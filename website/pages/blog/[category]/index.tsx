@@ -1,11 +1,9 @@
-import { BlogSvg } from "../../../assets/svg/BlogSvg";
 import { Hero } from "../../../components/Utilities/Fragments/Hero/Hero";
 import { Search } from "../../../components/Utilities/Fragments/Search/Search";
 import { useState, useEffect } from 'react';
 import { posts } from "../../../data/posts";
 import { Articles } from "../../../components/Page/Blog/Articles/Articles";
 import { blog } from "../../../data/blog";
-
 const Page = ({currentPage,hero}:{currentPage:any,hero:any}) => {
   const [searchValue,setSearchValue] = useState<string>('');
   const {articles} = posts;
@@ -30,7 +28,6 @@ const Page = ({currentPage,hero}:{currentPage:any,hero:any}) => {
   );
 };
 export default Page;
-
 export const getStaticProps = async ({params}:{params:string|any}) => {
   const {programming,seo} = blog;
   const {category} = params;

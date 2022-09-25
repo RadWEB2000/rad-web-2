@@ -1,12 +1,6 @@
-import { AskMeSvg } from "../../assets/svg/AskMeSvg";
-import { BlogSvg } from "../../assets/svg/BlogSvg";
-import { Details } from "../../components/Page/Contact/Details/Details";
-import { Form } from "../../components/Page/Contact/Form/Form/Form";
 import { CardMain } from "../../components/Page/Services/CardMain/CardMain";
 import { Cards } from "../../components/Page/Services/Cards/Cards";
-import { ContactCard } from "../../components/Utilities/Cards/ContactCard/ContactCard";
 import { Hero } from "../../components/Utilities/Fragments/Hero/Hero";
-
 const Page = () => {
   return (
     <>
@@ -14,7 +8,6 @@ const Page = () => {
         content="Chcesz stać się ważną częścią projeku RadWEB? Nic trudniejszego, ponieważ to właśnie w tym miejscu możesz dokonać realizacji między innymi stron internetowych czy też modernizacji już istniejących stron internetowych."
         title="Usługi i oferty"
         type="page"
-        svg={<BlogSvg />}
       />
       <main className="page">
         <Cards>

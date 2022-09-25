@@ -1,10 +1,5 @@
-import { AskMeSvg } from "../../../assets/svg/AskMeSvg";
-import { BlogSvg } from "../../../assets/svg/BlogSvg";
-import { Details } from "../../../components/Page/Contact/Details/Details";
-import { Form } from "../../../components/Page/Contact/Form/Form/Form";
 import { Card } from "../../../components/Page/Services/Card/Card";
 import { Cards } from "../../../components/Page/Services/Cards/Cards";
-import { ContactCard } from "../../../components/Utilities/Cards/ContactCard/ContactCard";
 import { Hero } from "../../../components/Utilities/Fragments/Hero/Hero";
 
 const Page = () => {
@@ -14,7 +9,6 @@ const Page = () => {
         content="Beatae qui minima labore vitae quibusdam sed vel illo est. Consequatur est ratione eaque ut. Praesentium laboriosam ad ut et excepturi dolorem officia rerum ut. Quasi repellat quia reprehenderit dolorem neque ex ullam sed minima. Beatae qui minima labore vitae quibusdam sed vel illo est. Consequatur est ratione eaque ut. Praesentium laboriosam ad ut et excepturi dolorem officia rerum ut. Quasi repellat quia reprehenderit dolorem neque ex ullam sed minima. "
         title="Usługi"
         type="page"
-        svg={<BlogSvg />}
       />
       <main className="page">
         <Cards>
