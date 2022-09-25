@@ -1,4 +1,5 @@
 import { MouseEventHandler, ReactElement } from "react";
+import { IntSeo } from "../../components/Layout/Seo/interface";
 export interface IntLayoutThemeContext {
   isLight: boolean;
   isMobile: boolean;

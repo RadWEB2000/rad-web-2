@@ -18,7 +18,6 @@ export const Form = () => {
     template:'template_b469d46',
     user:'jiBzcCuVYQCjwhBEu'
   }
-  console.log(formValues);
   const completeForm = (e:any) => {
     setFormValues({
       ...formValues,

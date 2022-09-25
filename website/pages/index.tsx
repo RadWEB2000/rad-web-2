@@ -8,9 +8,17 @@ import { Person } from "../components/Page/Home/Person/Person";
 import { JoinSvg } from "../assets/svg/JoinSvg";
 import { StatsSvg } from "../assets/svg/StatsSvg";
 import { SvgContainer } from "../components/Utilities/Fragments/SvgContainer/SvgContainer";
+import { Seo } from "../components/Layout/Seo/Seo";
 const Page = () => {
   return (
     <>
+      <Seo
+          canonical='https://rad-web.vercel.app'
+          description='Każda szanująca się osoba prywatna, organizacja czy też firma posiada strony internetowe. Zapraszam do zgłębienia swojej wiedzy z tego zagadnienia!'
+          image='/assets/brand/logo-black.png'
+          title='RadWEB - Tworzenie i pozycjonowanie stron internetowych, SEO'
+          typePage='website'
+      />
       <Hero/>
       <main className="page">
         <Person

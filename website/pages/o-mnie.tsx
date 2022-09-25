@@ -1,3 +1,4 @@
+import { Seo } from "../components/Layout/Seo/Seo";
 import { Content } from "../components/Page/About/AboutMe/Content/Content";
 import { Hero } from "../components/Page/About/AboutMe/Hero/Hero";
 import { Poster } from "../components/Page/About/AboutMe/Poster/Poster";
@@ -6,6 +7,13 @@ import { SectionCards } from '../components/Page/About/AboutMe/SectionCards/Sect
 const Page = () => {
   return (
     <>
+      <Seo
+          canonical='https://rad-web.vercel.app/o-mnie'
+          description='Nazywam się Radosław Adamczyk. Na codzień zajmuję się procesami SEO i SEM. Ponadto tworzę strony i apliacje internetowe. Zapraszam!'
+          image='/assets/images/suit.jpg'
+          title='Radosław Adamczyk - SEO. SEM, front-end/web dev - RadWEB'
+          typePage='website'
+      />
       <Hero
         image='/assets/images/suit.jpg'
         job="specjalista ds. SEO i SEM, front-end i web developer"
