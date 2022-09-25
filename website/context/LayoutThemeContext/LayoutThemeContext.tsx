@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { Footer } from "../../components/Layout/Footer/Footer/Footer";
 import { Navigation } from "../../components/Layout/Navigation/Navigation/Navigation";
 import { Global } from "../../styles/Global";
-import { darkTheme, lightTheme } from "../../styles/theme";
+import { lightTheme } from "../../styles/theme";
 import { IntLayoutThemeContext, IntLayoutThemeProvider } from "./interface";
 export const LayoutThemeContext = createContext<IntLayoutThemeContext>({
   isLight: false,
