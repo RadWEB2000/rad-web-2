@@ -1,0 +1,29 @@
+import {Hero} from '../../../components/Utilities/Fragments/Post/Hero/Hero';
+import {Content} from '../../../components/Utilities/Fragments/Post/Content/Content' ;
+import {Movie} from '../../../components/Utilities/Fragments/Post/Movie/Movie';
+import {Poster} from '../../../components/Utilities/Fragments/Post/Poster/Poster';
+import { AuthorCard } from "../../../components/Utilities/Cards/AuthorCard/AuthorCard"
+
+<Hero
+    title='Czym jest HTML? - historia czy teraźniejszość?'
+    image='https://cdn.pixabay.com/photo/2017/09/05/10/19/business-2717063_960_720.jpg'
+    release='Mon Apr 11 2022 00:00:00 GMT+0200 (czas środkowoeuropejski letni)'
+>Dla każdego kto rozpoczął swoją przygodę ze stronami internetowymi zna ten język. Istnieje wielki spór w środowisku developerów stron internetowych, jak określić tą techologię. Sami twórcy nazwali ją HyperText Markup Language, czyli hipertextowy język znaczników. Skoro HTML jest językiem opisowym, a nie programowania! Warto to zapamiętać, aby nie dać sobie powodu do niewybrednych zdań na nasz poziom wiedzy.</Hero>
+<Content title='Historia języka znaczników'>
+Ojcem założycielem tej przełomowej technoligii jest fizyk z ośrodka badawczego CERN - **Tim Berners-Lee**. W 1980 roku Tim stworzył prowizoryczny system informacyjny, który miał uroczą nazwę - *Enquire*, który był wykorzystywany do organizacji oraz współdzielenia dokumentów rzy wykorzystaniu internetu, co było rewolucją w tamtych czasach. Pierwszą specyfikacją HTML-a z 1991 roku było HTML Tags, zawierający w sobie aż **22 znaczniki**, tworząc core szablonów stron internetowych. Ta wersja była oparta na SGML-u. SGML, czyli generalnie ustandaryzowany język znaczników, służący do ujednolicania struktur, a także formatów informacji.
+</Content>
+<Content>
+W 1993 roku kiedy to międzynarodowa stowarzyszenie zrzeszające osoby interesujące się standaradami technicznymi w internecie oraz w ogóle w świecie technologii - *IEFT*, opublikowało pierwszą ustandaryzowało specyfikację HTML-a autorstwa wcześniej wspomnianego ojca założyciela oraz **Dana Conolly**. Po swoistym przeterminowaniu tego standardu, organizacja córka IEFT-y, czyli **HTML Working Group**, w 1995 roku został wprowadzony do powszechnego użytku wersję noszącą miano *HTML 2.0*, w celu łatwego rozróżnienia standardu.
+</Content>
+<Content>
+Krokiem milowym w rozwoju podstawowej technologii stron internetowych, było opublikowanie 18 grudnia 1997 roku standardu *HTML 4.0* wraz z regularnie wprowadzanymi co raz to nowszymi i szerszymi aktualizacjami. Miało ono trzy swoje gałęzie:
+- **Strict** zakaz użycia elementów przestarzałych,
+- **Transitional** dopszalne użytkowanie przestazałych elementy,
+- **Frameset** po chłopsku mówiąc, brak zasad.
+</Content>
+<Content title='Teraźniejszość HTML'>
+Mimo tego, że nie jest to oficjalny standard, ale powszechnie jest stosowany HTML 5. Dlaczego? W tym miejscu mogę opowiedzieć jedynie o moim doświadczeniu. Prywatnie wiele mi dało wprowadzenie na szerszą skalę znaczników schematycznych, na przykład nav, menu, figure, video czy tez chociażby pre. Czemu jest obecnie tak istotne stosowanie znaczników schemantycznych? Pierwszym powodem, jest ułatwienie pracy sobie oraz innym deweloperom. Drugim równie istotnym powodem jest wyszukiwarka internetowa. Każdy piszący komercyjnie strony internetowe, chce aby jego dzieło było powszechnie podziwiane, a nie schowane do przysłowiowej szuflady. Dziś takie wyszukiwarki jak Google, zwracają szczególną uwagę na zaimplementowane tagi. Człowiek z zasady jest leniwy i najchętniej korzystałby jedynie z div. Z kolei inna osoba stwierdziłaby, być może słusznie, że jej tekst jest na tyle ciekawy i istotny, to też zamiast zwykłych paragrafów, każdą linijkę treści oplecie znacznikiem h1. To jest błędna droga. Wybrałem właśnie HTML, który jest podstawą wszystkich stron internetowych. To jest początek serii wpisów o technologiach frontend-owych. Nie ukrywam, że z czasem zamierzam napisać i nagrać krótkie filmiki, albo i nawet całe kursy oparte właśnie o ten cykl. Branża IT, a w szczególności ta część odpowiedzialna za strony internetowe nie wymaga szcczególnie wielkich nakładów finansowych, ponieważ oczekuje czegoś znacznie więcej niż pieniądze - czasu, a tego nie zyska się za pieniądze.
+</Content>
+<AuthorCard></AuthorCard>
+
+export default ({children}) => <div>{children}</div>
