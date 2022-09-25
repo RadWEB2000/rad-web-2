@@ -21,7 +21,7 @@ export const Global = createGlobalStyle`
     html{
         font-family:${({theme}) => theme.fonts.family.regular};
         font-size:62.5%;
-        font-weight:${({theme}) => theme.fonts.weight.weight};
+        font-weight:400;
     }
     a,
     button{
