@@ -16,7 +16,7 @@ const Page = () => {
           canonical='https://rad-web.vercel.app'
           description='Każda szanująca się osoba prywatna, organizacja czy też firma posiada strony internetowe. Zapraszam do zgłębienia swojej wiedzy z tego zagadnienia!'
           image='/assets/brand/logo-black.png'
-          title='RadWEB - Tworzenie i pozycjonowanie stron internetowych, SEO'
+          title='RadWEB - Tworzenie stron i aplikacji internetowych, SEO'
           typePage='website'
       />
       <Hero/>
