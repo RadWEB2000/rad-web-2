@@ -1,0 +1,44 @@
+import { Content } from "../../components/Utilities/Fragments/Post/Content/Content";
+import { Hero } from "../../components/Utilities/Fragments/Post/Hero/Hero";
+import { AuthorCard } from '../../components/Utilities/Cards/AuthorCard/AuthorCard';
+import { Seo } from "../../components/Layout/Seo/Seo";
+
+<Seo
+    canonical='https://rad-web.vercel.app/projekty/radweb-filmabse'
+    description='Jeśli szukałeś alternatywy dla Netflixa to nie mogłeś lepiej trafić. To tuaj znajdziesz wszystkie interesujące Ciebie filmy, seriale oraz aktorów.'
+    image='https://images.unsplash.com/photo-1559570278-eb8d71d06403?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=626&q=80 '
+    title='Aplikacja internetowa, RadWEB Filmbase - RadWEB'
+    typePage='article'
+/>
+<Hero image='https://images.unsplash.com/photo-1559570278-eb8d71d06403?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=626&q=80 ' title='RadWEB FilmBase - znajdź swój film' stack={['html','css','styled','javascript','typescript','react','next']}  >RadWEB Filmbase to jeden z większych projektów, które zrealizowałem na przestrzeni kilku miesięcy. Pomysł na napisanie tego projektu zrodził mi się w głowie kiedy, znudziła mi się treść oferowana przez usługi streamingowe, szczególnie przez Netflixa. </Hero>
+<Content title='NextJS — dynamiczne generowanie statycznych stron
+'>
+Przy tworzeniu tej aplikacji webowej miałem za cel nauczenie się jednej ze sztandarowych funkcji frameworka NextJS, czyli **dynamicznego generowania statycznych podstron (SSG)** przy jednoczesnym pobieraniu danych z API, o czym będę wspominał w następnych artykułach. Podczas przygotowywania koncepcji serwisu, wygląd strony jest bardzo bliźniaczy do serwisu streamingowego Netflix. 
+</Content>
+<Content title='Użyte narzędzia do zbudowania aplikacji webowej'>
+Aplikacja webowa jest zbudowana o wyżej wymieniony framework NextJS, jednakże nie są to wszystkie technologie użyte w tym projekcie. Użyłem styled-components, technologii, która umożliwia nadawanie wyglądów CSS z wykorzystaniem JavaScript oraz TypeScript do kontrolowania wprowadzanych danych, poprawności przekazywanych komponentów, a także właściwości (***properties** — czyli żargonowych propsów*) 
+</Content>
+<Content title='Użyte narzędzia do zbudowania aplikacji webowej'>
+Jeśli chodzi źródło pobierania jest nim TheMovieDatabase, z którego wyciągam następujące informacje:
+- spis filmów, z każdego filmu pobieram poniższe informacje:
+    - plakat filmu
+    - tytuł filmu
+    - stronę, która szerzej omawia film,
+    - ilość widzów, datę premiery oraz ocenę  filmu
+    - producenta, budżet oraz zysk jaki przyniósł film
+    - opis, a także trailery  filmu,
+    - obsada aktorska oraz komentarze dotyczące filmu
+- spis seriali
+- spis aktorów
+
+Przy sprawdzaniu jakie dane chcę pobierać z wybranego przeze mnie zapytania API pomocnym się okazał program Postman, który zdecydowanie przyspieszył proces produkcji.
+</Content>
+<Content title='RadWEB FilmBase - Podsumowanie'>
+RadWEB Filmbase to zdecydowanie największy projekt niedokończony projekt — który dotychczas zrealizowałem, nie licząc oczywiście tego serwisu. W przyszłości chcę dodać możliwość dodawania własnych komentarzy oraz możliwość dodawania filmów, seriali oraz aktorów do listy ulubionych. To też jest gwarantem, że będę dokładał wszelkie starania, aby Netflix w końcu miał godnego siebie rywala.
+</Content>
+<Content>
+**Jeśli chcesz, abym podjął się zrealizowania wymyślonego przez Ciebie projektu, bez względu na to czy jest to pomysł na stronę internetową lub aplikację webową to śmiało [skontaktuj się ze mną](https://rad-web.vercel.app/kontakt).** 
+</Content>
+<AuthorCard></AuthorCard>
+
+export default ({children}) => <div>{children}</div>
