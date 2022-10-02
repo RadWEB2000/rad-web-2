@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { SocialsShare } from '../../../../Utilities/Fragments/SocialsShare/SocialsShare';
 import { IntHero } from './interface';
 import { Wrapper } from './style';
 export const Hero = ({image,job,title}:IntHero) => {
