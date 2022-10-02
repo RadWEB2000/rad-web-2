@@ -22,7 +22,6 @@ export const Hero = ({image,job,title}:IntHero) => {
                 <section>
                     <h1>{title}</h1>
                     <h2 className="job">{job}</h2>
-                    {/* <SocialsShare/> */}
                 </section>
             </div>
         </Wrapper>
