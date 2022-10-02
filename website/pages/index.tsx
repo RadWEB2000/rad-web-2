@@ -1,11 +1,7 @@
 import { Blog } from "../components/Page/Home/Blog/Blog";
 import { Projects } from "../components/Page/Home/Projects/Projects";
-import { Services } from "../components/Page/Home/Services/Services";
 import { Hero } from "../components/Page/Home/Hero/Hero";
-import { Team } from "../components/Page/Home/Team/Team";
-import { Movie } from "../components/Page/Home/Movie/Movie";
 import { Person } from "../components/Page/Home/Person/Person";
-import { JoinSvg } from "../assets/svg/JoinSvg";
 import { StatsSvg } from "../assets/svg/StatsSvg";
 import { SvgContainer } from "../components/Utilities/Fragments/SvgContainer/SvgContainer";
 import { Seo } from "../components/Layout/Seo/Seo";
@@ -33,9 +29,6 @@ const Page = () => {
           image="/assets/images/wall.jpg"
           title="Radosław Adamczyk"
         />
-        {/* <Movie
-          url="/assets/movies/city.webm"
-        /> */}
         <Blog
           button="więcej"
           content={`Programowanie i pozycjonowanie są niezwykle prężnie rozwijającymi się dziedzinami nauki. W  programowaniu często pojawiają się nowe paczki usprawniające prace deweloperów. Natomiast proces pozycjonowania poddawany jest przez wyszukiwarkę Google co raz to nowszym rewolucjom. Na szczęście z blogiem RadWEB zawsze będziesz na bieżąco z nowinkami.`}
@@ -53,10 +46,6 @@ const Page = () => {
           path="/projekty"
           title="Projekty i realizacje"
         />
-        {/* <SvgContainer
-          icon={<JoinSvg/>}
-        /> */}
-        {/* <Services/> */}
       </main>
     </>
   );

@@ -2,7 +2,6 @@ import { IntHero } from "./interface";
 import { getTime } from "../../../../../lib/functions/getTime";
 import Image from "next/image";
 import { Wrapper } from "./style";
-import { SocialsShare } from "../../SocialsShare/SocialsShare";
 import { StackTechnology } from "../../StackTechnology/StackTechnology";
 export const Hero = ({
   children,
@@ -17,7 +16,6 @@ export const Hero = ({
       {stack && <StackTechnology stack={stack}/>}
       <h1>{title}</h1>
       {release && <p className="release">{day} {month} {year}</p>}
-      {/* <SocialsShare/> */}
       <figure>
         <Image
           alt={title}
