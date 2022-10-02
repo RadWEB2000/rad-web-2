@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 import { flex } from '../../../../../styles/mixins';
 export const Wrapper = styled.section`
-    margin:1rem auto;
+    margin:5rem auto;
     max-width:95%;
     width:120rem;
+    h2 {
+        font-size:4rem;
+    }
+    h3,h4 {
+        font-size:3rem;
+    }
     & > p {
         font-size:1.77rem;
-        line-height:1.7;
+        line-height:1.9;
         font-weight:500;
-        padding:.45rem;
         text-align:justify;
         a{
             color:${({theme}) => theme.colors.secondary};
@@ -64,10 +69,25 @@ export const Wrapper = styled.section`
         color:${({theme}) => theme.colors.background};
         display:block;
         font-size:1.45rem;
-        padding:1rem .15rem;
+        padding:3rem 2.5rem;
         white-space:pre-wrap;
         width:100%;
         word-break:break-all;
         word-wrap:break-word;
+    }
+
+    @media only screen {
+        @media (max-width:500px){
+            text-align:start !important;
+            h2 {
+                font-size:2.8rem;
+            }
+            h3,h4 {
+                font-size:2.2rem;
+            }
+            & > p {
+                text-align:start !important;
+            }
+        }
     }
 `

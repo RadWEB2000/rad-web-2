@@ -20,6 +20,13 @@ interface IntPosts {
 export const posts:IntPosts = {
     articles:[
         {
+            content:`Roboty wyszukiwarek internetowych pracują dzień i noc, jednak czy można je kontrolować? Zapraszam`,
+            date:'Sun Oct 02 2022 17:40:26 GMT+0200 (czas środkowoeuropejski letni)',
+            image:'https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
+            path:'/blog/programowanie/robots-txt-jak-przejac-kontrole-nad-robotami-wyszukiwarek',
+            title:'Robots.txt — Jak przejąć kontrolę nad robotami wyszukiwarek?'
+        },
+        {
             content:`Najczęściej używanymi systemami operacyjnymi są Mac OS, Linux oraz Windows. Windows jest najpoplarniejszy, ale dlaczego`,
             date:'Sun Jun 05 2022 00:00:00 GMT+0200 (czas środkowoeuropejski letni)',
             image:'https://images.unsplash.com/photo-1624571395775-253d9666612b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
@@ -40,6 +47,7 @@ export const posts:IntPosts = {
             path:'/blog/programowanie/czym-jest-html',
             title:'Czym jest HTML? - historia czy teraźniejszość?'
         },
+      
     ],
     projects:[
         {
