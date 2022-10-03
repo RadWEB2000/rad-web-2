@@ -2,7 +2,6 @@ import { createContext, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { Footer } from "../../components/Layout/Footer/Footer/Footer";
 import { Navigation } from "../../components/Layout/Navigation/Navigation/Navigation";
-import { Seo } from "../../components/Layout/Seo/Seo";
 import { Global } from "../../styles/Global";
 import { lightTheme } from "../../styles/theme";
 import { IntLayoutThemeContext, IntLayoutThemeProvider } from "./interface";
@@ -15,7 +14,7 @@ export const LayoutThemeContext = createContext<IntLayoutThemeContext>({
   openMenu: () => {},
   handle: () => {},
 });
-export const LayoutThemeProvider = ({ children}: IntLayoutThemeProvider) => {
+export const LayoutThemeProvider = ({ children }: IntLayoutThemeProvider) => {
   const [isLight, setIsLight] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -53,10 +52,9 @@ export const LayoutThemeProvider = ({ children}: IntLayoutThemeProvider) => {
     >
       <ThemeProvider theme={lightTheme}>
         <Global />
-       
         <Navigation />
         {children}
-        <Footer/>
+        <Footer />
       </ThemeProvider>
     </LayoutThemeContext.Provider>
   );
