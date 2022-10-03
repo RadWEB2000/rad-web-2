@@ -7,6 +7,7 @@ export const Wrapper = styled.nav`
     position:sticky;
     grid-template-rows:7rem auto;
     top:0;
+    transition:.5s linear box-shadow;
     z-index:9999;
     @media only screen {
         @media (max-width:900px){

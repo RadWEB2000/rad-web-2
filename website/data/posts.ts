@@ -24,7 +24,7 @@ export const posts:IntPosts = {
             date:'Sun Oct 02 2022 17:40:26 GMT+0200 (czas środkowoeuropejski letni)',
             image:'https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
             path:'/blog/programowanie/robots-txt-jak-przejac-kontrole-nad-robotami-wyszukiwarek',
-            title:'Robots.txt — Jak przejąć kontrolę nad robotami wyszukiwarek?'
+            title:'Przejęcie kontroli nad botami Google z robots.txt'
         },
         {
             content:`Najczęściej używanymi systemami operacyjnymi są Mac OS, Linux oraz Windows. Windows jest najpoplarniejszy, ale dlaczego`,
