@@ -1,5 +1,4 @@
-/** @type {import('next-sitemap').IConfig} */
-export const siteUrl = 'https://rad-web.vercel.app/';
+const siteUrl = 'https://rad-web.vercel.app/';
 module.exports = {
   siteUrl,
   exclude: ["/404"],
