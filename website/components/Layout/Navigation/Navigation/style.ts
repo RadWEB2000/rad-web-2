@@ -5,7 +5,7 @@ export const Wrapper = styled.nav`
     display:grid;
     grid-template-columns:1fr 3fr;
     position:sticky;
-    grid-template-rows:7rem auto;
+    grid-template-rows:7.5rem auto;
     top:0;
     transition:.5s linear box-shadow;
     z-index:9999;

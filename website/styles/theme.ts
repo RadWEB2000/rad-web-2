@@ -14,7 +14,7 @@ export const theme = {
 }
 export const lightTheme:DefaultTheme = {
     colors:{
-        background:'#fafafa',
+        background:'#fefefe',
         backgroundOpacity:`linear-gradient(to left,hsla(0, 0%, 98%, 0.8),hsla(0, 0%, 98%, 1))`,
         color:'#0a0a0a',
         primary:'#0c17e9',

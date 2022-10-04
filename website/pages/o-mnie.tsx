@@ -10,12 +10,12 @@ const Page = () => {
       <Seo
           canonical='https://rad-web.vercel.app/o-mnie'
           description='Nazywam się Radosław Adamczyk. Na codzień zajmuję się procesami SEO i SEM. Ponadto tworzę strony i apliacje internetowe. Zapraszam!'
-          image='/assets/images/suit.jpg'
+          image='/assets/images/forest.jpg'
           title='Radosław Adamczyk - SEO. SEM, front-end/web dev - RadWEB'
           typePage='website'
       />
       <Hero
-        image='/assets/images/suit.jpg'
+        image="/assets/images/suit.jpg"
         job="specjalista ds. SEO i SEM, front-end i web developer"
         title="Radosław Adamczyk"
       />
@@ -25,7 +25,7 @@ const Page = () => {
         </Content>
         <Poster
           ratio="4/3"
-          image="/assets/images/room.jpg"
+          image='/assets/images/forest.jpg'
           title="#"
         />
         <Content title="Rozwój zawodowy jako programista">

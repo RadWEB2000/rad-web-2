@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     padding:0 1rem;
     & > a {
         cursor:pointer;
-        font-size:3.5rem;
+        font-size:3.15rem;
         font-weight:600;
         user-select:none;
     }

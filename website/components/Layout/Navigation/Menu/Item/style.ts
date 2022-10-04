@@ -29,7 +29,7 @@ const Item = () => css`
 const Big = () => css`
   height: 3.5rem;
   & > a {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 600;
     padding: 0 0.5rem;
     transition: 0.2s linear color;
@@ -48,8 +48,7 @@ export const Expand = styled.div`
   ${Big};
   ${Item};
   & > button {
-    aspect-ratio: 1/1;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `;
 export const Regular = styled.li`

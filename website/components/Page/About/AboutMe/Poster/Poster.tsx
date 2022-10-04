@@ -9,7 +9,7 @@ export const Poster = ({image,ratio,title}:IntPoster) => {
                     alt={title}
                     layout='fill'
                     loading="lazy"
-                    objectFit='cover'
+                    objectFit='contain'
                     objectPosition='center'
                     src={image}
                     title={title}
