@@ -1,0 +1,97 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: center;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	row-gap: 2rem;
+	width: 85%;
+	& > * {
+		width: 100%;
+	}
+	& > h1 {
+		font-size: 7rem;
+		font-weight: 900;
+		text-align: center;
+	}
+	& > p {
+		font-size: 1.6rem;
+		line-height: 1.9;
+		padding: 0.2rem;
+	}
+	& > ul {
+		align-items: center;
+		display: flex;
+		flex-flow: row wrap;
+		gap: 1.5rem;
+		justify-content: flex-start;
+		padding: 0.15rem;
+	}
+	@media only screen {
+		@media (max-width: 1170px) {
+			width: 95%;
+		}
+		@media (max-width: 950px) {
+			row-gap: 1rem;
+			& > h1 {
+				font-size: 5rem;
+			}
+			& > p {
+				font-size: 1.5rem;
+				line-height: 1.5;
+				padding: 0.15rem;
+			}
+			& > ul {
+				gap: 0.18rem;
+				padding: 0.1rem;
+			}
+		}
+		@media (max-width: 735px) {
+			row-gap: 1rem;
+			& > h1 {
+				font-size: 4rem;
+				font-weight: 900;
+				text-align: center;
+			}
+			& > p {
+				font-size: 1.45rem;
+				line-height: 1.5;
+				padding: 0;
+			}
+			& > ul {
+				gap: 0.18rem;
+				padding: 0.1rem;
+			}
+		}
+		@media (max-width: 670px) {
+			min-height: calc(100vh - 10rem);
+			row-gap: 3rem;
+			& > h1 {
+				font-size: 6rem;
+			}
+			& > p {
+				font-size: 1.55rem;
+				line-height: 1.7;
+				padding: 0;
+			}
+			& > ul {
+				gap: 0.4rem;
+			}
+		}
+		@media (max-width: 400px) {
+			row-gap: 2rem;
+			& > h1 {
+				font-size: 4rem;
+			}
+			& > p {
+				font-size: 1.45rem;
+				line-height: 1.5;
+			}
+			& > ul {
+				justify-content: center;
+				gap: 0.12rem;
+				row-gap: 1rem;
+			}
+		}
+	}
+}

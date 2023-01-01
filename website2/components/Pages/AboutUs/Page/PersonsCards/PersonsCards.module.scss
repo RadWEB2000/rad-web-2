@@ -1,0 +1,30 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	row-gap: 4rem;
+	&,
+	& > section {
+		align-items: start;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+	}
+	& > section {
+		row-gap: 2rem;
+		& > h2 {
+			font-size: 5rem;
+		}
+		& > p {
+			color: $quatenaryButtonColor;
+			font-size: 2rem;
+			line-height: 2;
+			font-weight: 400;
+		}
+	}
+	& > ul {
+		align-items: start;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+}

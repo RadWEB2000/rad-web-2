@@ -1,0 +1,42 @@
+@import "../../../../styles/Variables.module.scss";
+.button,
+.title {
+	padding: 0.25rem 0.5rem;
+}
+.button {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+}
+.content {
+	font-size: 1.65rem;
+	line-height: 1.95;
+	text-indent: 2rem;
+	@media only screen {
+		@media (max-width: 700px) {
+			font-size: 1.55rem;
+			line-height: 1.8;
+			text-indent: 1.2rem;
+		}
+	}
+}
+.title {
+	color: $tertiaryButtonColor;
+	font-size: 3.85rem;
+	font-weight: 900;
+	@media only screen {
+		@media (max-width: 700px) {
+			font-size: 2.55rem;
+		}
+	}
+}
+.wrapper {
+	align-items: start;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	row-gap: 1rem;
+	& > * {
+		width: 100%;
+	}
+}

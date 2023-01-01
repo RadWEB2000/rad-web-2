@@ -1,0 +1,42 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	&[data-variant="primary"] > a {
+		background-color: $primaryButtonColor;
+		min-width: 12rem;
+	}
+	&[data-variant="secondary"] > a {
+		background-color: $secondaryButtonColor;
+		min-width: 12rem;
+	}
+	&[data-variant="tertiary"] > a {
+		background-color: $tertiaryButtonColor;
+		min-width: 16rem;
+	}
+	&,
+	& > a {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
+	& > a {
+		border-radius: 2.5rem;
+		color: $background;
+		font-size: 1.5rem;
+		font-weight: 600;
+		min-height: 3.5rem;
+		padding: 0 0.5rem;
+		user-select: none;
+	}
+	@media only screen {
+		@media (max-width: 735px) {
+			&[data-variant="primary"] > a {
+				min-width: 10rem;
+			}
+		}
+		@media (max-width: 700px) {
+			&[data-variant="tertiary"] > a {
+				min-width: 13rem;
+			}
+		}
+	}
+}

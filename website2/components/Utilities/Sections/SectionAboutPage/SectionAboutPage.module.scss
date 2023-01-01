@@ -1,0 +1,28 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: start;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	row-gap: 4rem;
+	& > h2 {
+		font-size: 5rem;
+	}
+	& > p {
+		color: $quatenaryButtonColor;
+		font-size: 2rem;
+		line-height: 2;
+		font-weight: 400;
+	}
+	@media only screen {
+		@media (max-width: 650px) {
+			row-gap: 2rem;
+			& > h2 {
+				font-size: 4rem;
+			}
+			& > p {
+				font-size: 1.7rem;
+			}
+		}
+	}
+}

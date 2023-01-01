@@ -1,0 +1,142 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	height: 45rem;
+	overflow: hidden;
+	max-width: 97%;
+	transition: 0.2s linear border;
+	width: 35rem;
+	& > a {
+		align-items: center;
+		background: yellow;
+		display: flex;
+		flex-flow: column;
+		height: 100%;
+		width: 100%;
+		justify-content: center;
+		position: relative;
+		& > .image {
+			background: aqua;
+			display: flex;
+			&,
+			& > figure {
+				filter: brightness(50%);
+				position: relative;
+				height: 100%;
+				width: 100%;
+			}
+			& > figure {
+				transition: 0.2s linear scale;
+			}
+		}
+		& > .content {
+			align-items: center;
+			display: flex;
+			flex-flow: column;
+			justify-content: space-between;
+			height: 100%;
+			width: 100%;
+			color: $background;
+			position: absolute;
+			padding: 2rem 0.75rem;
+			z-index: 0;
+			&::before {
+				background-color: $white;
+				top: -2rem;
+				left: 0;
+				transform: translateX(-100%);
+				opacity: 0;
+				visibility: hidden;
+				height: 120%;
+				transition: 0.3s linear opacity, 0.3s linear transform,
+					0.3s linear visibility;
+				width: 120%;
+				z-index: -1;
+			}
+			& > .date {
+				align-items: center;
+				display: flex;
+				justify-content: flex-end;
+				width: 100%;
+				& > p {
+					color: $white;
+					font-size: 1.7rem;
+					font-weight: 600;
+					transition: 0.2s linear color;
+				}
+			}
+			& > .info {
+				align-items: start;
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				row-gap: 0.5rem;
+				& > h3,
+				& > p,
+				& > div > p {
+					transition: 0.2s linear background-color, 0.2s linear color;
+				}
+				& > h3 {
+					font-size: 3rem;
+					font-weight: 800;
+				}
+				& > p {
+					font-size: 1.47rem;
+					font-weight: 600;
+					line-height: 1.6;
+					opacity: 0.8;
+				}
+				& > div {
+					justify-content: flex-start;
+					width: 100%;
+					&,
+					& > p {
+						align-items: center;
+						display: flex;
+					}
+					& > p {
+						background-color: hsla(0, 100%, 100%, 80%);
+						border-radius: 1rem;
+						color: $color;
+						padding: 0.25rem 1.75rem;
+						justify-content: center;
+					}
+				}
+			}
+		}
+	}
+	&:focus,
+	&:focus-within,
+	&:hover {
+		& > a {
+			& > .image {
+				& > figure {
+					scale: 1.2;
+				}
+			}
+			& > .content {
+				&::before {
+					opacity: 1;
+					transform: translateX(0);
+					visibility: visible;
+				}
+				& > .date {
+					& > p {
+						color: $color;
+					}
+				}
+				& > .info {
+					& > h3,
+					& > p {
+						color: $color;
+					}
+					& > div {
+						& > p {
+							background-color: hsla(0, 100%, 0%, 80%);
+							color: $background;
+						}
+					}
+				}
+			}
+		}
+	}
+}

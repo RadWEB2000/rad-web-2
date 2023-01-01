@@ -1,0 +1,9 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: center;
+	display: flex;
+	gap: 1rem;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 5rem auto;
+}

@@ -1,83 +1,96 @@
-import styled from 'styled-components';
-import { flex } from '../../../../styles/mixins';
+import styled from "styled-components";
+import { flex } from "../../../../styles/mixins";
 export const Wrapper = styled.div`
-    column-gap:1rem;
-    display:grid;
-    grid-template-columns:2.5fr 1.5fr;
-    min-height:70rem;
-    & > figure{
-        border-radius:2.7rem;
-        overflow:hidden;
-        position:relative;
-    }
-    & > section{
-        ${flex({align:'flex-start',justify:'center'})}
-        flex-flow:column;
-        padding:.7rem;
-        row-gap:2rem;
-        & > h2{
-            font-size:4rem;
-        }
-        & > p {
-            color:${({theme}) => theme.colors.gray};
-            font-size:1.65rem;
-            line-height:1.5;
-        }
-        & > ul{
-            ${flex({align:'flex-start',justify:'flex-start'})}
-            flex-flow:row wrap;
-            padding:.25rem;
-            gap:.4rem;
-            & > button {
-                & > a{
-                    min-height:3.5rem;
-                    padding:.15rem .2rem;
-                    & > p{
-                        font-size:1.5rem;
-                    }
-                }
-            }
-        }
-    }
-    @media only screen{
-        @media (max-width:1250px){
-            grid-template-columns:2fr 1.5fr;
-        }
-        @media (max-width:950px){
-            grid-template-columns:1.5fr 2fr;
-            & > section{
-                & > h2{
-                    font-size:3.45rem;
-                }
-                & > p {
-                    font-size:1.55rem;
-                    line-height:1.3;
-                }
-            }
-        }
-        @media (max-width:850px){
-            grid-template-columns:1fr;
-            min-height:auto;
-            & > figure{
-                aspect-ratio:4/3;
-            }
-        }
-        @media (max-width:450px){
-            grid-template-columns:1fr;
-            min-height:auto;
-            & > figure{
-                min-height:45rem;
-                width:100%;
-            }
-            & > section{
-                & > h2{
-                    font-size:3rem;
-                }
-                & > p {
-                    font-size:1.45rem;
-                    line-height:1.3;
-                }
-            }
-        }
-    }
-`
+	column-gap: 1rem;
+	display: grid;
+	grid-template-columns: 50rem calc(100% - 50rem);
+	min-height: 60rem;
+	margin: 0 auto;
+	max-width: 95%;
+	width: 120rem;
+	& > figure {
+		border-radius: 1.7rem;
+		overflow: hidden;
+		position: relative;
+	}
+	& > section {
+		align-items: start;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		padding: 0.45rem;
+		row-gap: 2rem;
+		& > h2 {
+			font-size: 4.5rem;
+		}
+		& > p {
+			font-size: 1.8rem;
+			line-height: 1.7;
+		}
+	}
+	@media only screen {
+		@media (max-width: 1040px) {
+			grid-template-columns: 40rem calc(100% - 40rem);
+			min-height: 50rem;
+			& > section {
+				align-items: start;
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				padding: 0.45rem;
+				row-gap: 2rem;
+				& > h2 {
+					font-size: 3.75rem;
+				}
+				& > p {
+					font-size: 1.6rem;
+					line-height: 1.7;
+				}
+			}
+		}
+		@media (max-width: 850px) {
+			grid-template-columns: 30rem calc(100% - 30rem);
+			min-height: 50rem;
+			width: 65rem;
+			& > section {
+				align-items: start;
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				padding: 0.45rem;
+				row-gap: 1rem;
+				& > h2 {
+					font-size: 3rem;
+				}
+				& > p {
+					font-size: 1.45rem;
+					line-height: 1.6;
+				}
+			}
+		}
+		@media (max-width: 740px) {
+			display: flex;
+			flex-flow: column;
+			min-height: 50rem;
+			width: 35rem;
+			& > figure {
+				aspect-ratio: 4/3;
+			}
+			& > section {
+				align-items: start;
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				padding: 0.45rem;
+				row-gap: 1rem;
+				& > h2 {
+					font-size: 3rem;
+				}
+				& > p {
+					font-size: 1.45rem;
+					line-height: 1.6;
+				}
+			}
+		}
+	}
+`;

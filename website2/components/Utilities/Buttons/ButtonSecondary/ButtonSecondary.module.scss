@@ -1,0 +1,45 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	&,
+	& > a {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
+	& > a {
+		// background: white;
+		color: $tertiaryButtonColor;
+		font-size: 1.7rem;
+		font-weight: 500;
+		min-height: 3rem;
+		padding: 0.25rem 0.75rem;
+		position: relative;
+		transition: 0.15s ease-in-out color;
+		min-width: 10rem;
+		z-index: 0;
+		&::after,
+		&::before {
+			background: $tertiaryButtonColor;
+			height: 50%;
+			transition: 0.4s ease-in-out width;
+			width: 0%;
+			z-index: -1;
+		}
+		&::after {
+			left: 0;
+			top: 0;
+		}
+		&::before {
+			bottom: 0;
+			right: 0;
+		}
+		&:focus,
+		&:hover {
+			color: $background;
+			&::after,
+			&::before {
+				width: 100%;
+			}
+		}
+	}
+}

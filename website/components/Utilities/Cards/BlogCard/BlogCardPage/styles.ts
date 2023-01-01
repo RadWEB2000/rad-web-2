@@ -41,7 +41,7 @@ export const BlogCardPageStyles = styled.li`
 			width: 100%;
 		}
 		& > .date {
-			font-size: 1.9rem;
+			font-size: 1.7rem;
 			font-weight: 600;
 		}
 		& > h3 {

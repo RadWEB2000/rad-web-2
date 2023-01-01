@@ -1,0 +1,70 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	background-color: $white;
+	max-width: 95%;
+	width: 32.5rem;
+	& > a {
+		align-items: flex-start;
+		display: flex;
+		flex-flow: column;
+		height: 100%;
+		justify-content: flex-start;
+		width: 100%;
+		& > .image {
+			aspect-ratio: 4/4;
+			overflow: hidden;
+			width: 100%;
+			& > figure {
+				height: 100%;
+				position: relative;
+				transition: 0.2s linear transform;
+				width: 100%;
+			}
+		}
+		& > .content {
+			align-items: flex-start;
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			min-height: 12rem;
+			padding: 0.25rem 0.75rem;
+			row-gap: 0.5rem;
+			width: 100%;
+			& > h3 {
+				& > span {
+					&:first-of-type {
+						font-size: 2.5rem;
+						font-weight: 900;
+					}
+					&:last-of-type {
+						font-size: 2rem;
+					}
+				}
+			}
+			& > .jobs {
+				font-size: 1.5rem;
+				font-style: italic;
+			}
+			& > .cities {
+				font-size: 1.5rem;
+				font-weight: 900;
+			}
+		}
+	}
+	&:focus-within,
+	&:hover {
+		& > a {
+			& > .image {
+				& > figure {
+					transform: translateY(2rem) scale(1.2);
+				}
+			}
+		}
+	}
+	@media only screen {
+		@media (max-width: 340px) {
+			max-width: 90%;
+			width: 20rem;
+		}
+	}
+}

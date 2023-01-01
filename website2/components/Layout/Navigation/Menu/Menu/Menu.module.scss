@@ -1,0 +1,21 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: center;
+	background-color: $background;
+	display: flex;
+	height: 100%;
+	gap: 2.5rem;
+	justify-content: center;
+	@media only screen {
+		@media (max-width: 1000px) {
+			gap: 1.5rem;
+		}
+		@media (max-width: 850px) {
+			align-items: start;
+			flex-flow: column;
+			justify-content: flex-start;
+			gap: 0.5rem;
+			padding: 1rem 2rem;
+		}
+	}
+}

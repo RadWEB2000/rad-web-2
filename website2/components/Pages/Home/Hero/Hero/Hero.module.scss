@@ -1,0 +1,40 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	background-color: $background;
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	gap: 1rem;
+	padding: 2rem 4rem;
+	min-height: calc(100vh - 11.5rem);
+	& > div {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
+	@media only screen {
+		@media (max-width: 1170px) {
+			grid-template-columns: 1.25fr 1fr;
+			padding: 2rem 1.5rem;
+		}
+		@media (max-width: 875px) {
+			grid-template-columns: 1.5fr 1fr;
+			padding: 2rem 0.5rem;
+		}
+		@media (max-width: 750px) {
+			grid-template-columns: 1.85fr 1fr;
+		}
+		@media (max-width: 670px) {
+			align-items: center;
+			display: flex;
+			flex-flow: column;
+			padding: 1rem 0.5rem;
+		}
+		@media (max-width: 500px) {
+			padding: 1rem 0.25rem;
+			& > div {
+				padding: 1rem 0;
+				width: 100%;
+			}
+		}
+	}
+}

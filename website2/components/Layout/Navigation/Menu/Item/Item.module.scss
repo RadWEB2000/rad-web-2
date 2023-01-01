@@ -1,0 +1,89 @@
+@import "../../../../../styles/Variables.module.scss";
+.expand,
+.main {
+	flex-flow: row nowrap;
+	height: 3rem;
+	&,
+	& > * {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
+	& > a {
+		color: $quatenaryButtonColor;
+		font-size: 1.55rem;
+		font-weight: 700;
+		height: 100%;
+		min-width: 5rem;
+		padding: 0 0.15rem;
+		position: relative;
+		&::before {
+			background-color: $secondaryButtonColor;
+			bottom: 0;
+			height: 0.15rem;
+			left: 0;
+			transition: 0.2s linear width;
+			width: 0%;
+		}
+		&:focus,
+		&:hover {
+			color: $secondaryButtonColor;
+			&::before {
+				width: 100%;
+			}
+		}
+	}
+	@media only screen {
+		@media (max-width: 850px) {
+			justify-content: flex-start;
+			width: 100%;
+		}
+	}
+}
+.expand {
+	& > a {
+		padding: 0 0.5rem 0 0;
+	}
+	& > button {
+		aspect-ratio: 1/1;
+		color: $quatenaryButtonColor;
+		font-size: 2rem;
+		height: 100%;
+		transition: 0.2s linear color;
+		& > * {
+			transition: 0.2s linear scale;
+		}
+		&:focus,
+		&:hover {
+			color: $secondaryButtonColor;
+			& > * {
+				scale: 1.2;
+			}
+		}
+	}
+}
+
+.submenu {
+	& > a {
+		color: $background;
+		position: relative;
+		transition: 0.2s ease-in-out color;
+		padding: 0 0.5rem;
+		z-index: 0;
+		&::before {
+			background-color: $background;
+			height: 100%;
+			left: 0;
+			transition: 0.2s ease-in-out width;
+			width: 0%;
+			z-index: -1;
+		}
+		&:focus,
+		&:hover {
+			color: $secondaryButtonColor;
+			&::before {
+				width: 100%;
+			}
+		}
+	}
+}

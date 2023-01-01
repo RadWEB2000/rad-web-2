@@ -12,14 +12,17 @@ export const Global = createGlobalStyle`
         content:"";
         position:absolute;
     }
+    a{
+        cursor:pointer;
+    }
     body{
-        background-color:${({theme}) => theme.colors.background};
-        color:${({theme}) => theme.colors.color};
+        background-color:${({ theme }) => theme.colors.background};
+        color:${({ theme }) => theme.colors.color};
         font-size:1.6rem;
         transition:.2s linear background-color, .2s linear color;
     }
     html{
-        font-family:${({theme}) => theme.fonts.family.regular};
+        font-family:${({ theme }) => theme.fonts.family.regular};
         font-size:62.5%;
         font-weight:400;
     }
@@ -41,11 +44,11 @@ export const Global = createGlobalStyle`
     }
     h1,
     h2{
-        font-weight:${({theme}) => theme.fonts.weight.heading};
+        font-weight:${({ theme }) => theme.fonts.weight.heading};
     }
     code,
     pre{
-        font-family:${({theme}) => theme.fonts.family.code};
+        font-family:${({ theme }) => theme.fonts.family.code};
     }
     iframe{
         all:unset;
@@ -67,7 +70,7 @@ export const Global = createGlobalStyle`
         width:160rem;
     }
     .section{
-        ${flex({align:'center',justify:'center'})};
+        ${flex({ align: "center", justify: "center" })};
         flex-flow:column;
         margin:5rem auto;
         row-gap:2rem;
@@ -130,4 +133,4 @@ export const Global = createGlobalStyle`
         }
     }
 
-`
+`;

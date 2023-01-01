@@ -1,0 +1,45 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: center;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	row-gap: 4rem;
+	min-height: calc(100vh - 25rem);
+	padding: 3rem 1rem;
+	& > h1 {
+		font-size: 8rem;
+		max-width: 95%;
+		text-align: center;
+	}
+	& > p {
+		font-size: 1.9rem;
+		line-height: 2.2;
+		max-width: 95%;
+		text-indent: 2rem;
+		width: 130rem;
+	}
+	@media only screen {
+		@media (max-width: 1050px) {
+			& > h1 {
+				font-size: 6rem;
+			}
+			& > p {
+				font-size: 1.7rem;
+				line-height: 2;
+			}
+		}
+		@media (max-width: 600px) {
+			row-gap: 2rem;
+			& > h1 {
+				font-size: 4rem;
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+			& > p {
+				font-size: 1.6rem;
+				line-height: 1.7;
+			}
+		}
+	}
+}

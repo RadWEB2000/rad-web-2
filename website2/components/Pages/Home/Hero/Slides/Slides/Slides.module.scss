@@ -1,0 +1,56 @@
+@import "../../../../../../styles/Variables.module.scss";
+.button,
+.buttons,
+.currentSlide {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+.button,
+.currentSlide {
+	aspect-ratio: 1/1;
+	width: 4.2rem;
+}
+.wrapper {
+	align-items: center;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	margin: auto;
+	row-gap: 0.25rem;
+	width: 45rem;
+	@media only screen {
+		@media (max-width: 1170px) {
+			max-width: 97%;
+			width: 40rem;
+		}
+		@media (max-width: 875px) {
+			width: 31rem;
+		}
+		@media (max-width: 670px) {
+			max-width: 95%;
+			width: 95%;
+		}
+	}
+}
+.buttons {
+	flex-flow: row nowrap;
+	padding: 0.15rem 0.2rem;
+	width: 100%;
+}
+.button {
+	font-size: 2rem;
+	& > * {
+		transition: 0.2s linear scale;
+	}
+	&:hover {
+		& > * {
+			scale: 1.2;
+		}
+	}
+}
+.currentSlide {
+	font-size: 2rem;
+	font-weight: 900;
+	user-select: none;
+}

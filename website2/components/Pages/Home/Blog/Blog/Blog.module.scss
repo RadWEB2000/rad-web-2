@@ -1,0 +1,10 @@
+.wrapper {
+	align-items: center;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	row-gap: 2rem;
+	& > * {
+		width: 100%;
+	}
+}
