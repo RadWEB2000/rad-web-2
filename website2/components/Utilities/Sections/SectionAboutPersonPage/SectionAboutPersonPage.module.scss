@@ -1,0 +1,78 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: start;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	margin: 5rem auto;
+	row-gap: 1rem;
+	& > * {
+		width: 100%;
+	}
+}
+.content {
+	padding: 0.25rem;
+	& > * {
+		line-height: 2;
+	}
+	& > h2 {
+		font-size: 4rem;
+	}
+	& > p {
+		color: $quatenaryButtonColor;
+		font-size: 1.7rem;
+		b {
+			color: $color;
+			font-weight: 700;
+		}
+		a {
+			background-color: rgb(85, 73, 241, 0.15);
+			color: rgb(85, 73, 241, 1);
+			display: inline-block;
+			padding: 0 0.5rem;
+			text-decoration: underline;
+			transition: 0.2s linear color;
+			&:focus-within,
+			&:hover {
+				color: $color;
+			}
+		}
+	}
+	@media only screen {
+		@media (max-width: 650px) {
+			& > h2 {
+				line-height: 1.2;
+			}
+		}
+		@media (max-width: 360px) {
+			& > h2 {
+				font-size: 3rem;
+			}
+			& > p {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+.iframe,
+.image {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 0.25rem;
+}
+.image {
+	& > figure {
+		aspect-ratio: 16/9;
+		position: relative;
+		width: 90%;
+	}
+}
+.iframe {
+	& > iframe {
+		aspect-ratio: 16/9;
+		border: none;
+		max-width: 95%;
+		width: 90rem;
+	}
+}

@@ -1,0 +1,14 @@
+.wrapper {
+	&,
+	& > ol {
+		align-items: center;
+		display: flex;
+		flex-flow: column;
+	}
+	& > * {
+		width: 100%;
+	}
+	& > ol {
+		row-gap: 3rem;
+	}
+}

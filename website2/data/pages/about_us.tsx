@@ -139,6 +139,43 @@ export const about_us = {
 						"https://www.linkedin.com/in/rados%C5%82aw-adamczyk-853948195/",
 					],
 				},
+				jobs: {
+					title: "Ścieżka zawodowa",
+					content: `Eveniet fugit natus officiis maxime labore libero expedita neque enim. Dolorem ea deserunt rem omnis eum in animi. Asperiores vel excepturi nemo adipisci eos tenetur totam. Dolor velit omnis saepe autem a reiciendis fuga est non. Aut quae debitis. Sed ut alias ut non minus possimus consequatur.Rerum sit perspiciatis eos. Quis quia ut ut minus rem molestiae voluptatum. Maiores facilis et eligendi. Molestiae deleniti porro qui ipsam corrupti voluptates qui at. Iste consequatur reprehenderit modi et delectus ab tempora blanditiis aut.Facilis quia quo eius nulla inventore suscipit. Mollitia nesciunt corrupti atque et et tenetur sunt quia voluptas. Est quia id non eveniet alias sit similique. Id consequatur enim corrupti doloribus facilis sit consequatur. Velit sequi fugiat minima quas fugiat deleniti sunt provident. Quis aut dolore ut debitis recusandae omnis et.`,
+					timeline: [
+						{
+							date: "Paź 2021 - Sty 2022", //date
+							title: "Sunrise System",
+							subtitle: "Specjalista SEO",
+							content:
+								"Ipsa consequuntur inventore quos est natus. Possimus earum voluptatem quas veniam. Vel dolore et consequatur distinctio repellat ut. Sequi recusandae qui. Sunt laboriosam molestiae. Quo qui eligendi aut qui cumque.",
+						},
+						{
+							date: "Sie 2022 - teraz", //date
+							title: "4Real",
+							subtitle: "Specjalista SEM",
+							content:
+								"Dolore consectetur ipsam esse quisquam et nisi fugiat aut illum. Eum corrupti unde sit quam. Ea porro ipsum inventore dolores eligendi ad consequatur est. Qui aut officia sequi id optio voluptatibus labore ut. Quaerat tenetur omnis dolorem tempora eligendi non dolore cum.",
+						},
+					],
+				},
+				content: [
+					{
+						content: `Dolor <b>est voluptatum ab et recusandae.</b> Magni repellat dolorem ex. Dolor et et atque non.<i> Dolores amet explicabo</i> sit voluptate voluptatem. Eaque dolores similique iste omnis aut eos esse.Quia hic sequi quibusdam voluptates in. Nesciunt quia ipsam et ut. Commodi omnis corrupti voluptas voluptas. Odit perferendis quia.Deleniti architecto blanditiis eos eum in fugiat. Dignissimos delectus iste laudantium at ea doloribus. Sed laudantium esse porro consectetur atque rerum expedita nihil. <a href="#">Animi excepturi libero</a> quasi dolores veniam odio repudiandae.<br/> Laudantium qui consequatur ut molestias. Repellendus officia ipsa et neque inventore consequatur unde odio. Totam aliquid odio amet ut voluptates officiis dolores illum repellendus. Mollitia ut beatae id illo hic nam. Rerum atque voluptates omnis qui. Dolor amet dolorum omnis et quos voluptas consequuntur praesentium.Doloremque recusandae omnis laborum et minus occaecati numquam non omnis. Eos quae aspernatur in accusantium quis qui et natus voluptatem. Omnis libero placeat laborum et fugiat consectetur. Illum aliquid pariatur.Voluptatem ut temporibus vitae voluptates provident et. Aut consequatur sunt doloremque sint culpa. Et nihil animi autem modi. Esse impedit est nemo voluptatum.`,
+						title: "Dynamic Identity Executive",
+					},
+					{
+						content: `Debitis rerum dicta vel. Officiis soluta voluptatum commodi. Itaque aut in velit amet vitae et quia. Molestias recusandae quis ut.Modi sed sint repellat. Dicta doloremque facilis explicabo. Non molestias quis est amet fugit id non. Omnis ipsum minima quia. voluptatem sed nobis.`,
+						title: "Direct Response Planner",
+						image:
+							"https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+					},
+					{
+						content: `Atque ea eum ducimus. Doloremque natus odit. Molestias qui rerum ea.Eum voluptates unde facilis. Nulla nulla ea quia officia autem molestias. Ipsum iusto qui dolorem officiis voluptas molestiae a.Ea officia et eveniet ipsa voluptatibus accusamus dolor. Aut itaque consequatur. Similique et veritatis fugit odit.`,
+						title: "Future Response Engineer",
+						iframe: "https://www.youtube.com/embed/elUWNFWl9XA",
+					},
+				],
 			},
 		},
 	},
