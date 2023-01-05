@@ -37,50 +37,50 @@ export const about_us = {
 						jobs: "Front-end & Web developer, specjalista SEO/SEM ",
 						path: "/o-nas/radoslaw-adamczyk",
 					},
-					{
-						cities: "Poznań, Warszawa",
-						fullname: {
-							firstname: "Filip",
-							lastname: "Bukowiecki",
-						},
-						image:
-							"https://scontent-frt3-2.xx.fbcdn.net/v/t1.6435-9/163593504_522809258687062_2936523161654908151_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGmNL7hcbV9yErEiqSZY4BjWgwyI9H7cJhaDDIj0ftwmLAHdf40TalC3ht9HcE-OCIzQvnkr4NolYrTSeQWLpdz&_nc_ohc=kBuwzLKGB_QAX8FdnqS&_nc_ht=scontent-frt3-2.xx&oh=00_AfAeVLMg5x3MGYY3ikQvHik-_iXsyBOyG9haIK7QMrdtgw&oe=63D7CFD1",
-						jobs: "Wideomaker",
-						path: "/o-nas/filip-bukowiecki",
-					},
-					{
-						cities: "Hrud, Łódź, Bydgoszcz",
-						fullname: {
-							firstname: "Klaudia",
-							lastname: "Paluch",
-						},
-						image:
-							"https://scontent-frt3-1.xx.fbcdn.net/v/t1.6435-9/67766166_899725800378552_6233916043962613760_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeH6IIpTWvoiChu7_8rhNyg62oHsb1Lh4JragexvUuHgmqHfG4kpVFkm8RB_U_FeuwWWJm_1p8lAtHUB_9rjPeHC&_nc_ohc=9lzZ7WnNGOsAX_MX80x&_nc_oc=AQmJ5OR14EOjIRv3ROl5X7MVPzjHOJQNAT6NMmNu84LaaG0YC59hTmdPMtERf8Q_kJc&_nc_ht=scontent-frt3-1.xx&oh=00_AfD--ReCiqncvyOe61Wm9I307S-tUWjVDHk8BZlqA4_LfA&oe=63D7A794",
-						jobs: "Copywriter, UI/UX Designer",
-						path: "/o-nas/klaudia-palucch",
-					},
-					{
-						cities: "Szamotuły, Poznań",
-						fullname: {
-							firstname: "Zofia",
-							lastname: "Lisek",
-						},
-						image:
-							"https://scontent-frt3-1.xx.fbcdn.net/v/t1.6435-9/38143525_2150791755246225_1699292093991616512_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeEiXzK0JiSuvfnLL39NfRRaPn-clj7nH8A-f5yWPucfwPW_31mUGgKsMqtE1XPYoo9XDMRe23S1Qqc6Gi5tqgY0&_nc_ohc=_6cWejTjYw8AX-RyPEz&tn=lMCY_hlX12DF5FQN&_nc_ht=scontent-frt3-1.xx&oh=00_AfB4v8bl6CEITVcVSFdP-ha4C31NQw4_XWN1sK3Y2zCPhw&oe=63D7BD5A",
-						jobs: "Copywriter",
-						path: "/o-nas/zofia-lisek",
-					},
-					{
-						cities: "Poznań",
-						fullname: {
-							firstname: "Agata",
-							lastname: "Berlińska",
-						},
-						image:
-							"https://scontent-frt3-2.xx.fbcdn.net/v/t39.30808-6/320062811_555561189356516_3754574274238561791_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEcVKo5KwV5bLdYDPRjHFN3XC3P08pxuohcLc_TynG6iPVCmsR1RDI-2EzhSfxAV9wtleI32dQ4C3pZJO_rhURO&_nc_ohc=OChQHznVB7IAX_XZN9t&_nc_ht=scontent-frt3-2.xx&oh=00_AfDkh3LogoEpNRB-pxRw-X8Z7QmbTjd0fe6M0Wuu3KwPJQ&oe=63B61656",
-						jobs: "Copywriter",
-						path: "/o-nas/agata-berlinska",
-					},
+					// {
+					// 	cities: "Poznań, Warszawa",
+					// 	fullname: {
+					// 		firstname: "Filip",
+					// 		lastname: "Bukowiecki",
+					// 	},
+					// 	image:
+					// 		"https://scontent-frt3-2.xx.fbcdn.net/v/t1.6435-9/163593504_522809258687062_2936523161654908151_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGmNL7hcbV9yErEiqSZY4BjWgwyI9H7cJhaDDIj0ftwmLAHdf40TalC3ht9HcE-OCIzQvnkr4NolYrTSeQWLpdz&_nc_ohc=kBuwzLKGB_QAX8FdnqS&_nc_ht=scontent-frt3-2.xx&oh=00_AfAeVLMg5x3MGYY3ikQvHik-_iXsyBOyG9haIK7QMrdtgw&oe=63D7CFD1",
+					// 	jobs: "Wideomaker",
+					// 	path: "/o-nas/filip-bukowiecki",
+					// },
+					// {
+					// 	cities: "Hrud, Łódź, Bydgoszcz",
+					// 	fullname: {
+					// 		firstname: "Klaudia",
+					// 		lastname: "Paluch",
+					// 	},
+					// 	image:
+					// 		"https://scontent-frt3-1.xx.fbcdn.net/v/t1.6435-9/67766166_899725800378552_6233916043962613760_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeH6IIpTWvoiChu7_8rhNyg62oHsb1Lh4JragexvUuHgmqHfG4kpVFkm8RB_U_FeuwWWJm_1p8lAtHUB_9rjPeHC&_nc_ohc=9lzZ7WnNGOsAX_MX80x&_nc_oc=AQmJ5OR14EOjIRv3ROl5X7MVPzjHOJQNAT6NMmNu84LaaG0YC59hTmdPMtERf8Q_kJc&_nc_ht=scontent-frt3-1.xx&oh=00_AfD--ReCiqncvyOe61Wm9I307S-tUWjVDHk8BZlqA4_LfA&oe=63D7A794",
+					// 	jobs: "Copywriter, UI/UX Designer",
+					// 	path: "/o-nas/klaudia-palucch",
+					// },
+					// {
+					// 	cities: "Szamotuły, Poznań",
+					// 	fullname: {
+					// 		firstname: "Zofia",
+					// 		lastname: "Lisek",
+					// 	},
+					// 	image:
+					// 		"https://scontent-frt3-1.xx.fbcdn.net/v/t1.6435-9/38143525_2150791755246225_1699292093991616512_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeEiXzK0JiSuvfnLL39NfRRaPn-clj7nH8A-f5yWPucfwPW_31mUGgKsMqtE1XPYoo9XDMRe23S1Qqc6Gi5tqgY0&_nc_ohc=_6cWejTjYw8AX-RyPEz&tn=lMCY_hlX12DF5FQN&_nc_ht=scontent-frt3-1.xx&oh=00_AfB4v8bl6CEITVcVSFdP-ha4C31NQw4_XWN1sK3Y2zCPhw&oe=63D7BD5A",
+					// 	jobs: "Copywriter",
+					// 	path: "/o-nas/zofia-lisek",
+					// },
+					// {
+					// 	cities: "Poznań",
+					// 	fullname: {
+					// 		firstname: "Agata",
+					// 		lastname: "Berlińska",
+					// 	},
+					// 	image:
+					// 		"https://scontent-frt3-2.xx.fbcdn.net/v/t39.30808-6/320062811_555561189356516_3754574274238561791_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEcVKo5KwV5bLdYDPRjHFN3XC3P08pxuohcLc_TynG6iPVCmsR1RDI-2EzhSfxAV9wtleI32dQ4C3pZJO_rhURO&_nc_ohc=OChQHznVB7IAX_XZN9t&_nc_ht=scontent-frt3-2.xx&oh=00_AfDkh3LogoEpNRB-pxRw-X8Z7QmbTjd0fe6M0Wuu3KwPJQ&oe=63B61656",
+					// 	jobs: "Copywriter",
+					// 	path: "/o-nas/agata-berlinska",
+					// },
 				],
 				mission: {
 					content:

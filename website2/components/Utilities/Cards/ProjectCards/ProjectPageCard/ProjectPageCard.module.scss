@@ -1,0 +1,69 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	background: orange;
+	max-width: 97%;
+	width: 37rem;
+	& > a {
+		align-items: start;
+		background: orangered;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+		& > figure {
+			aspect-ratio: 4/3.75;
+			background: aqua;
+			overflow: hidden;
+			width: 100%;
+			& > div {
+				height: 100%;
+				position: relative;
+				transition: 0.3s linear transform;
+				width: 100%;
+			}
+		}
+		& > figcaption {
+			align-items: start;
+			background-color: $white;
+			display: flex;
+			flex-flow: column;
+			justify-content: flex-start;
+			padding: 0.85rem 0.75rem 2rem;
+			row-gap: 0.5rem;
+			& > div {
+				justify-content: flex-start;
+				width: 100%;
+				&,
+				& > p {
+					align-items: center;
+					display: flex;
+				}
+				& > p {
+					background-color: rgb(85, 73, 241);
+					border-radius: 0.5rem;
+					color: $white;
+					justify-content: center;
+					font-size: 1.5rem;
+					font-weight: 600;
+					padding: 0.25rem 1rem;
+				}
+			}
+			& > h3 {
+				font-size: 2.15rem;
+			}
+			& > p {
+				font-size: 1.4rem;
+				line-height: 1;
+			}
+		}
+	}
+	&:focus-within,
+	&:hover {
+		& > a {
+			& > figure {
+				& > div {
+					transform: rotate(2deg) scale(1.2);
+				}
+			}
+		}
+	}
+}

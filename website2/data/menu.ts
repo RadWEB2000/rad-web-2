@@ -27,22 +27,22 @@ export const menu: intMenu = {
 					path: "/o-nas/radoslaw-adamczyk",
 					title: "Radosław Adamczyk",
 				},
-				{
-					path: "/o-nas/filip-bukowiecki",
-					title: "Filip Bukowiecki",
-				},
-				{
-					path: "/o-nas/klaudia-paluch",
-					title: "Klaudia Paluch",
-				},
-				{
-					path: "/o-nas/zofia-lisek",
-					title: "Zofia Lisek",
-				},
-				{
-					path: "/o-nas/agata-harriet-berlinska",
-					title: "Agata Harriet Berlińska",
-				},
+				// {
+				// 	path: "/o-nas/filip-bukowiecki",
+				// 	title: "Filip Bukowiecki",
+				// },
+				// {
+				// 	path: "/o-nas/klaudia-paluch",
+				// 	title: "Klaudia Paluch",
+				// },
+				// {
+				// 	path: "/o-nas/zofia-lisek",
+				// 	title: "Zofia Lisek",
+				// },
+				// {
+				// 	path: "/o-nas/agata-harriet-berlinska",
+				// 	title: "Agata Harriet Berlińska",
+				// },
 				{
 					path: "/o-nas/",
 					title: "Kim jesteśmy?",
