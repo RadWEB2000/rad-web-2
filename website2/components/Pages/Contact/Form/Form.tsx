@@ -1,13 +1,14 @@
 import ContactField from "../../../Utilities/Forms/ContactField/ContactField";
+import styles from "./Form.module.scss";
 import SubmitButton from "../../../Utilities/Buttons/SubmitButton/SubmitButton";
+import Terms from "../Terms/Terms";
 import { contact } from "../../../../data/pages/contact";
 import { RiSendPlaneLine } from "react-icons/ri";
-import Terms from "../Terms/Terms";
 const Form = () => {
 	const { fullname, email, phone, subject, message } =
 		contact.pl.main.form.fields;
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<h2>Formularz kontaktowy</h2>
 			<form action="" autoComplete="off">
 				<div>

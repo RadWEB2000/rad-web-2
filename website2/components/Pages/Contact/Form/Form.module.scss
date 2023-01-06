@@ -1,0 +1,19 @@
+.wrapper {
+	row-gap: 2rem;
+	max-width: 96%;
+	width: 50rem;
+	&,
+	& > form,
+	& > form > div:first-of-type {
+		align-items: center;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+	}
+	& > form {
+		row-gap: 1.5rem;
+		& > div:first-of-type {
+			row-gap: 0.85rem;
+		}
+	}
+}
