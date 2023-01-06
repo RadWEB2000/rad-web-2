@@ -1,0 +1,49 @@
+.wrapper {
+	display: flex;
+	flex-flow: column-reverse;
+	justify-content: center;
+	width: 45rem;
+	max-width: 95%;
+	border-radius: 5px;
+	padding: 4px 15px 6px;
+	font-size: 1.6rem;
+	cursor: text;
+	background-color: rgb(0, 0, 0, 0.05);
+	transition: 0.3s;
+	&:focus-within,
+	&:hover {
+		background-color: rgb(0, 0, 0, 0.1);
+	}
+	& > * + label {
+		transform-origin: left;
+		color: rgb(0, 0, 0, 0.6);
+		cursor: text;
+		font-size: 1.6rem;
+		pointer-events: none;
+		transition: all 0.2s;
+		transform: translate(0, 50%) scale(1);
+	}
+	& > *:not(:placeholder-shown),
+	& > *:focus {
+		& + label {
+			transform: translate(0, 0) scale(0.8);
+		}
+	}
+	& > input,
+	& > textarea {
+		background-color: rgb(0, 0, 0, 0);
+		color: rgb(0, 0, 0, 1);
+		transition: 0.2s all;
+		padding: 3rem 0 1rem;
+		margin: -3rem 0 -1rem;
+		&::-moz-placeholder {
+			color: transparent !important;
+		}
+		&::-webkit-input-placeholder {
+			opacity: 0;
+		}
+	}
+	& > textarea {
+		height: 25rem;
+	}
+}
