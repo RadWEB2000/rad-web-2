@@ -1,5 +1,9 @@
+import Cards from "../components/Pages/Contact/Cards/Cards";
 import Form from "../components/Pages/Contact/Form/Form";
+import Informations from "../components/Pages/Contact/Informations/Informations";
+import Wrapper from "../components/Pages/Contact/Wrapper/Wrapper";
 import ContactField from "../components/Utilities/Forms/ContactField/ContactField";
+import { contact } from "../data/pages/contact";
 import Layout from "./../components/Layout/Layout/Layout";
 import { home } from "./../data/pages/home";
 import { posts } from "./../data/pages/posts";
@@ -20,7 +24,13 @@ const Page = () => {
 			}}
 		>
 			<main>
-				<Form />
+				<Wrapper>
+					<div>
+						<Informations {...contact.pl.main.informations} />
+						<Form />
+					</div>
+					<Cards />
+				</Wrapper>
 			</main>
 		</Layout>
 	);

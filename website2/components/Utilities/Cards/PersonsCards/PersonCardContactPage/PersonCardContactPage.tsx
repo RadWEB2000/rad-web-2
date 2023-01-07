@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ReactElement } from "react";
+import styles from "./PersonCardContactPage.module.scss";
 import { CiMail, CiPhone } from "react-icons/ci";
 import { IntPersonCardContactPage } from "./interface";
+import { ReactElement } from "react";
 const PersonCardContactPage = ({
 	email,
 	fullname,
@@ -12,8 +13,8 @@ const PersonCardContactPage = ({
 	phone,
 }: IntPersonCardContactPage): ReactElement => {
 	return (
-		<li>
-			<figure>
+		<li className={styles.wrapper}>
+			<figure className={styles.image}>
 				<Image
 					alt={`${fullname.firstname} ${fullname.lastname} - ${job}`}
 					fill
@@ -26,35 +27,31 @@ const PersonCardContactPage = ({
 					quality={90}
 				/>
 			</figure>
-			<figcaption>
-				<section>
-					<h2>
+			<figcaption className={styles.content}>
+				<section className={styles.description}>
+					<h2 className={styles.fullname}>
 						<Link
 							href={path}
 						>{`${fullname.firstname} ${fullname.lastname}`}</Link>
 					</h2>
-					<h3>{job}</h3>
+					<h3 className={styles.jobs}>{job}</h3>
 				</section>
-				<div>
-					<Link href={`mailto:${email.adress}`}>
-						<span>
-							<i>
-								<span>
-									<CiMail />
-								</span>
-							</i>
-							{email.name}
-						</span>
+				<div className={styles.contact}>
+					<Link className={styles.contactItem} href={`mailto:${email.adress}`}>
+						<i>
+							<span>
+								<CiMail />
+							</span>
+						</i>
+						{email.name}
 					</Link>
-					<Link href={`mailto:${phone.adress}`}>
-						<span>
-							<i>
-								<span>
-									<CiPhone />
-								</span>
-							</i>
-							{phone.name}
-						</span>
+					<Link className={styles.contactItem} href={`mailto:${phone.adress}`}>
+						<i>
+							<span>
+								<CiPhone />
+							</span>
+						</i>
+						{phone.name}
 					</Link>
 				</div>
 			</figcaption>

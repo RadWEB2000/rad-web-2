@@ -1,0 +1,82 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	background-color: rgb(255, 255, 255);
+	flex-shrink: 0;
+	max-width: 95%;
+	user-select: none;
+	width: 25rem;
+	&,
+	& > .content,
+	& > .content > .description {
+		align-items: start;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+	}
+	& > *,
+	& > * > * {
+		width: 100%;
+	}
+	& > .image {
+		height: 35rem;
+		position: relative;
+	}
+	& > .content {
+		padding: 0.25rem 0.4rem;
+		& > .description {
+			border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+			padding: 0 0 0.5rem;
+			row-gap: 0.25rem;
+			& > .fullname {
+				& > a {
+					font-size: 2.15rem;
+					font-weight: 600;
+					transition: 0.3s linear color;
+					&:focus,
+					&:focus-within,
+					&:hover {
+						color: $secondaryButtonColor;
+					}
+				}
+			}
+			& > .jobs {
+				font-size: 1.6rem;
+				font-weight: 400;
+				opacity: 0.75;
+			}
+		}
+		& > .contact {
+			display: flex;
+
+			& > .contactItem {
+				flex-grow: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 5rem;
+				gap: 0.8rem;
+				cursor: pointer;
+				transition: 0.3s;
+				&:nth-of-type(1) {
+					border-radius: 0 0 0 1rem;
+				}
+				&:nth-of-type(2) {
+					border-radius: 0 0 1rem 0;
+				}
+				&:hover {
+					background-color: rgb(0, 0, 0, 0.1);
+				}
+				& > i {
+					& > span {
+						aspect-ratio: 1/1;
+						align-items: center;
+						display: flex;
+						font-size: 2.25rem;
+						justify-content: center;
+						width: 2.5rem;
+					}
+				}
+			}
+		}
+	}
+}

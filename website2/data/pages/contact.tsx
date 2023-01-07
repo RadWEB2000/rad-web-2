@@ -48,6 +48,20 @@ export const contact = {
 				button: "Wyślij",
 				rodo: `Poznałem i akceptuję <a href="#">Politykę prywatności</a>.`,
 			},
+			informations: {
+				content: `Strony internetowe, aplikacje webowe, pozycjonowanie stron internetowych, copywriting oraz tworzenie treści wideo. Tym zajmuje się RadWEB od 2021 roku. Zaufaj nam, a osiągniesz sukces!`,
+				nip: "785 174 65 59",
+				regon: 301587920,
+				address: `Donatowo 53<br/>64-020 Czempiń`,
+				email: {
+					address: "mailto:radoslaw.adamczyk2000@gmail.com",
+					name: "E-mail",
+				},
+				phone: {
+					address: "tel:+48794100413",
+					name: "Telefon",
+				},
+			},
 		},
 	},
 };
