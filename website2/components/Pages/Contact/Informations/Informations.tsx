@@ -1,7 +1,9 @@
 import Link from "next/link";
+import styles from "./Informations.module.scss";
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { IntInformations } from "./interface";
+import { motion } from "framer-motion";
 const Informations = ({
 	address,
 	content,
@@ -11,10 +13,9 @@ const Informations = ({
 	regon,
 }: IntInformations) => {
 	return (
-		<section>
+		<section className={styles.wrapper}>
 			<h2>RadWEB</h2>
-			<p>{content}</p>
-
+			<p dangerouslySetInnerHTML={{ __html: content }} />
 			<address>
 				<p dangerouslySetInnerHTML={{ __html: address }} />
 				{nip && (
@@ -30,26 +31,26 @@ const Informations = ({
 					</p>
 				)}
 				<ul>
-					<li>
-						<Link href={email.address}>
+					<Link href={`mailto:${email.address}`} legacyBehavior>
+						<motion.a whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.93 }}>
 							<i>
 								<span>
 									<HiOutlineMail />
 								</span>
 							</i>
 							<p>{email.name}</p>
-						</Link>
-					</li>
-					<li>
-						<Link href={phone.address}>
+						</motion.a>
+					</Link>
+					<Link href={`tel:${phone.address}`} legacyBehavior>
+						<motion.a whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.93 }}>
 							<i>
 								<span>
 									<FaPhoneAlt />
 								</span>
 							</i>
 							<p>{phone.name}</p>
-						</Link>
-					</li>
+						</motion.a>
+					</Link>
 				</ul>
 			</address>
 		</section>

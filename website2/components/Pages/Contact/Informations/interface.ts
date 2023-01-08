@@ -5,10 +5,10 @@ export interface IntInformations {
 		address: string;
 		name: string;
 	};
-	nip: number | string;
+	nip?: number | string;
 	phone: {
 		address: string;
 		name: string;
 	};
-	regon: number | string;
+	regon?: number | string;
 }

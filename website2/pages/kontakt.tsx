@@ -26,10 +26,19 @@ const Page = () => {
 			<main>
 				<Wrapper>
 					<div>
-						<Informations {...contact.pl.main.informations} />
+						<Informations
+							address={contact.pl.main.informations.address}
+							content={contact.pl.main.informations.content}
+							email={contact.pl.main.informations.email}
+							phone={contact.pl.main.informations.phone}
+						/>
+					</div>
+					<div>
 						<Form />
 					</div>
-					<Cards />
+					<div>
+						<Cards />
+					</div>
 				</Wrapper>
 			</main>
 		</Layout>
