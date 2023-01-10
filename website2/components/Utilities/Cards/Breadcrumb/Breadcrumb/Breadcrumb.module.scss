@@ -1,0 +1,30 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	gap: 0.15rem;
+	margin: 0.5rem auto 1rem;
+	max-width: 95vw;
+	width: 150rem;
+	&,
+	& > li {
+		align-items: center;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+	& > li {
+		gap: 0.35rem;
+		& > span {
+			align-items: center;
+			aspect-ratio: 1/1;
+			display: flex;
+			font-size: 2rem;
+			justify-content: center;
+			width: 2.45rem;
+		}
+		&:last-of-type {
+			& > a {
+				color: $primaryButtonColor;
+			}
+		}
+	}
+}
