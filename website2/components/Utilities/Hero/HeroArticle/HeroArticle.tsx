@@ -8,8 +8,29 @@ import {
 	LinkedinShareButton,
 	TwitterShareButton,
 } from "react-share";
-import { IntHeroArticle } from "./interface";
+import { IntHeroArticle, IntSocialsShare } from "./interface";
 import { ReactElement } from "react";
+const SocialsShare = ({ url }: IntSocialsShare) => {
+	return (
+		<ul className={styles.socials}>
+			<li className={styles.social}>
+				<FacebookShareButton url={url}>
+					<FaFacebookF />
+				</FacebookShareButton>
+			</li>
+			<li className={styles.social}>
+				<LinkedinShareButton url={url}>
+					<FaLinkedinIn />
+				</LinkedinShareButton>
+			</li>
+			<li className={styles.social}>
+				<TwitterShareButton url={url}>
+					<FaTwitter />
+				</TwitterShareButton>
+			</li>
+		</ul>
+	);
+};
 const HeroArticle = ({
 	date,
 	excerpt,
@@ -26,8 +47,9 @@ const HeroArticle = ({
 	});
 	return (
 		<header className={styles.wrapper}>
-			<section className={styles.content}>
+			<section className={styles.details}>
 				<h1 className={styles.title}>{title}</h1>
+				<SocialsShare url={url} />
 				<p className={styles.release}>{`${day} ${month} ${year}`}</p>
 				<p className={styles.reading}>
 					<span>
@@ -35,28 +57,8 @@ const HeroArticle = ({
 					</span>
 					{` ${time}`} min
 				</p>
-				<p
-					className={styles.excerpt}
-					dangerouslySetInnerHTML={{ __html: excerpt }}
-				/>
 			</section>
-			<ul className={styles.socials}>
-				<li className={styles.social__item}>
-					<FacebookShareButton url={url}>
-						<FaFacebookF />
-					</FacebookShareButton>
-				</li>
-				<li className={styles.social__item}>
-					<LinkedinShareButton url={url}>
-						<FaLinkedinIn />
-					</LinkedinShareButton>
-				</li>
-				<li className={styles.social__item}>
-					<TwitterShareButton url={url}>
-						<FaTwitter />
-					</TwitterShareButton>
-				</li>
-			</ul>
+
 			<figure className={styles.image}>
 				<Image
 					alt={`${day} ${month} ${year} - ${title}`}
@@ -70,6 +72,9 @@ const HeroArticle = ({
 					quality={89}
 				/>
 			</figure>
+			<section className={styles.excerpt}>
+				<p dangerouslySetInnerHTML={{ __html: excerpt }} />
+			</section>
 		</header>
 	);
 };

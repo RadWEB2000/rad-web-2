@@ -1,0 +1,71 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	// background-color: orange;
+
+	// row-gap: 1.15rem;
+	hr {
+		background-image: linear-gradient(
+			to top right,
+			$white,
+			$white,
+			$white,
+			$quatenaryButtonColor,
+			$white,
+			$white,
+			$white
+		);
+		border: none;
+		display: block;
+		margin: 2rem auto;
+		opacity: 0.3;
+		height: 0.5rem;
+		width: 90%;
+	}
+	& > h2,
+	& > h3 {
+		line-height: 2.2;
+		font-weight: 700;
+	}
+	& > h2 {
+		color: $tertiaryButtonColor;
+		font-size: 3rem;
+	}
+	& > h3 {
+		font-size: 2.7rem;
+	}
+	& > p {
+		color: $quatenaryButtonColor;
+		font-size: 1.7rem;
+		line-height: 1.7;
+		a {
+			color: $primaryButtonColor;
+			text-decoration: underline;
+			transition: 0.3s linear color;
+			&:focus,
+			&:focus-within,
+			&:hover {
+				color: #3772df;
+			}
+		}
+		a,
+		b,
+		strong {
+			font-weight: 600;
+		}
+	}
+	& > ol,
+	& > ul {
+		display: flex;
+		flex-flow: column;
+		padding: 0 3rem;
+		& > li {
+			line-height: 1.7;
+		}
+	}
+
+	& > ul {
+		& > li {
+			list-style: circle;
+		}
+	}
+}

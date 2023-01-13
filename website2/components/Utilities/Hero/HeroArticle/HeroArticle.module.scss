@@ -1,89 +1,146 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	// background-color: orange;
 	margin: 2rem auto 5rem;
 	max-width: 90vw;
-	row-gap: 3rem;
-	width: 135rem;
+	row-gap: 3.2rem;
+	width: 125rem;
 	&,
-	& > .content,
-	& > .socials {
+	& > .details,
+	& > .details > .socials {
 		display: flex;
 	}
 	&,
-	& > .content {
-		align-items: flex-end;
+	& > .details {
 		flex-flow: column;
+		justify-content: center;
 	}
-	& > .content {
-		row-gap: 2rem;
-		& > .release {
-			font-size: 2.2rem;
-			opacity: 0.7;
-			font-weight: 700;
-		}
+	& > .details {
+		min-height: 25rem;
+		padding: 1rem 0;
+		row-gap: 1rem;
 		& > .title {
-			// background: green;
-			color: $secondaryButtonColor;
-			font-size: 7rem;
-			text-align: center;
+			color: $primaryButtonColor;
+			font-size: 5.75rem;
+			font-weight: 800;
+		}
+		& > .socials {
+			gap: 1rem;
+			justify-content: flex-end;
+			&,
+			& > .social {
+				align-items: center;
+				display: flex;
+			}
+			& > .social {
+				justify-content: center;
+				& > * {
+					aspect-ratio: 1/1;
+					width: 3rem;
+					&,
+					& > * {
+						align-items: center;
+						display: flex;
+						justify-content: center;
+					}
+					& > * {
+						font-size: 2.4rem;
+						transition: 0.25s ease-in-out color, 0.25s ease-in-out scale;
+						&:focus,
+						&:focus-within,
+						&:hover {
+							color: $secondaryButtonColor;
+							scale: 1.2;
+						}
+					}
+				}
+			}
+		}
+		& > .reading,
+		& > .release {
+			padding: 0.25rem 0.3rem;
+			text-align: end;
 			width: 100%;
 		}
-		& > .reading {
-			// background: aqua;
+		& > .release {
 			font-size: 2.2rem;
-			column-gap: 0.25rem;
-			opacity: 0.7;
-			flex-flow: row nowrap;
+		}
+		& > .reading {
+			column-gap: 0.5rem;
+			font-size: 2rem;
+			justify-content: flex-end;
 			&,
 			& > span {
 				align-items: center;
 				display: flex;
+			}
+			& > span {
 				justify-content: center;
 			}
-		}
-		& > .excerpt {
-			// background: pink;
-			font-size: 2rem;
-			font-weight: 500;
-			line-height: 2;
-			padding: 0.85rem;
 		}
 	}
 	& > .image {
-		aspect-ratio: 16/8;
+		aspect-ratio: 16/9;
 		position: relative;
 		width: 100%;
 	}
-	& > .socials {
-		align-items: center;
-		column-gap: 1.5rem;
-		display: flex;
-		justify-content: flex-end;
-		padding: 0.5rem 1rem;
-		width: 100%;
-		& > * {
-			aspect-ratio: 1/1;
-			color: $quatenaryButtonColor;
-			font-size: 2.5rem;
-			transition: 0.25s ease-in-out color, 0.25s ease-in-out transform;
-			width: 3rem;
-			&,
-			& > * {
-				align-items: center;
-				display: flex;
-				justify-content: center;
+	& > .excerpt {
+		font-size: 1.86rem;
+		font-weight: 600;
+		line-height: 2;
+		padding: 0.5rem;
+	}
+	@media only screen {
+		@media (max-width: 815px) {
+			& > .details {
+				& > .title {
+					font-size: 4.95rem;
+				}
 			}
-			& > * {
-				background: white;
-				height: 100%;
-				width: 100%;
+		}
+		@media (max-width: 625px) {
+			& > .details {
+				row-gap: 1.2rem;
+				& > .title {
+					font-size: 4.95rem;
+				}
 			}
-			&:focus,
-			&:focus-within,
-			&:hover {
-				color: $secondaryButtonColor;
-				transform: scale(1.2);
+			& > .excerpt {
+				font-size: 1.75rem;
+				line-height: 2;
+			}
+			& > .image {
+				aspect-ratio: 16/11;
+			}
+		}
+		@media (max-width: 400px) {
+			& > .details {
+				row-gap: 1.2rem;
+				& > .title {
+					font-size: 3.95rem;
+				}
+				& > .socials {
+					& > .social {
+						& > * {
+							width: 3rem;
+							& > * {
+								font-size: 2.2rem;
+							}
+						}
+					}
+				}
+				& > .release {
+					font-size: 1.7rem;
+				}
+				& > .reading {
+					font-size: 1.55rem;
+				}
+			}
+			& > .excerpt {
+				font-size: 1.6rem;
+				line-height: 2;
+			}
+			& > .image {
+				aspect-ratio: 4/5;
 			}
 		}
 	}

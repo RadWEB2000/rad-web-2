@@ -51,6 +51,16 @@ main {
 			margin: 0 auto 6rem;
 		}
 	}
+	&.article {
+		max-width: 92vw;
+		width: 105rem;
+		& > * {
+			margin: 3rem auto;
+			&:first-of-type {
+				margin: 0 auto 3rem;
+			}
+		}
+	}
 }
 textarea {
 	font-family: inherit;
