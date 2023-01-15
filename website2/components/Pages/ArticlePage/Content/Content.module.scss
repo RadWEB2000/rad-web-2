@@ -1,8 +1,5 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	// background-color: orange;
-
-	// row-gap: 1.15rem;
 	hr {
 		background-image: linear-gradient(
 			to top right,
@@ -16,15 +13,15 @@
 		);
 		border: none;
 		display: block;
+		height: 0.5rem;
 		margin: 2rem auto;
 		opacity: 0.3;
-		height: 0.5rem;
 		width: 90%;
 	}
 	& > h2,
 	& > h3 {
-		line-height: 2.2;
 		font-weight: 700;
+		line-height: 2.2;
 	}
 	& > h2 {
 		color: $tertiaryButtonColor;
@@ -53,19 +50,51 @@
 			font-weight: 600;
 		}
 	}
-	& > ol,
-	& > ul {
+	ol,
+	ul {
 		display: flex;
 		flex-flow: column;
-		padding: 0 3rem;
+		margin: 0 auto;
+		width: 90%;
 		& > li {
 			line-height: 1.7;
 		}
 	}
-
-	& > ul {
+	ol {
+		& > li {
+			list-style: decimal;
+		}
+	}
+	ul {
 		& > li {
 			list-style: circle;
+		}
+	}
+	@media only screen {
+		@media (max-width: 350px) {
+			& > h2,
+			& > h3 {
+				line-height: 1.7;
+			}
+			& > h2 {
+				color: $tertiaryButtonColor;
+				font-size: 2.7rem;
+			}
+			& > h3 {
+				font-size: 2.2rem;
+			}
+			& > p {
+				font-size: 1.55rem;
+				line-height: 1.7;
+			}
+			ol,
+			ul {
+				width: 85%;
+				& > li {
+					font-size: 1.55rem;
+					line-height: 1.7;
+				}
+			}
 		}
 	}
 }

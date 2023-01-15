@@ -1,0 +1,13 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	aspect-ratio: 16/8;
+	position: relative;
+	margin: 0 auto;
+	max-width: 97%;
+	width: 100rem;
+	@media only screen {
+		@media (max-width: 550px) {
+			aspect-ratio: 16/12;
+		}
+	}
+}

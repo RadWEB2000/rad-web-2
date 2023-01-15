@@ -1,0 +1,43 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: center;
+	background-color: rgb(85, 73, 241, 0.1);
+	border: 0.5rem solid rgb(85, 73, 241);
+	border-radius: 1rem;
+	color: $color;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	max-width: 95%;
+	padding: 2.5rem 3.5rem;
+	row-gap: 2.5rem;
+	width: 85rem;
+	& > * {
+		margin: auto;
+		width: 100%;
+	}
+	& > h2 {
+		font-size: 2.75rem;
+		font-weight: 900;
+		line-height: 1.7;
+	}
+	& > p {
+		color: $quatenaryButtonColor;
+		font-size: 1.7rem;
+		font-weight: 600;
+		line-height: 1.6;
+	}
+	& > ul {
+		& > li {
+			margin: 0.65rem 0;
+			line-height: 1.9;
+			list-style: square inside;
+		}
+	}
+	@media only screen {
+		@media (max-width: 500px) {
+			padding: 1.85rem 2rem;
+			row-gap: 1.25rem;
+		}
+	}
+}

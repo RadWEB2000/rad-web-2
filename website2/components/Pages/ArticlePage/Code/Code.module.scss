@@ -1,0 +1,24 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	& > pre {
+		margin: auto;
+		text-align: left;
+		width: 97%;
+		& > code {
+			align-items: center;
+			background-color: $color;
+			border-radius: 0.5rem;
+			color: $white;
+			display: flex;
+			font-size: 1.7rem;
+			font-weight: 500;
+			justify-content: flex-start;
+			line-height: 2;
+			min-height: 14rem;
+			padding: 1rem 2rem;
+			width: 100%;
+			word-break: break-all;
+			word-wrap: break-word;
+		}
+	}
+}

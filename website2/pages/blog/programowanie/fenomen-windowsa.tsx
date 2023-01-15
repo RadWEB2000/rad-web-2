@@ -10,6 +10,9 @@ import { useRouter } from "next/router";
 import Breadcrumb from "../../../components/Utilities/Cards/Breadcrumb/Breadcrumb/Breadcrumb";
 import HeroArticle from "../../../components/Utilities/Hero/HeroArticle/HeroArticle";
 import Content from "../../../components/Pages/ArticlePage/Content/Content";
+import Picture from "../../../components/Pages/ArticlePage/Picture/Picture";
+import Code from "../../../components/Pages/ArticlePage/Code/Code";
+import Summary from "../../../components/Pages/ArticlePage/Summary/Summary";
 const Page = () => {
 	const [searchValue, setSearchValue] = useState("");
 	const { pathname } = useRouter();
@@ -60,21 +63,36 @@ const Page = () => {
 				<Content
 					content={`
 						<h3>Jakiś tytuł</h3>
-						<ul classname="regularList">
-							<li>Quasi quas autem optio quod eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
-							<li>Quasi quas autem optio quod eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
-							<li>Quasi quas autem optio quod eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
-						</ul>
 				`}
 				/>
+				<Code>
+					const a = "2"
+					<br />
+					php "Hello World"
+				</Code>
 				<Content
 					content={`
 						<h3>Jakiś tytuł</h3>
 						<ol>
+							<li><b>Quasi</b> quas autem optio quod eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
 							<li>Quasi quas autem optio quod eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
-							<li>Quasi quas autem optio quod eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
-							<li>Quasi quas autem optio quod eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
+							<li><ul classname="regularList">
+							<li><b>Quasi quas autem optio</b><p> quod eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut.</p> </li><br/>
+							<li><b>Quasi quas autem optio quod</b> eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
+							<hr/>
+							<li><b>Quasi quas autem optio quod</b> eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
+							</ul></li>
 						</ol>
+				`}
+				/>
+				<Picture
+					image="https://images.unsplash.com/photo-1594712844133-d4193f13c17e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+					title=""
+				/>
+				<Content
+					content={`
+						<h2>Jakiś tytuł</h2>
+						<p>Vitae itaque <b>molestiae doloremque</b> architecto dolores. Ut voluptatem explicabo nostrum laborum. Quidem cum ut quasi libero porro et alias. Error nihil non rerum ad maiores labore tenetur. <a href="#">Modi incidunt</a> iure dolorem. Est alias inventore qui reiciendis distinctio et dignissimos facere corporis. Similique dolores aut. Aut sit aspernatur. Exercitationem velit assumenda occaecati dignissimos quibusdam. Autem ex et ea quia. Et assumenda accusamus consequatur. Fugit quibusdam et est aut voluptas. Quasi voluptatem at et. Cumque dolor blanditiis porro unde nihil consequatur unde nulla repudiandae. Corrupti aliquam quis qui fugiat voluptatem. Perferendis excepturi dolores similique. Qui consequatur dolorum quos similique aut cum at corrupti sed. Soluta ab omnis qui sint soluta aperiam ex. Facilis qui sit vel.</p>
 				`}
 				/>
 				<Content
@@ -97,6 +115,16 @@ const Page = () => {
 							<li><h4>Quasi quas autem optio quod</h4> eius illo voluptas nihil maiores. Voluptatum repellat laudantium laboriosam earum ut. </li>
 						</ul>
 				`}
+				/>
+				<Summary
+					title="Podsumowanie"
+					content="Velit aliquam perferendis nulla qui adipisci est recusandae sed. Dolor illum dolores non nulla atque sit doloremque vel. Minima at perspiciatis illo recusandae eos distinctio sint voluptatem. Error ut repellendus tenetur eos. Qui praesentium iste cupiditate beatae natus ea eum. Asperiores iusto voluptas eos nihil et. Earum earum illum accusantium minima in est."
+					list={[
+						"Vel similique voluptatem molestiae qui. Nihil qui voluptatem sit non aut dolores minima repellendus. Magni iure odit sed. ",
+						"Vel similique voluptatem molestiae qui. Nihil qui voluptatem sit non aut dolores minima repellendus. Magni iure odit sed. ",
+						"Vel similique voluptatem molestiae qui. Nihil qui voluptatem sit non aut dolores minima repellendus. Magni iure odit sed. ",
+						"Vel similique voluptatem molestiae qui. Nihil qui voluptatem sit non aut dolores minima repellendus. Magni iure odit sed. ",
+					]}
 				/>
 			</main>
 		</Layout>
