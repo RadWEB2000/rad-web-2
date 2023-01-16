@@ -1,0 +1,28 @@
+.spacer {
+	display: block;
+	height: 4.5rem;
+	width: 100%;
+}
+.wrapper {
+	align-items: center;
+	display: flex;
+	flex-flow: row wrap-reverse;
+	justify-content: space-between;
+	@media only screen {
+		@media (max-width: 930px) {
+			flex-flow: column-reverse;
+			row-gap: 2rem;
+			&,
+			& > div {
+				align-items: center;
+				justify-content: center;
+			}
+			& > div {
+				display: flex;
+				&:first-of-type {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

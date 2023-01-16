@@ -1,0 +1,86 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	& > a {
+		display: flex;
+		flex-flow: row;
+		height: 32rem;
+		width: 60rem;
+		& > div {
+			flex: 1.2;
+			overflow: hidden;
+			&,
+			& > figure {
+				position: relative;
+			}
+			& > figure {
+				height: 100%;
+				transition: 0.2s ease-in-out transform;
+				width: 100%;
+			}
+		}
+		& > section {
+			align-items: center;
+			background-color: $white;
+			border-radius: 0 2rem 2rem 0;
+			display: flex;
+			flex: 1.2;
+			height: 100%;
+			justify-content: flex-start;
+			padding: 0 0.5rem;
+			text-align: start;
+			& > h3 {
+				font-size: 2.6rem;
+				font-weight: 900;
+				transition: 0.2s linear color;
+			}
+		}
+	}
+	&:focus,
+	&:focus-within,
+	&:hover {
+		& > a {
+			& > div {
+				& > figure {
+					transform: scale(1.13) rotate(2deg);
+				}
+			}
+			& > section {
+				& > h3 {
+					color: $tertiaryButtonColor;
+				}
+			}
+		}
+	}
+	@media only screen {
+		@media (max-width: 930px) {
+			margin: auto;
+			width: 95%;
+			& > a {
+				width: 100%;
+				& > div {
+					flex: 1.2;
+				}
+				& > section {
+					flex: 1.2;
+					& > h3 {
+						font-size: 2.2rem;
+					}
+				}
+			}
+		}
+		@media (max-width: 450px) {
+			& > a {
+				flex-flow: column;
+				height: auto;
+				& > div {
+					aspect-ratio: 4/3;
+					height: auto;
+				}
+				& > section {
+					min-height: 12rem;
+					border-radius: 0;
+				}
+			}
+		}
+	}
+}

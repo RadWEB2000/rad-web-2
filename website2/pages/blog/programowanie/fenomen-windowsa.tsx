@@ -13,6 +13,7 @@ import Content from "../../../components/Pages/ArticlePage/Content/Content";
 import Picture from "../../../components/Pages/ArticlePage/Picture/Picture";
 import Code from "../../../components/Pages/ArticlePage/Code/Code";
 import Summary from "../../../components/Pages/ArticlePage/Summary/Summary";
+import Details from "../../../components/Pages/ArticlePage/Details/Details/Details";
 const Page = () => {
 	const [searchValue, setSearchValue] = useState("");
 	const { pathname } = useRouter();
@@ -125,6 +126,26 @@ const Page = () => {
 						"Vel similique voluptatem molestiae qui. Nihil qui voluptatem sit non aut dolores minima repellendus. Magni iure odit sed. ",
 						"Vel similique voluptatem molestiae qui. Nihil qui voluptatem sit non aut dolores minima repellendus. Magni iure odit sed. ",
 					]}
+				/>
+				<Details
+					article={{
+						heading: "Polecany artykuł",
+						image:
+							"https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80",
+						path: "#",
+						title:
+							"Robots.txt — Jak przejąć kontrolę nad robotami wyszukiwarek?",
+					}}
+					author={{
+						fullname: {
+							firstname: "Radosław",
+							lastname: "Adamczyk",
+						},
+						image:
+							"https://scontent-frt3-2.xx.fbcdn.net/v/t39.30808-6/320637585_556006019305036_2965245612562101645_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFSXTzRiKwZ8ACQHDhAlqXgHysRVyhbDVIfKxFXKFsNUo7WIAnRt-EOMgiDCKsAf-35UrNb5s-3s0HnHgF2JquG&_nc_ohc=ObDCLc16kuUAX-AYIzP&_nc_ht=scontent-frt3-2.xx&oh=00_AfAbf6ip_Jq_3MIs9BNvx4E9F4whH8fL50pNEDfeklik4A&oe=63B54A13",
+						jobs: "Front-end & Web developer, specjalista SEO/SEM",
+						path: "#",
+					}}
 				/>
 			</main>
 		</Layout>

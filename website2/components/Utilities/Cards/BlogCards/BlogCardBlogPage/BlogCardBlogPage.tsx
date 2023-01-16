@@ -46,11 +46,11 @@ const BlogCardBlogPage = ({
 					</div>
 					<section className={styles.info}>
 						<h3>{title}</h3>
-						<p
+						{/* <p
 							dangerouslySetInnerHTML={{
 								__html: excerpt.substring(0, 85) + "...",
 							}}
-						/>
+						/> */}
 						<div>
 							<p>{category}</p>
 						</div>

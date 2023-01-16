@@ -33,7 +33,7 @@ const ProjectPageCard = ({
 					<div>
 						<p>{category.name}</p>
 					</div>
-					<p dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 150) }} />
+					<p dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 125) }} />
 				</figcaption>
 			</Link>
 		</li>

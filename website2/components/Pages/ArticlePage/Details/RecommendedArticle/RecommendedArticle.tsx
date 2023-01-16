@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./RecommendedArticle.module.scss";
 import { IntRecommendedArticle } from "./interface";
 import { ReactElement } from "react";
 const RecommendedArticle = ({
@@ -8,9 +9,9 @@ const RecommendedArticle = ({
 	path,
 	title,
 }: IntRecommendedArticle): ReactElement => {
+	console.log(image);
 	return (
-		<div title={title}>
-			<h2>{heading}</h2>
+		<div className={styles.wrapper} title={title}>
 			<Link href={path} rel="index follow">
 				<div>
 					<figure>

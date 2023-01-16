@@ -2,11 +2,11 @@ import BlogCardHomePage from "../../../../Utilities/Cards/BlogCards/BlogCardHome
 import styles from "./Cards.module.scss";
 import { IntCards } from "./interface";
 import { ReactElement, useEffect, useState } from "react";
+import BlogCardBlogPage from "../../../../Utilities/Cards/BlogCards/BlogCardBlogPage/BlogCardBlogPage";
 const Cards = ({ cards }: IntCards): ReactElement => {
 	const [articlesNumber, setArticlesNumber] = useState(3);
 	useEffect(() => {
 		if (window !== undefined) {
-			console.log(window.screen);
 			if (window.innerWidth <= 1000) {
 				setArticlesNumber(2);
 			} else {
@@ -25,9 +25,9 @@ const Cards = ({ cards }: IntCards): ReactElement => {
 		<ul className={styles.wrapper}>
 			{cards
 				.slice(0, articlesNumber)
-				.map(({ button, category, date, image, path, title }) => (
-					<BlogCardHomePage
-						button={button}
+				.map(({ category, excerpt, date, image, path, title }) => (
+					<BlogCardBlogPage
+						excerpt={excerpt}
 						category={category}
 						date={date}
 						image={image}
