@@ -1,17 +1,13 @@
 @import "../../../../styles/Variables.module.scss";
-.button,
-.title {
-	padding: 0.25rem 0.5rem;
-}
 .button {
 	align-items: center;
 	display: flex;
 	justify-content: flex-end;
+	padding: 0.25rem 0.5rem;
 }
 .content {
-	font-size: 1.65rem;
+	font-size: 1.85rem;
 	line-height: 1.95;
-	text-indent: 2rem;
 	@media only screen {
 		@media (max-width: 700px) {
 			font-size: 1.55rem;
@@ -22,7 +18,7 @@
 }
 .title {
 	color: $tertiaryButtonColor;
-	font-size: 3.85rem;
+	font-size: 5.5rem;
 	font-weight: 900;
 	@media only screen {
 		@media (max-width: 700px) {

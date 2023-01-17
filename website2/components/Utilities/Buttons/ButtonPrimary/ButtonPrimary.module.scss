@@ -1,41 +1,75 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	&[data-variant="primary"] > a {
-		background-color: $primaryButtonColor;
-		min-width: 12rem;
-	}
-	&[data-variant="secondary"] > a {
-		background-color: $secondaryButtonColor;
-		min-width: 12rem;
-	}
-	&[data-variant="tertiary"] > a {
-		background-color: $tertiaryButtonColor;
-		min-width: 16rem;
-	}
-	&,
-	& > a {
-		align-items: center;
-		display: flex;
-		justify-content: center;
-	}
-	& > a {
-		border-radius: 2.5rem;
-		color: $background;
-		font-size: 1.5rem;
-		font-weight: 600;
-		min-height: 3.5rem;
-		padding: 0 0.5rem;
-		user-select: none;
-	}
-	@media only screen {
-		@media (max-width: 735px) {
-			&[data-variant="primary"] > a {
-				min-width: 10rem;
+	&[data-variant="primary"] {
+		border: 2px solid #5549f1;
+		color: #5549f1;
+		font-size: 1.6rem;
+		padding: 0.6rem 2.2rem;
+		position: relative;
+		text-decoration: none;
+		transition: 0.5s;
+		&::after,
+		&::before {
+			border: inherit;
+			height: 4rem;
+			transition: 0.5s;
+			width: 4rem;
+		}
+		&::after {
+			border-width: 0 2px 2px 0;
+			bottom: -1rem;
+			right: -1rem;
+		}
+		&::before {
+			border-width: 2px 0 0 2px;
+			left: -1rem;
+			top: -1rem;
+		}
+		&:focus,
+		&:focus-within,
+		&:hover {
+			&::after,
+			&::before {
+				height: calc(100% + 1.8rem);
+				width: calc(100% + 1.8rem);
 			}
 		}
-		@media (max-width: 700px) {
-			&[data-variant="tertiary"] > a {
-				min-width: 13rem;
+	}
+	&[data-variant="secondary"] {
+		align-items: center;
+		background-color: transparent;
+		border: none;
+		border-radius: 0.4rem;
+		color: rgb(0, 0, 0, 0.9);
+		cursor: pointer;
+		display: flex;
+		font-size: 1.65rem;
+		font-weight: 600;
+		height: 4.5rem;
+		justify-content: center;
+		min-width: 13rem;
+		outline: 2.5px solid rgb(0, 0, 0, 0.7);
+		position: relative;
+		transition: 0.3s;
+		user-select: none;
+		&::after {
+			background-color: #5549f1;
+			height: 100%;
+			left: 0;
+			top: 0;
+			transform: scaleY(0);
+			transform-origin: bottom;
+			transition: 0.3s;
+			width: 100%;
+			z-index: -1;
+		}
+		&:focus,
+		&:focus-within,
+		&:hover {
+			color: #fff;
+			outline: 2.5px solid rgb(85, 73, 241);
+			&::after {
+				transform: scale(1, 1);
 			}
 		}
 	}

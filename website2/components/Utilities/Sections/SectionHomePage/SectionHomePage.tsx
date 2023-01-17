@@ -19,7 +19,7 @@ const SectionHomePage = ({
 					<ButtonPrimary
 						path={button.path}
 						title={button.title}
-						variant="tertiary"
+						variant="secondary"
 					/>
 				</div>
 			)}

@@ -9,21 +9,18 @@ const ButtonPrimary = ({
 	variant,
 }: IntButtonPrimary): ReactElement => {
 	return (
-		<div className={styles.wrapper} data-variant={variant}>
-			<Link href={path} legacyBehavior rel="index follow">
-				<motion.a
-					whileHover={{
-						scale: 1.05,
-						filter: "brightness(120%)",
-					}}
-					whileTap={{
-						scale: 0.95,
-					}}
-				>
-					{title}
-				</motion.a>
-			</Link>
-		</div>
+		<Link href={path} legacyBehavior rel="index follow">
+			<motion.a
+				className={styles.wrapper}
+				data-variant={variant}
+				whileTap={{
+					scale: 0.95,
+				}}
+			>
+				{title}
+				<i className="bx bx-right-arrow-alt" />
+			</motion.a>
+		</Link>
 	);
 };
 export default ButtonPrimary;
