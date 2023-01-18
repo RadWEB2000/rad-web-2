@@ -2,6 +2,11 @@
 .wrapper {
 	align-items: center;
 	background-image: $grayGradient;
+	background-image: linear-gradient(
+		to right bottom,
+		$white,
+		hsla(244, 86%, 62%, 0.03)
+	);
 	border-radius: 1rem;
 	display: flex;
 	overflow: hidden;
@@ -30,7 +35,7 @@
 	}
 }
 .image {
-	aspect-ratio: 4/2.5;
+	aspect-ratio: 4/3;
 	width: 100%;
 	& > figure {
 		height: 100%;

@@ -17,12 +17,15 @@
 	flex-flow: column;
 	justify-content: center;
 	margin: auto;
-	row-gap: 0.25rem;
-	width: 45rem;
+	row-gap: 1.5rem;
+	width: 40rem;
 	@media only screen {
 		@media (max-width: 1170px) {
 			max-width: 97%;
 			width: 40rem;
+		}
+		@media (max-width: 1050px) {
+			width: 33rem;
 		}
 		@media (max-width: 875px) {
 			width: 31rem;

@@ -73,4 +73,25 @@
 			}
 		}
 	}
+	&[data-variant="tertiary"] {
+		align-items: center;
+		background-color: #5549f1;
+		border-radius: 1rem;
+		box-shadow: 0 0.5rem 0 #100b51;
+		color: #fff;
+		display: flex;
+		font-size: 1.6rem;
+		font-weight: 600;
+		height: 3.5rem;
+		justify-content: center;
+		min-width: 10rem;
+		outline: none;
+		transition: 0.3s;
+		&:focus,
+		&:focus-within,
+		&:hover {
+			box-shadow: 0 0 0 #463bd4;
+			transform: scaleY(0.5rem);
+		}
+	}
 }

@@ -5,9 +5,7 @@ export const home = {
 		hero: {
 			title: "RadWEB",
 			content:
-				"Corrupti necessitatibus incidunt voluptatem id eaque ut dolorem rerum. Provident eum atque consequuntur laborum velit unde. Qui blanditiis in ut et aperiam consequuntur. Dolor quia totam architecto sequi doloremque voluptatem culpa. Quis dolores dolorem quia. Enim veniam possimus error laudantium commodi possimus asperiores. Laudantium dolorem eaque vel dicta facere minima. Repellendus non eaque incidunt qui id fuga minus iusto. Aut cupiditate doloribus. Temporibus esse iure perspiciatis. Non a saepe dolorem dolores. Ducimus id atque quidem repellat ipsum sed. Quibusdam laboriosam in. Praesentium impedit dolorum ut corrupti est nulla sit. Corporis voluptatibus et quia quod. Dolores ut nemo aperiam nesciunt est dignissimos. Nihil saepe quia sed consectetur dolores adipisci nulla.  ",
-			image:
-				"https://images.unsplash.com/photo-1531934788018-04c3cd417b80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80",
+				"Corrupti necessitatibus incidunt voluptatem id eaque ut dolorem rerum. Provident eum atque consequuntur laborum velit unde. Qui blanditiis in ut et aperiam consequuntur. Dolor quia totam architecto sequi doloremque voluptatem culpa. Quis dolores dolorem quia. Enim veniam possimus error ",
 			buttons: [
 				{
 					path: "/blog",

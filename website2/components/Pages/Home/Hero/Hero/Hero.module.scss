@@ -1,11 +1,12 @@
 @import "../../../../../styles/Variables.module.scss";
 .wrapper {
-	background-color: $background;
 	display: grid;
 	grid-template-columns: 1.5fr 1fr;
 	gap: 1rem;
-	padding: 2rem 4rem;
-	min-height: calc(100vh - 11.5rem);
+	margin: 0 auto;
+	padding: 1.2rem 1rem;
+	min-height: calc(100vh - 12.5rem);
+	width: 90vw;
 	& > div {
 		align-items: center;
 		display: flex;
@@ -15,6 +16,10 @@
 		@media (max-width: 1170px) {
 			grid-template-columns: 1.25fr 1fr;
 			padding: 2rem 1.5rem;
+		}
+		@media (max-width: 1050px) {
+			grid-template-columns: 1.25fr 1fr;
+			width: 96vw;
 		}
 		@media (max-width: 875px) {
 			grid-template-columns: 1.5fr 1fr;
