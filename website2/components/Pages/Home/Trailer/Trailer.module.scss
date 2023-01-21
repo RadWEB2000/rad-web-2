@@ -1,0 +1,17 @@
+.wrapper {
+	align-items: center;
+	aspect-ratio: 16/9;
+	background-color: orange;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	margin: 10rem auto 5rem auto;
+	width: 100%;
+	& > video {
+		filter: contrast(150%);
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		width: 100%;
+	}
+}

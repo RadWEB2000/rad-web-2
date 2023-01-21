@@ -1,9 +1,12 @@
 import Blog from "../components/Pages/Home/Blog/Blog/Blog";
+import Trailer from "../components/Pages/Home/Trailer/Trailer";
+import Projects from "../components/Pages/Home/Projects/Projects/Projects";
 import SectionHomePage from "../components/Utilities/Sections/SectionHomePage/SectionHomePage";
 import Layout from "./../components/Layout/Layout/Layout";
 import Hero from "./../components/Pages/Home/Hero/Hero/Hero";
 import { home } from "./../data/pages/home";
 import { posts } from "./../data/pages/posts";
+import { projects } from "../data/pages/projects";
 const Page = () => {
 	const { pl } = home;
 	const { cards } = posts.pl;
@@ -26,6 +29,7 @@ const Page = () => {
 				title={pl.hero.title}
 			/>
 			<main>
+				<Trailer movie="/assets/movie/trailer.mp4" />
 				<Blog
 					button={{
 						path: "/blog",
@@ -35,9 +39,14 @@ const Page = () => {
 					content={`Soluta sit magnam corporis iusto optio nihil excepturi in. Est itaque aut atque ipsam ea et nam. Esse iusto odio sint ut cupiditate est veritatis est. Molestiae molestias et autem rem et iure commodi voluptas velit. Quibusdam a qui eum consequatur ullam distinctio. Deserunt porro cupiditate ut. Dolorum excepturi suscipit. Consectetur temporibus placeat. Optio quas voluptatem dolores et et soluta vel aspernatur. Aut dolores ullam aliquam odit occaecati voluptas maxime labore quis. Ea qui quo voluptatem dolorem ratione nam laboriosam doloremque voluptas.`}
 					title="Blog"
 				/>
-				<SectionHomePage
-					content={`Soluta sit magnam corporis iusto optio nihil excepturi in. Est itaque aut atque ipsam ea et nam. Esse iusto odio sint ut cupiditate est veritatis est. Molestiae molestias et autem rem et iure commodi voluptas velit. Quibusdam a qui eum consequatur ullam distinctio. Deserunt porro cupiditate ut. Dolorum excepturi suscipit. Consectetur temporibus placeat. Optio quas voluptatem dolores et et soluta vel aspernatur. Aut dolores ullam aliquam odit occaecati voluptas maxime labore quis. Ea qui quo voluptatem dolorem ratione nam laboriosam doloremque voluptas.`}
-					title="Projekty i realizacje - Case Studies"
+				<Projects
+					title="Projekty i realizacje komercyjne"
+					content="Quia iusto quia quam est. Ad ea ad in. Odit voluptas aut possimus placeat laborum voluptas accusantium. Voluptatibus corrupti omnis est dolore rem et dolor a dolorem. In qui exercitationem voluptas quisquam id. Neque aut similique quo impedit quod consequatur aut est."
+					button={{
+						path: "/projekty",
+						title: "więcej",
+					}}
+					cards={projects.pl.main.projects.cards}
 				/>
 			</main>
 		</Layout>

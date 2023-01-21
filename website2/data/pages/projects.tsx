@@ -40,7 +40,18 @@ export const projects = {
 				cards: [
 					{
 						category: {
-							name: "Programowanie",
+							name: "Seo",
+							value: "seo",
+						},
+						excerpt: `Libero doloribus blanditiis aut iste amet. Et et non vel. Cupiditate optio dolor nemo. Quidem delectus quos placeat qui aut vel ea. Harum repudiandae quia voluptatum. Aut consequatur aut cumque est rem omnis qui. Ab voluptatum ea ad. Vitae amet dolor. Eum illo et autem et odit commodi natus totam distinctio. Autem consectetur reiciendis et debitis.`,
+						image:
+							"https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+						path: "/projekty/mistcont",
+						title: "MistCont",
+					},
+					{
+						category: {
+							name: "programowanie",
 							value: "programming",
 						},
 						excerpt: `Libero doloribus blanditiis aut iste amet. Et et non vel. Cupiditate optio dolor nemo. Quidem delectus quos placeat qui aut vel ea. Harum repudiandae quia voluptatum. Aut consequatur aut cumque est rem omnis qui. Ab voluptatum ea ad. Vitae amet dolor. Eum illo et autem et odit commodi natus totam distinctio. Autem consectetur reiciendis et debitis.`,
@@ -51,7 +62,7 @@ export const projects = {
 					},
 					{
 						category: {
-							name: "Programming",
+							name: "programowanie",
 							value: "programming",
 						},
 						excerpt: `Libero doloribus blanditiis aut iste amet. Et et non vel. Cupiditate optio dolor nemo. Quidem delectus quos placeat qui aut vel ea. Harum repudiandae quia voluptatum. Aut consequatur aut cumque est rem omnis qui. Ab voluptatum ea ad. Vitae amet dolor. Eum illo et autem et odit commodi natus totam distinctio. Autem consectetur reiciendis et debitis.`,
@@ -82,17 +93,7 @@ export const projects = {
 						path: "/projekty/gdzie-jutro",
 						title: "Gdzie Jutro",
 					},
-					{
-						category: {
-							name: "Seo",
-							value: "seo",
-						},
-						excerpt: `Libero doloribus blanditiis aut iste amet. Et et non vel. Cupiditate optio dolor nemo. Quidem delectus quos placeat qui aut vel ea. Harum repudiandae quia voluptatum. Aut consequatur aut cumque est rem omnis qui. Ab voluptatum ea ad. Vitae amet dolor. Eum illo et autem et odit commodi natus totam distinctio. Autem consectetur reiciendis et debitis.`,
-						image:
-							"https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-						path: "/projekty/mistcont",
-						title: "MistCont",
-					},
+
 					{
 						category: {
 							name: "Programowanie",
