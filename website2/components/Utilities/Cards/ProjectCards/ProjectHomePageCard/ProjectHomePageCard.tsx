@@ -13,25 +13,35 @@ const ProjectHomePageCard = ({
 }: IntProjectHomePageCard): ReactElement => {
 	return (
 		<Link href={path} legacyBehavior rel="index follow">
-			<a className={styles.wrapper} title={`${title} - ${category}`}>
+			<a
+				className={styles.wrapper}
+				data-size={isBig ? "big" : "small"}
+				title={`${title} - ${category.name}`}
+			>
 				<figure className={styles.image}>
-					<Image
-						alt={`${title} - ${category}`}
-						fill
-						src={image}
-						style={{
-							objectFit: "cover",
-							objectPosition: "center",
-						}}
-					/>
+					<div>
+						<Image
+							alt={`${title} - ${category.name}`}
+							fill
+							src={image}
+							style={{
+								objectFit: "cover",
+								objectPosition: "center",
+							}}
+						/>
+					</div>
 				</figure>
 				<figcaption className={styles.content}>
-					<p className={styles.category}>{category.name}</p>
+					<div className={styles.category}>
+						<p>{category.name}</p>
+					</div>
 					<h3 className={styles.title}>{title}</h3>
 					{isBig && (
 						<p
 							className={styles.excerpt}
-							dangerouslySetInnerHTML={{ __html: excerpt }}
+							dangerouslySetInnerHTML={{
+								__html: excerpt.substring(0, 360) + "...",
+							}}
 						/>
 					)}
 				</figcaption>

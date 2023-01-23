@@ -21,7 +21,7 @@ const Cards = ({ cards }: IntCards) => {
 				))}
 			</li>
 			<li className={styles.small}>
-				{cards?.slice(1, 4).map(({ category, excerpt, image, path, title }) => (
+				{cards?.slice(1, 5).map(({ category, excerpt, image, path, title }) => (
 					<ProjectHomePageCard
 						category={{
 							name: category.name,
