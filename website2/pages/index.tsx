@@ -7,6 +7,8 @@ import Hero from "./../components/Pages/Home/Hero/Hero/Hero";
 import { home } from "./../data/pages/home";
 import { posts } from "./../data/pages/posts";
 import { projects } from "../data/pages/projects";
+import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
+import { testimonials } from "./../data/pages/testimonials";
 const Page = () => {
 	const { pl } = home;
 	const { cards } = posts.pl;
@@ -48,6 +50,7 @@ const Page = () => {
 					}}
 					cards={projects.pl.main.projects.cards}
 				/>
+				<Testimonials cards={testimonials.pl} />
 			</main>
 		</Layout>
 	);

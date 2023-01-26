@@ -1,0 +1,50 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: center;
+	background-color: $white;
+	border-radius: 1.25rem;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	padding: 1.5rem 0.5rem;
+	row-gap: 0.6rem;
+	width: 35rem;
+	& > * {
+		width: 100%;
+	}
+	& > .info {
+		align-items: center;
+		column-gap: 2rem;
+		display: flex;
+		flex-flow: row;
+		justify-content: flex-start;
+		& > figure {
+			aspect-ratio: 1/1;
+			border-radius: 50%;
+			height: 9rem;
+			overflow: hidden;
+			position: relative;
+		}
+		& > div {
+			& > h4 {
+				font-size: 2.2rem;
+			}
+			& > h5 {
+				font-size: 1.5rem;
+				font-weight: 900;
+			}
+		}
+	}
+	& > .content {
+		font-size: 1.67rem;
+		line-height: 1.9;
+		padding: 0.5rem;
+	}
+	& > .date {
+		& > p {
+			font-size: 1.67rem;
+			font-weight: 800;
+			line-height: 1.4;
+		}
+	}
+}
