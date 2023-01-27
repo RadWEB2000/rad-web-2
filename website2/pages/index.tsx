@@ -9,6 +9,8 @@ import { posts } from "./../data/pages/posts";
 import { projects } from "../data/pages/projects";
 import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
 import { testimonials } from "./../data/pages/testimonials";
+import About from "../components/Pages/Home/About/About";
+import { peoplesCards } from "./../data/pages/peoplesCards";
 const Page = () => {
 	const { pl } = home;
 	const { cards } = posts.pl;
@@ -40,6 +42,15 @@ const Page = () => {
 					cards={[...cards]}
 					content={`Soluta sit magnam corporis iusto optio nihil excepturi in. Est itaque aut atque ipsam ea et nam. Esse iusto odio sint ut cupiditate est veritatis est. Molestiae molestias et autem rem et iure commodi voluptas velit. Quibusdam a qui eum consequatur ullam distinctio. Deserunt porro cupiditate ut. Dolorum excepturi suscipit. Consectetur temporibus placeat. Optio quas voluptatem dolores et et soluta vel aspernatur. Aut dolores ullam aliquam odit occaecati voluptas maxime labore quis. Ea qui quo voluptatem dolorem ratione nam laboriosam doloremque voluptas.`}
 					title="Blog"
+				/>
+				<About
+					button={{
+						path: "",
+						title: "więcej",
+					}}
+					cards={peoplesCards.pl}
+					content={`Quia velit libero deserunt reprehenderit quis animi dolorem tempore. Corrupti et magnam voluptates eaque repellat minus explicabo et aut. Dolor corporis unde non beatae deleniti nesciunt quaerat est. Doloremque tenetur illo exercitationem eaque non. Officia est aut ea ut nulla. Ipsa iste dolorem tempore dolor.`}
+					title="Kim jesteśmy?"
 				/>
 				<Projects
 					title="Projekty i realizacje komercyjne"

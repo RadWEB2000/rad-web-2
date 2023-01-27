@@ -49,18 +49,6 @@ export const testimonials = {
 				"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/730.jpg",
 		},
 		{
-			company: "Product Intranet Officer",
-			content:
-				"Illo exercitationem deserunt quos repellat explicabo aliquam vero illo. D",
-			date: "Wed Jun 15 2022 12:31:50 GMT+0200 (czas środkowoeuropejski letni)",
-			fullname: {
-				firstname: "Ed",
-				lastname: "Thompson",
-			},
-			image:
-				"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/730.jpg",
-		},
-		{
 			company: "Product Operations Coordinator",
 			content:
 				"Magnam facilis et minima cupiditate. Omnis neque sit voluptatem magnam deleniti enim voluptas ad. Facilis et et maiores totam beatae quod reprehenderit necessitatibus fuga. Qui provident voluptate quis omnis vel.",
