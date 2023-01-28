@@ -1,10 +1,11 @@
 import PersonCardHomePage from "../../../Utilities/Cards/PersonsCards/PersonCardHomePage/PersonCardHomePage";
 import SectionHomePage from "./../../../Utilities/Sections/SectionHomePage/SectionHomePage";
+import styles from "./About.module.scss";
 import { IntAbout } from "./interface";
 
 const About = ({ button, cards, content, title }: IntAbout) => {
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<SectionHomePage
 				content={content}
 				title={title}
@@ -23,7 +24,7 @@ const About = ({ button, cards, content, title }: IntAbout) => {
 						}}
 						image={image}
 						jobs={jobs}
-						key={path}
+						key={fullname.lastname}
 						path={path}
 					/>
 				))}

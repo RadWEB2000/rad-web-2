@@ -1,0 +1,44 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	display: grid;
+	grid-gap: 0.5rem;
+	grid-template-columns: repeat(2, 1fr);
+	height: 100%;
+	& > li {
+		align-items: center;
+		display: flex;
+		justify-content: flex-start;
+		& > a {
+			color: $quatenaryButtonColor;
+			font-size: 1.7rem;
+			font-weight: 700;
+			padding: 0 0.5rem;
+			position: relative;
+			transition: 0.2s ease-in-out color;
+			z-index: 0;
+			&::before {
+				background-color: $color;
+				height: 120%;
+				left: 0;
+				opacity: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				transition: 0.4s ease-in-out opacity, 0.4s ease-in-out width,
+					0.4s ease-in-out visibility;
+				width: 0%;
+				visibility: hidden;
+				z-index: -1;
+			}
+			&:focus,
+			&:focus-within,
+			&:hover {
+				color: $white;
+				&::before {
+					opacity: 1;
+					width: 100%;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}

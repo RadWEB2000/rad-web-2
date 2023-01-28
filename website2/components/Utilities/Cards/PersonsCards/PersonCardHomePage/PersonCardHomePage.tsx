@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./PersonCardHomePage.module.scss";
 import { IntPersonCardHomePage } from "./interface";
 import { ReactElement } from "react";
 
@@ -12,7 +13,7 @@ const PersonCardHomePage = ({
 	path,
 }: IntPersonCardHomePage): ReactElement => {
 	return (
-		<li>
+		<li className={styles.wrapper}>
 			<Link href={path} legacyBehavior>
 				<a>
 					<div>
@@ -31,9 +32,15 @@ const PersonCardHomePage = ({
 						</figure>
 					</div>
 					<section>
-						<h3>{`${fullname.firstname} ${fullname.lastname}`}</h3>
-						<p dangerouslySetInnerHTML={{ __html: jobs }} />
-						<p dangerouslySetInnerHTML={{ __html: cities }} />
+						<h4>{`${fullname.firstname} ${fullname.lastname}`}</h4>
+						<p
+							className={styles.jobs}
+							dangerouslySetInnerHTML={{ __html: jobs }}
+						/>
+						<p
+							className={styles.cities}
+							dangerouslySetInnerHTML={{ __html: cities }}
+						/>
 					</section>
 				</a>
 			</Link>

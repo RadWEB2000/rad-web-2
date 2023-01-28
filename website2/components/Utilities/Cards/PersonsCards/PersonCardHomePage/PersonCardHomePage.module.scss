@@ -1,0 +1,73 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: center;
+	margin: 0 auto;
+	transition: 0.2s linear box-shadow, 0.2s 0.1s linear transform;
+	width: 30rem;
+	& > a {
+		& > div {
+			aspect-ratio: 4/4.5;
+			border-radius: 1rem 1rem 0 0;
+			overflow: hidden;
+			width: 100%;
+			& > figure {
+				height: 100%;
+				position: relative;
+				transition: 0.25s ease-in-out scale;
+				width: 100%;
+			}
+		}
+		& > section {
+			align-items: start;
+			border-radius: 0 0 1rem 1rem;
+			background-color: $white;
+			display: flex;
+			flex-flow: column;
+			justify-content: flex-start;
+			min-height: 10rem;
+			padding: 1.15rem 0.5rem 1rem 0.5rem;
+			row-gap: 0.7rem;
+			& > h4 {
+				font-size: 2rem;
+			}
+			& > p {
+				font-size: 1.65rem;
+			}
+		}
+	}
+	&:focus,
+	&:focus-within,
+	&:hover {
+		box-shadow: 0 0.25rem 0.5rem hsla(0, 100%, 0%, 0.15);
+		transform: translateY(-3rem);
+		& > a {
+			& > div {
+				& > figure {
+					scale: 1.2;
+				}
+			}
+		}
+	}
+	@media only screen {
+		@media (max-width: 965px) {
+			width: 25rem;
+		}
+		@media (max-width: 810px) {
+			width: 22rem;
+			& > a {
+				& > div {
+					aspect-ratio: 4/5.5;
+				}
+				& > section {
+					padding: 1.15rem 0.5rem 1rem 0.5rem;
+					& > h4 {
+						font-size: 1.8rem;
+					}
+					& > p {
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+}

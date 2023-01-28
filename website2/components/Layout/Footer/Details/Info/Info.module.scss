@@ -1,0 +1,49 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	row-gap: 1rem;
+	&,
+	& > address,
+	& > address > ul {
+		align-items: center;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		text-align: center;
+	}
+	& > b {
+		font-size: 3rem;
+		font-weight: 900;
+	}
+	& > address {
+		font-style: normal;
+		&,
+		& > ul {
+			row-gap: 0.6rem;
+		}
+		& > p {
+			font-size: 1.7rem;
+		}
+		& > ul {
+			& > li {
+				& > a {
+					flex-flow: row;
+					&,
+					& > p {
+						align-items: center;
+						display: flex;
+						justify-content: center;
+					}
+					& > span {
+						aspect-ratio: 1/1;
+						font-size: 3rem;
+						width: 3.5rem;
+					}
+					& > p {
+						font-size: 1.7rem;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+}

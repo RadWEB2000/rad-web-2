@@ -1,0 +1,16 @@
+.wrapper {
+	align-items: center;
+	display: flex;
+	height: 40rem;
+	justify-content: center;
+	position: relative;
+	margin: 2rem auto 0 auto;
+	width: 100%;
+	& > iframe {
+		all: unset;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		width: 100%;
+	}
+}

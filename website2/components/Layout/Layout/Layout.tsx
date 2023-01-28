@@ -1,3 +1,5 @@
+import { footer } from "../../../data/footer";
+import Footer from "../Footer/Footer/Footer";
 import Navigation from "../Navigation/Navigation/Navigation";
 import Seo from "../Seo/Seo";
 import { IntLayout } from "./interface";
@@ -20,6 +22,7 @@ const Layout = ({
 			/>
 			<Navigation />
 			<>{children}</>
+			<Footer socials={footer.pl.socials} />
 		</>
 	);
 };

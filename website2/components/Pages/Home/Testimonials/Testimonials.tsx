@@ -11,7 +11,7 @@ const Testimonials = ({ cards }: IntTestimonials): ReactElement => {
 			<SectionHomePage content="" title="Opinie" />
 			<Masonry
 				autoArrange={true}
-				breakpoints={{ mobile: 0, tablet: 550, desktop: 1205 }}
+				breakpoints={{ mobile: 0, tablet: 550, desktop: 1250 }}
 				columns={{ mobile: 1, tablet: 2, desktop: 3 }}
 				gap={{ mobile: 2.5, tablet: 5, desktop: 10 }}
 			>

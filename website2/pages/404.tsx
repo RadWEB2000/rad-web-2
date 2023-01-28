@@ -1,3 +1,4 @@
+import Element404 from "../components/Pages/404/Element404";
 import Layout from "./../components/Layout/Layout/Layout";
 const Page = () => {
 	return (
@@ -13,9 +14,7 @@ const Page = () => {
 				type: "website",
 			}}
 		>
-			{/* <Head>
-				
-			</Head> */}
+			<Element404 content="Strona nie została znaleziona" />
 		</Layout>
 	);
 };

@@ -1,0 +1,44 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: center;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	row-gap: 5rem;
+	padding: 4rem 1.5rem 2rem 1.5rem;
+	position: relative;
+	z-index: 0;
+	&::after {
+		background-image: linear-gradient(
+			to bottom,
+			rgb(85, 73, 241, 0.15),
+			rgb(85, 73, 241, 0.3)
+		);
+		border-radius: 3rem 3rem 0 0;
+		top: 0;
+		height: 80%;
+		width: 100%;
+		z-index: -1;
+	}
+	& > * {
+		width: 100%;
+	}
+	& > ul {
+		align-items: start;
+		// background: orangered;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+	}
+	@media only screen {
+		@media (max-width: 710px) {
+			&::after {
+				height: 40%;
+			}
+			& > ul {
+				// flex-flow: column;
+				row-gap: 2rem;
+			}
+		}
+	}
+}

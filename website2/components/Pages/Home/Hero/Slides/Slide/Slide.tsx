@@ -30,7 +30,7 @@ const Slide = ({
 			<section className={styles.content}>
 				<h2>{title}</h2>
 				<p dangerouslySetInnerHTML={{ __html: content }} />
-				<ButtonPrimary path={path} title={button} variant="tertiary" />
+				{/* <ButtonPrimary path={path} title={button} variant="tertiary" /> */}
 			</section>
 		</li>
 	);

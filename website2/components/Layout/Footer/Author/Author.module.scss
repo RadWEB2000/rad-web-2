@@ -1,0 +1,12 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 6rem;
+	width: 100%;
+	& > p {
+		font-size: 2rem;
+		font-weight: 900;
+	}
+}
