@@ -41,4 +41,27 @@
 			}
 		}
 	}
+	@media only screen {
+		@media (max-width: 750px) {
+			& > li {
+				justify-content: center;
+			}
+		}
+		@media (max-width: 750px) {
+			& > li {
+				& > a {
+					font-size: 1.6rem;
+				}
+			}
+		}
+		@media (max-width: 390px) {
+			& > li {
+				& > a {
+					font-size: 1.5rem;
+					font-weight: 500;
+					text-align: center;
+				}
+			}
+		}
+	}
 }

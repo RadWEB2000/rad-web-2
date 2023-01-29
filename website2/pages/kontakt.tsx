@@ -34,12 +34,10 @@ const Page = () => {
 							email={contact.pl.main.informations.email}
 							phone={contact.pl.main.informations.phone}
 						/>
+						<Cards />
 					</div>
 					<div>
 						<Form />
-					</div>
-					<div>
-						<Cards />
 					</div>
 				</Wrapper>
 			</main>

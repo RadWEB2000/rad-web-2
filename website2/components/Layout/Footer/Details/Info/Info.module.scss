@@ -46,4 +46,25 @@
 			}
 		}
 	}
+	@media only screen {
+		@media (max-width: 430px) {
+			& > address {
+				& > ul {
+					flex-flow: row;
+					& > li {
+						& > a {
+							flex-flow: row;
+							& > span {
+								font-size: 4rem;
+								width: 4.5rem;
+							}
+							& > p {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

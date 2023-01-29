@@ -20,4 +20,18 @@
 			text-align: center;
 		}
 	}
+	@media only screen {
+		@media (max-width: 750px) {
+			& > .content {
+				align-items: center;
+				display: flex;
+				flex-flow: column-reverse;
+				row-gap: 3rem;
+				padding: 2rem 0;
+				& > * {
+					width: 100%;
+				}
+			}
+		}
+	}
 }
