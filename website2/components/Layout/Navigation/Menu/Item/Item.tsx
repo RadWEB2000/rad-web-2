@@ -10,7 +10,7 @@ const Item = ({
 	path,
 	title,
 	variant,
-}: IntItem): ReactElement | null | undefined => {
+}: IntItem): ReactElement => {
 	const expandLinkHandle = () => {
 		menu.close, expandClose;
 	};
@@ -57,6 +57,8 @@ const Item = ({
 				</Link>
 			</li>
 		);
-	} else null;
+	} else {
+		return <></>;
+	}
 };
 export default Item;
