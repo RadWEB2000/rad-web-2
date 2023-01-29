@@ -66,11 +66,7 @@ const Page = () => {
 						<h3>Jakiś tytuł</h3>
 				`}
 				/>
-				<Code>
-					const a = "2"
-					<br />
-					php "Hello World"
-				</Code>
+
 				<Content
 					content={`
 						<h3>Jakiś tytuł</h3>
