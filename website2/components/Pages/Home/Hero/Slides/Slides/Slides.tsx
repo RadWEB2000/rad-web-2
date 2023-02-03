@@ -1,26 +1,26 @@
 import Slide from "../Slide/Slide";
 import styles from "./Slides.module.scss";
-import { home } from "./../../../../../../data/pages/home";
 import { RxTrackNext, RxTrackPrevious } from "react-icons/rx";
 import { useEffect, useState } from "react";
+import { homepage } from "./../../../../../../data/pages/homepage";
 const Slides = () => {
 	const [currentSlide, setCurrentSlide] = useState(0);
-	const { button, cards } = home.pl.hero.slides;
+	const { slides } = homepage.pl.content.hero;
 	return (
 		<div className={styles.wrapper}>
 			<Slide
-				button={button}
-				content={cards[currentSlide].content}
-				image={cards[currentSlide].image}
-				path={cards[currentSlide].path}
-				title={cards[currentSlide].title}
+				button={slides[currentSlide].button}
+				content={slides[currentSlide].content}
+				image={slides[currentSlide].image}
+				path={slides[currentSlide].path}
+				title={slides[currentSlide].title}
 			/>
 			<div className={styles.buttons}>
 				<button
 					className={styles.button}
 					onClick={() =>
 						setCurrentSlide(
-							currentSlide <= 0 ? cards.length - 1 : currentSlide - 1
+							currentSlide <= 0 ? slides.length - 1 : currentSlide - 1
 						)
 					}
 				>
@@ -31,7 +31,7 @@ const Slides = () => {
 					className={styles.button}
 					onClick={() =>
 						setCurrentSlide(
-							currentSlide >= cards.length - 1 ? 0 : currentSlide + 1
+							currentSlide >= slides.length - 1 ? 0 : currentSlide + 1
 						)
 					}
 				>

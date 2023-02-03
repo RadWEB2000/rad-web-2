@@ -1,6 +1,6 @@
 export interface IntPersonCardContactPage {
 	email: {
-		adress: string;
+		address: string;
 		name: string;
 	};
 	fullname: {
@@ -11,7 +11,7 @@ export interface IntPersonCardContactPage {
 	job: string;
 	path: string;
 	phone: {
-		adress: string;
+		address: string;
 		name: string;
 	};
 }

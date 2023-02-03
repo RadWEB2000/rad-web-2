@@ -2,14 +2,13 @@ import ContactField from "../../../Utilities/Forms/ContactField/ContactField";
 import styles from "./Form.module.scss";
 import SubmitButton from "../../../Utilities/Buttons/SubmitButton/SubmitButton";
 import Terms from "../Terms/Terms";
-import { contact } from "../../../../data/pages/contact";
 import { RiSendPlaneLine } from "react-icons/ri";
-const Form = () => {
-	const { fullname, email, phone, subject, message } =
-		contact.pl.main.form.fields;
+import { IntForm } from "./interface";
+const Form = ({ fields, button, rodo, title }: IntForm) => {
+	const { fullname, email, phone, subject, message } = fields;
 	return (
 		<div className={styles.wrapper}>
-			<h2>Formularz kontaktowy</h2>
+			<h2>{title}</h2>
 			<form action="" autoComplete="off">
 				<div>
 					<ContactField
@@ -50,10 +49,10 @@ const Form = () => {
 						variant="textarea"
 					/>
 				</div>
-				<Terms content={contact.pl.main.form.rodo} />
+				<Terms content={rodo} />
 				<div>
 					<SubmitButton
-						content={contact.pl.main.form.button}
+						content={button}
 						icon={<RiSendPlaneLine />}
 						isValid={true}
 					/>

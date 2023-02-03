@@ -1,67 +1,64 @@
 import Blog from "../components/Pages/Home/Blog/Blog/Blog";
 import Trailer from "../components/Pages/Home/Trailer/Trailer";
 import Projects from "../components/Pages/Home/Projects/Projects/Projects";
-import SectionHomePage from "../components/Utilities/Sections/SectionHomePage/SectionHomePage";
 import Layout from "./../components/Layout/Layout/Layout";
 import Hero from "./../components/Pages/Home/Hero/Hero/Hero";
-import { home } from "./../data/pages/home";
 import { posts } from "./../data/pages/posts";
 import { projects } from "../data/pages/projects";
 import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
-import { testimonials } from "./../data/pages/testimonials";
 import About from "../components/Pages/Home/About/About";
-import { peoplesCards } from "./../data/pages/peoplesCards";
+import { persons } from "../data/utils/persons";
+import { homepage } from "../data/pages/homepage";
 const Page = () => {
-	const { pl } = home;
 	const { cards } = posts.pl;
 	return (
 		<Layout
-			image="https://cdn.pixabay.com/photo/2016/11/29/06/15/plans-1867745_960_720.jpg"
+			image={homepage.pl.seo.image}
 			meta={{
-				description: "",
-				title: "",
+				description: homepage.pl.seo.meta.description,
+				title: homepage.pl.seo.meta.title,
 			}}
 			og={{
-				description: "",
-				title: "",
+				description: homepage.pl.seo.og.description,
+				title: homepage.pl.seo.og.title,
 				type: "website",
 			}}
 		>
 			<Hero
-				buttons={pl.hero.buttons}
-				content={pl.hero.content}
-				title={pl.hero.title}
+				buttons={homepage.pl.content.hero.buttons}
+				content={homepage.pl.content.hero.content}
+				title={homepage.pl.content.hero.title}
 			/>
 			<main>
-				<Trailer movie="/assets/movie/trailer.mp4" />
+				<Trailer movie={homepage.pl.content.trailer} />
 				<Blog
 					button={{
-						path: "/blog",
-						title: "Więcej",
+						path: homepage.pl.content.blog.button.path,
+						title: homepage.pl.content.blog.button.title,
 					}}
 					cards={[...cards]}
-					content={`Soluta sit magnam corporis iusto optio nihil excepturi in. Est itaque aut atque ipsam ea et nam. Esse iusto odio sint ut cupiditate est veritatis est. Molestiae molestias et autem rem et iure commodi voluptas velit. Quibusdam a qui eum consequatur ullam distinctio. Deserunt porro cupiditate ut. Dolorum excepturi suscipit. Consectetur temporibus placeat. Optio quas voluptatem dolores et et soluta vel aspernatur. Aut dolores ullam aliquam odit occaecati voluptas maxime labore quis. Ea qui quo voluptatem dolorem ratione nam laboriosam doloremque voluptas.`}
-					title="Blog"
+					content={homepage.pl.content.blog.content}
+					title={homepage.pl.content.blog.title}
 				/>
 				<About
 					button={{
-						path: "",
-						title: "więcej",
+						path: homepage.pl.content.about.button.path,
+						title: homepage.pl.content.about.button.title,
 					}}
-					cards={peoplesCards.pl}
-					content={`Quia velit libero deserunt reprehenderit quis animi dolorem tempore. Corrupti et magnam voluptates eaque repellat minus explicabo et aut. Dolor corporis unde non beatae deleniti nesciunt quaerat est. Doloremque tenetur illo exercitationem eaque non. Officia est aut ea ut nulla. Ipsa iste dolorem tempore dolor.`}
-					title="Kim jesteśmy?"
+					cards={persons.pl}
+					content={homepage.pl.content.about.content}
+					title={homepage.pl.content.about.title}
 				/>
 				<Projects
-					title="Projekty i realizacje komercyjne"
-					content="Quia iusto quia quam est. Ad ea ad in. Odit voluptas aut possimus placeat laborum voluptas accusantium. Voluptatibus corrupti omnis est dolore rem et dolor a dolorem. In qui exercitationem voluptas quisquam id. Neque aut similique quo impedit quod consequatur aut est."
+					title={homepage.pl.content.projects.title}
+					content={homepage.pl.content.projects.content}
 					button={{
-						path: "/projekty",
-						title: "więcej",
+						path: homepage.pl.content.projects.button.path,
+						title: homepage.pl.content.projects.button.title,
 					}}
 					cards={projects.pl.main.projects.cards}
 				/>
-				<Testimonials cards={testimonials.pl} />
+				<Testimonials cards={homepage.pl.content.testimonials} />
 			</main>
 		</Layout>
 	);

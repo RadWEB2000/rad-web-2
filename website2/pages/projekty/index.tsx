@@ -3,22 +3,26 @@ import Cards from "../../components/Pages/Projects/Cards/Cards";
 import ProjectPageCard from "../../components/Utilities/Cards/ProjectCards/ProjectPageCard/ProjectPageCard";
 import { projects } from "../../data/pages/projects";
 import HeroPage from "./../../components/Utilities/Hero/HeroPage/HeroPage";
+import { projectspage } from "./../../data/pages/projectspage";
 const Page = () => {
 	const { pl } = projects;
 	return (
 		<Layout
-			image={pl.main.seo.image}
+			image={projectspage.pl.main.seo.image}
 			meta={{
-				description: pl.main.seo.meta.description,
-				title: pl.main.seo.meta.title,
+				description: projectspage.pl.main.seo.meta.description,
+				title: projectspage.pl.main.seo.meta.title,
 			}}
 			og={{
-				description: pl.main.seo.og.description,
-				title: pl.main.seo.og.title,
+				description: projectspage.pl.main.seo.og.description,
+				title: projectspage.pl.main.seo.og.title,
 				type: "website",
 			}}
 		>
-			<HeroPage content={pl.main.hero.content} title={pl.main.hero.title} />
+			<HeroPage
+				content={projectspage.pl.main.content.hero.content}
+				title={projectspage.pl.main.content.hero.title}
+			/>
 			<main>
 				<Cards>
 					{pl.main.projects.cards.map(

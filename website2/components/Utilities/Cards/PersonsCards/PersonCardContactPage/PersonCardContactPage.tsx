@@ -37,7 +37,7 @@ const PersonCardContactPage = ({
 					<h3 className={styles.jobs}>{job}</h3>
 				</section>
 				<div className={styles.contact}>
-					<Link className={styles.contactItem} href={`mailto:${email.adress}`}>
+					<Link className={styles.contactItem} href={`mailto:${email.address}`}>
 						<i>
 							<span>
 								<CiMail />
@@ -45,7 +45,7 @@ const PersonCardContactPage = ({
 						</i>
 						{email.name}
 					</Link>
-					<Link className={styles.contactItem} href={`mailto:${phone.adress}`}>
+					<Link className={styles.contactItem} href={`tel:${phone.address}`}>
 						<i>
 							<span>
 								<CiPhone />

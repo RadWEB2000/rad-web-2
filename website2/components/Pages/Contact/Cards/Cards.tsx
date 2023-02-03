@@ -1,11 +1,10 @@
 import PersonCardContactPage from "../../../Utilities/Cards/PersonsCards/PersonCardContactPage/PersonCardContactPage";
 import styles from "./Cards.module.scss";
-import { peoplesCards } from "../../../../data/pages/peoplesCards";
-const Cards = () => {
-	const { pl } = peoplesCards;
+import { IntCards } from "./interface";
+const Cards = ({ cards }: IntCards) => {
 	return (
 		<ul className={styles.wrapper}>
-			{pl.map(({ email, fullname, image, jobs, path, phone }) => (
+			{cards.map(({ email, fullname, image, jobs, path, phone }) => (
 				<PersonCardContactPage
 					email={{ ...email }}
 					fullname={{ ...fullname }}

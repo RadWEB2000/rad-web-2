@@ -16,9 +16,6 @@
 			grid-column: 8/-1;
 			position: relative;
 		}
-		&:nth-of-type(3) {
-			grid-row: 2;
-		}
 	}
 	@media only screen {
 		@media (max-width: 1175px) {

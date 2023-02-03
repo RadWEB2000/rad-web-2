@@ -1,37 +1,37 @@
 import Layout from "../../components/Layout/Layout/Layout";
 import Mission from "../../components/Pages/AboutUs/Page/Mission/Mission";
 import PersonsCards from "../../components/Pages/AboutUs/Page/PersonsCards/PersonsCards";
+import { aboutpage } from "../../data/pages/aboutpage";
 import HeroPage from "./../../components/Utilities/Hero/HeroPage/HeroPage";
-import { about_us } from "./../../data/pages/about_us";
+import { persons } from "./../../data/utils/persons";
 const Page = () => {
-	const { pl } = about_us;
 	return (
 		<Layout
-			image={pl.page.seo.image}
+			image={aboutpage.pl.main.seo.image}
 			meta={{
-				description: pl.page.seo.meta.description,
-				title: pl.page.seo.meta.title,
+				description: aboutpage.pl.main.seo.meta.description,
+				title: aboutpage.pl.main.seo.meta.title,
 			}}
 			og={{
-				description: pl.page.seo.og.description,
-				title: pl.page.seo.og.title,
+				description: aboutpage.pl.main.seo.og.description,
+				title: aboutpage.pl.main.seo.og.title,
 				type: "website",
 			}}
 		>
 			<HeroPage
-				content={pl.page.content.hero.content}
-				title={pl.page.content.hero.title}
+				content={aboutpage.pl.main.content.hero.content}
+				title={aboutpage.pl.main.content.hero.title}
 			/>
 			<main>
 				<Mission
-					cards={pl.page.content.mission.cards}
-					content={pl.page.content.mission.content}
-					title={pl.page.content.mission.title}
+					cards={aboutpage.pl.main.content.mission.cards}
+					content={aboutpage.pl.main.content.mission.content}
+					title={aboutpage.pl.main.content.mission.title}
 				/>
 				<PersonsCards
-					cards={pl.page.content.peoplesCards}
-					content={`Soluta exercitationem vel ad quidem totam vel excepturi earum. Omnis mollitia dolorem rerum aliquid dolor quisquam deleniti. Rerum autem nesciunt laboriosam. Iste non repellendus beatae praesentium iste. Ipsa tenetur quia quod quaerat ipsam ad vel. Delectus eos ut voluptatem ullam ut. Vel cum ut quos sequi. Pariatur magnam dicta voluptas.`}
-					title="Zespół"
+					cards={persons.pl}
+					content={aboutpage.pl.main.content.team.content}
+					title={aboutpage.pl.main.content.team.title}
 				/>
 			</main>
 		</Layout>

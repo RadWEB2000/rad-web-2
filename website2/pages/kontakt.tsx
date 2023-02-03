@@ -2,42 +2,48 @@ import Cards from "../components/Pages/Contact/Cards/Cards";
 import Form from "../components/Pages/Contact/Form/Form";
 import Informations from "../components/Pages/Contact/Informations/Informations";
 import Wrapper from "../components/Pages/Contact/Wrapper/Wrapper";
-import ContactField from "../components/Utilities/Forms/ContactField/ContactField";
 import HeroPage from "../components/Utilities/Hero/HeroPage/HeroPage";
-import { contact } from "../data/pages/contact";
+import { contactpage } from "../data/pages/contactpage";
 import { projects } from "../data/pages/projects";
+import { persons } from "../data/utils/persons";
 import Layout from "./../components/Layout/Layout/Layout";
-import { home } from "./../data/pages/home";
-import { posts } from "./../data/pages/posts";
 const Page = () => {
 	const { pl } = projects;
 	return (
 		<Layout
-			image="https://cdn.pixabay.com/photo/2016/11/29/06/15/plans-1867745_960_720.jpg"
+			image={contactpage.pl.seo.image}
 			meta={{
-				description: "",
-				title: "",
+				description: contactpage.pl.seo.meta.description,
+				title: contactpage.pl.seo.meta.title,
 			}}
 			og={{
-				description: "",
-				title: "",
+				description: contactpage.pl.seo.og.description,
+				title: contactpage.pl.seo.og.title,
 				type: "website",
 			}}
 		>
-			<HeroPage content={pl.main.hero.content} title={pl.main.hero.title} />
+			<HeroPage
+				content={contactpage.pl.content.hero.content}
+				title={contactpage.pl.content.hero.title}
+			/>
 			<main>
 				<Wrapper>
 					<div>
 						<Informations
-							address={contact.pl.main.informations.address}
-							content={contact.pl.main.informations.content}
-							email={contact.pl.main.informations.email}
-							phone={contact.pl.main.informations.phone}
+							address={contactpage.pl.content.informations.address}
+							content={contactpage.pl.content.informations.content}
+							email={contactpage.pl.content.informations.email}
+							phone={contactpage.pl.content.informations.phone}
 						/>
-						<Cards />
+						<Cards cards={[...persons.pl]} />
 					</div>
 					<div>
-						<Form />
+						<Form
+							button={contactpage.pl.content.form.button}
+							fields={contactpage.pl.content.form.fields}
+							rodo={contactpage.pl.content.form.rodo}
+							title={contactpage.pl.content.form.title}
+						/>
 					</div>
 				</Wrapper>
 			</main>

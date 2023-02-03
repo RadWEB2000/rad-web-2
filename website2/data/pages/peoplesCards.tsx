@@ -33,7 +33,7 @@ export const peoplesCards: iPeoplesCards = {
 			},
 			image:
 				"https://scontent-frx5-1.xx.fbcdn.net/v/t39.30808-6/276023280_313097927587919_115999904089054848_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=ETAvIyzRkr4AX-M0-Q0&_nc_ht=scontent-frx5-1.xx&oh=00_AfAuF5KBIEooRu3_HiL6tCI1OjoXoCDp60SqCmjb6Dtt2Q&oe=63D8F130",
-			jobs: "Front-end & Web developer, specjalista SEO/SEM ",
+			jobs: "Front-end & Web developer, SEO/SEM Specialist",
 			path: "/o-nas/radoslaw-adamczyk",
 			phone: {
 				adress: "+48794100413",
