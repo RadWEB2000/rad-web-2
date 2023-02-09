@@ -2,6 +2,7 @@ import Head from "next/head";
 import { ReactElement } from "react";
 import { IntSeo } from "./interface";
 const Seo = ({ canonical, image, meta, og, robots }: IntSeo): ReactElement => {
+	console.log(meta.title);
 	return (
 		<Head>
 			<title>{meta.title}</title>

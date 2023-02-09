@@ -17,11 +17,15 @@ interface IntPersonElement {
 	};
 }
 interface IntPersons {
-	pl: IntPersonElement[];
+	pl: {
+		adamczyk_radoslaw: IntPersonElement;
+		bukowiecki_filip: IntPersonElement;
+		paluch_klaudia: IntPersonElement;
+	};
 }
 export const persons: IntPersons = {
-	pl: [
-		{
+	pl: {
+		adamczyk_radoslaw: {
 			cities: "Śrem, Poznań, Kraków",
 			email: {
 				address: "radoslaw.adamczyk2000@gmail.com",
@@ -39,7 +43,7 @@ export const persons: IntPersons = {
 				name: "Telefon",
 			},
 		},
-		{
+		bukowiecki_filip: {
 			cities: "Poznań, Wrocław, Warszawa",
 			email: {
 				address: "filip.bukowiecki@gmail.com",
@@ -57,7 +61,7 @@ export const persons: IntPersons = {
 				name: "Telefon",
 			},
 		},
-		{
+		paluch_klaudia: {
 			cities: "Biała Podlaska, Łódź, Warszawa, Bydgoszcz",
 			email: {
 				address: "kawaii.neko.sheart@gmail.com",
@@ -75,5 +79,5 @@ export const persons: IntPersons = {
 				name: "Telefon",
 			},
 		},
-	],
+	},
 };

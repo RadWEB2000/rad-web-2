@@ -45,6 +45,12 @@ main {
 	margin: 5rem auto 15rem;
 	max-width: 95vw;
 	width: 120rem;
+	&.homepage > * {
+		margin: 15rem auto;
+		&:first-of-type {
+			margin: 0 auto 15rem;
+		}
+	}
 	& > .section {
 		margin: 6rem auto;
 		&:first-of-type {

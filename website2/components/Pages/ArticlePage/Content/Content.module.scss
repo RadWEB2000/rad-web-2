@@ -1,100 +1,64 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	hr {
-		background-image: linear-gradient(
-			to top right,
-			$white,
-			$white,
-			$white,
-			$quatenaryButtonColor,
-			$white,
-			$white,
-			$white
-		);
-		border: none;
-		display: block;
-		height: 0.5rem;
-		margin: 2rem auto;
-		opacity: 0.3;
-		width: 90%;
+	align-items: start;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	row-gap: 3rem;
+	& > * {
+		width: 100%;
 	}
-	& > h2,
-	& > h3 {
-		font-weight: 700;
-		line-height: 2.2;
+	section {
 	}
-	& > h2 {
+	h2 {
 		color: $tertiaryButtonColor;
-		font-size: 3rem;
+		font-size: 3.5rem;
+		font-weight: 900;
+		line-height: 2.5;
 	}
-	& > h3 {
+	h3 {
+		color: $secondaryButtonColor;
 		font-size: 2.7rem;
+		font-weight: 700;
+		line-height: 2;
 	}
-	& > p {
-		color: $quatenaryButtonColor;
-		font-size: 1.7rem;
-		line-height: 1.7;
-		a {
-			color: $primaryButtonColor;
-			text-decoration: underline;
-			transition: 0.3s linear color;
-			&:focus,
-			&:focus-within,
-			&:hover {
-				color: #3772df;
-			}
-		}
-		a,
-		b,
-		strong {
-			font-weight: 600;
-		}
+	p {
+		font-size: 1.9rem;
+		line-height: 2;
 	}
-	ol,
-	ul {
-		display: flex;
-		flex-flow: column;
-		margin: 0 auto;
-		width: 90%;
-		& > li {
-			line-height: 1.7;
-		}
-	}
-	ol {
-		& > li {
-			list-style: decimal;
-		}
+	b {
+		font-size: 1.9rem;
+		line-height: 2;
 	}
 	ul {
-		& > li {
+		padding: 1.5rem;
+		li {
 			list-style: circle;
+			list-style-position: inside;
+			font-size: 1.9rem;
+			line-height: 1.7;
+			b,
+			strong {
+				font-weight: 600;
+				line-height: 1.7;
+				display: inline-block;
+			}
 		}
 	}
-	@media only screen {
-		@media (max-width: 350px) {
-			& > h2,
-			& > h3 {
-				line-height: 1.7;
-			}
-			& > h2 {
-				color: $tertiaryButtonColor;
-				font-size: 2.7rem;
-			}
-			& > h3 {
-				font-size: 2.2rem;
-			}
-			& > p {
-				font-size: 1.55rem;
-				line-height: 1.7;
-			}
-			ol,
-			ul {
-				width: 85%;
-				& > li {
-					font-size: 1.55rem;
-					line-height: 1.7;
-				}
-			}
-		}
+	pre {
+		background: black;
+		color: #fff;
+		margin: 2rem auto;
+		text-align: start;
+		padding: 2rem 1.5rem;
+		width: 95%;
+	}
+	code {
+		text-align: start;
+		font-family: inherit;
+		font-style: normal;
+		text-align: start;
+		line-height: 1.7;
+		width: 100%;
 	}
 }

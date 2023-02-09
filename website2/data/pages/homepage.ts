@@ -89,7 +89,7 @@ export const homepage = {
 					path: "/blog",
 					title: "więcej",
 				},
-				content: `Aut corporis enim. Laborum corrupti facilis pariatur. Qui minima non itaque tempore laudantium. Consequatur id quis molestiae maiores debitis accusamus praesentium. Repellat aspernatur perspiciatis quibusdam assumenda sit ipsam officiis commodi occaecati. Qui beatae sequi saepe.`,
+				content: `Programowanie i pozycjonowanie są niezwykle prężnie rozwijającymi się dziedzinami nauki. W programowaniu często pojawiają się nowe paczki usprawniające prace deweloperów. Natomiast proces pozycjonowania poddawany jest przez wyszukiwarkę Google co raz to nowszym rewolucjom. Na szczęście z blogiem RadWEB zawsze będziesz na bieżąco z nowinkami.`,
 				title: "Blog - bądź na bieżąco z internetem",
 			},
 			about: {
@@ -105,7 +105,7 @@ export const homepage = {
 					path: "/projekty",
 					title: "więcej",
 				},
-				content: `Aut corporis enim. Laborum corrupti facilis pariatur. Qui minima non itaque tempore laudantium. Consequatur id quis molestiae maiores debitis accusamus praesentium. Repellat aspernatur perspiciatis quibusdam assumenda sit ipsam officiis commodi occaecati. Qui beatae sequi saepe.`,
+				content: `Praktyka czyni mistrza. Projekty i realizacje RadWEB z zakresu stron i aplikacji internetowych są najlepszym tego przykładem, ponieważ na ich przykładzie można zauważyć rozwój wiedzy oraz kompetencji.`,
 				title: "Projekty i realizacje komercyjne",
 			},
 			testimonials: [

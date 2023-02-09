@@ -2,6 +2,7 @@ import Layout from "../../components/Layout/Layout/Layout";
 import Mission from "../../components/Pages/AboutUs/Page/Mission/Mission";
 import PersonsCards from "../../components/Pages/AboutUs/Page/PersonsCards/PersonsCards";
 import { aboutpage } from "../../data/pages/aboutpage";
+import { getStructuredDataWebsite } from "../../lib/getStructuredData";
 import HeroPage from "./../../components/Utilities/Hero/HeroPage/HeroPage";
 import { persons } from "./../../data/utils/persons";
 const Page = () => {
@@ -17,6 +18,7 @@ const Page = () => {
 				title: aboutpage.pl.main.seo.og.title,
 				type: "website",
 			}}
+			schema={getStructuredDataWebsite({ url: "/o-nas" })}
 		>
 			<HeroPage
 				content={aboutpage.pl.main.content.hero.content}
@@ -29,7 +31,7 @@ const Page = () => {
 					title={aboutpage.pl.main.content.mission.title}
 				/>
 				<PersonsCards
-					cards={persons.pl}
+					cards={Object.values(persons.pl)}
 					content={aboutpage.pl.main.content.team.content}
 					title={aboutpage.pl.main.content.team.title}
 				/>

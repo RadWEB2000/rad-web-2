@@ -16,7 +16,7 @@ export const projectspage = {
 			content: {
 				hero: {
 					title: "Projekty i realizacje",
-					content: `Necessitatibus vitae et doloribus voluptatem quia commodi. Aut eum beatae omnis ex id. Omnis possimus aut eaque molestias vel modi est beatae. Ipsam voluptatum tempora impedit. Pariatur possimus est blanditiis fuga ullam a aut velit ratione. Porro beatae vel ducimus inventore. Et expedita consequuntur necessitatibus vel iure voluptatem velit maxime enim. Tempore at unde. Autem nostrum eius iure inventore.`,
+					content: `Praktyka czyni mistrza - te słowa jasno określają rozwój RadWEB. Znajdziesz tutaj realizacje z zakresu tworzenia, pozycjonowania oraz optymalizacji stron internetowych. Tworzę aplikacje od warsty wizualnej oraz serwerowej czyli fachowo mówiąc front-end i back-end. Jestem zaprzyjaźniony z kilkoma jęzkami programowania tj. z JavaScript oraz PHP. Nie oznacza to, że jestem ograniczony jedynie do tych dwóch technologii ponieważ rozwijam się w innych językach programowania takimi jak Ruby czy Python.`,
 				},
 			},
 		},

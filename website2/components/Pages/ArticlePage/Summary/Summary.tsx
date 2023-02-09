@@ -7,7 +7,7 @@ const Summary = ({ content, list, title }: IntSummary): ReactElement => {
 			<h2>{title}</h2>
 			{content && <p dangerouslySetInnerHTML={{ __html: content }} />}
 			<ul>
-				{list.map((item, index) => (
+				{list?.map((item, index) => (
 					<li dangerouslySetInnerHTML={{ __html: item }} key={index} />
 				))}
 			</ul>

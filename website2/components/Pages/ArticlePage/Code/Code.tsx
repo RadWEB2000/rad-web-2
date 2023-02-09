@@ -1,11 +1,11 @@
 import styles from "./Code.module.scss";
 import { IntCode } from "./interface";
 import { ReactElement } from "react";
-const Code = ({ children }: IntCode): ReactElement => {
+const Code = ({ code }: IntCode): ReactElement => {
 	return (
 		<div className={styles.wrapper}>
 			<pre>
-				<code>{children}</code>
+				<code dangerouslySetInnerHTML={{ __html: code }} />
 			</pre>
 		</div>
 	);

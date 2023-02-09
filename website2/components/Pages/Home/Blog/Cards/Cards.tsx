@@ -21,21 +21,20 @@ const Cards = ({ cards }: IntCards): ReactElement => {
 			});
 		}
 	}, []);
+	console.log(cards);
 	return (
 		<ul className={styles.wrapper}>
-			{cards
-				.slice(0, articlesNumber)
-				.map(({ category, excerpt, date, image, path, title }) => (
-					<BlogCardBlogPage
-						excerpt={excerpt}
-						category={category}
-						date={date}
-						image={image}
-						key={title}
-						path={path}
-						title={title}
-					/>
-				))}
+			{cards.slice(0, articlesNumber).map(({ hero, path }) => (
+				<BlogCardBlogPage
+					excerpt={hero.excerpt}
+					category={``}
+					date={hero.date}
+					image={hero.image}
+					key={hero.title}
+					path={path}
+					title={hero.title}
+				/>
+			))}
 		</ul>
 	);
 };

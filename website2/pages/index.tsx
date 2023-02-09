@@ -9,8 +9,9 @@ import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
 import About from "../components/Pages/Home/About/About";
 import { persons } from "../data/utils/persons";
 import { homepage } from "../data/pages/homepage";
+import Head from "next/head";
+import { getStructuredDataOrganization } from "../lib/getStructuredData";
 const Page = () => {
-	const { cards } = posts.pl;
 	return (
 		<Layout
 			image={homepage.pl.seo.image}
@@ -23,20 +24,21 @@ const Page = () => {
 				title: homepage.pl.seo.og.title,
 				type: "website",
 			}}
+			schema={getStructuredDataOrganization()}
 		>
 			<Hero
 				buttons={homepage.pl.content.hero.buttons}
 				content={homepage.pl.content.hero.content}
 				title={homepage.pl.content.hero.title}
 			/>
-			<main>
+			<main className="homepage">
 				<Trailer movie={homepage.pl.content.trailer} />
 				<Blog
 					button={{
 						path: homepage.pl.content.blog.button.path,
 						title: homepage.pl.content.blog.button.title,
 					}}
-					cards={[...cards]}
+					cards={[...posts.pl.articles]}
 					content={homepage.pl.content.blog.content}
 					title={homepage.pl.content.blog.title}
 				/>
@@ -45,7 +47,7 @@ const Page = () => {
 						path: homepage.pl.content.about.button.path,
 						title: homepage.pl.content.about.button.title,
 					}}
-					cards={persons.pl}
+					cards={Object.values(persons.pl)}
 					content={homepage.pl.content.about.content}
 					title={homepage.pl.content.about.title}
 				/>

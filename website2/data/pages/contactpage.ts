@@ -15,7 +15,8 @@ export const contactpage = {
 		content: {
 			hero: {
 				title: "Zaufaj specjalistom",
-				content: `Necessitatibus vitae et doloribus voluptatem quia commodi. Aut eum beatae omnis ex id. Omnis possimus aut eaque molestias vel modi est beatae. Ipsam voluptatum tempora impedit. Pariatur possimus est blanditiis fuga ullam a aut velit ratione. Porro beatae vel ducimus inventore. Et expedita consequuntur necessitatibus vel iure voluptatem velit maxime enim. Tempore at unde. Autem nostrum eius iure inventore.`,
+				content: `Chcesz zrealizować projekt strony bądź aplikacji internetowej? Planujesz odświeżenie strony internetowej? W tym temacie nie powinno się zawierzać losowym osobom, a raczej doświadczonym specjalistom RadWEB.
+				<b>Nie wahaj się i napisz już teraz!</b>`,
 			},
 			form: {
 				fields: {

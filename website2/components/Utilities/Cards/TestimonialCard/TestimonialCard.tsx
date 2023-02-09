@@ -2,6 +2,7 @@ import getDate from "./../../../../lib/getDate";
 import Image from "next/image";
 import styles from "./TestimonialCard.module.scss";
 import { IntTestimonialCard } from "./interface";
+import { motion } from "framer-motion";
 import { ReactElement } from "react";
 const TestimonialCard = ({
 	company,
@@ -16,18 +17,34 @@ const TestimonialCard = ({
 		variant: "shortname",
 	});
 	return (
-		<li className={styles.wrapper}>
+		<motion.li
+			className={styles.wrapper}
+			initial={{
+				opacity: 0,
+				visibility: "hidden",
+				y: -20,
+			}}
+			whileInView={{
+				opacity: 1,
+				visibility: "visible",
+				y: 0,
+				transition: {
+					delay: 0.4,
+				},
+			}}
+			viewport={{ once: true }}
+		>
 			<div className={styles.info}>
 				<figure>
 					<Image
-						alt=""
+						alt={`${fullname.firstname} ${fullname.lastname} - ${company} - ${day} ${month} ${year}`}
 						fill
 						src={image}
 						style={{
 							objectFit: "cover",
 							objectPosition: "center",
 						}}
-						title=""
+						title={`${fullname.firstname} ${fullname.lastname} - ${company} - ${day} ${month} ${year}`}
 						quality={90}
 					/>
 				</figure>
@@ -42,7 +59,7 @@ const TestimonialCard = ({
 			<div className={styles.date}>
 				<p>{`${day} ${month} ${year}`}</p>
 			</div>
-		</li>
+		</motion.li>
 	);
 };
 export default TestimonialCard;

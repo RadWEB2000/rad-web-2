@@ -8,5 +8,13 @@ export interface IntCard {
 	variant: "programming" | "seo" | "copywriting" | "ads";
 }
 export interface IntCards {
-	cards: IntCard[];
+	cards: {
+		hero: {
+			excerpt: string;
+			date: string;
+			image: string;
+			title: string;
+		};
+		path: string;
+	}[];
 }

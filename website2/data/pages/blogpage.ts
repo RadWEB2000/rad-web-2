@@ -20,7 +20,7 @@ export const blogpage = {
 			content: {
 				hero: {
 					title: "Blog",
-					content: `Necessitatibus vitae et doloribus voluptatem quia commodi. Aut eum beatae omnis ex id. Omnis possimus aut eaque molestias vel modi est beatae. Ipsam voluptatum tempora impedit. Pariatur possimus est blanditiis fuga ullam a aut velit ratione. Porro beatae vel ducimus inventore. Et expedita consequuntur necessitatibus vel iure voluptatem velit maxime enim. Tempore at unde. Autem nostrum eius iure inventore.`,
+					content: `Świat programowania, pozycjonowania - i co może zdziwić - historii mimo częstych rewolucji nadal jest w trakcie ewolucji. W związku z tym należy dokładać wszelkich starań aby być cały czas na bieżąco. Najlepszym miejscem do poznawania ciekawostek z tego świata bezapelacjnie jest blog, a w szczególności blog RadWEB, gdzie poza suchymi informacjami poznasz konkretne zagadnienia w możliwie jak najszerszym kontekście.`,
 				},
 			},
 		},

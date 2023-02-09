@@ -1,3 +1,3 @@
 export interface IntCode {
-	children: any;
+	code: string;
 }

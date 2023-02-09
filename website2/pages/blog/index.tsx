@@ -23,6 +23,7 @@ const Page = () => {
 				title: blogpage.pl.main.seo.og.title,
 				type: "website",
 			}}
+			schema={{}}
 		>
 			<HeroPage
 				content={blogpage.pl.main.content.hero.content}
@@ -31,24 +32,20 @@ const Page = () => {
 			<main>
 				<SearchField handle={setSearchValue} placeholder={`Szukaj`} />
 				<Cards>
-					{plPosts.cards
+					{posts.pl.articles
 						.filter(
 							(item) =>
-								item.category
-									.toLowerCase()
-									.includes(searchValue.toLowerCase()) ||
-								item.date.toLowerCase().includes(searchValue.toLowerCase()) ||
-								item.excerpt
+								item.hero.excerpt
 									.toLowerCase()
 									.includes(searchValue.toLowerCase()) ||
 								item.title.toLowerCase().includes(searchValue.toLowerCase())
 						)
-						.map(({ category, date, excerpt, image, path, title }) => (
+						.map(({ hero, title, path }) => (
 							<BlogCardBlogPage
-								category={category}
-								date={date}
-								excerpt={excerpt}
-								image={image}
+								category={``}
+								date={hero.date}
+								excerpt={hero.excerpt}
+								image={hero.image}
 								key={title}
 								path={path}
 								title={title}

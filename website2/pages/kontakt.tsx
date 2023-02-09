@@ -6,6 +6,7 @@ import HeroPage from "../components/Utilities/Hero/HeroPage/HeroPage";
 import { contactpage } from "../data/pages/contactpage";
 import { projects } from "../data/pages/projects";
 import { persons } from "../data/utils/persons";
+import { getStructuredDataWebsite } from "../lib/getStructuredData";
 import Layout from "./../components/Layout/Layout/Layout";
 const Page = () => {
 	const { pl } = projects;
@@ -21,6 +22,7 @@ const Page = () => {
 				title: contactpage.pl.seo.og.title,
 				type: "website",
 			}}
+			schema={getStructuredDataWebsite({ url: "/kontakt" })}
 		>
 			<HeroPage
 				content={contactpage.pl.content.hero.content}
@@ -35,7 +37,7 @@ const Page = () => {
 							email={contactpage.pl.content.informations.email}
 							phone={contactpage.pl.content.informations.phone}
 						/>
-						<Cards cards={[...persons.pl]} />
+						<Cards cards={Object.values(persons.pl)} />
 					</div>
 					<div>
 						<Form
