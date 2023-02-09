@@ -14,7 +14,10 @@ const Document = () => {
 					})(window,document,'script','dataLayer','GTM-MPGDKSZ');`,
 					}}
 				/>
-
+				<meta
+					name="google-site-verification"
+					content="1R0cNdnVvIwcVStMUJAi1N2vG73gP-13D0eY4ONp2bw"
+				/>
 				<meta name="author" content="Radosław Adamczyk - RadWEB" />
 				<link
 					rel="stylesheet"
