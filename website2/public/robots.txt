@@ -1,0 +1,9 @@
+User-agent:*
+Allow: /
+
+User-agent: Baidu bot
+User-agent: Yandex bot
+User-agent: Discord bot
+User-agent: baiduspider
+User-agent: Yandex
+Disallow:/
