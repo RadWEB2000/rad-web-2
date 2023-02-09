@@ -58,6 +58,7 @@ const Page = ({ content, seo }: IntPage) => {
 				description: seo ? seo.meta.description : "",
 				title: seo ? seo.meta.title : "",
 			}}
+			schema={{}}
 			og={{
 				description: seo ? seo.og.description : "",
 				title: seo ? seo.og.title : "",

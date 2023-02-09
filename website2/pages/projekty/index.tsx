@@ -18,6 +18,7 @@ const Page = () => {
 				title: projectspage.pl.main.seo.og.title,
 				type: "website",
 			}}
+			schema={{}}
 		>
 			<HeroPage
 				content={projectspage.pl.main.content.hero.content}

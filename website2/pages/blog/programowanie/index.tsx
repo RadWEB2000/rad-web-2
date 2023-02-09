@@ -12,7 +12,6 @@ const Page = () => {
 	const { query } = useRouter();
 	console.log(query.category);
 	const { pl } = blog;
-	const { pl: plPosts } = posts;
 	return (
 		<Layout
 			image="https://cdn.pixabay.com/photo/2016/11/29/06/15/plans-1867745_960_720.jpg"
@@ -25,32 +24,35 @@ const Page = () => {
 				title: pl.main.seo.og.title,
 				type: "website",
 			}}
+			schema={{}}
 		>
 			<HeroPage content={pl.main.hero.content} title={pl.main.hero.title} />
 			<main>
 				<SearchField handle={setSearchValue} placeholder={`Szukaj`} />
 				<Cards>
-					{plPosts.cards
-						.filter((item) =>
-							item.category.toLowerCase().includes("programowanie")
-						)
+					{posts.pl.articles
+						// .filter((item) =>
+						// 	item.category.toLowerCase().includes("programowanie")
+						// )
 						.filter(
 							(item) =>
-								item.date.toLowerCase().includes(searchValue.toLowerCase()) ||
-								item.excerpt
+								item.hero.date
+									.toLowerCase()
+									.includes(searchValue.toLowerCase()) ||
+								item.hero.excerpt
 									.toLowerCase()
 									.includes(searchValue.toLowerCase()) ||
 								item.title.toLowerCase().includes(searchValue.toLowerCase())
 						)
-						.map(({ category, date, excerpt, image, path, title }) => (
+						.map(({ hero, path }) => (
 							<BlogCardBlogPage
-								category={category}
-								date={date}
-								excerpt={excerpt}
-								image={image}
-								key={title}
+								category={``}
+								date={hero.date}
+								excerpt={hero.excerpt}
+								image={hero.image}
+								key={hero.title}
 								path={path}
-								title={title}
+								title={hero.title}
 							/>
 						))}
 				</Cards>
