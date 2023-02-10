@@ -50,7 +50,6 @@ const Page = ({
 		visible: boolean;
 	};
 }) => {
-	console.log(seo?.meta.title);
 	return (
 		<Layout
 			image={seo?.image}

@@ -24,62 +24,70 @@ export const blogpage = {
 				},
 			},
 		},
-		programming: {
-			seo: {
-				image: "",
-				meta: {
-					title: "",
-					description: "",
+		subpages: [
+			{
+				seo: {
+					image: "",
+					meta: {
+						title: "",
+						description: "",
+					},
+					og: {
+						title: "",
+						description: "",
+					},
 				},
-				og: {
-					title: "",
-					description: "",
-				},
-			},
-			content: {
-				hero: {
-					title: "Programowanie",
-					content: ``,
-				},
-			},
-		},
-		seo: {
-			seo: {
-				image: "",
-				meta: {
-					title: "",
-					description: "",
-				},
-				og: {
-					title: "",
-					description: "",
+				path: "/blog/programowanie",
+				slug: "programowanie",
+				content: {
+					hero: {
+						title: "Programowanie",
+						content: ``,
+					},
 				},
 			},
-			content: {
-				hero: {
-					title: "Tajniki SEO",
-					content: ``,
+			{
+				seo: {
+					image: "",
+					meta: {
+						title: "",
+						description: "",
+					},
+					og: {
+						title: "",
+						description: "",
+					},
+				},
+				path: "/blog/pozycjonowanie",
+				slug: "pozycjonowanie",
+				content: {
+					hero: {
+						title: "Tajniki SEO",
+						content: ``,
+					},
 				},
 			},
-		},
-		ads: {
-			seo: {
-				image: "",
-				meta: {
-					title: "",
-					description: "",
+			{
+				seo: {
+					image: "",
+					meta: {
+						title: "",
+						description: "",
+					},
+					og: {
+						title: "",
+						description: "",
+					},
 				},
-				og: {
-					title: "",
-					description: "",
+				path: "/blog/reklamy-w-google",
+				slug: "reklamy-w-google",
+				content: {
+					hero: {
+						title: "Reklamy Google",
+						content: ``,
+					},
 				},
 			},
-			content: {
-				hero: {
-					title: "Reklamy Google",
-					content: ``,
-				},
-			},
-		},
+		],
 	},
 };

@@ -1,32 +1,37 @@
 import Layout from "../../../components/Layout/Layout/Layout";
 import SearchField from "../../../components/Utilities/Forms/SearchField/SearchField";
 import HeroPage from "../../../components/Utilities/Hero/HeroPage/HeroPage";
-import { blog } from "../../../data/pages/blog";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import BlogCardBlogPage from "../../../components/Utilities/Cards/BlogCards/BlogCardBlogPage/BlogCardBlogPage";
 import { posts } from "../../../data/pages/posts";
 import Cards from "../../../components/Pages/Blog/Cards/Cards";
-import { useRouter } from "next/router";
-const Page = () => {
+import { blogpage } from "../../../data/pages/blogpage";
+import { getStructuredDataWebsite } from "../../../lib/getStructuredData";
+const Page = ({
+	seo,
+	hero,
+	path = "",
+}: {
+	seo: any;
+	hero: any;
+	path?: string;
+}) => {
 	const [searchValue, setSearchValue] = useState("");
-	const { query } = useRouter();
-	console.log(query.category);
-	const { pl } = blog;
 	return (
 		<Layout
-			image="https://cdn.pixabay.com/photo/2016/11/29/06/15/plans-1867745_960_720.jpg"
+			image={seo?.image}
 			meta={{
-				description: pl.main.seo.meta.description,
-				title: pl.main.seo.meta.title,
+				description: seo?.meta.description,
+				title: seo?.meta.title,
 			}}
 			og={{
-				description: pl.main.seo.og.description,
-				title: pl.main.seo.og.title,
+				description: seo?.og.description,
+				title: seo?.og.title,
 				type: "website",
 			}}
-			schema={{}}
+			schema={getStructuredDataWebsite({ url: path })}
 		>
-			<HeroPage content={pl.main.hero.content} title={pl.main.hero.title} />
+			<HeroPage content={hero?.content} title={hero?.title} />
 			<main>
 				<SearchField handle={setSearchValue} placeholder={`Szukaj`} />
 				<Cards>
@@ -61,3 +66,34 @@ const Page = () => {
 	);
 };
 export default Page;
+export const getStaticProps = ({ params }: { params: any }) => {
+	const getSubpage = blogpage.pl.subpages.filter((item: any) => {
+		return item.slug === params.category;
+	});
+	return {
+		props: {
+			seo: {
+				image: getSubpage[0].seo.image,
+				meta: {
+					description: getSubpage[0].seo.meta.description,
+					title: getSubpage[0].seo.meta.title,
+				},
+				og: {
+					description: getSubpage[0].seo.og.description,
+					title: getSubpage[0].seo.og.title,
+				},
+			},
+			path: getSubpage[0].path,
+			hero: {
+				content: getSubpage[0].content.hero.content,
+				title: getSubpage[0].content.hero.title,
+			},
+		},
+	};
+};
+export const getStaticPaths = async () => {
+	return {
+		paths: [],
+		fallback: true,
+	};
+};

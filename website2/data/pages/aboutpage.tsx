@@ -48,47 +48,112 @@ export const aboutpage = {
 				},
 			},
 		},
-		radoslaw_adamczyk: {
-			seo: {
-				image: "/assets/images/adamczyk_radoslaw/photo-2.webp",
-				meta: {
-					description:
-						"Pierwsze kroki stawiałem w 2016 roku. Dziś doświadczonym programistą stron internetowych, aplikacji webowych oraz specjalistą seo/sem. Zapraszam!",
-					title: "Radosław Adamczyk - Programista, SEO/SEM, PPC - RadWEB",
+		subpages: [
+			{
+				seo: {
+					image: "/assets/images/adamczyk_radoslaw/photo-2.webp",
+					meta: {
+						description:
+							"Pierwsze kroki stawiałem w 2016 roku. Dziś doświadczonym programistą stron internetowych, aplikacji webowych oraz specjalistą seo/sem. Zapraszam!",
+						title: "Radosław Adamczyk - Programista, SEO/SEM, PPC - RadWEB",
+					},
+					og: {
+						description: "Poznaj mnie bliżej!",
+						title: "Radosław Adamczyk - WWW / SEO/ SEM",
+					},
 				},
-				og: {
-					description: "Poznaj mnie bliżej!",
-					title: "Radosław Adamczyk - WWW / SEO/ SEM",
+				slug: "radoslaw-adamczyk",
+				path: "/o-nas/radoslaw-adamczyk",
+				hero: {
+					fullname: {
+						firstname: "",
+						lastname: "",
+					},
+					image: "",
+					jobs: "",
+					cities: "",
+					socials: [""],
 				},
+				content: ``,
+				history: [
+					{
+						title: "",
+						position: "",
+						date: "",
+						content: "",
+					},
+				],
 			},
-		},
-		filip_bukowiecki: {
-			seo: {
-				image: "/assets/images/bukowiecki_filip/photo-3.webp",
-				meta: {
-					description:
-						"Czuję, że z kamerą się urodzłem. Moją pasją jest szeroko pojęty świat film. Dziś jestem profesjonalnym operatorem kamery i montażystą. Sprawdź sam!",
-					title: "Filip Bukowiecki - Operator kamery, montażysta - RadWEB",
+			{
+				seo: {
+					image: "/assets/images/bukowiecki_filip/photo-3.webp",
+					meta: {
+						description:
+							"Czuję, że z kamerą się urodzłem. Moją pasją jest szeroko pojęty świat film. Dziś jestem profesjonalnym operatorem kamery i montażystą. Sprawdź sam!",
+						title: "Filip Bukowiecki - Operator kamery, montażysta - RadWEB",
+					},
+					og: {
+						description: "Poznaj mnie bliżej!",
+						title: "Filip Bukowiecki - Operator kamery, montażysta",
+					},
 				},
-				og: {
-					description: "Poznaj mnie bliżej!",
-					title: "Filip Bukowiecki - Operator kamery, montażysta",
+				slug: "filip-bukowiecki",
+				path: "/o-nas/filip-bukowiecki",
+				hero: {
+					fullname: {
+						firstname: "",
+						lastname: "",
+					},
+					image: "",
+					jobs: "",
+					cities: "",
+					socials: [""],
 				},
+				content: ``,
+				history: [
+					{
+						title: "",
+						position: "",
+						date: "",
+						content: "",
+					},
+				],
 			},
-		},
-		klaudia_paluch: {
-			seo: {
-				image: "/assets/images/paluch_klaudia/front.webp",
-				meta: {
-					description:
-						"Pędzel i pióro to dwa moje atrybuty. Z nich to zaprojektuję stronę i stworzę na nią treści. Nie daj się zgwałcić!",
-					title: "Klaudia Paluch - UX/UI Design, Copywriting - RadWEB",
+			{
+				seo: {
+					image: "/assets/images/paluch_klaudia/front.webp",
+					meta: {
+						description:
+							"Pędzel i pióro to dwa moje atrybuty. Z nich to zaprojektuję stronę i stworzę na nią treści. Nie daj się zgwałcić!",
+						title: "Klaudia Paluch - UX/UI Design, Copywriting - RadWEB",
+					},
+					og: {
+						description: "Poznaj mnie bliżej!",
+						title: "Klaudia Paluch - UX/UI Design, Copywriting",
+					},
 				},
-				og: {
-					description: "Poznaj mnie bliżej!",
-					title: "Klaudia Paluch - UX/UI Design, Copywriting",
+				slug: "klaudia-paluch",
+				path: "/o-nas/klaudia-paluch",
+				hero: {
+					fullname: {
+						firstname: "",
+						lastname: "",
+					},
+					image: "",
+					jobs: "",
+					cities: "",
+					socials: [""],
 				},
+				content: ``,
+				history: [
+					{
+						title: "",
+						position: "",
+						date: "",
+						content: "",
+					},
+				],
 			},
-		},
+		],
 	},
 };
