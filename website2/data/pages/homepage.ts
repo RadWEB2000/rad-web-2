@@ -45,15 +45,15 @@ export const homepage = {
 						path: "/uslugi/seo",
 						title: "Seo",
 					},
-					{
-						button: "więcej",
-						content:
-							"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
-						image:
-							"https://images.unsplash.com/photo-1511268559489-34b624fbfcf5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-						path: "/uslugi/google-ads",
-						title: "Google Ads",
-					},
+					// {
+					// 	button: "więcej",
+					// 	content:
+					// 		"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
+					// 	image:
+					// 		"https://images.unsplash.com/photo-1511268559489-34b624fbfcf5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+					// 	path: "/uslugi/google-ads",
+					// 	title: "Google Ads",
+					// },
 					{
 						button: "więcej",
 						content:
