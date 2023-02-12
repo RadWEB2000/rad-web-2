@@ -64,23 +64,62 @@ export const aboutpage = {
 				},
 				slug: "radoslaw-adamczyk",
 				path: "/o-nas/radoslaw-adamczyk",
+				email: {
+					address: "radoslaw.adamczyk2000@gmail.com",
+					name: "E-mail",
+				},
+				phone: {
+					address: "794100413",
+					name: "Telefon",
+				},
 				hero: {
 					fullname: {
-						firstname: "",
-						lastname: "",
+						firstname: "Radosław",
+						lastname: "Adamczyk",
 					},
-					image: "",
-					jobs: "",
-					cities: "",
-					socials: [""],
+					image: "/assets/images/adamczyk_radoslaw/front.webp",
+					jobs: `Front/Web developer, SEO/SEM Specialist`,
+					website: {
+						title: "Strona",
+						url: "https://rad-web-portfolio.vercel.app/",
+						visible: true,
+					},
+					cities: "Śrem, Poznań, Kraków",
+					socials: [
+						"https://www.facebook.com/radoslaw.adamczyk.2000",
+						"https://www.instagram.com/radoslaw.adamczyk.2000/",
+						"https://www.youtube.com/channel/UCOHB1fpEKwxhjCEDNgVLEog",
+						"https://github.com/RadoslawAdamczyk2000",
+						"https://www.linkedin.com/in/rados%C5%82aw-adamczyk-853948195/",
+					],
 				},
-				content: ``,
+				content: `<section>
+				<h3>Życiorys</h3>
+				<p>Urodziłem się w Szpitalu Powiatowym imienia Tadeusza Malińskiego w Śremie 9 października 2000 roku. Przygodę z edukacją rozpocząłem we wrześniu 2007 roku w Szkole Podstawowej imienia generała J&oacute;zefa Wybickiego w Maniczekach, a następnym etap edukacji szkolnej od września 2013 było nieistniejące już Gimnazjum imienia świętego Jana Pawła II r&oacute;wnież w Manieczkach. Po 3 latach z radością i ulgą opuściłem mury budynk&oacute;w szkolnych w słynnych Manieczkach. We wrześniu 2016 roku wstąpiłem do Katolickiego Publicznego Akademickiego Liceum Og&oacute;lnokształcącego imienia świętego Jana Pawła II w Śremie na ulicy Staszica 1.<br/><br/> W tej plac&oacute;wce oświatowej uczyłem się na profilu matematyczno-fizyczno-informatyczno-historycznym, gdzie z wyżej wymienionych przedmiot&oacute;w jedynie maturę z historii zdawałem na poziomie rozszerzonym. W KPALO miałem przyjemność być kształconym przez genialnych nauczycieli, kt&oacute;rzy byli i są nadal podekscytowani tym co robią. W liceum poznałem wiele os&oacute;b skąd dziś - jak sądzę - mam wiele prawdziwych przyjaźni oraz znajomości. Po zakończeniu &quot;przymusowej&quot; edukacji w 2019 roku wstąpiłem w mury Wyższego Arcybiskupiego Seminarium Duchownego w Poznaniu w kt&oacute;rym przetrwałem aż 23 dni... Rok p&oacute;źniej, czyli w 2020 roku byłem na postulacie Wyższego Seminarium Zgromadzenia Księży świętego Michała Archanioła (CSMA) gdzie kształciłem się przez p&oacute;ł roku. Dziś od września 2021 roku kształcę się na kierunku technik administracji w szkole policealnej Cosinus. Mam nadzieję, że to nie koniec mojej przygody z edukacją.</p>
+			</section>
+			<div class="image_person_page">
+			<figure>
+			<img src="/assets/images/adamczyk_radoslaw/photo-2.webp" />
+			</figure>
+			</div>
+			<section>
+				<h2>Rozw&oacute;j zawodowy jako programista</h2>
+				<p>Od zawsze jak tylko pamiętam zawsze miałem styczność z komputerami. Na początku było to ogrywanie r&oacute;żnych gier komputerowych takich jak Wyspa 7 skarb&oacute;w, Assiasins Creed, Minecraft, League of Legends, Civilization VI oraz Grand Theft Auto San Andreas oraz GTA V. Świadomą przygodę z programowaniem zacząłem już w trzeciej klasie gimnazjum na lekcjach informatyki, kiedy to mieliśmy zajęcia z podstaw HTMLa. Następnym etapem było poznanie podstaw C++ na zajęciach z rozszerzonej informatki w KPALO, gdzie ten język nie przypadł mi do gustu. <br/><br/>Nieustanne rozwijanie wiedzy z zakresu stron internetowych poprzez wgłębianie się w technologie webowe czyli HTML, CSS, Scss, JavaScrpt wraz z jego frameworkami, TypeScirpt oraz inne języki. Ta determinacja oraz zdobywana wiedza pozwoliły mi uzyskać pierwszą pracę w branży jako specjalista do spraw SEO w Sunrise System. Dziś mam niezmierną radość wsp&oacute;łpracując z agencją 4Real na stanowisku specjalisty do spraw SEM.</p>
+			</section>`,
 				history: [
 					{
-						title: "",
-						position: "",
-						date: "",
-						content: "",
+						title: "Sunrise System",
+						position: "Specjalista SEO",
+						date: "Paź 2021 - Sty 2022",
+						content:
+							"Ipsa consequuntur inventore quos est natus. Possimus earum voluptatem quas veniam. Vel dolore et consequatur distinctio repellat ut. Sequi recusandae qui. Sunt laboriosam molestiae. Quo qui eligendi aut qui cumque.",
+					},
+					{
+						title: "4Real",
+						position: "Specjalista SEM",
+						date: "Sie 2022 - teraz",
+						content:
+							"Dolore consectetur ipsam esse quisquam et nisi fugiat aut illum. Eum corrupti unde sit quam. Ea porro ipsum inventore dolores eligendi ad consequatur est. Qui aut officia sequi id optio voluptatibus labore ut. Quaerat tenetur omnis dolorem tempora eligendi non dolore cum.",
 					},
 				],
 			},
@@ -99,15 +138,28 @@ export const aboutpage = {
 				},
 				slug: "filip-bukowiecki",
 				path: "/o-nas/filip-bukowiecki",
+				email: {
+					address: "filip.bukowiecki@gmail.com",
+					name: "E-mail",
+				},
+				phone: {
+					address: "885343346",
+					name: "Telefon",
+				},
 				hero: {
 					fullname: {
-						firstname: "",
-						lastname: "",
+						firstname: "Filip",
+						lastname: "Bukowiecki",
 					},
-					image: "",
-					jobs: "",
-					cities: "",
+					image: "/assets/images/bukowiecki_filip/front.webp",
+					jobs: `Operator kamery, montażysta`,
+					cities: "Poznań, Wrocław, Warszawa",
 					socials: [""],
+					website: {
+						title: "Strona",
+						url: "https://filipbukowiecki.vercel.app/",
+						visible: true,
+					},
 				},
 				content: ``,
 				history: [
@@ -134,15 +186,28 @@ export const aboutpage = {
 				},
 				slug: "klaudia-paluch",
 				path: "/o-nas/klaudia-paluch",
+				email: {
+					address: "kawaii.neko.sheart@gmail.com",
+					name: "E-mail",
+				},
+				phone: {
+					address: "516675978",
+					name: "Telefon",
+				},
 				hero: {
 					fullname: {
-						firstname: "",
-						lastname: "",
+						firstname: "Klaudia",
+						lastname: "Paluch",
 					},
-					image: "",
-					jobs: "",
-					cities: "",
+					image: "/assets/images/paluch_klaudia/front.jpg",
+					jobs: `Copywriting, UX, UI Design`,
+					cities: "Biała Podlaska, Łódź, Warszawa, Bydgoszcz",
 					socials: [""],
+					website: {
+						title: "Strona",
+						url: "https://filipbukowiecki.vercel.app/",
+						visible: false,
+					},
 				},
 				content: ``,
 				history: [

@@ -10,13 +10,16 @@ const Jobs = ({ cards, content, title }: IntJobs): ReactElement => {
 			<SectionAboutPersonPage content={content} title={title} />
 			<ol>
 				{cards.map(({ content, date, subtitle, title }) => (
-					<JobCard
-						content={content}
-						date={date}
-						key={title}
-						subtitle={subtitle}
-						title={title}
-					/>
+					<>
+						{title !== "" && (
+							<JobCard
+								content={content}
+								date={date}
+								subtitle={subtitle}
+								title={title}
+							/>
+						)}
+					</>
 				))}
 			</ol>
 		</div>

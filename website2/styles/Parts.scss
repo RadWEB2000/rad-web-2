@@ -1,0 +1,26 @@
+.image_person_page {
+	figure {
+		aspect-ratio: 4/2;
+		display: flex;
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		img {
+			height: 100%;
+			object-fit: contain;
+			width: 100%;
+		}
+	}
+	@media only screen {
+		@media (max-width: 800px) {
+			figure {
+				aspect-ratio: 4/3;
+			}
+		}
+		@media (max-width: 500px) {
+			figure {
+				aspect-ratio: 4/7;
+			}
+		}
+	}
+}
