@@ -19,7 +19,7 @@ export const aboutpage = {
 			content: {
 				hero: {
 					title: "Kim jesteśmy?",
-					content: `Fuga et provident soluta minima autem sit. Et quae dicta similique maxime voluptas. Et iste voluptate similique ut ut facilis occaecati. A ea amet. Officia neque voluptatem et earum quia rerum in voluptatem. Ipsam culpa aut officiis deleniti voluptatum perferendis. Repellat officia in molestiae voluptatem distinctio minus`,
+					content: `Jesteśmy grupą znajomych z całej Polski, której głównym zainteresowaniem jest technologia. Realizujemy swoje hobby w zakresie UIi/UX stron internetowych, tworzenia stron internetowych, pozycjonowania serwisów internetowych, copywritingu oraz tworzeniu treści wideo.`,
 				},
 				mission: {
 					title: "Misja RadWEB",
