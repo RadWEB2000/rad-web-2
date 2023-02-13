@@ -23,7 +23,7 @@ export const aboutpage = {
 				},
 				mission: {
 					title: "Misja RadWEB",
-					content: `Tempore voluptatum facere. Porro incidunt natus perferendis. Aperiam quo unde ut. Quis doloribus voluptas aliquam sed autem. Optio aut et a mollitia reprehenderit quia et recusandae officiis.`,
+					content: `W RadWEB wierzymy, że nasz sukces zależy od naszej uczciwości, profesjonalizmu i ciągłego rozwoju. Nasz zespół składa się z ludzi, którzy dążą do doskonałości w każdym aspekcie swojej pracy i są zaangażowani w dostarczanie naszym klientom najlepszych możliwych rozwiązań.<br/><br/> Jesteśmy dumni z naszych usług w zakresie tworzenia stron internetowych, pozycjonowania stron internetowych, projektowania stron internetowych, copywritingu i videomaking. Nasze projekty są zawsze dostosowane do potrzeb naszych klientów i są tworzone z najwyższą starannością, aby zapewnić naszym klientom nie tylko świetnie wyglądające strony internetowe, ale również strony internetowe, które działają skutecznie i efektywnie.`,
 					cards: [
 						{
 							icon: <FaHandsHelping />,
@@ -44,7 +44,7 @@ export const aboutpage = {
 				},
 				team: {
 					title: "Zespół RadWEB",
-					content: `At quibusdam omnis vitae qui rerum harum beatae aliquam. Expedita rerum dicta reiciendis est vero. Aut nam aliquid fuga.`,
+					content: `RadWEB znajdziesz w wielu lokalizacjach w Polsce, w tym w Białej Podlaskiej, Bydgoszczy, Krakowie, Łodzi, Poznaniu, Warszawie i Wrocławiu. Dzięki temu jesteśmy w stanie świadczyć nasze usługi na terenie całego kraju, dostarczając naszym klientom nie tylko wysokiej jakości projekty, ale również pełen zakres usług, w tym pozycjonowanie serwisów internetowych, copywriting oraz tworzenie treści wideo.<br/><br/>Nasz zespół składa się z doświadczonych projektantów, programistów i marketerów, którzy współpracują ze sobą, aby zapewnić naszym klientom najlepsze możliwe rezultaty. Nasze projekty są zawsze dostosowane do potrzeb naszych klientów i są tworzone zgodnie z najnowszymi standardami branży, co gwarantuje, że nasze strony internetowe są zawsze nowoczesne i skuteczne.`,
 				},
 			},
 		},
