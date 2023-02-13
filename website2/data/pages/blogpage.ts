@@ -42,7 +42,10 @@ export const blogpage = {
 				content: {
 					hero: {
 						title: "Programowanie",
-						content: ``,
+						content: `Programowanie jest jednym z najważniejszych aspektów tworzenia stron internetowych. Bez niego strony internetowe byłyby tylko estetycznymi wizualizacjami, bez funkcjonalności i możliwości interakcji z użytkownikiem. Programowanie stron internetowych pozwala na stworzenie dynamicznej i interaktywnej witryny, która jest w stanie dostosować się do potrzeb użytkownika.
+						Tworzenie stron internetowych za pomocą programowania może być skomplikowane, ale jednocześnie jest to proces pełen wyzwań i nagrody. W RadWEB wiemy, jak ważne jest, aby tworzenie stron internetowych było wygodne dla naszych klientów, dlatego nasz zespół składa się z doświadczonych programistów, którzy są gotowi pomóc naszym klientom w realizacji ich wizji.
+						Programowanie stron internetowych to nie tylko tworzenie kodu, ale również zrozumienie potrzeb użytkownika i jego oczekiwań. Nasz zespół w RadWEB jest zawsze gotów do wsłuchania się w potrzeby naszych klientów i stworzenia rozwiązania, które będzie dostosowane do ich potrzeb.
+						Nasza wiedza i doświadczenie w zakresie programowania pozwala nam stworzyć strony internetowe, które są nie tylko estetyczne, ale również funkcjonalne i efektywne. Nasze strony internetowe są zawsze zoptymalizowane pod kątem wydajności i dostępności, co pozwala naszym klientom na uzyskanie najlepszych możliwych rezultatów.`,
 					},
 				},
 			},
@@ -63,7 +66,7 @@ export const blogpage = {
 				content: {
 					hero: {
 						title: "Tajniki SEO",
-						content: ``,
+						content: `Wysoka pozycja w wynikach wyszukiwania to klucz do sukcesu każdej strony internetowej. Aby osiągnąć taki sukces, trzeba zrozumieć, jak wyszukiwarki, takie jak Google, indeksują i oceniają strony internetowe.SEO to proces, który polega na dostosowaniu strony internetowej do wymagań i algorytmów wyszukiwarek, aby zwiększyć jej widoczność i uzyskać lepsze wyniki w wynikach wyszukiwania. W tym celu można wykorzystać różne techniki, takie jak optymalizacja treści, ulepszanie struktury strony i linkowanie zewnętrzne. Zespół RadWEB jest doświadczony w tej dziedzinie i oferuje swoim klientom profesjonalne usługi pozycjonowania stron internetowych, aby pomóc im osiągnąć sukces w sieci.`,
 					},
 				},
 			},

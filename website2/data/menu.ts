@@ -61,10 +61,10 @@ export const menu: intMenu = {
 					path: "/blog/pozycjonowanie",
 					title: "Pozycjonowanie",
 				},
-				{
-					path: "/blog/reklamy-w-google",
-					title: "Reklamy w Google",
-				},
+				// {
+				// 	path: "/blog/reklamy-w-google",
+				// 	title: "Reklamy w Google",
+				// },
 				{
 					path: "/blog",
 					title: "Wszystkie wpisy",

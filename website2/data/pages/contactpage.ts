@@ -15,8 +15,7 @@ export const contactpage = {
 		content: {
 			hero: {
 				title: "Zaufaj specjalistom",
-				content: `Chcesz zrealizować projekt strony bądź aplikacji internetowej? Planujesz odświeżenie strony internetowej? W tym temacie nie powinno się zawierzać losowym osobom, a raczej doświadczonym specjalistom RadWEB.
-				<b>Nie wahaj się i napisz już teraz!</b>`,
+				content: `Jeśli chcesz mieć pewność, że Twoja strona internetowa będzie funkcjonalna, estetyczna i skuteczna, to warto powierzyć ją w ręce specjalistów. W RadWEB mamy wieloletnie doświadczenie w projektowaniu i tworzeniu stron internetowych oraz aplikacji, dlatego jesteśmy w stanie zapewnić Ci najlepsze rozwiązania. Nie tylko realizujemy projekty, ale również dbamy o to, aby strony były jak najlepiej widoczne w wyszukiwarkach internetowych.<br/><br/> Dzięki wiedzy i umiejętnościom naszych specjalistów z zakresu pozycjonowania stron, będziesz mieć pewność, że Twoja strona znajdzie się na pierwszej stronie wyników wyszukiwania.Jeśli chcesz wyróżnić się na tle konkurencji i zaprezentować swoją ofertę w sposób atrakcyjny i przejrzysty, to nasza oferta jest skierowana właśnie do Ciebie. Nasi specjaliści z zakresu copywritingu pomogą Ci stworzyć treści, które zachęcą do skorzystania z Twoich usług.<b>W RadWEB jesteśmy zawsze gotowi do pomocy, dlatego nie wahaj się i napisz do nas już teraz. Z chęcią odpowiemy na wszystkie Twoje pytania i pomożemy Ci w realizacji Twojego projektu. Nie czekaj, skorzystaj z naszej oferty już dziś!</b>`,
 			},
 			form: {
 				fields: {
