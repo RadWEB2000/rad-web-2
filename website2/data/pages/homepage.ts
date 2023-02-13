@@ -14,8 +14,8 @@ export const homepage = {
 		},
 		content: {
 			hero: {
-				title: "RadWEB",
-				content: `Witaj w serwisie RadWEB. Poznaj zgrany zespoł. Zespół, który jest złożony z pasjonatów swojej dziedziny, co stawia nas jako profesjonalistów w branży.`,
+				title: "RadWEB — pasjonaci internetu",
+				content: `Witaj w serwisie RadWEB. Jesteśmy zgranym zespołem, który żyje swoimi pasjami, co bezapelacyjnie stawia nas jako specjalistów w tym, co robimy. Specjalizujemy się w m.in. stronach internetowych, SEO, sem, tworzeniu treści oraz videomakingu. Przekonaj się, że warto nam zaufać!`,
 				buttons: [
 					{
 						path: "/blog",
@@ -30,7 +30,7 @@ export const homepage = {
 					{
 						button: "więcej",
 						content:
-							"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
+							"Strony internetowe są podstawą istnienia w internecie. Z nich się bierze fundamentalna wiedza oraz podstawowe zaufanie do osoby, czy też firmy lub organizacji.",
 						image:
 							"https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80",
 						path: "/uslugi/strony-internetowe",
@@ -39,7 +39,7 @@ export const homepage = {
 					{
 						button: "więcej",
 						content:
-							"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
+							"Pozycjonowanie stron internetowych, potocznie też nazywane SEO to szereg działań mających na celu wywindowanie stron www w wynikach wyszukiwania w Google, Bing, Yahoo.",
 						image:
 							"https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1251&q=80",
 						path: "/uslugi/seo",
@@ -54,19 +54,19 @@ export const homepage = {
 					// 	path: "/uslugi/google-ads",
 					// 	title: "Google Ads",
 					// },
+					// {
+					// 	button: "więcej",
+					// 	content:
+					// 		"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
+					// 	image:
+					// 		"https://images.unsplash.com/photo-1604676811086-0652089a2876?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+					// 	path: "/uslugi/videomaking",
+					// 	title: "Videomaking",
+					// },
 					{
 						button: "więcej",
 						content:
-							"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
-						image:
-							"https://images.unsplash.com/photo-1604676811086-0652089a2876?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-						path: "/uslugi/videomaking",
-						title: "Videomaking",
-					},
-					{
-						button: "więcej",
-						content:
-							"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
+							"Tworzenie treści jest jak tchnienie życia w stronę internetową. Z publikowanych treści jest generowane zainteresowanie robotów wyszukiwarek i użytkowników stroną internetową. Co za tym idzie, treści w stronach internetowych powinny być unikalne oraz przyciągające uwagę użytkownika.",
 						image:
 							"https://images.unsplash.com/photo-1667056624790-f0e8e391c086?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
 						path: "/uslugi/copywriting",
@@ -75,7 +75,7 @@ export const homepage = {
 					{
 						button: "więcej",
 						content:
-							"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
+							"Wygląd prezentowanych treści na stronie internetowej jest równie ważna, co teksty na niej się znajdujące. Odpowiednio przygotowany projekt graficzny serwisu powinien się znacząco wyróżniać na tle konkurencji. Dlatego też UI/UX strony nie można pozostawiać przypadkowi.",
 						image:
 							"https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
 						path: "/uslugi/ui-ux",
@@ -89,7 +89,7 @@ export const homepage = {
 					path: "/blog",
 					title: "więcej",
 				},
-				content: `Programowanie i pozycjonowanie są niezwykle prężnie rozwijającymi się dziedzinami nauki. W programowaniu często pojawiają się nowe paczki usprawniające prace deweloperów. Natomiast proces pozycjonowania poddawany jest przez wyszukiwarkę Google co raz to nowszym rewolucjom. Na szczęście z blogiem RadWEB zawsze będziesz na bieżąco z nowinkami.`,
+				content: `Świat technologii, tak samo. Jak internet błyskawicznie się rozwija. Codziennie na świecie rodzi się cyfrowa rewolucja. Dowiedz się, jak poprawnie tworzyć strony internetowe dostępne dla każdego. Poznaj tajniki jak być w czołówce wyników wyszukiwania w najpopularniejszych wyszukiwarkach internetowych, dzięki sprawdzonych technikach SEO. Naucz się, jak tworzyć wartościowe treści na stronę, zarówno teksty, jak i materiały wideo. Wyjdź zwycięsko z internetowego pola bitewnego.`,
 				title: "Blog - bądź na bieżąco z internetem",
 			},
 			about: {
@@ -97,7 +97,7 @@ export const homepage = {
 					path: "/o-nas",
 					title: "więcej",
 				},
-				content: `Aut corporis enim. Laborum corrupti facilis pariatur. Qui minima non itaque tempore laudantium. Consequatur id quis molestiae maiores debitis accusamus praesentium. Repellat aspernatur perspiciatis quibusdam assumenda sit ipsam officiis commodi occaecati. Qui beatae sequi saepe.`,
+				content: `Poznaj swoich przyszłych specjalistów, dzięki którym odniesiesz sukces w internecie! Jesteśmy grupą pasjonatów, która codziennie od wielu lat rozwija swoje umiejętności poprzez praktykę.`,
 				title: "O nas - Zespół RadWEB",
 			},
 			projects: {
@@ -105,7 +105,7 @@ export const homepage = {
 					path: "/projekty",
 					title: "więcej",
 				},
-				content: `Praktyka czyni mistrza. Projekty i realizacje RadWEB z zakresu stron i aplikacji internetowych są najlepszym tego przykładem, ponieważ na ich przykładzie można zauważyć rozwój wiedzy oraz kompetencji.`,
+				content: `Praktyka czyni mistrza. Dlatego, też, nieustannie poszerzamy portfolio o coraz to nowe projekty realizowane na własne potrzeby i realizacje komercyjne, które w 100% spełniają wymagania usługobiorcy. Do każdego zadania — nie ważne czy to zaprojektowanie, zaprogramowanie lub wypozycjonowanie strony internetowej, czy też tworzenie wysokiej jakości treści albo videomaking — podchodzimy, jak do najważniejszego zlecenia w życiu.`,
 				title: "Projekty i realizacje komercyjne",
 			},
 			testimonials: [
