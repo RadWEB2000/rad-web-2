@@ -2,15 +2,11 @@
 .wrapper {
 	&,
 	& > a {
-		align-items: center;
-		display: flex;
-		justify-content: center;
+		@include flexNoFlow(center, center);
 	}
 	& > a {
-		// background: white;
+		@include font(1.7rem, 500);
 		color: $tertiaryButtonColor;
-		font-size: 1.7rem;
-		font-weight: 500;
 		min-height: 3rem;
 		padding: 0.25rem 0.75rem;
 		position: relative;

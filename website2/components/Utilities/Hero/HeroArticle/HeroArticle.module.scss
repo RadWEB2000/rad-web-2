@@ -19,9 +19,8 @@
 		padding: 1rem 0;
 		row-gap: 1rem;
 		& > .title {
+			@include font(5.75rem, 800);
 			color: $primaryButtonColor;
-			font-size: 5.75rem;
-			font-weight: 800;
 		}
 		& > .socials {
 			gap: 1rem;
@@ -38,9 +37,7 @@
 					width: 3rem;
 					&,
 					& > * {
-						align-items: center;
-						display: flex;
-						justify-content: center;
+						@include flexNoFlow(center, center);
 					}
 					& > * {
 						font-size: 2.4rem;

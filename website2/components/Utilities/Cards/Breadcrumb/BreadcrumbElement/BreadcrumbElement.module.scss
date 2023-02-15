@@ -1,4 +1,4 @@
+@import "../../../../../styles/Variables.module.scss";
 .wrapper {
-	font-size: 1.55rem;
-	font-weight: 700;
+	@include font(1.55rem, 700);
 }

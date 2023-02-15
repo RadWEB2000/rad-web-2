@@ -1,18 +1,13 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	align-items: start;
-	display: flex;
-	flex-flow: column;
-	justify-content: flex-start;
+	@include flex(start, column, flex-start);
 	row-gap: 4rem;
 	& > h2 {
 		font-size: 5rem;
 	}
 	& > p {
+		@include fontLine(2, 2rem, 400);
 		color: $quatenaryButtonColor;
-		font-size: 2rem;
-		line-height: 2;
-		font-weight: 400;
 	}
 	@media only screen {
 		@media (max-width: 650px) {

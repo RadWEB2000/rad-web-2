@@ -1,6 +1,5 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	justify-content: center;
 	max-width: 95%;
 	min-height: 50rem;
 	padding: 0.9rem;
@@ -8,9 +7,7 @@
 	width: 65rem;
 	&,
 	& > address {
-		align-items: start;
-		display: flex;
-		flex-flow: column;
+		@include flex(start, column, center);
 	}
 	& > h2 {
 		font-size: 4.65rem;
@@ -24,18 +21,15 @@
 		justify-content: flex-start;
 		row-gap: 0.75rem;
 		& > p:first-of-type {
-			font-size: 1.6rem;
+			@include font(1.6rem, 600);
 			line-height: 2;
-			font-weight: 600;
 		}
 		& > ul {
 			gap: 1.2rem;
 			flex-flow: row wrap;
 			&,
 			& > a {
-				align-items: center;
-				display: flex;
-				justify-content: flex-start;
+				@include flexNoFlow(center, flex-start);
 			}
 			& > a {
 				border: 1px solid rgb(0, 0, 0, 0.1);
@@ -48,11 +42,9 @@
 				}
 				& > i {
 					& > span {
-						align-items: center;
+						@include flexNoFlow(center, center);
 						aspect-ratio: 1/1;
-						display: flex;
 						font-size: 1.6rem;
-						justify-content: center;
 						width: 3.5rem;
 					}
 				}

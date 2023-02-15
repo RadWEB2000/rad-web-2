@@ -4,28 +4,20 @@
 	max-width: 95%;
 	width: 32.5rem;
 	& > a {
-		align-items: flex-start;
-		display: flex;
-		flex-flow: column;
-		height: 100%;
-		justify-content: flex-start;
-		width: 100%;
+		@include flex(flex-start, column, flex-start);
+		@include fullSize;
 		& > .image {
 			aspect-ratio: 4/4;
 			overflow: hidden;
 			width: 100%;
 			& > figure {
-				height: 100%;
+				@include fullSize;
 				position: relative;
 				transition: 0.2s linear transform;
-				width: 100%;
 			}
 		}
 		& > .content {
-			align-items: flex-start;
-			display: flex;
-			flex-flow: column;
-			justify-content: center;
+			@include flex(flex-start, column, center);
 			min-height: 12rem;
 			padding: 0.25rem 0.75rem;
 			row-gap: 0.5rem;
@@ -33,8 +25,7 @@
 			& > h3 {
 				& > span {
 					&:first-of-type {
-						font-size: 2.5rem;
-						font-weight: 900;
+						@include font(2.5rem, 900);
 					}
 					&:last-of-type {
 						font-size: 2rem;
@@ -46,8 +37,7 @@
 				font-style: italic;
 			}
 			& > .cities {
-				font-size: 1.5rem;
-				font-weight: 900;
+				@include font(1.5rem, 900);
 			}
 		}
 	}

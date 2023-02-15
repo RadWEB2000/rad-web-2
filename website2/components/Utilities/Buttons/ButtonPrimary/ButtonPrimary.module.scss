@@ -1,5 +1,6 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
+	cursor: pointer;
 	&[data-variant="primary"] {
 		border: 2px solid #5549f1;
 		color: #5549f1;
@@ -36,32 +37,30 @@
 			}
 		}
 	}
+	&[data-variant="secondary"],
+	&[data-variant="tertiary"] {
+		@include flexNoFlow(center, center);
+		@include font(1.65rem, 600);
+	}
 	&[data-variant="secondary"] {
-		align-items: center;
 		background-color: transparent;
 		border: none;
 		border-radius: 0.4rem;
 		color: rgb(0, 0, 0, 0.9);
-		cursor: pointer;
-		display: flex;
-		font-size: 1.65rem;
-		font-weight: 600;
 		height: 4.5rem;
-		justify-content: center;
 		min-width: 13rem;
 		outline: 2.5px solid rgb(0, 0, 0, 0.7);
 		position: relative;
 		transition: 0.3s;
 		user-select: none;
 		&::after {
+			@include fullSize;
 			background-color: #5549f1;
-			height: 100%;
 			left: 0;
 			top: 0;
 			transform: scaleY(0);
 			transform-origin: bottom;
 			transition: 0.3s;
-			width: 100%;
 			z-index: -1;
 		}
 		&:focus,
@@ -75,16 +74,11 @@
 		}
 	}
 	&[data-variant="tertiary"] {
-		align-items: center;
 		background-color: #5549f1;
 		border-radius: 1rem;
 		box-shadow: 0 0.5rem 0 #100b51;
 		color: #fff;
-		display: flex;
-		font-size: 1.6rem;
-		font-weight: 600;
 		height: 3.5rem;
-		justify-content: center;
 		min-width: 10rem;
 		outline: none;
 		transition: 0.3s;

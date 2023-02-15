@@ -1,3 +1,4 @@
+@import "../../../../styles/Variables.module.scss";
 .wrapper {
 	position: sticky;
 	top: 10rem;
@@ -6,10 +7,7 @@
 	&,
 	& > form,
 	& > form > div:first-of-type {
-		align-items: center;
-		display: flex;
-		flex-flow: column;
-		justify-content: flex-start;
+		@include flex(center, column, flex-start);
 	}
 	& > form {
 		row-gap: 1.5rem;

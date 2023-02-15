@@ -2,9 +2,7 @@
 .wrapper {
 	@media only screen {
 		@media (max-width: 850px) {
-			align-items: center;
-			display: flex;
-			justify-content: flex-end;
+			@include flexNoFlow(center, flex-end);
 			padding: 0 1rem;
 			width: 100%;
 		}

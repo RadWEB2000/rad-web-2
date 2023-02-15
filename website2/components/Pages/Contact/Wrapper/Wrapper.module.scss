@@ -1,18 +1,15 @@
+@import "../../../../styles/Variables.module.scss";
 .wrapper {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	& > div {
 		width: 100%;
 		&:nth-of-type(1) {
-			align-items: start;
-			display: flex;
-			flex-flow: column;
+			@include flex(start, column, flex-start);
 			grid-column: 1/8;
 		}
 		&:nth-of-type(2) {
-			align-items: center;
-			display: flex;
-			justify-content: center;
+			@include flexNoFlow(start, center);
 			grid-column: 8/-1;
 			position: relative;
 		}

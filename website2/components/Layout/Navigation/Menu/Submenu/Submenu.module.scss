@@ -2,13 +2,10 @@
 .wrapper {
 	position: relative;
 	& > ul {
-		align-items: start;
+		@include flex(start, column, flex-start);
 		border-radius: 0 1rem 1rem 1rem;
 		background-color: $secondaryButtonColor;
-		display: flex;
-		flex-flow: column;
 		row-gap: 1rem;
-
 		padding: 0.75rem 0.5rem 0.75rem 1rem;
 		opacity: 0;
 		transition: 0.2s linear opacity, 0.2s linear transform,

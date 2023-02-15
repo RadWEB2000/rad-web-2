@@ -1,16 +1,7 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
 	& > ul {
-		// display: grid;
-		// grid-template-columns: repeat(3, 1fr);
-		// grid-template-rows: masonry;
-		// grid-gap: 2rem;
-		// masonry-auto-flow: ordered;
-		// justify-tracks: center;
-		align-items: baseline;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
+		@include flex(baseline, row wrap, center);
 		gap: 2rem;
 	}
 }

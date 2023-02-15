@@ -1,8 +1,6 @@
+@import "../../../../styles/Variables.module.scss";
 .wrapper {
-	align-items: start;
+	@include flex(start, row wrap, center);
 	column-gap: 0.25rem;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
 	row-gap: 1rem;
 }

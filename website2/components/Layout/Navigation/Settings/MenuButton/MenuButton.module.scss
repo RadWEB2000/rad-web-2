@@ -2,11 +2,8 @@
 .wrapper {
 	display: none;
 	@media only screen and (max-width: 850px) {
-		align-items: center;
+		@include flex(center, column, space-evenly);
 		aspect-ratio: 1/1;
-		display: flex;
-		flex-flow: column;
-		justify-content: space-evenly;
 		overflow: hidden;
 		position: relative;
 		width: 3rem;

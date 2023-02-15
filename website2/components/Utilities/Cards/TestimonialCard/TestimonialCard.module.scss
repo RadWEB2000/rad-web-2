@@ -1,12 +1,9 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	align-items: center;
+	@include flex(center, column, flex-start);
 	background-color: $white;
 	border-radius: 1.25rem;
 	box-shadow: 0 0 1rem hsl(0, 0%, 57%, 0.25);
-	display: flex;
-	flex-flow: column;
-	justify-content: flex-start;
 	padding: 1.5rem 0.5rem;
 	margin: auto;
 	margin-top: 1rem;
@@ -17,11 +14,8 @@
 		width: 100%;
 	}
 	& > .info {
-		align-items: center;
+		@include flex(center, row, flex-start);
 		column-gap: 2rem;
-		display: flex;
-		flex-flow: row;
-		justify-content: flex-start;
 		& > figure {
 			aspect-ratio: 1/1;
 			border-radius: 50%;
@@ -34,21 +28,17 @@
 				font-size: 2.2rem;
 			}
 			& > h5 {
-				font-size: 1.5rem;
-				font-weight: 900;
+				@include font(1.5rem, 900);
 			}
 		}
 	}
 	& > .content {
-		font-size: 1.67rem;
-		line-height: 1.9;
+		@include fontLine(1.9, 1.67rem, 400);
 		padding: 0.5rem;
 	}
 	& > .date {
 		& > p {
-			font-size: 1.67rem;
-			font-weight: 800;
-			line-height: 1.4;
+			@include fontLine(1.4, 1.67rem, 800);
 		}
 	}
 
@@ -83,14 +73,12 @@
 				}
 			}
 			& > .content {
-				font-size: 1.6rem;
-				line-height: 1.6;
+				@include fontLine(1.6, 1.6rem, 400);
 				padding: 0.5rem;
 			}
 			& > .date {
 				& > p {
-					font-size: 1.57rem;
-					font-weight: 600;
+					@include font(1.57rem, 600);
 				}
 			}
 		}

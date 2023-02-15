@@ -1,12 +1,9 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	align-items: center;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	row-gap: 5rem;
+	@include flex(center, column, center);
 	padding: 4rem 1.5rem 2rem 1.5rem;
 	position: relative;
+	row-gap: 5rem;
 	z-index: 0;
 	&::after {
 		background-image: linear-gradient(
@@ -24,11 +21,7 @@
 		width: 100%;
 	}
 	& > ul {
-		align-items: start;
-		// background: orangered;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
+		@include flex(start, row wrap, center);
 	}
 	@media only screen {
 		@media (max-width: 710px) {
@@ -36,7 +29,6 @@
 				height: 40%;
 			}
 			& > ul {
-				// flex-flow: column;
 				row-gap: 2rem;
 			}
 		}

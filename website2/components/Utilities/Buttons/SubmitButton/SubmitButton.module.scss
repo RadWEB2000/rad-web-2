@@ -1,10 +1,10 @@
+@import "../../../../styles/Variables.module.scss";
 .wrapper {
+	@include font(1.6rem, 400);
 	background-color: #5549f1;
 	border-radius: 1rem;
 	color: #fff;
 	display: inline-block;
-	font-size: 1.6rem;
-	font-weight: 400;
 	letter-spacing: 0.1px;
 	min-width: 13rem;
 	padding: 1.15rem 1rem;
@@ -28,10 +28,8 @@
 		transform: translate(-1rem, -50%);
 		transition: 0.3s;
 		& > span {
-			align-items: center;
+			@include flexNoFlow(center, center);
 			color: rgb(209, 205, 255);
-			display: flex;
-			justify-content: center;
 		}
 	}
 }

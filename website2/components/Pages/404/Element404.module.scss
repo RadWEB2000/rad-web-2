@@ -1,8 +1,6 @@
+@import "../../../styles/Variables.module.scss";
 .wrapper {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	flex-flow: column;
+	@include flex(center, column, center);
 	min-height: calc(100vh - 15rem);
 	row-gap: 2rem;
 	width: 100%;

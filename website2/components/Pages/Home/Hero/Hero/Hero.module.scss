@@ -8,9 +8,7 @@
 	min-height: calc(100vh - 12.5rem);
 	width: 90vw;
 	& > div {
-		align-items: center;
-		display: flex;
-		justify-content: center;
+		@include flexNoFlow(center, center);
 	}
 	@media only screen {
 		@media (max-width: 1170px) {
@@ -29,9 +27,7 @@
 			grid-template-columns: 1.85fr 1fr;
 		}
 		@media (max-width: 670px) {
-			align-items: center;
-			display: flex;
-			flex-flow: column;
+			@include flex(center, column, center);
 			padding: 1rem 0.5rem;
 		}
 		@media (max-width: 500px) {

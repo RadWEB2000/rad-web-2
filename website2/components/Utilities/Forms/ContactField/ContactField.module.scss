@@ -1,11 +1,10 @@
+@import "../../../../styles/Variables.module.scss";
 .wrapper {
+	@include flex(flex-start, column-reverse, center);
 	background-color: rgb(0, 0, 0, 0.05);
 	border-radius: 5px;
 	cursor: text;
-	display: flex;
-	flex-flow: column-reverse;
 	font-size: 1.6rem;
-	justify-content: center;
 	max-width: 90%;
 	padding: 4px 15px 6px;
 	transition: 0.3s;

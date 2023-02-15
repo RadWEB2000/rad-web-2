@@ -9,7 +9,6 @@ import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
 import About from "../components/Pages/Home/About/About";
 import { persons } from "../data/utils/persons";
 import { homepage } from "../data/pages/homepage";
-import Head from "next/head";
 import { getStructuredDataOrganization } from "../lib/getStructuredData";
 const Page = () => {
 	return (

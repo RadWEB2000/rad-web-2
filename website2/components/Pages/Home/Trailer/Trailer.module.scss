@@ -1,16 +1,13 @@
+@import "../../../../styles/Variables.module.scss";
 .wrapper {
-	align-items: center;
+	@include flexNoFlow(center, center);
 	aspect-ratio: 16/9;
-	display: flex;
-	justify-content: center;
 	position: relative;
 	margin: 10rem auto 5rem auto;
 	width: 100%;
 	& > video {
+		@include fullSize;
+		@include object;
 		filter: contrast(125%);
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-		width: 100%;
 	}
 }

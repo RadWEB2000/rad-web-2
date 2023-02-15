@@ -6,19 +6,14 @@
 	width: 150rem;
 	&,
 	& > li {
-		align-items: center;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: flex-start;
+		@include flex(center, row wrap, flex-start);
 	}
 	& > li {
 		gap: 0.35rem;
 		& > span {
-			align-items: center;
+			@include flexNoFlow(center, center);
 			aspect-ratio: 1/1;
-			display: flex;
 			font-size: 2rem;
-			justify-content: center;
 			width: 2.45rem;
 		}
 		&:last-of-type {

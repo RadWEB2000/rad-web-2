@@ -1,5 +1,4 @@
 @import "../../../../styles/Variables.module.scss";
-
 .wrapper {
 	display: grid;
 	grid-template-columns: 2fr 1.3fr;
@@ -9,9 +8,7 @@
 		position: relative;
 	}
 	& > .content {
-		align-items: center;
-		display: flex;
-		justify-content: center;
+		@include flexNoFlow(center, center);
 		& > section {
 			flex-flow: column;
 			width: 90%;
@@ -43,11 +40,8 @@
 			& > .contact > .contactItem,
 			& > .socials > .social {
 				& > a {
-					height: 100%;
-					width: 100%;
-					align-items: center;
-					display: flex;
-					justify-content: center;
+					@include flexNoFlow(center, center);
+					@include fullSize;
 					& > * {
 						transition: 0.2s linear scale;
 					}
@@ -99,16 +93,13 @@
 					}
 					&,
 					& > span {
-						align-items: center;
-						display: flex;
-						justify-content: center;
+						@include flexNoFlow(center, center);
 					}
 					& > span {
 						font-size: 3rem;
 					}
 					& > p {
-						font-weight: 700;
-						font-size: 2rem;
+						@include font(2rem, 700);
 					}
 				}
 			}
@@ -158,10 +149,7 @@
 			}
 		}
 		@media (max-width: 550px) {
-			align-items: center;
-			display: flex;
-			flex-flow: column;
-			justify-content: center;
+			@include flex(center, column, center);
 			row-gap: 2rem;
 			& > * {
 				width: 100%;

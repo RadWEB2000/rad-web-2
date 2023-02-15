@@ -1,31 +1,23 @@
 @import "../../../../../styles/Variables.module.scss";
 .wrapper {
-	align-items: center;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
+	@include flex(center, column, center);
 	row-gap: 2rem;
 	width: 85%;
 	& > * {
 		width: 100%;
 	}
 	& > h1 {
-		font-size: 7.2rem;
-		font-weight: 900;
+		@include font(7.2rem, 900);
 		text-align: left;
 	}
 	& > p {
-		font-size: 2rem;
-		font-weight: 500;
+		@include font(2rem, 500);
 		line-height: 2;
 		padding: 0.2rem;
 	}
 	& > ul {
-		align-items: center;
-		display: flex;
-		flex-flow: row wrap;
+		@include flex(center, row wrap, flex-start);
 		gap: 3.5rem;
-		justify-content: flex-start;
 		padding: 0.15rem 2rem;
 	}
 	@media only screen {
@@ -61,8 +53,7 @@
 		@media (max-width: 735px) {
 			row-gap: 1rem;
 			& > h1 {
-				font-size: 4rem;
-				font-weight: 900;
+				@include font(4rem, 900);
 				text-align: center;
 			}
 			& > p {

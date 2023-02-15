@@ -1,25 +1,19 @@
 @import "../../../../styles/Variables.module.scss";
 .button {
-	align-items: center;
-	display: flex;
-	justify-content: flex-end;
+	@include flexNoFlow(center, flex-end);
 	padding: 0.25rem 0.5rem;
 }
 .content {
-	font-size: 1.85rem;
-	line-height: 1.95;
+	@include fontLine(1.95, 1.85rem, 400);
 	@media only screen {
 		@media (max-width: 700px) {
-			font-size: 1.55rem;
-			line-height: 1.8;
-			text-indent: 1.2rem;
+			@include fontLine(1.8, 1.55rem, 400);
 		}
 	}
 }
 .title {
+	@include font(5.5rem, 900);
 	color: $tertiaryButtonColor;
-	font-size: 5.5rem;
-	font-weight: 900;
 	@media only screen {
 		@media (max-width: 850px) {
 			font-size: 4.15rem;
@@ -30,10 +24,7 @@
 	}
 }
 .wrapper {
-	align-items: start;
-	display: flex;
-	flex-flow: column;
-	justify-content: flex-start;
+	@include flex(start, column, flex-start);
 	row-gap: 1rem;
 	& > * {
 		width: 100%;

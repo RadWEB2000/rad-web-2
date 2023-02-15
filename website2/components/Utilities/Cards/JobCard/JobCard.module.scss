@@ -6,11 +6,8 @@
 	display: grid;
 	grid-template-columns: 18rem calc(100% - 18rem);
 	& > .date {
-		align-items: center;
+		@include flex(center, column, space-around);
 		background-color: rgb(85, 73, 241, 0.1);
-		display: flex;
-		flex-flow: column;
-		justify-content: space-around;
 		& > p {
 			color: rgb(85, 73, 241);
 			font-weight: 900;
@@ -20,10 +17,7 @@
 		display: grid;
 		grid-template-rows: 10rem calc(100% - 10rem);
 		& > * {
-			align-items: center;
-			display: flex;
-			flex-flow: column;
-			justify-content: center;
+			@include flex(center, column, center);
 		}
 		& > .heading {
 			background-color: rgb(85, 73, 241, 0.9);
@@ -54,8 +48,7 @@
 			& > .date {
 				background-color: rgb(85, 73, 241, 0.1);
 				& > p {
-					font-size: 1.45rem;
-					font-weight: 700;
+					@include font(1.45rem, 700);
 					text-align: center;
 				}
 			}
@@ -79,10 +72,7 @@
 			}
 		}
 		@media (max-width: 550px) {
-			align-items: center;
-			display: flex;
-			flex-flow: column;
-			justify-content: center;
+			@include flex(center, column, center);
 			max-width: 95%;
 			width: 40rem;
 			& > * {
@@ -98,9 +88,7 @@
 				}
 			}
 			& > .content {
-				align-items: center;
-				display: flex;
-				flex-flow: column;
+				@include flex(center, column, center);
 				& > * {
 					width: 100%;
 				}

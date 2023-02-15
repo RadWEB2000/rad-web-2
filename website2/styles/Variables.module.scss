@@ -1,10 +1,48 @@
-$primaryButtonColor: #045aff;
-$secondaryButtonColor: #474bb2;
-$tertiaryButtonColor: #4c1690;
-$quatenaryButtonColor: #515151;
-$background: #fff;
-$white: #f7f7f7;
-$color: #000;
-$latoFont: "Lato", sans-serif;
-$grayGradient: linear-gradient(to right bottom, $background, #f7f7f7);
-$backgroudGoogleMaps: #e8eaed;
+$primaryButtonColor: var(--primaryButtonColor);
+$secondaryButtonColor: var(--secondaryButtonColor);
+$tertiaryButtonColor: var(--tertiaryButtonColor);
+$quatenaryButtonColor: var(--quatenaryButtonColor);
+$background: var(--background);
+$white: var(--white);
+$color: var(--color);
+$latoFont: var(--latoFont);
+$grayGradient: var(--grayGradient);
+$backgroudGoogleMaps: var(--backgroudGoogleMaps);
+
+@mixin borderBottomTop($color, $size) {
+	border-bottom: $size solid $color;
+	border-top: $size solid $color;
+}
+@mixin flex($align, $flow, $justify) {
+	@include flexNoFlow($align, $justify);
+	flex-flow: $flow;
+}
+@mixin flexNoFlow($align, $justify) {
+	align-items: $align;
+	display: flex;
+	justify-content: $justify;
+}
+@mixin font($size, $weight: 400) {
+	font-size: $size;
+	font-weight: $weight;
+}
+@mixin fontLine($line, $size, $weight: 400) {
+	@include font($size, $weight);
+	line-height: $line;
+}
+@mixin fullSize {
+	height: 100%;
+	width: 100%;
+}
+@mixin list($style, $position) {
+	list-style: $style;
+	list-style-position: $position;
+}
+@mixin object($fit: cover, $position: center) {
+	object-fit: $fit;
+	object-position: $position;
+}
+@mixin wrapText {
+	word-break: break-all;
+	word-wrap: break-word;
+}

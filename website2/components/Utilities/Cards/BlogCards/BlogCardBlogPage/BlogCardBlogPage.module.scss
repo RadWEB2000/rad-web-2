@@ -6,35 +6,24 @@
 	transition: 0.2s linear border;
 	width: 35rem;
 	& > a {
-		align-items: center;
-		background: yellow;
-		display: flex;
-		flex-flow: column;
-		height: 100%;
-		width: 100%;
-		justify-content: center;
+		@include flex(center, column, center);
+		@include fullSize;
 		position: relative;
 		& > .image {
-			background: aqua;
 			display: flex;
 			&,
 			& > figure {
+				@include fullSize;
 				filter: brightness(50%);
 				position: relative;
-				height: 100%;
-				width: 100%;
 			}
 			& > figure {
 				transition: 0.2s linear scale;
 			}
 		}
 		& > .content {
-			align-items: center;
-			display: flex;
-			flex-flow: column;
-			justify-content: space-between;
-			height: 100%;
-			width: 100%;
+			@include flex(center, column, space-between);
+			@include fullSize;
 			color: $background;
 			position: absolute;
 			padding: 2rem 0.75rem;
@@ -53,22 +42,16 @@
 				z-index: -1;
 			}
 			& > .date {
-				align-items: center;
-				display: flex;
-				justify-content: flex-end;
+				@include flexNoFlow(center, flex-end);
 				width: 100%;
 				& > p {
+					@include font(1.7rem, 600);
 					color: $white;
-					font-size: 1.7rem;
-					font-weight: 600;
 					transition: 0.2s linear color;
 				}
 			}
 			& > .info {
-				align-items: start;
-				display: flex;
-				flex-flow: column;
-				justify-content: center;
+				@include flex(start, column, center);
 				row-gap: 0.5rem;
 				width: 100%;
 				& > h3,
@@ -77,14 +60,10 @@
 					transition: 0.2s linear background-color, 0.2s linear color;
 				}
 				& > h3 {
-					font-size: 3rem;
-					font-weight: 800;
-					line-height: 1.7;
+					@include fontLine(1.7rem, 3rem, 800);
 				}
 				& > p {
-					font-size: 1.47rem;
-					font-weight: 600;
-					line-height: 1.7;
+					@include fontLine(1.7, 1.47rem, 600);
 					opacity: 0.8;
 				}
 				& > div {

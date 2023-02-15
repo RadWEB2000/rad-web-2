@@ -1,24 +1,20 @@
+@import "../../../../../styles/Variables.module.scss";
 .spacer {
 	display: block;
 	height: 4.5rem;
 	width: 100%;
 }
 .wrapper {
-	align-items: center;
-	border-bottom: 2px solid hsla(0, 100%, 0%, 0.1);
-	border-top: 2px solid hsla(0, 100%, 0%, 0.1);
+	@include borderBottomTop(2px, hsla(0, 100%, 0%, 0.1));
+	@include flex(center, row wrap-reverse, space-between);
 	padding: 1rem 0;
-	display: flex;
-	flex-flow: row wrap-reverse;
-	justify-content: space-between;
 	@media only screen {
 		@media (max-width: 930px) {
 			flex-flow: column-reverse;
 			row-gap: 2rem;
 			&,
 			& > div {
-				align-items: center;
-				justify-content: center;
+				@include flexNoFlow(center, center);
 			}
 			& > div {
 				display: flex;

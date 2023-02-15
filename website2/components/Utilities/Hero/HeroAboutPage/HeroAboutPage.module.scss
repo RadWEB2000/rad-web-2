@@ -5,10 +5,7 @@
 	grid-template-columns: 1.5fr 1fr;
 	padding: 1rem 4rem;
 	& > * {
-		align-items: end;
-		display: flex;
-		flex-flow: column;
-		justify-content: center;
+		@include flex(end, column, center);
 	}
 	@media only screen {
 		@media (max-width: 1150px) {
@@ -16,12 +13,9 @@
 			padding: 1rem 1rem;
 		}
 		@media (max-width: 600px) {
-			align-items: center;
-			display: flex;
-			flex-flow: column;
-			justify-content: flex-start;
-			row-gap: 2rem;
+			@include flex(center, column, flex-start);
 			padding: 1rem 1rem;
+			row-gap: 2rem;
 		}
 		@media (max-width: 400px) {
 			min-height: calc(100vh - 20rem);
@@ -31,9 +25,8 @@
 
 .image {
 	& > .picture {
-		height: 100%;
+		@include fullSize;
 		position: relative;
-		width: 100%;
 	}
 	@media only screen {
 		@media (max-width: 600px) {
@@ -42,11 +35,6 @@
 			overflow: hidden;
 			max-width: 95%;
 			width: 30rem;
-			& > .picture {
-				position: relative;
-				height: 100%;
-				width: 100%;
-			}
 		}
 	}
 }
@@ -61,28 +49,21 @@
 	}
 	& > .cities,
 	& > .jobs {
-		font-size: 2rem;
-		line-height: 2;
+		@include fontLine(2, 2rem, 400);
 	}
 	& > .jobs {
 		font-style: italic;
 	}
 	& > .socials {
-		align-items: center;
-		display: flex;
-		flex-flow: row wrap;
+		@include flex(center, row wrap, flex-end);
 		gap: 1rem;
-		justify-content: flex-end;
 		& > .social {
 			aspect-ratio: 1/1;
 			width: 3rem;
 			& > a {
-				align-items: center;
-				display: flex;
-				height: 100%;
-				justify-content: center;
+				@include flexNoFlow(center, center);
+				@include fullSize;
 				position: relative;
-				width: 100%;
 				&::before {
 					bottom: 0;
 					background-color: $color;

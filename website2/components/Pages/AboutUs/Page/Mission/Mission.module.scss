@@ -4,9 +4,7 @@
 	row-gap: 5rem;
 	&,
 	& > ul {
-		align-items: center;
-		display: flex;
-		justify-content: center;
+		@include flexNoFlow(center, center);
 	}
 	& > ul {
 		flex-flow: row;

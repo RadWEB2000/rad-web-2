@@ -1,10 +1,7 @@
 @import "../../../../../styles/Variables.module.scss";
 .wrapper {
-	align-items: center;
+	@include flex(center, column, flex-start);
 	border-radius: 1rem;
-	display: flex;
-	flex-flow: column;
-	justify-content: flex-start;
 	overflow: hidden;
 	& > * {
 		width: 100%;
@@ -60,11 +57,8 @@
 	}
 }
 .content {
-	align-items: flex-start;
+	@include flex(flex-start, column, flex-start);
 	background-image: $grayGradient;
-	display: flex;
-	flex-flow: column;
-	justify-content: flex-start;
 	padding: 0.25rem 0.25rem 0.5rem;
 	row-gap: 0.5rem;
 	user-select: none;
@@ -84,8 +78,7 @@
 		text-align: end;
 	}
 	& > p.excerpt {
-		font-size: 1.4rem;
-		font-weight: 600;
+		@include font(1.4rem, 600);
 		padding: 0.75rem;
 		text-align: justify;
 		@media only screen {
@@ -106,8 +99,6 @@
 		}
 	}
 	& > div.button {
-		align-items: center;
-		display: flex;
-		justify-content: center;
+		@include flexNoFlow(center, center);
 	}
 }

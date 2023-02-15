@@ -1,12 +1,10 @@
+@import "../../../../../styles/Variables.module.scss";
 .wrapper {
 	margin: auto auto 0 auto;
 	width: 25rem;
 	&,
 	& > section {
-		align-items: center;
-		display: flex;
-		flex-flow: column;
-		justify-content: center;
+		@include flex(center, column, center);
 		text-align: center;
 	}
 	& > div {

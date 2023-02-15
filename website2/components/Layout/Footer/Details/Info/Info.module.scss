@@ -4,15 +4,11 @@
 	&,
 	& > address,
 	& > address > ul {
-		align-items: center;
-		display: flex;
-		flex-flow: column;
-		justify-content: center;
+		@include flex(center, column, center);
 		text-align: center;
 	}
 	& > b {
-		font-size: 3rem;
-		font-weight: 900;
+		@include font(3rem, 900);
 	}
 	& > address {
 		font-style: normal;
@@ -29,9 +25,7 @@
 					flex-flow: row;
 					&,
 					& > p {
-						align-items: center;
-						display: flex;
-						justify-content: center;
+						@include flex(center, row wrap, center);
 					}
 					& > span {
 						aspect-ratio: 1/1;
@@ -39,8 +33,7 @@
 						width: 3.5rem;
 					}
 					& > p {
-						font-size: 1.7rem;
-						font-weight: 700;
+						@include font(1.7rem, 700);
 					}
 				}
 			}

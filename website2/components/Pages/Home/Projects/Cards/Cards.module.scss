@@ -1,11 +1,11 @@
+@import "../../../../../styles/Variables.module.scss";
 .wrapper {
 	display: grid;
 	grid-template-columns: 3fr 1.5fr;
 	min-height: 65rem;
 	& > .big,
 	& > .small {
-		height: 100%;
-		width: 100%;
+		@include fullSize;
 	}
 	& > .small {
 		display: grid;

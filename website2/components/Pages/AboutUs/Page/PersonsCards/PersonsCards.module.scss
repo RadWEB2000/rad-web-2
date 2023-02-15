@@ -3,10 +3,7 @@
 	row-gap: 4rem;
 	&,
 	& > section {
-		align-items: start;
-		display: flex;
-		flex-flow: column;
-		justify-content: flex-start;
+		@include flex(start, column, flex-start);
 	}
 	& > section {
 		row-gap: 2rem;
@@ -14,17 +11,13 @@
 			font-size: 5rem;
 		}
 		& > p {
+			@include font(2rem);
 			color: $quatenaryButtonColor;
-			font-size: 2rem;
 			line-height: 2;
-			font-weight: 400;
 		}
 	}
 	& > ul {
-		align-items: start;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
+		@include flex(start, row wrap, center);
 		gap: 1.5rem;
 		width: 100%;
 	}

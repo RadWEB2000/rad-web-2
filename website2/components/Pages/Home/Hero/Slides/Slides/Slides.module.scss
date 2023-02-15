@@ -2,9 +2,7 @@
 .button,
 .buttons,
 .currentSlide {
-	align-items: center;
-	display: flex;
-	justify-content: center;
+	@include flexNoFlow(center, center);
 }
 .button,
 .currentSlide {
@@ -12,10 +10,7 @@
 	width: 4.2rem;
 }
 .wrapper {
-	align-items: center;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
+	@include flex(center, column, center);
 	margin: auto;
 	row-gap: 1.5rem;
 	width: 40rem;
@@ -53,7 +48,6 @@
 	}
 }
 .currentSlide {
-	font-size: 2rem;
-	font-weight: 900;
+	@include font(2rem, 900);
 	user-select: none;
 }

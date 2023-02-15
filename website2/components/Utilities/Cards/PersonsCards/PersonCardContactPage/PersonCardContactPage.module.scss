@@ -7,10 +7,7 @@
 	&,
 	& > .content,
 	& > .content > .description {
-		align-items: start;
-		display: flex;
-		flex-flow: column;
-		justify-content: flex-start;
+		@include flex(start, column, flex-start);
 	}
 	& > *,
 	& > * > * {
@@ -28,8 +25,7 @@
 			row-gap: 0.25rem;
 			& > .fullname {
 				& > a {
-					font-size: 1.85rem;
-					font-weight: 600;
+					@include font(1.85rem, 600);
 					transition: 0.3s linear color;
 					&:focus,
 					&:focus-within,
@@ -39,22 +35,18 @@
 				}
 			}
 			& > .jobs {
-				font-size: 1.35rem;
-				font-weight: 400;
+				@include font(1.35rem, 400);
 				opacity: 0.75;
 			}
 		}
 		& > .contact {
 			display: flex;
-
 			& > .contactItem {
-				flex-grow: 1;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				height: 3.5rem;
-				gap: 0.8rem;
+				@include flexNoFlow(center, center);
 				cursor: pointer;
+				flex-grow: 1;
+				gap: 0.8rem;
+				height: 3.5rem;
 				transition: 0.3s;
 				&:nth-of-type(1) {
 					border-radius: 0 0 0 1rem;
@@ -67,11 +59,9 @@
 				}
 				& > i {
 					& > span {
+						@include flexNoFlow(center, center);
 						aspect-ratio: 1/1;
-						align-items: center;
-						display: flex;
 						font-size: 1.75rem;
-						justify-content: center;
 						width: 2.5rem;
 					}
 				}
