@@ -1,10 +1,6 @@
 @import "../../../../styles/Variables.module.scss";
 .progress {
-	background-image: linear-gradient(
-		to right,
-		$tertiaryButtonColor,
-		$secondaryButtonColor
-	);
+	background-image: $progressScroll;
 	height: 0.2rem;
 	left: 0;
 	position: fixed;
@@ -23,7 +19,7 @@
 	top: 0;
 	z-index: 99999;
 	&[data-scrolled="true"] {
-		box-shadow: 0 0.5rem 0.2rem hsla(0, 100%, 0%, 0.1);
+		box-shadow: $navShadow;
 		height: 6rem;
 	}
 	& > * {
@@ -45,7 +41,7 @@
 			grid-template-rows: 5rem auto;
 			height: auto;
 			&[data-scrolled="true"] {
-				box-shadow: 0 0.5rem 0.2rem hsla(0, 100%, 0%, 0.1);
+				box-shadow: $navShadow;
 				height: auto;
 			}
 			& > .brand {

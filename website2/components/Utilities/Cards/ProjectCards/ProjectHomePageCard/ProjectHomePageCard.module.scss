@@ -31,7 +31,7 @@
 				display: flex;
 			}
 			& > p {
-				background-color: $primaryButtonColor;
+				background-color: $primary;
 				color: $white;
 				font-weight: 700;
 				justify-content: center;
@@ -82,7 +82,7 @@
 			}
 			& > .excerpt {
 				@include fontLine(1.5, 1.55rem, 400);
-				color: $quatenaryButtonColor;
+				color: $quatenary;
 				padding: 0.25rem 0;
 			}
 		}

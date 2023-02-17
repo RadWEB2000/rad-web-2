@@ -6,7 +6,7 @@
 	}
 	& > a {
 		@include font(1.7rem, 500);
-		color: $tertiaryButtonColor;
+		color: $tertiary;
 		min-height: 3rem;
 		padding: 0.25rem 0.75rem;
 		position: relative;
@@ -15,7 +15,7 @@
 		z-index: 0;
 		&::after,
 		&::before {
-			background: $tertiaryButtonColor;
+			background: $tertiary;
 			height: 50%;
 			transition: 0.4s ease-in-out width;
 			width: 0%;

@@ -16,8 +16,7 @@
 		}
 		& > figcaption {
 			@include flex(start, column, flex-start);
-			background-color: $white;
-			background-color: rgb(85, 73, 241, 0.2);
+			background-color: $projectPageCard;
 			border-radius: 0 0 1rem 1rem;
 			padding: 0.85rem 0.75rem 2rem;
 			row-gap: 0.75rem;
@@ -31,7 +30,7 @@
 				}
 				& > p {
 					@include font(1.5rem, 600);
-					background-color: rgb(85, 73, 241);
+					background-color: $senary;
 					border-radius: 0.5rem;
 					color: $white;
 					justify-content: center;

@@ -1,8 +1,8 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
 	@include flex(center, column, center);
-	background-color: rgb(85, 73, 241, 0.1);
-	border: 0.3rem solid rgb(85, 73, 241);
+	background-color: $summaryBackground;
+	border: $summaryBorder;
 	border-radius: 1rem;
 	color: $color;
 	max-width: 95%;
@@ -19,7 +19,7 @@
 	}
 	& > p {
 		@include font(1.7rem, 600);
-		color: $quatenaryButtonColor;
+		color: $quatenary;
 		line-height: 1.6;
 	}
 	& > ul {

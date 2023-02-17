@@ -13,6 +13,7 @@ const Layout = ({
 	robots,
 	schema,
 }: IntLayout) => {
+	const theme = true;
 	return (
 		<>
 			<Head>

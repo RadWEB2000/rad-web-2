@@ -35,7 +35,7 @@
 	&:focus,
 	&:focus-within,
 	&:hover {
-		box-shadow: 0 0.25rem 0.5rem hsla(0, 100%, 0%, 0.15);
+		box-shadow: $personHomePageShadowHover;
 		transform: translateY(-3rem);
 		& > a {
 			& > div {

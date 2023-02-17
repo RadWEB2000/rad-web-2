@@ -20,7 +20,7 @@
 		row-gap: 1rem;
 		& > .title {
 			@include font(5.75rem, 800);
-			color: $primaryButtonColor;
+			color: $primary;
 		}
 		& > .socials {
 			gap: 1rem;

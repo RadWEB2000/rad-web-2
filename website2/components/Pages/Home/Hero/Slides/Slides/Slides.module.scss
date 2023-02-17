@@ -37,6 +37,7 @@
 	width: 100%;
 }
 .button {
+	color: $color;
 	font-size: 2rem;
 	& > * {
 		transition: 0.2s linear scale;

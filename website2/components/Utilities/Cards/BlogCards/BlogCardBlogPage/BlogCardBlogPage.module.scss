@@ -60,7 +60,7 @@
 					transition: 0.2s linear background-color, 0.2s linear color;
 				}
 				& > h3 {
-					@include fontLine(1.7rem, 3rem, 800);
+					@include fontLine(1.7, 3rem, 800);
 				}
 				& > p {
 					@include fontLine(1.7, 1.47rem, 600);
@@ -75,7 +75,7 @@
 						display: flex;
 					}
 					& > p {
-						background-color: hsla(0, 100%, 100%, 80%);
+						background-color: $blogCardBlogPageBackground;
 						border-radius: 1rem;
 						color: $color;
 						padding: 0.25rem 1.75rem;
@@ -112,7 +112,7 @@
 					}
 					& > div {
 						& > p {
-							background-color: hsla(0, 100%, 0%, 80%);
+							background-color: $blogCardBlogPageHoverBackground;
 							color: $background;
 						}
 					}

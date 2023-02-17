@@ -3,7 +3,7 @@
 	@include flex(center, column, flex-start);
 	background-color: $white;
 	border-radius: 1.25rem;
-	box-shadow: 0 0 1rem hsl(0, 0%, 57%, 0.25);
+	box-shadow: $testimonialShadow;
 	padding: 1.5rem 0.5rem;
 	margin: auto;
 	margin-top: 1rem;

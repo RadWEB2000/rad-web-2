@@ -6,25 +6,101 @@
 }
 // CSS VARIABLES
 :root {
-	--primaryButtonColor: #045aff;
-	--secondaryButtonColor: #474bb2;
-	--tertiaryButtonColor: #4c1690;
-	--quatenaryButtonColor: #515151;
+	--latoFont: "Lato", sans-serif;
+	--white: #f7f7f7;
+	// // &[data-theme="true"] {
+	// --navShadow: 0 0.25rem 0.2rem hsla(0, 100%, 100%, 0.2);
+	// --primaryButtonColor: #e72929; //ok
+	// --secondaryButtonColor: #c92939; // ok
+	// --tertiaryButtonColor: #c494ff; // ok
+	// --quatenaryButtonColor: #11e195; // ok
+	// --background: #121213; // ok
+	// --color: #f7f7f7; // ok
+	// --grayGradient: linear-gradient(to right bottom, #101010, #131313);
+	// --backgroudGoogleMaps: #f00; // ok
+
+	// --buttonSecondary: #c92939;
+	// --buttonSecondaryOutline: 2.5px solid rgba(255, 255, 255, 0.7);
+	// --buttonSecondaryOutlineHover: 2.5px solid rgb(145, 17, 17);
+	// // }
+	// &[data-theme="false"] {
+
 	--background: #fff;
+	--primary: #045aff;
+	--secondary: #474bb2;
+	--tertiary: #4c1690;
+	--quatenary: #515151;
+	--quinary: #463bd4;
+	--senary: #5549f1;
+	--septenary: #d1cdff;
+
 	--white: #f7f7f7;
 	--color: #000;
-	--latoFont: "Lato", sans-serif;
+	--googleMaps: #e8eaed;
+	--socialFooter: rgb(85, 73, 241, 0.12);
+	--progressScroll: linear-gradient(to right, $tertiary, $secondary);
+	--codeBackogrund: #011627;
+	--codeColor: #f7f7f7;
+	--summaryBackground: rgb(85, 73, 241, 0.1);
+	--summaryBorder: 0.3rem solid rgb(85, 73, 241);
+	--contactInformationBorder: 1px solid rgb(0, 0, 0, 0.1);
+	--contactInformationBackground: rgba(0, 0, 0, 0.03);
+	--termsBackground: linear-gradient(
+		to right,
+		hsl(120, 93%, 79, 0.3),
+		hsl(120, 93%, 79%, 0.8)
+	);
+	--homeAboutSectionBackgrond: linear-gradient(
+		to bottom,
+		rgb(85, 73, 241, 0.15),
+		rgb(85, 73, 241, 0.3)
+	);
+	--slideBackground: linear-gradient(
+		to right bottom,
+		$white,
+		hsla(244, 86%, 62%, 0.03)
+	);
+	--personHeroContactItem: rgb(85, 73, 241, 0.2);
+	--personHeroWebsiteBackground: rgb(85, 73, 241, 0.1);
+	--personHeroWebsiteBackgroundHover: rgb(85, 73, 241, 0.3);
+	--personHeroWebsiteShadow: 0 0 1rem hsla(0, 100%, 0%, 0.1);
+	--buttonSecondaryOutline: 2.5px solid rgb(0, 0, 0, 0.7);
+	--buttonSecondaryOutlineHover: 2.5px solid $senary;
+	--buttonTertiaryShadow: 0 0.5rem 0 #100b51;
+	--buttonTertiaryHoverShadow: 0 0 0 $quinary;
+	--blogCardBlogPageBackground: hsla(0, 100%, 100%, 80%);
+	--blogCardBlogPageHoverBackground: hsla(0, 100%, 0%, 80%);
 	--grayGradient: linear-gradient(to right bottom, #ffffff, #f7f7f7);
-	--backgroudGoogleMaps: #e8eaed;
+	--missionCardHoverShadow: 0 0 0.4rem 0.2rem rgb(100, 100, 100, 0.1);
+	--missionCardHoverOutline: 1px solid rgb(0, 0, 0, 0);
+	--personContactPageBorder: 1px solid rgb(0, 0, 0, 0.1);
+	--personContactPageContentHover: rgb(0, 0, 0, 0.1);
+	--personHomePageShadowHover: 0 0.25rem 0.5rem hsla(0, 100%, 0%, 0.15);
+	--projectPageCard: rgb(85, 73, 241, 0.2);
+	--testimonialShadow: 0 0 1rem hsl(0, 0%, 57%, 0.25);
+	--contactFieldBackground: rgb(0, 0, 0, 0.05);
+	--contactFieldBackgroundHover: rgb(0, 0, 0, 0.1);
+	--contactFieldLabelColor: rgb(0, 0, 0, 0.6);
+	--contactFieldInputBackground: rgb(0, 0, 0, 0);
+	--contactFieldInputColor: rgb(0, 0, 0, 1);
+	--searchBorder: 1px solid rgb(0, 0, 0, 0.3);
+	--searchOutline: 0px solid rgba(0, 0, 0, 0);
+	--navShadow: 0 0.5rem 0.2rem hsla(0, 100%, 0%, 0.1);
+	//
+	//
+	//
+	//
+	// }
 }
-
 // CODE
 ::after,
 ::before {
 	content: "";
 	position: absolute;
 }
-
+::selection {
+	background-color: $tertiaryButtonColor;
+}
 a {
 	color: inherit;
 	text-decoration: none;
@@ -34,10 +110,11 @@ button {
 	cursor: pointer;
 }
 body {
-	background-color: $background;
+	background-color: var(--background);
 	color: $color;
 	font-family: $latoFont;
 	font-size: 1.6rem;
+	transition: 0.3s linear background-color, 0.3s linear color;
 }
 button,
 input,
@@ -48,15 +125,13 @@ textarea {
 }
 html {
 	font-size: 62.5%;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	// -webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
 }
 li {
 	list-style: none;
 }
 main {
-	// border-left: 0.2px solid black;
-	// border-right: 0.2px solid black;
 	margin: 5rem auto 15rem;
 	max-width: 95vw;
 	width: 120rem;

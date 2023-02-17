@@ -17,11 +17,11 @@
 		border-radius: 15rem;
 		height: 11rem;
 		position: relative;
-		outline: 3px solid rgb(85, 73, 241);
+		outline: 3px solid $senary;
 		outline-offset: 5px;
 		width: 11rem;
 		&::after {
-			background-color: rgb(85, 73, 241);
+			background-color: $senary;
 			border-radius: 15rem;
 			height: 100%;
 			left: 0;
@@ -32,7 +32,7 @@
 			z-index: 0;
 		}
 		& > span {
-			color: rgb(85, 73, 241);
+			color: $senary;
 			font-size: 3.7rem;
 			z-index: 1;
 		}
@@ -41,7 +41,7 @@
 		@include font(2rem, 900);
 	}
 	& > p {
-		@include fontLine(1.5, 15rem);
+		@include fontLine(1.5, 1.5rem);
 		height: 11rem;
 		margin-top: -2.5rem;
 		opacity: 0.8;
@@ -50,9 +50,9 @@
 	}
 	&:focus-within,
 	&:hover {
-		box-shadow: 0 0 0.4rem 0.2rem rgb(100, 100, 100, 0.1);
+		box-shadow: $missionCardHoverShadow;
 		transform: translateY(-1rem);
-		outline: 1px solid rgb(0, 0, 0, 0);
+		outline: $missionCardHoverOutline;
 		& > div {
 			&::after {
 				transform: scale(6);

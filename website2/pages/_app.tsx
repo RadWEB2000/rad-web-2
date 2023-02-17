@@ -3,9 +3,12 @@ import { LayoutProvider } from "../context/LayoutProvider";
 import "../styles/Global.scss";
 import "../styles/Parts.scss";
 const App = ({ Component, pageProps }: AppProps) => {
+	let theme = true;
 	return (
 		<LayoutProvider>
-			<Component {...pageProps} />
+			<div data-theme={theme}>
+				<Component {...pageProps} />
+			</div>
 		</LayoutProvider>
 	);
 };

@@ -7,7 +7,7 @@
 	}
 	& > p {
 		@include fontLine(2, 2rem, 400);
-		color: $quatenaryButtonColor;
+		color: $quatenary;
 	}
 	@media only screen {
 		@media (max-width: 650px) {

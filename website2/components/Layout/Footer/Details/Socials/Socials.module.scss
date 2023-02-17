@@ -15,7 +15,8 @@
 			width: 100%;
 			z-index: 0;
 			&::before {
-				background-color: rgb(85, 73, 241, 0.15);
+				background-color: $socialFooter;
+				border-radius: 1rem 1rem 0 0;
 				bottom: 0;
 				height: 50%;
 				transform: translateY(110%);
@@ -26,7 +27,7 @@
 			&:focus,
 			&:focus-within,
 			&:hover {
-				color: $tertiaryButtonColor;
+				color: $tertiary;
 				&::before {
 					transform: translateY(0%);
 				}

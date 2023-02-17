@@ -1,17 +1,17 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	border: 1px solid rgb(0, 0, 0, 0.3);
+	border: $searchBorder;
 	border-radius: 3rem;
 	display: grid;
 	grid-template-columns: calc(100% - 10rem) 10rem;
 	height: 5rem;
-	outline: 0px solid rgb(0, 0, 0, 0);
+	outline: $searchOutline;
 	overflow: hidden;
 	margin: auto;
 	max-width: 90%;
 	transition: 0.3s;
 	&:focus-within {
-		outline: 1px solid $primaryButtonColor;
+		outline: 1px solid $primary;
 	}
 	& > input {
 		border: 0;
@@ -23,7 +23,7 @@
 	}
 	& > span {
 		@include flexNoFlow(center, start);
-		color: rgb(0, 0, 0, 0.6);
+		color: $color;
 		height: 100%;
 		line-height: 0;
 		padding: 0 10px;

@@ -6,11 +6,7 @@
 	row-gap: 5rem;
 	z-index: 0;
 	&::after {
-		background-image: linear-gradient(
-			to bottom,
-			rgb(85, 73, 241, 0.15),
-			rgb(85, 73, 241, 0.3)
-		);
+		background-image: $termsBackground;
 		border-radius: 3rem 3rem 0 0;
 		top: 0;
 		height: 80%;

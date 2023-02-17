@@ -1,12 +1,7 @@
 @import "../../../../../../styles/Variables.module.scss";
 .wrapper {
 	@include flex(center, column, center);
-	background-image: $grayGradient;
-	background-image: linear-gradient(
-		to right bottom,
-		$white,
-		hsla(244, 86%, 62%, 0.03)
-	);
+	background-image: $slideBackround;
 	border-radius: 1rem;
 	overflow: hidden;
 	position: relative;

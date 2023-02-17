@@ -7,9 +7,9 @@
 	grid-template-columns: 18rem calc(100% - 18rem);
 	& > .date {
 		@include flex(center, column, space-around);
-		background-color: rgb(85, 73, 241, 0.1);
+		background-color: $quinary;
 		& > p {
-			color: rgb(85, 73, 241);
+			color: $white;
 			font-weight: 900;
 		}
 	}
@@ -20,7 +20,7 @@
 			@include flex(center, column, center);
 		}
 		& > .heading {
-			background-color: rgb(85, 73, 241, 0.9);
+			background-color: $senary;
 			color: $background;
 			display: flex;
 			padding: 0.5rem 0.25rem;
@@ -33,7 +33,7 @@
 			}
 		}
 		& > .description {
-			background-color: $white;
+			background-color: $background;
 			& > p {
 				font-size: 1.7rem;
 				line-height: 2;
@@ -46,7 +46,6 @@
 		@media (max-width: 725px) {
 			grid-template-columns: 14rem calc(100% - 14rem);
 			& > .date {
-				background-color: rgb(85, 73, 241, 0.1);
 				& > p {
 					@include font(1.45rem, 700);
 					text-align: center;
@@ -79,11 +78,9 @@
 				width: 100%;
 			}
 			& > .date {
-				background-color: rgb(85, 73, 241, 0.2);
 				min-height: 7rem;
 				padding: 0.2rem 0.5rem;
 				& > p {
-					color: rgb(85, 73, 241, 1);
 					font-size: 1.5rem;
 				}
 			}

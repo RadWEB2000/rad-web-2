@@ -2,8 +2,8 @@
 .wrapper {
 	cursor: pointer;
 	&[data-variant="primary"] {
-		border: 2px solid #5549f1;
-		color: #5549f1;
+		border: 2px solid $senary;
+		color: $senary;
 		font-size: 1.6rem;
 		padding: 0.6rem 2.2rem;
 		position: relative;
@@ -46,16 +46,16 @@
 		background-color: transparent;
 		border: none;
 		border-radius: 0.4rem;
-		color: rgb(0, 0, 0, 0.9);
+		color: $color;
 		height: 4.5rem;
 		min-width: 13rem;
-		outline: 2.5px solid rgb(0, 0, 0, 0.7);
+		outline: $buttonSecondaryOutline;
 		position: relative;
 		transition: 0.3s;
 		user-select: none;
 		&::after {
 			@include fullSize;
-			background-color: #5549f1;
+			background-color: $senary;
 			left: 0;
 			top: 0;
 			transform: scaleY(0);
@@ -66,18 +66,18 @@
 		&:focus,
 		&:focus-within,
 		&:hover {
-			color: #fff;
-			outline: 2.5px solid rgb(85, 73, 241);
+			color: $white;
+			outline: $buttonSecondaryOutline;
 			&::after {
 				transform: scale(1, 1);
 			}
 		}
 	}
 	&[data-variant="tertiary"] {
-		background-color: #5549f1;
+		background-color: $senary;
 		border-radius: 1rem;
-		box-shadow: 0 0.5rem 0 #100b51;
-		color: #fff;
+		box-shadow: $buttonTertiaryShadow;
+		color: $white;
 		height: 3.5rem;
 		min-width: 10rem;
 		outline: none;
@@ -85,7 +85,7 @@
 		&:focus,
 		&:focus-within,
 		&:hover {
-			box-shadow: 0 0 0 #463bd4;
+			box-shadow: $buttonTertiaryHoverShadow;
 			transform: scaleY(0.5rem);
 		}
 	}

@@ -7,7 +7,7 @@
 	& > label {
 		@include flexNoFlow(center, center);
 		aspect-ratio: 1/1;
-		border: 2px solid black;
+		border: 2px solid $color;
 		cursor: pointer;
 		font-size: 1.6rem;
 		width: 2.25rem;
@@ -26,25 +26,21 @@
 		position: relative;
 		z-index: 0;
 		&::before {
-			background-image: linear-gradient(
-				to right,
-				hsl(120, 93%, 79, 0.3),
-				hsl(120, 93%, 79%, 0.8)
-			);
+			background-image: $termsBackground;
 			height: 100%;
 			transition: 0.3s ease-in-out width;
 			width: 0%;
 			z-index: -1;
 		}
 		& > a {
-			color: #463bd4;
+			color: $quinary;
 			font-weight: 600;
 			text-decoration: underline;
 			transition: 0.3s linear color;
 			&:focus,
 			&:focus-within,
 			&:hover {
-				color: #5549f1;
+				color: $senary;
 			}
 		}
 	}
