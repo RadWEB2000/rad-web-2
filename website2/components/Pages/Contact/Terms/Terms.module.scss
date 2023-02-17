@@ -11,6 +11,9 @@
 		cursor: pointer;
 		font-size: 1.6rem;
 		width: 2.25rem;
+		& > * {
+			fill: $color;
+		}
 	}
 	& > input {
 		display: none;

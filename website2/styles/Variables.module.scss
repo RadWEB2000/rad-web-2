@@ -42,20 +42,12 @@ $contactFieldInputBackground: var(--contactFieldInputBackground);
 $contactFieldInputColor: var(--contactFieldInputColor);
 $searchBorder: var(--searchBorder);
 $searchOutline: var(--searchOutline);
-//
-//
-
-$primaryButtonColor: var(--primaryButtonColor);
-$secondaryButtonColor: var(--secondaryButtonColor);
-$tertiaryButtonColor: var(--tertiaryButtonColor);
-$quatenaryButtonColor: var(--quatenaryButtonColor);
-
+$navShadow: var(--navShadow);
 $latoFont: var(--latoFont);
 $grayGradient: var(--grayGradient);
-
-$navShadow: var(--navShadow);
-$backgroudGoogleMaps: var(--backgroudGoogleMaps);
-$buttonSecondaryOutline: var(--buttonSecondaryOutline);
+$aboutUsSection: var(--aboutUsSection);
+//
+//
 
 @mixin borderBottomTop($color, $size) {
 	border-bottom: $size solid $color;

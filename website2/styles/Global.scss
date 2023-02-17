@@ -86,6 +86,11 @@
 	--searchBorder: 1px solid rgb(0, 0, 0, 0.3);
 	--searchOutline: 0px solid rgba(0, 0, 0, 0);
 	--navShadow: 0 0.5rem 0.2rem hsla(0, 100%, 0%, 0.1);
+	--aboutUsSection: linear-gradient(
+		to top left,
+		hsla(244, 86%, 62%, 0.699),
+		hsla(244, 64%, 53%, 0.158)
+	);
 	//
 	//
 	//
@@ -99,7 +104,7 @@
 	position: absolute;
 }
 ::selection {
-	background-color: $tertiaryButtonColor;
+	background-color: $tertiary;
 }
 a {
 	color: inherit;

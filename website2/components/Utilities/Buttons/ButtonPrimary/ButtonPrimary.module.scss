@@ -49,7 +49,7 @@
 		color: $color;
 		height: 4.5rem;
 		min-width: 13rem;
-		outline: $buttonSecondaryOutline;
+		outline: 0.2rem solid $senary;
 		position: relative;
 		transition: 0.3s;
 		user-select: none;
@@ -67,7 +67,7 @@
 		&:focus-within,
 		&:hover {
 			color: $white;
-			outline: $buttonSecondaryOutline;
+			outline: 0.2rem solid $quinary;
 			&::after {
 				transform: scale(1, 1);
 			}
@@ -76,7 +76,7 @@
 	&[data-variant="tertiary"] {
 		background-color: $senary;
 		border-radius: 1rem;
-		box-shadow: $buttonTertiaryShadow;
+		box-shadow: $senary;
 		color: $white;
 		height: 3.5rem;
 		min-width: 10rem;
