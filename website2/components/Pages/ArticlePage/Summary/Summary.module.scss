@@ -1,10 +1,10 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
 	@include flex(center, column, center);
-	background-color: $summaryBackground;
-	border: $summaryBorder;
+	background-color: var(--summaryBackground);
+	border: var(--summaryBorder);
 	border-radius: 1rem;
-	color: $color;
+	color: var(--color);
 	max-width: 95%;
 	padding: 2.5rem 3.5rem;
 	row-gap: 2.5rem;
@@ -19,7 +19,7 @@
 	}
 	& > p {
 		@include font(1.7rem, 600);
-		color: $quatenary;
+		color: var(--quatenary);
 		line-height: 1.6;
 	}
 	& > ul {

@@ -20,7 +20,7 @@
 		row-gap: 1rem;
 		& > .title {
 			@include font(5.75rem, 800);
-			color: $primary;
+			color: var(--primary);
 		}
 		& > .socials {
 			gap: 1rem;
@@ -45,7 +45,7 @@
 						&:focus,
 						&:focus-within,
 						&:hover {
-							color: $secondaryButtonColor;
+							color: var(--secondaryButtonColor);
 							scale: 1.2;
 						}
 					}

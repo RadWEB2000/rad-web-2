@@ -24,12 +24,12 @@
 		& > .content {
 			@include flex(center, column, space-between);
 			@include fullSize;
-			color: $background;
+			color: var(--background);
 			position: absolute;
 			padding: 2rem 0.75rem;
 			z-index: 0;
 			&::before {
-				background-color: $white;
+				background-color: var(--white);
 				top: -2rem;
 				left: 0;
 				transform: translateX(-100%);
@@ -46,7 +46,7 @@
 				width: 100%;
 				& > p {
 					@include font(1.7rem, 600);
-					color: $white;
+					color: var(--white);
 					transition: 0.2s linear color;
 				}
 			}
@@ -75,9 +75,9 @@
 						display: flex;
 					}
 					& > p {
-						background-color: $blogCardBlogPageBackground;
+						background-color: var(--blogCardBlogPageBackground);
 						border-radius: 1rem;
-						color: $color;
+						color: var(--color);
 						padding: 0.25rem 1.75rem;
 						justify-content: center;
 					}
@@ -102,18 +102,18 @@
 				}
 				& > .date {
 					& > p {
-						color: $color;
+						color: var(--color);
 					}
 				}
 				& > .info {
 					& > h3,
 					& > p {
-						color: $color;
+						color: var(--color);
 					}
 					& > div {
 						& > p {
-							background-color: $blogCardBlogPageHoverBackground;
-							color: $background;
+							background-color: var(--blogCardBlogPageHoverBackground);
+							color: var(--background);
 						}
 					}
 				}

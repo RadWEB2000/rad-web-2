@@ -23,7 +23,7 @@
 				text-align: end;
 			}
 			& > .fullname {
-				color: $primaryButtonColor;
+				color: var(--primary);
 				font-size: 5rem;
 				line-height: 2;
 			}
@@ -59,7 +59,7 @@
 					height: 3.5rem;
 					width: 7rem;
 					& > a {
-						background-color: $personHeroContactItem;
+						background-color: var(--personHeroContactItem);
 						border-radius: 1rem;
 						font-size: 2.5rem;
 					}
@@ -77,7 +77,7 @@
 			& > .website {
 				margin: 0.5rem 0;
 				& > .websiteButton {
-					background-color: $personHeroWebsiteBackground;
+					background-color: var(--personHeroWebsiteBackground);
 					border-radius: 1rem;
 					column-gap: 0.5rem;
 					flex-flow: row nowrap;
@@ -88,8 +88,8 @@
 					&:focus-within,
 					&:focus,
 					&:hover {
-						background-color: $personHeroWebsiteBackgroundHover;
-						box-shadow: $personHeroWebsiteShadow;
+						background-color: var(--personHeroWebsiteBackgroundHover);
+						box-shadow: var(--personHeroWebsiteShadow);
 					}
 					&,
 					& > span {

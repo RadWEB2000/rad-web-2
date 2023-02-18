@@ -14,7 +14,7 @@
 		}
 	}
 	& > .content {
-		background-color: $white;
+		background-color: var(--white);
 		bottom: 0;
 		opacity: 0;
 		position: absolute;
@@ -31,8 +31,8 @@
 				display: flex;
 			}
 			& > p {
-				background-color: $primary;
-				color: $white;
+				background-color: var(--primary);
+				color: var(--white);
 				font-weight: 700;
 				justify-content: center;
 				min-width: 10rem;
@@ -82,7 +82,7 @@
 			}
 			& > .excerpt {
 				@include fontLine(1.5, 1.55rem, 400);
-				color: $quatenary;
+				color: var(--quatenary);
 				padding: 0.25rem 0;
 			}
 		}

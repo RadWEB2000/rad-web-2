@@ -7,9 +7,9 @@
 	grid-template-columns: 18rem calc(100% - 18rem);
 	& > .date {
 		@include flex(center, column, space-around);
-		background-color: $quinary;
+		background-color: var(--quinary);
 		& > p {
-			color: $white;
+			color: var(--white);
 			font-weight: 900;
 		}
 	}
@@ -20,8 +20,8 @@
 			@include flex(center, column, center);
 		}
 		& > .heading {
-			background-color: $senary;
-			color: $background;
+			background-color: var(--senary);
+			color: var(--background);
 			display: flex;
 			padding: 0.5rem 0.25rem;
 			row-gap: 1rem;
@@ -33,7 +33,7 @@
 			}
 		}
 		& > .description {
-			background-color: $background;
+			background-color: var(--background);
 			& > p {
 				font-size: 1.7rem;
 				line-height: 2;

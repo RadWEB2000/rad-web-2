@@ -20,7 +20,7 @@
 		}
 		& > section {
 			align-items: center;
-			background-color: $background;
+			background-color: var(--background);
 			border-radius: 0 2rem 2rem 0;
 			display: flex;
 			flex: 1.2;
@@ -46,7 +46,7 @@
 			}
 			& > section {
 				& > h3 {
-					color: $tertiaryButtonColor;
+					color: var(--tertiary);
 				}
 			}
 		}

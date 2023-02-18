@@ -18,7 +18,7 @@
 		}
 		&:last-of-type {
 			& > a {
-				color: $primary;
+				color: var(--primary);
 			}
 		}
 	}

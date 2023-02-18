@@ -12,7 +12,7 @@
 		}
 		& > p {
 			@include font(2rem);
-			color: $quatenaryButtonColor;
+			color: var(--quatenary);
 			line-height: 2;
 		}
 	}

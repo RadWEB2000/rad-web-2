@@ -1,6 +1,6 @@
 @import "../../../../styles/Variables.module.scss";
 .progress {
-	background-image: $progressScroll;
+	background-image: var(--progressScroll);
 	height: 0.2rem;
 	left: 0;
 	position: fixed;
@@ -9,7 +9,7 @@
 	z-index: 999999;
 }
 .wrapper {
-	background-color: $background;
+	background-color: var(--background);
 	display: grid;
 	grid-template-columns: 20rem calc(100% - 20rem);
 	height: 7rem;
@@ -19,7 +19,7 @@
 	top: 0;
 	z-index: 99999;
 	&[data-scrolled="true"] {
-		box-shadow: $navShadow;
+		box-shadow: var(--navShadow);
 		height: 6rem;
 	}
 	& > * {
@@ -41,7 +41,7 @@
 			grid-template-rows: 5rem auto;
 			height: auto;
 			&[data-scrolled="true"] {
-				box-shadow: $navShadow;
+				box-shadow: var(--navShadow);
 				height: auto;
 			}
 			& > .brand {

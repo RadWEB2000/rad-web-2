@@ -2,8 +2,8 @@
 .wrapper {
 	cursor: pointer;
 	&[data-variant="primary"] {
-		border: 2px solid $senary;
-		color: $senary;
+		border: 2px solid var(--senary);
+		color: var(--senary);
 		font-size: 1.6rem;
 		padding: 0.6rem 2.2rem;
 		position: relative;
@@ -46,16 +46,16 @@
 		background-color: transparent;
 		border: none;
 		border-radius: 0.4rem;
-		color: $color;
+		color: var(--color);
 		height: 4.5rem;
 		min-width: 13rem;
-		outline: 0.2rem solid $senary;
+		outline: 0.2rem solid var(--senary);
 		position: relative;
 		transition: 0.3s;
 		user-select: none;
 		&::after {
 			@include fullSize;
-			background-color: $senary;
+			background-color: var(--senary);
 			left: 0;
 			top: 0;
 			transform: scaleY(0);
@@ -66,18 +66,18 @@
 		&:focus,
 		&:focus-within,
 		&:hover {
-			color: $white;
-			outline: 0.2rem solid $quinary;
+			color: var(--white);
+			outline: 0.2rem solid var(--quinary);
 			&::after {
 				transform: scale(1, 1);
 			}
 		}
 	}
 	&[data-variant="tertiary"] {
-		background-color: $senary;
+		background-color: var(--senary);
 		border-radius: 1rem;
-		box-shadow: $senary;
-		color: $white;
+		box-shadow: var(--senary);
+		color: var(--white);
 		height: 3.5rem;
 		min-width: 10rem;
 		outline: none;
@@ -85,7 +85,7 @@
 		&:focus,
 		&:focus-within,
 		&:hover {
-			box-shadow: $buttonTertiaryHoverShadow;
+			box-shadow: var(--buttonTertiaryHoverShadow);
 			transform: scaleY(0.5rem);
 		}
 	}

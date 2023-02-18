@@ -8,7 +8,7 @@
 			@include flexNoFlow(center, flex-start);
 			@include font(1.7rem, 500);
 			@include wrapText;
-			background-color: $color;
+			background-color: var(--color);
 			border-radius: 0.5rem;
 			color: $white;
 			line-height: 2;

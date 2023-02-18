@@ -7,12 +7,12 @@
 	}
 	h2 {
 		@include font(3.5rem, 900);
-		color: $tertiary;
+		color: var(-tertiary);
 		line-height: 2.5;
 	}
 	h3 {
 		@include font(2.7rem, 700);
-		color: $secondary;
+		color: var(--secondary);
 		line-height: 2;
 	}
 	p {
@@ -38,8 +38,8 @@
 		}
 	}
 	pre {
-		background: $codeBackground;
-		color: $codeColor;
+		background-color: var(--codeBackground);
+		color: var(--codeColor);
 		margin: 2rem auto;
 		text-align: start;
 		padding: 2rem 1.5rem;

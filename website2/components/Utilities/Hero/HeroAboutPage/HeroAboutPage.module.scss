@@ -66,14 +66,14 @@
 				position: relative;
 				&::before {
 					bottom: 0;
-					background-color: $color;
+					background-color: var(--color);
 					height: 0.12rem;
 					left: 0;
 					transition: 0.3s linear width;
 					width: 0%;
 				}
 				& > * {
-					color: $color;
+					color: var(--color);
 					font-size: 2.5rem;
 					opacity: 0.7;
 					transition: 0.3s linear opacity, 0.3s linear transform;

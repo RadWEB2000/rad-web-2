@@ -20,7 +20,7 @@
 		& > section {
 			@include flex(start, column, flex-start);
 			border-radius: 0 0 1rem 1rem;
-			background-color: $white;
+			background-color: var(--white);
 			min-height: 10rem;
 			padding: 1.15rem 0.5rem 1rem 0.5rem;
 			row-gap: 0.7rem;
@@ -35,7 +35,7 @@
 	&:focus,
 	&:focus-within,
 	&:hover {
-		box-shadow: $personHomePageShadowHover;
+		box-shadow: var(--personHomePageShadowHover);
 		transform: translateY(-3rem);
 		& > a {
 			& > div {

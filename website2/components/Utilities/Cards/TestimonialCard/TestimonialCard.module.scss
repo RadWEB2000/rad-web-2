@@ -1,9 +1,9 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
 	@include flex(center, column, flex-start);
-	background-color: $white;
+	background-color: var(--white);
 	border-radius: 1.25rem;
-	box-shadow: $testimonialShadow;
+	box-shadow: var(--testimonialShadow);
 	padding: 1.5rem 0.5rem;
 	margin: auto;
 	margin-top: 1rem;

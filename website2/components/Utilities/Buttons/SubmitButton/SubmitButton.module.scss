@@ -1,9 +1,9 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
 	@include font(1.6rem, 400);
-	background-color: $senary;
+	background-color: var(--senary);
 	border-radius: 1rem;
-	color: $white;
+	color: var(--white);
 	display: inline-block;
 	letter-spacing: 0.1px;
 	min-width: 13rem;
@@ -12,7 +12,7 @@
 	transition: 0.3s;
 	&:focus-within,
 	&:hover {
-		background-color: $quinary;
+		background-color: var(--quinary);
 		padding-right: 3rem;
 		& > i {
 			opacity: 1;
@@ -29,7 +29,7 @@
 		transition: 0.3s;
 		& > span {
 			@include flexNoFlow(center, center);
-			color: $septenary;
+			color: var(--septenary);
 		}
 	}
 }

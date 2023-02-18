@@ -7,12 +7,12 @@
 	& > a {
 		@include flex(center, row, center);
 		@include font(2.5rem, 800);
-		color: $color;
+		color: var(--color);
 		padding: 0 1rem;
 		transition: 0.3s ease-in-out color;
 		&:focus,
 		&:hover {
-			color: $primary;
+			color: var(--primary);
 		}
 	}
 	@media only screen {

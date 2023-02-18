@@ -20,7 +20,7 @@
 	& > .content {
 		padding: 0.25rem 0.4rem;
 		& > .description {
-			border-bottom: $personContactPageBorder;
+			border-bottom: var(personContactPageBorder);
 			padding: 0 0 0.5rem;
 			row-gap: 0.25rem;
 			& > .fullname {
@@ -30,7 +30,7 @@
 					&:focus,
 					&:focus-within,
 					&:hover {
-						color: $secondary;
+						color: var(secondary);
 					}
 				}
 			}
@@ -55,7 +55,7 @@
 					border-radius: 0 0 1rem 0;
 				}
 				&:hover {
-					background-color: $personContactPageContentHover;
+					background-color: var(--personContactPageContentHover);
 				}
 				& > i {
 					& > span {

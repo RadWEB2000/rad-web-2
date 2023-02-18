@@ -1,7 +1,7 @@
 @import "../../../../../../styles/Variables.module.scss";
 .wrapper {
 	@include flex(center, column, center);
-	background-image: $slideBackround;
+	background-image: var(--slideBackround);
 	border-radius: 1rem;
 	overflow: hidden;
 	position: relative;

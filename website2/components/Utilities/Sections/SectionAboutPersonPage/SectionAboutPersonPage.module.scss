@@ -16,21 +16,21 @@
 		font-size: 4rem;
 	}
 	& > p {
-		color: $quatenaryButtonColor;
+		color: var(--quatenary);
 		font-size: 1.7rem;
 		b {
-			color: $color;
+			color: var(--color);
 			font-weight: 700;
 		}
 		a {
-			color: $senary;
+			color: var(--senary);
 			display: inline-block;
 			padding: 0 0.5rem;
 			text-decoration: underline;
 			transition: 0.2s linear color;
 			&:focus-within,
 			&:hover {
-				color: $color;
+				color: var(--color);
 			}
 		}
 	}

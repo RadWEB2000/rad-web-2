@@ -1,17 +1,17 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	border: $searchBorder;
+	border: var(--searchBorder);
 	border-radius: 3rem;
 	display: grid;
 	grid-template-columns: calc(100% - 10rem) 10rem;
 	height: 5rem;
-	outline: $searchOutline;
+	outline: var(--searchOutline);
 	overflow: hidden;
 	margin: auto;
 	max-width: 90%;
 	transition: 0.3s;
 	&:focus-within {
-		outline: 1px solid $primary;
+		outline: 1px solid var(--primary);
 	}
 	& > input {
 		border: 0;
@@ -23,7 +23,7 @@
 	}
 	& > span {
 		@include flexNoFlow(center, start);
-		color: $color;
+		color: var(--color);
 		height: 100%;
 		line-height: 0;
 		padding: 0 10px;

@@ -32,13 +32,13 @@
 				@include flexNoFlow(center, flex-start);
 			}
 			& > a {
-				border: $contactInformationBorder;
+				border: var(--contactInformationBorder);
 				padding: 0 1rem 0 0;
 				transition: 0.25s ease-in-out background-color;
 				&:focus,
 				&:focus-within,
 				&:hover {
-					background-color: $contactInformationBackground;
+					background-color: var(--contactInformationBackground);
 				}
 				& > i {
 					& > span {
