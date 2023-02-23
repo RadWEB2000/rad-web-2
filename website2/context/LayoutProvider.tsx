@@ -1,4 +1,5 @@
 import { createContext, ReactElement, useEffect, useState } from "react";
+import { theme, TypeThemeValue } from "./../data/utils/theme";
 export const LayoutContext = createContext({
 	menu: {
 		close: () => {},
@@ -13,6 +14,9 @@ export const LayoutProvider = ({
 }: {
 	children: ReactElement | ReactElement[];
 }) => {
+	const [isLightTheme, setIsLightTheme] = useState(true);
+	const { dark, light } = theme;
+	const getThemeVariant: TypeThemeValue = isLightTheme ? light : dark;
 	const [isOpenMenu, setIsOpenMenu] = useState(true);
 	const [isScrolled, updateIsScrolled] = useState(false);
 	useEffect(() => {
@@ -26,6 +30,15 @@ export const LayoutProvider = ({
 			});
 		}
 	}, []);
+
+	useEffect(() => {
+		const root = document.documentElement;
+		Object.keys(getThemeVariant).forEach((key) => {
+			const val = getThemeVariant[key];
+			root.style.setProperty(`--${key}`, val);
+		});
+	}, []);
+
 	return (
 		<LayoutContext.Provider
 			value={{
@@ -37,7 +50,7 @@ export const LayoutProvider = ({
 				scroll: isScrolled,
 			}}
 		>
-			{children}
+			<>{children}</>
 		</LayoutContext.Provider>
 	);
 };

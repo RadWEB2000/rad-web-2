@@ -6,6 +6,7 @@
 	& > .big,
 	& > .small {
 		@include fullSize;
+		overflow: hidden;
 	}
 	& > .small {
 		display: grid;
