@@ -14,6 +14,7 @@ const Page = () => {
 				type: "website",
 			}}
 			schema={{}}
+			hero={<></>}
 		>
 			<Element404 content="Strona nie została znaleziona" />
 		</Layout>
