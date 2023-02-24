@@ -19,11 +19,13 @@ const Page = () => {
 				type: "website",
 			}}
 			schema={getStructuredDataWebsite({ url: "/o-nas" })}
+			hero={
+				<HeroPage
+					content={aboutpage.pl.main.content.hero.content}
+					title={aboutpage.pl.main.content.hero.title}
+				/>
+			}
 		>
-			<HeroPage
-				content={aboutpage.pl.main.content.hero.content}
-				title={aboutpage.pl.main.content.hero.title}
-			/>
 			<main>
 				<Mission
 					cards={aboutpage.pl.main.content.mission.cards}

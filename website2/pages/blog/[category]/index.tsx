@@ -30,10 +30,14 @@ const Page = ({
 				type: "website",
 			}}
 			schema={getStructuredDataWebsite({ url: path })}
+			hero={
+				<>
+					<HeroPage content={hero?.content} title={hero?.title} />
+					<SearchField handle={setSearchValue} placeholder={`Szukaj`} />
+				</>
+			}
 		>
-			<HeroPage content={hero?.content} title={hero?.title} />
 			<main>
-				<SearchField handle={setSearchValue} placeholder={`Szukaj`} />
 				<Cards>
 					{posts.pl.articles
 						// .filter((item) =>

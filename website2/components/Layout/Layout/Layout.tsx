@@ -3,10 +3,12 @@ import { footer } from "../../../data/footer";
 import Footer from "../Footer/Footer/Footer";
 import Navigation from "../Navigation/Navigation/Navigation";
 import Seo from "../Seo/Seo";
+import styles from "./Layout.module.scss";
 import { IntLayout } from "./interface";
 const Layout = ({
 	canonical,
 	children,
+	hero,
 	image,
 	meta,
 	og,
@@ -38,7 +40,10 @@ const Layout = ({
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
 				/>
 			</Head>
-			<Navigation />
+			<header className={styles.header}>
+				<Navigation />
+				<>{hero}</>
+			</header>
 			<>{children}</>
 			<Footer socials={footer.pl.socials} />
 		</>

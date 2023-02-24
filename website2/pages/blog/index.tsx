@@ -24,13 +24,17 @@ const Page = () => {
 				type: "website",
 			}}
 			schema={{}}
+			hero={
+				<>
+					<HeroPage
+						content={blogpage.pl.main.content.hero.content}
+						title={blogpage.pl.main.content.hero.title}
+					/>
+					<SearchField handle={setSearchValue} placeholder={`Szukaj`} />
+				</>
+			}
 		>
-			<HeroPage
-				content={blogpage.pl.main.content.hero.content}
-				title={blogpage.pl.main.content.hero.title}
-			/>
 			<main>
-				<SearchField handle={setSearchValue} placeholder={`Szukaj`} />
 				<Cards>
 					{posts.pl.articles
 						.filter(

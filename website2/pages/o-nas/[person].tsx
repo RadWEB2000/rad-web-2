@@ -47,24 +47,26 @@ const Page = ({
 				title: seo?.og.title,
 				type: "website",
 			}}
+			hero={
+				<Hero
+					cities={hero?.cities}
+					fullname={{
+						firstname: hero?.fullname.firstname,
+						lastname: hero?.fullname.lastname,
+					}}
+					image={hero?.image}
+					jobs={hero?.jobs}
+					email={email?.address}
+					phone={phone?.address}
+					socials={hero?.socials}
+					website={{
+						title: hero?.website.title,
+						url: hero?.website.url,
+						visible: hero?.website.visible,
+					}}
+				/>
+			}
 		>
-			<Hero
-				cities={hero?.cities}
-				fullname={{
-					firstname: hero?.fullname.firstname,
-					lastname: hero?.fullname.lastname,
-				}}
-				image={hero?.image}
-				jobs={hero?.jobs}
-				email={email?.address}
-				phone={phone?.address}
-				socials={hero?.socials}
-				website={{
-					title: hero?.website.title,
-					url: hero?.website.url,
-					visible: hero?.website.visible,
-				}}
-			/>
 			<main>
 				{content && <Content content={content} />}
 				{history && <Jobs cards={history} content={``} title={``} />}

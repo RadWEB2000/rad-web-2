@@ -7,6 +7,7 @@ import Summary from "../../../components/Pages/ArticlePage/Summary/Summary";
 import Details from "../../../components/Pages/ArticlePage/Details/Details/Details";
 import { getStructuredDataArticle } from "./../../../lib/getStructuredData";
 import { getAuthor } from "../../../lib/getAuthor";
+import HeroArticlePage from "./../../../components/Utilities/Hero/HeroArticlePage/HeroArticlePage";
 const Page = ({
 	author,
 	breadcrumbs,
@@ -78,8 +79,19 @@ const Page = ({
 				title: hero?.title,
 				url: url,
 			})}
+			hero={
+				<HeroArticlePage
+					breadcrumbs={breadcrumbs}
+					image={hero?.image}
+					lang="pl"
+					readingTime={hero?.readingTime}
+					release={hero?.date}
+					title={hero?.title}
+					url={url}
+				/>
+			}
 		>
-			{breadcrumbs && <Breadcrumb breadcrumbs={breadcrumbs} />}
+			{/* {breadcrumbs && <Breadcrumb breadcrumbs={breadcrumbs} />}
 
 			<HeroArticle
 				date={hero?.date}
@@ -89,8 +101,13 @@ const Page = ({
 				time={hero?.readingTime}
 				title={hero?.title}
 				url={url}
-			/>
-			<main className="article">
+			/> */}
+			<main
+				className="article"
+				style={{
+					marginTop: "15rem",
+				}}
+			>
 				<Content content={content} />
 				{summary?.visible && (
 					<Summary

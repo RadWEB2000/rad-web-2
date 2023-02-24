@@ -84,7 +84,8 @@ export const posts: intPosts = {
 					readingTime: "10",
 					title: "Czym jest HTML? - historia i rozwój",
 				},
-				content: `<h2>Czy HTML jest językiem programowania?</h2>
+				content: `	<b style="font-weight:700">Język HTML to najczęściej spotykany język w internecie. To nim bazują wszystkie strony oraz aplikacje internetowe. Jest on najbardziej niedocenianym, a jednocześnie sprawiającym najwięcej problemów językiem spośród wszystkich języków webowych.</b><h2>Czy HTML jest językiem programowania?</h2>
+			
 				<p>Zanim odpowiem na to, czy HTML jest językiem programowania, w pierwszej kolejności należy zdefiniować, czym jest język programowania. Język programowania jest sztucznie wytworzonym językiem, kt&oacute;ry jest stosowany do wytwarzania oprogramowania, takiego jak strony internetowe, aplikacje internetowe, zaplecze logistyczne bankowości oraz gry.&nbsp;Każdy język programowania, podobnie jak języki obce, mają określoną składnię (z ang. syntax) oraz działają na r&oacute;żnej powłoce.</p>
 				<p>Aby dany język m&oacute;gł być nazwanym językiem programowania, musi zawierać własną składnię (może być podobna do składni innych język&oacute;w, dobrym przykładem jest tutaj Java oraz C#), semantykę, czyli zasady, w jaki spos&oacute;b tworzy się konstrukcje językowe. Ponadto taki język musi być interpretowany (podobnie jak JavaScript jest interpretowany przez przeglądarkę internetową) lub interpretowany. Na koniec zaś musi oferować wiele funkcjonalności jak na przykład operowanie na danych, kt&oacute;re umożliwiają tworzenie złożonych program&oacute;w.</p>
 				<p>W związku z powyższą definicją tego, czym jest język programowania, jasno można stwierdzić, że&nbsp;HTML nie jest językiem programowania. HTML jest językiem opisowym, ponieważ nie posiada w sobie funkcjonalności dotyczących operowania danymi, a jedynie jest furtką m.in. dla PHP i JavaScript, kt&oacute;ra umożliwia manipulację danymi.</p>
@@ -412,7 +413,9 @@ export const posts: intPosts = {
 					readingTime: "6",
 					title: "Robots.txt — Jak przejąć kontrolę nad robotami wyszukiwarek?",
 				},
-				content: `<section>
+				content: `
+				<b style="font-weight:700">Od końca lat 60. XX wieku, czyli od momentu stworzenia internetu powstało prawie 2 miliardy stron internetowych. Sporo. W związku z tym, kiedy internet stał się globalnym dobrem, stworzono programy — roboty wyszukiwarek, które miały i mają nadal za zadanie skanować wszystkie strony internetowe w ramach wyszukiwarki internetowej oraz filtrować je. Po przefiltrowaniu stron boty wyszukiwarek sortują strony internetowe w swoim rankingu. Czym są roboty wyszukiwarek? Jak zarządzać nimi? Szczegóły poznasz poniżej.</b>
+				<section>
 						<h2>Czym są roboty?</h2>
 						<p>Każdy z nas słyszał o robotach. To dzieło techniki rozpropagowały filmy z gatunku &bdquo;Ja Robot&rdquo;. Na szerszą, światową skalę roboty pod sformułowaniem droid &mdash; słowo, do kt&oacute;rego Disney/LucasArts posiadają prawa autorskie &mdash; rozpropagowały filmy z sagi &bdquo;Gwiezdne Wojny&rdquo;.</p>
 						<h3>Robot &mdash; naukowa definicja</h3>
@@ -562,7 +565,9 @@ export const posts: intPosts = {
 					readingTime: "3",
 					title: "Fenomen Windowsa",
 				},
-				content: `<section>
+				content: `
+				<b style="font-weight:700">W Polsce z komputera korzysta około 85% osób, którzy są sklasyfikowani pomiędzy trzy duże systemy operacyjne: Windows, Linux oraz MacOS. Jednakże w kraju nad Wartą i Wisłą dominują użytkownicy systemu okienkowego, z racji tego że sporo aplikacji biznesowych i gier jest tworzona z myślą o tym systemie. Z zrealizowanej w ubiegłym tygodniu ankiety traktującej o systemach operacyjnych, ze sztandarowego produktu Microsoft korzysta 75% osób, jednakże jedynie 50% użytkowników uważa za swój ulubiony. Dlaczego?</b>
+				<section>
 				<h2>Czym wog&oacute;le jest system operacyjny?</h2>
 				<p>Skoro ten artykuł traktuje o systemach operacyjnych, warto wspomnieć czym wog&oacute;le są. Sama nazwa pochodzi z angielskiego <em>Operating System</em> - w skr&oacute;cie <em>OS</em>. OS to środowisko do uruchamiania i zarządzania programami, procesami oraz zadaniami w komputerze. Najważniejszymi obszarami działań system&oacute;w są:</p>
 				<ul>
@@ -632,7 +637,9 @@ export const posts: intPosts = {
 					readingTime: "3",
 					title: "Cechy dobrej strony internetowej",
 				},
-				content: `<section>
+				content: `
+				<b style="font-weight:700">W swoim życiu każdy z nas widział setki, jak nie tysiące stron internetowych. Jedne nam przypadły do gustu, inne niekoniecznie. Od czego to zależy? Najważniejszymi czynnikami są prędkość załadowania strony, kolory oraz typografia - to wszystko wpływa w sposób istotny na jakość strony w aspekcie front-end developerskim oraz jakości pozycjonowania. Ta Święta Trójca internetowa, jest swoistym kluczem do odniesienia sukcesu w tej przestrzeni.</b>
+				<section>
 				<section>
 					<h2>Co to jest typografia?</h2>
 					<p>Typografia to nic innego jak styl, grubość oraz rozmiar czcionek. W tworzeniu stron internetowych istotne jest zastosowanie odpowiedniej czcionki. Im przejrzystsza tym użytkownikowi, łatwiej będzie przeczytać to co mieliśmy do przekazania. Wielu tw&oacute;rc&oacute;w stron, korzysta z tzw. <strong>czcionek bezszeryfowych</strong> - <em>&quot;sans serif&quot;</em>, kt&oacute;re nie posiadają haczyk&oacute;w. Do najpopularniejszych przykład&oacute;w czcionek, przy jednoczesnym wsparciu polskich znak&oacute;w należą Poppins, Lato oraz Montserrat.&nbsp;</p><br/>

@@ -24,12 +24,14 @@ const Page = () => {
 				type: "website",
 			}}
 			schema={getStructuredDataOrganization()}
+			hero={
+				<Hero
+					buttons={homepage.pl.content.hero.buttons}
+					content={homepage.pl.content.hero.content}
+					title={homepage.pl.content.hero.title}
+				/>
+			}
 		>
-			<Hero
-				buttons={homepage.pl.content.hero.buttons}
-				content={homepage.pl.content.hero.content}
-				title={homepage.pl.content.hero.title}
-			/>
 			<main className="homepage">
 				<Trailer movie={homepage.pl.content.trailer} />
 				<Blog

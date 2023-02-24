@@ -9,7 +9,6 @@
 	z-index: 999999;
 }
 .wrapper {
-	background-color: var(--background);
 	display: grid;
 	grid-template-columns: 20rem calc(100% - 20rem);
 	height: 7rem;
@@ -17,8 +16,11 @@
 	transition: 0.2s linear background-color, 0.2s linear box-shadow,
 		0.2s linear height;
 	top: 0;
+	position: fixed;
+	width: 100vw;
 	z-index: 99999;
 	&[data-scrolled="true"] {
+		background-color: var(--background);
 		box-shadow: var(--navShadow);
 		height: 6rem;
 	}

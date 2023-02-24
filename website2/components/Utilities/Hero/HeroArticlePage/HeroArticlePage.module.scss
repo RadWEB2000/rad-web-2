@@ -1,0 +1,80 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	@include flex(center, column, center);
+	// background: lime;
+	row-gap: 5rem;
+	& > .socials {
+		@include flex(center, row wrap, flex-end);
+		column-gap: 1rem;
+		width: 110rem;
+		// background: pink;
+		& > li {
+			aspect-ratio: 1/1;
+			background-color: var(--quinary);
+			color: var(--background);
+			cursor: pointer;
+			border-radius: 50%;
+			width: 4.5rem;
+			&,
+			& > * > * {
+				@include flexNoFlow(center, center);
+			}
+			& > * > * {
+				@include fullSize;
+				font-size: 2.2rem;
+			}
+		}
+	}
+	& > section {
+		@include flex(center, column, center);
+		// background: green;
+		width: 125rem;
+		row-gap: 2rem;
+		& > * {
+			width: 100%;
+		}
+		& > h1 {
+			font-size: 7.5rem;
+			font-weight: 900;
+			text-align: center;
+		}
+		& > div {
+			@include flex(center, row wrap, space-between);
+			min-height: 5rem;
+			padding: 0.5rem 1rem;
+			& > p {
+				font-size: 2rem;
+				font-weight: 700;
+			}
+		}
+	}
+	& > figure {
+		aspect-ratio: 16/10;
+		bottom: -15rem;
+		box-shadow: 0 2rem 2rem 0.2rem hsla(0, 0%, 0%, 0.15);
+		border-radius: 2rem;
+		overflow: hidden;
+		position: relative;
+		width: 115rem;
+		& > div {
+			@include fullSize;
+			position: relative;
+		}
+	}
+
+	& > .socials,
+	& > section,
+	& > figure {
+		max-width: 95%;
+	}
+
+	@media only screen {
+		@media (max-width: 750px) {
+			& > section {
+				& > h1 {
+					font-size: 5rem;
+				}
+			}
+		}
+	}
+}

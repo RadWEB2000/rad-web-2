@@ -23,11 +23,13 @@ const Page = () => {
 				type: "website",
 			}}
 			schema={getStructuredDataWebsite({ url: "/kontakt" })}
+			hero={
+				<HeroPage
+					content={contactpage.pl.content.hero.content}
+					title={contactpage.pl.content.hero.title}
+				/>
+			}
 		>
-			<HeroPage
-				content={contactpage.pl.content.hero.content}
-				title={contactpage.pl.content.hero.title}
-			/>
 			<main>
 				<Wrapper>
 					<div>

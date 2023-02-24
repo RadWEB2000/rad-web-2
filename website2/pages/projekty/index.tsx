@@ -19,11 +19,13 @@ const Page = () => {
 				type: "website",
 			}}
 			schema={{}}
+			hero={
+				<HeroPage
+					content={projectspage.pl.main.content.hero.content}
+					title={projectspage.pl.main.content.hero.title}
+				/>
+			}
 		>
-			<HeroPage
-				content={projectspage.pl.main.content.hero.content}
-				title={projectspage.pl.main.content.hero.title}
-			/>
 			<main>
 				<Cards>
 					{pl.main.projects.cards.map(
