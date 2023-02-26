@@ -55,7 +55,7 @@ const Page = ({ frontMatter, source }: { frontMatter: any; source: any }) => {
 export default Page;
 
 export const getStaticPaths = async () => {
-	const postsDirectory = path.join(process.cwd(), "content", "articles1");
+	const postsDirectory = path.join(process.cwd(), "content", "articles");
 	const filenames = fs.readdirSync(postsDirectory);
 	const paths = filenames.map((filename) => {
 		const filePath = path.join(postsDirectory, filename);
@@ -80,7 +80,7 @@ export const getStaticProps = async ({ params }: { params: any }) => {
 	const filePath = path.join(
 		process.cwd(),
 		"content",
-		"articles1",
+		"articles",
 		`${slug}.mdx`
 	);
 	const fileContents = fs.readFileSync(filePath);
