@@ -7,6 +7,8 @@ import { posts } from "../../../data/pages/posts";
 import Cards from "../../../components/Pages/Blog/Cards/Cards";
 import { blogpage } from "../../../data/pages/blogpage";
 import { getStructuredDataWebsite } from "../../../lib/getStructuredData";
+import fs from "fs";
+import path from "path";
 const Page = ({
 	seo,
 	hero,
@@ -70,6 +72,16 @@ const Page = ({
 	);
 };
 export default Page;
+
+export const getStaticPaths = async () => {
+	const postsDirectory = path.join(process.cwd(), "content", "articles1");
+	console.log("posts directory", postsDirectory);
+	return {
+		paths: [],
+		fallback: true,
+	};
+};
+
 export const getStaticProps = ({ params }: { params: any }) => {
 	const getSubpage = blogpage.pl.subpages.filter((item: any) => {
 		return item.slug === params.category;
@@ -93,11 +105,5 @@ export const getStaticProps = ({ params }: { params: any }) => {
 				title: getSubpage[0].content.hero.title,
 			},
 		},
-	};
-};
-export const getStaticPaths = async () => {
-	return {
-		paths: [],
-		fallback: true,
 	};
 };

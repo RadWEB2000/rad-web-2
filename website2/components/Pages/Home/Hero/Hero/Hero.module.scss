@@ -163,12 +163,10 @@
 			}
 		}
 		@media (max-width: 1300px) {
-			background: lime;
 			grid-template-columns: 1.5fr 2fr;
 			width: 97%;
 			margin: auto;
 			& > .cards {
-				background: orange;
 				justify-content: flex-end;
 				& > div {
 					& > li {
@@ -198,12 +196,10 @@
 			}
 		}
 		@media (max-width: 1150px) {
-			background: lime;
 			grid-template-columns: 1.5fr 2fr;
 			width: 97%;
 			margin: auto;
 			& > .cards {
-				background: orange;
 				justify-content: flex-end;
 				& > div {
 					& > li {
@@ -236,22 +232,17 @@
 		}
 		@media (max-width: 890px) {
 			@include flex(center, column, flex-start);
-			background: lime;
 			width: 97%;
 			margin: auto;
 			& > * {
 				width: 100%;
 			}
 			& > .cards {
-				background: orange;
 				justify-content: flex-end;
 				& > div {
 					position: relative;
 					width: 100%;
 					& > li {
-						background: pink;
-						// height: 100%;
-						// width: 100%;
 						width: 100%;
 						max-width: 95%;
 					}

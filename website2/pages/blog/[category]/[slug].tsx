@@ -76,8 +76,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }: { params: any }) => {
-	console.log("getStaticProps", params);
-	const { category, slug } = params;
+	const { slug } = params;
 	const filePath = path.join(
 		process.cwd(),
 		"content",
