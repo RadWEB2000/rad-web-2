@@ -13,9 +13,9 @@
 	content: "";
 	position: absolute;
 }
-::selection {
-	background-color: var(--tertiary);
-}
+// ::selection {
+// 	background-color: var(--tertiary);
+// }
 a {
 	color: inherit;
 	text-decoration: none;

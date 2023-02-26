@@ -32,8 +32,8 @@ const Page = () => {
 				/>
 			}
 		>
-			<main className="homepage">
-				<Trailer movie={homepage.pl.content.trailer} />
+			<main className="homepage mainHP">
+				{/* <Trailer movie={homepage.pl.content.trailer} /> */}
 				<Blog
 					button={{
 						path: homepage.pl.content.blog.button.path,

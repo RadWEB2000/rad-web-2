@@ -1,6 +1,7 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
 	border: var(--searchBorder);
+	background-color: hsla(224, 7%, 67%, 0.22);
 	border-radius: 3rem;
 	display: grid;
 	grid-template-columns: calc(100% - 10rem) 10rem;
@@ -8,6 +9,7 @@
 	outline: var(--searchOutline);
 	overflow: hidden;
 	margin: auto;
+	width: 90rem;
 	max-width: 90%;
 	transition: 0.3s;
 	&:focus-within {

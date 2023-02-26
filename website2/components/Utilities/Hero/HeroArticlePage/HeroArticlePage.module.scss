@@ -39,9 +39,10 @@
 			text-align: center;
 		}
 		& > div {
-			@include flex(center, row wrap, space-between);
+			@include flex(flex-end, column-reverse, center);
 			min-height: 5rem;
 			padding: 0.5rem 1rem;
+			row-gap: 1rem;
 			& > p {
 				font-size: 2rem;
 				font-weight: 700;

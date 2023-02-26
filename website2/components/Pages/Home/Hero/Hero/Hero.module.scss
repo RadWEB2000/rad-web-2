@@ -1,40 +1,300 @@
 @import "../../../../../styles/Variables.module.scss";
+
 .wrapper {
 	display: grid;
-	grid-template-columns: 1.5fr 1fr;
-	gap: 1rem;
-	margin: 0 auto;
-	padding: 1.2rem 1rem;
-	min-height: calc(100vh - 12.5rem);
-	width: 90vw;
+	grid-template-columns: 2fr 3fr;
+	min-height: calc(100vh - 20rem);
+	position: relative;
+
+	& > .cards {
+		@include flexNoFlow(center, center);
+		position: relative;
+		min-height: 100%;
+		margin: auto;
+		width: 95%;
+		& > div {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			position: relative;
+			top: -2rem;
+			padding: 2rem;
+			position: absolute;
+			margin: auto;
+			gap: 1rem;
+			& > li {
+				border-radius: 2rem;
+				overflow: hidden;
+				margin: auto;
+				height: 40rem;
+				width: 35rem;
+				position: relative;
+				& > a {
+					position: relative;
+					z-index: 0;
+					&,
+					& > figure {
+						@include fullSize;
+					}
+					& > figure {
+						position: relative;
+						z-index: 0;
+						& > div {
+							@include fullSize;
+							position: relative;
+							transition: 0.3s linear scale;
+						}
+					}
+					& > figcaption {
+						background-color: #c9d5f3;
+						position: absolute;
+						bottom: 0;
+						padding: 1rem;
+						width: 100%;
+						transition: 0.3s linear all;
+						transform: translateY(calc(100% - 6rem));
+						& > h4 {
+							font-size: 2.5rem;
+							height: 6rem;
+							font-weight: 700;
+						}
+						& > p {
+							font-size: 1.5rem;
+							line-height: 1.7;
+							transition: 0.3s linear all;
+							opacity: 0;
+							visibility: hidden;
+						}
+					}
+				}
+				&:focus,
+				&:focus-within,
+				&:hover {
+					& > a {
+						& > figure {
+							& > div {
+								scale: 1.12;
+							}
+						}
+						& > figcaption {
+							transform: translateY(0);
+							& > p {
+								opacity: 1;
+								visibility: visible;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	& > div {
 		@include flexNoFlow(center, center);
+		position: relative;
+		& > section {
+			@include flex(center, column, center);
+
+			row-gap: 2rem;
+			width: 90%;
+			& > * {
+				width: 100%;
+			}
+			& > h1 {
+				font-size: 5.5rem;
+				font-weight: 900;
+			}
+			& > p {
+				font-size: 1.8rem;
+				line-height: 2.2;
+				font-weight: 500;
+			}
+			& > ul {
+				@include flex(center, row wrap, flex-start);
+				gap: 3.5rem;
+				padding: 1.5rem 2rem;
+			}
+		}
 	}
 	@media only screen {
-		@media (max-width: 1170px) {
-			grid-template-columns: 1.25fr 1fr;
-			padding: 2rem 1.5rem;
-		}
-		@media (max-width: 1050px) {
-			grid-template-columns: 1.25fr 1fr;
-			width: 96vw;
-		}
-		@media (max-width: 875px) {
-			grid-template-columns: 1.5fr 1fr;
-			padding: 2rem 0.5rem;
-		}
-		@media (max-width: 750px) {
-			grid-template-columns: 1.85fr 1fr;
-		}
-		@media (max-width: 670px) {
-			@include flex(center, column, center);
-			padding: 1rem 0.5rem;
-		}
-		@media (max-width: 500px) {
-			padding: 1rem 0.25rem;
+		@media (max-width: 1460px) {
+			& > .cards {
+				& > div {
+					& > li {
+						height: 33rem;
+						width: 35rem;
+						& > a {
+							& > figcaption {
+								position: absolute;
+								bottom: 0;
+								padding: 1rem;
+								width: 100%;
+								transition: 0.3s linear all;
+								transform: translateY(calc(100% - 4.5rem));
+								& > h4 {
+									font-size: 2.25rem;
+									height: 4rem;
+									font-weight: 700;
+								}
+								& > p {
+									font-size: 1.45rem;
+									line-height: 1.3;
+								}
+							}
+						}
+					}
+				}
+			}
 			& > div {
-				padding: 1rem 0;
+				& > section {
+					row-gap: 2rem;
+					top: 8rem;
+					width: 92%;
+					& > h1 {
+						font-size: 4.25rem;
+					}
+					& > p {
+						font-size: 1.5rem;
+					}
+					& > ul {
+						@include flex(center, row wrap, flex-start);
+						gap: 3.5rem;
+						padding: 1.5rem 2rem;
+					}
+				}
+			}
+		}
+		@media (max-width: 1300px) {
+			background: lime;
+			grid-template-columns: 1.5fr 2fr;
+			width: 97%;
+			margin: auto;
+			& > .cards {
+				background: orange;
+				justify-content: flex-end;
+				& > div {
+					& > li {
+						height: 32rem;
+						width: 30rem;
+						& > a {
+							& > figcaption {
+								position: absolute;
+								bottom: 0;
+								padding: 1rem;
+								width: 100%;
+								transition: 0.3s linear all;
+								transform: translateY(calc(100% - 4.5rem));
+								& > h4 {
+									font-size: 2.25rem;
+									height: 4rem;
+									font-weight: 700;
+								}
+								& > p {
+									font-size: 1.45rem;
+									line-height: 1.3;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		@media (max-width: 1150px) {
+			background: lime;
+			grid-template-columns: 1.5fr 2fr;
+			width: 97%;
+			margin: auto;
+			& > .cards {
+				background: orange;
+				justify-content: flex-end;
+				& > div {
+					& > li {
+						height: 32rem;
+						width: 23rem;
+					}
+				}
+			}
+			& > div {
+				align-items: center;
+
+				& > section {
+					row-gap: 2rem;
+					top: unset;
+					position: relative;
+					width: 92%;
+					& > h1 {
+						font-size: 3.25rem;
+					}
+					& > p {
+						font-size: 1.5rem;
+					}
+					& > ul {
+						@include flex(center, row wrap, flex-start);
+						gap: 3.5rem;
+						padding: 1.5rem 2rem;
+					}
+				}
+			}
+		}
+		@media (max-width: 890px) {
+			@include flex(center, column, flex-start);
+			background: lime;
+			width: 97%;
+			margin: auto;
+			& > * {
 				width: 100%;
+			}
+			& > .cards {
+				background: orange;
+				justify-content: flex-end;
+				& > div {
+					position: relative;
+					width: 100%;
+					& > li {
+						background: pink;
+						// height: 100%;
+						// width: 100%;
+						width: 100%;
+						max-width: 95%;
+					}
+				}
+			}
+			& > div {
+				align-items: center;
+
+				& > section {
+					row-gap: 2rem;
+					top: unset;
+					position: relative;
+					padding: 2rem 0;
+					width: 92%;
+					& > h1 {
+						font-size: 5.25rem;
+					}
+					& > p {
+						font-size: 1.75rem;
+					}
+					& > ul {
+						@include flex(center, row wrap, flex-start);
+						gap: 3.5rem;
+						padding: 1.5rem 2rem;
+					}
+				}
+			}
+		}
+		@media (max-width: 600px) {
+			& > .cards {
+				display: none;
+			}
+		}
+	}
+	@media (max-width: 400px) {
+		& > div {
+			& > section {
+				& > h1 {
+					font-size: 3rem;
+				}
+				& > p {
+					font-size: 1.55rem;
+				}
 			}
 		}
 	}

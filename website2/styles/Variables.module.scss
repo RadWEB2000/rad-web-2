@@ -1,3 +1,10 @@
+@mixin backgroundImage {
+	// background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 @mixin borderBottomTop($color, $size) {
 	border-bottom: $size solid $color;
 	border-top: $size solid $color;
