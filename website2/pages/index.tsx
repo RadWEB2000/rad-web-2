@@ -10,7 +10,25 @@ import About from "../components/Pages/Home/About/About";
 import { persons } from "../data/utils/persons";
 import { homepage } from "../data/pages/homepage";
 import { getStructuredDataOrganization } from "../lib/getStructuredData";
-const Page = () => {
+
+import fs from "fs";
+import matter from "gray-matter";
+
+interface IntArticle {
+	slug: string;
+	category: string;
+	release: string;
+	excerpt: string;
+	image: string;
+	title: string;
+	lang: string;
+}
+
+interface IntPage {
+	articles: IntArticle[];
+}
+
+const Page = ({ articles }: IntPage) => {
 	return (
 		<Layout
 			image={homepage.pl.seo.image}
@@ -39,7 +57,7 @@ const Page = () => {
 						path: homepage.pl.content.blog.button.path,
 						title: homepage.pl.content.blog.button.title,
 					}}
-					cards={[...posts.pl.articles]}
+					cards={articles}
 					content={homepage.pl.content.blog.content}
 					title={homepage.pl.content.blog.title}
 				/>
@@ -67,3 +85,30 @@ const Page = () => {
 	);
 };
 export default Page;
+
+export const getStaticProps = ({ params }: { params: any }) => {
+	const articlesDirectory = `${process.cwd()}/content/articles`;
+	const articlesFiles = fs
+		.readdirSync(articlesDirectory)
+		.filter((file) => file.endsWith(".mdx"));
+	const articles = articlesFiles.map((file) => {
+		const path = `${articlesDirectory}/${file}`;
+		const contents = fs.readFileSync(path, "utf8");
+		const { data } = matter(contents);
+		return {
+			slug: file.replace(/\.mdx$/, ""),
+			category: data.category,
+			release: `${data.release}`,
+			excerpt: data.excerpt,
+			image: data.image,
+			title: data.title,
+			lang: data.lang,
+		};
+	});
+
+	return {
+		props: {
+			articles,
+		},
+	};
+};

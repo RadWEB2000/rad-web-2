@@ -9,12 +9,12 @@ export interface IntCard {
 }
 export interface IntCards {
 	cards: {
-		hero: {
-			excerpt: string;
-			date: string;
-			image: string;
-			title: string;
-		};
-		path: string;
+		slug: string;
+		category: string;
+		release: string;
+		excerpt: string;
+		image: string;
+		title: string;
+		lang: string;
 	}[];
 }

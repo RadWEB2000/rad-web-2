@@ -24,17 +24,26 @@ const Cards = ({ cards }: IntCards): ReactElement => {
 	console.log(cards);
 	return (
 		<ul className={styles.wrapper}>
-			{cards.slice(0, articlesNumber).map(({ hero, path }) => (
-				<BlogCardBlogPage
-					excerpt={hero.excerpt}
-					category={``}
-					date={hero.date}
-					image={hero.image}
-					key={hero.title}
-					path={path}
-					title={hero.title}
-				/>
-			))}
+			{cards
+				.sort(
+					(a, b) =>
+						new Date(b.release).getTime() - new Date(a.release).getTime()
+				)
+				.slice(0, articlesNumber)
+				.map((article: any) => {
+					const { category, excerpt, image, release, title, slug } = article;
+					return (
+						<BlogCardBlogPage
+							category={category}
+							date={release}
+							excerpt={excerpt}
+							image={image}
+							key={title}
+							path={`/blog/${category}/${slug}`}
+							title={title}
+						/>
+					);
+				})}
 		</ul>
 	);
 };
