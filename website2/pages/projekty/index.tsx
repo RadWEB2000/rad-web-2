@@ -4,7 +4,10 @@ import ProjectPageCard from "../../components/Utilities/Cards/ProjectCards/Proje
 import { projects } from "../../data/pages/projects";
 import HeroPage from "./../../components/Utilities/Hero/HeroPage/HeroPage";
 import { projectspage } from "./../../data/pages/projectspage";
-const Page = () => {
+import fs from "fs";
+import matter from "gray-matter";
+import { articles } from "./../../data/utils/articles";
+const Page = ({ articles }: { articles: any | any[] }) => {
 	const { pl } = projects;
 	return (
 		<Layout
@@ -28,24 +31,69 @@ const Page = () => {
 		>
 			<main>
 				<Cards>
-					{pl.main.projects.cards.map(
-						({ category, excerpt, image, path, title }) => (
-							<ProjectPageCard
-								category={{
-									name: category.name,
-									value: category.value,
-								}}
-								excerpt={excerpt}
-								image={image}
-								key={title}
-								path={path}
-								title={title}
-							/>
+					{articles
+						.sort(
+							(a: any, b: any) =>
+								new Date(b.release).getTime() - new Date(a.release).getTime()
 						)
-					)}
+						.map(
+							({
+								slug,
+								category,
+								release,
+								excerpt,
+								image,
+								title,
+							}: {
+								slug: any;
+								category: any;
+								release: any;
+								excerpt: any;
+								image: any;
+								title: any;
+							}) => (
+								<ProjectPageCard
+									category={{
+										name: category,
+										value: "seo",
+									}}
+									excerpt={excerpt}
+									image={image}
+									key={title}
+									path={`/projekty/${slug}`}
+									title={title}
+								/>
+							)
+						)}
 				</Cards>
 			</main>
 		</Layout>
 	);
 };
 export default Page;
+
+export const getStaticProps = ({ params }: { params: any }) => {
+	const articlesDirectory = `${process.cwd()}/content/projects/pl`;
+	const articlesFiles = fs
+		.readdirSync(articlesDirectory)
+		.filter((file) => file.endsWith(".mdx"));
+	const articles = articlesFiles.map((file) => {
+		const path = `${articlesDirectory}/${file}`;
+		const contents = fs.readFileSync(path, "utf8");
+		const { data } = matter(contents);
+		return {
+			slug: file.replace(/\.mdx$/, ""),
+			category: data.category,
+			release: `${data.release}`,
+			excerpt: data.excerpt,
+			image: data.image,
+			title: data.title,
+		};
+	});
+
+	return {
+		props: {
+			articles,
+		},
+	};
+};
