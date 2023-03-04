@@ -11,15 +11,22 @@ import Image from "next/image";
 import styles from "./HeroArticlePage.module.scss";
 import { IntHeroArticlePage } from "./interface";
 import { motion } from "framer-motion";
+import ButtonPrimary from "./../../Buttons/ButtonPrimary/ButtonPrimary";
+import getStack from "./../../../../lib/getStack";
+import { CgWebsite } from "react-icons/cg";
+import getCapitalize from "../../../../lib/getCapitalize";
 const HeroArticlePage = ({
 	breadcrumbs,
 	image,
 	lang,
 	readingTime,
 	release,
+	tags,
 	title,
 	url,
+	website,
 }: IntHeroArticlePage) => {
+	const shareUrl = "https://rad-web.vercel.app";
 	const { day, month, year } = getDate({
 		date: release,
 		lang: lang,
@@ -37,7 +44,7 @@ const HeroArticlePage = ({
 						scale: 0.95,
 					}}
 				>
-					<FacebookShareButton url={url}>
+					<FacebookShareButton url={shareUrl}>
 						<FaFacebookF />
 					</FacebookShareButton>
 				</motion.li>
@@ -49,7 +56,7 @@ const HeroArticlePage = ({
 						scale: 0.95,
 					}}
 				>
-					<LinkedinShareButton url={url}>
+					<LinkedinShareButton url={shareUrl}>
 						<FaLinkedinIn />
 					</LinkedinShareButton>
 				</motion.li>
@@ -61,7 +68,7 @@ const HeroArticlePage = ({
 						scale: 0.95,
 					}}
 				>
-					<TwitterShareButton url={url}>
+					<TwitterShareButton url={shareUrl}>
 						<FaTwitter />
 					</TwitterShareButton>
 				</motion.li>
@@ -75,6 +82,32 @@ const HeroArticlePage = ({
 					</p>
 					<p>{`${day} ${month} ${year}`}</p>
 				</div>
+				{tags && (
+					<ul className={styles.stacks}>
+						{tags.map((item: string, index: number) => (
+							<>
+								{getStack(item).name !== null && (
+									<li
+										aria-label={`${getStack(item).name}`}
+										className={styles.stack}
+										title={`${getStack(item).name}`}
+									>
+										{getStack(item).icon}
+									</li>
+								)}
+							</>
+						))}
+					</ul>
+				)}
+				{website && (
+					<div className={styles.website}>
+						<ButtonPrimary
+							path={website}
+							title={`Zapraszamy na stronę ${getCapitalize(title)}`}
+							variant="primary"
+						/>
+					</div>
+				)}
 			</section>
 			<figure>
 				<div>

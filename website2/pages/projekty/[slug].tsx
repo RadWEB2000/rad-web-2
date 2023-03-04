@@ -18,10 +18,12 @@ const Page = ({ frontMatter, source }: { frontMatter: any; source: any }) => {
 					breadcrumbs={frontMatter.breadcrumbs}
 					image={frontMatter.image}
 					lang={"pl"}
-					readingTime={frontMatter.reading}
+					readingTime={frontMatter.readingTime}
 					release={frontMatter.release}
 					title={frontMatter.title}
+					tags={frontMatter.tags}
 					url={`https://rad-web.vercel.app/projekty/${frontMatter.category}/${frontMatter.slug}`}
+					website={frontMatter.website}
 				/>
 			}
 			image={frontMatter.image}

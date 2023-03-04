@@ -15,7 +15,7 @@ const Menu = () => {
 			{menu.pl.map(({ submenu }) => (
 				<>
 					{submenu?.map(({ path, title }) => (
-						<li key={path}>
+						<li key={`${path} - footer`}>
 							<Link href={path}>{title}</Link>
 						</li>
 					))}

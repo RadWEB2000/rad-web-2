@@ -48,6 +48,19 @@
 				font-weight: 700;
 			}
 		}
+		& > .stacks {
+			@include flex(center, row wrap, flex-end);
+			& > .stack {
+				@include flexNoFlow(center, center);
+				aspect-ratio: 1/1;
+				font-size: 2.5rem;
+				user-select: none;
+				width: 4rem;
+			}
+		}
+		& > .website {
+			@include flexNoFlow(center, center);
+		}
 	}
 	& > figure {
 		aspect-ratio: 16/10;

@@ -11,20 +11,22 @@ import {
 import { IntHeroArticle, IntSocialsShare } from "./interface";
 import { ReactElement } from "react";
 const SocialsShare = ({ url }: IntSocialsShare) => {
+	const shareUrl =
+		window !== undefined ? window.location.href : "https://rad-web.vercel.app";
 	return (
 		<ul className={styles.socials}>
 			<li className={styles.social}>
-				<FacebookShareButton url={url}>
+				<FacebookShareButton url={shareUrl}>
 					<FaFacebookF />
 				</FacebookShareButton>
 			</li>
 			<li className={styles.social}>
-				<LinkedinShareButton url={url}>
+				<LinkedinShareButton url={shareUrl}>
 					<FaLinkedinIn />
 				</LinkedinShareButton>
 			</li>
 			<li className={styles.social}>
-				<TwitterShareButton url={url}>
+				<TwitterShareButton url={shareUrl}>
 					<FaTwitter />
 				</TwitterShareButton>
 			</li>

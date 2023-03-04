@@ -9,4 +9,6 @@ export interface IntHeroArticlePage {
 	release: string;
 	title: string;
 	url: string;
+	tags?: string[];
+	website?: string;
 }

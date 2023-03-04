@@ -1,0 +1,175 @@
+@import "../../../../styles/Variables.module.scss";
+
+.category {
+	& > button {
+		@include flexNoFlow(center, center);
+		background-color: var(--senary);
+		border-radius: 0.5rem;
+		color: var(--background);
+		padding: 0.5rem 0.7rem;
+		transition: 0.3s ease-in-out background-color, 0.3s ease-in-out color;
+		&:focus,
+		&:focus-within,
+		&:hover {
+			background-color: var(--quinary);
+		}
+		& > p {
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+	}
+}
+
+.wrapper__big,
+.wrapper__small {
+	& > .image {
+		border-radius: 1rem;
+		overflow: hidden;
+		position: relative;
+		& > figure {
+			@include fullSize;
+			transition: 0.3s linear transform;
+		}
+	}
+
+	& > .content {
+		& > .categories {
+			@include flex(start, row wrap, start);
+			gap: 0.6rem;
+		}
+	}
+
+	&:focus,
+	&:focus-within,
+	&:hover {
+		& > .image {
+			& > figure {
+				transform: scale(1.1) rotate(1deg);
+			}
+		}
+	}
+}
+
+.wrapper__big {
+	background-color: #c9d5f3;
+	border-radius: 1rem;
+	display: grid;
+	height: 60rem;
+	grid-template-columns: 1.5fr 2fr;
+	width: 100%;
+	& > .content {
+		@include flex(start, column, center);
+		padding: 1rem 1.5rem;
+		row-gap: 1rem;
+		& > .release {
+			font-size: 2.1rem;
+			font-weight: 700;
+		}
+		& > .title {
+			font-size: 4.5rem;
+			font-weight: 700;
+		}
+		& > .excerpt {
+			font-size: 1.7rem;
+			line-height: 1.9;
+			font-weight: 600;
+		}
+	}
+	@media only screen {
+		@media (max-width: 875px) {
+			@include flex(center, column-reverse, center);
+			background-color: transparent;
+			height: auto;
+			margin: auto;
+			max-width: 90%;
+			width: 35rem;
+			& > .image {
+				aspect-ratio: 3/3.4;
+				width: 100%;
+			}
+			& > .content {
+				@include flex(start, column, start);
+				padding: 0.5rem 1.15rem 0.8rem;
+				row-gap: 0.4rem;
+				& > .release {
+					font-size: 1.5rem;
+					font-weight: 600;
+					text-align: end;
+					width: 100%;
+				}
+				& > .title {
+					font-size: 2.4rem;
+					font-weight: 800;
+				}
+				& > .excerpt {
+					font-size: 1.55rem;
+					font-weight: 500;
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+}
+
+.wrapper__small {
+	margin: auto;
+	max-width: 95%;
+	width: 35rem;
+	& > .image {
+		aspect-ratio: 3/3.4;
+		width: 100%;
+	}
+	& > .content {
+		@include flex(start, column, start);
+		padding: 0.5rem 1.15rem 0.8rem;
+		row-gap: 0.4rem;
+		& > .release {
+			font-size: 1.5rem;
+			font-weight: 600;
+			text-align: end;
+			width: 100%;
+		}
+		& > .title {
+			font-size: 2.4rem;
+			font-weight: 800;
+		}
+		& > .excerpt {
+			font-size: 1.55rem;
+			font-weight: 500;
+			line-height: 1.5;
+		}
+	}
+	@media only screen {
+		@media (max-width: 740px) {
+			width: 32rem;
+		}
+		@media (max-width: 675px) {
+			width: 27rem;
+		}
+		@media (max-width: 585px) {
+			width: 25rem;
+			& > .image {
+				aspect-ratio: 3/4;
+				width: 100%;
+			}
+			& > .content {
+				padding: 0.5rem 0.55rem 0.8rem;
+				& > .release {
+					font-size: 1.5rem;
+					font-weight: 600;
+					text-align: end;
+					width: 100%;
+				}
+				& > .title {
+					font-size: 2.2rem;
+					font-weight: 800;
+				}
+				& > .excerpt {
+					font-size: 1.45rem;
+					font-weight: 500;
+					line-height: 1.2;
+				}
+			}
+		}
+	}
+}
