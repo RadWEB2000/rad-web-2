@@ -10,7 +10,6 @@ import { ArticleComponents } from "../../../components/Pages/ArticlePage/Article
 
 const Page = ({ frontMatter, source }: { frontMatter: any; source: any }) => {
 	const readTime = readingTime(source);
-	console.log(frontMatter.release);
 	return (
 		<Layout
 			hero={
@@ -66,7 +65,6 @@ export const getStaticPaths = async () => {
 				category: data.category,
 				slug: filename.replace(/\.mdx/, ""),
 			},
-			// data,
 		};
 	});
 	return {
