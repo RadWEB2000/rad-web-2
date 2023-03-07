@@ -1,4 +1,4 @@
-import Breadcrumb from "../../Cards/Breadcrumb/Breadcrumb/Breadcrumb";
+// import Breadcrumb from "../../Cards/Breadcrumb/Breadcrumb/Breadcrumb";
 import { BsClock } from "react-icons/bs";
 import { FaFacebookF, FaLinkedinIn, FaTwitch, FaTwitter } from "react-icons/fa";
 import {
@@ -15,6 +15,7 @@ import ButtonPrimary from "./../../Buttons/ButtonPrimary/ButtonPrimary";
 import getStack from "./../../../../lib/getStack";
 import { CgWebsite } from "react-icons/cg";
 import getCapitalize from "../../../../lib/getCapitalize";
+import Breadcrumb from "../../../../src/components/Utilities/Breadcrumb/Breadcrumb";
 const HeroArticlePage = ({
 	breadcrumbs,
 	image,
@@ -34,7 +35,7 @@ const HeroArticlePage = ({
 	});
 	return (
 		<div className={styles.wrapper}>
-			{breadcrumbs && <Breadcrumb breadcrumbs={breadcrumbs} />}
+			{breadcrumbs && <Breadcrumb breadcrumb={breadcrumbs} />}
 			<ul className={styles.socials}>
 				<motion.li
 					whileHover={{

@@ -1,25 +1,34 @@
-import JobCard from "../../../../Utilities/Cards/JobCard/JobCard";
+// import JobCard from "../../../../Utilities/Cards/JobCard/JobCard";
 import SectionAboutPersonPage from "../../../../Utilities/Sections/SectionAboutPersonPage/SectionAboutPersonPage";
 import styles from "./Jobs.module.scss";
-import { IntJobs } from "./interface";
 import { ReactElement } from "react";
+import JobCard, {
+	iJobCard,
+} from "../../../../../src/components/Utilities/Cards/JobCard/JobCard";
 
-const Jobs = ({ cards, content, title }: IntJobs): ReactElement => {
+interface iJobs {
+	cards: iJobCard[];
+	content?: string;
+	title?: string;
+}
+
+const Jobs = ({ cards, content, title }: iJobs): ReactElement => {
+	console.log(cards);
 	return (
 		<div className={`section ${styles.wrapper}`}>
-			<SectionAboutPersonPage content={content} title={title} />
+			{content !== undefined && title !== undefined && (
+				<SectionAboutPersonPage content={content} title={title} />
+			)}
+
 			<ol>
-				{cards.map(({ content, date, subtitle, title }) => (
-					<>
-						{title !== "" && (
-							<JobCard
-								content={content}
-								date={date}
-								subtitle={subtitle}
-								title={title}
-							/>
-						)}
-					</>
+				{cards.map(({ company, content, time, workplace }) => (
+					<JobCard
+						content={content}
+						company={company}
+						time={time}
+						key={`${company} - ${workplace}`}
+						workplace={workplace}
+					/>
 				))}
 			</ol>
 		</div>

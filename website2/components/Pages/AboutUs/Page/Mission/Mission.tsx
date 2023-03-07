@@ -1,8 +1,8 @@
-import MissionCard from "../../../../Utilities/Cards/MissionCard/MissionCard";
 import SectionAboutPage from "../../../../Utilities/Sections/SectionAboutPage/SectionAboutPage";
 import styles from "./Mission.module.scss";
 import { IntMission } from "./interface";
 import { ReactElement } from "react";
+import MissionCard from "../../../../../src/components/Utilities/Cards/MissionCard/MissionCard";
 const Mission = ({ cards, content, title }: IntMission): ReactElement => {
 	return (
 		<div className={`section ${styles.wrapper}`}>

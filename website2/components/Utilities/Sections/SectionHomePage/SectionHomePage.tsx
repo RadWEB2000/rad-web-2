@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import styles from "./SectionHomePage.module.scss";
 import { IntSectionHomePage } from "./interface";
 import { ReactElement } from "react";
+import RegularButton from "../../../../src/components/Utilities/Buttons/RegularButton/RegularButton";
 const SectionHomePage = ({
 	button,
 	content,
@@ -68,7 +69,7 @@ const SectionHomePage = ({
 					}}
 					viewport={{ once: true }}
 				>
-					<ButtonPrimary
+					<RegularButton
 						path={button.path}
 						title={button.title}
 						variant="secondary"

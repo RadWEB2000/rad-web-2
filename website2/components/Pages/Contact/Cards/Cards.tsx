@@ -1,18 +1,23 @@
-import PersonCardContactPage from "../../../Utilities/Cards/PersonsCards/PersonCardContactPage/PersonCardContactPage";
+import PersonCard from "../../../../src/components/Utilities/Cards/PersonCard/PersonCard";
 import styles from "./Cards.module.scss";
 import { IntCards } from "./interface";
 const Cards = ({ cards }: IntCards) => {
 	return (
 		<ul className={styles.wrapper}>
 			{cards.map(({ email, fullname, image, jobs, path, phone }) => (
-				<PersonCardContactPage
-					email={{ ...email }}
-					fullname={{ ...fullname }}
+				<PersonCard
+					cities=""
+					email={email.address}
+					fullname={{
+						firstname: fullname.firstname,
+						lastname: fullname.lastname,
+					}}
 					image={image}
-					job={jobs}
-					key={jobs}
+					jobs={jobs}
+					key={`${fullname.firstname} - ${fullname.lastname} - contact`}
 					path={path}
-					phone={{ ...phone }}
+					phone={phone.address}
+					variant="contact"
 				/>
 			))}
 		</ul>

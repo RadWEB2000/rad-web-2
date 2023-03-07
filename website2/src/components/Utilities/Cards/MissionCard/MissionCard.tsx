@@ -1,6 +1,12 @@
 import styles from "./MissionCard.module.scss";
-import { IntMissionCard } from "./interface";
-const MissionCard = ({ content, icon, title }: IntMissionCard) => {
+import { ReactElement } from "react";
+interface iMissionCard {
+	content: string;
+	icon: ReactElement;
+	title: string;
+}
+
+const MissionCard = ({ content, icon, title }: iMissionCard): ReactElement => {
 	return (
 		<li className={styles.wrapper}>
 			<div>
@@ -11,4 +17,5 @@ const MissionCard = ({ content, icon, title }: IntMissionCard) => {
 		</li>
 	);
 };
+
 export default MissionCard;

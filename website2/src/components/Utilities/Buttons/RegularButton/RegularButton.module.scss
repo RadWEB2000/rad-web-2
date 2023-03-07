@@ -1,0 +1,81 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	cursor: pointer;
+	& > .content {
+		@include flex(center, row, center);
+		@include fullSize;
+	}
+	&[data-variant="primary"] {
+		// background: orange;
+		& > .content {
+			border: 2.2px solid var(--senary);
+			color: var(--senary);
+			font-size: 1.6rem;
+			font-weight: 700;
+			padding: 0.6rem 2.2rem;
+			position: relative;
+			text-decoration: none;
+			text-align: center;
+			transition: 0.5s;
+			&::after,
+			&::before {
+				border: inherit;
+				height: 4rem;
+				transition: 0.5s;
+				width: 4rem;
+			}
+			&::after {
+				border-width: 0 2px 2px 0;
+				bottom: -1rem;
+				right: -1rem;
+			}
+			&::before {
+				border-width: 2px 0 0 2px;
+				left: -1rem;
+				top: -1rem;
+			}
+			&:focus,
+			&:focus-within,
+			&:hover {
+				&::after,
+				&::before {
+					height: calc(100% + 1.8rem);
+					width: calc(100% + 1.8rem);
+				}
+			}
+		}
+	}
+	&[data-variant="secondary"] {
+		@include flexNoFlow(center, center);
+		@include font(1.65rem, 600);
+		background-color: transparent;
+		border: none;
+		border-radius: 0.4rem;
+		color: #1d1927;
+		height: 3.75rem;
+		min-width: 10rem;
+		outline: 0.2rem solid #5549f1;
+		position: relative;
+		transition: 0.3s;
+		user-select: none;
+		&::after {
+			@include fullSize;
+			background-color: #5549f1;
+			left: 0;
+			top: 0;
+			transform: scaleY(0);
+			transform-origin: bottom;
+			transition: 0.3s;
+			z-index: -1;
+		}
+		&:focus,
+		&:focus-within,
+		&:hover {
+			color: #ffffff;
+			outline: 0.2rem solid #463bd4;
+			&::after {
+				transform: scale(1, 1);
+			}
+		}
+	}
+}

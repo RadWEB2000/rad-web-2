@@ -1,0 +1,47 @@
+@import "../../../styles/Variables.module.scss";
+.wrapper {
+	gap: 0.15rem;
+	margin: 0.5rem auto 7rem;
+	max-width: 95vw;
+	width: 150rem;
+	&,
+	& > .element {
+		@include flex(center, row wrap, flex-start);
+	}
+}
+
+.element {
+	gap: 0.35rem;
+	& > span {
+		@include flexNoFlow(center, center);
+		aspect-ratio: 1/1;
+		font-size: 1.3rem;
+		width: 2.45rem;
+	}
+	& > a {
+		font-weight: 700;
+		position: relative;
+		transition: 0.3s ease-in-out color;
+		&::after {
+			bottom: -0.5rem;
+			background-color: #008aff;
+			left: 0;
+			height: 0.15rem;
+			transition: 0.3s ease-in-out width;
+			width: 0%;
+		}
+		&:focus,
+		&:focus-visible,
+		&:hover {
+			color: #008aff;
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+	&:last-of-type {
+		& > a {
+			color: #008aff;
+		}
+	}
+}

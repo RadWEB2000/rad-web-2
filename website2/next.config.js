@@ -8,7 +8,7 @@ const withMDX = require("@next/mdx")({
 });
 const nextConfig = {
 	i18n: {
-		locales: ["pl"],
+		locales: ["pl", "en", "es", "de", "it", "ne", "fr"],
 		defaultLocale: "pl",
 	},
 	reactStrictMode: true,

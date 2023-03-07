@@ -1,4 +1,4 @@
-import PersonCardHomePage from "../../../Utilities/Cards/PersonsCards/PersonCardHomePage/PersonCardHomePage";
+import PersonCard from "../../../../src/components/Utilities/Cards/PersonCard/PersonCard";
 import SectionHomePage from "./../../../Utilities/Sections/SectionHomePage/SectionHomePage";
 import styles from "./About.module.scss";
 import { IntAbout } from "./interface";
@@ -16,16 +16,19 @@ const About = ({ button, cards, content, title }: IntAbout) => {
 			/>
 			<ul>
 				{cards.map(({ cities, fullname, image, jobs, path }) => (
-					<PersonCardHomePage
+					<PersonCard
 						cities={cities}
+						email=""
 						fullname={{
 							firstname: fullname.firstname,
 							lastname: fullname.lastname,
 						}}
 						image={image}
 						jobs={jobs}
-						key={fullname.lastname}
+						key={~`${fullname.firstname} ${fullname.lastname} - home`}
 						path={path}
+						phone=""
+						variant="home"
 					/>
 				))}
 			</ul>

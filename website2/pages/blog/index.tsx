@@ -9,6 +9,7 @@ import Cards from "../../components/Pages/Blog/Cards/Cards";
 import { blogpage } from "./../../data/pages/blogpage";
 import fs from "fs";
 import matter from "gray-matter";
+import BlogCard from "../../src/components/Utilities/Cards/BlogCard/BlogCard";
 
 interface IntArticle {
 	slug: string;
@@ -66,13 +67,21 @@ const Page = ({ articles }: IntPage) => {
 							const { category, excerpt, image, release, title, slug } =
 								article;
 							return (
-								<BlogCardBlogPage
-									category={category}
-									date={release}
+								// <BlogCardBlogPage
+								// 	category={category}
+								// 	date={release}
+								// 	excerpt={excerpt}
+								// 	image={image}
+								// 	key={title}
+								// 	path={`/blog/${category}/${slug}`}
+								// 	title={title}
+								// />
+								<BlogCard
 									excerpt={excerpt}
 									image={image}
 									key={title}
 									path={`/blog/${category}/${slug}`}
+									release={release}
 									title={title}
 								/>
 							);
