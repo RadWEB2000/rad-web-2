@@ -1,6 +1,5 @@
 import ProjectCard from "../../../../../src/components/Utilities/Cards/ProjectCard/ProjectCard";
 import { iProject } from "../../../../../src/ts/interface";
-import ProjectHomePageCard from "../../../../Utilities/Cards/ProjectCards/ProjectHomePageCard/ProjectHomePageCard";
 import styles from "./Cards.module.scss";
 interface iCards {
 	cards: iProject[];
