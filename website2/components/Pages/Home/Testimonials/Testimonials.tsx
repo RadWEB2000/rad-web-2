@@ -1,10 +1,10 @@
 import SectionHomePage from "../../../Utilities/Sections/SectionHomePage/SectionHomePage";
 import styles from "./Testimonials.module.scss";
-import TestimonialCard from "../../../Utilities/Cards/TestimonialCard/TestimonialCard";
 import { IntTestimonials } from "./interface";
 import { IntTestimonialCard } from "./../../../Utilities/Cards/TestimonialCard/interface";
 import { ReactElement } from "react";
 import Masonry from "react-smart-masonry";
+import TestimonialCard from "../../../../src/components/Utilities/Cards/TestimonialCard/TestimonialCard";
 const Testimonials = ({ cards }: IntTestimonials): ReactElement => {
 	return (
 		<section className={styles.wrapper}>
