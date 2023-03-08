@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ReactElement } from "react";
+import styles from "./ProjectCard.module.scss";
 import { getDate } from "./../../../../lib/functions/getDate";
+import { ReactElement } from "react";
 
 interface iProjectCard {
 	category: string;
@@ -10,7 +11,6 @@ interface iProjectCard {
 	isBig?: boolean;
 	path: string;
 	release: string;
-	size?: "big" | "small";
 	title: string;
 	variant: "home" | "page";
 }
@@ -22,7 +22,6 @@ const ProjectCard = ({
 	isBig = false,
 	path,
 	release,
-	size = "small",
 	title,
 	variant,
 }: iProjectCard): ReactElement | null => {
@@ -35,7 +34,7 @@ const ProjectCard = ({
 		return (
 			<Link href={path} legacyBehavior rel="index follow">
 				<a
-					className={styles.wrapper}
+					className={styles.wrapper__home}
 					data-size={isBig ? "big" : "small"}
 					title={`${title} - ${category}`}
 				>
@@ -70,23 +69,9 @@ const ProjectCard = ({
 			</Link>
 		);
 	} else if (variant === "page") {
-		if (size === "big") {
-			return (
-				<li className={styles.wrapper__big}>
-					<section className={styles.content}>
-						<p className={styles.release}>{`${month} ${year}`}</p>
-						<h2 className={styles.title}>
-							<Link href={path} rel="index follow">
-								{title}
-							</Link>
-						</h2>
-						<p
-							className={styles.excerpt}
-							dangerouslySetInnerHTML={{
-								__html: excerpt.substring(0, 170) + "...",
-							}}
-						/>
-					</section>
+		return (
+			<Link href={path} rel="index follow">
+				<li className={styles.wrapper__page}>
 					<div className={styles.image}>
 						<figure>
 							<Image
@@ -101,41 +86,19 @@ const ProjectCard = ({
 							/>
 						</figure>
 					</div>
+					<section className={styles.content}>
+						<p className={styles.release}>{`${month} ${year}`}</p>
+						<h3 className={styles.title}>{title}</h3>
+						<p
+							className={styles.excerpt}
+							dangerouslySetInnerHTML={{
+								__html: excerpt.substring(0, 100) + "...",
+							}}
+						/>
+					</section>
 				</li>
-			);
-		} else {
-			return (
-				<Link href={path} rel="index follow">
-					{" "}
-					<li className={styles.wrapper__small}>
-						<div className={styles.image}>
-							<figure>
-								<Image
-									alt={`${title} - ${month} ${year} | RadWEB`}
-									fill
-									style={{
-										objectFit: "cover",
-										objectPosition: "center",
-									}}
-									src={image}
-									title={`${title} - ${month} ${year} | RadWEB`}
-								/>
-							</figure>
-						</div>
-						<section className={styles.content}>
-							<p className={styles.release}>{`${month} ${year}`}</p>
-							<h3 className={styles.title}>{title}</h3>
-							<p
-								className={styles.excerpt}
-								dangerouslySetInnerHTML={{
-									__html: excerpt.substring(0, 100) + "...",
-								}}
-							/>
-						</section>
-					</li>
-				</Link>
-			);
-		}
+			</Link>
+		);
 	} else return null;
 };
 

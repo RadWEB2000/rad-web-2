@@ -3,8 +3,6 @@ import Trailer from "../components/Pages/Home/Trailer/Trailer";
 import Projects from "../components/Pages/Home/Projects/Projects/Projects";
 import Layout from "./../components/Layout/Layout/Layout";
 import Hero from "./../components/Pages/Home/Hero/Hero/Hero";
-import { posts } from "./../data/pages/posts";
-import { projects } from "../data/pages/projects";
 import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
 import About from "../components/Pages/Home/About/About";
 import { persons } from "../data/utils/persons";
@@ -13,22 +11,15 @@ import { getStructuredDataOrganization } from "../lib/getStructuredData";
 
 import fs from "fs";
 import matter from "gray-matter";
+import { iArticle, iProject } from "../src/ts/interface";
 
-interface IntArticle {
-	slug: string;
-	category: string;
-	release: string;
-	excerpt: string;
-	image: string;
-	title: string;
-	lang: string;
+interface iPage {
+	articles: iArticle[];
+	projects: iProject[];
 }
 
-interface IntPage {
-	articles: IntArticle[];
-}
-
-const Page = ({ articles }: IntPage) => {
+const Page = ({ articles, projects }: iPage) => {
+	console.log(projects);
 	return (
 		<Layout
 			image={homepage.pl.seo.image}
@@ -77,7 +68,7 @@ const Page = ({ articles }: IntPage) => {
 						path: homepage.pl.content.projects.button.path,
 						title: homepage.pl.content.projects.button.title,
 					}}
-					cards={projects.pl.main.projects.cards}
+					cards={projects}
 				/>
 				<Testimonials cards={homepage.pl.content.testimonials} />
 			</main>
@@ -106,9 +97,28 @@ export const getStaticProps = ({ params }: { params: any }) => {
 		};
 	});
 
+	const projectsDirectory = `${process.cwd()}/content/projects/pl`;
+	const projectsFiles = fs
+		.readdirSync(projectsDirectory)
+		.filter((file) => file.endsWith(".mdx"));
+	const projects = projectsFiles.map((file) => {
+		const path = `${projectsDirectory}/${file}`;
+		const contents = fs.readFileSync(path, "utf8");
+		const { data } = matter(contents);
+		return {
+			category: data.category[0].name,
+			excerpt: data.excerpt,
+			image: data.image,
+			path: `https://rad-web.vercel.app/projekty/${data.slug}`,
+			release: data.release,
+			title: data.title,
+		};
+	});
+
 	return {
 		props: {
 			articles,
+			projects,
 		},
 	};
 };

@@ -1,14 +1,23 @@
 import Cards from "../Cards/Cards";
 import SectionHomePage from "../../../../Utilities/Sections/SectionHomePage/SectionHomePage";
 import styles from "./Project.module.scss";
-import { IntProjects } from "./interface";
 import { ReactElement } from "react";
+import { iProject } from "../../../../../src/ts/interface";
+interface iProjects {
+	button?: {
+		path: string;
+		title: string;
+	};
+	cards: iProject[];
+	content: string;
+	title: string;
+}
 const Projects = ({
 	button,
 	cards,
 	content,
 	title,
-}: IntProjects): ReactElement => {
+}: iProjects): ReactElement => {
 	return (
 		<section className={styles.wrapper}>
 			<SectionHomePage button={button} content={content} title={title} />

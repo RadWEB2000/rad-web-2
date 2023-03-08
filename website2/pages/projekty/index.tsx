@@ -5,12 +5,14 @@ import HeroPage from "./../../components/Utilities/Hero/HeroPage/HeroPage";
 import { projectspage } from "./../../data/pages/projectspage";
 import fs from "fs";
 import matter from "gray-matter";
-import ProjectCard from "../../components/Utilities/Cards/ProjectsCard/ProjectCard";
+// import ProjectCard from "../../components/Utilities/Cards/ProjectsCard/ProjectCard";
 import { useRouter } from "next/router";
 import { typeProjectCategory } from "../../types/types";
 import SearchField from "../../components/Utilities/Forms/SearchField/SearchField";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Categories from "../../components/Pages/Projects/Categories/Categories";
+import ProjectCard from "../../src/components/Utilities/Cards/ProjectCard/ProjectCard";
+import { iArticle, iProject } from "../../src/ts/interface";
 interface IntArticle {
 	category: {
 		name: string;
@@ -24,8 +26,8 @@ interface IntArticle {
 	tags: typeProjectCategory[];
 }
 
-interface IntPage {
-	articles: IntArticle[];
+interface iPage {
+	articles: iProject[];
 }
 
 interface IntCategory {
@@ -58,14 +60,12 @@ const Category = ({ current, handle, name, value }: IntCategory) => {
 	);
 };
 
-const Page = ({ articles }: IntPage) => {
+const Page = ({ articles }: iPage) => {
 	const { pl } = projects;
 	const [searchValue, setSearchValue] = useState<string>("");
 	const { locale } = useRouter();
-	console.log(articles[0].category);
 	const sortedArticles = articles.sort(
-		(a: any, b: any) =>
-			new Date(b.release).getTime() - new Date(a.release).getTime()
+		(a, b) => new Date(b.release).getTime() - new Date(a.release).getTime()
 	);
 
 	const [currentCategory, setCurrentCategory] =
@@ -109,18 +109,23 @@ const Page = ({ articles }: IntPage) => {
 										.toLowerCase()
 										.includes(searchValue.toLowerCase()))
 						)
-						.map(({ excerpt, image, slug, release, title }, index: number) => (
-							<ProjectCard
-								excerpt={excerpt}
-								image={image}
-								key={title}
-								lang="pl"
-								path={`/projekty/${slug}`}
-								release={release}
-								size="small"
-								title={title}
-							/>
-						))}
+						.map(
+							(
+								{ category, excerpt, image, path, release, title },
+								index: number
+							) => (
+								<ProjectCard
+									excerpt={excerpt}
+									image={image}
+									key={title}
+									category={category}
+									path={path}
+									release={release}
+									title={title}
+									variant="page"
+								/>
+							)
+						)}
 				</Cards>
 			</main>
 		</Layout>
@@ -143,6 +148,8 @@ export const getStaticProps = ({ params }: { params: any }) => {
 			excerpt: data.excerpt,
 			image: data.image,
 			title: data.title,
+			category: data.category[0].name,
+			path: `https://rad-web.vercel.app/projekty/${data.slug}`,
 			tags: data.tags,
 		};
 	});
