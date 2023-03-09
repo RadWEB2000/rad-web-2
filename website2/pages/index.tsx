@@ -35,9 +35,9 @@ const Page = ({ articles, projects }: iPage) => {
 			schema={getStructuredDataOrganization()}
 			hero={
 				<Hero
-					buttons={homepage.pl.content.hero.buttons}
-					content={homepage.pl.content.hero.content}
-					title={homepage.pl.content.hero.title}
+				// buttons={homepage.pl.content.hero.buttons}
+				// content={homepage.pl.content.hero.content}
+				// title={homepage.pl.content.hero.title}
 				/>
 			}
 		>

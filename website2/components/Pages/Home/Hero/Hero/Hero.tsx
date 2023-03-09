@@ -4,7 +4,7 @@ import styles from "./Hero.module.scss";
 import { IntHero } from "./interface";
 import { ReactElement } from "react";
 
-const Hero = ({ buttons, content, title }: IntHero): ReactElement => {
+const Hero = (): ReactElement => {
 	return (
 		<section className={styles.wrapper}>
 			<div>
