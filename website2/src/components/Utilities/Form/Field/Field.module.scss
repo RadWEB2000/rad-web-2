@@ -1,5 +1,5 @@
 @import "../../../../styles/Variables.module.scss";
-.wrapper {
+.wrapper__contact {
 	@include flex(flex-start, column-reverse, center);
 	background-color: var(--contactFieldBackground);
 	border-radius: 5px;

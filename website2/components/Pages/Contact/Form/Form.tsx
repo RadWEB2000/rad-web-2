@@ -1,9 +1,10 @@
-import ContactField from "../../../Utilities/Forms/ContactField/ContactField";
+import Field from "../../../../src/components/Utilities/Form/Field/Field";
 import styles from "./Form.module.scss";
-import SubmitButton from "../../../Utilities/Buttons/SubmitButton/SubmitButton";
+import SubmitButton from "../../../../src/components/Utilities/Buttons/SubmitButton/SubmitButton";
 import Terms from "../Terms/Terms";
-import { RiSendPlaneLine } from "react-icons/ri";
 import { IntForm } from "./interface";
+import { RiSendPlaneLine } from "react-icons/ri";
+
 const Form = ({ fields, button, rodo, title }: IntForm) => {
 	const { fullname, email, phone, subject, message } = fields;
 	return (
@@ -11,37 +12,41 @@ const Form = ({ fields, button, rodo, title }: IntForm) => {
 			<h2>{title}</h2>
 			<form action="" autoComplete="off">
 				<div>
-					<ContactField
+					<Field
 						id="fullname"
 						label={fullname.label}
 						name="fullname"
 						placeholder={fullname.placeholder}
 						variant="field"
 					/>
-					<ContactField
+					<Field
 						id="email"
 						label={email.label}
 						name="email"
+						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}"
 						placeholder={email.placeholder}
 						type="email"
 						variant="field"
 					/>
-					<ContactField
+					<Field
 						id="phone"
 						label={phone.label}
 						name="phone"
+						pattern="[0-9]{9}"
 						placeholder={phone.placeholder}
 						type="tel"
 						variant="field"
 					/>
-					<ContactField
+					<Field
 						id="subject"
 						label={subject.label}
+						max={30}
+						min={5}
 						name="subject"
 						placeholder={subject.placeholder}
 						variant="field"
 					/>
-					<ContactField
+					<Field
 						id="message"
 						label={message.label}
 						name="message"

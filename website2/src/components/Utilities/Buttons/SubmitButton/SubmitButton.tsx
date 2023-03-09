@@ -1,12 +1,18 @@
 import styles from "./SubmitButton.module.scss";
-import { IntSubmitButton } from "./interface";
 import { motion } from "framer-motion";
 import { ReactElement } from "react";
+
+interface iSubmitButton {
+	content: string;
+	icon: ReactElement;
+	isValid: boolean;
+}
+
 const SubmitButton = ({
 	content,
 	icon,
 	isValid,
-}: IntSubmitButton): ReactElement => {
+}: iSubmitButton): ReactElement => {
 	return (
 		<motion.button
 			className={styles.wrapper}
