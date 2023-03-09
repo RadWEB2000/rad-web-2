@@ -2,11 +2,11 @@ import Layout from "../../../components/Layout/Layout/Layout";
 import SearchField from "../../../components/Utilities/Forms/SearchField/SearchField";
 import HeroPage from "../../../components/Utilities/Hero/HeroPage/HeroPage";
 import { useState } from "react";
-import BlogCardBlogPage from "../../../components/Utilities/Cards/BlogCards/BlogCardBlogPage/BlogCardBlogPage";
-import Cards from "../../../components/Pages/Blog/Cards/Cards";
 import { blogpage } from "../../../data/pages/blogpage";
 import fs from "fs";
 import matter from "gray-matter";
+import CardsWrapper from "./../../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
+import BlogCard from "../../../src/components/Utilities/Cards/BlogCard/BlogCard";
 
 interface IntArticle {
 	slug: string;
@@ -19,6 +19,7 @@ interface IntArticle {
 }
 interface IntPage {
 	articles: IntArticle[];
+	currentQuery: string;
 	page: {
 		seo: {
 			image: string;
@@ -39,9 +40,8 @@ interface IntPage {
 	};
 }
 
-const Page = ({ page, articles }: IntPage) => {
+const Page = ({ articles, currentQuery, page }: IntPage) => {
 	const [searchValue, setSearchValue] = useState("");
-	console.log(articles);
 	return (
 		<Layout
 			image={page?.seo.image}
@@ -63,11 +63,8 @@ const Page = ({ page, articles }: IntPage) => {
 			}
 		>
 			<main>
-				<Cards>
+				<CardsWrapper variant="articles">
 					{articles
-						?.filter((item: any) =>
-							item.category.toLowerCase().includes("programowanie")
-						)
 						?.filter((item: any) =>
 							item.title.toLowerCase().includes(searchValue.toLowerCase())
 						)
@@ -78,19 +75,23 @@ const Page = ({ page, articles }: IntPage) => {
 						.map((article: any) => {
 							const { category, excerpt, image, release, title, slug } =
 								article;
+
 							return (
-								<BlogCardBlogPage
-									category={category}
-									date={release}
-									excerpt={excerpt}
-									image={image}
-									key={title}
-									path={`/blog/${category}/${slug}`}
-									title={title}
-								/>
+								<>
+									{category === currentQuery && (
+										<BlogCard
+											release={release}
+											excerpt={excerpt}
+											image={image}
+											key={title}
+											path={`/blog/${category}/${slug}`}
+											title={title}
+										/>
+									)}
+								</>
 							);
 						})}
-				</Cards>
+				</CardsWrapper>
 			</main>
 		</Layout>
 	);
@@ -125,9 +126,9 @@ export const getStaticProps = ({ params }: { params: any }) => {
 			lang: data.lang,
 		};
 	});
-
 	return {
 		props: {
+			currentQuery: params.category,
 			page: {
 				seo: {
 					image: getSubpage[0].seo.image,

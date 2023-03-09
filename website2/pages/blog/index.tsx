@@ -1,34 +1,22 @@
-import Layout from "../../components/Layout/Layout/Layout";
-import SearchField from "../../components/Utilities/Forms/SearchField/SearchField";
-import HeroPage from "../../components/Utilities/Hero/HeroPage/HeroPage";
-import { blog } from "./../../data/pages/blog";
-import { useEffect, useState } from "react";
-import BlogCardBlogPage from "../../components/Utilities/Cards/BlogCards/BlogCardBlogPage/BlogCardBlogPage";
-import { posts } from "./../../data/pages/posts";
-import Cards from "../../components/Pages/Blog/Cards/Cards";
-import { blogpage } from "./../../data/pages/blogpage";
-import fs from "fs";
-import matter from "gray-matter";
 import BlogCard from "../../src/components/Utilities/Cards/BlogCard/BlogCard";
+import CardsWrapper from "./../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
+import fs from "fs";
+import HeroPage from "../../components/Utilities/Hero/HeroPage/HeroPage";
+import Layout from "../../components/Layout/Layout/Layout";
+import matter from "gray-matter";
+import SearchField from "../../components/Utilities/Forms/SearchField/SearchField";
+import { blog } from "./../../data/pages/blog";
+import { blogpage } from "./../../data/pages/blogpage";
+import { posts } from "./../../data/pages/posts";
+import { useState } from "react";
+import { iArticle } from "../../src/ts/interface";
 
-interface IntArticle {
-	slug: string;
-	category: string;
-	release: string;
-	excerpt: string;
-	image: string;
-	title: string;
-	lang: string;
+interface iPage {
+	articles: iArticle[];
 }
 
-interface IntPage {
-	articles: IntArticle[];
-}
-
-const Page = ({ articles }: IntPage) => {
+const Page = ({ articles }: iPage) => {
 	const [searchValue, setSearchValue] = useState("");
-	const { pl } = blog;
-	const { pl: plPosts } = posts;
 	console.log(articles);
 	return (
 		<Layout
@@ -54,28 +42,19 @@ const Page = ({ articles }: IntPage) => {
 			}
 		>
 			<main>
-				<Cards>
+				<CardsWrapper variant="articles">
 					{articles
 						?.filter((item: any) =>
 							item.title.toLowerCase().includes(searchValue.toLowerCase())
 						)
 						.sort(
-							(a: IntArticle, b: IntArticle) =>
+							(a: iArticle, b: iArticle) =>
 								new Date(b.release).getTime() - new Date(a.release).getTime()
 						)
 						.map((article: any) => {
 							const { category, excerpt, image, release, title, slug } =
 								article;
 							return (
-								// <BlogCardBlogPage
-								// 	category={category}
-								// 	date={release}
-								// 	excerpt={excerpt}
-								// 	image={image}
-								// 	key={title}
-								// 	path={`/blog/${category}/${slug}`}
-								// 	title={title}
-								// />
 								<BlogCard
 									excerpt={excerpt}
 									image={image}
@@ -86,14 +65,14 @@ const Page = ({ articles }: IntPage) => {
 								/>
 							);
 						})}
-				</Cards>
+				</CardsWrapper>
 			</main>
 		</Layout>
 	);
 };
 export default Page;
 
-export const getStaticProps = ({ params }: { params: any }) => {
+export const getStaticProps = () => {
 	const articlesDirectory = `${process.cwd()}/content/articles`;
 	const articlesFiles = fs
 		.readdirSync(articlesDirectory)
