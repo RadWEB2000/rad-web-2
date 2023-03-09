@@ -10,7 +10,7 @@ import { ArticleComponents } from "../../components/Pages/ArticlePage/ArticleCom
 
 const Page = ({ frontMatter, source }: { frontMatter: any; source: any }) => {
 	const readTime = readingTime(source);
-	console.log(frontMatter.release);
+	console.log(frontMatter);
 	return (
 		<Layout
 			hero={

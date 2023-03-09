@@ -89,7 +89,6 @@ const Page = ({ data, frontMatter }: iPage) => {
 				{data !== undefined && (
 					<MDXRemote {...data} components={ArticleComponents} />
 				)}
-				{/* {content && <Content content={content} />} */}
 				{frontMatter.jobsExperience && (
 					<Jobs
 						cards={[...frontMatter.jobsExperience]}

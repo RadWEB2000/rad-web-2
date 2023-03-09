@@ -11,11 +11,10 @@ import Image from "next/image";
 import styles from "./HeroArticlePage.module.scss";
 import { IntHeroArticlePage } from "./interface";
 import { motion } from "framer-motion";
-import ButtonPrimary from "./../../Buttons/ButtonPrimary/ButtonPrimary";
 import getStack from "./../../../../lib/getStack";
-import { CgWebsite } from "react-icons/cg";
 import getCapitalize from "../../../../lib/getCapitalize";
 import Breadcrumb from "../../../../src/components/Utilities/Breadcrumb/Breadcrumb";
+import RegularButton from "../../../../src/components/Utilities/Buttons/RegularButton/RegularButton";
 const HeroArticlePage = ({
 	breadcrumbs,
 	image,
@@ -27,6 +26,7 @@ const HeroArticlePage = ({
 	url,
 	website,
 }: IntHeroArticlePage) => {
+	console.log(website);
 	const shareUrl = "https://rad-web.vercel.app";
 	const { day, month, year } = getDate({
 		date: release,
@@ -102,7 +102,7 @@ const HeroArticlePage = ({
 				)}
 				{website && (
 					<div className={styles.website}>
-						<ButtonPrimary
+						<RegularButton
 							path={website}
 							title={`Zapraszamy na stronę ${getCapitalize(title)}`}
 							variant="primary"

@@ -106,7 +106,7 @@ export const getStaticProps = ({ params }: { params: any }) => {
 			image: data.image,
 			title: data.title,
 			category: data.category[0].name,
-			path: `https://rad-web.vercel.app/projekty/${data.slug}`,
+			path: `/projekty/${data.slug}`,
 			tags: data.tags,
 		};
 	});
