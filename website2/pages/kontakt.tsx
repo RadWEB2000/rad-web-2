@@ -1,4 +1,3 @@
-import Cards from "../components/Pages/Contact/Cards/Cards";
 import Form from "../components/Pages/Contact/Form/Form";
 import Informations from "../components/Pages/Contact/Informations/Informations";
 import Wrapper from "../components/Pages/Contact/Wrapper/Wrapper";
@@ -7,6 +6,8 @@ import { contactpage } from "../data/pages/contactpage";
 import { projects } from "../data/pages/projects";
 import { persons } from "../data/utils/persons";
 import { getStructuredDataWebsite } from "../lib/getStructuredData";
+import CardsWrapper from "../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
+import PersonCard from "../src/components/Utilities/Cards/PersonCard/PersonCard";
 import Layout from "./../components/Layout/Layout/Layout";
 const Page = () => {
 	const { pl } = projects;
@@ -39,7 +40,26 @@ const Page = () => {
 							email={contactpage.pl.content.informations.email}
 							phone={contactpage.pl.content.informations.phone}
 						/>
-						<Cards cards={Object.values(persons.pl)} />
+						<CardsWrapper variant="contact">
+							{Object.values(persons.pl).map(
+								({ email, fullname, image, jobs, path, phone }) => (
+									<PersonCard
+										cities=""
+										email={email.address}
+										fullname={{
+											firstname: fullname.firstname,
+											lastname: fullname.lastname,
+										}}
+										image={image}
+										jobs={jobs}
+										key={`${fullname.firstname} - ${fullname.lastname} - contact`}
+										path={path}
+										phone={phone.address}
+										variant="contact"
+									/>
+								)
+							)}
+						</CardsWrapper>
 					</div>
 					<div>
 						<Form

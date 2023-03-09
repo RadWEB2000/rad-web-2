@@ -1,0 +1,8 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	&[data-variant="contact"] {
+		@include flex(start, row, flex-start);
+		gap: 1rem;
+		padding: 0.5rem;
+	}
+}
