@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Hero.module.scss";
+import styles from "./HeroPerson.module.scss";
 import { CgMail, CgSmartphone } from "react-icons/cg";
 import { motion } from "framer-motion";
 import { ReactElement } from "react";
@@ -29,7 +29,7 @@ const HeroPerson = ({
 }: iHeroPerson): ReactElement => {
 	return (
 		<header className={styles.wrapper}>
-			<div className={styles.image}>
+			{/* <div className={styles.image}>
 				<Image
 					alt={`${fullname.firstname} ${fullname.lastname} - ${jobs} - ${cities}`}
 					fill
@@ -40,7 +40,7 @@ const HeroPerson = ({
 					}}
 					title={`${fullname.firstname} ${fullname.lastname} - ${jobs} - ${cities}`}
 				/>
-			</div>
+			</div> */}
 			<div className={styles.content}>
 				<section>
 					<h1

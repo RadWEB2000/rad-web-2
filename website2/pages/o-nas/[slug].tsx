@@ -1,6 +1,5 @@
 import Layout from "../../components/Layout/Layout/Layout";
 import Jobs from "../../components/Pages/AboutUs/Page/Jobs/Jobs";
-import Hero from "../../components/Pages/PersonPage/Hero/Hero";
 import { getStructuredDataPerson } from "../../lib/getStructuredData";
 
 import fs from "fs";
