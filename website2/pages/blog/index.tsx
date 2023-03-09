@@ -4,10 +4,8 @@ import fs from "fs";
 import HeroPage from "../../components/Utilities/Hero/HeroPage/HeroPage";
 import Layout from "../../components/Layout/Layout/Layout";
 import matter from "gray-matter";
-import SearchField from "../../components/Utilities/Forms/SearchField/SearchField";
-import { blog } from "./../../data/pages/blog";
+import Search from "../../src/components/Utilities/Form/Search/Search";
 import { blogpage } from "./../../data/pages/blogpage";
-import { posts } from "./../../data/pages/posts";
 import { useState } from "react";
 import { iArticle } from "../../src/ts/interface";
 
@@ -17,7 +15,6 @@ interface iPage {
 
 const Page = ({ articles }: iPage) => {
 	const [searchValue, setSearchValue] = useState("");
-	console.log(articles);
 	return (
 		<Layout
 			image="https://cdn.pixabay.com/photo/2016/11/29/06/15/plans-1867745_960_720.jpg"
@@ -37,7 +34,7 @@ const Page = ({ articles }: iPage) => {
 						content={blogpage.pl.main.content.hero.content}
 						title={blogpage.pl.main.content.hero.title}
 					/>
-					<SearchField handle={setSearchValue} placeholder={`Szukaj`} />
+					<Search handle={setSearchValue} placeholder={`Szukaj`} />
 				</>
 			}
 		>

@@ -5,7 +5,7 @@ import HeroPage from "./../../components/Utilities/Hero/HeroPage/HeroPage";
 import matter from "gray-matter";
 import Layout from "../../components/Layout/Layout/Layout";
 import ProjectCard from "../../src/components/Utilities/Cards/ProjectCard/ProjectCard";
-import SearchField from "../../components/Utilities/Forms/SearchField/SearchField";
+import Search from "../../src/components/Utilities/Form/Search/Search";
 import { iProject } from "../../src/ts/interface";
 import { projects } from "../../data/pages/projects";
 import { projectspage } from "./../../data/pages/projectspage";
@@ -46,7 +46,7 @@ const Page = ({ articles }: iPage) => {
 						content={projectspage.pl.main.content.hero.content}
 						title={projectspage.pl.main.content.hero.title}
 					/>
-					<SearchField handle={setSearchValue} placeholder="Szukaj" />
+					<Search handle={setSearchValue} placeholder="Szukaj" />
 				</>
 			}
 		>

@@ -1,8 +1,13 @@
-import styles from "./SearchField.module.scss";
+import styles from "./Search.module.scss";
 import { BsSearch } from "react-icons/bs";
-import { ReactElement, useState } from "react";
-import { IntSearchField } from "./interface";
-const SearchField = ({ handle, placeholder }: IntSearchField): ReactElement => {
+import { Dispatch, ReactElement, SetStateAction } from "react";
+
+interface iSearch {
+	handle: Dispatch<SetStateAction<string>>;
+	placeholder: string;
+}
+
+const Search = ({ handle, placeholder }: iSearch): ReactElement => {
 	return (
 		<div className={styles.wrapper}>
 			<input
@@ -19,4 +24,4 @@ const SearchField = ({ handle, placeholder }: IntSearchField): ReactElement => {
 		</div>
 	);
 };
-export default SearchField;
+export default Search;

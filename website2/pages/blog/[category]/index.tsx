@@ -1,24 +1,16 @@
-import Layout from "../../../components/Layout/Layout/Layout";
-import SearchField from "../../../components/Utilities/Forms/SearchField/SearchField";
+import BlogCard from "../../../src/components/Utilities/Cards/BlogCard/BlogCard";
+import CardsWrapper from "./../../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
+import fs from "fs";
 import HeroPage from "../../../components/Utilities/Hero/HeroPage/HeroPage";
+import Layout from "../../../components/Layout/Layout/Layout";
+import matter from "gray-matter";
+import Search from "../../../src/components/Utilities/Form/Search/Search";
 import { useState } from "react";
 import { blogpage } from "../../../data/pages/blogpage";
-import fs from "fs";
-import matter from "gray-matter";
-import CardsWrapper from "./../../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
-import BlogCard from "../../../src/components/Utilities/Cards/BlogCard/BlogCard";
+import { iArticle } from "../../../src/ts/interface";
 
-interface IntArticle {
-	slug: string;
-	category: string;
-	release: string;
-	excerpt: string;
-	image: string;
-	title: string;
-	lang: string;
-}
 interface IntPage {
-	articles: IntArticle[];
+	articles: iArticle[];
 	currentQuery: string;
 	page: {
 		seo: {
@@ -58,7 +50,7 @@ const Page = ({ articles, currentQuery, page }: IntPage) => {
 			hero={
 				<>
 					<HeroPage content={page?.hero.content} title={page?.hero.title} />
-					<SearchField handle={setSearchValue} placeholder={`Szukaj`} />
+					<Search handle={setSearchValue} placeholder={`Szukaj`} />
 				</>
 			}
 		>
@@ -69,7 +61,7 @@ const Page = ({ articles, currentQuery, page }: IntPage) => {
 							item.title.toLowerCase().includes(searchValue.toLowerCase())
 						)
 						.sort(
-							(a: IntArticle, b: IntArticle) =>
+							(a: iArticle, b: iArticle) =>
 								new Date(b.release).getTime() - new Date(a.release).getTime()
 						)
 						.map((article: any) => {
