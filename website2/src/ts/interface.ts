@@ -16,3 +16,12 @@ export interface iProject {
 	release: string;
 	title: string;
 }
+
+export interface iSectionPage {
+	button?: {
+		path: string;
+		title: string;
+	};
+	content: string;
+	title: string;
+}

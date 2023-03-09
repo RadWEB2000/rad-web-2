@@ -1,14 +1,13 @@
-import ButtonPrimary from "../../Buttons/ButtonPrimary/ButtonPrimary";
+import styles from "./SectionPage.module.scss";
 import { motion } from "framer-motion";
-import styles from "./SectionHomePage.module.scss";
-import { IntSectionHomePage } from "./interface";
 import { ReactElement } from "react";
-import RegularButton from "../../../../src/components/Utilities/Buttons/RegularButton/RegularButton";
-const SectionHomePage = ({
+import RegularButton from "../../Buttons/RegularButton/RegularButton";
+import { iSectionPage } from "../../../../ts/interface";
+const SectionPage = ({
 	button,
 	content,
 	title,
-}: IntSectionHomePage): ReactElement => {
+}: iSectionPage): ReactElement => {
 	return (
 		<section className={styles.wrapper}>
 			<motion.h2
@@ -79,4 +78,4 @@ const SectionHomePage = ({
 		</section>
 	);
 };
-export default SectionHomePage;
+export default SectionPage;

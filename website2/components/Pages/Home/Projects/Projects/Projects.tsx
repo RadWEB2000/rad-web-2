@@ -1,16 +1,10 @@
 import Cards from "../Cards/Cards";
-import SectionHomePage from "../../../../Utilities/Sections/SectionHomePage/SectionHomePage";
+import SectionPage from "../../../../../src/components/Utilities/Section/SectionPage/SectionPage";
 import styles from "./Project.module.scss";
+import { iProject, iSectionPage } from "../../../../../src/ts/interface";
 import { ReactElement } from "react";
-import { iProject } from "../../../../../src/ts/interface";
-interface iProjects {
-	button?: {
-		path: string;
-		title: string;
-	};
+interface iProjects extends iSectionPage {
 	cards: iProject[];
-	content: string;
-	title: string;
 }
 const Projects = ({
 	button,
@@ -20,7 +14,7 @@ const Projects = ({
 }: iProjects): ReactElement => {
 	return (
 		<section className={styles.wrapper}>
-			<SectionHomePage button={button} content={content} title={title} />
+			<SectionPage button={button} content={content} title={title} />
 			<Cards cards={cards} />
 		</section>
 	);

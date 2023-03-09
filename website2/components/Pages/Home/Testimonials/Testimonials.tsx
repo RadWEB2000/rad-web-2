@@ -1,13 +1,13 @@
-import SectionHomePage from "../../../Utilities/Sections/SectionHomePage/SectionHomePage";
+import Masonry from "react-smart-masonry";
+import SectionPage from "../../../../src/components/Utilities/Section/SectionPage/SectionPage";
 import styles from "./Testimonials.module.scss";
+import TestimonialCard from "../../../../src/components/Utilities/Cards/TestimonialCard/TestimonialCard";
 import { IntTestimonials } from "./interface";
 import { ReactElement } from "react";
-import Masonry from "react-smart-masonry";
-import TestimonialCard from "../../../../src/components/Utilities/Cards/TestimonialCard/TestimonialCard";
 const Testimonials = ({ cards }: IntTestimonials): ReactElement => {
 	return (
 		<section className={styles.wrapper}>
-			<SectionHomePage content="" title="Opinie" />
+			<SectionPage content="" title="Opinie" />
 			<Masonry
 				autoArrange={true}
 				breakpoints={{ mobile: 0, tablet: 550, desktop: 1250 }}

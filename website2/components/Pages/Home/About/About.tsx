@@ -1,13 +1,13 @@
 import CardsWrapper from "../../../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
 import PersonCard from "../../../../src/components/Utilities/Cards/PersonCard/PersonCard";
-import SectionHomePage from "./../../../Utilities/Sections/SectionHomePage/SectionHomePage";
+import SectionPage from "../../../../src/components/Utilities/Section/SectionPage/SectionPage";
 import styles from "./About.module.scss";
 import { IntAbout } from "./interface";
 
 const About = ({ button, cards, content, title }: IntAbout) => {
 	return (
 		<div className={styles.wrapper}>
-			<SectionHomePage
+			<SectionPage
 				content={content}
 				title={title}
 				button={{
