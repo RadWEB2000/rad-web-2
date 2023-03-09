@@ -1,64 +1,21 @@
-import Layout from "../../components/Layout/Layout/Layout";
-import Cards from "../../components/Pages/Projects/Cards/Cards";
-import { projects } from "../../data/pages/projects";
-import HeroPage from "./../../components/Utilities/Hero/HeroPage/HeroPage";
-import { projectspage } from "./../../data/pages/projectspage";
-import fs from "fs";
-import matter from "gray-matter";
-// import ProjectCard from "../../components/Utilities/Cards/ProjectsCard/ProjectCard";
-import { useRouter } from "next/router";
-import { typeProjectCategory } from "../../types/types";
-import SearchField from "../../components/Utilities/Forms/SearchField/SearchField";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import CardsWrapper from "./../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
 import Categories from "../../components/Pages/Projects/Categories/Categories";
+import fs from "fs";
+import HeroPage from "./../../components/Utilities/Hero/HeroPage/HeroPage";
+import matter from "gray-matter";
+import Layout from "../../components/Layout/Layout/Layout";
 import ProjectCard from "../../src/components/Utilities/Cards/ProjectCard/ProjectCard";
-import { iArticle, iProject } from "../../src/ts/interface";
-interface IntArticle {
-	category: {
-		name: string;
-		value: typeProjectCategory;
-	}[];
-	excerpt: string;
-	image: string;
-	release: string;
-	slug: string;
-	title: string;
-	tags: typeProjectCategory[];
-}
+import SearchField from "../../components/Utilities/Forms/SearchField/SearchField";
+import { iProject } from "../../src/ts/interface";
+import { projects } from "../../data/pages/projects";
+import { projectspage } from "./../../data/pages/projectspage";
+import { typeProjectCategory } from "../../types/types";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 interface iPage {
 	articles: iProject[];
 }
-
-interface IntCategory {
-	current: typeProjectCategory;
-	handle: Dispatch<SetStateAction<typeProjectCategory>>;
-	name: string;
-	value: typeProjectCategory;
-}
-
-const Category = ({ current, handle, name, value }: IntCategory) => {
-	const getValue = (
-		current: typeProjectCategory,
-		value: typeProjectCategory
-	) => {
-		if (current !== value) {
-			return handle(value);
-		} else if (current !== "") {
-			return handle("");
-		} else {
-			return handle(value);
-		}
-	};
-
-	return (
-		<li>
-			<button onClick={() => getValue(current, value)}>
-				<p>{name}</p>
-			</button>
-		</li>
-	);
-};
 
 const Page = ({ articles }: iPage) => {
 	const { pl } = projects;
@@ -99,7 +56,7 @@ const Page = ({ articles }: iPage) => {
 					current={currentCategory}
 					handle={setCurrentCategory}
 				/>
-				<Cards>
+				<CardsWrapper variant="articles">
 					{sortedArticles
 						?.filter(
 							(item: any) =>
@@ -126,7 +83,7 @@ const Page = ({ articles }: iPage) => {
 								/>
 							)
 						)}
-				</Cards>
+				</CardsWrapper>
 			</main>
 		</Layout>
 	);
