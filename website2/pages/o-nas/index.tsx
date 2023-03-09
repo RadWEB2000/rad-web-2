@@ -1,9 +1,9 @@
+import HeroPage from "../../src/components/Utilities/Hero/HeroPage/HeroPage";
 import Layout from "../../components/Layout/Layout/Layout";
 import Mission from "../../components/Pages/AboutUs/Page/Mission/Mission";
 import PersonsCards from "../../components/Pages/AboutUs/Page/PersonsCards/PersonsCards";
 import { aboutpage } from "../../data/pages/aboutpage";
 import { getStructuredDataWebsite } from "../../lib/getStructuredData";
-import HeroPage from "./../../components/Utilities/Hero/HeroPage/HeroPage";
 import { persons } from "./../../data/utils/persons";
 const Page = () => {
 	return (

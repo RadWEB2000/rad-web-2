@@ -1,11 +1,6 @@
-import { useRouter } from "next/router";
 import Layout from "../../components/Layout/Layout/Layout";
 import Jobs from "../../components/Pages/AboutUs/Page/Jobs/Jobs";
-import Content from "../../components/Pages/PersonPage/Content/Content";
 import Hero from "../../components/Pages/PersonPage/Hero/Hero";
-import HeroAboutPage from "../../components/Utilities/Hero/HeroAboutPage/HeroAboutPage";
-import SectionAboutPersonPage from "../../components/Utilities/Sections/SectionAboutPersonPage/SectionAboutPersonPage";
-import { aboutpage } from "../../data/pages/aboutpage";
 import { getStructuredDataPerson } from "../../lib/getStructuredData";
 
 import fs from "fs";
@@ -15,6 +10,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { ArticleComponents } from "./../../components/Pages/ArticlePage/ArticleComponents/ArticleComponents";
 import { iJobCard } from "../../src/components/Utilities/Cards/JobCard/JobCard";
+import HeroPerson from "../../src/components/Utilities/Hero/HeroPerson/HeroPerson";
 
 interface iPage {
 	data: any;
@@ -66,7 +62,7 @@ const Page = ({ data, frontMatter }: iPage) => {
 				type: "website",
 			}}
 			hero={
-				<Hero
+				<HeroPerson
 					cities={frontMatter.cities}
 					fullname={{
 						firstname: frontMatter.firstname,
@@ -77,11 +73,7 @@ const Page = ({ data, frontMatter }: iPage) => {
 					email={frontMatter.email}
 					phone={frontMatter.phone}
 					socials={frontMatter.socials}
-					website={{
-						title: frontMatter.websiteButton,
-						url: frontMatter.website,
-						visible: true,
-					}}
+					website={frontMatter.website}
 				/>
 			}
 		>
