@@ -1,3 +1,4 @@
+import CardsWrapper from "../../../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
 import PersonCard from "../../../../src/components/Utilities/Cards/PersonCard/PersonCard";
 import SectionHomePage from "./../../../Utilities/Sections/SectionHomePage/SectionHomePage";
 import styles from "./About.module.scss";
@@ -14,7 +15,7 @@ const About = ({ button, cards, content, title }: IntAbout) => {
 					title: button.title,
 				}}
 			/>
-			<ul>
+			<CardsWrapper variant="articles">
 				{cards.map(({ cities, fullname, image, jobs, path }) => (
 					<PersonCard
 						cities={cities}
@@ -31,7 +32,7 @@ const About = ({ button, cards, content, title }: IntAbout) => {
 						variant="home"
 					/>
 				))}
-			</ul>
+			</CardsWrapper>
 		</div>
 	);
 };
