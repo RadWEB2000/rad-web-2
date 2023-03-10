@@ -1,16 +1,40 @@
+import emailjs from "@emailjs/browser";
 import Field from "../../../Utilities/Form/Field/Field";
 import styles from "./Form.module.scss";
 import SubmitButton from "../../../Utilities/Buttons/SubmitButton/SubmitButton";
 import Terms from "../Terms/Terms";
 import { IntForm } from "./interface";
 import { RiSendPlaneLine } from "react-icons/ri";
-
+import { useRef } from "react";
 const Form = ({ fields, button, rodo, title }: IntForm) => {
 	const { fullname, email, phone, subject, message } = fields;
+
+	const form: any = useRef();
+
+	const sendEmail = (e: any) => {
+		e.preventDefault();
+
+		emailjs
+			.sendForm(
+				"service_lbhu0es",
+				"template_tzm9fde",
+				form.current,
+				"ySuO0dO8DnPVxHUPs"
+			)
+			.then(
+				(result) => {
+					console.log(result.text);
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
+	};
+
 	return (
 		<div className={styles.wrapper}>
 			<h2>{title}</h2>
-			<form action="" autoComplete="off">
+			<form action="" autoComplete="off" ref={form} onSubmit={sendEmail}>
 				<div>
 					<Field
 						id="fullname"
@@ -54,7 +78,7 @@ const Form = ({ fields, button, rodo, title }: IntForm) => {
 						variant="textarea"
 					/>
 				</div>
-				<Terms content={rodo} />
+				{/* <Terms content={rodo} /> */}
 				<div>
 					<SubmitButton
 						content={button}

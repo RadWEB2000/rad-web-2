@@ -19,7 +19,7 @@ const PersonsCards = ({
 	title,
 }: iPersonCards): ReactElement => {
 	return (
-		<div className={`section ${styles.wrapper}`}>
+		<div className={`section ${styles.wrapper}`} id="zespol">
 			<SectionPage content={content} title={title} />
 			<ul>
 				{cards.map(({ cities, fullname, image, jobs, path }) => (

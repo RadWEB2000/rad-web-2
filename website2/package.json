@@ -10,6 +10,7 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@googlemaps/react-wrapper": "^1.1.35",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",

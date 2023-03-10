@@ -15,7 +15,7 @@ interface iMission {
 
 const Mission = ({ cards, content, title }: iMission): ReactElement => {
 	return (
-		<div className={`section ${styles.wrapper}`}>
+		<div className={`section ${styles.wrapper}`} id="misja">
 			<SectionPage content={content} title={title} />
 			<ul>
 				{cards.map(({ content, icon, title }) => (
