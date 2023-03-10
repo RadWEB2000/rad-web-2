@@ -2,7 +2,6 @@ import Blog from "../components/Pages/Home/Blog/Blog/Blog";
 import Trailer from "../components/Pages/Home/Trailer/Trailer";
 import Projects from "../components/Pages/Home/Projects/Projects/Projects";
 import Layout from "./../components/Layout/Layout/Layout";
-import Hero from "./../components/Pages/Home/Hero/Hero/Hero";
 import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
 import About from "../components/Pages/Home/About/About";
 import { persons } from "../data/utils/persons";
@@ -12,6 +11,7 @@ import { getStructuredDataOrganization } from "../lib/getStructuredData";
 import fs from "fs";
 import matter from "gray-matter";
 import { iArticle, iProject } from "../src/ts/interface";
+import HeroHome from "../src/components/Utilities/Hero/HeroHome/HeroHome";
 
 interface iPage {
 	articles: iArticle[];
@@ -34,10 +34,49 @@ const Page = ({ articles, projects }: iPage) => {
 			}}
 			schema={getStructuredDataOrganization()}
 			hero={
-				<Hero
-				// buttons={homepage.pl.content.hero.buttons}
-				// content={homepage.pl.content.hero.content}
-				// title={homepage.pl.content.hero.title}
+				<HeroHome
+					buttons={[
+						{
+							path: "/blog",
+							title: "/blog",
+						},
+						{
+							path: "/kontakt",
+							title: "kontakt",
+						},
+					]}
+					cards={[
+						{
+							content:
+								"Strony internetowe są podstawą istnienia w internecie. Z nich się bierze fundamentalna wiedza oraz podstawowe zaufanie do osoby, czy też firmy lub organizacji.",
+							image:
+								"https://images.unsplash.com/photo-1622782914767-404fb9ab3f57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+							title: "Strony internetowe",
+						},
+						{
+							content:
+								"Pozycjonowanie stron internetowych, potocznie też nazywane SEO to szereg działań mających na celu wywindowanie stron www w wynikach wyszukiwania w Google, Bing, Yahoo.",
+							image:
+								"https://images.unsplash.com/photo-1633632799503-c8cff57c17f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+							title: "Marketing",
+						},
+						{
+							content:
+								"Tworzenie treści jest jak tchnienie życia w stronę internetową. Z publikowanych treści jest generowane zainteresowanie robotów wyszukiwarek i użytkowników stroną internetową. Co za tym idzie, treści w stronach internetowych powinny być unikalne oraz przyciągające uwagę użytkownika.",
+							image:
+								"https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2Vic2l0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=80",
+							title: "Copywriting",
+						},
+						{
+							content:
+								"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
+							image:
+								"https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+							title: "Wideomaking",
+						},
+					]}
+					content={homepage.pl.content.hero.content}
+					title={homepage.pl.content.hero.title}
 				/>
 			}
 		>
