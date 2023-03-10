@@ -1,11 +1,8 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	// min-height: calc(100vh - 10rem);
-	// background: red;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	padding: 1rem 2rem 1rem 3rem;
-
 	& > .image {
 		aspect-ratio: 1/1;
 		border-radius: 50% 65% 50% 25%;
@@ -15,7 +12,6 @@
 		margin: auto;
 	}
 	& > .content {
-		// background: lime;
 		@include flex(start, column, center);
 		row-gap: 2rem;
 		& > * {
@@ -27,18 +23,15 @@
 			font-weight: 800;
 		}
 		& > .jobs {
-			// background: aqua;
 			font-size: 3.2rem;
 			opacity: 0.8;
 		}
 		& > .cities {
-			// background: fuchsia;
 			font-size: 2.7rem;
 			opacity: 0.6;
 		}
 		& > .socials {
 			@include flex(center, row wrap, center);
-			// background: white;
 			gap: 0.15rem;
 			width: 100%;
 			& > .social {
@@ -46,7 +39,6 @@
 				width: 3.65rem;
 				& > a {
 					@include flexNoFlow(center, center);
-					// background: aqua;
 					font-size: 2rem;
 					height: 100%;
 					width: 100%;
@@ -69,7 +61,6 @@
 		& > .contact {
 			@include flex(center, row wrap, center);
 			gap: 1rem;
-			// background: violet;
 			& > .contactItem {
 				background-color: #6b748c;
 				color: #f5f9ff;
@@ -91,6 +82,59 @@
 				&:hover {
 					background-color: #585e6e;
 				}
+			}
+		}
+	}
+
+	@media only screen {
+		@media (max-width: 1600px) {
+			grid-template-columns: 1.4fr 1fr;
+		}
+		@media (max-width: 1230px) {
+			grid-template-columns: 65% 35%;
+			& > .image {
+				max-width: 80%;
+			}
+			& > .content {
+				row-gap: 1rem;
+				& > .fullname {
+					font-size: 4.5rem;
+					font-weight: 800;
+				}
+				& > .jobs {
+					font-size: 2.8rem;
+				}
+				& > .cities {
+					font-size: 2.2rem;
+				}
+			}
+		}
+		@media (max-width: 940px) {
+			grid-template-columns: 60% 40%;
+			& > .image {
+				max-width: 95%;
+			}
+			& > .content {
+				row-gap: 1rem;
+				margin: auto;
+				width: 95%;
+				& > .fullname {
+					font-size: 4.15rem;
+					font-weight: 800;
+				}
+				& > .jobs {
+					font-size: 2.2rem;
+				}
+				& > .cities {
+					font-size: 1.9rem;
+				}
+			}
+		}
+		@media (max-width: 820px) {
+			@include flex(center, column, center);
+			row-gap: 1rem;
+			& > .image {
+				width: 30rem;
 			}
 		}
 	}
