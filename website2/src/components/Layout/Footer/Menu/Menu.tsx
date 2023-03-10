@@ -1,6 +1,6 @@
 import Link from "next/link";
+import { menu } from "../../../../../data/menu";
 import styles from "./Menu.module.scss";
-import { menu } from "../../../../data/menu";
 const Menu = () => {
 	return (
 		<menu className={styles.wrapper}>

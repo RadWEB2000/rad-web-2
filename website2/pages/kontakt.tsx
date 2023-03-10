@@ -2,7 +2,7 @@ import CardsWrapper from "../src/components/Utilities/Cards/CardsWrapper/CardsWr
 import Form from "../src/components/Pages/ContactPage/Form/Form";
 import HeroPage from "../src/components/Utilities/Hero/HeroPage/HeroPage";
 import Informations from "../src/components/Pages/ContactPage/Informations/Informations";
-import Layout from "./../components/Layout/Layout/Layout";
+import Layout from "../src/components/Layout/Layout/Layout";
 import PersonCard from "../src/components/Utilities/Cards/PersonCard/PersonCard";
 import Wrapper from "../src/components/Pages/ContactPage/Wrapper/Wrapper";
 import { contactpage } from "../data/pages/contactpage";

@@ -1,5 +1,5 @@
 import HeroPage from "../../src/components/Utilities/Hero/HeroPage/HeroPage";
-import Layout from "../../components/Layout/Layout/Layout";
+import Layout from "../../src/components/Layout/Layout/Layout";
 import Mission from "../../src/components/Pages/AboutPage/Mission/Mission";
 import PersonsCards from "../../src/components/Pages/AboutPage/PersonsCards/PersonsCards";
 import { aboutpage } from "../../data/pages/aboutpage";

@@ -3,7 +3,7 @@ import Categories from "../../src/components/Pages/ProjectsPage/Categories/Categ
 import fs from "fs";
 import HeroPage from "../../src/components/Utilities/Hero/HeroPage/HeroPage";
 import matter from "gray-matter";
-import Layout from "../../components/Layout/Layout/Layout";
+import Layout from "../../src/components/Layout/Layout/Layout";
 import ProjectCard from "../../src/components/Utilities/Cards/ProjectCard/ProjectCard";
 import Search from "../../src/components/Utilities/Form/Search/Search";
 import { iProject } from "../../src/ts/interface";

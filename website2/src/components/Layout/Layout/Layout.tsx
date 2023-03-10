@@ -1,10 +1,10 @@
 import Head from "next/head";
-import { footer } from "../../../data/footer";
 import Footer from "../Footer/Footer/Footer";
 import Navigation from "../Navigation/Navigation/Navigation";
 import styles from "./Layout.module.scss";
 import { IntLayout } from "./interface";
 import Seo from "../Seo/Seo";
+import { footer } from "../../../../data/footer";
 const Layout = ({
 	canonical,
 	children,

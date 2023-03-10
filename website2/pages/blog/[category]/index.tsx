@@ -2,7 +2,7 @@ import BlogCard from "../../../src/components/Utilities/Cards/BlogCard/BlogCard"
 import CardsWrapper from "./../../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
 import fs from "fs";
 import HeroPage from "../../../src/components/Utilities/Hero/HeroPage/HeroPage";
-import Layout from "../../../components/Layout/Layout/Layout";
+import Layout from "../../../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import Search from "../../../src/components/Utilities/Form/Search/Search";
 import { useState } from "react";

@@ -1,8 +1,8 @@
-import getSocials from "./../../../../../lib/getSocials";
 import Link from "next/link";
 import styles from "./Socials.module.scss";
 import { IntSocials } from "./interface";
 import { motion } from "framer-motion";
+import getSocials from "../../../../../lib/functions/getSocials";
 const Socials = ({ socials }: IntSocials) => {
 	return (
 		<ul className={styles.wrapper}>

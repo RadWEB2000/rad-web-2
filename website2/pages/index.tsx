@@ -2,7 +2,7 @@ import AboutSection from "../src/components/Pages/HomePage/AboutSection/AboutSec
 import BlogSection from "../src/components/Pages/HomePage/BlogSection/BlogSection";
 import fs from "fs";
 import HeroHome from "../src/components/Utilities/Hero/HeroHome/HeroHome";
-import Layout from "./../components/Layout/Layout/Layout";
+import Layout from "../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import ProjectsSection from "../src/components/Pages/HomePage/ProjectsSection/ProjectsSection";
 import TestimonialsSection from "../src/components/Pages/HomePage/TestimonialsSection/TestimonialsSection";
@@ -10,6 +10,7 @@ import { getStructuredDataOrganization } from "../lib/getStructuredData";
 import { homepage } from "../data/pages/homepage";
 import { iArticle, iProject } from "../src/ts/interface";
 import { persons } from "../data/utils/persons";
+
 
 interface iPage {
 	articles: iArticle[];

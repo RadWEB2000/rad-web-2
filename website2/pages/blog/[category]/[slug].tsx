@@ -1,6 +1,6 @@
 import fs from "fs";
 import HeroArticle from "../../../src/components/Utilities/Hero/HeroArticle/HeroArticle";
-import Layout from "../../../components/Layout/Layout/Layout";
+import Layout from "../../../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import path from "path";
 import readingTime from "reading-time";

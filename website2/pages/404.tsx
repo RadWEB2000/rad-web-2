@@ -1,5 +1,4 @@
-import Element404 from "../components/Pages/404/Element404";
-import Layout from "./../components/Layout/Layout/Layout";
+import Layout from "../src/components/Layout/Layout/Layout";
 const Page = () => {
 	return (
 		<Layout
@@ -14,9 +13,27 @@ const Page = () => {
 				type: "website",
 			}}
 			schema={{}}
-			hero={<></>}
+			hero={
+				<>
+					<h1
+						style={{
+							alignItems: "center",
+							display: "flex",
+							fontSize: "5rem",
+							fontWeight: "700",
+							justifyContent: "center",
+							margin: "auto",
+							textAlign: "center",
+							height: "calc(100vh - 35rem)",
+							width: "100%",
+						}}
+					>
+						404
+					</h1>
+				</>
+			}
 		>
-			<Element404 content="Strona nie została znaleziona" />
+			<></>
 		</Layout>
 	);
 };

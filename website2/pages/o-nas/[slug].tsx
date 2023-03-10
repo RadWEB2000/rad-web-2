@@ -1,7 +1,7 @@
 import fs from "fs";
 import HeroPerson from "../../src/components/Utilities/Hero/HeroPerson/HeroPerson";
 import Jobs from "../../src/components/Pages/AboutPage/Jobs/Jobs";
-import Layout from "../../components/Layout/Layout/Layout";
+import Layout from "../../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import path from "path";
 import { ArticleComponents } from "../../src/components/Pages/ArticlePage/ArticleComponents/ArticleComponents";
