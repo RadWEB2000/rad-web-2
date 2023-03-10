@@ -11,7 +11,6 @@ import { homepage } from "../data/pages/homepage";
 import { iArticle, iProject } from "../src/ts/interface";
 import { persons } from "../data/utils/persons";
 
-
 interface iPage {
 	articles: iArticle[];
 	projects: iProject[];
@@ -68,7 +67,7 @@ const Page = ({ articles, projects }: iPage) => {
 						},
 						{
 							content:
-								"Quo eos consequatur velit aliquid id dicta dolorem eveniet. Eius non aut molestiae laborum et. Similique et qui quidem. Nobis et sed magni tenetur perferendis voluptatibus commodi dolores aut. Tempora vel et.",
+								"Videomaking to usługa polegająca na tworzeniu i produkcji profesjonalnych filmów i materiałów wideo w celach marketingowych, promocyjnych, edukacyjnych, rozrywkowych i innych. ",
 							image:
 								"https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
 							title: "Wideomaking",
@@ -107,7 +106,7 @@ const Page = ({ articles, projects }: iPage) => {
 					}}
 					cards={projects}
 				/>
-				<TestimonialsSection cards={homepage.pl.content.testimonials} />
+				{/* <TestimonialsSection cards={homepage.pl.content.testimonials} /> */}
 			</main>
 		</Layout>
 	);
