@@ -1,121 +1,96 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	min-height: calc(100vh - 10rem);
+	// min-height: calc(100vh - 10rem);
+	// background: red;
 	display: grid;
-	grid-template-columns: 1.5fr 1fr;
-	padding: 1rem 4rem;
-	& > * {
-		@include flex(end, column, center);
-	}
-	@media only screen {
-		@media (max-width: 1150px) {
-			grid-template-columns: 1.15fr 1fr;
-			padding: 1rem 1rem;
-		}
-		@media (max-width: 600px) {
-			@include flex(center, column, flex-start);
-			padding: 1rem 1rem;
-			row-gap: 2rem;
-		}
-		@media (max-width: 400px) {
-			min-height: calc(100vh - 20rem);
-		}
-	}
-}
+	grid-template-columns: 2fr 1fr;
+	padding: 1rem 2rem 1rem 3rem;
 
-.image {
-	& > .picture {
-		@include fullSize;
+	& > .image {
+		aspect-ratio: 1/1;
+		border-radius: 50% 65% 50% 25%;
+		overflow: hidden;
+		width: 65rem;
 		position: relative;
+		margin: auto;
 	}
-	@media only screen {
-		@media (max-width: 600px) {
-			aspect-ratio: 1/1;
-			border-radius: 50%;
-			overflow: hidden;
-			max-width: 95%;
-			width: 30rem;
+	& > .content {
+		// background: lime;
+		@include flex(start, column, center);
+		row-gap: 2rem;
+		& > * {
+			text-align: center;
+			width: 100%;
 		}
-	}
-}
-
-.content {
-	row-gap: 3rem;
-	& > *:not(.socials) {
-		text-align: end;
-	}
-	& > .title {
-		font-size: 6rem;
-	}
-	& > .cities,
-	& > .jobs {
-		@include fontLine(2, 2rem, 400);
-	}
-	& > .jobs {
-		font-style: italic;
-	}
-	& > .socials {
-		@include flex(center, row wrap, flex-end);
-		gap: 1rem;
-		& > .social {
-			aspect-ratio: 1/1;
-			width: 3rem;
-			& > a {
-				@include flexNoFlow(center, center);
-				@include fullSize;
-				position: relative;
-				&::before {
-					bottom: 0;
-					background-color: var(--color);
-					height: 0.12rem;
-					left: 0;
-					transition: 0.3s linear width;
-					width: 0%;
-				}
-				& > * {
-					color: var(--color);
-					font-size: 2.5rem;
-					opacity: 0.7;
-					transition: 0.3s linear opacity, 0.3s linear transform;
-				}
-			}
-			&:focus-within,
-			&:hover {
+		& > .fullname {
+			font-size: 5.25rem;
+			font-weight: 800;
+		}
+		& > .jobs {
+			// background: aqua;
+			font-size: 3.2rem;
+			opacity: 0.8;
+		}
+		& > .cities {
+			// background: fuchsia;
+			font-size: 2.7rem;
+			opacity: 0.6;
+		}
+		& > .socials {
+			@include flex(center, row wrap, center);
+			// background: white;
+			gap: 0.15rem;
+			width: 100%;
+			& > .social {
+				aspect-ratio: 1/1;
+				width: 3.65rem;
 				& > a {
-					&::before {
-						width: 100%;
-					}
+					@include flexNoFlow(center, center);
+					// background: aqua;
+					font-size: 2rem;
+					height: 100%;
+					width: 100%;
 					& > * {
-						opacity: 1;
-						transform: translateY(-0.5rem);
+						transition: 0.2s linear scale;
+					}
+				}
+				&:focus,
+				&:focus-within,
+				&:hover {
+					& > a {
+						& > * {
+							scale: 1.7;
+						}
 					}
 				}
 			}
 		}
-	}
-	@media only screen {
-		@media (max-width: 970px) {
-			row-gap: 1.5rem;
-			& > .title {
-				font-size: 4.5rem;
-			}
-		}
-		@media (max-width: 400px) {
-			& > *:not(.socials) {
-				text-align: center;
-				width: 100%;
-			}
-			& > .title {
-				font-size: 3rem;
-			}
-			& > .cities,
-			& > .jobs {
-				font-size: 1.7rem;
-				line-height: 1.5;
-			}
-			& > .socials {
-				justify-content: center;
-				width: 100%;
+
+		& > .contact {
+			@include flex(center, row wrap, center);
+			gap: 1rem;
+			// background: violet;
+			& > .contactItem {
+				background-color: #6b748c;
+				color: #f5f9ff;
+				border-radius: 4rem;
+				height: 4rem;
+				width: 8rem;
+				transition: 0.25s ease-in-out background-color,
+					0.25s ease-in-out transform;
+				& > a {
+					@include flexNoFlow(center, center);
+					font-size: 2.4rem;
+					height: 100%;
+					width: 100%;
+					& > * {
+						margin: auto;
+					}
+				}
+				&:focus-within,
+				&:hover {
+					background-color: #585e6e;
+				}
 			}
 		}
 	}
