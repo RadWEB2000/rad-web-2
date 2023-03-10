@@ -1,0 +1,7 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	& > ul {
+		@include flex(baseline, row wrap, center);
+		gap: 2rem;
+	}
+}

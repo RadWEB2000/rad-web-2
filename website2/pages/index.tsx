@@ -1,6 +1,4 @@
-import Trailer from "../components/Pages/Home/Trailer/Trailer";
 import Layout from "./../components/Layout/Layout/Layout";
-import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
 import { persons } from "../data/utils/persons";
 import { homepage } from "../data/pages/homepage";
 import { getStructuredDataOrganization } from "../lib/getStructuredData";
@@ -12,6 +10,7 @@ import HeroHome from "../src/components/Utilities/Hero/HeroHome/HeroHome";
 import AboutSection from "../src/components/Pages/HomePage/AboutSection/AboutSection";
 import BlogSection from "../src/components/Pages/HomePage/BlogSection/BlogSection";
 import ProjectsSection from "../src/components/Pages/HomePage/ProjectsSection/ProjectsSection";
+import TestimonialsSection from "../src/components/Pages/HomePage/TestimonialsSection/TestimonialsSection";
 
 interface iPage {
 	articles: iArticle[];
@@ -81,7 +80,6 @@ const Page = ({ articles, projects }: iPage) => {
 			}
 		>
 			<main className="homepage mainHP">
-				{/* <Trailer movie={homepage.pl.content.trailer} /> */}
 				<BlogSection
 					button={{
 						path: homepage.pl.content.blog.button.path,
@@ -109,7 +107,7 @@ const Page = ({ articles, projects }: iPage) => {
 					}}
 					cards={projects}
 				/>
-				<Testimonials cards={homepage.pl.content.testimonials} />
+				<TestimonialsSection cards={homepage.pl.content.testimonials} />
 			</main>
 		</Layout>
 	);
