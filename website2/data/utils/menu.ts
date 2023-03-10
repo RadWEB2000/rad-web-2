@@ -70,7 +70,7 @@ export const menu: IntMenu = {
 			},
 			{
 				path: "/projekty",
-				title: "projekty",
+				title: "Projekty",
 			},
 			{
 				path: "/kontakt",
