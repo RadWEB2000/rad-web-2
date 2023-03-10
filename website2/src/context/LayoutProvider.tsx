@@ -9,8 +9,8 @@ import { theme, TypeThemeValue } from "../../data/utils/theme";
 
 interface iLayoutContext {
 	menu: {
-		close: Function | MouseEventHandler<any>;
-		handle: Function | MouseEventHandler<any>;
+		close: MouseEventHandler;
+		handle: MouseEventHandler;
 		isOpen: boolean;
 	};
 	scroll: boolean;
