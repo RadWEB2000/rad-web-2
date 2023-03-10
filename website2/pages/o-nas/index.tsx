@@ -1,7 +1,7 @@
 import HeroPage from "../../src/components/Utilities/Hero/HeroPage/HeroPage";
 import Layout from "../../components/Layout/Layout/Layout";
-import Mission from "../../components/Pages/AboutUs/Page/Mission/Mission";
-import PersonsCards from "../../components/Pages/AboutUs/Page/PersonsCards/PersonsCards";
+import Mission from "../../src/components/Pages/AboutPage/Mission/Mission";
+import PersonsCards from "../../src/components/Pages/AboutPage/PersonsCards/PersonsCards";
 import { aboutpage } from "../../data/pages/aboutpage";
 import { getStructuredDataWebsite } from "../../lib/getStructuredData";
 import { persons } from "./../../data/utils/persons";

@@ -4,7 +4,7 @@ import Layout from "../../../components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import path from "path";
 import readingTime from "reading-time";
-import { ArticleComponents } from "../../../components/Pages/ArticlePage/ArticleComponents/ArticleComponents";
+import { ArticleComponents } from "../../../src/components/Pages/ArticlePage/ArticleComponents/ArticleComponents";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
@@ -45,7 +45,6 @@ const Page = ({ frontMatter, source }: { frontMatter: any; source: any }) => {
 					className="excerpt"
 					dangerouslySetInnerHTML={{ __html: frontMatter.excerpt }}
 				/>
-				{/* <h1>{`https://rad-web.vercel.app/projekty/${frontMatter.category}/${frontMatter.slug}`}</h1> */}
 				<MDXRemote {...source} components={ArticleComponents} />
 			</main>
 		</Layout>

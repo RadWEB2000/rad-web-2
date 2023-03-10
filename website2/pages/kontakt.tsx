@@ -1,14 +1,15 @@
 import CardsWrapper from "../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
-import Form from "../components/Pages/Contact/Form/Form";
+import Form from "../src/components/Pages/ContactPage/Form/Form";
 import HeroPage from "../src/components/Utilities/Hero/HeroPage/HeroPage";
-import Informations from "../components/Pages/Contact/Informations/Informations";
+import Informations from "../src/components/Pages/ContactPage/Informations/Informations";
 import Layout from "./../components/Layout/Layout/Layout";
 import PersonCard from "../src/components/Utilities/Cards/PersonCard/PersonCard";
-import Wrapper from "../components/Pages/Contact/Wrapper/Wrapper";
+import Wrapper from "../src/components/Pages/ContactPage/Wrapper/Wrapper";
 import { contactpage } from "../data/pages/contactpage";
 import { getStructuredDataWebsite } from "../src/lib/functions/getStructuredData";
 import { persons } from "../data/utils/persons";
 import { projects } from "../data/pages/projects";
+
 const Page = () => {
 	const { pl } = projects;
 	return (

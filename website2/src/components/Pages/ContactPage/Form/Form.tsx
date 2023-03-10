@@ -1,6 +1,6 @@
-import Field from "../../../../src/components/Utilities/Form/Field/Field";
+import Field from "../../../Utilities/Form/Field/Field";
 import styles from "./Form.module.scss";
-import SubmitButton from "../../../../src/components/Utilities/Buttons/SubmitButton/SubmitButton";
+import SubmitButton from "../../../Utilities/Buttons/SubmitButton/SubmitButton";
 import Terms from "../Terms/Terms";
 import { IntForm } from "./interface";
 import { RiSendPlaneLine } from "react-icons/ri";

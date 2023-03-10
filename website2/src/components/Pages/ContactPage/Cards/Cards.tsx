@@ -1,4 +1,4 @@
-import PersonCard from "../../../../src/components/Utilities/Cards/PersonCard/PersonCard";
+import PersonCard from "../../../Utilities/Cards/PersonCard/PersonCard";
 import styles from "./Cards.module.scss";
 import { IntCards } from "./interface";
 const Cards = ({ cards }: IntCards) => {
