@@ -1,14 +1,14 @@
-import Form from "../components/Pages/Contact/Form/Form";
-import Informations from "../components/Pages/Contact/Informations/Informations";
-import Wrapper from "../components/Pages/Contact/Wrapper/Wrapper";
-import HeroPage from "../components/Utilities/Hero/HeroPage/HeroPage";
-import { contactpage } from "../data/pages/contactpage";
-import { projects } from "../data/pages/projects";
-import { persons } from "../data/utils/persons";
-import { getStructuredDataWebsite } from "../lib/getStructuredData";
 import CardsWrapper from "../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
-import PersonCard from "../src/components/Utilities/Cards/PersonCard/PersonCard";
+import Form from "../components/Pages/Contact/Form/Form";
+import HeroPage from "../src/components/Utilities/Hero/HeroPage/HeroPage";
+import Informations from "../components/Pages/Contact/Informations/Informations";
 import Layout from "./../components/Layout/Layout/Layout";
+import PersonCard from "../src/components/Utilities/Cards/PersonCard/PersonCard";
+import Wrapper from "../components/Pages/Contact/Wrapper/Wrapper";
+import { contactpage } from "../data/pages/contactpage";
+import { getStructuredDataWebsite } from "../src/lib/functions/getStructuredData";
+import { persons } from "../data/utils/persons";
+import { projects } from "../data/pages/projects";
 const Page = () => {
 	const { pl } = projects;
 	return (
