@@ -1,0 +1,10 @@
+@import "../../../../../styles/Variables.module.scss";
+.wrapper {
+	@media only screen {
+		@media (max-width: 850px) {
+			@include flexNoFlow(center, flex-end);
+			padding: 0 1rem;
+			width: 100%;
+		}
+	}
+}
