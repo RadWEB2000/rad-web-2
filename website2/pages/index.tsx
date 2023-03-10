@@ -1,6 +1,4 @@
-import Blog from "../components/Pages/Home/Blog/Blog/Blog";
 import Trailer from "../components/Pages/Home/Trailer/Trailer";
-import Projects from "../components/Pages/Home/Projects/Projects/Projects";
 import Layout from "./../components/Layout/Layout/Layout";
 import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
 import { persons } from "../data/utils/persons";
@@ -12,6 +10,8 @@ import matter from "gray-matter";
 import { iArticle, iProject } from "../src/ts/interface";
 import HeroHome from "../src/components/Utilities/Hero/HeroHome/HeroHome";
 import AboutSection from "../src/components/Pages/HomePage/AboutSection/AboutSection";
+import BlogSection from "../src/components/Pages/HomePage/BlogSection/BlogSection";
+import ProjectsSection from "../src/components/Pages/HomePage/ProjectsSection/ProjectsSection";
 
 interface iPage {
 	articles: iArticle[];
@@ -82,7 +82,7 @@ const Page = ({ articles, projects }: iPage) => {
 		>
 			<main className="homepage mainHP">
 				{/* <Trailer movie={homepage.pl.content.trailer} /> */}
-				<Blog
+				<BlogSection
 					button={{
 						path: homepage.pl.content.blog.button.path,
 						title: homepage.pl.content.blog.button.title,
@@ -100,7 +100,7 @@ const Page = ({ articles, projects }: iPage) => {
 					content={homepage.pl.content.about.content}
 					title={homepage.pl.content.about.title}
 				/>
-				<Projects
+				<ProjectsSection
 					title={homepage.pl.content.projects.title}
 					content={homepage.pl.content.projects.content}
 					button={{

@@ -1,14 +1,19 @@
 import BlogCard from "../../../../../src/components/Utilities/Cards/BlogCard/BlogCard";
 import CardsWrapper from "../../../../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
 import SectionPage from "../../../../../src/components/Utilities/Section/SectionPage/SectionPage";
-import styles from "./Blog.module.scss";
+import styles from "./BlogSection.module.scss";
 import { iArticle, iSectionPage } from "../../../../../src/ts/interface";
 import { ReactElement } from "react";
 import { useVisibleArticlesHP } from "../../../../../src/lib/hooks/useVisibleArticlesHP";
 interface iBlog extends iSectionPage {
 	cards: iArticle[];
 }
-const Blog = ({ button, cards, content, title }: iBlog): ReactElement => {
+const BlogSection = ({
+	button,
+	cards,
+	content,
+	title,
+}: iBlog): ReactElement => {
 	return (
 		<div className={`section ${styles.wrapper}`}>
 			<SectionPage button={button} content={content} title={title} />
@@ -36,4 +41,4 @@ const Blog = ({ button, cards, content, title }: iBlog): ReactElement => {
 		</div>
 	);
 };
-export default Blog;
+export default BlogSection;
