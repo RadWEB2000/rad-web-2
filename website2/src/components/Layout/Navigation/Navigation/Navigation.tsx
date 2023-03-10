@@ -9,13 +9,18 @@ const Navigation = () => {
 	const { scrollYProgress } = useScroll();
 	const { scroll } = useContext(LayoutContext);
 	const { menu: menuContext } = useContext(LayoutContext);
+	console.log(menuContext);
 	return (
 		<>
 			<motion.div
 				className={styles.progress}
 				style={{ scaleX: scrollYProgress }}
 			/>
-			<nav className={styles.wrapper} data-scrolled={scroll}>
+			<nav
+				className={styles.wrapper}
+				data-scrolled={scroll}
+				data-open={`${menuContext.isOpen}-menu`}
+			>
 				<div className={styles.brand}>
 					<Brand />
 				</div>

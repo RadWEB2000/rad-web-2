@@ -31,7 +31,7 @@ export const LayoutContext = createContext<iLayoutContext>({
 
 export const LayoutProvider = ({ children }: iLayoutProvider): ReactElement => {
 	const [isLightTheme, setIsLightTheme] = useState<boolean>(true);
-	const [isOpenMenu, setIsOpenMenu] = useState<boolean>(true);
+	const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 	const [isScrolled, updateIsScrolled] = useState<boolean>(false);
 	const { dark, light } = theme;
 	const getThemeVariant: TypeThemeValue = isLightTheme ? light : dark;
@@ -46,6 +46,24 @@ export const LayoutProvider = ({ children }: iLayoutProvider): ReactElement => {
 			});
 		}
 	}, []);
+
+	// useEffect(() => {
+	// 	if (window !== undefined) {
+	// 		if (window.innerWidth <= 850) {
+	// 			setIsOpenMenu(false);
+	// 		} else {
+	// 			setIsOpenMenu(true);
+	// 		}
+
+	// 		window.addEventListener("resize", () => {
+	// 			if (window.innerWidth <= 850) {
+	// 				setIsOpenMenu(false);
+	// 			} else {
+	// 				setIsOpenMenu(true);
+	// 			}
+	// 		});
+	// 	}
+	// }, [isOpenMenu]);
 
 	useEffect(() => {
 		const root = document.documentElement;

@@ -49,6 +49,7 @@ li {
 main {
 	margin: 5rem auto 15rem;
 	max-width: 95vw;
+	overflow-x: hidden;
 	width: 120rem;
 	&.homepage > * {
 		margin: 15rem auto;
