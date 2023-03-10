@@ -3,7 +3,6 @@ import Trailer from "../components/Pages/Home/Trailer/Trailer";
 import Projects from "../components/Pages/Home/Projects/Projects/Projects";
 import Layout from "./../components/Layout/Layout/Layout";
 import Testimonials from "../components/Pages/Home/Testimonials/Testimonials";
-import About from "../components/Pages/Home/About/About";
 import { persons } from "../data/utils/persons";
 import { homepage } from "../data/pages/homepage";
 import { getStructuredDataOrganization } from "../lib/getStructuredData";
@@ -12,6 +11,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { iArticle, iProject } from "../src/ts/interface";
 import HeroHome from "../src/components/Utilities/Hero/HeroHome/HeroHome";
+import AboutSection from "../src/components/Pages/HomePage/AboutSection/AboutSection";
 
 interface iPage {
 	articles: iArticle[];
@@ -91,7 +91,7 @@ const Page = ({ articles, projects }: iPage) => {
 					content={homepage.pl.content.blog.content}
 					title={homepage.pl.content.blog.title}
 				/>
-				<About
+				<AboutSection
 					button={{
 						path: homepage.pl.content.about.button.path,
 						title: homepage.pl.content.about.button.title,
