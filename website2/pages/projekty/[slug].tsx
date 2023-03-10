@@ -1,12 +1,12 @@
 import fs from "fs";
-import readingTime from "reading-time";
-import path from "path";
-import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
 import Layout from "../../components/Layout/Layout/Layout";
-import HeroArticlePage from "../../components/Utilities/Hero/HeroArticlePage/HeroArticlePage";
+import HeroArticle from "../../src/components/Utilities/Hero/HeroArticle/HeroArticle";
+import matter from "gray-matter";
+import path from "path";
+import readingTime from "reading-time";
 import { ArticleComponents } from "../../components/Pages/ArticlePage/ArticleComponents/ArticleComponents";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 
 const Page = ({ frontMatter, source }: { frontMatter: any; source: any }) => {
 	const readTime = readingTime(source);
@@ -14,7 +14,7 @@ const Page = ({ frontMatter, source }: { frontMatter: any; source: any }) => {
 	return (
 		<Layout
 			hero={
-				<HeroArticlePage
+				<HeroArticle
 					breadcrumbs={frontMatter.breadcrumbs}
 					image={frontMatter.image}
 					lang={"pl"}
