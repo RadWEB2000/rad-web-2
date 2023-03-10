@@ -1,10 +1,16 @@
-import { createContext, ReactElement, useEffect, useState } from "react";
+import {
+	createContext,
+	MouseEventHandler,
+	ReactElement,
+	useEffect,
+	useState,
+} from "react";
 import { theme, TypeThemeValue } from "../../data/utils/theme";
 
 interface iLayoutContext {
 	menu: {
-		close: Function;
-		handle: Function;
+		close: Function | MouseEventHandler;
+		handle: Function | MouseEventHandler;
 		isOpen: boolean;
 	};
 	scroll: boolean;
