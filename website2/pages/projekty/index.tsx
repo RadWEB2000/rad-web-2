@@ -1,5 +1,5 @@
 import CardsWrapper from "./../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
-import Categories from "../../components/Pages/Projects/Categories/Categories";
+import Categories from "../../src/components/Pages/ProjectsPage/Categories/Categories";
 import fs from "fs";
 import HeroPage from "../../src/components/Utilities/Hero/HeroPage/HeroPage";
 import matter from "gray-matter";
