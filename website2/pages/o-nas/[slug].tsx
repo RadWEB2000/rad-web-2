@@ -1,15 +1,14 @@
-import Layout from "../../components/Layout/Layout/Layout";
-import Jobs from "../../components/Pages/AboutUs/Page/Jobs/Jobs";
-import { getStructuredDataPerson } from "../../lib/getStructuredData";
-
 import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
-import { ArticleComponents } from "./../../components/Pages/ArticlePage/ArticleComponents/ArticleComponents";
-import { iJobCard } from "../../src/components/Utilities/Cards/JobCard/JobCard";
 import HeroPerson from "../../src/components/Utilities/Hero/HeroPerson/HeroPerson";
+import Jobs from "../../components/Pages/AboutUs/Page/Jobs/Jobs";
+import Layout from "../../components/Layout/Layout/Layout";
+import matter from "gray-matter";
+import path from "path";
+import { ArticleComponents } from "./../../components/Pages/ArticlePage/ArticleComponents/ArticleComponents";
+import { getStructuredDataPerson } from "../../lib/getStructuredData";
+import { iJobCard } from "../../src/components/Utilities/Cards/JobCard/JobCard";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 
 interface iPage {
 	data: any;

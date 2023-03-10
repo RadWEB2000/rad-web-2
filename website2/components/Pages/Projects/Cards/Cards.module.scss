@@ -1,6 +1,0 @@
-@import "../../../../styles/Variables.module.scss";
-.wrapper {
-	@include flex(start, row wrap, center);
-	column-gap: 0.25rem;
-	row-gap: 1rem;
-}
