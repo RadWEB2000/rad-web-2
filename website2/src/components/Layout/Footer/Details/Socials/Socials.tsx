@@ -1,9 +1,14 @@
+import getSocials from "../../../../../lib/functions/getSocials";
 import Link from "next/link";
 import styles from "./Socials.module.scss";
-import { IntSocials } from "./interface";
 import { motion } from "framer-motion";
-import getSocials from "../../../../../lib/functions/getSocials";
-const Socials = ({ socials }: IntSocials) => {
+import { ReactElement } from "react";
+
+interface iSocials {
+	socials: string[];
+}
+
+const Socials = ({ socials }: iSocials): ReactElement => {
 	return (
 		<ul className={styles.wrapper}>
 			{socials.map((path) => (

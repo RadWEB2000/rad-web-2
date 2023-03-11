@@ -1,18 +1,19 @@
 import Link from "next/link";
 import styles from "./Info.module.scss";
 import { CgMail, CgSmartphone } from "react-icons/cg";
-import { IntInfo } from "./interface";
 import { ReactElement } from "react";
-const Info = ({ nip, regon }: IntInfo): ReactElement => {
+interface iInfo {
+	address: string;
+	nip?: number | string;
+	regon?: number | string;
+	title: string;
+}
+const Info = ({ address, nip, regon, title }: iInfo): ReactElement => {
 	return (
 		<section className={styles.wrapper}>
-			<b>RadWEB</b>
+			<b>{title}</b>
 			<address>
-				<p>
-					Donatowo 53,
-					<br />
-					64-020 Czempiń
-				</p>
+				<p dangerouslySetInnerHTML={{ __html: address }} />
 				{nip && (
 					<p>
 						<b>NIP:</b>
