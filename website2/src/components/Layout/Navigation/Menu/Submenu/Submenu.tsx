@@ -1,8 +1,16 @@
 import Item from "../Item/Item";
 import styles from "./Submenu.module.scss";
-import { IntSubmenu } from "./interface";
-import { useState } from "react";
-const Submenu = ({ path, title, submenu }: IntSubmenu) => {
+import { ReactElement, useState } from "react";
+interface iSubmenu {
+	path: string;
+	title: string;
+	submenu: {
+		path: string;
+		title: string;
+	}[];
+}
+
+const Submenu = ({ path, title, submenu }: iSubmenu): ReactElement => {
 	const [isActive, setIsActive] = useState(false);
 	return (
 		<li className={styles.wrapper} onMouseLeave={() => setIsActive(false)}>
