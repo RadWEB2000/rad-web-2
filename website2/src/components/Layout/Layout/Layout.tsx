@@ -2,8 +2,33 @@ import Head from "next/head";
 import Footer from "../Footer/Footer/Footer";
 import Navigation from "../Navigation/Navigation/Navigation";
 import styles from "./Layout.module.scss";
-import { IntLayout } from "./interface";
 import { footer } from "../../../../data/footer";
+import { ReactElement } from "react";
+
+interface iLayout {
+	canonical?: string;
+	image: string;
+	meta: {
+		description: string;
+		title: string;
+	};
+	og: {
+		description: string;
+		title: string;
+		type: "article" | "website" | "blog";
+	};
+	robots?:
+		| "index follow"
+		| "noindex nofollow"
+		| "index nofollow"
+		| "noindex follow"
+		| "index"
+		| "follow";
+	children: ReactElement | ReactElement[];
+	hero: ReactElement;
+	schema: any;
+}
+
 const Layout = ({
 	canonical,
 	children,
@@ -13,7 +38,7 @@ const Layout = ({
 	og,
 	robots,
 	schema,
-}: IntLayout) => {
+}: iLayout): ReactElement => {
 	const theme = true;
 	return (
 		<>
