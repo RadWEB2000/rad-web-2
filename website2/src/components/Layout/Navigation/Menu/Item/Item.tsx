@@ -1,16 +1,24 @@
 import Link from "next/link";
 import styles from "./Item.module.scss";
 import { FiChevronDown } from "react-icons/fi";
-import { IntItem } from "./interface";
 import { LayoutContext } from "./../../../../../context/LayoutProvider";
-import { ReactElement, useContext } from "react";
+import { MouseEventHandler, ReactElement, useContext } from "react";
+
+interface iItem {
+	expandClose?: MouseEventHandler;
+	expandHandle?: MouseEventHandler;
+	path: string;
+	title: string;
+	variant: "expand" | "main" | "submenu";
+}
+
 const Item = ({
 	expandClose,
 	expandHandle,
 	path,
 	title,
 	variant,
-}: IntItem): ReactElement => {
+}: iItem): ReactElement => {
 	const expandLinkHandle = () => {
 		menu.close, expandClose;
 	};
