@@ -3,7 +3,6 @@ import Footer from "../Footer/Footer/Footer";
 import Navigation from "../Navigation/Navigation/Navigation";
 import styles from "./Layout.module.scss";
 import { IntLayout } from "./interface";
-import Seo from "../Seo/Seo";
 import { footer } from "../../../../data/footer";
 const Layout = ({
 	canonical,
@@ -45,7 +44,13 @@ const Layout = ({
 				<>{hero}</>
 			</header>
 			<>{children}</>
-			<Footer socials={footer.pl.socials} />
+			<Footer
+				info={{
+					address: `Donatowo 54<br/>64-020 Czempiń`,
+					title: "RadWEB",
+				}}
+				socials={footer.pl.socials}
+			/>
 		</>
 	);
 };

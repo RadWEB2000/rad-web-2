@@ -4,8 +4,16 @@ import Map from "../Map/Map";
 import Menu from "../Menu/Menu";
 import Socials from "../Details/Socials/Socials";
 import styles from "./Footer.module.scss";
-import { IntFooter } from "./interface";
-const Footer = ({ socials }: IntFooter) => {
+interface iFooter {
+	info: {
+		address: string;
+		nip?: number | string;
+		regon?: number | string;
+		title: string;
+	};
+	socials: string[];
+}
+const Footer = ({ info, socials }: iFooter) => {
 	return (
 		<>
 			<Map />
@@ -16,7 +24,12 @@ const Footer = ({ socials }: IntFooter) => {
 					</div>
 					<div className={styles.details}>
 						<Socials socials={socials} />
-						<Info nip={82301093901} regon={3102938128039} />
+						<Info
+							address={info.address}
+							nip={info.nip}
+							regon={info.regon}
+							title={info.title}
+						/>
 					</div>
 				</div>
 				<Author />
