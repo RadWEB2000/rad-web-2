@@ -58,10 +58,10 @@ export const menu: IntMenu = {
 						path: "/blog/seo",
 						title: "Seo",
 					},
-					{
-						path: "/blog/reklamy-ads",
-						title: "Reklamy Ads",
-					},
+					// {
+					// 	path: "/blog/reklamy-ads",
+					// 	title: "Reklamy Ads",
+					// },
 					{
 						path: "/blog",
 						title: "Wszystkie wpisy",
