@@ -55,7 +55,7 @@ export const menu: IntMenu = {
 						title: "Programowanie",
 					},
 					{
-						path: "/blog/seo",
+						path: "/blog/pozycjonowanie",
 						title: "Seo",
 					},
 					// {

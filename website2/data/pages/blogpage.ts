@@ -29,7 +29,8 @@ export const blogpage = {
 				seo: {
 					image: "",
 					meta: {
-						title: "",
+						title:
+							"Porady i ciekawostki ze świata programowania, blog o programowaniu - RadWEB",
 						description: "",
 					},
 					og: {
@@ -53,7 +54,7 @@ export const blogpage = {
 				seo: {
 					image: "",
 					meta: {
-						title: "",
+						title: "Poznaj tajniki pozycjonowania, blog o SEO - RadWEB",
 						description: "",
 					},
 					og: {
