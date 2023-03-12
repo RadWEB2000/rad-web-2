@@ -36,7 +36,7 @@ const Page = ({ articles, projects }: iPage) => {
 					buttons={[
 						{
 							path: "/blog",
-							title: "/blog",
+							title: "blog",
 						},
 						{
 							path: "/kontakt",

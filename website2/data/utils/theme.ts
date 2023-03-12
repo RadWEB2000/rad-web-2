@@ -60,8 +60,8 @@ export const theme = {
 	},
 	light: {
 		background: "#fff",
-		color: "#1D1927",
-		primary: "#008AFF",
+		color: "#000",
+		primary: "#414756",
 		secondary: "#000DAA",
 		tertiary: "#4d1790",
 		quatenary: "#515151",
