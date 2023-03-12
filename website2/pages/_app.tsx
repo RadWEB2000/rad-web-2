@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { LayoutProvider } from "../src/context/LayoutProvider";
-import "../styles/Global.scss";
-import "../styles/Parts.scss";
+import "../src/styles/Global.scss";
+import "../src/styles/Parts.scss";
 const App = ({ Component, pageProps }: AppProps) => {
 	let theme = true;
 	return (
