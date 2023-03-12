@@ -60,7 +60,7 @@ const BlogCard = ({
 						<p
 							className={styles.excerpt}
 							dangerouslySetInnerHTML={{
-								__html: excerpt.substring(0, 80) + "...",
+								__html: excerpt.substring(0, 120) + "(...)",
 							}}
 						/>
 					</div>

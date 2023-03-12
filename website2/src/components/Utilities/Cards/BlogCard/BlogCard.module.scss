@@ -11,8 +11,8 @@
 		// background-color: hsla(0, 100%, 100%, 0.85);
 		background-image: linear-gradient(
 			to top right,
-			hsla(0, 100%, 100%, 1),
-			hsla(0, 100%, 100%, 0.7)
+			hsl(218, 80%, 98%),
+			hsl(218, 80%, 98%, 0.85)
 		);
 		top: -2rem;
 		left: 0;
@@ -43,10 +43,10 @@
 				0.2s transform;
 		}
 		& > h3 {
-			@include fontLine(1.7, 3rem, 800);
+			@include fontLine(1.5, 2.5rem, 600);
 		}
 		& > p {
-			@include fontLine(1.7, 1.6rem, 400);
+			@include fontLine(1.7, 1.5rem, 400);
 			opacity: 0.8;
 		}
 	}

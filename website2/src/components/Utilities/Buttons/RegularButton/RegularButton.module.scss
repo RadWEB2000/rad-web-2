@@ -8,8 +8,8 @@
 	&[data-variant="primary"] {
 		// background: orange;
 		& > .content {
-			border: 2.2px solid var(--senary);
-			color: var(--senary);
+			border: 2.2px solid #1a73e8;
+			color: #1a73e8;
 			font-size: 1.6rem;
 			font-weight: 700;
 			padding: 0.6rem 2.2rem;
@@ -54,13 +54,13 @@
 		color: #1d1927;
 		height: 3.75rem;
 		min-width: 10rem;
-		outline: 0.2rem solid #5549f1;
+		outline: 0.2rem solid #1a73e8;
 		position: relative;
 		transition: 0.3s;
 		user-select: none;
 		&::after {
 			@include fullSize;
-			background-color: #5549f1;
+			background-color: #1a73e8;
 			left: 0;
 			top: 0;
 			transform: scaleY(0);
@@ -72,7 +72,7 @@
 		&:focus-within,
 		&:hover {
 			color: #ffffff;
-			outline: 0.2rem solid #463bd4;
+			outline: 0.2rem solid #1a73e8;
 			&::after {
 				transform: scale(1, 1);
 			}
