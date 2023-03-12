@@ -61,7 +61,7 @@ export const theme = {
 	light: {
 		background: "#fff",
 		color: "#3e4455",
-		primary: "#414756",
+		primary: "#1a73e8",
 		secondary: "#000DAA",
 		tertiary: "#4d1790",
 		quatenary: "#515151",

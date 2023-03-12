@@ -1,7 +1,7 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
 	@include font(1.6rem, 400);
-	background-color: var(--senary);
+	background-color: var(--primary);
 	border-radius: 1rem;
 	color: var(--white);
 	display: inline-block;
@@ -12,7 +12,7 @@
 	transition: 0.3s;
 	&:focus-within,
 	&:hover {
-		background-color: var(--quinary);
+		filter: brightness(115%);
 		padding-right: 3rem;
 		& > i {
 			opacity: 1;
