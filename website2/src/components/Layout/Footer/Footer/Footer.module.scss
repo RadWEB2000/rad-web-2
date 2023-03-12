@@ -1,7 +1,7 @@
 @import "../../../../styles/Variables.module.scss";
 
 .wrapper {
-	background-color: var(--googleMaps);
+	background-color: #f6f9fe;
 	padding: 2rem 3rem;
 	& > .content {
 		column-gap: 1rem;

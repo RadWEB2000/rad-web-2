@@ -58,7 +58,13 @@ const Field = ({
 		} else if (variant === "textarea") {
 			return (
 				<div className={styles.wrapper__contact}>
-					<textarea id={id} name={name} placeholder={placeholder} required />
+					<textarea
+						id={id}
+						maxLength={350}
+						name={name}
+						placeholder={placeholder}
+						required
+					/>
 					<label htmlFor={name}>{label}</label>
 				</div>
 			);

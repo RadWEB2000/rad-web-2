@@ -2,6 +2,7 @@
 .wrapper__contact {
 	@include flex(flex-start, column-reverse, center);
 	background-color: var(--contactFieldBackground);
+	background-color: #f6f9fe;
 	border-radius: 5px;
 	color: #000;
 	cursor: text;
@@ -13,13 +14,15 @@
 	&:focus-within,
 	&:hover {
 		background-color: var(--contactFieldBackgroundHover);
+		background-color: #eef1fb;
 	}
 	& > * + label {
 		color: var(--contactFieldLabelColor);
 		color: #000;
 
 		cursor: text;
-		font-size: 1.6rem;
+		font-size: 1.7rem;
+		font-weight: 600;
 		pointer-events: none;
 		transform: translate(0, 50%) scale(1);
 		transform-origin: left;
@@ -37,7 +40,7 @@
 		background-color: var(--contactFieldInputBackground);
 		color: var(--contactFieldInputColor);
 		color: #000;
-
+		font-size: 1.6rem;
 		padding: 3rem 0 1rem;
 		transition: 0.2s all;
 		margin: -3rem 0 -1rem;
@@ -50,7 +53,7 @@
 		}
 	}
 	& > textarea {
-		height: 15rem;
+		height: 25rem;
 	}
 	@media only screen {
 		@media (max-width: 475px) {
