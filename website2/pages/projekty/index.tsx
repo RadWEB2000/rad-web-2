@@ -9,7 +9,7 @@ import Search from "../../src/components/Utilities/Form/Search/Search";
 import { iProject } from "../../src/ts/interface";
 import { projects } from "../../data/pages/projects";
 import { projectspage } from "./../../data/pages/projectspage";
-import { typeProjectCategory } from "../../types/types";
+import { tProjectCategory } from "../../src/ts/types";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -25,8 +25,7 @@ const Page = ({ articles }: iPage) => {
 		(a, b) => new Date(b.release).getTime() - new Date(a.release).getTime()
 	);
 
-	const [currentCategory, setCurrentCategory] =
-		useState<typeProjectCategory>("");
+	const [currentCategory, setCurrentCategory] = useState<tProjectCategory>("");
 	return (
 		<Layout
 			image={projectspage.pl.main.seo.image}
