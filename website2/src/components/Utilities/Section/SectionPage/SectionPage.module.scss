@@ -13,7 +13,7 @@
 }
 .title {
 	@include font(5.5rem, 900);
-	color: var(--tertiary);
+	color: #3e4455;
 	@media only screen {
 		@media (max-width: 850px) {
 			font-size: 4.15rem;
