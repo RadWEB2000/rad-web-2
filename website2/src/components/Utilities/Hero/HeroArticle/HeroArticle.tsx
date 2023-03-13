@@ -12,7 +12,6 @@ import {
 	LinkedinShareButton,
 	TwitterShareButton,
 } from "react-share";
-import { motion } from "framer-motion";
 
 interface iHeroArticle {
 	breadcrumbs: {
@@ -50,42 +49,21 @@ const HeroArticle = ({
 		<div className={styles.wrapper}>
 			{breadcrumbs && <Breadcrumb breadcrumb={breadcrumbs} />}
 			<ul className={styles.socials}>
-				<motion.li
-					whileHover={{
-						scale: 1.05,
-					}}
-					whileTap={{
-						scale: 0.95,
-					}}
-				>
+				<li>
 					<FacebookShareButton url={shareUrl}>
 						<FaFacebookF />
 					</FacebookShareButton>
-				</motion.li>
-				<motion.li
-					whileHover={{
-						scale: 1.05,
-					}}
-					whileTap={{
-						scale: 0.95,
-					}}
-				>
+				</li>
+				<li>
 					<LinkedinShareButton url={shareUrl}>
 						<FaLinkedinIn />
 					</LinkedinShareButton>
-				</motion.li>
-				<motion.li
-					whileHover={{
-						scale: 1.05,
-					}}
-					whileTap={{
-						scale: 0.95,
-					}}
-				>
+				</li>
+				<li>
 					<TwitterShareButton url={shareUrl}>
 						<FaTwitter />
 					</TwitterShareButton>
-				</motion.li>
+				</li>
 			</ul>
 			<section>
 				<h1>{title}</h1>

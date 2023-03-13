@@ -8,10 +8,11 @@
 		width: 110rem;
 		& > li {
 			aspect-ratio: 1/1;
-			background-color: var(--quinary);
-			color: var(--background);
+			background-color: #1a73e8;
+			color: #fff;
 			cursor: pointer;
 			border-radius: 50%;
+			transition: 0.3s ease-in-out filter;
 			width: 4.5rem;
 			&,
 			& > * > * {
@@ -20,6 +21,17 @@
 			& > * > * {
 				@include fullSize;
 				font-size: 2.2rem;
+			}
+			& > * {
+				transition: 0.2s ease-in-out scale;
+			}
+			&:focus,
+			&:focus-within,
+			&:hover {
+				filter: brightness(115%);
+				& > * {
+					scale: 1.7;
+				}
 			}
 		}
 	}

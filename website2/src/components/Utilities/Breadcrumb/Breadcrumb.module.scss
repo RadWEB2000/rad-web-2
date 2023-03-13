@@ -8,6 +8,12 @@
 	& > .element {
 		@include flex(center, row wrap, flex-start);
 	}
+
+	& > .element:last-of-type {
+		& > span {
+			color: #1a73e8;
+		}
+	}
 }
 
 .element {
@@ -24,16 +30,16 @@
 		transition: 0.3s ease-in-out color;
 		&::after {
 			bottom: -0.5rem;
-			background-color: #008aff;
+			background-color: #1a73e8;
 			left: 0;
-			height: 0.15rem;
+			height: 0.12rem;
 			transition: 0.3s ease-in-out width;
 			width: 0%;
 		}
 		&:focus,
 		&:focus-visible,
 		&:hover {
-			color: #008aff;
+			color: #1a73e8;
 			&::after {
 				width: 100%;
 			}
@@ -41,7 +47,7 @@
 	}
 	&:last-of-type {
 		& > a {
-			color: #008aff;
+			color: #1a73e8;
 		}
 	}
 }

@@ -1,7 +1,7 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
 	border: var(--searchBorder);
-	background-color: hsla(224, 7%, 67%, 0.22);
+	background-color: hsla(0, 0%, 78%, 0.15);
 	border-radius: 3rem;
 	display: grid;
 	grid-template-columns: calc(100% - 10rem) 10rem;
@@ -13,7 +13,7 @@
 	max-width: 90%;
 	transition: 0.3s;
 	&:focus-within {
-		outline: 1px solid var(--primary);
+		outline: 1px solid #1a73e8;
 	}
 	& > input {
 		border: 0;
