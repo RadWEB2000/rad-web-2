@@ -8,7 +8,7 @@
 	gap: 4rem;
 	height: 40rem;
 	max-width: 90%;
-	outline: var(--missionCardOutline);
+	outline: 1px solid #edf1fd;
 	overflow: hidden;
 	transition: 0.4s;
 	width: 25rem;
@@ -17,11 +17,11 @@
 		border-radius: 15rem;
 		height: 11rem;
 		position: relative;
-		outline: 3px solid var(--senary);
+		outline: 3px solid #1a73e8;
 		outline-offset: 5px;
 		width: 11rem;
 		&::after {
-			background-color: var(--senary);
+			background-color: #edf1fd;
 			border-radius: 15rem;
 			height: 100%;
 			left: 0;
@@ -32,13 +32,14 @@
 			z-index: 0;
 		}
 		& > span {
-			color: var(--senary);
+			color: #1a73e8;
 			font-size: 3.7rem;
 			z-index: 1;
 		}
 	}
 	& > h3 {
 		@include font(2rem, 900);
+		color: #1a73e8;
 	}
 	& > p {
 		@include fontLine(1.5, 1.5rem);
@@ -50,9 +51,9 @@
 	}
 	&:focus-within,
 	&:hover {
-		box-shadow: var(--missionCardHoverShadow);
+		box-shadow: 0 0 0.4rem 0.2rem hsla(225, 80%, 96%, 0.102);
 		transform: translateY(-1rem);
-		outline: var(--missionCardHoverOutline);
+		outline: #edf1fd;
 		& > div {
 			&::after {
 				transform: scale(6);
