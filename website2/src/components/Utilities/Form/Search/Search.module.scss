@@ -1,19 +1,19 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
-	border: var(--searchBorder);
-	background-color: hsla(0, 0%, 78%, 0.15);
+	border: 1px solid $color;
+	background-color: $search;
 	border-radius: 3rem;
 	display: grid;
 	grid-template-columns: calc(100% - 10rem) 10rem;
 	height: 5rem;
-	outline: var(--searchOutline);
+	outline: 0px solid $colorSecondary;
 	overflow: hidden;
 	margin: auto;
 	width: 90rem;
 	max-width: 90%;
 	transition: 0.3s;
 	&:focus-within {
-		outline: 1px solid #1a73e8;
+		outline: 1px solid $primary;
 	}
 	& > input {
 		border: 0;
@@ -25,7 +25,7 @@
 	}
 	& > span {
 		@include flexNoFlow(center, start);
-		color: var(--color);
+		color: $color;
 		height: 100%;
 		line-height: 0;
 		padding: 0 10px;

@@ -8,13 +8,13 @@
 		@include flex(center, row, flex-start);
 		& > a {
 			@include font(1.7rem, 700);
-			color: var(--quatenary);
+			color: $color;
 			padding: 0 0.5rem;
 			position: relative;
 			transition: 0.2s ease-in-out color;
 			z-index: 0;
 			&::before {
-				background-color: var(--color);
+				background-color: $color;
 				height: 120%;
 				left: 0;
 				opacity: 0;
@@ -29,7 +29,7 @@
 			&:focus,
 			&:focus-within,
 			&:hover {
-				color: var(--white);
+				color: $background;
 				&::before {
 					opacity: 1;
 					width: 100%;

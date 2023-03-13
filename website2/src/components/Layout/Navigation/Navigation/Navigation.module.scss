@@ -1,12 +1,6 @@
 @import "../../../../styles/Variables.module.scss";
 .progress {
-	background-image: var(--progressScroll);
-	height: 0.2rem;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 999999;
+	display: none;
 }
 .wrapper {
 	display: grid;
@@ -19,8 +13,8 @@
 	width: 100vw;
 	z-index: 99999;
 	&[data-scrolled="true"] {
-		background-color: var(--background);
-		box-shadow: var(--navShadow);
+		background-color: $background;
+		box-shadow: 0 5px 2px $navShadow;
 		height: 6rem;
 	}
 
@@ -43,7 +37,7 @@
 			grid-template-rows: 5rem auto;
 			height: auto;
 			&[data-scrolled="true"] {
-				box-shadow: var(--navShadow);
+				box-shadow: 0 5px 2px $navShadow;
 				height: auto;
 			}
 			& > .brand {
@@ -59,8 +53,8 @@
 					visibility: hidden;
 				}
 				&[data-open="true"] {
-					background-color: var(--background);
-					box-shadow: var(--navShadow);
+					background-color: $background;
+					box-shadow: 0 5px 2px $navShadow;
 				}
 			}
 			& > .settings {
@@ -69,12 +63,9 @@
 				display: flex;
 			}
 			&[data-open="true-menu"] {
-				background-color: var(--background);
-				box-shadow: var(--navShadow);
+				background-color: $background;
+				box-shadow: 0 5px 2px $navShadow;
 			}
-			// &[data-scrolled="true"] {
-			// 	height: 5rem;
-			// }
 		}
 	}
 }

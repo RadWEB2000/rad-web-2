@@ -8,8 +8,8 @@
 	&[data-variant="primary"] {
 		// background: orange;
 		& > .content {
-			border: 2.2px solid #1a73e8;
-			color: #1a73e8;
+			border: 2.2px solid $primary;
+			color: $primary;
 			font-size: 1.6rem;
 			font-weight: 700;
 			padding: 0.6rem 2.2rem;
@@ -51,16 +51,16 @@
 		background-color: transparent;
 		border: none;
 		border-radius: 0.4rem;
-		color: #1d1927;
+		color: $colorSecondary;
 		height: 3.75rem;
 		min-width: 10rem;
-		outline: 0.2rem solid #1a73e8;
+		outline: 0.2rem solid $primary;
 		position: relative;
 		transition: 0.3s;
 		user-select: none;
 		&::after {
 			@include fullSize;
-			background-color: #1a73e8;
+			background-color: $primary;
 			left: 0;
 			top: 0;
 			transform: scaleY(0);
@@ -71,8 +71,8 @@
 		&:focus,
 		&:focus-within,
 		&:hover {
-			color: #ffffff;
-			outline: 0.2rem solid #1a73e8;
+			color: $background;
+			outline: 0.2rem solid $primary;
 			&::after {
 				transform: scale(1, 1);
 			}

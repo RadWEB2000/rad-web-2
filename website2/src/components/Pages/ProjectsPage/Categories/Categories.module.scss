@@ -15,13 +15,14 @@
 		}
 		&[data-checked="true"] {
 			& > button {
-				background-color: var(--senary);
-				color: var(--background);
+				background-color: $primary;
+				color: $background;
 			}
 		}
 		&[data-checked="false"] {
 			& > button {
-				background-color: #dde1ef;
+				background-color: $secondary;
+				color: $colorSecondary;
 			}
 		}
 	}

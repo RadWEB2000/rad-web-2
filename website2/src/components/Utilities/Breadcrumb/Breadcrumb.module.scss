@@ -11,7 +11,7 @@
 
 	& > .element:last-of-type {
 		& > span {
-			color: #1a73e8;
+			color: $primary;
 		}
 	}
 }
@@ -30,7 +30,7 @@
 		transition: 0.3s ease-in-out color;
 		&::after {
 			bottom: -0.5rem;
-			background-color: #1a73e8;
+			background-color: $primary;
 			left: 0;
 			height: 0.12rem;
 			transition: 0.3s ease-in-out width;
@@ -39,7 +39,7 @@
 		&:focus,
 		&:focus-visible,
 		&:hover {
-			color: #1a73e8;
+			color: $primary;
 			&::after {
 				width: 100%;
 			}
@@ -47,7 +47,7 @@
 	}
 	&:last-of-type {
 		& > a {
-			color: #1a73e8;
+			color: $primary;
 		}
 	}
 }

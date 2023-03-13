@@ -2,13 +2,11 @@
 .wrapper {
 	@include flex(center, column, center);
 	border-radius: 1rem;
-	background-color: var(--background);
-	color: var(--color);
 	cursor: pointer;
 	gap: 4rem;
 	height: 40rem;
 	max-width: 90%;
-	outline: 1px solid #edf1fd;
+	outline: 1px solid $secondary;
 	overflow: hidden;
 	transition: 0.4s;
 	width: 25rem;
@@ -17,11 +15,11 @@
 		border-radius: 15rem;
 		height: 11rem;
 		position: relative;
-		outline: 3px solid #1a73e8;
+		outline: 3px solid $primary;
 		outline-offset: 5px;
 		width: 11rem;
 		&::after {
-			background-color: #edf1fd;
+			background-color: $secondary;
 			border-radius: 15rem;
 			height: 100%;
 			left: 0;
@@ -32,14 +30,14 @@
 			z-index: 0;
 		}
 		& > span {
-			color: #1a73e8;
+			color: $primary;
 			font-size: 3.7rem;
 			z-index: 1;
 		}
 	}
 	& > h3 {
 		@include font(2rem, 900);
-		color: #1a73e8;
+		color: $primary;
 	}
 	& > p {
 		@include fontLine(1.5, 1.5rem);
@@ -51,9 +49,9 @@
 	}
 	&:focus-within,
 	&:hover {
-		box-shadow: 0 0 0.4rem 0.2rem hsla(225, 80%, 96%, 0.102);
+		box-shadow: 0 0 0.4rem 0.2rem $missionCardShadow;
 		transform: translateY(-1rem);
-		outline: #edf1fd;
+		outline: $secondary;
 		& > div {
 			&::after {
 				transform: scale(6);

@@ -1,3 +1,21 @@
+$black: var(--black);
+$white: var(--white);
+$background: var(--background);
+$color: var(--color);
+$colorSecondary: var(--colorSecondary);
+$primary: var(--primary);
+$secondary: var(--secondary);
+$tertiary: var(--tertiary);
+$quatenary: var(--quatenary);
+$navShadow: var(--navShadow);
+$blogCard: var(--blogCard);
+$heroImageOne: var(--heroImageOne);
+$heroImageTwo: var(--heroImageTwo);
+$aboutSectionImage: var(--aboutSectionImage);
+$missionCardShadow: var(--missionCardShadow);
+$search: var(--search);
+$article: var(--article);
+
 @mixin backgroundImage {
 	// background-attachment: fixed;
 	background-position: center;

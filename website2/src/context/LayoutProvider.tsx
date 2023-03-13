@@ -5,7 +5,8 @@ import {
 	useEffect,
 	useState,
 } from "react";
-import { theme, TypeThemeValue } from "../../data/utils/theme";
+import { theme, TypeThemeValue } from "../data/theme";
+// import { theme, TypeThemeValue } from "../../data/utils/theme";
 
 interface iLayoutContext {
 	menu: {

@@ -8,14 +8,14 @@
 		@include flexNoFlow(center, center);
 	}
 	& > a {
-		@include font(1.65rem, 700);
-		color: var(--color);
+		@include font(1.6rem, 700);
+		color: $color;
 		height: 100%;
 		min-width: 5rem;
 		padding: 0 0.15rem;
 		position: relative;
 		&::before {
-			background-color: var(--secondary);
+			background-color: $primary;
 			bottom: 0;
 			height: 0.15rem;
 			left: 0;
@@ -25,7 +25,7 @@
 		&:focus,
 		&:focus-within,
 		&:hover {
-			color: var(--primary);
+			color: $primary;
 			&::before {
 				width: 100%;
 			}
@@ -44,7 +44,7 @@
 	}
 	& > button {
 		aspect-ratio: 1/1;
-		color: var(--color);
+		color: $colorSecondary;
 		font-size: 2.25rem;
 		height: 100%;
 		transition: 0.2s linear color;
@@ -53,7 +53,7 @@
 		}
 		&:focus,
 		&:hover {
-			color: var(--primary);
+			color: $primary;
 			& > * {
 				scale: 1.2;
 			}
@@ -63,13 +63,14 @@
 
 .submenu {
 	& > a {
-		color: var(--background);
+		color: $background;
+		font-weight: 600;
 		position: relative;
 		transition: 0.2s ease-in-out color;
 		padding: 0 0.5rem;
 		z-index: 0;
 		&::before {
-			background-color: var(--background);
+			background-color: $background;
 			height: 100%;
 			left: 0;
 			transition: 0.2s ease-in-out width;
@@ -78,7 +79,7 @@
 		}
 		&:focus,
 		&:hover {
-			color: var(--secondary);
+			color: $primary;
 			&::before {
 				width: 100%;
 			}

@@ -18,13 +18,13 @@
 }
 
 .table {
-	background: gray;
+	// background: gray;
 }
 
 .img {
 	aspect-ratio: 16/9;
 	border-radius: 2rem;
-	margin: 2rem auto;
+	margin: 8rem auto;
 	min-height: 20rem;
 	overflow: hidden;
 	position: relative;
@@ -37,7 +37,7 @@
 
 .b,
 .strong {
-	color: #000;
+	color: $colorSecondary;
 	font-weight: 700;
 }
 
@@ -69,13 +69,13 @@
 }
 
 .a {
-	color: #1a73e8;
+	color: $primary;
 	text-decoration: underline;
 	transition: 0.3s ease-in-out color;
 	&:focus,
 	&:focus-within,
 	&:hover {
-		color: #ff023e;
+		color: $quatenary;
 	}
 }
 
@@ -92,7 +92,6 @@
 		}
 
 		.h3 {
-			color: var(--senary);
 			font-size: 2.7rem;
 		}
 

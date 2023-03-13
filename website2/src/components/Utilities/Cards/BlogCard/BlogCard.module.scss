@@ -3,17 +3,12 @@
 .content {
 	@include flex(center, column, space-between);
 	@include fullSize;
-	color: var(--background);
+	color: $background;
 	position: absolute;
 	padding: 2rem 0.75rem;
 	z-index: 0;
 	&::before {
-		// background-color: hsla(0, 100%, 100%, 0.85);
-		background-image: linear-gradient(
-			to top right,
-			hsl(218, 80%, 98%),
-			hsl(218, 80%, 98%, 0.85)
-		);
+		background-image: $blogCard;
 		top: -2rem;
 		left: 0;
 		transform: translateX(-100%);
@@ -30,7 +25,7 @@
 		width: 100%;
 		& > p {
 			@include font(1.7rem, 600);
-			color: var(--white);
+			color: $background;
 			transition: 0.2s linear color;
 		}
 	}
@@ -92,18 +87,17 @@
 				}
 				& > .release {
 					& > p {
-						color: var(--color);
+						color: $colorSecondary;
 					}
 				}
 				& > .details {
 					& > * {
-						color: var(--color);
+						color: $colorSecondary;
 						transform: translateY(-1rem);
 					}
 					& > div {
 						& > p {
-							background-color: var(--blogCardBlogPageHoverBackground);
-							color: var(--background);
+							color: $colorSecondary;
 						}
 					}
 				}

@@ -8,8 +8,8 @@
 		width: 110rem;
 		& > li {
 			aspect-ratio: 1/1;
-			background-color: #1a73e8;
-			color: #fff;
+			background-color: $primary;
+			color: $white;
 			cursor: pointer;
 			border-radius: 50%;
 			transition: 0.3s ease-in-out filter;
@@ -74,7 +74,6 @@
 	& > figure {
 		aspect-ratio: 16/10;
 		bottom: -15rem;
-		box-shadow: 0 2rem 2rem 0.2rem hsla(0, 0%, 0%, 0.15);
 		border-radius: 2rem;
 		overflow: hidden;
 		position: relative;

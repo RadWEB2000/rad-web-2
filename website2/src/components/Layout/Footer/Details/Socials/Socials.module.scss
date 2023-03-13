@@ -15,7 +15,7 @@
 			width: 100%;
 			z-index: 0;
 			&::before {
-				background-color: var(--socialFooter);
+				background-color: $secondary;
 				border-radius: 1rem 1rem 0 0;
 				bottom: 0;
 				height: 50%;
@@ -27,7 +27,7 @@
 			&:focus,
 			&:focus-within,
 			&:hover {
-				color: var(--tertiary);
+				color: $primary;
 				&::before {
 					transform: translateY(0%);
 				}

@@ -1,9 +1,9 @@
 @import "../../../../styles/Variables.module.scss";
 .wrapper {
 	@include font(1.6rem, 400);
-	background-color: var(--primary);
+	background-color: $primary;
 	border-radius: 1rem;
-	color: var(--white);
+	color: $white;
 	display: inline-block;
 	letter-spacing: 0.1px;
 	min-width: 13rem;
@@ -29,7 +29,6 @@
 		transition: 0.3s;
 		& > span {
 			@include flexNoFlow(center, center);
-			color: var(--septenary);
 		}
 	}
 }

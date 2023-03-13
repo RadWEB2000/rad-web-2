@@ -157,29 +157,6 @@
 		@include flex(start, column, start);
 		padding: 0.5rem 1.15rem 0.8rem;
 		row-gap: 0.4rem;
-		& > .categories {
-			@include flex(start, row wrap, start);
-			gap: 0.6rem;
-			& > .category {
-				& > button {
-					@include flexNoFlow(center, center);
-					background-color: var(--senary);
-					border-radius: 0.5rem;
-					color: var(--background);
-					padding: 0.5rem 0.7rem;
-					transition: 0.3s ease-in-out background-color, 0.3s ease-in-out color;
-					&:focus,
-					&:focus-within,
-					&:hover {
-						background-color: var(--quinary);
-					}
-					& > p {
-						font-size: 1.5rem;
-						font-weight: 600;
-					}
-				}
-			}
-		}
 		& > .release {
 			font-size: 1.5rem;
 			font-weight: 600;
