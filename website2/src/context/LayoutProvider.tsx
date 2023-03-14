@@ -23,6 +23,7 @@ interface iLayoutContext {
 
 interface iLayoutProvider {
 	children: ReactElement;
+	time: string;
 }
 
 export const LayoutContext = createContext<iLayoutContext>({
@@ -38,7 +39,10 @@ export const LayoutContext = createContext<iLayoutContext>({
 	scroll: false,
 });
 
-export const LayoutProvider = ({ children }: iLayoutProvider): ReactElement => {
+export const LayoutProvider = ({
+	children,
+	time,
+}: iLayoutProvider): ReactElement => {
 	const [isLightTheme, setIsLightTheme] = useState<boolean>(true);
 	const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 	const [isScrolled, updateIsScrolled] = useState<boolean>(false);
@@ -56,14 +60,13 @@ export const LayoutProvider = ({ children }: iLayoutProvider): ReactElement => {
 		}
 	}, []);
 
-	// useEffect(() => {
-	// 	const currentHour = new Date().getHours();
-	// 	if (currentHour >= 10 && currentHour <= 6) {
-	// 		return setIsLightTheme(false);
-	// 	} else {
-	// 		return setIsLightTheme(true);
-	// 	}
-	// }, []);
+	useEffect(() => {
+		if (parseInt(time) >= 18 || parseInt(time) < 6) {
+			return setIsLightTheme(false);
+		} else {
+			return setIsLightTheme(true);
+		}
+	}, []);
 
 	useEffect(() => {
 		const root = document.documentElement;
