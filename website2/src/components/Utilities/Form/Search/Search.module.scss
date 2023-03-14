@@ -3,6 +3,7 @@
 	border: 1px solid $color;
 	background-color: $search;
 	border-radius: 3rem;
+	color: $color;
 	display: grid;
 	grid-template-columns: calc(100% - 10rem) 10rem;
 	height: 5rem;
@@ -17,6 +18,7 @@
 	}
 	& > input {
 		border: 0;
+		color: $color;
 		font-size: 1.7rem;
 		height: 100%;
 		outline: 0;

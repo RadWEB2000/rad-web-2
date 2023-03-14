@@ -3,4 +3,10 @@
 	@include flex(start, row wrap, flex-start);
 	gap: 1rem;
 	padding: 0.5rem;
+	@media only screen {
+		@media (max-width: 930px) {
+			background: orange;
+			justify-content: center;
+		}
+	}
 }

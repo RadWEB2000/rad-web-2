@@ -14,6 +14,10 @@ interface iLayoutContext {
 		handle: MouseEventHandler;
 		isOpen: boolean;
 	};
+	theme: {
+		handle: MouseEventHandler;
+		isLight: boolean;
+	};
 	scroll: boolean;
 }
 
@@ -26,6 +30,10 @@ export const LayoutContext = createContext<iLayoutContext>({
 		close: () => {},
 		handle: () => {},
 		isOpen: false,
+	},
+	theme: {
+		handle: () => {},
+		isLight: true,
 	},
 	scroll: false,
 });
@@ -49,22 +57,13 @@ export const LayoutProvider = ({ children }: iLayoutProvider): ReactElement => {
 	}, []);
 
 	// useEffect(() => {
-	// 	if (window !== undefined) {
-	// 		if (window.innerWidth <= 850) {
-	// 			setIsOpenMenu(false);
-	// 		} else {
-	// 			setIsOpenMenu(true);
-	// 		}
-
-	// 		window.addEventListener("resize", () => {
-	// 			if (window.innerWidth <= 850) {
-	// 				setIsOpenMenu(false);
-	// 			} else {
-	// 				setIsOpenMenu(true);
-	// 			}
-	// 		});
+	// 	const currentHour = new Date().getHours();
+	// 	if (currentHour >= 10 && currentHour <= 6) {
+	// 		return setIsLightTheme(false);
+	// 	} else {
+	// 		return setIsLightTheme(true);
 	// 	}
-	// }, [isOpenMenu]);
+	// }, []);
 
 	useEffect(() => {
 		const root = document.documentElement;
@@ -72,7 +71,7 @@ export const LayoutProvider = ({ children }: iLayoutProvider): ReactElement => {
 			const val = getThemeVariant[key];
 			root.style.setProperty(`--${key}`, val);
 		});
-	}, []);
+	}, [isLightTheme]);
 
 	return (
 		<LayoutContext.Provider
@@ -81,6 +80,10 @@ export const LayoutProvider = ({ children }: iLayoutProvider): ReactElement => {
 					close: () => setIsOpenMenu(false),
 					handle: () => setIsOpenMenu(!isOpenMenu),
 					isOpen: isOpenMenu,
+				},
+				theme: {
+					handle: () => setIsLightTheme(!isLightTheme),
+					isLight: isLightTheme,
 				},
 				scroll: isScrolled,
 			}}

@@ -9,7 +9,7 @@
 	}
 	& > a {
 		@include font(1.6rem, 700);
-		color: $color;
+		color: $colorSecondary;
 		height: 100%;
 		min-width: 5rem;
 		padding: 0 0.15rem;
@@ -63,14 +63,14 @@
 
 .submenu {
 	& > a {
-		color: $background;
+		color: $white;
 		font-weight: 600;
 		position: relative;
 		transition: 0.2s ease-in-out color;
 		padding: 0 0.5rem;
 		z-index: 0;
 		&::before {
-			background-color: $background;
+			background-color: $white;
 			height: 100%;
 			left: 0;
 			transition: 0.2s ease-in-out width;

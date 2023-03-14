@@ -4,6 +4,9 @@
 	top: 10rem;
 	row-gap: 2rem;
 	width: 95%;
+	h2 {
+		color: $colorSecondary;
+	}
 	&,
 	& > form,
 	& > form > div:first-of-type {

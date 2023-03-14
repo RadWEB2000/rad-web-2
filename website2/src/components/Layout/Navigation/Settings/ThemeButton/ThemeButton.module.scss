@@ -1,0 +1,9 @@
+@import "../../../../../styles/Variables.module.scss";
+
+.wrapper {
+	@include flexNoFlow(center, center);
+	aspect-ratio: 1/1;
+	color: $colorSecondary;
+	font-size: 2rem;
+	width: 3.5rem;
+}

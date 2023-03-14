@@ -3,7 +3,7 @@
 .content {
 	@include flex(center, column, space-between);
 	@include fullSize;
-	color: $background;
+	color: $color;
 	position: absolute;
 	padding: 2rem 0.75rem;
 	z-index: 0;
@@ -25,7 +25,7 @@
 		width: 100%;
 		& > p {
 			@include font(1.7rem, 600);
-			color: $background;
+			color: $color;
 			transition: 0.2s linear color;
 		}
 	}

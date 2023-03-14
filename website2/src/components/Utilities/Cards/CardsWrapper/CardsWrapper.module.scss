@@ -7,5 +7,10 @@
 	}
 	&[data-variant="contact"] {
 		@include flex(start, row wrap, flex-start);
+		@media only screen {
+			@media (max-width: 930px) {
+				justify-content: center;
+			}
+		}
 	}
 }

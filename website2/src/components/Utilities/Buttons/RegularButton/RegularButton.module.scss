@@ -71,7 +71,7 @@
 		&:focus,
 		&:focus-within,
 		&:hover {
-			color: $background;
+			color: $colorSecondary;
 			outline: 0.2rem solid $primary;
 			&::after {
 				transform: scale(1, 1);

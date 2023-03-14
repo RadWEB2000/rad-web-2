@@ -1,20 +1,11 @@
 @import "../../../styles/Variables.module.scss";
 
-@keyframes backgroundA {
-	from {
-		background-image: $heroImageOne;
-	}
-	to {
-		background-image: $heroImageTwo;
-	}
-}
-
 .header {
 	@include backgroundImage;
-	animation: backgroundA 2s ease-in-out alternate-reverse infinite;
-	background-image: $heroImageOne;
+	background-image: $heroImage;
 	background-attachment: fixed;
 	padding: 12rem 0 5rem 0;
 	min-height: calc(100vh - 10rem);
 	height: auto;
+	transition: 0.3s linear background-image;
 }

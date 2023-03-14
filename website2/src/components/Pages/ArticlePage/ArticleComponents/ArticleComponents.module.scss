@@ -13,6 +13,7 @@
 .h2,
 .h3,
 .h4 {
+	color: $colorSecondary !important;
 	margin: 1.5rem 0 0.5rem 0;
 	text-align: start;
 }
@@ -80,6 +81,7 @@
 }
 
 .p {
+	color: $color !important;
 	font-size: 1.7rem;
 	line-height: 1.8;
 	margin: 1.15rem 0;
