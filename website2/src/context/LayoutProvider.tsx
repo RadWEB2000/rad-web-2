@@ -43,7 +43,7 @@ export const LayoutProvider = ({
 	children,
 	time,
 }: iLayoutProvider): ReactElement => {
-	const [isLightTheme, setIsLightTheme] = useState<boolean>(true);
+	const [isLightTheme, setIsLightTheme] = useState<boolean>(false);
 	const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 	const [isScrolled, updateIsScrolled] = useState<boolean>(false);
 	const { dark, light } = theme;
