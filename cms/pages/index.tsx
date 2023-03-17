@@ -1,33 +1,74 @@
+import { users } from "@default/src/data/users";
 import { iLogin } from "@default/src/ts/interfaces";
-import { schLogin } from "@default/src/ts/schemas";
+import { sLogin } from "@default/src/ts/schemas";
 import { Formik, Field, Form } from "formik";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 const Page = () => {
-	const handleSubmit = async (values, actions) => {
+	const [Alert, updateAlert] = useState("");
+	const router = useRouter();
+	const handleSubmit = async (values: iLogin, actions: any) => {
+		const { login, password } = values;
+		console.log("values", values);
+		console.log("actions", actions);
 		try {
-			await schLogin.validate(values);
-			console.log("values", values);
+			await sLogin.validate(values);
 			actions.setSubmitting(false);
-			// wykonaj dalsze akcje, np. wysłanie formularza do API
+
+			const user = users.find((user) => user.login === login);
+			if (!user) {
+				updateAlert("Nieprawidłowy login");
+			} else if (user.password !== password) {
+				updateAlert("Nieprawidłowe hasło");
+			} else {
+				router.push("/dashboard");
+			}
 		} catch (error) {
 			console.error("Błąd walidacji:", error);
 			actions.setSubmitting(false);
 		}
 	};
 
-	const renderForm = ({ errors, touched, isSubmitting }) => {
+	const validate = {
+		login: (value: string) => {
+			let error;
+			if (value === "admin") {
+				error = "nice try";
+				updateAlert("nice try");
+			} else {
+				updateAlert("");
+			}
+			return error;
+		},
+	};
+
+	const renderForm = ({
+		errors,
+		touched,
+		isSubmitting,
+	}: {
+		errors: any;
+		touched: any;
+		isSubmitting: any;
+	}) => {
 		return (
 			<Form>
-				<label htmlFor="login">login: </label>
-				<Field id="login" name="login" placeholder="login" type="text" />
-				{errors.login && touched.login ? <div>{errors.login}</div> : null}
+				<label htmlFor="login">Login: </label>
+				<Field
+					id="login"
+					name="login"
+					placeholder="login"
+					type="text"
+					validate={validate.login}
+				/>
 
 				<label htmlFor="password">password: </label>
 				<Field
 					id="password"
 					name="password"
 					placeholder="password"
-					type="password"
+					type="text"
 				/>
 				{errors.password && touched.password ? (
 					<div>{errors.password}</div>
@@ -48,18 +89,11 @@ const Page = () => {
 					password: "",
 				}}
 				onSubmit={handleSubmit}
-				validationSchema={schLogin}
+				validationSchema={sLogin}
 			>
 				{renderForm}
 			</Formik>
-			{/* <form action="">
-				<br />
-				<input type="text" placeholder="login" />
-				<br />
-				<input type="password" placeholder="password" name="" id="" />
-				<br />
-				<button type="submit">Log In</button>
-			</form> */}
+			<h1>{Alert}</h1>
 		</>
 	);
 };
