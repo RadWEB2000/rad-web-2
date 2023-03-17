@@ -1,7 +1,6 @@
 import { tFullname } from "./types";
 
 export interface iLogin {
-	email?: string;
 	login: string;
 	password: string;
 }
