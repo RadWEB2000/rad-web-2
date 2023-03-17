@@ -1,0 +1,21 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+::after,
+::before {
+	content: "";
+	position: absolute;
+}
+
+body {
+	font-size: 1.6rem;
+}
+
+html {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 62.5%;
+}
