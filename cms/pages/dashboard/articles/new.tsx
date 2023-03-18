@@ -2,11 +2,12 @@ import { useUser } from "@default/src/lib/hooks/useUser";
 import { Field, Form, Formik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/router";
+
 import React, { useEffect, useState } from "react";
+
+import { Editor } from "@tinymce/tinymce-react";
 import { TextEditor } from "@default/src/components/Utilities/TextEditor/TextEditor";
-import { ImStatsBars } from "react-icons/im";
-import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs";
-import { BiLogOutCircle } from "react-icons/bi";
+
 const Page = () => {
 	const { user } = useUser();
 	const { pathname } = useRouter();
@@ -28,28 +29,20 @@ const Page = () => {
 				</div>
 			</nav>
 			<menu>
-				<Link href="/analytics">
-					<ImStatsBars />
-					statystyki
-				</Link>
-				<Link href="/articles">
-					<BsReverseLayoutTextSidebarReverse />
-					artykuly
-				</Link>
-				<Link href="/">
-					<BiLogOutCircle />
-					Wyloguj
-				</Link>
-				{/* <Link href="/strony">strony</Link> */}
-				{/* <Link href="/uzytkownicy">uzytkownicy</Link>
+				<Link href="/analytics">statystyki</Link>
+				<Link href="/articles">artykuly</Link>
+				<Link href="/strony">strony</Link>
+				<Link href="/uzytkownicy">uzytkownicy</Link>
 				<Link href="/rozszerzenia">rozszerzenia</Link>
 				<Link href="/ustawienia">ustawienia</Link>
+				<Link href="/">Wyloguj</Link>
 				<Link href="/dashboard/wiadomosci">wiadomosci</Link>
-				<Link href="/dashboard/kontakty">kontakty</Link> */}
+				<Link href="/dashboard/kontakty">kontakty</Link>
 			</menu>
 			<h1>{p}</h1>
-			<TextEditor />
 			<main>
+				<TextEditor initialValue={content} onChange={handleContentChange} />
+
 				<h2>SEO</h2>
 				<Formik initialValues={{}} onSubmit={() => {}}>
 					<Form>

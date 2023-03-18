@@ -1,43 +1,33 @@
 import React, { useEffect, useState } from "react";
-import EditorJS from "@editorjs/editorjs";
-import CodeTool from "@editorjs/code";
-import ImageTool from "@editorjs/image";
-import ListTool from "@editorjs/list";
-import TableTool from "@editorjs/table";
 
-export const TextEditor = () => {
-	const [editor, setEditor] = useState(null);
+import { Editor } from "@tinymce/tinymce-react";
 
-	const handleEditorLoad = () => {
-		const newEditor = new EditorJS({
-			holder: "editor",
-			tools: {
-				code: CodeTool,
-				image: {
-					class: ImageTool,
-					config: {
-						endpoints: {
-							byFile: "/api/image", // endpoint for image upload
-						},
-					},
-				},
-				list: ListTool,
-				table: TableTool,
-			},
-		});
+export const TextEditor = ({ initialValue, onChange }) => {
+	const [content, setContent] = useState(initialValue);
 
-		setEditor(newEditor);
+	useEffect(() => {
+		setContent(initialValue);
+	}, [initialValue]);
+
+	const handleEditorChange = (content, editor) => {
+		setContent(content);
+		onChange(content);
 	};
 
-	const handleSave = async () => {
-		const outputData = await editor.save();
-		console.log(outputData);
-	};
-	console.log(editor);
 	return (
-		<div>
-			<div id="editor" />
-			<button onClick={handleSave}>Save</button>
+		<div style={{ width: "100rem", margin: "auto" }}>
+			<Editor
+				apiKey="artffja362mp9svwdmbbc3so6su77retx9kgtlnhmjukfynj"
+				value={content}
+				init={{
+					height: 500,
+					menubar: true,
+					plugins: [],
+					toolbar: "",
+					toolbar_mode: "sliding",
+				}}
+				onEditorChange={handleEditorChange}
+			/>
 		</div>
 	);
 };
