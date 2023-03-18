@@ -16,17 +16,21 @@ const Page = () => {
 				</div>
 			</nav>
 			<menu>
-				<Link href="/analytics">statystyki</Link>
-				<Link href="/articles">artykuly</Link>
-				<Link href="/strony">strony</Link>
-				<Link href="/uzytkownicy">uzytkownicy</Link>
-				<Link href="/rozszerzenia">rozszerzenia</Link>
-				<Link href="/ustawienia">ustawienia</Link>
+				<Link href="/dashboard/analytics">statystyki</Link>
+				<Link href="/dashboard/articles">artykuly</Link>
 				<Link href="/">Wyloguj</Link>
+				{/* <Link href="/dashboard/strony">strony</Link>
+				<Link href="/dashboard/uzytkownicy">uzytkownicy</Link>
+				<Link href="/dashboard/rozszerzenia">rozszerzenia</Link>
+				<Link href="/dashboard/ustawienia">ustawienia</Link>
 				<Link href="/dashboard/wiadomosci">wiadomosci</Link>
-				<Link href="/dashboard/kontakty">kontakty</Link>
+				<Link href="/dashboard/kontakty">kontakty</Link> */}
 			</menu>
 			<h1>{p}</h1>
+
+			<button>
+				<Link href="/dashboard/articles/new">nowy</Link>
+			</button>
 		</>
 	);
 };

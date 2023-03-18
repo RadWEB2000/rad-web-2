@@ -57,7 +57,7 @@ const Page = () => {
 					id="password"
 					name="password"
 					placeholder="password"
-					type="password"
+					type="text"
 				/>
 				{errors.password && touched.password ? (
 					<div>{errors.password}</div>

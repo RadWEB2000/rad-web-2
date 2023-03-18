@@ -14,14 +14,14 @@ const Page = () => {
 			</nav>
 			<menu>
 				<Link href="/dashboard/analytics">statystyki</Link>
-				<Link href="/dashboard/artykuly">artykuly</Link>
-				<Link href="/dashboard/strony">strony</Link>
+				<Link href="/dashboard/articles">artykuly</Link>
+				<Link href="/">Wyloguj</Link>
+				{/* <Link href="/dashboard/strony">strony</Link>
 				<Link href="/dashboard/uzytkownicy">uzytkownicy</Link>
 				<Link href="/dashboard/rozszerzenia">rozszerzenia</Link>
 				<Link href="/dashboard/ustawienia">ustawienia</Link>
 				<Link href="/dashboard/wiadomosci">wiadomosci</Link>
-				<Link href="/dashboard/kontakty">kontakty</Link>
-				<Link href="/">Wyloguj</Link>
+				<Link href="/dashboard/kontakty">kontakty</Link> */}
 			</menu>
 			<h1>Successfull</h1>
 		</>
