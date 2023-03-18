@@ -1,46 +1,38 @@
+import { loginUser, UserProvider } from "@default/src/context/UserContext";
 import { users } from "@default/src/data/users";
+import { useUser } from "@default/src/lib/hooks/useUser";
 import { iLogin } from "@default/src/ts/interfaces";
 import { sLogin } from "@default/src/ts/schemas";
 import { Formik, Field, Form } from "formik";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Page = () => {
 	const [Alert, updateAlert] = useState("");
 	const router = useRouter();
+	const { user, login, setUser } = useUser();
+
 	const handleSubmit = async (values: iLogin, actions: any) => {
-		const { login, password } = values;
-		console.log("values", values);
-		console.log("actions", actions);
 		try {
 			await sLogin.validate(values);
 			actions.setSubmitting(false);
 
-			const user = users.find((user) => user.login === login);
+			const user = loginUser(values.login, values.password);
+			console.log("values", values);
+
 			if (!user) {
-				updateAlert("Nieprawidłowy login");
-			} else if (user.password !== password) {
-				updateAlert("Nieprawidłowe hasło");
+				updateAlert("Wprowadź poprawny login");
+			} else if (user?.password !== values.password) {
+				updateAlert("Wprowadź poprawne hasło");
 			} else {
+				login(values.login, values.password);
+				setUser(user);
 				router.push("/dashboard");
 			}
 		} catch (error) {
 			console.error("Błąd walidacji:", error);
 			actions.setSubmitting(false);
 		}
-	};
-
-	const validate = {
-		login: (value: string) => {
-			let error;
-			if (value === "admin") {
-				error = "nice try";
-				updateAlert("nice try");
-			} else {
-				updateAlert("");
-			}
-			return error;
-		},
 	};
 
 	const renderForm = ({
@@ -54,32 +46,40 @@ const Page = () => {
 	}) => {
 		return (
 			<Form>
+				<br />
+				<br />
 				<label htmlFor="login">Login: </label>
-				<Field
-					id="login"
-					name="login"
-					placeholder="login"
-					type="text"
-					validate={validate.login}
-				/>
-
+				<Field id="login" name="login" placeholder="login" type="text" />
+				<br />
+				<br />
+				<br />
 				<label htmlFor="password">password: </label>
 				<Field
 					id="password"
 					name="password"
 					placeholder="password"
-					type="text"
+					type="password"
 				/>
 				{errors.password && touched.password ? (
 					<div>{errors.password}</div>
 				) : null}
+				<br />
+				<br />
 
-				<button type="submit" disabled={isSubmitting}>
+				<button
+					onClick={() => console.log("ok")}
+					type="submit"
+					disabled={isSubmitting}
+				>
 					Submit
 				</button>
 			</Form>
 		);
 	};
+
+	useEffect(() => {
+		console.log(user);
+	}, []);
 
 	return (
 		<>
@@ -93,7 +93,7 @@ const Page = () => {
 			>
 				{renderForm}
 			</Formik>
-			<h1>{Alert}</h1>
+			<h6>{Alert}</h6>
 		</>
 	);
 };

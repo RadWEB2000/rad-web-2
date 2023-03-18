@@ -1,6 +1,13 @@
+import { UserProvider } from "@default/src/context/UserContext";
 import type { AppProps } from "next/app";
 import "../src/styles/Global.scss";
 
-export default function App({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />;
-}
+const App = ({ Component, pageProps }: AppProps) => {
+	return (
+		<UserProvider>
+			<Component {...pageProps} />
+		</UserProvider>
+	);
+};
+
+export default App;

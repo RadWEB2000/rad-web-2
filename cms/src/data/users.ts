@@ -6,17 +6,29 @@ export const users: iUser[] = [
 			firstname: "Radosław",
 			lastname: "Adamczyk",
 		},
-		login: "radoslaw_adamczyk",
+		role: "admin",
+		login: "adamczyk",
 		email: "radoslaw.adamczyk2000@gmail.com",
 		password: "wpolgram",
 	},
 	{
 		fullname: {
 			firstname: "Radosław",
-			lastname: "Adamczyk",
+			lastname: "Bukowiecki",
 		},
 		login: "filip_bukowiecki",
+		role: "editor",
 		email: "radoslaw.adamczyk2000@gmail.com",
 		password: "wpolgram1",
+	},
+	{
+		fullname: {
+			firstname: "Radosław",
+			lastname: "Paluch",
+		},
+		login: "admin",
+		role: "subscriber",
+		email: "radoslaw.adamczyk2000@gmail.com",
+		password: "admin",
 	},
 ];

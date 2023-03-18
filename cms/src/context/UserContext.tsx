@@ -1,15 +1,16 @@
-import { iUser } from "../ts/interfaces";
 import { users } from "@default/src/data/users";
-import { createContext, ReactElement, useState } from "react";
+import React, { createContext, ReactElement, useState } from "react";
+import { iLogin, iUser } from "@default/src/ts/interfaces";
 
 interface iUserContext {
 	user: iUser | null;
+	setUser: (user: iUser | null) => void;
 	login: (login: string, password: string) => void;
 	logout: () => void;
 }
 
 interface iUserProvider {
-	children: ReactElement;
+	children: ReactElement | React.ReactNode;
 }
 
 export const loginUser = (
@@ -19,11 +20,15 @@ export const loginUser = (
 	const user = users.find(
 		(user) => user.login === login && user.password === password
 	);
+
+	// console.log("user context", user);
+
 	return user;
 };
 
 export const UserContext = createContext<iUserContext>({
 	user: null,
+	setUser: () => {},
 	login: () => {},
 	logout: () => {},
 });
@@ -45,6 +50,7 @@ export const UserProvider = ({ children }: iUserProvider) => {
 			value={{
 				user,
 				login,
+				setUser,
 				logout,
 			}}
 		>
