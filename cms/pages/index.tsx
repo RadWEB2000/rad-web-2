@@ -1,5 +1,4 @@
-import { loginUser, UserProvider } from "@default/src/context/UserContext";
-import { users } from "@default/src/data/users";
+import { loginUser } from "@default/src/context/UserContext";
 import { useUser } from "@default/src/lib/hooks/useUser";
 import { iLogin } from "@default/src/ts/interfaces";
 import { sLogin } from "@default/src/ts/schemas";

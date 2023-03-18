@@ -1,6 +1,6 @@
-import { users } from "@default/src/data/users";
 import React, { createContext, ReactElement, useState } from "react";
-import { iLogin, iUser } from "@default/src/ts/interfaces";
+import { iUser } from "@default/src/ts/interfaces";
+import { users } from "@default/src/data/users";
 
 interface iUserContext {
 	user: iUser | null;

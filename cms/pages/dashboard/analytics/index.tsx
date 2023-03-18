@@ -1,9 +1,12 @@
 import { useUser } from "@default/src/lib/hooks/useUser";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Page = () => {
 	const { user } = useUser();
-	console.log(user);
+	const { pathname } = useRouter();
+	const p = pathname.split("/")[2];
+
 	return (
 		<>
 			<nav>
@@ -13,17 +16,17 @@ const Page = () => {
 				</div>
 			</nav>
 			<menu>
-				<Link href="/dashboard/analytics">statystyki</Link>
-				<Link href="/dashboard/artykuly">artykuly</Link>
-				<Link href="/dashboard/strony">strony</Link>
-				<Link href="/dashboard/uzytkownicy">uzytkownicy</Link>
-				<Link href="/dashboard/rozszerzenia">rozszerzenia</Link>
-				<Link href="/dashboard/ustawienia">ustawienia</Link>
+				<Link href="/analytics">statystyki</Link>
+				<Link href="/artykuly">artykuly</Link>
+				<Link href="/strony">strony</Link>
+				<Link href="/uzytkownicy">uzytkownicy</Link>
+				<Link href="/rozszerzenia">rozszerzenia</Link>
+				<Link href="/ustawienia">ustawienia</Link>
+				<Link href="/">Wyloguj</Link>
 				<Link href="/dashboard/wiadomosci">wiadomosci</Link>
 				<Link href="/dashboard/kontakty">kontakty</Link>
-				<Link href="/">Wyloguj</Link>
 			</menu>
-			<h1>Successfull</h1>
+			<h1>{p}</h1>
 		</>
 	);
 };
