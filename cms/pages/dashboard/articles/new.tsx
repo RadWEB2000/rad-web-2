@@ -2,24 +2,12 @@ import { useUser } from "@default/src/lib/hooks/useUser";
 import { Field, Form, Formik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
-import React, { useEffect, useState } from "react";
-
-import { Editor } from "@tinymce/tinymce-react";
 import { TextEditor } from "@default/src/components/Utilities/TextEditor/TextEditor";
 
 const Page = () => {
 	const { user } = useUser();
 	const { pathname } = useRouter();
 	const p = pathname.split("/")[3];
-
-	const [content, setContent] = useState("");
-
-	const handleContentChange = (newContent) => {
-		setContent(newContent);
-	};
-
-	console.log(content);
 	return (
 		<>
 			<nav>
@@ -41,7 +29,7 @@ const Page = () => {
 			</menu>
 			<h1>{p}</h1>
 			<main>
-				<TextEditor initialValue={content} onChange={handleContentChange} />
+				<TextEditor />
 
 				<h2>SEO</h2>
 				<Formik initialValues={{}} onSubmit={() => {}}>

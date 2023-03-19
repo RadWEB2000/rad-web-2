@@ -9,32 +9,24 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@editorjs/code": "^2.8.0",
-		"@editorjs/editorjs": "^2.26.5",
-		"@editorjs/image": "^2.8.1",
-		"@editorjs/list": "^1.8.0",
-		"@editorjs/table": "^2.2.1",
-		"@tinymce/tinymce-react": "^4.3.0",
-		"@types/draft-js": "^0.11.10",
 		"@types/node": "18.15.3",
 		"@types/react": "18.0.28",
 		"@types/react-dom": "18.0.11",
-		"@types/react-draft-wysiwyg": "^1.13.4",
 		"@types/react-icons": "^3.0.0",
 		"@types/yup": "^0.32.0",
-		"draft-js": "^0.11.7",
 		"eslint": "8.36.0",
 		"eslint-config-next": "13.2.4",
 		"formik": "^2.2.9",
 		"next": "13.2.4",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-draft-wysiwyg": "^1.15.0",
 		"react-icons": "^4.8.0",
+		"react-simplemde-editor": "^5.2.0",
 		"sass": "^1.59.3",
-		"summernote": "^0.8.20",
-		"tinymce": "^6.4.0",
 		"typescript": "5.0.2",
 		"yup": "^1.0.2"
+	},
+	"devDependencies": {
+		"@types/jsdom": "^21.1.0"
 	}
 }
