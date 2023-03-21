@@ -1,7 +1,6 @@
 import { LayoutProvider } from "@default/src/context/LayoutProvider/LayoutProvider";
-// import "@default/styles/globals.css";
 import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
+import "@default/src/styles/Global.scss";
 
 const App = ({ Component, pageProps }: AppProps) => {
 	return (

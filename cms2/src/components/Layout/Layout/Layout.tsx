@@ -20,7 +20,7 @@ const Layout = ({ children, isLoginPage = true }: iLayout) => {
 						</li>
 					</nav>
 				) : null}
-				<main>{children}</main>
+				<>{children}</>
 			</>
 		</>
 	);
