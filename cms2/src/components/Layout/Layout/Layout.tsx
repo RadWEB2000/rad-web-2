@@ -1,5 +1,7 @@
+import { menu } from "@default/src/data/menu";
 import Head from "next/head";
 import { ReactElement } from "react";
+import Navigation from "../Navigation/Navigation/Navigation";
 
 export interface iLayout {
 	children: ReactElement | ReactElement[];
@@ -12,16 +14,10 @@ const Layout = ({ children, isLoginPage = true }: iLayout) => {
 			<Head>
 				<title>RadWEB CMS</title>
 			</Head>
-			<>
-				{!isLoginPage ? (
-					<nav>
-						<li>
-							<a href="#">start</a>
-						</li>
-					</nav>
-				) : null}
+			<div>
+				{!isLoginPage ? <Navigation brand="" menu={menu} /> : null}
 				<>{children}</>
-			</>
+			</div>
 		</>
 	);
 };

@@ -1,23 +1,23 @@
 import { FormEventHandler } from "react";
 
 interface iInputField {
-	field: {
-		name: string;
-		onBlur?: FormEventHandler;
-		onChange?: FormEventHandler;
-		value?: string;
-	};
-	label: string;
+	field: any;
 	props: any;
-	type?: "text" | "password";
 }
 
-const InputField = ({ field, label, type = "text", ...props }: iInputField) => {
+const InputField = ({ field, ...props }) => {
 	return (
 		<div>
-			<label htmlFor={field.name}>{label}</label>
-			<input name={field.name} {...props} type={type} />
+			<label htmlFor={field.name}>{props.label}</label>
+			<input
+				id={field.name}
+				name={field.name}
+				type={props.type}
+				{...field}
+				{...props}
+			/>
 		</div>
 	);
 };
+
 export default InputField;
