@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./Item.module.scss";
 import { HiChevronDown } from "react-icons/hi";
 import { MouseEventHandler, ReactElement } from "react";
 
@@ -12,7 +13,7 @@ interface iItem {
 const Item = ({ path, title, variant }: iItem): ReactElement | null => {
 	if (variant === "expand") {
 		return (
-			<li>
+			<li className={styles.expand}>
 				<Link href={path}>{title}</Link>
 				<button aria-label="Expand button">
 					<HiChevronDown />
@@ -21,13 +22,13 @@ const Item = ({ path, title, variant }: iItem): ReactElement | null => {
 		);
 	} else if (variant === "regular") {
 		return (
-			<li>
+			<li className={styles.regular}>
 				<Link href={path}>{title}</Link>
 			</li>
 		);
 	} else if (variant === "submenu") {
 		return (
-			<li>
+			<li className={styles.submenu}>
 				<Link href={path}>{title}</Link>
 			</li>
 		);

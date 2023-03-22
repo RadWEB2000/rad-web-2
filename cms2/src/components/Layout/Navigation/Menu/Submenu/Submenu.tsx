@@ -12,7 +12,7 @@ interface iSubmenu {
 
 const Submenu = ({ items, path, title }: iSubmenu): ReactElement => {
 	return (
-		<div>
+		<div style={{ width: "100%" }}>
 			<Item path={path} title={title} variant="expand" />
 			<ul>
 				{items.map(({ path, title }) => (

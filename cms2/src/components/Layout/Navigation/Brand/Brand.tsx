@@ -1,3 +1,4 @@
+import styles from "./Brand.module.scss";
 import { ReactElement } from "react";
 interface iBrand {
 	title: string;
@@ -5,7 +6,7 @@ interface iBrand {
 
 const Brand = ({ title }: iBrand): ReactElement => {
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<h1>{title}</h1>
 		</div>
 	);

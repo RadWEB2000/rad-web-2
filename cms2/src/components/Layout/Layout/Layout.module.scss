@@ -1,0 +1,17 @@
+.wrapper {
+	// background: orange;
+	display: grid;
+	grid-template-columns: 30rem calc(100% - 30rem);
+	transition: 0.3s linear grid-template-columns;
+	& > nav {
+		grid-column: 1;
+	}
+	& > menu {
+		grid-column: 2;
+	}
+	@media only screen {
+		@media (max-width: 450px) {
+			grid-template-columns: 20rem calc(100% - 20rem);
+		}
+	}
+}

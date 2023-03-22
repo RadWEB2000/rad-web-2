@@ -1,0 +1,72 @@
+@import "../../../../../styles/Variables.module.scss";
+.expand,
+.regular,
+.submenu {
+	height: 4rem;
+	width: 100%;
+	&,
+	& > a {
+		@include flex(center, flex-start);
+	}
+	& > a {
+		@include size;
+		font-weight: 600;
+		// background: violet;
+		padding: 0 1rem;
+		text-transform: uppercase;
+	}
+}
+
+.expand,
+.regular {
+	color: $color;
+	// border-bottom: 1px solid #000;
+	& > a {
+		font-weight: 700;
+	}
+}
+
+.expand {
+	// background: salmon;
+	display: grid;
+	grid-template-columns: calc(100% - 4rem) 4rem;
+	& > button {
+		@include flex(center, flex-start);
+		@include size;
+		& > * {
+			font-size: 3rem;
+			margin: auto;
+		}
+	}
+}
+
+.submenu {
+	background: white;
+	// display: none;
+	& > a {
+		font-weight: 500;
+	}
+}
+
+@media only screen {
+	@media (max-width: 450px) {
+		.expand,
+		.regular,
+		.submenu {
+			// background: lime;
+			height: 3.5rem;
+			& > a {
+				font-size: 1.5rem;
+			}
+		}
+
+		.expand {
+			grid-template-columns: calc(100% - 3.5rem) 3.5rem;
+			& > button {
+				& > * {
+					font-size: 2.6rem;
+				}
+			}
+		}
+	}
+}
