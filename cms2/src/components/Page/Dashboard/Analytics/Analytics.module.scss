@@ -1,0 +1,25 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	background: pink;
+	border-radius: 1.5rem;
+	height: 15rem;
+	padding: 1rem;
+	& > ul {
+		background: red;
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.item {
+	@include flex(center, center);
+	background: yellow;
+	min-height: 8rem;
+	flex-flow: column;
+	& > span {
+		background: gray;
+		aspect-ratio: 1/1;
+		width: 5rem;
+	}
+}

@@ -1,7 +1,8 @@
 .wrapper {
 	background-color: #d0868b;
 	border-right: 1px solid black;
-	height: 100vh;
+	min-height: 100vh;
+	height: auto;
 	display: grid;
 	grid-template-rows: 8rem calc(100% - 8rem);
 	grid-row-gap: 1rem;
