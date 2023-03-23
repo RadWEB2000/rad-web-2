@@ -1,0 +1,28 @@
+@import "../../../../styles/Variables.module.scss";
+
+.wrapper {
+	background-color: $quinary;
+	padding: 2rem 3rem;
+	& > .content {
+		column-gap: 1rem;
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		min-height: 40rem;
+		& > .details {
+			@include flex(center, column, space-evenly);
+			text-align: center;
+		}
+	}
+	@media only screen {
+		@media (max-width: 750px) {
+			& > .content {
+				@include flex(center, column-reverse, center);
+				row-gap: 3rem;
+				padding: 2rem 0;
+				& > * {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

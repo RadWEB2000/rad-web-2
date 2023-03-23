@@ -1,0 +1,61 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	@include flex(center, column, center);
+	border-radius: 1rem;
+	cursor: pointer;
+	gap: 4rem;
+	height: 40rem;
+	max-width: 90%;
+	outline: 1px solid $secondary;
+	overflow: hidden;
+	transition: 0.4s;
+	width: 25rem;
+	& > div {
+		@include flexNoFlow(center, center);
+		border-radius: 15rem;
+		height: 11rem;
+		position: relative;
+		outline: 3px solid $primary;
+		outline-offset: 5px;
+		width: 11rem;
+		&::after {
+			background-color: $secondary;
+			border-radius: 15rem;
+			height: 100%;
+			left: 0;
+			opacity: 0.3;
+			top: 0;
+			transition: 0.4s;
+			width: 100%;
+			z-index: 0;
+		}
+		& > span {
+			color: $primary;
+			font-size: 3.7rem;
+			z-index: 1;
+		}
+	}
+	& > h3 {
+		@include font(2rem, 900);
+		color: $primary;
+	}
+	& > p {
+		@include fontLine(1.5, 1.5rem);
+		height: 11rem;
+		margin-top: -2.5rem;
+		opacity: 0.8;
+		text-align: center;
+		width: 19rem;
+	}
+	&:focus-within,
+	&:hover {
+		box-shadow: 0 0 0.4rem 0.2rem $missionCardShadow;
+		transform: translateY(-1rem);
+		outline: $secondary;
+		& > div {
+			&::after {
+				transform: scale(6);
+			}
+		}
+	}
+}

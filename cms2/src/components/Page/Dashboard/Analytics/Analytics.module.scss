@@ -13,12 +13,14 @@
 }
 
 .item {
-	@include flex(center, center);
 	background: yellow;
 	min-height: 8rem;
 	flex-flow: column;
+	&,
 	& > span {
-		background: gray;
+		@include flex(center, center);
+	}
+	& > span {
 		aspect-ratio: 1/1;
 		width: 5rem;
 	}

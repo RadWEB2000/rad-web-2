@@ -1,0 +1,34 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	@include font(1.6rem, 400);
+	background-color: $primary;
+	border-radius: 1rem;
+	color: $white;
+	display: inline-block;
+	letter-spacing: 0.1px;
+	min-width: 13rem;
+	padding: 1.15rem 1rem;
+	position: relative;
+	transition: 0.3s;
+	&:focus-within,
+	&:hover {
+		filter: brightness(115%);
+		padding-right: 3rem;
+		& > i {
+			opacity: 1;
+			transform: translate(0.5rem, -50%);
+		}
+	}
+	& > i {
+		font-size: 2rem;
+		display: inline-block;
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		transform: translate(-1rem, -50%);
+		transition: 0.3s;
+		& > span {
+			@include flexNoFlow(center, center);
+		}
+	}
+}

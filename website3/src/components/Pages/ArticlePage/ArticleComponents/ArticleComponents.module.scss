@@ -1,0 +1,128 @@
+@import "../../../../styles/Variables.module.scss";
+.h2 {
+	font-size: 3.2rem;
+}
+
+.h3 {
+	font-size: 2.8rem;
+}
+
+.h4 {
+	font-size: 2.4rem;
+}
+.h2,
+.h3,
+.h4 {
+	color: $colorSecondary !important;
+	margin: 1.5rem 0 0.5rem 0;
+	text-align: start;
+}
+
+.table {
+	// background: gray;
+}
+
+.img {
+	aspect-ratio: 16/9;
+	border-radius: 2rem;
+	margin: 8rem auto;
+	min-height: 20rem;
+	overflow: hidden;
+	position: relative;
+	width: 95%;
+	& > figure {
+		@include fullSize;
+		position: relative;
+	}
+}
+
+.b,
+.strong {
+	color: $colorSecondary;
+	font-weight: 700;
+}
+
+.em,
+.i {
+	font-style: italic;
+}
+
+.ol {
+	li {
+		list-style: decimal;
+	}
+}
+
+.ul {
+	li {
+		list-style: disc;
+	}
+}
+
+.ol,
+.ul {
+	padding: 2rem 3rem;
+	li {
+		font-size: 1.7rem;
+		line-height: 1.8;
+		list-style-position: inside;
+	}
+}
+
+.a {
+	color: $primary;
+	text-decoration: underline;
+	transition: 0.3s ease-in-out color;
+	&:focus,
+	&:focus-within,
+	&:hover {
+		color: $quatenary;
+	}
+}
+
+.p {
+	color: $color !important;
+	font-size: 1.7rem;
+	line-height: 1.8;
+	margin: 1.15rem 0;
+}
+
+@media only screen {
+	@media (max-width: 465px) {
+		.h2 {
+			font-size: 3rem;
+		}
+
+		.h3 {
+			font-size: 2.7rem;
+		}
+
+		.h4 {
+			font-size: 2.25rem;
+		}
+
+		.p {
+			font-size: 1.7rem;
+			line-height: 1.6;
+		}
+		.ol,
+		.ul {
+			padding: 1rem 1.5rem;
+			li {
+				font-size: 1.7rem;
+				line-height: 1.6;
+			}
+		}
+		.img {
+			min-height: 25rem;
+			width: 97%;
+		}
+	}
+	@media (max-width: 315px) {
+		.h2,
+		.h3,
+		.h4 {
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,62 @@
+$black: var(--black);
+$white: var(--white);
+$background: var(--background);
+$color: var(--color);
+$colorSecondary: var(--colorSecondary);
+$primary: var(--primary);
+$secondary: var(--secondary);
+$tertiary: var(--tertiary);
+$quatenary: var(--quatenary);
+$quinary: var(--quinary);
+$navShadow: var(--navShadow);
+$blogCard: var(--blogCard);
+$heroImage: var(--heroImage);
+$aboutSectionImage: var(--aboutSectionImage);
+$missionCardShadow: var(--missionCardShadow);
+$search: var(--search);
+$article: var(--article);
+
+@mixin backgroundImage {
+	// background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@mixin borderBottomTop($color, $size) {
+	border-bottom: $size solid $color;
+	border-top: $size solid $color;
+}
+@mixin flex($align, $flow, $justify) {
+	@include flexNoFlow($align, $justify);
+	flex-flow: $flow;
+}
+@mixin flexNoFlow($align, $justify) {
+	align-items: $align;
+	display: flex;
+	justify-content: $justify;
+}
+@mixin font($size, $weight: 400) {
+	font-size: $size;
+	font-weight: $weight;
+}
+@mixin fontLine($line, $size, $weight: 400) {
+	@include font($size, $weight);
+	line-height: $line;
+}
+@mixin fullSize {
+	height: 100%;
+	width: 100%;
+}
+@mixin list($style, $position) {
+	list-style: $style;
+	list-style-position: $position;
+}
+@mixin object($fit: cover, $position: center) {
+	object-fit: $fit;
+	object-position: $position;
+}
+@mixin wrapText {
+	word-break: break-all;
+	word-wrap: break-word;
+}

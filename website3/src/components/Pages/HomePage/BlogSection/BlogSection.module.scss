@@ -1,0 +1,8 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	@include flex(center, column, center);
+	row-gap: 2rem;
+	& > * {
+		width: 100%;
+	}
+}
