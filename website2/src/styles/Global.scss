@@ -48,11 +48,17 @@ main {
 	max-width: 95vw;
 	overflow-x: hidden;
 	width: 120rem;
+	background: lime;
+
 	&.homepage > * {
 		margin: 15rem auto;
 		&:first-of-type {
 			margin: 0 auto 15rem;
 		}
+	}
+	&.hp {
+		background: orangered;
+		width: 95vw;
 	}
 	& > .section {
 		margin: 6rem auto;

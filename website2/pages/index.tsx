@@ -78,7 +78,7 @@ const Page = ({ articles, projects }: iPage) => {
 				/>
 			}
 		>
-			<main className="homepage mainHP">
+			<main className="homepage mainHP hp">
 				<BlogSection
 					button={{
 						path: homepage.pl.content.blog.button.path,
