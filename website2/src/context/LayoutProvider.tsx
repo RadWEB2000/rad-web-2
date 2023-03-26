@@ -61,7 +61,7 @@ export const LayoutProvider = ({
 	}, []);
 
 	useEffect(() => {
-		if (parseInt(time) >= 18 || parseInt(time) < 6) {
+		if (parseInt(time) >= 20 && parseInt(time) < 6) {
 			return setIsLightTheme(false);
 		} else {
 			return setIsLightTheme(true);

@@ -4,7 +4,7 @@
 	padding: 0.25rem 0.5rem;
 }
 .content {
-	@include fontLine(2.4, 2.85rem, 400);
+	@include fontLine(2.4, 2.6rem, 400);
 	@media only screen {
 		@media (max-width: 700px) {
 			@include fontLine(1.8, 1.55rem, 400);
@@ -12,7 +12,7 @@
 	}
 }
 .title {
-	@include font(7.5rem, 700);
+	@include font(8rem, 700);
 	color: $colorSecondary;
 	@media only screen {
 		@media (max-width: 850px) {
@@ -26,6 +26,7 @@
 .wrapper {
 	@include flex(start, column, flex-start);
 	row-gap: 3rem;
+	padding: 1rem;
 	& > div {
 		width: 100%;
 	}

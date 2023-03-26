@@ -1,4 +1,6 @@
 @import "./Variables.module.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -25,6 +27,8 @@ body {
 	background-color: $background;
 	color: $color;
 	font-family: "Lato", sans-serif;
+	font-family: "Inter", sans-serif;
+
 	font-size: 1.6rem;
 	transition: 0.3s linear background-color, 0.3s linear color;
 }
