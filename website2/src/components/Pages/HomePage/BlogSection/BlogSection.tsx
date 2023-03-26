@@ -17,13 +17,13 @@ const BlogSection = ({
 	return (
 		<div className={`section ${styles.wrapper}`}>
 			<SectionPage button={button} content={content} title={title} />
-			<CardsWrapper variant="articles">
+			<CardsWrapper variant="hp-articles">
 				{cards
 					.sort(
 						(a, b) =>
 							new Date(b.release).getTime() - new Date(a.release).getTime()
 					)
-					.slice(0, useVisibleArticlesHP())
+					.slice(0, 5)
 					.map((article: any) => {
 						const { category, excerpt, image, release, title, slug } = article;
 						return (
