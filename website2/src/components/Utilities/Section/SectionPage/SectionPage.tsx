@@ -60,7 +60,7 @@ const SectionPage = ({
 					visibility: "visible",
 					x: 0,
 					transition: {
-						duration: 1,
+						duration: 0.5,
 						delay: 0.15,
 					},
 				}}
@@ -81,7 +81,7 @@ const SectionPage = ({
 					visibility: "visible",
 					y: 0,
 					transition: {
-						duration: 1,
+						duration: 0.67,
 						delay: 0.15,
 					},
 				}}
