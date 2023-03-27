@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from "./ProjectCard.module.scss";
 import { getDate } from "./../../../../lib/functions/getDate";
 import { ReactElement } from "react";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import getStack from "./../../../../../lib/getStack";
 
 interface iProjectCard {
 	category: string;
@@ -103,3 +105,73 @@ const ProjectCard = ({
 };
 
 export default ProjectCard;
+
+interface iProjectCard2 {
+	button: string;
+	content: string;
+	image: string;
+	path: string;
+	title: string;
+	stack?: string[];
+}
+export const ProjectCard2 = ({
+	button,
+	content,
+	image,
+	path,
+	title,
+	stack,
+}: iProjectCard2) => {
+	return (
+		<li className={styles.wrapper2}>
+			<section>
+				{stack && (
+					<ul className={styles.stack}>
+						{stack.map((item: string, index: number) => (
+							<>
+								{getStack(item).name !== null && (
+									<li
+										aria-label={`${getStack(item).name}`}
+										className={styles.stack}
+										title={`${getStack(item).name}`}
+									>
+										{getStack(item).icon}
+									</li>
+								)}
+							</>
+						))}
+					</ul>
+				)}
+				<p className={styles.release}>Mar 2023</p>
+				<h3 className={styles.title}>{title}</h3>
+				<p
+					className={styles.excerpt}
+					dangerouslySetInnerHTML={{
+						__html: content.substring(0, 350) + "[...]",
+					}}
+				/>
+				<div className={styles.button}>
+					<Link href={path}>
+						<span>{button}</span>
+						<i>
+							<HiOutlineArrowNarrowRight />
+						</i>
+					</Link>
+				</div>
+			</section>
+			<div>
+				<figure>
+					<Image
+						alt={`${title} - ${content}`}
+						fill
+						src={image}
+						style={{
+							objectFit: "cover",
+							objectPosition: "center",
+						}}
+					/>
+				</figure>
+			</div>
+		</li>
+	);
+};

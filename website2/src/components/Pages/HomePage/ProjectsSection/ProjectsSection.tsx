@@ -1,5 +1,7 @@
 import CardsWrapper from "../../../Utilities/Cards/CardsWrapper/CardsWrapper";
-import ProjectCard from "../../../Utilities/Cards/ProjectCard/ProjectCard";
+import ProjectCard, {
+	ProjectCard2,
+} from "../../../Utilities/Cards/ProjectCard/ProjectCard";
 import SectionPage from "../../../../../src/components/Utilities/Section/SectionPage/SectionPage";
 import styles from "./ProjectsSection.module.scss";
 import { iProject, iSectionPage } from "../../../../../src/ts/interface";
@@ -17,26 +19,28 @@ const ProjectsSection = ({
 	return (
 		<section className={styles.wrapper}>
 			<SectionPage button={button} content={content} title={title} />
-			<CardsWrapper variant="articles">
+			<div>
 				{cards
 					?.sort(
 						(a, b) =>
 							new Date(b.release).getTime() - new Date(a.release).getTime()
 					)
-					.slice(0, 3)
+					.slice(2, 3)
 					.map(({ category, excerpt, image, path, release, title }) => (
-						<ProjectCard
-							category={category}
-							excerpt={excerpt}
+						<ProjectCard2
+							// category={category}
+							content={excerpt}
 							image={image}
 							key={title}
 							path={path}
-							release={release}
+							button="więcej"
+							stack={["html", "react", "php"]}
+							// release={release}
 							title={title}
-							variant="page"
+							// variant="page"
 						/>
 					))}
-			</CardsWrapper>
+			</div>
 		</section>
 	);
 };

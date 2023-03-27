@@ -31,3 +31,22 @@
 		width: 100%;
 	}
 }
+
+@media only screen {
+	@media (max-width: 950px) {
+		.content {
+			@include fontLine(2.2, 2.2rem, 400);
+		}
+		.title {
+			@include font(6rem, 700);
+		}
+	}
+	@media (max-width: 480px) {
+		.content {
+			@include fontLine(2.2, 1.9rem, 400);
+		}
+		.title {
+			@include font(5.3rem, 700);
+		}
+	}
+}

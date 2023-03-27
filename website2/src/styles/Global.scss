@@ -52,7 +52,7 @@ main {
 	max-width: 95vw;
 	overflow-x: hidden;
 	width: 120rem;
-	background: lime;
+	// background: lime;
 
 	&.homepage > * {
 		margin: 15rem auto;
@@ -61,7 +61,7 @@ main {
 		}
 	}
 	&.hp {
-		background: orangered;
+		// background: orangered;
 		width: 95vw;
 	}
 	& > .section {
