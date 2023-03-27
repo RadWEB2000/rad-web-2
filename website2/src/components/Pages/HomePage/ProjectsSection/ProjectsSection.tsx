@@ -25,7 +25,7 @@ const ProjectsSection = ({
 						(a, b) =>
 							new Date(b.release).getTime() - new Date(a.release).getTime()
 					)
-					.slice(2, 3)
+					.slice(0, 1)
 					.map(({ category, excerpt, image, path, release, title }) => (
 						<ProjectCard2
 							// category={category}

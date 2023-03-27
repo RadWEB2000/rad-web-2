@@ -287,11 +287,7 @@
 					width: 2rem;
 				}
 				&:hover {
-					background-color: #000;
 					padding-left: 0;
-					& > * {
-						color: #fff;
-					}
 					& > i {
 						opacity: 1;
 						visibility: visible;
