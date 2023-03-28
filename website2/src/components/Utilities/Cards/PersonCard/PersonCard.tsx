@@ -179,9 +179,15 @@ export const PersonCardHomePage = ({
 				<p
 					className={styles.excerpt}
 					dangerouslySetInnerHTML={{
-						__html: excerpt.substring(0, 150) + `[...]`,
+						__html: excerpt.substring(0, 150) + ``,
 					}}
 				/>
+				{/* <p
+					className={styles.excerpt}
+					dangerouslySetInnerHTML={{
+						__html: excerpt.substring(0, 150) + `[...]`,
+					}}
+				/> */}
 				<div className={styles.button}>
 					<Link href={path}>
 						<span>{button}</span>

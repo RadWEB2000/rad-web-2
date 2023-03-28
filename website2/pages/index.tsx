@@ -107,7 +107,7 @@ const Page = ({ articles, projects }: iPage) => {
 					}}
 					cards={projects}
 				/>
-				<WhyUsSection
+				{/* <WhyUsSection
 					cards={[
 						{
 							content: `Est sed eveniet aut asperiores ut magni.Natus voluptas id laborum nihil.Neque at repudiandae soluta placeat omnis facere placeat consequatur. Maiores provident id ex qui ipsam ab. Labore eum id aut qui eaque vel.`,
@@ -124,7 +124,7 @@ const Page = ({ articles, projects }: iPage) => {
 					]}
 					content={`Amet ad facere excepturi numquam quam pariatur et. Rem repellat provident omnis temporibus a. Recusandae officiis tenetur aliquid dicta omnis fugiat nobis voluptatum. Doloremque qui in quas quasi iste maxime. Dignissimos repudiandae necessitatibus. Excepturi corrupti molestiae quia. Temporibus eveniet fugiat omnis error error accusamus omnis. Officiis sit nostrum fuga. Et omnis animi facilis id deleniti repellendus.`}
 					title="Dlaczego my?"
-				/>
+				/> */}
 				{/* <TestimonialsSection cards={homepage.pl.content.testimonials} /> */}
 			</main>
 		</Layout>

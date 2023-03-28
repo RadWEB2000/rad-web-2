@@ -53,7 +53,7 @@ const AboutSection = ({ button, cards, content, title }: iAboutSection) => {
 					<PersonCardHomePage
 						button="więcej"
 						cities={cities}
-						excerpt="Reiciendis et dolores reiciendis ea omnis et. Est quis est quo expedita veritatis rem porro nihil fugit. Possimus cupiditate commodi aliquid illo cupiditate qui mollitia sit unde. Ad debitis dolores aut fugit blanditiis. Placeat provident aut quia architecto. Est neque itaque est accusantium vel amet qui illo eaque."
+						excerpt=""
 						fullname={fullname}
 						image={image}
 						jobs={jobs}
