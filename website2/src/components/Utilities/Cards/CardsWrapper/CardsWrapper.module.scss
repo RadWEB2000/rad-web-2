@@ -21,4 +21,15 @@
 		grid-template-columns: repeat(5, 1fr);
 		justify-items: center;
 	}
+
+	&[data-variant="persons-section"] {
+		display: grid;
+		gap: 0.25rem;
+		grid-template-columns: repeat(3, 1fr);
+		@media only screen {
+			@media (max-width: 820px) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+	}
 }

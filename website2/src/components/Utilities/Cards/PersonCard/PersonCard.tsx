@@ -173,7 +173,7 @@ export const PersonCardHomePage = ({
 			<section>
 				<h3
 					className={styles.fullname}
-				>{`${fullname.firstname} ${fullname.lastname}`}</h3>
+				>{`${fullname.firstname}  ${fullname.lastname}`}</h3>
 				<p className={styles.jobs}>{jobs}</p>
 				<p className={styles.cities}>{cities}</p>
 				<p

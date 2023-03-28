@@ -62,7 +62,7 @@
 .wrapper__contact {
 	flex-shrink: 0;
 	max-width: 95%;
-	user-select: none;
+	// user-select: none;
 	width: 21rem;
 	&,
 	& > .content,
@@ -202,29 +202,33 @@
 
 .wrapper2 {
 	background-color: $background;
-	width: 50rem;
+	margin: 0 auto;
+	width: 99%;
 	& > figure {
-		height: 70rem;
+		height: 60rem;
 		position: relative;
 	}
 	& > section {
 		@include flex(start, column, start);
 		padding: 1.25rem 0.85rem 0.5rem 0.85rem;
 		row-gap: 0.5rem;
+
+		& > * {
+			text-align: start;
+		}
+
 		& > .fullname {
+			color: $colorSecondary;
 			font-size: 3.2rem;
 		}
 		& > .jobs,
 		& > .cities {
-			font-size: 1.6rem;
-			font-weight: 400;
-			line-height: 1.5;
+			@include fontLine(1.5, 1.6rem, 400);
 		}
 
 		& > .excerpt {
-			font-size: 1.55rem;
-			font-weight: 600;
-			line-height: 1.5;
+			@include fontLine(1.5, 1.55rem, 300);
+			color: $colorSecondary;
 			margin-top: 1.5rem;
 		}
 		& > .button {
@@ -262,6 +266,89 @@
 						opacity: 1;
 						visibility: visible;
 					}
+				}
+			}
+		}
+	}
+
+	@media only screen {
+		@media (max-width: 995px) {
+			width: 100%;
+			& > figure {
+				height: 65rem;
+			}
+			& > section {
+				padding: 0.75rem 0.25rem 0.5rem 0.25rem;
+				row-gap: 0.15rem;
+				& > .fullname {
+					font-size: 2.5rem;
+				}
+				& > .jobs,
+				& > .cities {
+					font-size: 1.54rem;
+				}
+
+				& > .excerpt {
+					font-size: 1.35rem;
+					margin-top: 1rem;
+				}
+				& > .button {
+					margin-top: 1.2rem;
+					& > a {
+						height: 3.5rem;
+						min-width: 10rem;
+						& > span,
+						& > i {
+							font-size: 1.5rem;
+						}
+					}
+				}
+			}
+		}
+		@media (max-width: 845px) {
+			& > figure {
+				height: 50rem;
+			}
+		}
+		@media (max-width: 820px) {
+			width: 40rem;
+			& > figure {
+				height: 65rem;
+			}
+			& > section {
+				& > .fullname {
+					font-size: 4.15rem;
+				}
+				& > .jobs,
+				& > .cities {
+					font-size: 1.64rem;
+				}
+
+				& > .excerpt {
+					font-size: 1.75rem;
+				}
+			}
+		}
+		@media (max-width: 625px) {
+			width: 85%;
+			& > figure {
+				height: 48rem;
+			}
+		}
+		@media (max-width: 450px) {
+			width: 90%;
+			& > section {
+				& > .fullname {
+					font-size: 2.8rem;
+				}
+				& > .jobs,
+				& > .cities {
+					font-size: 1.54rem;
+				}
+
+				& > .excerpt {
+					font-size: 1.45rem;
+					line-height: 1.45;
 				}
 			}
 		}

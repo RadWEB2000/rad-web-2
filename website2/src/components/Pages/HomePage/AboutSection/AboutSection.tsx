@@ -32,7 +32,7 @@ const AboutSection = ({ button, cards, content, title }: iAboutSection) => {
 			) : (
 				<SectionPage content={content} title={title} />
 			)}
-			<CardsWrapper variant="articles">
+			<CardsWrapper variant="persons-section">
 				{/* {cards.map(({ cities, fullname, image, jobs, path }) => (
 					<PersonCard
 						cities={cities}
