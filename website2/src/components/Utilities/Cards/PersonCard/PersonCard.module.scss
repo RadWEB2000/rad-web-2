@@ -199,3 +199,71 @@
 		}
 	}
 }
+
+.wrapper2 {
+	background-color: $background;
+	width: 50rem;
+	& > figure {
+		height: 70rem;
+		position: relative;
+	}
+	& > section {
+		@include flex(start, column, start);
+		padding: 1.25rem 0.85rem 0.5rem 0.85rem;
+		row-gap: 0.5rem;
+		& > .fullname {
+			font-size: 3.2rem;
+		}
+		& > .jobs,
+		& > .cities {
+			font-size: 1.6rem;
+			font-weight: 400;
+			line-height: 1.5;
+		}
+
+		& > .excerpt {
+			font-size: 1.55rem;
+			font-weight: 600;
+			line-height: 1.5;
+			margin-top: 1.5rem;
+		}
+		& > .button {
+			@include flex(center, row, flex-end);
+			margin-top: 2rem;
+			width: 100%;
+			& > a {
+				background-color: transparent;
+				border: 0.25rem solid $colorSecondary;
+				border-radius: 0.75rem;
+				height: 4rem;
+				min-width: 12rem;
+				padding-left: 2rem;
+				transition: 0.2s linear, 0.13s linear background-color;
+				&,
+				& > i {
+					@include flexNoFlow(center, center);
+				}
+				& > span,
+				& > i {
+					color: $colorSecondary;
+					font-weight: 700;
+					font-size: 1.7rem;
+					transition: 0.2s linear, 0.13s linear color;
+				}
+				& > i {
+					aspect-ratio: 1/1;
+					opacity: 0;
+					visibility: hidden;
+					width: 2rem;
+				}
+				&:hover {
+					padding-left: 0;
+					& > i {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+}

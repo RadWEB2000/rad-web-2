@@ -3,7 +3,7 @@ export const homepage = {
 		seo: {
 			image: "/assets/brand/logo.jpg",
 			meta: {
-				title: "💻 RadWEB - strony internetowe, seo, copywriting, videomaking",
+				title: "💻RadWEB - strony internetowe, seo, copywriting, videomaking",
 				description:
 					"Szukasz profesjonalistów i pasjonatów, którzy odkryją przed Tobą co możesz zyskać wchodząc w świat internetu? Sprawdź nas! ✌️",
 			},

@@ -1,5 +1,7 @@
 import CardsWrapper from "../../../Utilities/Cards/CardsWrapper/CardsWrapper";
-import PersonCard from "../../../Utilities/Cards/PersonCard/PersonCard";
+import PersonCard, {
+	PersonCardHomePage,
+} from "../../../Utilities/Cards/PersonCard/PersonCard";
 import SectionPage from "../../../Utilities/Section/SectionPage/SectionPage";
 import styles from "./AboutSection.module.scss";
 import { iSectionPage } from "../../../../ts/interface";
@@ -31,7 +33,7 @@ const AboutSection = ({ button, cards, content, title }: iAboutSection) => {
 				<SectionPage content={content} title={title} />
 			)}
 			<CardsWrapper variant="articles">
-				{cards.map(({ cities, fullname, image, jobs, path }) => (
+				{/* {cards.map(({ cities, fullname, image, jobs, path }) => (
 					<PersonCard
 						cities={cities}
 						email=""
@@ -45,6 +47,18 @@ const AboutSection = ({ button, cards, content, title }: iAboutSection) => {
 						path={path}
 						phone=""
 						variant="home"
+					/>
+				))} */}
+				{cards.map(({ cities, fullname, image, jobs, path }) => (
+					<PersonCardHomePage
+						button="więcej"
+						cities={cities}
+						excerpt="Reiciendis et dolores reiciendis ea omnis et. Est quis est quo expedita veritatis rem porro nihil fugit. Possimus cupiditate commodi aliquid illo cupiditate qui mollitia sit unde. Ad debitis dolores aut fugit blanditiis. Placeat provident aut quia architecto. Est neque itaque est accusantium vel amet qui illo eaque."
+						fullname={fullname}
+						image={image}
+						jobs={jobs}
+						key={image}
+						path={path}
 					/>
 				))}
 			</CardsWrapper>

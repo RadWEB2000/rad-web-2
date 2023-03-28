@@ -4,6 +4,7 @@ import styles from "./PersonCard.module.scss";
 import { tFullname } from "../../../../ts/types";
 import { ReactElement } from "react";
 import { CiMail, CiPhone } from "react-icons/ci";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 interface iPersonCard {
 	cities: string;
@@ -136,3 +137,60 @@ const PersonCard = ({
 };
 
 export default PersonCard;
+
+interface iPersonCardHomePage {
+	button: string;
+	cities: string;
+	excerpt: string;
+	fullname: tFullname;
+	image: string;
+	jobs: string;
+	path: string;
+}
+
+export const PersonCardHomePage = ({
+	button,
+	cities,
+	excerpt,
+	fullname,
+	image,
+	jobs,
+	path,
+}: iPersonCardHomePage) => {
+	return (
+		<li className={styles.wrapper2}>
+			<figure>
+				<Image
+					alt=""
+					fill
+					src={image}
+					style={{
+						objectFit: "cover",
+						objectPosition: "center",
+					}}
+				/>
+			</figure>
+			<section>
+				<h3
+					className={styles.fullname}
+				>{`${fullname.firstname} ${fullname.lastname}`}</h3>
+				<p className={styles.jobs}>{jobs}</p>
+				<p className={styles.cities}>{cities}</p>
+				<p
+					className={styles.excerpt}
+					dangerouslySetInnerHTML={{
+						__html: excerpt.substring(0, 150) + `[...]`,
+					}}
+				/>
+				<div className={styles.button}>
+					<Link href={path}>
+						<span>{button}</span>
+						<i>
+							<HiOutlineArrowNarrowRight />
+						</i>
+					</Link>
+				</div>
+			</section>
+		</li>
+	);
+};
