@@ -23,7 +23,7 @@ const BlogSection = ({
 						(a, b) =>
 							new Date(b.release).getTime() - new Date(a.release).getTime()
 					)
-					.slice(0, 5)
+					.slice(0, useVisibleArticlesHP())
 					.map((article: any) => {
 						const { category, excerpt, image, release, title, slug } = article;
 						return (
