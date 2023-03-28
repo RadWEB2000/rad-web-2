@@ -57,6 +57,7 @@
 	width: 38rem;
 	& > span {
 		@include font(3.5rem, 300);
+		display: block;
 		letter-spacing: 0.25rem;
 	}
 	& > h3 {
