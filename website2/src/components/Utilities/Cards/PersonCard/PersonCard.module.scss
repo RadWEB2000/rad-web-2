@@ -201,15 +201,17 @@
 }
 
 .wrapper2 {
-	background-color: $background;
 	margin: 0 auto;
 	width: 99%;
 	& > figure {
+		border-radius: 2rem 2rem 0 0;
+		overflow: hidden;
 		height: 60rem;
 		position: relative;
 	}
 	& > section {
 		@include flex(start, column, start);
+		background-color: $background;
 		padding: 1.25rem 0.85rem 0.5rem 0.85rem;
 		row-gap: 0.5rem;
 

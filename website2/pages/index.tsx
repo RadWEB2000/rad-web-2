@@ -10,6 +10,7 @@ import { getStructuredDataOrganization } from "../lib/getStructuredData";
 import { homepage } from "../data/pages/homepage";
 import { iArticle, iProject } from "../src/ts/interface";
 import { persons } from "../data/utils/persons";
+import WhyUsSection from "../src/components/Pages/HomePage/WhyUsSection/WhyUsSection";
 
 interface iPage {
 	articles: iArticle[];
@@ -105,6 +106,24 @@ const Page = ({ articles, projects }: iPage) => {
 						title: homepage.pl.content.projects.button.title,
 					}}
 					cards={projects}
+				/>
+				<WhyUsSection
+					cards={[
+						{
+							content: `Est sed eveniet aut asperiores ut magni.Natus voluptas id laborum nihil.Neque at repudiandae soluta placeat omnis facere placeat consequatur. Maiores provident id ex qui ipsam ab. Labore eum id aut qui eaque vel.`,
+							title: "Direct Quality Liaison",
+						},
+						{
+							content: `Ea quod quo asperiores unde. Corrupti voluptas maiores ab. Reiciendis rerum reprehenderit ipsam.`,
+							title: "Direct Quality Liaison",
+						},
+						{
+							content: `Neque totam quidem eveniet commodi minima et eos expedita sequi. Nobis id eum. Est commodi animi dolorem nihil. Aperiam ut ea omnis est fugiat.`,
+							title: "Direct Quality Liaison",
+						},
+					]}
+					content={`Amet ad facere excepturi numquam quam pariatur et. Rem repellat provident omnis temporibus a. Recusandae officiis tenetur aliquid dicta omnis fugiat nobis voluptatum. Doloremque qui in quas quasi iste maxime. Dignissimos repudiandae necessitatibus. Excepturi corrupti molestiae quia. Temporibus eveniet fugiat omnis error error accusamus omnis. Officiis sit nostrum fuga. Et omnis animi facilis id deleniti repellendus.`}
+					title="Dlaczego my?"
 				/>
 				{/* <TestimonialsSection cards={homepage.pl.content.testimonials} /> */}
 			</main>

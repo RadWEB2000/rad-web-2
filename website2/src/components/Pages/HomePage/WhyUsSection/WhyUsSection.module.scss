@@ -1,0 +1,95 @@
+@import "../../../../styles/Variables.module.scss";
+.wrapper {
+	background-color: $primary;
+	border-radius: 2rem;
+	color: $white;
+	max-width: 98%;
+	padding: 3rem 4rem;
+	width: 130rem;
+	& > section {
+		min-height: 30rem;
+		padding-bottom: 1rem;
+		& > h2 {
+			@include font(5.25rem, 600);
+			color: $white;
+		}
+		& > p {
+			@include fontLine(2.2, 2rem, 300);
+			color: #fdfdfd;
+			margin-top: 1.5rem;
+		}
+	}
+	& > ul {
+		border-top: 0.05px solid hsla(0, 100%, 100%, 0.3);
+		display: grid;
+		column-gap: 0.15rem;
+		grid-template-columns: repeat(3, 1fr);
+		justify-items: center;
+		padding-top: 2rem;
+	}
+	@media only screen {
+		@media (max-width: 1280px) {
+			padding: 1.5rem 1rem;
+		}
+		@media (max-width: 845px) {
+			padding: 1.5rem 1.2rem;
+			& > section {
+				height: auto;
+				& > h2 {
+					font-size: 4.5rem;
+				}
+				& > p {
+					font-size: 1.8rem;
+				}
+			}
+		}
+		@media (max-width: 550px) {
+			& > ul {
+				@include flex(center, row wrap, center);
+			}
+		}
+	}
+}
+
+.card {
+	height: auto;
+	padding: 0.25rem 1.5rem;
+	width: 38rem;
+	& > span {
+		@include font(3.5rem, 300);
+		letter-spacing: 0.25rem;
+	}
+	& > h3 {
+		@include fontLine(1.5, 2.9rem, 600);
+		color: $white;
+		margin-top: 0.5rem;
+	}
+	& > p {
+		@include fontLine(1.8, 1.6rem, 400);
+		margin-top: 2rem;
+	}
+	@media only screen {
+		@media (max-width: 1280px) {
+			padding: 0.2rem 1rem 2rem 1rem;
+			width: 95%;
+		}
+		@media (max-width: 845px) {
+			& > span {
+				@include font(5rem, 300);
+				letter-spacing: 0.25rem;
+			}
+			& > h3 {
+				@include fontLine(1.5, 2.2rem, 600);
+				color: $white;
+				margin-top: 0.25rem;
+			}
+			& > p {
+				@include fontLine(1.8, 1.5rem, 400);
+				margin-top: 1rem;
+			}
+		}
+		@media (max-width: 570px) {
+			padding: 0.2rem 0.5rem 2rem 0.5rem;
+		}
+	}
+}
