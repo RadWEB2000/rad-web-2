@@ -3,6 +3,7 @@
 .wrapper {
 	background-color: $quinary;
 	padding: 2rem 3rem;
+	// min-height: 100vh;
 	& > .content {
 		column-gap: 1rem;
 		display: grid;
@@ -24,5 +25,47 @@
 				}
 			}
 		}
+	}
+}
+
+.footer2 {
+	// background: palegreen;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-areas:
+		"info info menus menus menus"
+		"info info menus menus menus"
+		"info info menus menus menus"
+		"info info menus menus menus"
+		"info info menus menus menus"
+		"info info menus menus menus"
+		"settings settings settings settings settings";
+	height: auto;
+	min-height: calc(100vh - 10rem);
+	padding: 0 2rem;
+	& > section {
+		grid-area: info;
+		// background: lime;
+	}
+	& > menu {
+		// background: aqua;
+		grid-area: menus;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 1rem;
+		& > div {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			flex-flow: column;
+			background: hsla(123, 100%, 70%, 0.23);
+		}
+	}
+	& > div {
+		padding: 0 2rem;
+		grid-area: settings;
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
 	}
 }
