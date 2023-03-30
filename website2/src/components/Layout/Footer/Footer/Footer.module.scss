@@ -19,7 +19,7 @@
 	padding: 0 2rem 1rem 2rem;
 	& > .info {
 		grid-area: info;
-		// background: lime;
+		background: lime;
 		align-items: start;
 		display: flex;
 		justify-content: center;
@@ -57,17 +57,20 @@
 					font-weight: 500;
 				}
 			}
+			& > p {
+				cursor: default;
+			}
 		}
 	}
 	& > .menu {
 		align-items: center;
-		// background: aqua;
+		background: aqua;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-area: menus;
 		justify-items: center;
 		& > li {
-			// background: white;
+			background: white;
 			gap: 2rem;
 			&,
 			& > ul {
@@ -99,14 +102,14 @@
 		grid-template-columns: repeat(3, 1fr);
 		grid-area: settings;
 		& > p {
-			// background: pink;
+			background: pink;
 			grid-column: 1;
 			padding: 0.85rem;
 			margin: auto 0;
 		}
 		& > div {
 			align-items: flex-end;
-			// background: lightgray;
+			background: lightgray;
 			display: flex;
 			justify-content: center;
 			flex-flow: column;
@@ -169,6 +172,59 @@
 			color: $colorSecondary;
 			&::after {
 				width: 100%;
+			}
+		}
+	}
+}
+
+@media only screen {
+	@media (max-width: 1535px) {
+		.wrapper {
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-areas:
+				"info info menus menus menus"
+				"info info menus menus menus"
+				"info info menus menus menus"
+				"info info menus menus menus"
+				"info info menus menus menus"
+				"info info menus menus menus"
+				"break break break break break"
+				"settings settings settings settings settings";
+		}
+	}
+	@media (max-width: 1250px) {
+		.wrapper {
+			grid-template-columns: repeat(7, 1fr);
+			grid-template-areas:
+				"info info info info menus menus menus"
+				"info info info info menus menus menus"
+				"info info info info menus menus menus"
+				"info info info info menus menus menus"
+				"info info info info menus menus menus"
+				"info info info info menus menus menus"
+				"break break break break break break break"
+				"settings settings settings settings settings settings settings";
+			padding: 0 1.25rem 0.65rem 1.25rem;
+			& > .info {
+				max-width: auto;
+				width: 95%;
+				& > h2 {
+					font-size: 5.65rem;
+				}
+				& > p {
+					font-size: 1.65rem;
+					line-height: 1.7;
+					text-align: start;
+				}
+				& > address {
+					row-gap: 0.76rem;
+					& > * {
+						gap: 0.65rem;
+						& > span {
+							font-size: 1.5rem;
+						}
+					}
+				}
 			}
 		}
 	}
