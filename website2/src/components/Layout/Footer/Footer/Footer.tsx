@@ -63,7 +63,7 @@ const Footer = ({ info, socials }: iFooter) => {
 			</menu>
 			<span className={styles.break} />
 			<div className={styles.settings}>
-				<p>Radosław Adamczyk - RadWEB &copy; 2021-2023</p>
+				<p>RadWEB &copy; 2021-2023</p>
 				<div>
 					<ul className={styles.socials}>
 						{footerData.pl.socials.map((item, index) => (

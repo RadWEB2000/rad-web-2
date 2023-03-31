@@ -228,4 +228,184 @@
 			}
 		}
 	}
+	@media (max-width: 995px) {
+		.wrapper {
+			grid-template-areas:
+				"info info info menus menus menus menus"
+				"info info info menus menus menus menus"
+				"info info info menus menus menus menus"
+				"info info info menus menus menus menus"
+				"info info info menus menus menus menus"
+				"info info info menus menus menus menus"
+				"break break break break break break break"
+				"settings settings settings settings settings settings settings";
+		}
+	}
+	@media (max-width: 750px) {
+		.wrapper {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				"info info info "
+				"info info info "
+				"info info info "
+				"menus menus menus"
+				"menus menus menus"
+				"break break break"
+				"settings settings settings";
+
+			& > .settings {
+				grid-template-columns: repeat(5, 1fr);
+				& > p {
+					grid-column: 1/3;
+					padding: 0.25rem;
+				}
+				& > div {
+					grid-column: 3/-1;
+					row-gap: 0.8rem;
+					& > .socials {
+						gap: 1rem;
+						& > li {
+							width: 2.5rem;
+							& > a {
+								font-size: 1.6rem;
+							}
+						}
+					}
+					& > .menu {
+						gap: 1.55rem;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 555px) {
+		.wrapper {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				"info info info "
+				"info info info "
+				"info info info "
+				"menus menus menus"
+				"menus menus menus"
+				"break break break"
+				"settings settings settings";
+			& > .menu {
+				align-items: center;
+				display: flex;
+				flex-flow: row;
+				justify-content: space-evenly;
+				& > li {
+					gap: 1rem;
+					& > h3 {
+						font-size: 1.9rem;
+						text-align: center;
+						width: 100%;
+					}
+					& > ul {
+						gap: 0.4rem;
+						padding: 0.35rem;
+						& > .link {
+							& > a {
+								font-size: 1.4rem;
+								font-weight: 500;
+							}
+						}
+					}
+				}
+			}
+			& > .info {
+				row-gap: 1.5rem;
+				& > h2 {
+					font-size: 4rem;
+				}
+				& > p {
+					font-size: 1.5rem;
+					line-height: 2.1;
+				}
+				& > address {
+					row-gap: 0.75rem;
+					& > * {
+						gap: 0.75rem;
+						& > span {
+							font-size: 1.45rem;
+							font-weight: 500;
+						}
+					}
+					& > p {
+						cursor: default;
+					}
+				}
+			}
+			& > .settings {
+				grid-template-columns: repeat(2, 1fr);
+				& > p {
+					grid-column: 1/-1;
+					grid-row: 2;
+					text-align: center;
+				}
+				& > div {
+					grid-column: 1/-1;
+					grid-row: 1;
+					justify-content: center;
+					& > * {
+						justify-content: center;
+						width: 100%;
+					}
+					& > .socials {
+						gap: 1rem;
+						& > li {
+							width: 2.5rem;
+							& > a {
+								font-size: 1.6rem;
+							}
+						}
+					}
+					& > .menu {
+						gap: 1.55rem;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 400px) {
+		.wrapper {
+			padding: 0 0.45rem 0.65rem 0.45rem;
+		}
+	}
+	@media (max-width: 385px) {
+		.wrapper {
+			& > .info {
+				padding: 1.25rem 0 0.5rem 0;
+				& > address {
+					row-gap: 0.75rem;
+					& > * {
+						gap: 0.75rem;
+						& > span {
+							font-size: 1.1rem;
+							font-weight: 600;
+						}
+					}
+					& > p {
+						cursor: default;
+					}
+				}
+			}
+			& > .menu {
+				flex-flow: column;
+				padding: 1rem 0;
+				row-gap: 1rem;
+				& > li {
+					max-width: 95%;
+					width: 20rem;
+				}
+			}
+			& > .settings {
+				& > div {
+					padding: 1rem 0;
+				}
+			}
+		}
+	}
 }
+
+// 995px
