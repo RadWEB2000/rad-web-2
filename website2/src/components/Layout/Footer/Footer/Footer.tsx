@@ -1,5 +1,5 @@
 import styles from "./Footer.module.scss";
-import { menu } from "../../../../data/menu";
+// import { menu } from "../../../../data/menu";
 import Link from "next/link";
 import { footer as footerData } from "../../../../../data/footer";
 import getSocials from "../../../../../lib/getSocials";
@@ -7,48 +7,65 @@ import { IoHomeSharp, IoMailOpenOutline } from "react-icons/io5";
 import { BsTelephoneFill } from "react-icons/bs";
 
 interface iFooter {
-	info: {
-		address: string;
-		nip?: number | string;
-		regon?: number | string;
+	author: string;
+	brand: string;
+	content: string;
+	email: string;
+	location: string;
+	menu: {
+		columnName: string;
+		pages: {
+			path: string;
+			title: string;
+		}[];
+	}[];
+	phone: string;
+	settings: {
+		path: string;
 		title: string;
-	};
+	}[];
 	socials: string[];
 }
-const Footer = ({ info, socials }: iFooter) => {
-	const { footer, settings } = menu.pl;
+const Footer = ({
+	author,
+	brand,
+	content,
+	email,
+	location,
+	menu,
+	phone,
+	settings,
+	socials,
+}: iFooter) => {
+	// const { footer, settings } = menu.pl;
 	return (
 		<footer className={styles.wrapper}>
 			<section className={styles.info}>
-				<h2>RadWEB</h2>
-				<p>
-					Consequatur laborum earum quia nulla recusandae assumenda illum.
-					Facere veritatis mollitia rerum perferendis ea fuga. Repudiandae neque
-					cupiditate commodi et laboriosam consequatur odit.
-				</p>
+				<h2>{brand}</h2>
+				<p dangerouslySetInnerHTML={{ __html: content }} />
 				<address>
 					<p>
 						<i>
 							<IoHomeSharp />
 						</i>
-						<span>Donatowo 54, 64-020 Czempiń</span>
+						<span>{location}</span>
 					</p>
-					<Link href="tel:+48794100413">
+					<Link href={`tel:${phone}`}>
 						<i>
 							<BsTelephoneFill />
 						</i>
-						<span>+48 794-100-413</span>
+						<span>{phone}</span>
 					</Link>
-					<Link href="mailto:radoslaw.adamczyk2000@gmail.com">
+					<Link href={`mailto:${email}`}>
 						<i>
 							<IoMailOpenOutline />
 						</i>
-						<span>radoslaw.adamczyk2000@gmail.com</span>
+						<span>{email}</span>
 					</Link>
 				</address>
 			</section>
 			<menu className={styles.menu}>
-				{footer.map(({ columnName, pages }) => (
+				{menu.map(({ columnName, pages }) => (
 					<li key={columnName}>
 						<h3>{columnName}</h3>
 						<ul>
@@ -63,10 +80,10 @@ const Footer = ({ info, socials }: iFooter) => {
 			</menu>
 			<span className={styles.break} />
 			<div className={styles.settings}>
-				<p>RadWEB &copy; 2021-2023</p>
+				<p dangerouslySetInnerHTML={{ __html: author }} />
 				<div>
 					<ul className={styles.socials}>
-						{footerData.pl.socials.map((item, index) => (
+						{socials.map((item, index) => (
 							<li key={`${index}`} title={`${getSocials({ path: item }).name}`}>
 								<Link href={item} title={`${getSocials({ path: item }).name}`}>
 									{getSocials({ path: item }).icon}

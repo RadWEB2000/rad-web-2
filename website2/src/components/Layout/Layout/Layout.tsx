@@ -2,8 +2,8 @@ import Head from "next/head";
 import Footer from "../Footer/Footer/Footer";
 import Navigation from "../Navigation/Navigation/Navigation";
 import styles from "./Layout.module.scss";
-import { footer } from "../../../../data/footer";
 import { ReactElement } from "react";
+import { menu } from "../../../data/menu";
 
 interface iLayout {
 	canonical?: string;
@@ -40,6 +40,7 @@ const Layout = ({
 	schema,
 }: iLayout): ReactElement => {
 	const theme = true;
+	const { nav, footer, settings, socials } = menu.pl;
 	return (
 		<>
 			<Head>
@@ -70,11 +71,15 @@ const Layout = ({
 			</header>
 			<>{children}</>
 			<Footer
-				info={{
-					address: `Donatowo 54<br/>64-020 Czempiń`,
-					title: "RadWEB",
-				}}
-				socials={footer.pl.socials}
+				author={`RadWEB &copy; ${new Date().getFullYear()}`}
+				brand="RadWEB"
+				content={`RadWEB oferuje projektowanie i tworzenie funkcjonalnych stron internetowych oraz aplikacji. Nasza oferta obejmuje także usługi z zakresu pozycjonowania stron i copywritingu. Skontaktuj się z nami, a pomożemy Ci wyróżnić się w internecie!`}
+				email="radoslaw.adamczyk2000@gmail.com"
+				location="Donatowo 53, 64-020 Czempiń"
+				menu={footer}
+				phone="+48 794-100-413"
+				socials={socials}
+				settings={settings}
 			/>
 		</>
 	);

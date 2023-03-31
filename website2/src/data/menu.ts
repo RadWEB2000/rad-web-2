@@ -20,6 +20,7 @@ interface intMenu {
 			path: string;
 			title: string;
 		}[];
+		socials: string[];
 	};
 }
 export const menu: intMenu = {
@@ -80,7 +81,7 @@ export const menu: intMenu = {
 		],
 		footer: [
 			{
-				columnName: "Podstrony",
+				columnName: "Kim jesteśmy",
 				pages: [
 					{
 						path: "/",
@@ -88,7 +89,7 @@ export const menu: intMenu = {
 					},
 					{
 						path: "/o-nas",
-						title: "Kim jesteśmy?",
+						title: "O nas",
 					},
 					{
 						path: "/blog",
@@ -101,7 +102,7 @@ export const menu: intMenu = {
 				],
 			},
 			{
-				columnName: "Treści",
+				columnName: "Nasza wiedza",
 				pages: [
 					{
 						path: "/blog",
@@ -152,6 +153,13 @@ export const menu: intMenu = {
 				path: "#",
 				title: "Cookies",
 			},
+		],
+		socials: [
+			"https://www.facebook.com/radoslaw.adamczyk.2000",
+			"https://www.instagram.com/radoslaw.adamczyk.2000/",
+			"https://www.youtube.com/channel/UCOHB1fpEKwxhjCEDNgVLEog",
+			"https://github.com/RadoslawAdamczyk2000",
+			"https://www.linkedin.com/in/rados%C5%82aw-adamczyk-853948195/",
 		],
 	},
 };
