@@ -25,3 +25,15 @@ export interface iSectionPage {
 	content: string;
 	title: string;
 }
+
+export interface iSeoPage {
+	image: string;
+	meta: {
+		description: string;
+		title: string;
+	};
+	og: {
+		description: string;
+		title: string;
+	};
+}
