@@ -1,15 +1,8 @@
 import styles from "./Field.module.scss";
 import { ReactElement } from "react";
+import { iFormField } from "../../../../../content/pages/contactpage";
 
-interface iField {
-	id: string;
-	label: string;
-	max?: number;
-	min?: number;
-	name: string;
-	pattern?: "[0-9]{9}" | "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}";
-	placeholder: string;
-	type?: "text" | "email" | "tel";
+interface iField extends iFormField {
 	typeField?: "contact" | "newsletter";
 	variant?: "field" | "textarea";
 }
@@ -32,7 +25,6 @@ const Field = ({
 				<div className={styles.wrapper__contact}>
 					{pattern ? (
 						<input
-							id={id}
 							max={max}
 							min={min}
 							name={name}
@@ -43,7 +35,6 @@ const Field = ({
 						/>
 					) : (
 						<input
-							id={id}
 							max={max}
 							min={min}
 							name={name}

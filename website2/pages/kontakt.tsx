@@ -5,57 +5,75 @@ import Informations from "../src/components/Pages/ContactPage/Informations/Infor
 import Layout from "../src/components/Layout/Layout/Layout";
 import PersonCard from "../src/components/Utilities/Cards/PersonCard/PersonCard";
 import Wrapper from "../src/components/Pages/ContactPage/Wrapper/Wrapper";
-import { contactpage } from "../data/pages/contactpage";
+// import { contactpage } from "../data/pages/contactpage";
 import { getStructuredDataWebsite } from "../src/lib/functions/getStructuredData";
-import { persons } from "../data/utils/persons";
-import { projects } from "../data/pages/projects";
+import fs from "fs";
+import matter from "gray-matter";
+import { contactpage } from "../content/pages/contactpage";
 
-const Page = () => {
-	const { pl } = projects;
+interface iPage {
+	persons: {
+		cities: string;
+		email: string;
+		firstname: string;
+		image: string;
+		jobs: string;
+		lastname: string;
+		path: string;
+		phone: string;
+	}[];
+}
+
+const Page = ({ persons }: iPage) => {
+	const { content, details, form, seo } = contactpage.pl;
 	return (
 		<Layout
-			image={contactpage.pl.seo.image}
+			image={seo.image}
 			meta={{
-				description: contactpage.pl.seo.meta.description,
-				title: contactpage.pl.seo.meta.title,
+				description: seo.meta.description,
+				title: seo.meta.title,
 			}}
 			og={{
-				description: contactpage.pl.seo.og.description,
-				title: contactpage.pl.seo.og.title,
+				description: seo.og.description,
+				title: seo.og.title,
 				type: "website",
 			}}
 			schema={getStructuredDataWebsite({ url: "/kontakt" })}
-			hero={
-				<HeroPage
-					content={contactpage.pl.content.hero.content}
-					title={contactpage.pl.content.hero.title}
-				/>
-			}
+			hero={<HeroPage content={content.content} title={content.title} />}
 		>
 			<main>
 				<Wrapper>
 					<div>
 						<Informations
-							address={contactpage.pl.content.informations.address}
-							content={contactpage.pl.content.informations.content}
-							email={contactpage.pl.content.informations.email}
-							phone={contactpage.pl.content.informations.phone}
+							address={details.address}
+							content={details.content}
+							email={details.email}
+							phone={details.phone}
 						/>
 						<CardsWrapper variant="contact">
-							{Object.values(persons.pl).map(
-								({ email, fullname, image, jobs, path, phone }) => (
+							{persons.map(
+								({
+									cities,
+									email,
+									firstname,
+									image,
+									jobs,
+									lastname,
+									path,
+									phone,
+								}) => (
 									<PersonCard
-										cities=""
-										email={email.address}
+										cities={cities}
+										email={email}
 										fullname={{
-											firstname: fullname.firstname,
-											lastname: fullname.lastname,
+											firstname: firstname,
+											lastname: lastname,
 										}}
 										image={image}
 										jobs={jobs}
-										key={`${fullname.firstname} - ${fullname.lastname} - contact`}
+										key={`${firstname} - ${lastname} - contact`}
 										path={path}
-										phone={phone.address}
+										phone={phone}
 										variant="contact"
 									/>
 								)
@@ -64,10 +82,10 @@ const Page = () => {
 					</div>
 					<div>
 						<Form
-							button={contactpage.pl.content.form.button}
-							fields={contactpage.pl.content.form.fields}
-							rodo={contactpage.pl.content.form.rodo}
-							title={contactpage.pl.content.form.title}
+							button={form.button}
+							fields={form.fields}
+							rodo={form.rodo}
+							title={form.title}
 						/>
 					</div>
 				</Wrapper>
@@ -76,3 +94,30 @@ const Page = () => {
 	);
 };
 export default Page;
+
+export const getStaticProps = ({ params }: { params: any }) => {
+	const persons = fs
+		.readdirSync(`${process.cwd()}/content/persons/pl`)
+		.filter((f) => f.endsWith(".mdx"))
+		.map((f) => {
+			const path = `${process.cwd()}/content/persons/pl/${f}`;
+			const content = fs.readFileSync(path, "utf8");
+			const { data } = matter(content);
+			return {
+				cities: data.cities,
+				email: data.email,
+				firstname: data.firstname,
+				image: data.image,
+				jobs: data.jobs,
+				lastname: data.lastname,
+				path: data.path,
+				phone: data.phone,
+			};
+		});
+
+	return {
+		props: {
+			persons,
+		},
+	};
+};

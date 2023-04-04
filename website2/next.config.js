@@ -22,6 +22,7 @@ const nextConfig = {
 			"scontent-frt3-1.xx.fbcdn.net",
 			"cloudflare-ipfs.com",
 			"scontent-frx5-1.xx.fbcdn.net",
+			"scontent-fra5-2.xx.fbcdn.net",
 		],
 	},
 };
