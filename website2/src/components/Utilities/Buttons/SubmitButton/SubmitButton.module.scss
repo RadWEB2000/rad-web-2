@@ -2,12 +2,7 @@
 .wrapper {
 	&[data-disabled="true"] {
 		cursor: default;
-		background-color: transparent;
-		filter: brightness(80%);
-		border: 0.25rem solid $quinary;
-		& > * {
-			color: $quinary;
-		}
+		opacity: 0.5;
 		&:hover {
 			padding-left: 2rem;
 			& > i {

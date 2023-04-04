@@ -146,7 +146,7 @@ export const menu: intMenu = {
 		],
 		settings: [
 			{
-				path: "#",
+				path: "/polityka-prywatnosci",
 				title: "Polityka prywatności",
 			},
 			{

@@ -136,7 +136,7 @@ export const contactpage: iContactPage = {
 				warning: "Poprawnie uzupełnij formularz",
 			},
 			button: "Wyślij",
-			rodo: `Poznałem i akceptuję <a href="#">Politykę prywatności</a>.`,
+			rodo: `Poznałem i akceptuję <a href="/polityka-prywatnosci">Politykę prywatności</a>.`,
 			title: "Formularz kontaktowy",
 		},
 		details: {

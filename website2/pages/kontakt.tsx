@@ -95,7 +95,7 @@ const Page = ({ persons }: iPage) => {
 };
 export default Page;
 
-export const getStaticProps = ({ params }: { params: any }) => {
+export const getStaticProps = async () => {
 	const persons = fs
 		.readdirSync(`${process.cwd()}/content/persons/pl`)
 		.filter((f) => f.endsWith(".mdx"))
