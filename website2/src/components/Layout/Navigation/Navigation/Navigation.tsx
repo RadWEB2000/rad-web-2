@@ -9,7 +9,6 @@ const Navigation = () => {
 	const { scrollYProgress } = useScroll();
 	const { scroll } = useContext(LayoutContext);
 	const { menu: menuContext } = useContext(LayoutContext);
-	console.log(menuContext);
 	return (
 		<>
 			<motion.div

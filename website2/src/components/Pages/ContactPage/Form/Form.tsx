@@ -3,8 +3,7 @@ import Field from "../../../Utilities/Form/Field/Field";
 import styles from "./Form.module.scss";
 import SubmitButton from "../../../Utilities/Buttons/SubmitButton/SubmitButton";
 import Terms from "../Terms/Terms";
-import { RiSendPlaneLine } from "react-icons/ri";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { iFormField } from "./../../../../../content/pages/contactpage";
 
 interface iForm {
@@ -22,6 +21,7 @@ interface iForm {
 
 const Form = ({ fields, button, rodo, title }: iForm) => {
 	const form: any = useRef();
+	const [isRodoChecked, setosRodoChecked] = useState(false);
 	const sendEmail = (e: any) => {
 		e.preventDefault();
 
@@ -89,13 +89,13 @@ const Form = ({ fields, button, rodo, title }: iForm) => {
 						)
 					)}
 				</div>
-				{/* <Terms content={rodo} /> */}
+				<Terms
+					content={rodo}
+					handle={() => setosRodoChecked(!isRodoChecked)}
+					value={isRodoChecked}
+				/>
 				<div>
-					<SubmitButton
-						content={button}
-						icon={<RiSendPlaneLine />}
-						isValid={true}
-					/>
+					<SubmitButton content={button} isValid={isRodoChecked} />
 				</div>
 			</form>
 		</div>

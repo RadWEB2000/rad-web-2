@@ -106,7 +106,6 @@ export const contactpage: iContactPage = {
 					max: 18,
 					min: 9,
 					name: "phone",
-					pattern: `[0-9]{3}-[0-9]{3}-[0-9]{4}`,
 					placeholder: "Wpisz tutaj",
 					required: true,
 					type: "tel",
