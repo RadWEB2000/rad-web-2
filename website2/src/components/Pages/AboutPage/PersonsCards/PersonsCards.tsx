@@ -7,9 +7,10 @@ import { ReactElement } from "react";
 interface iPersonCards extends iSectionPage {
 	cards: {
 		cities: string;
-		fullname: tFullname;
+		firstname: string;
 		image: string;
 		jobs: string;
+		lastname: string;
 		path: string;
 	}[];
 }
@@ -22,17 +23,17 @@ const PersonsCards = ({
 		<div className={`section ${styles.wrapper}`} id="zespol">
 			<SectionPage content={content} title={title} />
 			<ul>
-				{cards.map(({ cities, fullname, image, jobs, path }) => (
+				{cards.map(({ cities, firstname, image, jobs, lastname, path }) => (
 					<PersonCard
 						cities={cities}
 						email="radoslaw.adamczyk@gmail.com"
 						fullname={{
-							firstname: fullname.firstname,
-							lastname: fullname.lastname,
+							firstname: firstname,
+							lastname: lastname,
 						}}
 						image={image}
 						jobs={jobs}
-						key={`${fullname.firstname} ${fullname.lastname} - o nas`}
+						key={`${firstname} ${lastname} - o nas`}
 						path={path}
 						phone=""
 						variant="about"

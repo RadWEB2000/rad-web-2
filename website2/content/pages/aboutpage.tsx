@@ -12,10 +12,10 @@ interface iAboutpageElement {
 	mission: {
 		title: string;
 		content: string;
-		cards?: {
+		cards: {
 			title: string;
 			content: string;
-			icon: ReactElement | JSX.Element;
+			icon: ReactElement;
 		}[];
 	};
 	team: {
