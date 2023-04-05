@@ -6,8 +6,8 @@ import Layout from "../../../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import Search from "../../../src/components/Utilities/Form/Search/Search";
 import { useState } from "react";
-import { blogpage } from "../../../data/pages/blogpage";
 import { iArticle } from "../../../src/ts/interface";
+import { blogpage } from "./../../../content/pages/blogpage";
 
 interface IntPage {
 	articles: iArticle[];
@@ -57,8 +57,10 @@ const Page = ({ articles, currentQuery, page }: IntPage) => {
 			<main>
 				<CardsWrapper variant="articles">
 					{articles
-						?.filter((item: any) =>
-							item.title.toLowerCase().includes(searchValue.toLowerCase())
+						?.filter(
+							(item: any) =>
+								item.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+								item.excerpt.toLowerCase().includes(searchValue.toLowerCase())
 						)
 						.sort(
 							(a: iArticle, b: iArticle) =>
@@ -96,9 +98,17 @@ export const getStaticPaths = async () => {
 	};
 };
 export const getStaticProps = ({ params }: { params: any }) => {
-	const getSubpage = blogpage.pl.subpages.filter((item: any) => {
-		return item.slug === params.category;
-	});
+	const getData = () => {
+		if (params.category == "programowanie") {
+			return blogpage.pl.subpage.programming;
+		} else if (params.category === "pozycjonowanie") {
+			return blogpage.pl.subpage.seo;
+		} else {
+			return blogpage.pl.subpage.seo;
+		}
+	};
+
+	const { seo, content, path } = getData();
 
 	const articlesDirectory = `${process.cwd()}/content/articles`;
 	const articlesFiles = fs
@@ -123,20 +133,20 @@ export const getStaticProps = ({ params }: { params: any }) => {
 			currentQuery: params.category,
 			page: {
 				seo: {
-					image: getSubpage[0].seo.image,
+					image: seo.image,
 					meta: {
-						description: getSubpage[0].seo.meta.description,
-						title: getSubpage[0].seo.meta.title,
+						description: seo.meta.description,
+						title: seo.meta.title,
 					},
 					og: {
-						description: getSubpage[0].seo.og.description,
-						title: getSubpage[0].seo.og.title,
+						description: seo.og.description,
+						title: seo.og.title,
 					},
 				},
-				path: getSubpage[0].path,
+				path: path,
 				hero: {
-					content: getSubpage[0].content.hero.content,
-					title: getSubpage[0].content.hero.title,
+					content: content.content,
+					title: content.title,
 				},
 			},
 			articles,
