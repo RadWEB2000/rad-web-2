@@ -1,11 +1,11 @@
 import HeroPage from "../../src/components/Utilities/Hero/HeroPage/HeroPage";
 import Layout from "../../src/components/Layout/Layout/Layout";
-import Mission from "../../src/components/Pages/AboutPage/Mission/Mission";
-import PersonsCards from "../../src/components/Pages/AboutPage/PersonsCards/PersonsCards";
-import { getStructuredDataWebsite } from "../../lib/getStructuredData";
 import fs from "fs";
 import matter from "gray-matter";
+import Mission from "../../src/components/Pages/AboutPage/Mission/Mission";
+import PersonsCards from "../../src/components/Pages/AboutPage/PersonsCards/PersonsCards";
 import { aboutpage } from "./../../content/pages/aboutpage";
+import { getStructuredDataWebsite } from "../../lib/getStructuredData";
 
 interface iPage {
 	persons: {

@@ -1,13 +1,18 @@
-import CardsWrapper from "../../../Utilities/Cards/CardsWrapper/CardsWrapper";
-import ProjectCard, {
-	ProjectCard2,
-} from "../../../Utilities/Cards/ProjectCard/ProjectCard";
+import { ProjectCard2 } from "../../../Utilities/Cards/ProjectCard/ProjectCard";
 import SectionPage from "../../../../../src/components/Utilities/Section/SectionPage/SectionPage";
 import styles from "./ProjectsSection.module.scss";
-import { iProject, iSectionPage } from "../../../../../src/ts/interface";
+import { iSectionPage } from "../../../../../src/ts/interface";
 import { ReactElement } from "react";
+import { tProjectCategory } from "../../../../ts/types";
 interface iProjects extends iSectionPage {
-	cards: iProject[];
+	cards: {
+		category: tProjectCategory;
+		excerpt: string;
+		image: string;
+		path: string;
+		release: string | Date;
+		title: string;
+	}[];
 }
 const ProjectsSection = ({
 	button,
@@ -15,7 +20,6 @@ const ProjectsSection = ({
 	content,
 	title,
 }: iProjects): ReactElement => {
-	console.log(cards);
 	return (
 		<section className={styles.wrapper}>
 			<SectionPage button={button} content={content} title={title} />

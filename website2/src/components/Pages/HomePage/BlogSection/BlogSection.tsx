@@ -2,11 +2,19 @@ import BlogCard from "../../../../../src/components/Utilities/Cards/BlogCard/Blo
 import CardsWrapper from "../../../../../src/components/Utilities/Cards/CardsWrapper/CardsWrapper";
 import SectionPage from "../../../../../src/components/Utilities/Section/SectionPage/SectionPage";
 import styles from "./BlogSection.module.scss";
-import { iArticle, iSectionPage } from "../../../../../src/ts/interface";
+import { iSectionPage } from "../../../../../src/ts/interface";
 import { ReactElement } from "react";
 import { useVisibleArticlesHP } from "../../../../../src/lib/hooks/useVisibleArticlesHP";
+import { tLang } from "../../../../ts/types";
 interface iBlog extends iSectionPage {
-	cards: iArticle[];
+	cards: {
+		category: string;
+		excerpt: string;
+		image: string;
+		lang: tLang;
+		release: string | Date;
+		title: string;
+	}[];
 }
 const BlogSection = ({
 	button,

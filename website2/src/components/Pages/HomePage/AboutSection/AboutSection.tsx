@@ -10,9 +10,10 @@ import { tFullname } from "../../../../ts/types";
 interface iAboutSection extends iSectionPage {
 	cards: {
 		cities: string;
-		fullname: tFullname;
+		firstname: string;
 		image: string;
 		jobs: string;
+		lastname: string;
 		path: string;
 	}[];
 }
@@ -33,28 +34,15 @@ const AboutSection = ({ button, cards, content, title }: iAboutSection) => {
 				<SectionPage content={content} title={title} />
 			)}
 			<CardsWrapper variant="persons-section">
-				{/* {cards.map(({ cities, fullname, image, jobs, path }) => (
-					<PersonCard
-						cities={cities}
-						email=""
-						fullname={{
-							firstname: fullname.firstname,
-							lastname: fullname.lastname,
-						}}
-						image={image}
-						jobs={jobs}
-						key={~`${fullname.firstname} ${fullname.lastname} - home`}
-						path={path}
-						phone=""
-						variant="home"
-					/>
-				))} */}
-				{cards.map(({ cities, fullname, image, jobs, path }) => (
+				{cards.map(({ cities, firstname, image, jobs, lastname, path }) => (
 					<PersonCardHomePage
 						button="więcej"
 						cities={cities}
 						excerpt=""
-						fullname={fullname}
+						fullname={{
+							firstname: firstname,
+							lastname: lastname,
+						}}
 						image={image}
 						jobs={jobs}
 						key={image}
