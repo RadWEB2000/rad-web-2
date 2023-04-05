@@ -104,7 +104,6 @@ export const getStaticPaths = async () => {
 				category: data.category,
 				slug: filename.replace(/\.mdx/, ""),
 			},
-			// data,
 		};
 	});
 	return {
