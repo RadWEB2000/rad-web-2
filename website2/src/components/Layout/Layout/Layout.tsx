@@ -66,7 +66,7 @@ const Layout = ({
 				/>
 			</Head>
 			<header className={styles.header}>
-				<Navigation />
+				<Navigation menu={nav} />
 				<>{hero}</>
 			</header>
 			<>{children}</>

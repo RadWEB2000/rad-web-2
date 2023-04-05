@@ -5,7 +5,19 @@ import { motion, useScroll } from "framer-motion";
 import Settings from "./../Settings/Settings/Settings";
 import { useContext, useEffect, useRef, useState } from "react";
 import { LayoutContext } from "../../../../context/LayoutProvider";
-const Navigation = () => {
+
+interface iNavigation {
+	menu: {
+		path: string;
+		title: string;
+		submenu?: {
+			path: string;
+			title: string;
+		}[];
+	}[];
+}
+
+const Navigation = ({ menu }: iNavigation) => {
 	const { scrollYProgress } = useScroll();
 	const { scroll } = useContext(LayoutContext);
 	const { menu: menuContext } = useContext(LayoutContext);
@@ -24,7 +36,7 @@ const Navigation = () => {
 					<Brand />
 				</div>
 				<div className={styles.menu} data-open={menuContext.isOpen}>
-					<Menu />
+					<Menu menu={menu} />
 				</div>
 				<div className={styles.settings}>
 					<Settings />

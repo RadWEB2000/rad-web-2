@@ -3,12 +3,21 @@ import Submenu from "../Submenu/Submenu";
 import styles from "./Menu.module.scss";
 import { useContext } from "react";
 import { LayoutContext } from "./../../../../../context/LayoutProvider";
-import { menu } from "../../../../../../data/utils/menu";
-const Menu = () => {
+interface iMenu {
+	menu: {
+		path: string;
+		title: string;
+		submenu?: {
+			path: string;
+			title: string;
+		}[];
+	}[];
+}
+const Menu = ({ menu }: iMenu) => {
 	const { menu: menuContext } = useContext(LayoutContext);
 	return (
 		<menu className={styles.wrapper} data-active={menuContext.isOpen}>
-			{menu.pl.navigation.map(({ path, submenu, title }) => (
+			{menu?.map(({ path, submenu, title }) => (
 				<>
 					{submenu ? (
 						<Submenu path={path} submenu={submenu} title={title} />
