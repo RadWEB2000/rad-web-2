@@ -6,7 +6,6 @@ import Layout from "../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import ProjectsSection from "../src/components/Pages/HomePage/ProjectsSection/ProjectsSection";
 import { getStructuredDataOrganization } from "../lib/getStructuredData";
-import { iArticle, iProject } from "../src/ts/interface";
 import { homepage } from "./../content/pages/homepage";
 import { tLang, tProjectCategory } from "../src/ts/types";
 
@@ -41,7 +40,6 @@ interface iPage {
 
 const Page = ({ articles, persons, projects }: iPage) => {
 	const { seo, hero, sections } = homepage.pl;
-	console.log(projects);
 	return (
 		<Layout
 			image={seo.image}

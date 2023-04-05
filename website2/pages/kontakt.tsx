@@ -5,7 +5,6 @@ import Informations from "../src/components/Pages/ContactPage/Informations/Infor
 import Layout from "../src/components/Layout/Layout/Layout";
 import PersonCard from "../src/components/Utilities/Cards/PersonCard/PersonCard";
 import Wrapper from "../src/components/Pages/ContactPage/Wrapper/Wrapper";
-// import { contactpage } from "../data/pages/contactpage";
 import { getStructuredDataWebsite } from "../src/lib/functions/getStructuredData";
 import fs from "fs";
 import matter from "gray-matter";
@@ -96,25 +95,25 @@ const Page = ({ persons }: iPage) => {
 export default Page;
 
 export const getStaticProps = async () => {
-	const persons = fs
-		.readdirSync(`${process.cwd()}/content/persons/pl`)
-		.filter((f) => f.endsWith(".mdx"))
-		.map((f) => {
-			const path = `${process.cwd()}/content/persons/pl/${f}`;
-			const content = fs.readFileSync(path, "utf8");
-			const { data } = matter(content);
-			return {
-				cities: data.cities,
-				email: data.email,
-				firstname: data.firstname,
-				image: data.image,
-				jobs: data.jobs,
-				lastname: data.lastname,
-				path: data.path,
-				phone: data.phone,
-			};
-		});
-
+	const personsDirectory = `${process.cwd()}/content/persons/pl`;
+	const personsFiles = fs
+		.readdirSync(personsDirectory)
+		.filter((f) => f.endsWith(".mdx"));
+	const persons = personsFiles.map((item) => {
+		const path = `${personsDirectory}/${item}`;
+		const content = fs.readFileSync(path, "utf8");
+		const { data } = matter(content);
+		return {
+			cities: data.cities,
+			email: data.email,
+			firstname: data.firstname,
+			image: data.image,
+			jobs: data.jobs,
+			lastname: data.lastname,
+			path: data.path,
+			phone: data.phone,
+		};
+	});
 	return {
 		props: {
 			persons,
