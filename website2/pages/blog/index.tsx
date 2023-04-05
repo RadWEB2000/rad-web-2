@@ -5,35 +5,33 @@ import HeroPage from "../../src/components/Utilities/Hero/HeroPage/HeroPage";
 import Layout from "../../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import Search from "../../src/components/Utilities/Form/Search/Search";
-import { blogpage } from "./../../data/pages/blogpage";
 import { useState } from "react";
 import { iArticle } from "../../src/ts/interface";
+import { blogpage } from "./../../content/pages/blogpage";
 
 interface iPage {
 	articles: iArticle[];
 }
 
 const Page = ({ articles }: iPage) => {
+	const { seo, content } = blogpage.pl.page;
 	const [searchValue, setSearchValue] = useState("");
 	return (
 		<Layout
-			image="https://cdn.pixabay.com/photo/2016/11/29/06/15/plans-1867745_960_720.jpg"
+			image={seo.image}
 			meta={{
-				description: blogpage.pl.main.seo.meta.description,
-				title: blogpage.pl.main.seo.meta.title,
+				description: seo.meta.description,
+				title: seo.meta.title,
 			}}
 			og={{
-				description: blogpage.pl.main.seo.og.description,
-				title: blogpage.pl.main.seo.og.title,
+				description: seo.og.description,
+				title: seo.og.title,
 				type: "website",
 			}}
 			schema={{}}
 			hero={
 				<>
-					<HeroPage
-						content={blogpage.pl.main.content.hero.content}
-						title={blogpage.pl.main.content.hero.title}
-					/>
+					<HeroPage content={content.content} title={content.title} />
 					<Search handle={setSearchValue} placeholder={`Szukaj`} />
 				</>
 			}
@@ -41,8 +39,10 @@ const Page = ({ articles }: iPage) => {
 			<main>
 				<CardsWrapper variant="articles">
 					{articles
-						?.filter((item: any) =>
-							item.title.toLowerCase().includes(searchValue.toLowerCase())
+						?.filter(
+							(item: any) =>
+								item.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+								item.excerpt.toLowerCase().includes(searchValue.toLowerCase())
 						)
 						.sort(
 							(a: iArticle, b: iArticle) =>
