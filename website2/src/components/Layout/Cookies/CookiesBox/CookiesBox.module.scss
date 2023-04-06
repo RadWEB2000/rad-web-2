@@ -15,9 +15,9 @@
 	@include flex(center, column, center);
 	background: orange;
 	max-width: 95%;
-	padding: 3.5rem 4rem;
+	padding: 2.5rem 2rem;
 	row-gap: 1.6rem;
-	width: 85rem;
+	width: 95rem;
 	& > * {
 		width: 100%;
 	}
@@ -29,9 +29,9 @@
 
 	& > .content {
 		background: palegreen;
-		font-size: 1.7rem;
+		font-size: 1.57rem;
 		line-height: 1.8;
-		font-weight: 700;
+		font-weight: 500;
 	}
 
 	& > .permissions {
@@ -59,12 +59,14 @@
 				& > .title {
 					margin: auto;
 					font-weight: 700;
+					cursor: default;
 					margin-left: 0;
 					padding-left: 1rem;
 				}
 				& > .box {
 					all: unset;
 					border: 1.2px solid black;
+					cursor: pointer;
 				}
 				& > button,
 				& > .box {
@@ -73,8 +75,12 @@
 					font-size: 2.2rem;
 					width: 3rem;
 				}
+				& > button {
+					cursor: default;
+				}
 			}
 			& > div {
+				cursor: default;
 				padding: 0.95rem;
 				& > p {
 					font-size: 1.5rem;

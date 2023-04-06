@@ -35,7 +35,7 @@ const CookiesBox = ({
 	isOpenCookiesPrefferences,
 	preferrences,
 }: iCookiesBox) => {
-	const detailsRefs = useRef([]);
+	const detailsRefs = useRef<(HTMLDetailsElement | null)[]>([]);
 	console.log(detailsRefs);
 	return (
 		<div data-open={true} className={styles.wrapper}>
@@ -70,39 +70,45 @@ const CookiesBox = ({
 								({ name, title, content, isChecked }, index) => {
 									const detailsRef = detailsRefs.current[index];
 									const isOpen = detailsRef?.open;
-									console.log(isOpen);
+									let isCheckedAction;
+									console.log(isCheckedAction);
 									return (
 										<details
 											className={styles.permission}
 											key={`${title}-${content}`}
-										    ref={(e) => (detailsRefs.current[index] = e)}
-    open={detailsRefs.current[index]?.open}
+											ref={(e) => (detailsRefs.current[index] = e)}
+											open={detailsRefs.current[index]?.open}
 										>
 											<summary>
 												<button
 													aria-label="expand"
-													onClick={() => (  const detailsRef = detailsRefs.current[index];
-														detailsRef.open = !detailsRef.open;)}
+													onClick={() => {
+														const detailsRef = detailsRefs.current[index];
+														if (detailsRef) {
+															detailsRef.open = !detailsRef.open;
+														}
+													}}
 												>
 													<FiChevronDown />
 												</button>
 												<p className={styles.title}>{title}</p>
 												<input
 													checked={isChecked}
-													type="checkbox"
-													title="a"
-													name={name}
 													id={name}
+													name={name}
+													onChange={(ev) => {
+														isCheckedAction = ev.target.checked;
+													}}
+													title="a"
+													type="checkbox"
 												/>
 												<label className={styles.box} htmlFor={name}>
 													<MdOutlineDone />
 												</label>
 											</summary>
-											{!detailsRef?.current[index]?.open && (
-												<div>
-													<p dangerouslySetInnerHTML={{ __html: content }} />
-												</div>
-											)}
+											<div>
+												<p dangerouslySetInnerHTML={{ __html: content }} />
+											</div>
 										</details>
 									);
 								}
