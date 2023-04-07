@@ -122,7 +122,7 @@ const Layout = ({
 							},
 							{
 								handle: () => setIsOpenCookiesBox(false),
-								title: "Włącz wszystkie i przejdź do serwisu",
+								title: "Przejdź do serwisu",
 							},
 						],
 						permissions: [

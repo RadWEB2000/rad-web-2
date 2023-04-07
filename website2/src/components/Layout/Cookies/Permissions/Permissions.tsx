@@ -11,16 +11,18 @@ import styles from "./Permissions.module.scss";
 interface iPermissions {
 	checkedStatus: boolean;
 	content: string;
+	checkboxRefs: MutableRefObject<HTMLInputElement[]>;
 	detailsRefs: MutableRefObject<(HTMLDetailsElement | null)[]>;
 	index: number;
 	isChecked?: boolean;
-	handleChecked: Dispatch<SetStateAction<boolean>>;
+	handleChecked: Dispatch<SetStateAction<any>>;
 	name: "necessary" | "preferential" | "statistical";
 	title: string;
 }
 const Permissions = ({
 	checkedStatus,
 	content,
+	checkboxRefs,
 	detailsRefs,
 	index,
 	isChecked,
@@ -54,9 +56,8 @@ const Permissions = ({
 					<input
 						id={name}
 						name={name}
-						onChange={(e) => {
-							handleChecked(e);
-						}}
+						onChange={handleChecked}
+						ref={checkboxRefs}
 						title="a"
 						type="checkbox"
 					/>

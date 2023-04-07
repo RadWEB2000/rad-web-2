@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { MouseEventHandler, useRef, useState } from "react";
+import { MouseEventHandler, MutableRefObject, useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { MdOutlineDone } from "react-icons/md";
 import Permissions from "../Permissions/Permissions";
@@ -36,12 +36,18 @@ const CookiesBox = ({
 	isOpenCookiesPrefferences,
 	preferrences,
 }: iCookiesBox) => {
-	const detailsRefs = useRef<(HTMLDetailsElement | null)[]>([]);
+	const checkboxRefs: MutableRefObject<HTMLInputElement[]> = useRef([]);
+	const detailsRefs: MutableRefObject<(HTMLDetailsElement | null)[]> = useRef(
+		[]
+	);
 	const [isCheckedStatus, setIsCheckedStatus] = useState(false);
 
-	const handleCheckboxChange = (event: any) => {
-		setIsCheckedStatus(event.target.checked);
-	};
+	const [checkedStatuses, setCheckedStatuses] = useState(
+		preferrences.permissions?.map(
+			(permission) => permission.isChecked ?? false
+		) ?? []
+	);
+
 	console.log(isCheckedStatus);
 	return (
 		<div data-open={true} className={styles.wrapper}>
@@ -74,10 +80,21 @@ const CookiesBox = ({
 						<div className={styles.permissions}>
 							{preferrences.permissions.map(
 								({ name, title, content, isChecked }, index) => {
+									const handleCheckboxChange = (
+										e: React.ChangeEvent<HTMLInputElement>
+									) => {
+										setCheckedStatuses((prevState) => {
+											const newState = [...prevState];
+											newState[index] = e.target.checked;
+											return newState;
+										});
+									};
+
 									return (
 										<Permissions
-											checkedStatus={isCheckedStatus}
+											checkedStatus={checkedStatuses[index]}
 											content={content}
+											checkboxRefs={checkboxRefs}
 											detailsRefs={detailsRefs}
 											index={index}
 											key={index}

@@ -13,7 +13,9 @@
 
 .box {
 	@include flex(center, column, center);
-	background: orange;
+	background-color: $background;
+	border-radius: 1rem;
+	box-shadow: 0 0 2rem 1rem hsla(0, 100%, 0%, 0.5);
 	max-width: 95%;
 	padding: 2.5rem 2rem;
 	row-gap: 1.6rem;
@@ -22,21 +24,16 @@
 		width: 100%;
 	}
 	& > .title {
-		background: pink;
-		font-size: 2.85rem;
-		line-height: 1.5;
+		@include fontLine(1.5, 2.85rem, 500);
 	}
 
 	& > .content {
-		background: palegreen;
-		font-size: 1.57rem;
-		line-height: 1.8;
-		font-weight: 500;
+		@include fontLine(1.8, 1.55rem, 400);
+		padding: 0 1rem;
 	}
 
 	& > .permissions {
 		@include flex(flex-start, column, center);
-		background: yellow;
 		row-gap: 0.5rem;
 	}
 
@@ -49,7 +46,6 @@
 			@include flexNoFlow(center, center);
 			& > button {
 				@include fullSize;
-				background: pink;
 				height: 3.75rem;
 				font-size: 1.45rem;
 				font-weight: 600;
