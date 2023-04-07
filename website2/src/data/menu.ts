@@ -150,7 +150,7 @@ export const menu: intMenu = {
 				title: "Polityka prywatności",
 			},
 			{
-				path: "#",
+				path: "/polityka-cookies",
 				title: "Cookies",
 			},
 		],
