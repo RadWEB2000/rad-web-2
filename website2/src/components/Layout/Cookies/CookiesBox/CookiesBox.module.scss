@@ -4,7 +4,7 @@
 	@include flexNoFlow(center, center);
 	@include fullSize;
 	position: fixed;
-	background: rgba(179, 231, 179, 0.459);
+	background: rgba(0, 0, 0, 0.63);
 	top: 0;
 	padding: 1.15rem;
 	left: 0;
@@ -38,57 +38,6 @@
 		@include flex(flex-start, column, center);
 		background: yellow;
 		row-gap: 0.5rem;
-		& > .permission {
-			background: salmon;
-			width: 100%;
-			& > summary {
-				@include flexNoFlow(center, space-between);
-				padding: 0.95rem 1rem;
-				position: relative;
-				&::before {
-					bottom: 0;
-					background: gray;
-					height: 1px;
-					left: 50%;
-					transform: translateX(-50%);
-					width: 90%;
-				}
-				& > input {
-					display: none;
-				}
-				& > .title {
-					margin: auto;
-					font-weight: 700;
-					cursor: default;
-					margin-left: 0;
-					padding-left: 1rem;
-				}
-				& > .box {
-					all: unset;
-					border: 1.2px solid black;
-					cursor: pointer;
-				}
-				& > button,
-				& > .box {
-					@include flexNoFlow(center, center);
-					aspect-ratio: 1/1;
-					font-size: 2.2rem;
-					width: 3rem;
-				}
-				& > button {
-					cursor: default;
-				}
-			}
-			& > div {
-				cursor: default;
-				padding: 0.95rem;
-				& > p {
-					font-size: 1.5rem;
-					font-weight: 300;
-					line-height: 1.65;
-				}
-			}
-		}
 	}
 
 	& > .buttons {

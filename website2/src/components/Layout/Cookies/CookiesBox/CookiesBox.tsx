@@ -2,6 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import { MouseEventHandler, useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { MdOutlineDone } from "react-icons/md";
+import Permissions from "../Permissions/Permissions";
 import styles from "./CookiesBox.module.scss";
 export interface iCookiesBox {
 	info: {
@@ -36,7 +37,12 @@ const CookiesBox = ({
 	preferrences,
 }: iCookiesBox) => {
 	const detailsRefs = useRef<(HTMLDetailsElement | null)[]>([]);
-	console.log(detailsRefs);
+	const [isCheckedStatus, setIsCheckedStatus] = useState(false);
+
+	const handleCheckboxChange = (event: any) => {
+		setIsCheckedStatus(event.target.checked);
+	};
+	console.log(isCheckedStatus);
 	return (
 		<div data-open={true} className={styles.wrapper}>
 			{!isOpenCookiesPrefferences && (
@@ -68,48 +74,18 @@ const CookiesBox = ({
 						<div className={styles.permissions}>
 							{preferrences.permissions.map(
 								({ name, title, content, isChecked }, index) => {
-									const detailsRef = detailsRefs.current[index];
-									const isOpen = detailsRef?.open;
-									let isCheckedAction;
-									console.log(isCheckedAction);
 									return (
-										<details
-											className={styles.permission}
-											key={`${title}-${content}`}
-											ref={(e) => (detailsRefs.current[index] = e)}
-											open={detailsRefs.current[index]?.open}
-										>
-											<summary>
-												<button
-													aria-label="expand"
-													onClick={() => {
-														const detailsRef = detailsRefs.current[index];
-														if (detailsRef) {
-															detailsRef.open = !detailsRef.open;
-														}
-													}}
-												>
-													<FiChevronDown />
-												</button>
-												<p className={styles.title}>{title}</p>
-												<input
-													checked={isChecked}
-													id={name}
-													name={name}
-													onChange={(ev) => {
-														isCheckedAction = ev.target.checked;
-													}}
-													title="a"
-													type="checkbox"
-												/>
-												<label className={styles.box} htmlFor={name}>
-													<MdOutlineDone />
-												</label>
-											</summary>
-											<div>
-												<p dangerouslySetInnerHTML={{ __html: content }} />
-											</div>
-										</details>
+										<Permissions
+											checkedStatus={isCheckedStatus}
+											content={content}
+											detailsRefs={detailsRefs}
+											index={index}
+											key={index}
+											handleChecked={handleCheckboxChange}
+											name={name}
+											title={title}
+											isChecked={isChecked}
+										/>
 									);
 								}
 							)}
