@@ -88,7 +88,7 @@ const Layout = ({
 				/>
 			</>
 			<>
-				<CookiesBox
+				{/* <CookiesBox
 					info={{
 						title: `Informacja o prywatności plików cookies`,
 						content: `Ta strona korzysta z plików cookie, aby poprawić wrażenia podczas przeglądania witryny. Część plików cookies, które są sklasyfikowane jako niezbędne, są przechowywane w przeglądarce, ponieważ są konieczne do działania podstawowych funkcji witryny.
@@ -144,7 +144,7 @@ const Layout = ({
 							},
 						],
 					}}
-				/>
+				/> */}
 			</>
 		</>
 	);
