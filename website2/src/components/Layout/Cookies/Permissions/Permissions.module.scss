@@ -44,9 +44,100 @@
 		cursor: default;
 		padding: 0.95rem;
 		& > p {
-			font-size: 1.5rem;
-			font-weight: 300;
-			line-height: 1.65;
+			@include fontLine(1.65, 1.5rem, 300);
+		}
+	}
+
+	@media only screen {
+		@media (max-width: 600px) {
+			& > summary {
+				@include flexNoFlow(center, space-between);
+				padding: 0.35rem 1rem 0.5rem 1rem;
+				position: relative;
+				&::before {
+					bottom: 0;
+					border-bottom: 0.5px solid gray;
+					border-radius: 1rem;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 98%;
+				}
+				& > input {
+					display: none;
+				}
+				& > .title {
+					margin: auto;
+					font-size: 1.5rem;
+					font-weight: 500;
+					cursor: default;
+					margin-left: 0;
+					padding-left: 1rem;
+				}
+				& > .box {
+					border: 0.8px solid black;
+				}
+				& > button,
+				& > .box {
+					@include flexNoFlow(center, center);
+					aspect-ratio: 1/1;
+					font-size: 1.7rem;
+					width: 2.3rem;
+				}
+				& > button {
+					cursor: pointer;
+				}
+			}
+			& > div {
+				padding: 0.35rem;
+				& > p {
+					@include fontLine(1.45, 1.45rem, 300);
+				}
+			}
+		}
+		@media (max-width: 400px) {
+			& > summary {
+				@include flexNoFlow(center, space-between);
+				padding: 0.35rem 1rem 0.5rem 1rem;
+				position: relative;
+				&::before {
+					bottom: 0;
+					border-bottom: 0.15px solid gray;
+					border-radius: 1rem;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 98%;
+				}
+				& > input {
+					display: none;
+				}
+				& > .title {
+					margin: auto;
+					font-size: 1.45rem;
+					font-weight: 500;
+					cursor: default;
+					margin-left: 0;
+					padding-left: 1rem;
+				}
+				& > .box {
+					border: 0.8px solid black;
+				}
+				& > button,
+				& > .box {
+					@include flexNoFlow(center, center);
+					aspect-ratio: 1/1;
+					font-size: 1.5rem;
+					width: 1.8rem;
+				}
+				& > button {
+					cursor: pointer;
+				}
+			}
+			& > div {
+				padding: 0.35rem;
+				& > p {
+					@include fontLine(1.45, 1.5rem, 300);
+				}
+			}
 		}
 	}
 }
