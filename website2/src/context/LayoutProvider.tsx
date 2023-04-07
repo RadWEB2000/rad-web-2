@@ -113,8 +113,8 @@ export const LayoutProvider = ({
 						Używamy również plików cookies stron trzecich, które pomagają nam analizować i zrozumieć, w jaki sposób korzystasz z tej witryny. Te pliki cookies będą przechowywane w przeglądarce tylko za Twoją zgodą. Możesz również z nich zrezygnować, ale rezygnacja z niektórych z tych plików może mieć wpływ na wygodę przeglądania.
 						<br/>
 						<br/>
-						Klikając „Przejdź do serwisu” udzielasz zgody na przetwarzanie Twoich danych osobowych dotyczących Twojej aktywności na naszej stronie. Dane są zbierane w celach zgodnych z naszą polityką prywatności oraz polityką cookies. Zgoda jest dobrowolna. Możesz jej odmówić lub ograniczyć jej zakres klikając w "Preferencje cookies".
-						W każdej chwili możesz modyfikować udzielone zgody w zakładce: informacje i regulaminy — zresetuj ustawienia cookies.`,
+						Klikając „Przejdź do serwisu” udzielasz zgody na przetwarzanie Twoich danych osobowych dotyczących Twojej aktywności na naszej stronie. Dane są zbierane w celach zgodnych z naszą polityką prywatności oraz polityką cookies. Zgoda jest dobrowolna.
+						W każdej chwili możesz sprawdzić naszą <a href="/polityka-cookies">politykę cookies</a>`,
 							buttons: [
 								{
 									handle: () => setIsOpenCookiesPrefferences(true),
