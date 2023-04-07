@@ -14,7 +14,6 @@
 .box {
 	@include flex(center, column, center);
 	background-color: $background;
-	border-radius: 1rem;
 	box-shadow: 0 0 2rem 1rem hsla(0, 100%, 0%, 0.5);
 	max-width: 95%;
 	padding: 2.5rem 2rem;

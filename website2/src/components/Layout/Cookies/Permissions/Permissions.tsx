@@ -11,7 +11,7 @@ import styles from "./Permissions.module.scss";
 interface iPermissions {
 	checkedStatus: boolean;
 	content: string;
-	checkboxRefs: MutableRefObject<HTMLInputElement[]>;
+	checkboxRefs: any;
 	detailsRefs: MutableRefObject<(HTMLDetailsElement | null)[]>;
 	index: number;
 	isChecked?: boolean;
