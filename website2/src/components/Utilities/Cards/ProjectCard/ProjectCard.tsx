@@ -112,6 +112,7 @@ interface iProjectCard2 {
 	image: string;
 	path: string;
 	title: string;
+	release: string | Date;
 	stack?: string[];
 }
 export const ProjectCard2 = ({
@@ -119,9 +120,15 @@ export const ProjectCard2 = ({
 	content,
 	image,
 	path,
+	release,
 	title,
 	stack,
 }: iProjectCard2) => {
+	const { month, year } = getDate({
+		date: release,
+		lang: "pl",
+		variant: "short",
+	});
 	return (
 		<li className={styles.wrapper2}>
 			<section>
@@ -142,7 +149,7 @@ export const ProjectCard2 = ({
 						))}
 					</ul>
 				)}
-				<p className={styles.release}>Mar 2023</p>
+				<p className={styles.release}>{`${month} ${year}`}</p>
 				<h3 className={styles.title}>{title}</h3>
 				<p
 					className={styles.excerpt}

@@ -104,7 +104,7 @@ export const LayoutProvider = ({
 			}}
 		>
 			<>{children}</>
-			<>
+			{/* <>
 				{isOpenCookiesBox && (
 					<CookiesBox
 						info={{
@@ -164,7 +164,7 @@ export const LayoutProvider = ({
 						}}
 					/>
 				)}
-			</>
+			</> */}
 		</LayoutContext.Provider>
 	);
 };

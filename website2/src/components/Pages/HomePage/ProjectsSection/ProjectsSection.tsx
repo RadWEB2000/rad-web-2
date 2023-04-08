@@ -11,6 +11,7 @@ interface iProjects extends iSectionPage {
 		image: string;
 		path: string;
 		release: string | Date;
+		stack: tProjectCategory[];
 		title: string;
 	}[];
 }
@@ -20,6 +21,7 @@ const ProjectsSection = ({
 	content,
 	title,
 }: iProjects): ReactElement => {
+	console.log(cards);
 	return (
 		<section className={styles.wrapper}>
 			<SectionPage button={button} content={content} title={title} />
@@ -30,20 +32,23 @@ const ProjectsSection = ({
 							new Date(b.release).getTime() - new Date(a.release).getTime()
 					)
 					.slice(0, 1)
-					.map(({ category, excerpt, image, path, release, title }) => (
-						<ProjectCard2
-							// category={category}
-							content={excerpt}
-							image={image}
-							key={title}
-							path={path}
-							button="więcej"
-							stack={["html", "react", "php"]}
-							// release={release}
-							title={title}
-							// variant="page"
-						/>
-					))}
+					.map(({ category, excerpt, image, path, release, stack, title }) => {
+						console.log(stack);
+						return (
+							<ProjectCard2
+								// category={category}
+								content={excerpt}
+								image={image}
+								key={title}
+								path={path}
+								button="więcej"
+								stack={stack}
+								release={release}
+								title={title}
+								// variant="page"
+							/>
+						);
+					})}
 			</div>
 		</section>
 	);

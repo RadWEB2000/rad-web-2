@@ -34,6 +34,7 @@ interface iPage {
 		image: string;
 		path: string;
 		release: string | Date;
+		stack: tProjectCategory[];
 		title: string;
 	}[];
 }
@@ -150,6 +151,7 @@ export const getStaticProps = ({ params }: { params: any }) => {
 			image: data.image,
 			path: `https://rad-web.vercel.app/projekty/${data.slug}`,
 			release: data.release,
+			stack: data.stack,
 			title: data.title,
 		};
 	});
