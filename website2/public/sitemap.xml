@@ -8,109 +8,179 @@
 
 
 <url>
-  <loc>https://rad-web.vercel.app/</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <loc>https://rad-web.vercel.app/en</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/o-nas</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <loc>https://rad-web.vercel.app/en/o-nas</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/o-nas/radoslaw-adamczyk</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <loc>https://rad-web.vercel.app/en/blog</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/o-nas/filip-bukowiecki</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <loc>https://rad-web.vercel.app/en/blog/programowanie</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/o-nas/klaudia-paluch</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <loc>https://rad-web.vercel.app/en/blog/pozycjonowanie</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/blog</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <loc>https://rad-web.vercel.app/en/projekty</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/blog/programowanie</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rad-web.vercel.app/blog/pozycjonowanie</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rad-web.vercel.app/projekty</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rad-web.vercel.app/kontakt</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rad-web.vercel.app/blog/programowanie/czym-jest-html-historia-i-rozwoj</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rad-web.vercel.app/blog/programowanie/robots-txt-jak-przejac-kontrole-nad-robotami-wyszukiwarek</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rad-web.vercel.app/blog/programowanie/fenomen-windowsa</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <loc>https://rad-web.vercel.app/en/kontakt</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://rad-web.vercel.app/projekty/mistcont</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/projekty/borowkowy-gaj</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <loc>https://rad-web.vercel.app/en/polityka-prywatnosci</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/projekty/filip-bukowiecki</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
+  <loc>https://rad-web.vercel.app/en/polityka-cookies</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/projekty/agromar</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://rad-web.vercel.app/polityka-prywatnosci</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://rad-web.vercel.app/projekty/gdzie-jutro</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://rad-web.vercel.app/o-nas</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/o-nas/radoslaw-adamczyk</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/o-nas/filip-bukowiecki</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/o-nas/klaudia-paluch</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog/programowanie</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog/pozycjonowanie</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/projekty</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/kontakt</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/polityka-cookies</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog/programowanie/jak-nauczyc-sie-reacta-dokumentacje-react</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog/programowanie/roznice-miedzy-tagami-html-a-atrybutami-i-jak-ich-uzywac</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog/pozycjonowanie/dlaczego-dostepnosc-stron-internetowych-jest-wazna-dla-seo</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog/pozycjonowanie/jak-zwiekszyc-widocznosc-swojego-biznesu-z-lokalnym-seo</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog/programowanie/czym-jest-html-historia-i-rozwoj</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog/pozycjonowanie/robots-txt-jak-przejac-kontrole-nad-robotami-wyszukiwarek</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/blog/programowanie/fenomen-windowsa</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://rad-web.vercel.app/blog/programowanie/cechy-dobrej-strony-internetowej</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://rad-web.vercel.app/projekty/radweb-filmbase</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/projekty/gdzie-jutro</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://rad-web.vercel.app/projekty/weather-app</loc>
-  <lastmod>2023-03-04T16:22:05+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/projekty/filip-bukowiecki</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/projekty/agromar</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://rad-web.vercel.app/projekty/borowkowy-gaj</loc>
+  <lastmod>2023-04-09T12:54:58+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 
