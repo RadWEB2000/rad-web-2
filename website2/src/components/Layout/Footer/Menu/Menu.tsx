@@ -1,10 +1,19 @@
 import Link from "next/link";
-import { menu } from "../../../../../data/menu";
 import styles from "./Menu.module.scss";
-const Menu = () => {
+interface iMenu {
+	menu: {
+		path: string;
+		title: string;
+		submenu?: {
+			path: string;
+			title: string;
+		}[];
+	}[];
+}
+const Menu = ({ menu }: iMenu) => {
 	return (
 		<menu className={styles.wrapper}>
-			{menu.pl.map(({ path, title }) => (
+			{menu.map(({ path, title }) => (
 				<li key={path}>
 					<Link href={path}>{title}</Link>
 				</li>
@@ -12,7 +21,7 @@ const Menu = () => {
 			<li>
 				<Link href="/polityka-prywatnosci">Polityka prywatności</Link>
 			</li>
-			{menu.pl.map(({ submenu }) => (
+			{menu.map(({ submenu }) => (
 				<>
 					{submenu?.map(({ path, title }) => (
 						<li key={`${path} - footer`}>

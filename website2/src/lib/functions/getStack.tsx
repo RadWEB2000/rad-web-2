@@ -18,7 +18,7 @@ import {
 } from "react-icons/si";
 import { tProjectCategory } from "../../ts/types";
 
-const useIcon = (value: tProjectCategory): ReactElement | null => {
+const getIcon = (value: tProjectCategory): ReactElement | null => {
 	if (value.toLowerCase().includes("html")) {
 		return <AiFillHtml5 />;
 	} else if (value.toLowerCase().includes("css")) {
@@ -68,7 +68,7 @@ const useIcon = (value: tProjectCategory): ReactElement | null => {
 	}
 };
 
-const useName = (value: tProjectCategory): string | null => {
+const getName = (value: tProjectCategory): string | null => {
 	if (value.toLowerCase().includes("html")) {
 		return "HTML";
 	} else if (value.toLowerCase().includes("css")) {
@@ -118,10 +118,10 @@ const useName = (value: tProjectCategory): string | null => {
 	}
 };
 
-export const useStack = (value: tProjectCategory) => {
+export const getStack = (value: tProjectCategory) => {
 	const { icon, name } = {
-		icon: useIcon(value),
-		name: useName(value),
+		icon: getIcon(value),
+		name: getName(value),
 	};
 	return { icon, name };
 };

@@ -1,10 +1,8 @@
 import styles from "./Footer.module.scss";
-// import { menu } from "../../../../data/menu";
 import Link from "next/link";
-import { footer as footerData } from "../../../../../data/footer";
-import getSocials from "../../../../../lib/getSocials";
 import { IoHomeSharp, IoMailOpenOutline } from "react-icons/io5";
 import { BsTelephoneFill } from "react-icons/bs";
+import getSocials from "../../../../lib/functions/getSocials";
 
 interface iFooter {
 	author: string;

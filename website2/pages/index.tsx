@@ -5,9 +5,9 @@ import HeroHome from "../src/components/Utilities/Hero/HeroHome/HeroHome";
 import Layout from "../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import ProjectsSection from "../src/components/Pages/HomePage/ProjectsSection/ProjectsSection";
-import { getStructuredDataOrganization } from "../lib/getStructuredData";
 import { homepage } from "./../content/pages/homepage";
 import { tLang, tProjectCategory } from "../src/ts/types";
+import { getStructuredDataOrganization } from "../src/lib/functions/getStructuredData";
 
 interface iPage {
 	articles: {

@@ -135,7 +135,7 @@
 			& > div {
 				padding: 0.35rem;
 				& > p {
-					@include fontLine(1.45, 1.5rem, 300);
+					@include fontLine(1.45, 1.25rem, 300);
 				}
 			}
 		}

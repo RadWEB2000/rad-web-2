@@ -5,10 +5,10 @@ import Layout from "../../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import path from "path";
 import { ArticleComponents } from "../../src/components/Pages/ArticlePage/ArticleComponents/ArticleComponents";
-import { getStructuredDataPerson } from "../../lib/getStructuredData";
 import { iJobCard } from "../../src/components/Utilities/Cards/JobCard/JobCard";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import { getStructuredDataPerson } from "../../src/lib/functions/getStructuredData";
 
 interface iPage {
 	data: any;

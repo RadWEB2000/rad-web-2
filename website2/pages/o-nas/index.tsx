@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import Mission from "../../src/components/Pages/AboutPage/Mission/Mission";
 import PersonsCards from "../../src/components/Pages/AboutPage/PersonsCards/PersonsCards";
 import { aboutpage } from "./../../content/pages/aboutpage";
-import { getStructuredDataWebsite } from "../../lib/getStructuredData";
+import { getStructuredDataWebsite } from "../../src/lib/functions/getStructuredData";
 
 interface iPage {
 	persons: {

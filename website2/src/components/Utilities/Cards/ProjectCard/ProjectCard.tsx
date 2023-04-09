@@ -4,7 +4,8 @@ import styles from "./ProjectCard.module.scss";
 import { getDate } from "./../../../../lib/functions/getDate";
 import { ReactElement } from "react";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import getStack from "./../../../../../lib/getStack";
+import { tProjectCategory } from "../../../../ts/types";
+import { getStack } from "../../../../lib/functions/getStack";
 
 interface iProjectCard {
 	category: string;
@@ -113,7 +114,7 @@ interface iProjectCard2 {
 	path: string;
 	title: string;
 	release: string | Date;
-	stack?: string[];
+	stack?: tProjectCategory[];
 }
 export const ProjectCard2 = ({
 	button,

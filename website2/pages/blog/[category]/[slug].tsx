@@ -3,13 +3,11 @@ import HeroArticle from "../../../src/components/Utilities/Hero/HeroArticle/Hero
 import Layout from "../../../src/components/Layout/Layout/Layout";
 import matter from "gray-matter";
 import path from "path";
-import readingTime from "reading-time";
 import { ArticleComponents } from "../../../src/components/Pages/ArticlePage/ArticleComponents/ArticleComponents";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
 const Page = ({ frontMatter, source }: { frontMatter: any; source: any }) => {
-	const readTime = readingTime(source);
 	return (
 		<Layout
 			hero={

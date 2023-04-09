@@ -1,5 +1,4 @@
 import Breadcrumb from "../../Breadcrumb/Breadcrumb";
-import getStack from "../../../../../lib/getStack";
 import Image from "next/image";
 import RegularButton from "./../../Buttons/RegularButton/RegularButton";
 import styles from "./HeroArticle.module.scss";
@@ -12,6 +11,7 @@ import {
 	LinkedinShareButton,
 	TwitterShareButton,
 } from "react-share";
+import { getStack } from "../../../../lib/functions/getStack";
 
 interface iHeroArticle {
 	breadcrumbs: {
