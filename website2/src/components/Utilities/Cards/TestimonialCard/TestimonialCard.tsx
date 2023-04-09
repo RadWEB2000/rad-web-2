@@ -1,9 +1,9 @@
-import getDate from "../../../../../lib/getDate";
 import Image from "next/image";
 import styles from "./TestimonialCard.module.scss";
 import { tFullname } from "../../../../ts/types";
 import { motion } from "framer-motion";
 import { ReactElement } from "react";
+import { getDate } from "../../../../lib/functions/getDate";
 
 interface iTestimonialCard {
 	company: string;
@@ -23,7 +23,7 @@ const TestimonialCard = ({
 	const { day, month, year } = getDate({
 		date: date,
 		lang: "pl",
-		variant: "shortname",
+		variant: "short",
 	});
 	return (
 		<motion.li
