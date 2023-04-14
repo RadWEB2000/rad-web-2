@@ -1,0 +1,23 @@
+@import "../../../../styles/Variables.module.scss";
+
+.button {
+	border-radius: 0.45rem;
+	color: #fff;
+	margin: 10rem auto;
+	gap: 1rem;
+	width: 15rem;
+	height: 4.25rem;
+	&,
+	& > i {
+		@include flex(center, center);
+	}
+	& > i {
+		aspect-ratio: 1/1;
+		font-size: 2.24rem;
+		width: 2.6rem;
+	}
+	& > span {
+		font-size: 1.55rem;
+		font-weight: 600;
+	}
+}
