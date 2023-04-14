@@ -1,0 +1,26 @@
+@import "./Variables.module.scss";
+
+.wmde-markdown-var.w-md-editor.w-md-editor-show-live {
+	margin: auto;
+	border-radius: 0;
+	height: 100% !important;
+	padding: 0 0 1rem;
+	.w-md-editor-content {
+		.w-md-editor-area.w-md-editor-input {
+			background: white !important;
+			border-radius: 0;
+			color: black;
+			.w-md-editor-text-input {
+				background: rgba(0, 0, 255, 0.124);
+			}
+		}
+		.w-md-editor-preview {
+			background: white !important;
+			border-radius: 0;
+			& > * {
+				background: white !important;
+				color: black;
+			}
+		}
+	}
+}
