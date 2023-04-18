@@ -1,0 +1,66 @@
+@import "../../../../styles/Variables.module.scss";
+
+.wrapper {
+	@include flex(flex-start, center);
+	cursor: text;
+	flex-flow: column-reverse;
+	position: relative;
+	max-width: 95vw;
+	width: 75rem;
+	&,
+	& > input,
+	& > input + label {
+		border: 0;
+		transition: 0.2s;
+	}
+
+	& > input,
+	& > input + label {
+		@include font(3.5rem);
+	}
+
+	& > input {
+		background-color: hsla(0, 0%, 0%, 0);
+		border-bottom: 1px solid hsl(0, 0%, 59%);
+		color: hsl(0, 0%, 0%);
+		padding: 5px 1px;
+		width: 100%;
+		&::-webkit-input-placeholder {
+			opacity: 0;
+		}
+		&::-moz-placeholder {
+			color: transparent !important;
+		}
+
+		& + label {
+			color: #000;
+			cursor: text;
+			pointer-events: none;
+			transform: translate(0, 120%) scale(1);
+			transform-origin: left;
+			transition: 0.2s linear;
+			-webkit-user-select: none;
+		}
+
+		&:not(:placeholder-shown) + label,
+		&:focus + label {
+			color: #787878;
+			transform: translate(0, 20%) scale(0.8);
+		}
+	}
+
+	&::after {
+		bottom: 0;
+		left: 0;
+		height: 2px;
+		transform: scaleX(0);
+		transform-origin: center;
+		transition: 0.3s;
+		width: 100%;
+	}
+
+	&:focus-within::after {
+		background-color: hsla(0, 0%, 0%, 0) !important;
+		transform: scaleX(1);
+	}
+}

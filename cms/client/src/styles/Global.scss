@@ -39,6 +39,11 @@ textarea {
 	outline: none;
 }
 
+input,
+textarea {
+	font-family: inherit;
+}
+
 li,
 ol,
 ul {

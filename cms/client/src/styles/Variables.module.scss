@@ -4,6 +4,11 @@
 	justify-content: $justify;
 }
 
+@mixin font($size, $weight: 400) {
+	font-size: $size;
+	font-weight: $weight;
+}
+
 @mixin size($height: 100%, $width: 100%) {
 	height: $height;
 	width: $width;

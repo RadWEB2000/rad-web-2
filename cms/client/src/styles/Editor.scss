@@ -1,37 +1,20 @@
 @import "./Variables.module.scss";
 
-// .w-md-editor {
-// 	.w-md-editor-toolbar {
-// 		@include flex(center, space-between);
-// 		padding: 0.5rem 1rem;
-// 		& > ul {
-// 			@include flex(center, flex-start);
-// 			gap: 0.15rem;
-// 			& > li {
-// 				aspect-ratio: 1/1;
-// 				@include flex(center, center);
-// 				@include size(3.25rem, 3.25rem);
-// 				& > button {
-// 					@include flex(center, center);
-// 					padding: 0.5rem;
-// 					&,
-// 					& > svg {
-// 						@include size;
-// 					}
-// 					& > svg {
-// 						flex-shrink: 0;
-// 					}
-// 				}
-// 			}
-// 		}
-// 		// & > ul:first-of-type {
-// 		// 	& > li:nth-of-type(5) {
-// 		// 		display: none;
-// 		// 	}
-// 		// }
-// 	}
-// }
-
-// .w-md-editor-bar {
-// 	// display: none;
-// }
+.w-md-editor {
+	.w-md-editor-toolbar {
+		& > ul {
+			& > li {
+				& > button {
+					@include flex(center, center);
+					@include size(2.75rem, 2.75rem);
+					cursor: pointer;
+					padding: 0.5rem;
+					& > svg {
+						@include size;
+						flex-shrink: 0;
+					}
+				}
+			}
+		}
+	}
+}
