@@ -1,4 +1,4 @@
-export interface iAccountsTable {
+export interface iUser {
 	email: string;
 	firstname: string;
 	id: number;

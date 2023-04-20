@@ -1,29 +1,28 @@
 import styles from "./LoginField.module.scss";
+import { UseFormRegister } from "react-hook-form";
 const { wrapper } = styles;
+
 interface iLoginField {
-	id: string;
 	label: string;
 	name: string;
-	placeholder: string;
-	required?: boolean;
-	type: "password" | "text";
+	placeholder?: string;
+	register: UseFormRegister<any>;
+	type?: string;
 }
 export const LoginField = ({
-	id,
 	label,
 	name,
-	placeholder,
-	required,
-	type,
+	placeholder = " ",
+	register,
+	type = "text",
 }: iLoginField) => {
 	return (
 		<div className={wrapper}>
 			<input
-				id={id}
-				name={name}
+				id={name}
 				placeholder={placeholder}
-				required={required}
 				type={type}
+				{...register(name)}
 			/>
 			<label htmlFor={name}>{label}</label>
 		</div>
