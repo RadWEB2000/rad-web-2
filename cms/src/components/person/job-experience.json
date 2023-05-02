@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_person_job_experiences",
+  "info": {
+    "displayName": "JobExperience"
+  },
+  "options": {},
+  "attributes": {
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "workplace": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "start": {
+      "type": "date",
+      "required": true
+    },
+    "end": {
+      "type": "date"
+    },
+    "isCurrentWork": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "Markdown",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "release": {
+      "type": "date",
+      "required": true
+    },
+    "published": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "lang": {
+      "type": "enumeration",
+      "enum": [
+        "polish",
+        "english",
+        "deutch",
+        "spanish"
+      ]
+    },
+    "author": {
+      "type": "enumeration",
+      "enum": [
+        "radoslaw-adamczyk",
+        "klaudia-paluch",
+        "filip-bukowiecki"
+      ],
+      "default": "radoslaw-adamczyk"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_social_media_people",
+  "info": {
+    "displayName": "SocialMediaPerson"
+  },
+  "options": {},
+  "attributes": {
+    "source": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
