@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_utilities_languages",
+  "info": {
+    "displayName": "Language"
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "polski",
+        "english",
+        "deutsch",
+        "espanol",
+        "francais",
+        "dansk",
+        "portugues"
+      ]
+    }
+  }
+}

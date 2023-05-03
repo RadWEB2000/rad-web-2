@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_utilities_authors",
+  "info": {
+    "displayName": "Author"
+  },
+  "options": {},
+  "attributes": {
+    "author": {
+      "type": "enumeration",
+      "enum": [
+        "radoslaw-adamczyk",
+        "filip-bukowiecki",
+        "klaudia-paluch"
+      ]
+    }
+  }
+}

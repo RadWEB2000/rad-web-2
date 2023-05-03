@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tag": {
+      "type": "customField",
+      "options": [
+        "react",
+        "html",
+        "seo",
+        "scss",
+        "css"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "customField",
+      "options": {
+        "pattern": "title"
+      },
+      "customField": "plugin::slug.slug"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "released": {
+      "type": "date",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "programming",
+        "marketing",
+        "seo",
+        "copywriting",
+        "videomaking"
+      ]
+    },
+    "readingTime": {
+      "type": "integer",
+      "required": true,
+      "default": 5
+    },
+    "lang": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utilities.language",
+      "required": true
+    },
+    "author": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utilities.author"
+    },
+    "editor": {
+      "type": "customField",
+      "options": {
+        "output": "Markdown",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "excerpt": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

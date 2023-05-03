@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_person_social_medias",
+  "info": {
+    "displayName": "SocialMedia",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

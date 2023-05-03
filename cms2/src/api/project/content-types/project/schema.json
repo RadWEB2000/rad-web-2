@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "lang": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utilities.language"
+    },
+    "stack": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utilities.stack"
+    },
+    "title": {
+      "type": "string"
+    },
+    "release": {
+      "type": "date",
+      "required": true
+    },
+    "reading": {
+      "type": "integer",
+      "default": 3,
+      "required": true
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "editor": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "author": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utilities.author"
+    },
+    "slug": {
+      "type": "customField",
+      "options": {
+        "pattern": "title"
+      },
+      "customField": "plugin::slug.slug"
+    }
+  }
+}

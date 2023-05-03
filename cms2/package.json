@@ -1,5 +1,5 @@
 {
-  "name": "cms",
+  "name": "cms-2",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -13,22 +13,25 @@
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^2.0.4",
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
+    "@exfabrica/strapi-plugin-awesome-help": "^1.0.8",
+    "@strapi/plugin-graphql": "^4.10.1",
     "@strapi/plugin-i18n": "4.10.1",
     "@strapi/plugin-seo": "^1.8.0",
     "@strapi/plugin-users-permissions": "4.10.1",
     "@strapi/strapi": "4.10.1",
     "better-sqlite3": "8.0.1",
     "custom-slug": "^2.1.1",
-    "strapi-plugin-menus": "^1.4.1",
+    "strapi-location-field-plugin": "^1.1.4",
+    "strapi-plugin-comments": "^2.2.10",
     "strapi-plugin-multi-select": "^1.1.0",
-    "strapi-plugin-slugify": "^2.3.2",
-    "strapi-plugin-vercel-deploy": "^1.4.0"
+    "strapi-plugin-navigation": "^2.2.8",
+    "strapi-plugin-slugify": "^2.3.2"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "64e0694e-03c9-40b0-8925-53c40b52054c"
+    "uuid": "9d936fbd-4ab8-4c2e-993f-fd66c04277bc"
   },
   "engines": {
     "node": ">=14.19.1 <=18.x.x",
