@@ -7,6 +7,9 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
+    "admin:dev": "cd admin && npm run dev",
+    "admin:build": "cd admin && npm run build",
+    "admin:start": "cd admin && npm run start",
     "strapi": "strapi"
   },
   "devDependencies": {},
