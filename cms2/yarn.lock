@@ -1678,9 +1678,9 @@
     ckeditor5 "^36.0.0"
 
 "@codemirror/autocomplete@^6.0.0":
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/@codemirror/autocomplete/-/autocomplete-6.6.0.tgz#9c0ea57792b405a391599bd80acae19b8c4c6ff5"
-  integrity sha512-SjbgWSwNKbyQOiVXtG8DXG2z29zTbmzpGccxMqakVo+vqK8fx3Ai0Ee7is3JqX6dxJOoK0GfP3LfeUK53Ltv7w==
+  version "6.6.1"
+  resolved "https://registry.yarnpkg.com/@codemirror/autocomplete/-/autocomplete-6.6.1.tgz#19e3541f8d17ceeb7e96fcc7506e8da9346b14af"
+  integrity sha512-RpsvnYOopnyNbZg487qoRD5bKg63KMMUVP5d8MQ4Luc7Mb6JBWTORovLi6cTvWaKlbmLW8Zd2dAJkIdrhBsXug==
   dependencies:
     "@codemirror/language" "^6.0.0"
     "@codemirror/state" "^6.0.0"
@@ -1751,9 +1751,9 @@
     "@lezer/highlight" "^1.0.0"
 
 "@codemirror/view@^6.0.0", "@codemirror/view@^6.6.0":
-  version "6.10.1"
-  resolved "https://registry.yarnpkg.com/@codemirror/view/-/view-6.10.1.tgz#b840a04db8941084ca88af1552c4678cc2980f37"
-  integrity sha512-Q3FAmkajqcoqBUlfrlD6p58lnuffYxS/6ImIrsLd4SZOZItCBysqAXvQ/OqWxMCyVuDoh5KaNErl9/FDlWM5IA==
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/@codemirror/view/-/view-6.11.0.tgz#7840cec0b983c3ac36348fd005ce405a8e788e0c"
+  integrity sha512-PRpPRkqMkAKKxEuiUBxapE0YR+wqs9At92ujbJo93PwTZ0jEJDzx9wahrDcXEhQ43Pe0RK9DdZMLWrt+QN80DA==
   dependencies:
     "@codemirror/state" "^6.1.4"
     style-mod "^4.0.0"
@@ -2068,6 +2068,15 @@
     "@formatjs/icu-skeleton-parser" "1.3.18"
     tslib "^2.4.0"
 
+"@formatjs/icu-messageformat-parser@2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-2.3.1.tgz#953080ea5c053bc73bdf55d0a524a3c3c133ae6b"
+  integrity sha512-knF2AkAKN4Upv4oIiKY4Wd/dLH68TNMPgV/tJMu/T6FP9aQwbv8fpj7U3lkyniPaNVxvia56Gxax8MKOjtxLSQ==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.14.3"
+    "@formatjs/icu-skeleton-parser" "1.3.18"
+    tslib "^2.4.0"
+
 "@formatjs/icu-messageformat-parser@2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-2.4.0.tgz#e165f3594c68416ce15f63793768251de2a85f88"
@@ -2102,6 +2111,15 @@
     "@formatjs/intl-localematcher" "0.2.32"
     tslib "^2.4.0"
 
+"@formatjs/intl-displaynames@6.3.1":
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-displaynames/-/intl-displaynames-6.3.1.tgz#6dcea7cb801460e2a8fa63eb38c54aa1b24f92c0"
+  integrity sha512-TlxguMDUbnFrJ4NA8fSyqXC62M7czvlRJ5mrJgtB91JVA+QPjjNdcRm1qPIC/DcU/pGUDcEzThn/x5A+jp15gg==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.14.3"
+    "@formatjs/intl-localematcher" "0.2.32"
+    tslib "^2.4.0"
+
 "@formatjs/intl-displaynames@6.3.2":
   version "6.3.2"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-displaynames/-/intl-displaynames-6.3.2.tgz#be169393a132eed9ca9c10ccb9d22ab150e24c90"
@@ -2115,6 +2133,15 @@
   version "7.1.9"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-listformat/-/intl-listformat-7.1.9.tgz#0c2ce67b610054f215dd2635a6da7da308cfbe3d"
   integrity sha512-5YikxwRqRXTVWVujhswDOTCq6gs+m9IcNbNZLa6FLtyBStAjEsuE2vAU+lPsbz9ZTST57D5fodjIh2JXT6sMWQ==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.14.3"
+    "@formatjs/intl-localematcher" "0.2.32"
+    tslib "^2.4.0"
+
+"@formatjs/intl-listformat@7.2.1":
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-listformat/-/intl-listformat-7.2.1.tgz#874eddc7d53ba2e3fd911bf30efc459fc99f08db"
+  integrity sha512-fRJFWLrGa7d25I4JSxNjKX29oXGcIXx8fJjgURnvs2C3ijS4gurUgFrUwLbv/2KfPfyJ5g567pz2INelNJZBdw==
   dependencies:
     "@formatjs/ecma402-abstract" "1.14.3"
     "@formatjs/intl-localematcher" "0.2.32"
@@ -2147,6 +2174,19 @@
     "@formatjs/intl-displaynames" "6.2.6"
     "@formatjs/intl-listformat" "7.1.9"
     intl-messageformat "10.3.3"
+    tslib "^2.4.0"
+
+"@formatjs/intl@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl/-/intl-2.7.1.tgz#f7e052ff09e9fe019ad83d4139af0de40084a2ae"
+  integrity sha512-se6vxidsN3PCmzqTsDd3YDT4IX9ZySPy39LYhF7x2ssNvlGMOuW3umkrIhKkXB7ZskqsJGY53LVCdiHsSwhGng==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.14.3"
+    "@formatjs/fast-memoize" "2.0.1"
+    "@formatjs/icu-messageformat-parser" "2.3.1"
+    "@formatjs/intl-displaynames" "6.3.1"
+    "@formatjs/intl-listformat" "7.2.1"
+    intl-messageformat "10.3.4"
     tslib "^2.4.0"
 
 "@formatjs/intl@2.7.2":
@@ -2817,6 +2857,22 @@
     react-intl "6.3.2"
     react-select "5.7.0"
 
+"@strapi/helper-plugin@4.10.2":
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.10.2.tgz#3e5553b1c6f48b7cb1af6e4ebdfa446e3fc7c824"
+  integrity sha512-8FMfYIFdHIlUPbOhoKL+N7gI5UZxy2kRVIZVRXYjoYMZ2Zkxn7J0qmjJD59IAblO8DI5zAr7p4D/BQfWLi8KqA==
+  dependencies:
+    axios "1.3.4"
+    date-fns "2.29.3"
+    formik "^2.2.6"
+    immer "9.0.19"
+    lodash "4.17.21"
+    prop-types "^15.7.2"
+    qs "6.11.1"
+    react-helmet "^6.1.0"
+    react-intl "6.4.1"
+    react-select "5.7.0"
+
 "@strapi/icons@1.6.6":
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/@strapi/icons/-/icons-1.6.6.tgz#e5259cdb6fc2425e926dfb0afc6e7c72748f1bab"
@@ -2889,16 +2945,16 @@
     yup "^0.32.9"
 
 "@strapi/plugin-graphql@^4.10.1", "@strapi/plugin-graphql@^4.9.2":
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-4.10.1.tgz#695fc48f2509504ee206cf272eb717b1ff37d927"
-  integrity sha512-nu9qDxHR+YHq5RYsh9YxpR74bVGXL63hMt0sslu+5SpZsiwJu+72NyhvBp2s7Pb09iRVD63iQ9PAiUSJb5dQFg==
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-4.10.2.tgz#5b4eec601f77af64a53340af5ef6be1a5196a57c"
+  integrity sha512-G2nM2URXgbXHfDcNku22sJHI9DTTZu66zAHMQUthvUly57y6bQRWBI55Xp4MtIgKDaZklyQ1pKsxasiMhBU3/g==
   dependencies:
     "@graphql-tools/schema" "8.5.1"
     "@graphql-tools/utils" "^8.12.0"
     "@strapi/design-system" "1.6.6"
-    "@strapi/helper-plugin" "4.10.1"
+    "@strapi/helper-plugin" "4.10.2"
     "@strapi/icons" "1.6.6"
-    "@strapi/utils" "4.10.1"
+    "@strapi/utils" "4.10.2"
     apollo-server-core "3.11.1"
     apollo-server-koa "3.10.0"
     glob "^7.1.7"
@@ -3095,10 +3151,22 @@
     prettier "2.8.4"
     typescript "5.0.4"
 
-"@strapi/utils@4.10.1", "@strapi/utils@^4.9.2":
+"@strapi/utils@4.10.1":
   version "4.10.1"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.10.1.tgz#31efa29c0c6c3b9c2c5f05e64c9e059bb389d655"
   integrity sha512-+t2dplbcmGpCJccTtVN3XsgDp/9SWSKUmKKDWkrGmddZkEwDH6PU9fN+9KGL09RMJyF3kjwJx6PJfXipyn/Vkg==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "2.29.3"
+    http-errors "1.8.1"
+    lodash "4.17.21"
+    p-map "4.0.0"
+    yup "0.32.9"
+
+"@strapi/utils@4.10.2", "@strapi/utils@^4.9.2":
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.10.2.tgz#cf804424f037de71a6467c4125181044396f8f5b"
+  integrity sha512-vf3fXtOK26hDjQq8+fv/PpvEjeVBUaD9cI8k7j8aSz3A1DY8BYL0KDBX/Gm9T55b0Lzxwz39zURA1+pQquxsFg==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.29.3"
@@ -3449,9 +3517,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@16 || 17 || 18":
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.0.tgz#15cda145354accfc09a18d2f2305f9fc099ada21"
-  integrity sha512-0FLj93y5USLHdnhIhABk83rm8XEGA7kH3cr+YUlvxoUGp1xNt/DINUMvqPxLyOQMzLmZe8i4RTHbvb8MC7NmrA==
+  version "18.2.1"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.1.tgz#37f7d4be4a2b4f61d618e4ca12681acab9e58c20"
+  integrity sha512-KbNvY50AOVy1HBHbQc+iPK44HMaz6CRXuUFsu/L8yCP+nsuE1c1EQSdyaHhsPiI7gJQ3c3VRp+YuCL/5hzvcRw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -7169,6 +7237,16 @@ intl-messageformat@10.3.3:
     "@formatjs/icu-messageformat-parser" "2.3.0"
     tslib "^2.4.0"
 
+intl-messageformat@10.3.4:
+  version "10.3.4"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-10.3.4.tgz#20f064c28b46fa6d352a4c4ba5e9bfc597af3eba"
+  integrity sha512-/FxUIrlbPtuykSNX85CB5sp2FjLVeTmdD7TfRkVFPft2n4FgcSlAcilFytYiFAEmPHc+0PvpLCIPXeaGFzIvOg==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.14.3"
+    "@formatjs/fast-memoize" "2.0.1"
+    "@formatjs/icu-messageformat-parser" "2.3.1"
+    tslib "^2.4.0"
+
 intl-messageformat@10.3.5:
   version "10.3.5"
   resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-10.3.5.tgz#f55684fc663e62616ad59d3a504ea0cac3f267b7"
@@ -9574,6 +9652,22 @@ react-intl@6.3.2:
     intl-messageformat "10.3.3"
     tslib "^2.4.0"
 
+react-intl@6.4.1:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-6.4.1.tgz#01e4bd5497cb93d87146e966d8eda25851d4d9b6"
+  integrity sha512-/aT5595AEMZ+Pjmt8W2R5/ZkYJmyyd6jTzHzqhJ1LnfeG36+N5huBtykxYhHqLc1BrIRQ1fTX1orYC0Ej5ojtg==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.14.3"
+    "@formatjs/icu-messageformat-parser" "2.3.1"
+    "@formatjs/intl" "2.7.1"
+    "@formatjs/intl-displaynames" "6.3.1"
+    "@formatjs/intl-listformat" "7.2.1"
+    "@types/hoist-non-react-statics" "^3.3.1"
+    "@types/react" "16 || 17 || 18"
+    hoist-non-react-statics "^3.3.2"
+    intl-messageformat "10.3.4"
+    tslib "^2.4.0"
+
 react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -11577,9 +11671,9 @@ webpack-sources@^3.2.3:
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
 
 webpack@^5.76.0:
-  version "5.81.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.81.0.tgz#27a2e8466c8b4820d800a8d90f06ef98294f9956"
-  integrity sha512-AAjaJ9S4hYCVODKLQTgG5p5e11hiMawBwV2v8MYLE0C/6UAGLuAF4n1qa9GOwdxnicaP+5k6M5HrLmD4+gIB8Q==
+  version "5.82.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.82.0.tgz#3c0d074dec79401db026b4ba0fb23d6333f88e7d"
+  integrity sha512-iGNA2fHhnDcV1bONdUu554eZx+XeldsaeQ8T67H6KKHl2nUSwX8Zm7cmzOA46ox/X1ARxf7Bjv8wQ/HsB5fxBg==
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^1.0.0"
