@@ -2005,11 +2005,6 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz#c5a1a4bfe1b57f0c3e61b29883525c6da3e5c091"
   integrity sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==
 
-"@exfabrica/strapi-plugin-awesome-help@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@exfabrica/strapi-plugin-awesome-help/-/strapi-plugin-awesome-help-1.0.8.tgz#41734c31125270e9aae4d285a5c043b1b5c94657"
-  integrity sha512-wfT1vieSEbfFUxJQG+JWUaXzc7LxG23ASdhGwO2soxyu56Fdv9E/kZYw4wl6A3WdmLsAQ8ICZrNI7AmSxc04eg==
-
 "@fingerprintjs/fingerprintjs@3.3.6":
   version "3.3.6"
   resolved "https://registry.yarnpkg.com/@fingerprintjs/fingerprintjs/-/fingerprintjs-3.3.6.tgz#4c3f1726dc0cb10b915cfce78d9471b38cd809bd"
