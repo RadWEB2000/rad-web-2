@@ -95,16 +95,14 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({
-	locale,
 	params,
 }: {
-	locale: string;
 	params: {
 		category: string;
 		slug: string;
 	};
 }) => {
-	const articleDirectory = `${process.cwd()}/content/${locale}/articles/${
+	const articleDirectory = `${process.cwd()}/content/pl/articles/${
 		params.category
 	}/${params.slug}.mdx`;
 

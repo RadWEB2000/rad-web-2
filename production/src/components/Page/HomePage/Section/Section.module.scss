@@ -136,7 +136,6 @@
 	& > article {
 		& > header {
 			& > h2 {
-				@include glitchHeadingEffect();
 				@include font(7rem, 700);
 				color: $white;
 				margin-bottom: 1rem;
