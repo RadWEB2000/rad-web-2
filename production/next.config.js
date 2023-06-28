@@ -8,10 +8,6 @@ const withMDX = require("@next/mdx")({
 });
 const nextConfig = {
 	reactStrictMode: true,
-	i18n: {
-		defaultLocale: "pl",
-		locales: ["pl", "en", "es"],
-	},
 	images: {
 		domains: [
 			"images.unsplash.com",
