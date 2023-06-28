@@ -94,14 +94,18 @@ export const getStaticPaths = async () => {
 		`${process.cwd()}/content/pl/articles/systemy-operacyjne`,
 	];
 
-	const paths: any[] = [];
+	const paths: any = [];
 
 	articlesDirectories.forEach((directory) => {
 		const filenames = fs.readdirSync(directory);
 
 		filenames.forEach((filename) => {
+			const category = directory.replace(
+				`${process.cwd()}/content/pl/articles/`,
+				""
+			);
 			paths.push({
-				params: { slug: filename.replace(".mdx", "") },
+				params: { category, slug: filename.replace(".mdx", "") },
 			});
 		});
 	});
