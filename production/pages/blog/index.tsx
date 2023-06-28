@@ -73,8 +73,8 @@ const Page = ({ articles }: iPage) => {
 
 export default Page;
 
-export const getStaticProps = ({ locale }: { locale: string }) => {
-	const articlesDirectory: string = `${process.cwd()}/content/${locale}/articles`;
+export const getStaticProps = () => {
+	const articlesDirectory: string = `${process.cwd()}/content/pl/articles`;
 	const getArticlesSubdirectories = () => {
 		const subdirectories = fs
 			.readdirSync(articlesDirectory, { withFileTypes: true })
@@ -100,9 +100,7 @@ export const getStaticProps = ({ locale }: { locale: string }) => {
 					release: data.publishedTime,
 					title: data.title,
 					slug: data.slug,
-					uri: `${locale !== "pl" ? `/${locale}` : ""}/blog/${data.category}/${
-						data.slug
-					}`,
+					uri: `/blog/${data.category}/${data.slug}`,
 				};
 			});
 		});

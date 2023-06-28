@@ -95,9 +95,9 @@ const Page = ({ data }: iPage) => {
 
 export default Page;
 
-export const getStaticProps = ({ locale }: { locale: string }) => {
+export const getStaticProps = () => {
 	const articles = () => {
-		const directory = `${process.cwd()}/content/${locale}/articles`;
+		const directory = `${process.cwd()}/content/pl/articles`;
 		const getSubdirectories = () => {
 			const subdirectories = fs
 				.readdirSync(directory, { withFileTypes: true })
@@ -121,9 +121,7 @@ export const getStaticProps = ({ locale }: { locale: string }) => {
 						image: data.image,
 						release: data.publishedTime,
 						title: data.title,
-						uri: `${locale !== "pl" ? `/${locale}` : ""}/blog/${
-							data.category
-						}/${data.slug}`,
+						uri: `/blog/${data.category}/${data.slug}`,
 					};
 				});
 			});
@@ -135,7 +133,7 @@ export const getStaticProps = ({ locale }: { locale: string }) => {
 	};
 
 	const projects = () => {
-		const directory = `${process.cwd()}/content/${locale}/projects`;
+		const directory = `${process.cwd()}/content/pl/projects`;
 		const files = fs
 			.readdirSync(directory)
 			.filter((file) => file.endsWith(".mdx"));
@@ -155,7 +153,7 @@ export const getStaticProps = ({ locale }: { locale: string }) => {
 	};
 
 	const team = () => {
-		const directory = `${process.cwd()}/content/${locale}/persons`;
+		const directory = `${process.cwd()}/content/pl/persons`;
 		const files = fs
 			.readdirSync(directory)
 			.filter((file) => file.endsWith(".mdx"));

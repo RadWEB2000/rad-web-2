@@ -71,14 +71,8 @@ const Page = ({ articles }: iPage) => {
 
 export default Page;
 
-export const getStaticProps = async ({
-	locale,
-	locales,
-}: {
-	locale: string;
-	locales: string[];
-}) => {
-	const articlesDirectory: string = `${process.cwd()}/content/${locale}/projects`;
+export const getStaticProps = async () => {
+	const articlesDirectory: string = `${process.cwd()}/content/pl/projects`;
 	const articlesFiles = fs
 		.readdirSync(articlesDirectory)
 		.filter((file) => file.endsWith(".mdx"));

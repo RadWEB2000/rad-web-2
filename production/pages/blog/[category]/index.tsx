@@ -105,15 +105,13 @@ export const getStaticPaths = () => {
 };
 
 export const getStaticProps = async ({
-	locale,
 	params,
 }: {
-	locale: string;
 	params: {
 		category: string;
 	};
 }) => {
-	const pageDirectory = `${process.cwd()}/content/${locale}/pages/blog/${
+	const pageDirectory = `${process.cwd()}/content/pl/pages/blog/${
 		params.category
 	}.mdx`;
 
@@ -142,9 +140,7 @@ export const getStaticProps = async ({
 			release: data.publishedTime,
 			category: data.category,
 			slug: data.slug,
-			uri: `${locale !== "pl" ? `/${locale}` : ""}/blog/${data.category}/${
-				data.slug
-			}`,
+			uri: `/blog/${data.category}/${data.slug}`,
 			excerpt: data.excerpt,
 		};
 	});

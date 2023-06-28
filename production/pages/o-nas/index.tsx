@@ -47,9 +47,9 @@ const Page = ({ data }: iPage) => {
 
 export default Page;
 
-export const getStaticProps = ({ locale }: { locale: string }) => {
+export const getStaticProps = () => {
 	const team = () => {
-		const directory = `${process.cwd()}/content/${locale}/persons`;
+		const directory = `${process.cwd()}/content/pl/persons`;
 		const files = fs
 			.readdirSync(directory)
 			.filter((file) => file.endsWith(".mdx"));
