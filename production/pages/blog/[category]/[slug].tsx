@@ -88,8 +88,26 @@ const Page = ({ data, source }: iPage) => {
 export default Page;
 
 export const getStaticPaths = async () => {
+	const articlesDirectories = [
+		`${process.cwd()}/content/pl/articles/programowanie`,
+		`${process.cwd()}/content/pl/articles/pozycjonowanie`,
+		`${process.cwd()}/content/pl/articles/systemy-operacyjne`,
+	];
+
+	const paths: any[] = [];
+
+	articlesDirectories.forEach((directory) => {
+		const filenames = fs.readdirSync(directory);
+
+		filenames.forEach((filename) => {
+			paths.push({
+				params: { slug: filename.replace(".mdx", "") },
+			});
+		});
+	});
+
 	return {
-		paths: [],
+		paths,
 		fallback: false,
 	};
 };

@@ -1,12 +1,12 @@
-import Layout from "@default/src/components/Layout/Layout";
-import { HeroPerson } from "@default/src/components/Utils/Hero/HeroPerson/HeroPerson";
-import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
 import fs from "fs";
-import { PersonPageWrapper } from "@default/src/components/Utils/Wrappers/PersonPageWrapper/PersonPageWrapper";
-import { MDXRemote } from "next-mdx-remote";
+import Layout from "@default/src/components/Layout/Layout";
+import matter from "gray-matter";
 import { ArticleComponents } from "@default/src/components/Page/ArticlePage/ArticleComponents/ArticleComponents";
+import { HeroPerson } from "@default/src/components/Utils/Hero/HeroPerson/HeroPerson";
+import { MDXRemote } from "next-mdx-remote";
+import { PersonPageWrapper } from "@default/src/components/Utils/Wrappers/PersonPageWrapper/PersonPageWrapper";
 import { Seo } from "@default/src/components/Layout/Seo/Seo";
+import { serialize } from "next-mdx-remote/serialize";
 
 interface iPage {
 	data: {
@@ -94,8 +94,15 @@ const Page = ({ data, source }: iPage) => {
 export default Page;
 
 export const getStaticPaths = async () => {
+	const personsDirectory = `${process.cwd()}/content/pl/persons`;
+	const filenames = fs.readdirSync(personsDirectory);
+
+	const paths = filenames.map((filename) => ({
+		params: { slug: filename.replace(".mdx", "") },
+	}));
+
 	return {
-		paths: [],
+		paths,
 		fallback: false,
 	};
 };
@@ -120,8 +127,6 @@ export const getStaticProps = async ({
 		},
 		scope: data,
 	});
-
-	console.log(data);
 
 	return {
 		props: {
