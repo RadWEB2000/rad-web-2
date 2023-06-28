@@ -97,24 +97,18 @@ const Page = ({ articles, data, source }: iPage) => {
 
 export default Page;
 
-export const getStaticPaths = async () => {
-	const articlesDirectories = [
-		`${process.cwd()}/content/pl/articles/programowanie`,
-		`${process.cwd()}/content/pl/articles/pozycjonowanie`,
-		`${process.cwd()}/content/pl/articles/systemy-operacyjne`,
-	];
+export const getStaticPaths = async ({ context }: { context: any }) => {
+	const { category } = context;
 
-	const paths: any[] = [];
+	const articlesDirectory = `${process.cwd()}/content/pl/articles/${category}`;
+	const filenames = fs.readdirSync(articlesDirectory);
 
-	articlesDirectories.forEach((directory) => {
-		const filenames = fs.readdirSync(directory);
-
-		filenames.forEach((filename) => {
-			paths.push({
-				params: { slug: filename.replace(".mdx", "") },
-			});
-		});
-	});
+	const paths = filenames.map((filename) => ({
+		params: {
+			category,
+			slug: filename.replace(".mdx", ""),
+		},
+	}));
 
 	return {
 		paths,

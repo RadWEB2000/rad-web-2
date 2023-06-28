@@ -71,20 +71,6 @@ const Page = ({ articles }: iPage) => {
 
 export default Page;
 
-export const getStaticPaths = async () => {
-	const personsDirectory = `${process.cwd()}/content/pl/projects`;
-	const filenames = fs.readdirSync(personsDirectory);
-
-	const paths = filenames.map((filename) => ({
-		params: { slug: filename.replace(".mdx", "") },
-	}));
-
-	return {
-		paths,
-		fallback: false,
-	};
-};
-
 export const getStaticProps = async () => {
 	const articlesDirectory: string = `${process.cwd()}/content/pl/projects`;
 	const articlesFiles = fs
