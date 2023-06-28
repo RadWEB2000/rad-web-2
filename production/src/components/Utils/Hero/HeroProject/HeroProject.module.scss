@@ -1,0 +1,92 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	& > .details {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		margin: 2rem auto 1rem;
+		min-height: 70rem;
+		max-width: 95%;
+		width: 170rem;
+		& > .title,
+		& > .website {
+			align-items: center;
+			display: flex;
+			padding: 0 2rem;
+		}
+		& > .title {
+			justify-content: flex-start;
+			grid-column: 1/-1;
+			grid-row: 1;
+			text-align: start;
+			& > h1 {
+				@include font(7rem, 900);
+				@include mainGlitchEffect();
+				margin: 2rem 0;
+			}
+		}
+		& > .website {
+			justify-content: flex-end;
+			grid-column: 1/-1;
+			grid-row: 2;
+			& > a {
+				@include flex(center, center);
+				border-radius: 5rem;
+				flex-flow: row nowrap;
+				gap: 1rem;
+				height: 7rem;
+				min-width: 40rem;
+				background-color: $jet;
+				transition: 0.25s ease-in-out background-color;
+				& > span {
+					@include font(2rem, 600);
+					text-transform: uppercase;
+				}
+				& > i {
+					@include flex(center, center);
+					font-size: 3rem;
+				}
+				&:focus,
+				&:focus-within,
+				&:hover {
+					background-color: $cardinal;
+				}
+			}
+		}
+		& > .excerpt {
+			grid-column: 1/-1;
+			grid-row: 3;
+			& > p {
+				@include font(2.2rem, 600);
+				color: $white;
+				line-height: 2.3;
+				padding: 1rem;
+			}
+		}
+	}
+
+	& > .image {
+		height: 100rem;
+		overflow: hidden;
+		position: relative;
+		width: 95%;
+	}
+
+	@media only screen {
+		@media (min-width: 850px) {
+			& > .details {
+				& > .title {
+					grid-column: 1/7;
+					grid-row: 1;
+				}
+				& > .website {
+					grid-column: 7/-1;
+					grid-row: 1;
+				}
+				& > .excerpt {
+					grid-row: 2;
+				}
+			}
+		}
+	}
+}

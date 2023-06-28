@@ -1,0 +1,27 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(flex-start, flex-start);
+	height: 100%;
+	flex-flow: column;
+	padding: 4rem 1.5rem 1rem;
+	row-gap: 2rem;
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+	@media only screen {
+		@media (min-width: 600px) {
+			// justify-content: center;
+			padding: 8rem 5.5rem 1rem;
+		}
+		@media (min-width: 1050px) {
+			// justify-content: center;
+			@include flex(center, flex-end);
+			flex-flow: row;
+			gap: 2rem;
+			overflow-y: visible;
+			padding: 0 2rem;
+		}
+	}
+}

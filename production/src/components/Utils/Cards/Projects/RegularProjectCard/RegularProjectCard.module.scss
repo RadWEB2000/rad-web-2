@@ -1,0 +1,115 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include size(auto, 95%);
+	margin: 2rem auto;
+	max-width: 95%;
+	& > .image {
+		@include size(20rem, 100%);
+		position: relative;
+		& > .categories {
+			@include flex(center, flex-start);
+			flex-flow: row wrap;
+			gap: 1rem;
+			left: 0;
+			padding: 1.2rem;
+			position: absolute;
+			top: 1rem;
+			width: 100%;
+			& > li {
+				& > a {
+					border-radius: 1rem;
+					background-color: $citron;
+					color: $black;
+					font-size: 2rem;
+					font-weight: 600;
+					padding: 0.5rem 1.5rem;
+					transition: 0.1s ease-in background-color;
+					&:focus,
+					&:focus-within,
+					&:hover {
+						background-color: $cyan;
+					}
+				}
+			}
+		}
+	}
+	& > .content {
+		align-items: center;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+		padding: 1rem 0 2rem;
+		& > .details {
+			@include flex(flex-start, center);
+			flex-flow: column;
+			padding: 0 1rem 0 4rem;
+			row-gap: 1rem;
+			width: 100%;
+			& > .title {
+				@include font(2.25rem, 600);
+				text-align: start;
+			}
+			& > .button {
+				@include flex(center, center);
+				flex-shrink: 0;
+				& > a {
+					@include size(3.85rem, 3.85rem);
+					border: 2px solid $gray;
+					border-radius: 50%;
+					color: $gray;
+					flex-shrink: 0;
+					position: relative;
+					transition: 0.3s linear border, 0.3s linear color;
+					& > i {
+						@include flex(center, center);
+						@include size(100%, 100%);
+						font-size: 3rem;
+						transition: 0.3s linear transform;
+					}
+					&:focus,
+					&:focus-within,
+					&:hover {
+						border: 2px solid $cyan;
+						color: $cyan;
+						& > i {
+							transform: translateX(0.8rem);
+						}
+					}
+				}
+			}
+		}
+		& > .excerpt {
+			@include font(1.5rem, 300);
+			line-height: 1.7;
+		}
+	}
+	@media only screen {
+		@media (min-width: 500px) {
+			& > .image {
+				@include size(auto, 100%);
+				aspect-ratio: 16/10;
+			}
+			& > .content {
+				& > .details {
+					& > .title {
+						font-size: 3rem;
+					}
+				}
+			}
+		}
+		@media (min-width: 1200px) {
+			& > .image {
+				aspect-ratio: 16/9;
+			}
+			& > .content {
+				& > .details {
+					row-gap: 2rem;
+					& > .title {
+						font-size: 3.5rem;
+					}
+				}
+			}
+		}
+	}
+}

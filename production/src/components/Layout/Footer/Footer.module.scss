@@ -1,0 +1,36 @@
+@import "../../../styles/Variables.scss";
+.wrapper {
+	border-top: 1px solid $jet;
+	cursor: default;
+	grid-template-columns: repeat(12, 1fr);
+	padding-bottom: 2rem;
+	user-select: none;
+	& > * {
+		grid-column: 1/-1;
+	}
+	& > div:first-of-type {
+		@include flex(center, center);
+		flex-flow: column-reverse;
+	}
+	& > span {
+		@include size(2px, 100%);
+		background: $jet;
+		display: block;
+		margin: 2rem auto;
+	}
+	& > div:last-of-type {
+		@include flex(center, space-between);
+		flex-flow: row nowrap;
+		padding: 0 2rem;
+	}
+	@media only screen {
+		@media (min-width: 1150px) {
+			& > div:first-of-type {
+				display: grid;
+				grid-template-columns: repeat(12, 1fr);
+				min-height: 70rem;
+				padding: 0 5rem;
+			}
+		}
+	}
+}

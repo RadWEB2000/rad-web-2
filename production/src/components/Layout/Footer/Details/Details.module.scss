@@ -1,0 +1,36 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(center, center);
+	flex-flow: column;
+	margin: 3rem auto;
+	row-gap: 2rem;
+	text-align: center;
+	width: 100%;
+	& > .title {
+		@include font(8rem, 900);
+	}
+	& > .details {
+		font-style: normal;
+		& > * {
+			margin-top: 0.5rem;
+			line-height: 1.85;
+		}
+	}
+	@media only screen {
+		@media (min-width: 1150px) {
+			grid-column: 10/-1;
+			// margin: 0 0 auto;
+			& > .details {
+				a {
+					transition: 0.15s ease-in-out color;
+					&:focus,
+					&:focus-within,
+					&:hover {
+						color: $cyan;
+					}
+				}
+			}
+		}
+	}
+}
