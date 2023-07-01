@@ -1,11 +1,10 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
+	@include grid(null, null, repeat(16, 1fr), null, null, null);
 	margin: auto;
-	display: grid;
-	grid-template-columns: repeat(16, 1fr);
-	width: 100%;
 	scroll-behavior: smooth;
+	width: 100%;
 }
 
 .content,
@@ -21,11 +20,8 @@
 
 .content {
 	scroll-behavior: smooth;
-	width: 95%;
 	margin: auto;
-	// * {
-	// 	margin-bottom: 5rem;
-	// }
+	width: 95%;
 }
 
 @media only screen {

@@ -2,14 +2,10 @@
 .wrapper {
 	margin: auto;
 	max-width: 90%;
-	width: 210rem;
 	padding: 1rem 1rem;
+	width: 210rem;
 	& > ul {
-		align-items: start;
-		justify-items: center;
-		display: grid;
-		gap: 1rem;
-		grid-template-columns: repeat(1, 1fr);
+		@include grid(start, 1rem, repeat(1, 1fr), center, 1rem, null);
 		width: 100%;
 	}
 

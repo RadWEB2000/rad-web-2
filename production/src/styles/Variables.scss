@@ -181,6 +181,118 @@ $fuchsia: #e93cf0;
 
 // mixins
 
+@mixin background2(
+	$color: null,
+	$image: null,
+	$position: null,
+	$attachment: null,
+	$repeat: null,
+	$size: null,
+	$blend: null
+) {
+	@if $color != null {
+		background-color: $color;
+	}
+	@if $image != null {
+		background-image: $image;
+	}
+	@if $position != null {
+		background-position: $position;
+	}
+	@if $attachment != null {
+		background-attachment: $attachment;
+	}
+	@if $repeat != null {
+		background-repeat: $repeat;
+	}
+	@if $size != null {
+		background-size: $size;
+	}
+	@if $blend != null {
+		background-blend-mode: $blend;
+	}
+}
+
+@mixin flex2($align, $justify, $flow: null, $gap: null) {
+	align-items: $align;
+	display: flex;
+	justify-content: $justify;
+	@if $flow != null {
+		flex-flow: $flow;
+	}
+
+	@if $gap != null {
+		gap: $gap;
+	}
+}
+
+@mixin font2(
+	$align: start,
+	$size,
+	$weight: 400,
+	$line: null,
+	$textTransform: null,
+	$fontVariant: null,
+	$fontPosition: null
+) {
+	text-align: $align;
+	font-size: $size;
+	font-weight: $weight;
+	@if $line != null {
+		line-height: $line;
+	}
+	@if $textTransform != null {
+		text-transform: $textTransform;
+	}
+	@if $fontVariant != null {
+		font-variant: $fontVariant;
+	}
+	@if $fontPosition != null {
+		font-variant-position: $fontPosition;
+	}
+}
+
+@mixin grid(
+	$align: null,
+	$columnGap: null,
+	$columns: null,
+	$justify: null,
+	$rowGap: null,
+	$rows: null
+) {
+	display: grid;
+	@if $align != null {
+		align-items: $align;
+	}
+	@if $columnGap!= null {
+		column-gap: $columnGap;
+	}
+
+	@if $columns!= null {
+		grid-template-columns: $columns;
+	}
+	@if $justify!= null {
+		justify-content: $justify;
+	}
+	@if $rowGap!= null {
+		row-gap: $rowGap;
+	}
+
+	@if $rows != null {
+		grid-template-rows: $rows;
+	}
+}
+
+@mixin size2($height, $width) {
+	height: $height;
+	width: $width;
+}
+
+@mixin textWrap2($break: break-all, $wrap: break-word) {
+	word-break: $break;
+	word-wrap: $wrap;
+}
+//
 @mixin backgroundImage($color, $blend) {
 	background-color: $color;
 	background-attachment: fixed;

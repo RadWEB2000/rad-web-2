@@ -1,8 +1,6 @@
 @import "../../../../styles/Variables.scss";
 .wrapper {
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	gap: 2rem;
+	@include grid(null, 2rem, repeat(12, 1fr), null, 2rem, null);
 	margin: 2rem auto 5rem;
 	max-width: 95%;
 	width: 70rem;
@@ -13,8 +11,7 @@
 			margin-bottom: 2rem;
 			&,
 			& > a {
-				@include flex(center, center);
-				flex-flow: row nowrap;
+				@include flex2(center, center, row wrap);
 			}
 			& > a {
 				@include size(7rem, 35rem);
@@ -35,11 +32,9 @@
 		}
 
 		& > .details {
-			@include flex(center, center);
+			@include flex2(center, center, column, 0 2rem);
 			background-color: $black;
-			flex-flow: column;
 			position: sticky;
-			row-gap: 1rem;
 			top: 10rem;
 			& > * {
 				width: 100%;
@@ -48,19 +43,14 @@
 				display: grid;
 				font-style: normal;
 				& > .location {
-					@include font(2rem, 700);
+					@include font2(center, 2rem, 700, 2);
 					color: $gray;
-					text-align: center;
-					line-height: 2;
 				}
 				& > .contact {
-					@include flex(center, center);
-					flex-flow: column;
-					gap: 0.5rem;
+					@include flex2(center, center, column, 0.5rem);
 					padding-bottom: 1rem;
 					& > a {
-						@include font(1.75rem, 700);
-						text-align: center;
+						@include font2(center, 1.75rem, 700);
 						&:focus-within,
 						&:hover {
 							color: $cyan;

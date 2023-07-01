@@ -1,17 +1,23 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	background-attachment: fixed;
-	background-color: $white;
+	@include background2($white, null, null, fixed, null, null, null);
 	color: $black;
 	margin-bottom: 5rem;
 	padding: 5rem 5rem;
 	position: relative;
 	z-index: 0;
 	&::after {
+		@include background2(
+			null,
+			url("https://cdn.pixabay.com/photo/2017/07/08/10/57/monochrome-2484055_1280.jpg"),
+			center,
+			fixed,
+			no-repeat,
+			cover,
+			null
+		);
 		@include size(100%, 100%);
-		background-attachment: fixed;
-		background-image: url("https://cdn.pixabay.com/photo/2017/07/08/10/57/monochrome-2484055_1280.jpg");
 		opacity: 0.25;
 		top: 0;
 		left: 0;

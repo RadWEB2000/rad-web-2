@@ -1,8 +1,7 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	@include grid(null, null, repeat(2, 1fr), null, null, null);
 	margin: 4rem auto;
 	max-width: 95%;
 	width: 150rem;
