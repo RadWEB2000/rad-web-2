@@ -141,7 +141,7 @@ export const getStaticProps = () => {
 			const contents = fs.readFileSync(`${directory}/${file}`, "utf8");
 			const { data } = matter(contents);
 			return {
-				release: `${data.release}`,
+				release: `${data.publishedTime}`,
 				excerpt: data.excerpt,
 				image: data.image,
 				title: data.title,

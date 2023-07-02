@@ -1,0 +1,75 @@
+@import "../../../../../styles/Variables.scss";
+.wrapper {
+	cursor: default;
+	flex-shrink: 0;
+	max-width: 90%;
+	margin: 3rem auto;
+	width: 55rem;
+	& > .image {
+		@include size(45rem, 100%);
+		border-radius: 2rem;
+		overflow: hidden;
+		&,
+		& > figure {
+			position: relative;
+		}
+		& > figure {
+			@include size(100%, 100%);
+			transition: 2s linear filter;
+		}
+	}
+	& > .content {
+		@include flex(flex-start, flex-start);
+		flex-flow: column;
+		row-gap: 2rem;
+		& > h3 {
+			@include font(3rem, 600);
+			font-family: $ibm;
+		}
+		& > div {
+			@include flex(center, space-between);
+			padding: 0 1rem;
+			width: 100%;
+		}
+		& > a {
+			@include size(4.5rem, 4.5rem);
+			border: 2px solid $gray;
+			border-radius: 50%;
+			color: $gray;
+			position: relative;
+			transition: 0.3s linear border, 0.3s linear color;
+			margin: 0 2rem 0 auto;
+			& > i {
+				@include flex(center, center);
+				@include size(100%, 100%);
+				font-size: 3rem;
+				transition: 0.3s linear transform;
+			}
+			&:focus,
+			&:focus-within,
+			&:hover {
+				border: 2px solid $fuchsia;
+				color: $fuchsia;
+				& > i {
+					transform: translateX(0.8rem);
+				}
+			}
+		}
+	}
+
+	@media only screen {
+		@media (min-width: 850px) {
+			max-width: 90%;
+			width: 40rem;
+		}
+		@media (min-width: 1450px) {
+			width: 95%;
+			& > .image {
+				height: 55rem;
+			}
+			& > .content {
+				margin-top: 2.5rem;
+			}
+		}
+	}
+}

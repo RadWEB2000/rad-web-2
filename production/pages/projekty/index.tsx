@@ -44,7 +44,12 @@ const Page = ({ articles }: iPage) => {
 			<Search handle={setSearchValue} placeholder="Szukaj" />
 			<ProjectCardsWrapper>
 				{articles
-					?.filter((item: any) =>
+					?.sort((a: any, b: any) => {
+						const dateA: any = new Date(a.release);
+						const dateB: any = new Date(b.release);
+						return dateB - dateA;
+					})
+					.filter((item: any) =>
 						item.title.toLowerCase().includes(searchValue.toLowerCase())
 					)
 					.map(({ category, title, image, excerpt, slug }) => {
@@ -80,7 +85,7 @@ export const getStaticProps = async () => {
 		const contents = fs.readFileSync(`${articlesDirectory}/${file}`, "utf8");
 		const { data } = matter(contents);
 		return {
-			release: `${data.release}`,
+			release: `${data.publishedTime}`,
 			excerpt: data.excerpt,
 			image: data.image,
 			title: data.title,

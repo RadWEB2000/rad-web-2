@@ -1,0 +1,23 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	margin-top: 2rem;
+	padding: 0 2rem 0 0;
+	& > a {
+		@include font(2.3rem, 700);
+		position: relative;
+		transition: 0.15s linear color;
+		&::after {
+			@include size(1.25px, 100%);
+			background: $cyan;
+			border-radius: 3rem;
+			top: 50%;
+			transform: translateX(-210%) translateY(-50%);
+		}
+		&:focus,
+		&:focus-within,
+		&:hover {
+			color: $cyan;
+		}
+	}
+}

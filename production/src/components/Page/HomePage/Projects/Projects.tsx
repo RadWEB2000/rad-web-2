@@ -41,21 +41,28 @@ export const Projects = ({ button, cards, content, title }: iProjects) => {
 			</article>
 			<div>
 				<ul>
-					{cards.slice(0, 4).map(({ category, image, title, slug }) => {
-						return (
-							<HomeProjectCard
-								categories={category}
-								image={{
-									alt: title,
-									src: image,
-									title: title,
-								}}
-								key={title}
-								title={title}
-								uri={slug}
-							/>
-						);
-					})}
+					{cards
+						.sort((a: any, b: any) => {
+							const dateA: any = new Date(a.release);
+							const dateB: any = new Date(b.release);
+							return dateB - dateA;
+						})
+						.slice(0, 4)
+						.map(({ category, image, title, slug }) => {
+							return (
+								<HomeProjectCard
+									categories={category}
+									image={{
+										alt: title,
+										src: image,
+										title: title,
+									}}
+									key={title}
+									title={title}
+									uri={slug}
+								/>
+							);
+						})}
 				</ul>
 			</div>
 		</div>

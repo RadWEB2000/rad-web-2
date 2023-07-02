@@ -1,0 +1,52 @@
+@import "../../../styles/Variables.scss";
+
+.wrapper {
+	width: 30rem;
+	margin: 0 2rem 3rem 4rem;
+	padding: 2rem;
+	position: sticky;
+	border-right: 1px solid $jet;
+	top: 10rem;
+	max-width: 95%;
+	& > h4 {
+		@include font(3rem, 500);
+		margin-bottom: 4rem;
+	}
+	& > ul {
+		@include flex(flex-start, center);
+		flex-flow: column;
+		row-gap: 1rem;
+		& > .element {
+			@include font(2rem, 500);
+			font-family: $openSans;
+			& > a {
+				scroll-behavior: smooth;
+				transition: 0.13s ease-in all;
+			}
+			&[data-active="true"] {
+				&,
+				&:focus,
+				&:focus-within,
+				&:hover {
+					& > a {
+						color: $citron !important;
+					}
+				}
+			}
+			&[data-tag="h3"] {
+				margin-left: 1.5rem;
+			}
+			&[data-tag="h4"] {
+				margin-left: 2.5rem;
+			}
+			&:focus,
+			&:focus-within,
+			&:hover {
+				& > a {
+					color: $cyan;
+					padding-left: 1rem;
+				}
+			}
+		}
+	}
+}

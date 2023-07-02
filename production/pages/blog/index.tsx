@@ -43,7 +43,12 @@ const Page = ({ articles }: iPage) => {
 			<Search handle={setSearchValue} placeholder="Szukaj" />
 			<BlogCardsWrapper>
 				{articles
-					?.filter((item: any) =>
+					?.sort((a: any, b: any) => {
+						const dateA: any = new Date(a.release);
+						const dateB: any = new Date(b.release);
+						return dateB - dateA;
+					})
+					.filter((item: any) =>
 						item.title.toLowerCase().includes(searchValue.toLowerCase())
 					)
 					.map(({ category, excerpt, title, image, release, uri }) => {

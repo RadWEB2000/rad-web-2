@@ -99,15 +99,35 @@
 			}
 		}
 		@media (min-width: 1200px) {
+			position: relative;
 			& > .image {
 				aspect-ratio: 16/9;
 			}
 			& > .content {
+				background-color: hsla(0, 100%, 0, 0.85);
+				position: absolute;
+				bottom: 0;
+
 				& > .details {
 					row-gap: 2rem;
 					& > .title {
 						font-size: 3.5rem;
 					}
+				}
+				& > .excerpt {
+					font-size: 1.7rem;
+				}
+			}
+		}
+		@media (min-width: 1530px) {
+			& > .content {
+				& > .details {
+					& > .title {
+						font-size: 4.5rem;
+					}
+				}
+				& > .excerpt {
+					font-size: 2rem;
 				}
 			}
 		}

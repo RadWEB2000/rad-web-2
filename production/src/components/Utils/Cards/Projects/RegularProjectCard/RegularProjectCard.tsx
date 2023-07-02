@@ -45,17 +45,6 @@ export const RegularProjectCard = ({
 					title={image?.title}
 					quality={70}
 				/>
-				{/* <ul className={styles.categories}>
-					{categories.map((item, index) => {
-						return (
-							<li className={styles.category} key={item}>
-								<Link href={"#"} rel="index follow">
-									{item}
-								</Link>
-							</li>
-						);
-					})}
-				</ul> */}
 			</figure>
 			<div className={styles.content}>
 				<div className={styles.details}>

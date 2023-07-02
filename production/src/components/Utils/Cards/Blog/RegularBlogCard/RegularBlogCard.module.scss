@@ -12,15 +12,14 @@
 	}
 	& > .details {
 		@include flex(center, space-between);
+		border-radius: 1rem;
+		background-color: $cyan;
+		color: $black;
+		font-size: 1.7rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin: 0.5rem 0;
 		padding: 0.75rem 1rem;
-		a {
-			transition: 0.12s ease-in color;
-			&:focus,
-			&:focus-within,
-			&:hover {
-				color: $cyan;
-			}
-		}
 	}
 	& > .content {
 		padding-bottom: 2rem;
@@ -58,6 +57,29 @@
 					& > i {
 						transform: translateX(0.8rem);
 					}
+				}
+			}
+		}
+	}
+
+	@media only screen {
+		@media (min-width: 1250px) {
+			& > .image {
+				aspect-ratio: unset;
+				height: 50rem;
+			}
+			& > .details {
+				@include flex(center, space-between);
+				padding: 1rem 2rem;
+				font-size: 2rem;
+			}
+			& > .content {
+				& > .title {
+					font-size: 3.85rem;
+				}
+				& > .excerpt {
+					@include font(1.8rem, 400);
+					line-height: 2.2;
 				}
 			}
 		}
