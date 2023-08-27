@@ -1,79 +1,76 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	width: 95%;
-	padding: 0 1rem;
-	row-gap: 2rem;
-	&,
-	& > li,
-	& > li > ul {
-		@include flex(flex-start, flex-start);
-		flex-flow: column;
-	}
-	& > li,
-	& > li > ul,
-	& > li > ul > li {
-		width: 100%;
-	}
-	& > li {
-		margin-top: 0.5rem;
-		& > h5 {
-			@include font(2rem, 800);
-			margin-bottom: 2rem;
-		}
-		& > ul {
-			row-gap: 1rem;
-			& > li {
-				@include font(1.8rem, 200);
-				height: 2rem;
-				margin: 0.2rem 0;
-				& > a {
-					position: relative;
-					transition: 0.15s ease-in-out color;
-					&::after {
-						@include size(1px, 0%);
-						background-color: $cyan;
-						border-radius: 2rem;
-						bottom: 0;
-						transition: 0.15s ease-in-out width;
-						left: 0;
-					}
-					&:focus,
-					&:focus-within,
-					&:hover {
-						color: $cyan;
-						&::after {
-							width: 100%;
-						}
-					}
-				}
-			}
-		}
-	}
+	@include size(100%, 100%);
+	// background: red;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 1rem;
+}
 
-	@media only screen {
-		@media (min-width: 850px) {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-		}
-		@media (min-width: 1150px) {
-			grid-column: 1/10;
-			& > li {
-				& > h5 {
-					font-size: 2.5rem;
-				}
-				& > ul {
-					row-gap: 1.5rem;
-					& > li {
-						font-size: 1.9rem;
-						height: auto;
-					}
+.column {
+	@include flex(center, center, column);
+	& > .title {
+		@include font(2.4rem, 600, null, inherit, uppercase, -1px, center);
+		border-bottom: 1px solid $peach;
+		color: $peach;
+	}
+	& > .menu {
+		@include flex(center, center, column, null, 0.3rem);
+		padding: 0.7rem 0 0.4rem 0;
+		& > .item {
+			@include font(1.7rem, 500, null, inherit, null, -1px, center);
+			& > a {
+				color: $silver;
+				transition: 0.15s ease-in-out color;
+				&:focus,
+				&:focus-within,
+				&:hover {
+					color: $white;
 				}
 			}
 		}
-		@media (min-width: 1250px) {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media only screen {
+	@media (min-width: 620px) {
+		.wrapper {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem;
+		}
+		.column {
+			@include flex(flex-start, flex-start, column);
+			& > .title {
+				border-bottom: 1.3px solid $peach;
+				text-align: start;
+			}
+			& > .menu {
+				@include flex(flex-start, flex-start, column, null, 0.3rem);
+				& > .item {
+					text-align: start;
+				}
+			}
+		}
+	}
+	@media (min-width: 800px) {
+		.column {
+			& > .title {
+				font-size: 3rem;
+			}
+			& > .menu {
+				font-size: 1.9rem;
+			}
+		}
+	}
+	@media (min-width: 1020px) {
+		.column {
+			& > .title {
+				font-size: 3.4rem;
+			}
+			& > .menu {
+				font-size: 2rem;
+			}
 		}
 	}
 }

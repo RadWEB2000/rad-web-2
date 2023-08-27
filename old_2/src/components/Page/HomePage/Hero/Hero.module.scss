@@ -1,0 +1,259 @@
+@import "../../../../styles/Variables.scss";
+
+@keyframes glitch {
+	0% {
+		text-shadow: 0.05em 0 0 $cyan, -0.03em -0.04em 0 $fuchsia,
+			0.025em 0.04em 0 $citron;
+	}
+	15% {
+		text-shadow: 0.05em 0 0 $cyan, -0.03em -0.04em 0 $fuchsia,
+			0.025em 0.04em 0 $citron;
+	}
+	16% {
+		text-shadow: -0.05em -0.025em 0 $cyan, 0.025em 0.035em 0 $fuchsia,
+			-0.05em -0.05em 0 $citron;
+	}
+	49% {
+		text-shadow: -0.05em -0.025em 0 $cyan, 0.025em 0.035em 0 $fuchsia,
+			-0.05em -0.05em 0 $citron;
+	}
+	50% {
+		text-shadow: 0.05em 0.035em 0 $cyan, 0.03em 0 0 $fuchsia,
+			0 -0.04em 0 $citron;
+	}
+	99% {
+		text-shadow: 0.05em 0.035em 0 $cyan, 0.03em 0 0 $fuchsia,
+			0 -0.04em 0 $citron;
+	}
+	100% {
+		text-shadow: -0.05em 0 0 $cyan, -0.025em -0.04em 0 $fuchsia,
+			-0.04em -0.025em 0 $citron;
+	}
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(3, auto);
+	margin-bottom: 7rem;
+	padding: 0 0.1rem 1rem;
+	row-gap: 2rem;
+	user-select: none;
+	width: 100%;
+	&::after {
+		@include size(1rem, 60%);
+		background-image: linear-gradient(
+			to right,
+			$white,
+			$white,
+			$white,
+			$jet,
+			$black
+		);
+		bottom: 0;
+		left: 0;
+		transform: translateX(-1rem) skew(-150deg);
+	}
+	& > * {
+		grid-column: 1/-1;
+	}
+	& > section {
+		@include flex(start, center);
+		@include size(50rem, 100%);
+		flex-flow: column;
+		grid-row: 1;
+		padding: 0 0.5rem;
+		& > header {
+			& > h1 {
+				@include font(7rem, 900);
+				animation: glitch 1000ms infinite;
+				position: relative;
+				text-shadow: 0.05em 0 0 $cyan, -0.03em -0.04em 0 $fuchsia,
+					0.025em 0.04em 0 $citron;
+				text-transform: uppercase;
+				&,
+				&::after,
+				&::before {
+					font-family: $openSans;
+				}
+				&::after,
+				&::before {
+					content: attr(data-text) !important;
+					color: $white;
+					left: 0;
+					top: 0;
+				}
+				&::after {
+					animation: glitch 800ms infinite;
+					clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+					opacity: 0.5;
+					transform: translate(-0.02em, -0.01em);
+				}
+				&::before {
+					animation: glitch 600ms infinite;
+					clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+					opacity: 0.75;
+					transform: translate(0.02em, 0.01em);
+				}
+			}
+		}
+		& > p {
+			@include font(2.5rem, 500);
+			margin-left: 2rem;
+		}
+	}
+	& > div {
+		@include flex(center, flex-end);
+		height: 3.5rem;
+		overflow: hidden;
+		padding: 0 1rem;
+		& > h2 {
+			@include font(3rem, 700);
+			color: $gray;
+			display: inline;
+			font-family: $ibm;
+			letter-spacing: 5px;
+			opacity: 0.5;
+			overflow-wrap: break-word;
+			text-align: end;
+			white-space: nowrap;
+			word-break: keep-all;
+			word-wrap: nowrap;
+		}
+	}
+	& > .menu,
+	& > .socials {
+		height: 15rem;
+	}
+	& > .menu {
+		@include flex(start, center);
+		flex-flow: column;
+		grid-column: 1/5;
+		grid-row: 3;
+		& > li {
+			& > a {
+				@include font(2rem, 500);
+				font-family: $ibm;
+				transition: 0.2s linear color;
+				&:focus,
+				&:focus-within,
+				&:hover {
+					color: $cyan;
+				}
+			}
+		}
+	}
+	& > .socials {
+		@include flex(flex-end, flex-end);
+		gap: 1rem;
+		grid-column: 5/-1;
+		& > li {
+			display: block;
+			@include size(5.5rem !important, 5.5rem !important);
+			&,
+			& > a {
+				@include flex(center, center);
+			}
+			& > a {
+				@include size(100%, 100%);
+				flex-shrink: 0;
+				color: $gray;
+				border: 3.5px solid #d8e2dc;
+				font-size: 2.5rem;
+				opacity: 0.7;
+				transition: all 0.5s ease;
+				&:focus,
+				&:focus-within,
+				&:hover {
+					opacity: 1;
+					&[data-variant="facebook"] {
+						@include socialMediaEffect(#1877f2);
+					}
+					&[data-variant="instagram"] {
+						@include socialMediaEffect(#f46f30);
+					}
+					&[data-variant="youtube"] {
+						@include socialMediaEffect(#ff0000);
+					}
+					&[data-variant="github"] {
+						@include socialMediaEffect(#ee1d52);
+					}
+					&[data-variant="linkedin"] {
+						@include socialMediaEffect(#f0b6a8);
+					}
+					&[data-variant="twitter"] {
+						@include socialMediaEffect(#1da1f2);
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen {
+		@media (min-width: 550px) {
+			& > section {
+				height: 55rem;
+				padding: 0 1.5rem;
+				& > header {
+					& > h1 {
+						font-size: 11.25rem;
+						margin-top: 5rem;
+					}
+				}
+				& > p {
+					font-size: 3.5rem;
+					margin-left: 2rem;
+				}
+			}
+			& > div {
+				height: 4.5rem;
+				overflow: hidden;
+				& > h2 {
+					@include font(4rem, 700);
+				}
+			}
+			& > .menu,
+			& > .socials {
+				height: 18rem;
+				margin-bottom: 3rem;
+			}
+			& > .menu {
+				row-gap: 1rem;
+				padding-left: 2rem;
+				& > li {
+					& > a {
+						font-size: 2.2rem;
+					}
+				}
+			}
+			& > .socials {
+				padding-right: 2rem;
+				& > li {
+					@include size(3.85rem, 3.85rem);
+
+					& > a {
+						font-size: 3rem;
+					}
+				}
+			}
+		}
+		@media (min-width: 1000px) {
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 20rem;
+					}
+				}
+				& > p {
+					font-size: 4.5rem;
+					margin-left: 6rem;
+				}
+			}
+		}
+		@media (min-width: 1250px) {
+			& > section {
+				height: calc(100vh - 35rem);
+			}
+		}
+	}
+}

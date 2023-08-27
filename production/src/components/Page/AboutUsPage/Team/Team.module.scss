@@ -1,0 +1,105 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	width: clamp(20rem, 180rem, 95%);
+	margin: 6rem auto;
+}
+
+.cards {
+	align-items: baseline;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	row-gap: 0.5rem;
+	justify-items: center;
+}
+.details {
+	@include flex(flex-start, flex-start, column);
+	& > * {
+		width: 100%;
+	}
+	& > .title {
+		padding: 1rem 2rem;
+		position: relative;
+		&::before {
+			@include positioning(
+				null,
+				null,
+				-1.5rem,
+				0,
+				null,
+				null,
+				null,
+				-1,
+				absolute
+			);
+			@include size(1.5px, 100%);
+			background-color: $white;
+			border-radius: 2rem;
+			opacity: 0.92;
+		}
+		& > h2 {
+			@include font(6rem, 900, 1.2, $drukCyr, uppercase, -1px, start);
+		}
+	}
+	& > .content {
+		padding: 1rem;
+		@include font(2.4rem, 300, 1.7, inherit, null, -1px, start);
+	}
+}
+
+@media only screen {
+	@media (min-width: 550px) {
+		.cards {
+			row-gap: 0.5rem;
+		}
+		.details {
+			& > .title {
+				& > h2 {
+					font-size: 9rem;
+				}
+			}
+			& > .content {
+				font-size: 2.7rem;
+			}
+		}
+	}
+	@media (min-width: 900px) {
+		.cards {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.details {
+			& > .title {
+				& > h2 {
+					font-size: 12rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 1200px) {
+		.details {
+			& > .title {
+				& > h2 {
+					font-size: 14.5rem;
+					line-height: 0.8;
+				}
+			}
+			& > .content {
+				font-size: 2.8rem;
+			}
+		}
+	}
+	@media (min-width: 1880px) {
+		.details {
+			& > .title {
+				& > h2 {
+					font-size: 16rem;
+					line-height: 0.8;
+				}
+			}
+			& > .content {
+				font-size: 3rem;
+				margin: 2rem 0 3rem;
+			}
+		}
+	}
+}

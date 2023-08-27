@@ -1,61 +1,60 @@
-import Link from "next/link";
-import styles from "./Hero.module.scss";
-import { motion } from "framer-motion";
-import { menu } from "@default/src/data/menu";
-import { getSocial } from "@default/src/lib/functions/getSocial";
-interface iHero {
-	slogan: string;
-	menu: {
+"use client";
+import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
+import { tImage } from "@default/ts/types";
+import Image from "next/image";
+import styles from "@default/components/Page/HomePage/Hero/Hero.module.scss";
+
+type tHero = {
+	buttons: {
 		label: string;
 		uri: string;
 	}[];
-	services: string[];
-	socials: string[];
+	image: tImage;
+	slogan: string;
 	title: string;
-}
-export const Hero = ({ slogan, menu, services, socials, title }: iHero) => {
+};
+
+//
+
+export default function Hero({ buttons, image, slogan, title }: tHero) {
 	return (
 		<div className={styles.wrapper}>
-			<section>
-				<header>
-					<h1 data-text={title}>{title}</h1>
+			<figure className={styles.image}>
+				<Image
+					alt={image.alt}
+					fill
+					loading="eager"
+					src={image.src}
+					style={{
+						objectFit: "cover",
+						objectPosition: "center",
+					}}
+					title={image.title}
+					quality={20}
+				/>
+			</figure>
+			<section className={styles.content}>
+				<header className={styles.title}>
+					<h1 dangerouslySetInnerHTML={{ __html: title }} />
 				</header>
-				<p>{slogan}</p>
+				<h2
+					className={styles.slogan}
+					dangerouslySetInnerHTML={{ __html: slogan }}
+				/>
+				<div className={styles.buttons}>
+					{buttons.map(({ label, uri }, index) => {
+						return (
+							<ButtonPrimary
+								key={index}
+								label={label}
+								theme="primary"
+								uri={uri}
+								variant="link"
+							/>
+						);
+					})}
+				</div>
 			</section>
-			<div>
-				<motion.h2
-					animate={{ x: ["100%", "-100%"] }}
-					transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-				>{`${services.map((item, index) => {
-					return item.toUpperCase();
-				})}`}</motion.h2>
-			</div>
-			<ul className={styles.menu}>
-				{menu.map(({ label, uri }) => {
-					return (
-						<li key={label}>
-							<Link href={uri}>{label}</Link>
-						</li>
-					);
-				})}
-			</ul>
-			<ul className={styles.socials}>
-				{socials.map((item, index) => {
-					const { icon, name } = getSocial(item);
-					return (
-						<li key={name}>
-							<Link
-								data-variant={name.toLowerCase()}
-								href={item}
-								rel="noindex follow"
-								target="_blank"
-							>
-								{icon}
-							</Link>
-						</li>
-					);
-				})}
-			</ul>
 		</div>
 	);
-};
+}

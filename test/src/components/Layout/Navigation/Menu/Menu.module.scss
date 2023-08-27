@@ -1,0 +1,17 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include size(100%, 100%);
+	@include flex(flex-start, flex-start, column, 0, 1rem);
+	padding: 2rem 1rem;
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+	@media only screen {
+		@media (min-width: 1000px) {
+			@include flex(center, flex-end, row nowrap, 1.15rem, 0);
+			overflow-y: visible;
+		}
+	}
+}

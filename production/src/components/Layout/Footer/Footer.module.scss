@@ -1,36 +1,78 @@
 @import "../../../styles/Variables.scss";
+
 .wrapper {
-	border-top: 1px solid $jet;
-	cursor: default;
+	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	padding-bottom: 2rem;
-	user-select: none;
+	padding: 2rem 4rem;
+	margin-top: 7rem;
+	row-gap: 4rem;
 	& > * {
 		grid-column: 1/-1;
 	}
-	& > div:first-of-type {
-		@include flex(center, center);
-		flex-flow: column-reverse;
+}
+
+.author,
+.socials {
+	@include flex(center, center);
+}
+
+.details,
+.menu {
+	@include flex(center, center);
+	@include size(100%, 100%);
+}
+
+.details {
+	// grid-column: 9/-1;
+	grid-row: 2;
+}
+
+.menu {
+	// grid-column: 1/9;
+	grid-row: 1;
+}
+
+.author {
+	// grid-column: 1/4;
+	grid-row: 4;
+}
+
+.socials {
+	// grid-column: 4/-1;
+	grid-row: 3;
+}
+@media only screen {
+	@media (min-width: 1290px) {
+		.details,
+		.menu {
+			grid-row: 1;
+		}
+		.details {
+			grid-column: 9/-1;
+		}
+
+		.menu {
+			grid-column: 1/9;
+		}
+
+		.author,
+		.socials {
+			grid-row: 2;
+		}
+
+		.author {
+			grid-column: 1/5;
+			justify-content: flex-start;
+		}
+
+		.socials {
+			grid-column: 5/-1;
+			justify-content: flex-end;
+		}
 	}
-	& > span {
-		@include size(2px, 100%);
-		background: $jet;
-		display: block;
-		margin: 2rem auto;
-	}
-	& > div:last-of-type {
-		@include flex(center, space-between);
-		flex-flow: row nowrap;
-		padding: 0 2rem;
-	}
-	@media only screen {
-		@media (min-width: 1150px) {
-			& > div:first-of-type {
-				display: grid;
-				grid-template-columns: repeat(12, 1fr);
-				min-height: 70rem;
-				padding: 0 5rem;
-			}
+	@media (min-width: 1750px) {
+		.wrapper {
+			margin-top: 15rem;
 		}
 	}
 }

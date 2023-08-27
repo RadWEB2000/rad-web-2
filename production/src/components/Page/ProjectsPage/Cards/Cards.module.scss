@@ -1,0 +1,25 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	align-items: start;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(1, 1fr);
+	justify-content: center;
+	justify-items: center;
+	margin: 1rem auto 3rem;
+	width: 95%;
+}
+
+@media only screen {
+	@media (min-width: 840px) {
+		.wrapper {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (min-width: 1850px) {
+		.wrapper {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}

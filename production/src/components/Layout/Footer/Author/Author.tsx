@@ -1,9 +1,16 @@
-import styles from "./Author.module.scss";
+import styles from "@default/components/Layout/Footer/Author/Author.module.scss";
 
-export const Author = () => {
+export interface iAuthor {
+	brand: {
+		title: string;
+		year: number;
+	};
+}
+
+export default function Author({ brand: { title, year } }: iAuthor) {
 	return (
 		<div className={styles.wrapper}>
-			<p>RadWEB &copy; {new Date().getFullYear()}</p>
+			<p>{`${title} © ${year} - ${new Date().getFullYear()}`}</p>
 		</div>
 	);
-};
+}

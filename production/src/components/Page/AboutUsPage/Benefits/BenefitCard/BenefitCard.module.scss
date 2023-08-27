@@ -1,0 +1,79 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(flex-start, flex-start, column, null, 0.3rem, false);
+	position: relative;
+	padding-bottom: 1rem;
+	z-index: 0;
+	&::after,
+	&::before {
+		background-color: $black;
+		height: 2.4px;
+		bottom: 0;
+		left: 0;
+	}
+
+	&::after {
+		opacity: 0.4;
+		width: 100%;
+		z-index: -2;
+	}
+	&::before {
+		transition: 0.15s ease-in-out width;
+		width: 10%;
+		z-index: -1;
+	}
+	& > * {
+		width: 100%;
+	}
+
+	&:focus,
+	&:focus-within,
+	&:hover {
+		&::before {
+			width: 100%;
+		}
+		& > .image {
+			& > figure {
+				transform: scale(1.15);
+			}
+		}
+	}
+}
+
+.image {
+	aspect-ratio: 16/11;
+	background: pink;
+	border-radius: 1.05rem;
+	overflow: hidden;
+	& > figure {
+		@include size(100%, 100%);
+		position: relative;
+		transition: 0.15s ease-in-out transform;
+	}
+}
+
+.details {
+	padding: 0.5rem;
+
+	& > .content,
+	& > .title {
+		@include font(unset, unset, 1.2, inherit, null, -1px, start);
+	}
+
+	& > .index {
+		opacity: 0.8;
+	}
+
+	& > .title {
+		font-size: 2.7rem;
+		font-weight: 500;
+	}
+	& > .content {
+		font-size: 1.8rem;
+		margin-top: 0.25rem;
+	}
+}
+
+// @media only screen {
+// }

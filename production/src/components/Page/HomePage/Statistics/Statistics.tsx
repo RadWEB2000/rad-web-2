@@ -1,43 +1,27 @@
-import { stat } from "@default/src/data/stat";
-import styles from "./Statistics.module.scss";
+import Card, {
+	tCard,
+} from "@default/components/Page/HomePage/Statistics/Card/Card";
+import styles from "@default/components/Page/HomePage/Statistics/Statistics.module.scss";
 
-interface iStatisticElement {
-	icon: JSX.Element;
-	title: string;
-	value: number;
-	unit?: string;
-}
-
-interface iStatistics {
-	statistics: iStatisticElement[];
-}
-
-const StatisticElement = ({ icon, title, value, unit }: iStatisticElement) => {
-	return (
-		<li className={styles.card}>
-			<span>
-				<i>{icon}</i>
-			</span>
-			<p>{`${value}${unit}`}</p>
-			<h3>{title}</h3>
-		</li>
-	);
+type tStatistics = {
+	cards: tCard[];
 };
 
-export const Statistics = ({ statistics }: iStatistics) => {
+export default function Statistics({ cards }: tStatistics) {
 	return (
 		<div className={styles.wrapper}>
-			{statistics.map(({ icon, title, value, unit }) => {
-				return (
-					<StatisticElement
-						icon={icon}
-						key={title}
-						title={title}
-						value={value}
-						unit={unit}
-					/>
-				);
-			})}
+			<div className={styles.box}>
+				{cards.map(({ icon, description, value }) => {
+					return (
+						<Card
+							icon={icon.split(":")[0]}
+							key={description}
+							description={description}
+							value={value}
+						/>
+					);
+				})}
+			</div>
 		</div>
 	);
-};
+}

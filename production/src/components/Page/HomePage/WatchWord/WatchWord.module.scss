@@ -1,0 +1,47 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(center, center);
+	min-height: 40rem;
+	background-color: $yellow;
+	color: $black;
+	& > section {
+		max-width: 90%;
+		& > h3 {
+			@include font(6rem, 800, 1, $drukCyr, null, -1px, center);
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 800px) {
+		.wrapper {
+			min-height: 50rem;
+			& > section {
+				& > h3 {
+					font-size: 7rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 1000px) {
+		.wrapper {
+			min-height: 70rem;
+			& > section {
+				& > h3 {
+					font-size: 11rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 1900px) {
+		.wrapper {
+			min-height: 90rem;
+			& > section {
+				& > h3 {
+					font-size: 15rem;
+				}
+			}
+		}
+	}
+}

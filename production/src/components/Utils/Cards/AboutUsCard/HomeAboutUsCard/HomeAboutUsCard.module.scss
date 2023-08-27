@@ -1,0 +1,94 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	width: 100%;
+}
+.image {
+	aspect-ratio: 4/4.25;
+	border-radius: 0.75rem 0.75rem 0 0;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+.content {
+	border: 4px solid $black;
+	border-radius: 0 0 0.75rem 0.75rem;
+	border-top: 0px solid $black;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	padding: 0 0 1.2rem 0;
+}
+.title {
+	@include flex(center, center);
+	background-color: $black;
+	color: $peach;
+	grid-column: 1/-1;
+	min-height: 5rem;
+	padding: 0 1rem;
+	& > h3 {
+		@include font(2.4rem, 700, 1, inherit, null, 1px, center);
+	}
+}
+.jobs {
+	@include flex(flex-start, flex-start, column, null, 1rem, false);
+	@include size(100%, 100%);
+	grid-column: 1/5;
+	padding: 0.65em;
+	& > li {
+		& > h4 {
+			@include font(1.6rem, 700, 1, inherit, null, -1px, start);
+		}
+	}
+}
+.button {
+	grid-column: 5/-1;
+	&,
+	& > a {
+		@include flex(center, center);
+	}
+
+	& > a {
+		@include size(3.5rem, 3.5rem);
+		border: 2.5px solid $erie;
+		border-radius: 50%;
+		font-size: 3.1rem;
+		transition: 0.2s ease-in-out background-color;
+		& > * {
+			transition: 0.2s ease-in-out transform;
+		}
+		&:focus,
+		&:focus-within,
+		&:hover {
+			background-color: $salmon;
+			& > * {
+				transform: translateX(0.5rem) scale(1.3);
+			}
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 980px) {
+		.image {
+			aspect-ratio: 4/4.5;
+		}
+		.title {
+			& > h3 {
+				font-size: 2.6rem;
+			}
+		}
+		.jobs {
+			& > li {
+				& > h4 {
+					font-size: 1.7rem;
+				}
+			}
+		}
+		.button {
+			& > a {
+				@include size(4.4rem, 4.4rem);
+				font-size: 3.4rem;
+			}
+		}
+	}
+}

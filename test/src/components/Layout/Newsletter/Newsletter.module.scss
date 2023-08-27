@@ -1,0 +1,126 @@
+@import "../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(center, center, column);
+	@include minSize(90vh, null);
+	@include size(80rem, 100%);
+	display: grid;
+	background-color: $sapphire;
+	grid-template-columns: repeat(1, 1fr);
+	& > * {
+		@include size(100%, 100%);
+		padding: 2rem;
+	}
+}
+
+.content {
+	@include flex(flex-start, center, column, null, 2rem);
+	& > h2 {
+		@include font(4rem, 700, 0.85, inherit, null, null, start);
+	}
+	& > p {
+		@include font(1.7rem, 400, 1.2, inherit, null, -1px, start);
+	}
+}
+
+.form {
+	@include flex(center, center);
+	backdrop-filter: brightness(90%);
+	& > form {
+		@include flex(flex-start, center, column);
+		&,
+		& > .field {
+			width: 100%;
+		}
+		& > .field {
+			@include flex(flex-start, center, column, null, 1rem);
+			& > label {
+				@include font(2rem, 700, null, inherit, uppercase, 1px, start);
+			}
+			& > input {
+				@include font(1.8rem, 500, null, inherit, null, -1px, start);
+				@include size(5rem, 100%);
+				border: 2px solid $white;
+				border-radius: 4rem;
+				color: $white;
+				padding: 0 2rem;
+			}
+		}
+		& > button {
+			@include flex(center, center);
+			@include font(1.6rem, 600, 1, inherit, uppercase, -1px, center);
+			@include minSize(4.5rem, 14rem);
+			background-color: $white;
+			border: 2px solid $white;
+			border-radius: 14rem;
+			color: $sapphire;
+			margin: 1rem 0 1rem auto;
+			padding: 0.5rem 1.25rem;
+			transition: 0.12s ease-in-out background-color, 0.12s ease-in-out color;
+			&:focus-within,
+			&:hover {
+				background-color: $sapphire;
+				color: $white;
+			}
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 650px) {
+		.content {
+			& > h2 {
+				font-size: 9.5rem;
+			}
+			& > p {
+				font-size: 2rem;
+			}
+		}
+		.form {
+			& > form {
+				& > .field {
+					& > label {
+						font-size: 2.6rem;
+					}
+					& > input {
+						font-size: 2.2rem;
+						height: 5.5rem;
+						padding: 0 3.25rem;
+					}
+				}
+				& > button {
+					@include minSize(4.5rem, 17rem);
+				}
+			}
+		}
+	}
+	@media (min-width: 800px) {
+		.wrapper {
+			margin-top: 20rem;
+		}
+	}
+	@media (min-width: 1140px) {
+		.wrapper {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.content {
+			& > h2 {
+				font-size: 8.25rem;
+			}
+			& > p {
+				font-size: 1.8rem;
+				line-height: 1.5;
+			}
+		}
+	}
+	@media (min-width: 1500px) {
+		.content {
+			& > h2 {
+				font-size: 12.25rem;
+			}
+			& > p {
+				font-size: 2.2rem;
+			}
+		}
+	}
+}

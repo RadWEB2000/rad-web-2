@@ -1,0 +1,62 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	border-radius: 2rem 2rem 0 0;
+	background-color: $alabaster;
+	color: $black;
+	margin: 3rem auto 4rem;
+	min-height: 40rem;
+	width: 99.5%;
+	padding: 2.85rem 1.5rem 5rem;
+}
+
+.details {
+	padding: 2rem 1rem;
+	& > .title {
+		@include font(7rem, 900, 0.94, $drukCyr, null, -1px, start);
+	}
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 1.5rem;
+	margin-top: 3rem;
+	padding: 0.25rem 0.5rem;
+}
+
+@media only screen {
+	@media (min-width: 470px) {
+		.details {
+			& > .title {
+				font-size: 8rem;
+			}
+		}
+	}
+	@media (min-width: 570px) {
+		.cards {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.details {
+			& > .title {
+				font-size: 9.7rem;
+			}
+		}
+	}
+	@media (min-width: 810px) {
+		.details {
+			& > .title {
+				font-size: 11rem;
+				width: clamp(15rem, 80rem, 95%);
+			}
+		}
+	}
+	@media (min-width: 1250px) {
+		.cards {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.details {
+			padding: 2rem 5rem;
+		}
+	}
+}

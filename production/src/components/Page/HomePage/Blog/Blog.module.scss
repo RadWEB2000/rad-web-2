@@ -1,37 +1,97 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	margin: 12rem auto 2rem;
-	max-width: 95%;
-	width: 210rem;
-	& > .section {
-		grid-column: 1/-1;
-		grid-row: 1;
-	}
-	& > .cards {
-		@include flex(baseline, flex-start);
-		flex-flow: row nowrap;
-		gap: 2rem;
-		grid-column: 1/-1;
-		grid-row: 2;
-		margin-top: 2rem;
-		overflow-x: scroll;
-		&::-webkit-scrollbar {
-			height: 0;
-		}
-	}
-	@media only screen {
-		@media (min-width: 850px) {
-			& > .cards {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				overflow-x: visible;
+	background-image: linear-gradient(
+		to bottom,
+		$white,
+		$seasalt,
+		$seasalt,
+		$seasalt,
+		$seasalt,
+		$seasalt,
+		$antique
+	);
+	color: $black;
+	padding: 4rem 2rem;
+	& > section {
+		margin: auto;
+		width: clamp(10rem, 150rem, 95%);
+		& > header {
+			& > h2 {
+				@include font(12rem, 700, 1, $drukCyr, uppercase, -1px, start);
 			}
 		}
-		@media (min-width: 1250px) {
-			& > .cards {
+		& > p {
+			@include font(1.7rem, 500, 1.6, inherit, null, -1.15px, start);
+			color: $erie;
+			margin-top: 2.5rem;
+		}
+	}
+	& > ul {
+		align-items: start;
+		display: grid;
+		justify-items: center;
+		margin: 2.5rem auto;
+		gap: 0.5rem;
+		grid-template-columns: repeat(1, 1fr);
+		width: clamp(10rem, 150rem, 95%);
+	}
+}
+
+@media only screen {
+	@media (min-width: 500px) {
+		.wrapper {
+			& > section {
+				& > header {
+					& > h2 {
+						font-size: 15rem;
+					}
+				}
+				& > p {
+					font-size: 1.9rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 600px) {
+		.wrapper {
+			& > section {
+				& > header {
+					& > h2 {
+						font-size: 15rem;
+					}
+				}
+				& > p {
+					font-size: 1.9rem;
+				}
+			}
+			& > ul {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+	@media (min-width: 950px) {
+		.wrapper {
+			& > section {
+				& > header {
+					& > h2 {
+						font-size: 22rem;
+					}
+				}
+				& > p {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 1250px) {
+		.wrapper {
+			& > section {
+				& > p {
+					font-size: 2.6rem;
+				}
+			}
+			& > ul {
 				grid-template-columns: repeat(3, 1fr);
 			}
 		}

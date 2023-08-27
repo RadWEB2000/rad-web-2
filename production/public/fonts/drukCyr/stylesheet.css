@@ -1,0 +1,99 @@
+@font-face {
+	font-family: "Druk Cyr";
+	src: url("/fonts/drukCyr/DrukCyr-Bold.eot");
+	src: local("Druk Cyr Bold"), local("DrukCyr-Bold"),
+		url("/fonts/drukCyr/DrukCyr-Bold.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/drukCyr/DrukCyr-Bold.woff2") format("woff2"),
+		url("/fonts/drukCyr/DrukCyr-Bold.woff") format("woff"),
+		url("/fonts/drukCyr/DrukCyr-Bold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Druk Cyr";
+	src: url("/fonts/drukCyr/DrukCyr-Heavy.eot");
+	src: local("Druk Cyr Heavy"), local("DrukCyr-Heavy"),
+		url("/fonts/drukCyr/DrukCyr-Heavy.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/drukCyr/DrukCyr-Heavy.woff2") format("woff2"),
+		url("/fonts/drukCyr/DrukCyr-Heavy.woff") format("woff"),
+		url("/fonts/drukCyr/DrukCyr-Heavy.ttf") format("truetype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Druk Cyr";
+	src: url("/fonts/drukCyr/DrukCyr-HeavyItalic.eot");
+	src: local("Druk Cyr Heavy Italic"), local("DrukCyr-HeavyItalic"),
+		url("/fonts/drukCyr/DrukCyr-HeavyItalic.eot?#iefix")
+			format("embedded-opentype"),
+		url("/fonts/drukCyr/DrukCyr-HeavyItalic.woff2") format("woff2"),
+		url("/fonts/drukCyr/DrukCyr-HeavyItalic.woff") format("woff"),
+		url("/fonts/drukCyr/DrukCyr-HeavyItalic.ttf") format("truetype");
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Druk Cyr";
+	src: url("/fonts/drukCyr/DrukCyr-MediumItalic.eot");
+	src: local("Druk Cyr Medium Italic"), local("DrukCyr-MediumItalic"),
+		url("/fonts/drukCyr/DrukCyr-MediumItalic.eot?#iefix")
+			format("embedded-opentype"),
+		url("/fonts/drukCyr/DrukCyr-MediumItalic.woff2") format("woff2"),
+		url("/fonts/drukCyr/DrukCyr-MediumItalic.woff") format("woff"),
+		url("/fonts/drukCyr/DrukCyr-MediumItalic.ttf") format("truetype");
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Druk Cyr";
+	src: url("/fonts/drukCyr/DrukCyr-SuperItalic.eot");
+	src: local("Druk Cyr Super Italic"), local("DrukCyr-SuperItalic"),
+		url("/fonts/drukCyr/DrukCyr-SuperItalic.eot?#iefix")
+			format("embedded-opentype"),
+		url("/fonts/drukCyr/DrukCyr-SuperItalic.woff2") format("woff2"),
+		url("/fonts/drukCyr/DrukCyr-SuperItalic.woff") format("woff"),
+		url("/fonts/drukCyr/DrukCyr-SuperItalic.ttf") format("truetype");
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Druk Cyr";
+	src: url("/fonts/drukCyr/DrukCyr-Super.eot");
+	src: local("Druk Cyr Super"), local("DrukCyr-Super"),
+		url("/fonts/drukCyr/DrukCyr-Super.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/drukCyr/DrukCyr-Super.woff2") format("woff2"),
+		url("/fonts/drukCyr/DrukCyr-Super.woff") format("woff"),
+		url("/fonts/drukCyr/DrukCyr-Super.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Druk Cyr";
+	src: url("/fonts/drukCyr/DrukCyr-Medium.eot");
+	src: local("Druk Cyr Medium"), local("DrukCyr-Medium"),
+		url("/fonts/drukCyr/DrukCyr-Medium.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/drukCyr/DrukCyr-Medium.woff2") format("woff2"),
+		url("/fonts/drukCyr/DrukCyr-Medium.woff") format("woff"),
+		url("/fonts/drukCyr/DrukCyr-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Druk Cyr";
+	src: url("/fonts/drukCyr/DrukCyr-BoldItalic.eot");
+	src: local("Druk Cyr Bold Italic"), local("DrukCyr-BoldItalic"),
+		url("/fonts/drukCyr/DrukCyr-BoldItalic.eot?#iefix")
+			format("embedded-opentype"),
+		url("/fonts/drukCyr/DrukCyr-BoldItalic.woff2") format("woff2"),
+		url("/fonts/drukCyr/DrukCyr-BoldItalic.woff") format("woff"),
+		url("/fonts/drukCyr/DrukCyr-BoldItalic.ttf") format("truetype");
+	font-weight: bold;
+	font-style: italic;
+}

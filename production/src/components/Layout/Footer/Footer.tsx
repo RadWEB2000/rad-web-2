@@ -1,21 +1,32 @@
-import styles from "./Footer.module.scss";
-import { Author } from "./Author/Author";
-import { Details } from "./Details/Details";
-import { Menu } from "./Menu/Menu";
-import { Socials } from "./Socials/Socials";
+import Author, {
+	iAuthor,
+} from "@default/components/Layout/Footer/Author/Author";
+import Details, {
+	iDetails,
+} from "@default/components/Layout/Footer/Details/Details";
+import Socials, {
+	iSocials,
+} from "@default/components/Layout/Footer/Socials/Socials";
+import Menu, { iMenu } from "@default/components/Layout/Footer/Menu/Menu";
+import styles from "@default/components/Layout/Footer/Footer.module.scss";
 
-export const Footer = () => {
+interface iFooter extends iAuthor, iDetails, iMenu, iSocials {}
+
+export default function Footer({ brand, details, menu, socialMedia }: iFooter) {
 	return (
 		<footer className={styles.wrapper}>
-			<div>
-				<Menu />
-				<Details />
+			<div className={styles.menu}>
+				<Menu menu={menu} />
 			</div>
-			<span />
-			<div>
-				<Author />
-				<Socials />
+			<div className={styles.details}>
+				<Details details={details} />
+			</div>
+			<div className={styles.author}>
+				<Author brand={brand} />
+			</div>
+			<div className={styles.socials}>
+				<Socials socialMedia={socialMedia} />
 			</div>
 		</footer>
 	);
-};
+}

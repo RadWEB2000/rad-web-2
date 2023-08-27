@@ -1,0 +1,85 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	padding: 1.3rem 1.5rem;
+	& > section {
+		@include flex(flex-start, flex-start, column, null, 3rem, false);
+		& > header {
+			margin-top: 2rem;
+			& > h1 {
+				@include font(10rem, 900, 0.9, $drukCyr, null, -1px, start);
+				color: $yellow;
+			}
+		}
+		& > div {
+			margin: 1rem auto 4rem;
+			width: 100%;
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 460px) {
+		.wrapper {
+			padding: 2rem 3.75rem;
+			& > section {
+				row-gap: 1.2rem;
+				& > header {
+					margin-top: unset;
+					& > h1 {
+						font-size: 11rem;
+						line-height: 1;
+					}
+				}
+				& > div {
+					margin: 0.1rem auto 4rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 630px) {
+		.wrapper {
+			padding: 3rem 5rem;
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 13rem;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: 760px) {
+		.wrapper {
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 16rem;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: 900px) {
+		.wrapper {
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 20rem;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: 1400px) {
+		.wrapper {
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 26rem;
+					}
+				}
+			}
+		}
+	}
+}

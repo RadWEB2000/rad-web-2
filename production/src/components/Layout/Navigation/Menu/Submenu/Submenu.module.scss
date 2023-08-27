@@ -1,21 +1,27 @@
 @import "../../../../../styles/Variables.scss";
 
 .wrapper {
-	position: relative;
-	@media only screen {
-		@media (max-width: 1049.5px) {
-			width: 100%;
-		}
-		@media (min-width: 1050px) {
+	width: 100%;
+	& > ul {
+		@include flex(flex-start, flex-start, column, null, 0.25rem, true);
+		margin: 0.5rem 0 0.5rem auto;
+		width: 90%;
+	}
+}
+
+@media only screen {
+	@media (min-width: 1250px) {
+		.wrapper {
+			position: relative;
+			width: auto;
 			& > ul {
-				@include flex(flex-start, flex-start);
-				flex-flow: column;
-				background: $jet;
-				border-radius: 0 1rem 1rem 1rem;
+				background-color: $erie;
+				border-radius: 0 2rem 1rem 2rem;
+				margin: 0rem 0 0.5rem auto;
 				min-width: 25rem;
+				padding: 1.2rem;
 				position: absolute;
-				padding: 0.7rem;
-				row-gap: 1rem;
+				overflow: hidden;
 			}
 		}
 	}

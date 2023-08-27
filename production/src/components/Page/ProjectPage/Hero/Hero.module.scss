@@ -1,0 +1,245 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include size(auto, 100%);
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(1, 1fr);
+	margin-bottom: 12rem;
+	margin-bottom: 2rem;
+	position: relative;
+	z-index: 0;
+}
+.image {
+	// aspect-ratio: 4/3;
+	@include size(52rem, 100%);
+	grid-column: 5/-1;
+	grid-column: 1/-1;
+	grid-row: 2;
+	& > figure {
+		@include size(100%, 100%);
+		position: relative;
+	}
+}
+.details {
+	@include flex(flex-start, flex-start, column, null, 1rem, false);
+	@include size(100%, 100%);
+	grid-column: 1/5;
+	grid-column: 1/-1;
+	grid-row: 1;
+	padding: 2rem 2rem 3rem;
+	// transform: translateY(18%);
+}
+.stack {
+	@include flex(center, center, row wrap, 0.2rem, 0.2rem, false);
+	width: 100%;
+	& > li {
+		$size: 3rem;
+		@include flex(center, center);
+		@include size($size, $size);
+		font-size: 2.3rem;
+	}
+}
+.content {
+	width: clamp(10rem, 110rem, 100%);
+	& > .release {
+		@include font(1.6rem, 800, 1, inherit, null, 1px, center);
+		opacity: 0.8;
+	}
+	& > .title {
+		margin-top: 0.5rem;
+		& > h1 {
+			@include font(9rem, 800, 0.9, $drukCyr, null, -1px, center);
+			color: $yellow;
+		}
+	}
+	& > .excerpt {
+		@include font(2rem, 500, 1.5, inherit, null, -1px, start);
+		margin-top: 3rem;
+		width: clamp(10rem, 85rem, 95%);
+	}
+	& > .website {
+		@include flex(center, center);
+		margin-top: 1.6rem;
+		& > a {
+			@include flex(center, center, row nowrap, 1rem, null, true);
+			@include font(2.2rem, 900, inherit, inherit, null, -1px, center);
+			background-color: $antique;
+			border-radius: 4rem;
+			color: $erie;
+			padding: 1rem 2rem;
+			min-width: 22rem;
+			transition: 0.15s linear background-color, 0.15s linear transform;
+			&:focus,
+			&:focus-within,
+			&:hover {
+				background-color: $peach;
+				transform: scale(1.05);
+			}
+			& > i {
+				@include flex(center, center);
+			}
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 500px) {
+		.image {
+			height: 56rem;
+		}
+		.stack {
+			justify-content: flex-start;
+			& > li {
+				$size: 4rem;
+				@include size($size, $size);
+				font-size: 3rem;
+			}
+		}
+		.details {
+			padding: 2rem 4rem 3rem;
+		}
+		.content {
+			width: clamp(10rem, 110rem, 95%);
+			& > .release {
+				font-size: 1.72rem;
+				text-align: start;
+			}
+			& > .title {
+				margin-top: 0.5rem;
+				& > h1 {
+					font-size: 11rem;
+					text-align: start;
+				}
+			}
+			& > .excerpt {
+				line-height: 1.8;
+			}
+			& > .website {
+				justify-content: flex-start;
+				& > a {
+					padding: 1rem 2rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 650px) {
+		.stack {
+			& > li {
+				$size: 5rem;
+				@include size($size, $size);
+				font-size: 4rem;
+			}
+		}
+		.content {
+			& > .release {
+				font-size: 1.8rem;
+			}
+			& > .title {
+				& > h1 {
+					font-size: 13rem;
+				}
+			}
+			& > .excerpt {
+				font-size: 1.95rem;
+				line-height: 2;
+			}
+		}
+	}
+	@media (min-width: 800px) {
+		.image {
+			height: 64rem;
+		}
+		.content {
+			& > .release {
+				font-size: 1.9rem;
+			}
+			& > .title {
+				& > h1 {
+					font-size: 16rem;
+				}
+			}
+			& > .excerpt {
+				font-size: 2.3rem;
+			}
+		}
+	}
+	@media (min-width: 1000px) {
+		.image {
+			height: 66rem;
+		}
+		.details {
+			padding: 4rem 6rem 4rem;
+		}
+		.content {
+			& > .release {
+				font-size: 1.9rem;
+			}
+			& > .title {
+				& > h1 {
+					font-size: 20rem;
+				}
+			}
+			& > .excerpt {
+				font-size: 2.4rem;
+				line-height: 2.3;
+			}
+		}
+	}
+	@media (min-width: 1250px) {
+		.image {
+			grid-column: 5/-1;
+			grid-row: 1;
+		}
+		.details {
+			grid-column: 1/5;
+			padding: 2rem 3rem 3rem;
+		}
+		.content {
+			& > .release {
+				font-size: 1.8rem;
+			}
+			& > .title {
+				& > h1 {
+					font-size: 12rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 1450px) {
+		.image {
+			height: 72rem;
+		}
+		.details {
+			padding: 2rem 3rem 3rem 4.5rem;
+		}
+		.content {
+			& > .release {
+				font-size: 2rem;
+			}
+			& > .title {
+				& > h1 {
+					font-size: 16rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 1850px) {
+		.image {
+			height: 95rem;
+		}
+		.details {
+			padding: 2rem 3rem 3rem 4.5rem;
+		}
+		.content {
+			& > .release {
+				font-size: 2rem;
+			}
+			& > .title {
+				& > h1 {
+					font-size: 16rem;
+				}
+			}
+		}
+	}
+}

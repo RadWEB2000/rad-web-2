@@ -1,0 +1,49 @@
+@import "../../../styles/Variables.scss";
+.wrapper {
+	@include flex(center, center);
+	margin: 1rem auto;
+	padding: 1rem 0;
+	width: 100%;
+}
+
+.label {
+	@include font(2rem, 500, 1, inherit, uppercase, -1px, center);
+	color: $peach;
+	height: 3rem;
+}
+
+.input {
+	@include font(1.5rem, 300, 1, inherit, null, 0.5px, start);
+	border-bottom: 1px solid $peach;
+	color: $silver;
+	padding: 0.3rem 1rem;
+	transition: 0.25s ease-in-out border-bottom, 0.25s ease-in-out color;
+	&:focus,
+	&:focus-within,
+	&:hover {
+		color: $white;
+		border-bottom: 1px solid $salmon;
+	}
+}
+
+.box {
+	@include flex(flex-start, flex-start, column, null, 1rem, false);
+	width: clamp(10rem, 80rem, 95%);
+	& > * {
+		width: 100%;
+	}
+}
+
+@media only screen {
+	@media (min-width: 1350px) {
+		.label {
+			font-size: 2.7rem;
+			height: 3rem;
+		}
+
+		.input {
+			font-size: 1.9rem;
+			padding: 0.5rem 1.4rem;
+		}
+	}
+}

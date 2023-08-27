@@ -1,0 +1,42 @@
+@import "../../../styles/Variables.scss";
+
+.wrapper {
+	&[data-theme="regular"] {
+		@include size(4rem, 4rem);
+		&,
+		& > a {
+			@include flex(center, center);
+		}
+		& > a {
+			@include size(100%, 100%);
+			color: $white;
+			font-size: 2.3rem;
+			margin: auto;
+			position: relative;
+			z-index: 0;
+			& > * {
+				transition: 0.2s ease-in-out transform;
+			}
+			&::before {
+				@include size(100%, 100%);
+				border: 2px solid $white;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				transition: 0.15s ease-in-out border-radius;
+				z-index: -2;
+			}
+			&:focus,
+			&:focus-within,
+			&:hover {
+				color: $salmon;
+				& > * {
+					transform: scale(1.05);
+				}
+				&::before {
+					border-radius: 1rem;
+				}
+			}
+		}
+	}
+}

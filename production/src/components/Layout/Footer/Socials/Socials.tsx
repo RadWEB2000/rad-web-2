@@ -1,21 +1,18 @@
-import Link from "next/link";
-import styles from "./Socials.module.scss";
-import { getSocial } from "@default/src/lib/functions/getSocial";
-import { menu } from "@default/src/data/menu";
+import styles from "@default/components/Layout/Footer/Socials/Socials.module.scss";
+import Social from "@default/components/Utils/Social/Social";
 
-export const Socials = () => {
+export interface iSocials {
+	socialMedia: {
+		url: string;
+	}[];
+}
+
+export default function Socials({ socialMedia }: iSocials) {
 	return (
 		<ul className={styles.wrapper}>
-			{menu.socials.map(({ color, url }) => {
-				const { icon, name } = getSocial(url);
-				return (
-					<li className={styles.item} key={url} title={name}>
-						<Link href={url} rel="index follow" title={name}>
-							{icon}
-						</Link>
-					</li>
-				);
+			{socialMedia.map(({ url }) => {
+				return <Social key={url} url={url} />;
 			})}
 		</ul>
 	);
-};
+}

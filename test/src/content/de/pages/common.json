@@ -1,0 +1,106 @@
+{
+	"navigation": [
+		{
+			"label": "Start",
+			"uri": "/"
+		},
+		{
+			"label": "Über uns",
+			"uri": "/",
+			"submenu": [
+				{
+					"label": "Radosław Adamczyk",
+					"uri": "/"
+				},
+				{
+					"label": "Klaudia Paluch",
+					"uri": "/"
+				},
+				{
+					"label": "Filip Bukowiecki",
+					"uri": "/"
+				}
+			]
+		},
+		{
+			"label": "Blog",
+			"uri": "/",
+			"submenu": [
+				{
+					"label": "Programmierung",
+					"uri": "/"
+				},
+				{
+					"label": "Suchmaschinenoptimierung (SEO)",
+					"uri": "/"
+				},
+				{
+					"label": "Geschäft",
+					"uri": "/"
+				},
+				{
+					"label": "Texterstellung",
+					"uri": "/"
+				},
+				{
+					"label": "UI/UX Design",
+					"uri": "/"
+				},
+				{
+					"label": "Videoproduktion",
+					"uri": "/"
+				}
+			]
+		},
+		{
+			"label": "Dienstleistungen",
+			"uri": "/",
+			"submenu": [
+				{
+					"label": "Webseiten",
+					"uri": "/"
+				},
+				{
+					"label": "Webanwendungen",
+					"uri": "/"
+				},
+				{
+					"label": "SEO",
+					"uri": "/"
+				},
+				{
+					"label": "Google Ads",
+					"uri": "/"
+				},
+				{
+					"label": "Texterstellung",
+					"uri": "/"
+				},
+				{
+					"label": "UI/UX Design",
+					"uri": "/"
+				},
+				{
+					"label": "Videoproduktion",
+					"uri": "/"
+				},
+				{
+					"label": "Standorte",
+					"uri": "/"
+				}
+			]
+		},
+		{
+			"label": "Projekte",
+			"uri": "/"
+		},
+		{
+			"label": "Fallstudien",
+			"uri": "/"
+		},
+		{
+			"label": "Kontakt",
+			"uri": "/"
+		}
+	]
+}

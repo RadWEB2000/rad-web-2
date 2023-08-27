@@ -1,0 +1,130 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(center, center, column, null, 1rem, true);
+	min-height: 50rem;
+	padding: 5rem 0 1rem 0;
+	z-index: 0;
+}
+
+.box {
+	width: clamp(10rem, 100rem, 95%);
+}
+
+.content {
+	& > .title {
+		& > h1 {
+			@include font(5rem, 800, 0.9, $drukCyr, null, 1px, center);
+			color: $yellow;
+			&::first-letter {
+				color: $peach;
+			}
+		}
+	}
+	& > .excerpt {
+		@include font(1.7rem, 400, 1.7, inherit, null, -1px, start);
+		color: $silver;
+		margin-top: 4rem;
+		padding: 1rem;
+	}
+}
+.details {
+	align-items: center;
+	display: grid;
+	border-radius: 1rem;
+	background-color: $erie;
+	justify-items: center;
+	grid-template-columns: repeat(1, 1fr);
+	row-gap: 2rem;
+	min-height: 5rem;
+	margin: 2rem 0;
+	padding: 1rem 0;
+	& > * {
+		@include font(1.8rem, 600, 1, $openSans, null, 0.5px, center);
+	}
+	& > .author,
+	& > .category {
+		color: $white;
+		transition: 0.15s ease-in-out color;
+		&:focus,
+		&:focus-within,
+		&:hover {
+			color: $peach;
+		}
+	}
+}
+.image {
+	aspect-ratio: 4/4.2;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	position: relative;
+	width: clamp(10rem, 120rem, 100%);
+}
+
+@media only screen {
+	@media (min-width: 500px) {
+		.content {
+			& > .title {
+				& > h1 {
+					font-size: 7.82rem;
+				}
+			}
+			& > .excerpt {
+				font-size: 1.9rem;
+			}
+		}
+		.details {
+			grid-template-columns: repeat(2, 1fr);
+			& > .author {
+				grid-column: 1/-1;
+			}
+		}
+		.image {
+			aspect-ratio: 4/3.25;
+		}
+	}
+	@media (min-width: 700px) {
+		.content {
+			& > .title {
+				& > h1 {
+					font-size: 9rem;
+				}
+			}
+		}
+		.details {
+			grid-template-columns: repeat(3, 1fr);
+			& > .author {
+				grid-column: unset;
+			}
+		}
+		.image {
+			aspect-ratio: 4/3.25;
+		}
+	}
+	@media (min-width: 1200px) {
+		.content {
+			& > .title {
+				& > h1 {
+					font-size: 14rem;
+				}
+			}
+			& > .excerpt {
+				font-size: 2.4rem;
+			}
+		}
+		.details {
+			grid-template-columns: repeat(3, 1fr);
+			& > .author {
+				grid-column: unset;
+			}
+		}
+		.image {
+			aspect-ratio: 4/3.25;
+		}
+	}
+	@media (min-width: 1700px) {
+		.image {
+			aspect-ratio: 4/3;
+		}
+	}
+}

@@ -1,0 +1,128 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	align-items: center;
+	justify-items: center;
+	display: grid;
+	user-select: none;
+	min-height: calc(100vh - 7rem);
+	grid-template-columns: repeat(16, 1fr);
+
+	& > .content {
+		@include flex(center, center, column);
+		grid-column: 1/-1;
+		grid-row: 1;
+		margin: auto;
+		& > section {
+			@include flex(center, center, column, 0, 2rem);
+			& > header,
+			& > ul {
+				width: 90%;
+			}
+			& > header {
+				@include flex(center, center, column);
+
+				& > h1 {
+					@include font(7rem, 800, 0.8, inherit, null, -1.4px, center);
+				}
+				& > h2 {
+					@include font(3.65rem, 600, 1.2, inherit, null, -1.4px, center);
+					color: $jordyBlue;
+					margin-top: 5px;
+				}
+			}
+			& > ul {
+				@include flex(center, center, row wrap, 1.5rem, 1rem);
+			}
+		}
+	}
+	& > .image {
+		display: none;
+	}
+	@media only screen {
+		@media (min-width: 650px) {
+			& > .content {
+				& > section {
+					& > header {
+						& > h1 {
+							font-size: 12rem;
+						}
+						& > h2 {
+							font-size: 5rem;
+							margin-top: 15px;
+						}
+					}
+				}
+			}
+		}
+		@media (min-width: 1000px) {
+			& > .content {
+				grid-column: 9/-1;
+				& > section {
+					padding: 1rem 0;
+					& > header {
+						justify-content: flex-end;
+						& > h1,
+						& > h2 {
+							text-align: end;
+							width: 100%;
+						}
+						& > h1 {
+							font-size: 8rem;
+						}
+						& > h2 {
+							font-size: 5rem;
+							margin-top: 15px;
+						}
+					}
+
+					& > ul {
+						justify-content: flex-end;
+					}
+				}
+			}
+			& > .image {
+				@include flex(center, center);
+				@include size(100%, 100%);
+				grid-column: 1/9;
+				grid-row: 1;
+				& > figure {
+					aspect-ratio: 1/1;
+					position: relative;
+					width: 90%;
+				}
+			}
+		}
+		@media (min-width: 1350px) {
+			& > .content {
+				width: 100%;
+				& > * {
+					width: 85%;
+				}
+				& > section {
+					row-gap: 3rem;
+					& > header {
+						justify-content: flex-end;
+						& > h1 {
+							font-size: 12rem;
+						}
+						& > h2 {
+							font-size: 7rem;
+						}
+					}
+				}
+			}
+		}
+		@media (min-width: 1620px) {
+			& > .content {
+				& > section {
+					& > header {
+						& > h1 {
+							font-size: 14rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

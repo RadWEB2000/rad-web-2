@@ -1,0 +1,136 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(flex-start, flex-start, column, null, null, false);
+	background-color: $erie;
+	border-radius: 1rem;
+	padding: 1rem 0;
+	&,
+	& > * {
+		width: 100%;
+	}
+}
+
+.head {
+	display: grid;
+	grid-template-columns: calc(100% - 6rem) 6rem;
+	height: 5rem;
+	& > * {
+		@include size(100%, 100%);
+	}
+	& > .title {
+		@include flex(center, flex-start);
+		padding-left: 1em;
+		& > h3 {
+			@include font(1.7rem, 700, 1, inherit, uppercase, 1px, start);
+			color: $silver;
+		}
+		&[data-open="true"] {
+			& > h3 {
+				color: $peach;
+			}
+		}
+	}
+	& > .button {
+		@include flex(center, center);
+		& > button {
+			@include size(3.7rem, 3.7rem);
+			position: relative;
+			& > span {
+				@include size(4px, 75%);
+				background-color: $silver;
+				border-radius: 1rem;
+				top: 50%;
+				left: 50%;
+				position: absolute;
+				transition: 0.2s ease-in-out background-color,
+					0.2s ease-in-out transform;
+				&:nth-of-type(1) {
+					transform: translate(-50%, -50%) rotate(90deg);
+				}
+				&:nth-of-type(2) {
+					transform: translate(-50%, -50%) rotate(0deg);
+				}
+			}
+			&[data-open="true"] {
+				& > span {
+					background-color: $peach;
+					&:nth-of-type(1) {
+						transform: translate(-50%, -50%) rotate(45deg);
+					}
+					&:nth-of-type(2) {
+						transform: translate(-50%, -50%) rotate(-45deg);
+					}
+				}
+			}
+		}
+	}
+}
+
+.body {
+	padding: 1.5rem 2rem;
+	& > .content {
+		& > section {
+			@include font(1.6rem, 300, 1.4, inherit, null, 1px, start);
+			color: $silver;
+		}
+	}
+	& > .link {
+		@include flex(center, flex-end);
+		& > a {
+			@include font(2rem, 700, 1, inherit, uppercase, 1px, center);
+			position: relative;
+			color: $white;
+			&::after {
+				@include size(1.5px, 0%);
+				background-color: $white;
+				bottom: 0;
+				left: 0;
+				transition: 0.15s ease-in-out width;
+			}
+			&:focus,
+			&:focus-within,
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 700px) {
+		.head {
+			& > .title {
+				& > h3 {
+					font-size: 2.2rem;
+				}
+			}
+		}
+
+		.body {
+			& > .content {
+				& > section {
+					font-size: 1.7rem;
+					line-height: 1.5;
+				}
+			}
+			& > .link {
+				margin-top: 2rem;
+				& > a {
+					font-size: 2.2rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 900px) {
+		.head {
+			& > .title {
+				& > h3 {
+					font-size: 2.4rem;
+				}
+			}
+		}
+	}
+}

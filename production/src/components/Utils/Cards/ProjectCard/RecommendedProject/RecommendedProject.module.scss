@@ -1,0 +1,42 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include size(30rem, clamp(10rem, 95rem, 100%));
+	& > a {
+		position: relative;
+		z-index: 0;
+		&:focus,
+		&:focus-within,
+		&:hover {
+			& > div {
+				& > figure {
+					transform: scale(1.2);
+				}
+			}
+		}
+
+		&,
+		& > * {
+			@include size(100%, 100%);
+			@include flex(center, center, column);
+		}
+		& > div {
+			overflow: hidden;
+			position: absolute;
+			z-index: -1;
+			& > figure {
+				@include size(100%, 100%);
+				filter: brightness(56%);
+				position: relative;
+				transition: 0.2s ease-in-out transform;
+			}
+		}
+		& > section {
+			background-color: hsla(38, 90%, 81%, 0.25);
+			color: $white;
+			& > h2 {
+				@include font(4rem, 700, 1, inherit, null, 1px, center);
+			}
+		}
+	}
+}

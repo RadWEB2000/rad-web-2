@@ -1,0 +1,82 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include size(40rem, 90%);
+	background: $erie;
+	margin: auto;
+	color: $peach;
+	@include flex(center, center, column, null, 1rem);
+	border-radius: 3rem;
+	transition: 0.25s ease-in-out filter;
+	&:focus,
+	&:focus-within,
+	&:hover {
+		filter: brightness(135%);
+	}
+
+	& > .icon {
+		& > * {
+			@include size(5rem, 5rem);
+		}
+	}
+	& > .value {
+		@include font(6rem, 700, 1.2, inherit, uppercase, 1px, center);
+	}
+	& > .title {
+		@include font(1.85rem, 600, 1.2, inherit, uppercase, -1px, center);
+	}
+}
+
+@media only screen {
+	@media (min-width: 570px) {
+		.wrapper {
+			@include size(unset, 95%);
+			aspect-ratio: 1/1;
+			border-radius: 1rem;
+			& > .icon {
+				& > * {
+					@include size(5rem, 5rem);
+				}
+			}
+			& > .value {
+				@include font(6rem, 700, 1.2, inherit, uppercase, 1px, center);
+			}
+			& > .title {
+				@include font(1.75rem, 600, 1.2, inherit, uppercase, -1px, center);
+			}
+		}
+	}
+	@media (min-width: 670px) {
+		.wrapper {
+			aspect-ratio: unset;
+			@include size(100%, 100%);
+			border-radius: 1rem;
+			& > .icon {
+				& > * {
+					@include size(5rem, 5rem);
+				}
+			}
+			& > .value {
+				@include font(6rem, 700, 1.2, inherit, uppercase, 1px, center);
+			}
+			& > .title {
+				@include font(1.75rem, 600, 1.2, inherit, uppercase, -1px, center);
+			}
+		}
+	}
+	@media (min-width: 130px) {
+		.wrapper {
+			& > .icon {
+				& > * {
+					@include size(7rem, 7rem);
+				}
+			}
+			& > .value {
+				@include font(11rem, 700, 1.2, inherit, uppercase, 1px, center);
+			}
+			& > .title {
+				@include font(3rem, 600, 1.2, inherit, uppercase, -1px, center);
+			}
+		}
+	}
+}

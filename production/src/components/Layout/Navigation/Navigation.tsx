@@ -1,30 +1,32 @@
-import styles from "./Navigation.module.scss";
-import { Brand, iBrand } from "./Brand/Brand";
-import { Button } from "./Button/Button";
-import { Lang } from "./Lang/Lang";
-import { menu } from "@default/src/data/menu";
-import { Menu } from "./Menu/Menu";
-import { useContext } from "react";
-import { LayoutContext } from "@default/src/context/LayoutContext/LayoutContext";
+"use client";
 
-interface iNavigation {
-	brand: iBrand;
+import Brand, {
+	iBrand,
+} from "@default/components/Layout/Navigation/Brand/Brand";
+import Menu from "@default/components/Layout/Navigation/Menu/Menu";
+import styles from "@default/components/Layout/Navigation/Navigation.module.scss";
+import Settings from "@default/components/Layout/Navigation/Settings/Settings";
+import { MenuContext } from "@default/context/MenuContext";
+import useGroupPathsMenu from "@default/lib/hooks/useGroupPathsMenu";
+import { useContext } from "react";
+
+interface iNavigation extends iBrand {
+	menu: any;
 }
 
-export const Navigation = ({ brand }: iNavigation) => {
-	const { isOpenMenu } = useContext(LayoutContext);
+export default function Navigation({ brand, menu }: iNavigation) {
+	const { isOpen } = useContext(MenuContext);
 	return (
-		<nav className={styles.wrapper} data-openMenu={isOpenMenu}>
+		<nav className={styles.wrapper} data-open-menu={isOpen}>
 			<div className={styles.brand}>
-				<Brand name={brand.name} uri={brand.uri} />
+				<Brand brand={brand} />
 			</div>
-			<div className={styles.menu} data-openMenu={isOpenMenu}>
-				<Menu menu={menu.pl.nav} />
+			<div className={styles.menu}>
+				<Menu menu={useGroupPathsMenu(menu)} />
 			</div>
 			<div className={styles.settings}>
-				{/* <Lang /> */}
-				<Button />
+				<Settings />
 			</div>
 		</nav>
 	);
-};
+}

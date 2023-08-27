@@ -1,0 +1,92 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include size(60rem, clamp(10rem, 70rem, 95%));
+	margin: 0 auto;
+	position: relative;
+	&:focus-within,
+	&:hover {
+		& > .content {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.content,
+.image {
+	@include positioning(50%, null, null, 50%, -50%, -50%, null, null, absolute);
+	@include size(100%, 100%);
+}
+
+.image {
+	z-index: -1;
+}
+
+.content {
+	@include flex(flex-start, center, column, null, 2rem);
+	background-image: linear-gradient(
+		to bottom,
+		rgba(33, 33, 33, 0.683),
+		rgba(33, 33, 33, 0.698),
+		hsla(0, 0%, 0%, 0.845)
+	);
+	padding: 2rem 1.25rem;
+	opacity: 0;
+	transition: 0.2s ease-in-out opacity, 0.2s ease-in-out visibility;
+	visibility: hidden;
+}
+
+.details {
+	@include flex(flex-start, center, column, null, 1rem);
+	& > .fullname {
+		& > h2 {
+			@include font(5rem, 700, 0.9, inherit, null, 1px, start);
+			color: $pictonBlue;
+		}
+	}
+	& > h3 {
+		@include font(2.5rem, 600, 1, inherit, null, 1px, start);
+		color: $white;
+	}
+}
+
+.excerpt {
+	@include font(1.9rem, 400, 1.2, inherit, null, -1px, start);
+}
+.button {
+	@include flex(center, flex-end, null, null);
+	width: 100%;
+	padding: 0.5rem 0;
+	& > a,
+	& > a > span {
+		@include flex(center, center);
+	}
+	& > a {
+		$size: 5rem;
+		@include size($size, $size);
+		font-size: 4rem;
+		& > span {
+			position: relative;
+			border: 3px solid white;
+			&,
+			&::before {
+				@include size(100%, 100%);
+				border-radius: 50%;
+			}
+			&::before {
+				border: 2px solid white;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) scale(1);
+				transition: 0.2s ease-in-out transform;
+			}
+			&:focus-within,
+			&:hover {
+				&::before {
+					transform: translate(-50%, -50%) scale(1.5);
+				}
+			}
+		}
+	}
+}

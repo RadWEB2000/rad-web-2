@@ -1,53 +1,79 @@
-import { HomeBlogCard } from "@default/src/components/Utils/Cards/Blog/HomeBlogCard/HomeBlogCard";
-import { Section, iSection } from "../Section/Section";
-import styles from "./Blog.module.scss";
+"use client";
 
-interface iBlog extends iSection {
-	cards: {
-		category: string;
-		excerpt: string;
-		image: string;
-		release: string;
-		title: string;
-		slug: string;
+import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
+import { MoveRight } from "lucide-react";
+import styles from "@default/components/Page/HomePage/Blog/Blog.module.scss";
+import HomeBlogCard from "@default/components/Utils/Cards/BlogCard/HomeBlogCard/HomeBlogCard";
+
+type tBlog = {
+	cards?: any[];
+	button: {
+		label: string;
 		uri: string;
-	}[];
-}
+	};
+	content: string;
+	title: string;
+};
 
-export const Blog = ({ button, cards, content, title }: iBlog) => {
+export default function Blog({
+	button: { label, uri },
+	cards,
+	content,
+	title,
+}: tBlog) {
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.section}>
-				<Section button={button} content={content} title={title} />
-			</div>
-			<ul className={styles.cards}>
-				{cards
-					.sort((a: any, b: any) => {
-						const dateA: any = new Date(a.release);
-						const dateB: any = new Date(b.release);
-						return dateB - dateA;
-					})
-					.slice(0, 6)
-					.map(({ category, image, release, title, uri }) => {
+			<section>
+				<header>
+					<h2 dangerouslySetInnerHTML={{ __html: title }} />
+				</header>
+				<p dangerouslySetInnerHTML={{ __html: content }} />
+				<ButtonPrimary
+					label={label}
+					theme="tertiary"
+					uri={uri}
+					icon={<MoveRight />}
+					variant="link"
+				/>
+			</section>
+			<ul>
+				{cards?.map(
+					({
+						node: {
+							categories,
+							date,
+							featuredImage,
+							post: { author },
+							status,
+							title,
+							uri,
+						},
+					}) => {
 						return (
 							<HomeBlogCard
-								category={{
-									label: category,
-									uri: "#",
+								author={{
+									firstname: author[0].teammate.fullname.firstname,
+									lastname: author[0].teammate.fullname.lastname,
 								}}
+								category={{
+									name: categories.edges[0].node.name,
+									uri: categories.edges[0].node.uri,
+								}}
+								date={date}
 								image={{
-									alt: title,
-									src: image,
-									title: title,
+									alt: featuredImage.node.altText,
+									src: featuredImage.node.sourceUrl,
+									title: featuredImage.node.title,
 								}}
 								key={title}
-								release={release}
+								status={status}
 								title={title}
 								uri={uri}
 							/>
 						);
-					})}
+					}
+				)}
 			</ul>
 		</div>
 	);
-};
+}

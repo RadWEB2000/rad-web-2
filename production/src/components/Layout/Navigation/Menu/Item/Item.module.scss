@@ -1,81 +1,80 @@
 @import "../../../../../styles/Variables.scss";
 
-.expand,
-.regular {
-	// height: 6rem;
-	@include flex(center, flex-start);
-	flex-flow: row nowrap;
-	gap: 1.5rem;
-	& > a {
-		@include font(4rem, 200);
-		position: relative;
-		&::before {
-			background-color: $cyan;
-			bottom: 0;
-			height: 1.2px;
-			left: 0;
-			width: 0;
-			transition: 0.15s ease-in-out width;
-		}
-		&:focus,
-		&:focus-within,
-		&:hover {
-			&::before {
-				width: 100%;
-			}
-		}
-	}
-	& > button {
+.expand {
+	@include flex(center, flex-start, null, null, null, false);
+	& > .button {
 		@include flex(center, center);
-		@include size(3.5rem, 3.5rem);
-		color: $white;
-		font-size: 3rem;
+		aspect-ratio: 1/1;
+		color: $black;
+		height: 100%;
 	}
 }
 
 .submenu {
-	// background: purple;
-	margin: 0.7rem 0 0.7rem 2rem;
-	& > a {
-		@include font(2.5rem, 200);
+	height: 2.85rem;
+	& > .link {
+		@include font(2.15rem, 400, null, inherit, uppercase, -0.5px, start);
+	}
+}
+
+.expand,
+.regular,
+.submenu {
+	width: 100%;
+}
+.expand,
+.regular {
+	height: 3.5rem;
+	& > .link {
+		@include font(2.5rem, 500, null, inherit, uppercase, -0.5px, start);
+		padding: 0 0.5rem;
 		position: relative;
-		&::before {
-			background-color: $cyan;
-			bottom: 0;
-			height: 1.2px;
-			left: 0;
-			width: 0;
-			transition: 0.15s ease-in-out width;
-		}
-		&:focus,
-		&:focus-within,
-		&:hover {
-			&::before {
-				width: 100%;
-			}
-		}
 	}
 }
 
 @media only screen {
-	@media (min-width: 1050px) {
-		.expand,
-		.regular {
-			gap: 1.15rem;
-			min-width: 5rem;
-			& > a {
-				@include font(1.95rem, 300);
-			}
-			& > button {
-				@include size(2rem, 2rem);
-				font-size: 1.8rem;
+	@media (min-width: 1250px) {
+		.expand {
+			& > .button {
+				color: $white;
 			}
 		}
+		.expand,
+		.regular {
+			height: 2.5rem;
+			width: auto;
+			& > .link {
+				@include font(1.85rem, 500, null, inherit, uppercase, -0.5px, start);
+				padding: 0 0.45rem;
+				transition: 0.3s ease-in-out color;
+				&::after {
+					@include size(1.2px, 0%);
+					background-color: $yellow;
+					bottom: 0;
+					left: 0;
+					transition: 0.3s ease-in-out width;
+				}
+				&:focus,
+				&:focus-within,
+				&:hover {
+					color: $yellow;
+					&::after {
+						width: 100%;
+					}
+				}
+			}
+		}
+
 		.submenu {
-			// background: purple;
-			margin: 0;
-			& > a {
-				font-size: 1.8rem;
+			height: 2.85rem;
+			& > .link {
+				font-size: 1.7rem;
+				transition: 0.3s ease-in-out opacity;
+				&:focus,
+				&:focus-within,
+				&:hover {
+					opacity: 0.7;
+				}
 			}
 		}
 	}

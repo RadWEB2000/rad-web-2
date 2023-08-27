@@ -1,0 +1,28 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin: auto;
+	width: 95%;
+	& > *:first-child {
+		grid-column: 1/-1;
+	}
+}
+
+@media only screen {
+	@media (min-width: 700px) {
+		.wrapper {
+			grid-template-columns: repeat(4, 1fr);
+			width: 100%;
+		}
+	}
+	@media (min-width: 950px) {
+		.wrapper {
+			grid-template-columns: repeat(5, 1fr);
+			& > *:first-child {
+				grid-column: unset;
+			}
+		}
+	}
+}

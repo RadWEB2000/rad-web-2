@@ -1,0 +1,17 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(flex-start, flex-start, column, null, 2rem);
+	width: 100%;
+	& > label {
+		@include font(2.2rem, 300, 1, inherit, uppercase, -1px, start);
+	}
+	& > input {
+		@include font(1.5rem, 600, 0.9, inherit, null, 0.25px, start);
+		@include size(3.8rem, 100%);
+		border: 2px solid $white;
+		border-radius: 3rem;
+		color: $white;
+		padding: 0 1rem 0 1rem;
+	}
+}

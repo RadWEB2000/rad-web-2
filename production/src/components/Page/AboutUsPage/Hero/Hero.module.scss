@@ -1,0 +1,102 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(flex-start, flex-start, column, null, 2rem, false);
+	padding: 4rem 2.5rem;
+	& > section {
+		height: auto;
+		position: relative;
+		z-index: 0;
+
+		& > header {
+			& > h1 {
+				@include font(12rem, 900, 1, $drukCyr, null, 1px, start);
+				color: $yellow;
+			}
+		}
+	}
+	& > div {
+		& > p {
+			@include font(2rem, 600, 1.6, inherit, null, -1px, start);
+			color: $seasalt;
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 480px) {
+		.wrapper {
+			padding: 4rem 3.5rem;
+			row-gap: 3rem;
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 18rem;
+					}
+				}
+			}
+			& > div {
+				& > p {
+					font-size: 2.5rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 800px) {
+		.wrapper {
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 27rem;
+					}
+				}
+			}
+			& > div {
+				& > p {
+					font-size: 2.75rem;
+					line-height: 1.75;
+				}
+			}
+		}
+	}
+	@media (min-width: 1200px) {
+		.wrapper {
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 32rem;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: 1400px) {
+		.wrapper {
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 38rem;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: 1600px) {
+		.wrapper {
+			padding: 5rem 7rem;
+			& > section {
+				& > header {
+					& > h1 {
+						font-size: 42rem;
+					}
+				}
+			}
+			& > div {
+				& > p {
+					font-size: 2.9rem;
+					line-height: 2;
+				}
+			}
+		}
+	}
+}

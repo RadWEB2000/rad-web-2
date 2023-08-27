@@ -1,0 +1,68 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	display: grid;
+	height: 40rem;
+
+	// background: red;
+	overflow: hidden;
+	transition: 0.2s ease-in-out;
+	&:hover {
+		// background-color: blue;
+		// width: 120%;
+		& > .image {
+			transform: scale(1.1) rotate(2deg);
+		}
+	}
+}
+
+.content,
+.image {
+	grid-row: 1;
+	grid-column: 1/-1;
+}
+
+.image {
+	position: relative;
+	@include size(100%, 100%);
+	filter: brightness(90%);
+	z-index: -1;
+	transform: scale(1);
+	transition: 0.5s ease-in-out;
+}
+
+.content {
+	@include flex(center, space-between, column, null, null, false);
+	padding: 2rem 1rem;
+	& > h2 {
+		@include font(1.8rem, 500, 1, inherit, null, -1px, center);
+		border-radius: 0.5rem;
+		padding: 1.2rem 1.85rem;
+		margin-left: 0.15rem;
+		margin-right: auto;
+	}
+	& > div {
+		padding-right: 0.5rem;
+		width: 100%;
+	}
+}
+
+@media only screen {
+	@media (min-width: 1350px) {
+		.wrapper {
+			height: 50rem;
+		}
+	}
+	@media (min-width: 1900px) {
+		.wrapper {
+			height: 65rem;
+			& > .content {
+				& > h2 {
+					font-size: 2.7rem;
+					border-radius: 1rem;
+					padding: 1.2rem 2.85rem;
+				}
+			}
+		}
+	}
+}

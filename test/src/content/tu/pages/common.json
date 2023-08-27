@@ -1,0 +1,106 @@
+{
+	"navigation": [
+		{
+			"label": "Başlangıç",
+			"uri": "/"
+		},
+		{
+			"label": "Hakkımızda",
+			"uri": "/",
+			"submenu": [
+				{
+					"label": "Radosław Adamczyk",
+					"uri": "/"
+				},
+				{
+					"label": "Klaudia Paluch",
+					"uri": "/"
+				},
+				{
+					"label": "Filip Bukowiecki",
+					"uri": "/"
+				}
+			]
+		},
+		{
+			"label": "Blog",
+			"uri": "/",
+			"submenu": [
+				{
+					"label": "Programlama",
+					"uri": "/"
+				},
+				{
+					"label": "SEO",
+					"uri": "/"
+				},
+				{
+					"label": "İş",
+					"uri": "/"
+				},
+				{
+					"label": "Metin Yazma",
+					"uri": "/"
+				},
+				{
+					"label": "UI/UX Tasarım",
+					"uri": "/"
+				},
+				{
+					"label": "Video Üretimi",
+					"uri": "/"
+				}
+			]
+		},
+		{
+			"label": "Hizmetler",
+			"uri": "/",
+			"submenu": [
+				{
+					"label": "Web Siteleri",
+					"uri": "/"
+				},
+				{
+					"label": "Web Uygulamaları",
+					"uri": "/"
+				},
+				{
+					"label": "SEO",
+					"uri": "/"
+				},
+				{
+					"label": "Google Ads",
+					"uri": "/"
+				},
+				{
+					"label": "Metin Yazma",
+					"uri": "/"
+				},
+				{
+					"label": "UI/UX Tasarım",
+					"uri": "/"
+				},
+				{
+					"label": "Video Üretimi",
+					"uri": "/"
+				},
+				{
+					"label": "Konumlar",
+					"uri": "/"
+				}
+			]
+		},
+		{
+			"label": "Projeler",
+			"uri": "/"
+		},
+		{
+			"label": "Örnek Çalışmalar",
+			"uri": "/"
+		},
+		{
+			"label": "İletişim",
+			"uri": "/"
+		}
+	]
+}

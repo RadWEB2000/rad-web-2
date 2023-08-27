@@ -1,0 +1,51 @@
+@import "../../../../styles/Variables.scss";
+
+.cards {
+	@include flex(center, center, column, null, null);
+	flex-shrink: 0;
+	margin: auto;
+	position: sticky;
+	top: 5rem;
+	width: clamp(0%, 150rem, 95%);
+}
+
+.content {
+	margin: 12rem auto 8rem auto;
+	padding: 2rem 1rem;
+	width: 95%;
+	& > header {
+		& > h2 {
+			@include font(6.25rem, 700, 0.9, inherit, null, 1px, center);
+		}
+	}
+	& > div {
+		margin-top: 3rem;
+	}
+}
+
+@media only screen {
+	@media (min-width: 750px) {
+		.content {
+			& > header {
+				& > h2 {
+					font-size: 12rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 950px) {
+		.content {
+			margin: 16rem auto 8rem auto;
+		}
+	}
+	@media (min-width: 1250px) {
+		.content {
+			margin: 22rem auto 10rem auto;
+			& > header {
+				& > h2 {
+					font-size: 16rem;
+				}
+			}
+		}
+	}
+}

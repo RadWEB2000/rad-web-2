@@ -1,0 +1,62 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	background-color: $erie;
+	border-radius: 0.75rem;
+	margin: 2rem auto 4rem;
+	width: clamp(10rem, 107rem, 95%);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	padding: 4rem 2rem;
+
+	& > .image {
+		@include flex(center, center);
+		grid-column: 1/2;
+		& > figure {
+			aspect-ratio: 1/1;
+			border-radius: 50%;
+			margin: auto;
+			overflow: hidden;
+			position: relative;
+			width: clamp(10rem, 30rem, 95%);
+		}
+	}
+	& > .details {
+		@include flex(flex-end, space-between, column, null, 0.5rem, false);
+		grid-column: 2/-1;
+		padding: 2rem 3rem;
+		& > .socials {
+			@include flex(center, flex-end, row wrap, 0.4rem, 0.4rem, true);
+			& > .social {
+				$size: 4.3rem;
+				@include size($size, $size);
+				& > a {
+					@include flex(center, center);
+					@include size(100%, 100%);
+					font-size: 2.6rem;
+					transition: 0.15s ease-in-out color;
+					&:focus,
+					&:focus-within,
+					&:hover {
+						color: $peach;
+					}
+				}
+			}
+		}
+		& > .fullname {
+			& > h2 {
+				@include font(6rem, 700, 1, inherit, null, -1px, end);
+				transition: 0.15s ease-in-out color;
+				&:focus,
+				&:focus-within,
+				&:hover {
+					color: $salmon;
+				}
+			}
+		}
+		& > .cities,
+		& > .jobs {
+			@include font(2rem, 400, 1, inherit, null, 0.5px, end);
+		}
+	}
+}

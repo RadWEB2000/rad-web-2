@@ -1,34 +1,40 @@
-import styles from "./Submenu.module.scss";
-import { AnimatePresence, motion } from "framer-motion";
-import { Item } from "../Item/Item";
+import Item from "@default/components/Layout/Navigation/Menu/Item/Item";
 import { useState } from "react";
+import styles from "@default/components/Layout/Navigation/Menu/Submenu/Submenu.module.scss";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface iSubmenu {
 	label: string;
-	submenu: {
-		label: string;
-		uri: string;
-	}[];
 	uri: string;
+	submenu?: any[];
 }
 
-export const Submenu = ({ label, submenu, uri }: iSubmenu) => {
-	const [isOpen, setIsOpen] = useState(false);
-
+export default function Submenu({ label, uri, submenu }: iSubmenu) {
+	const [isOpen, setIsOpen] = useState<boolean>(false);
 	return (
 		<li className={styles.wrapper} onMouseLeave={() => setIsOpen(false)}>
 			<Item
 				label={label}
-				handleExpand={() => setIsOpen(!isOpen)}
-				type="expand"
+				toggleSubmenu={() => setIsOpen(!isOpen)}
 				uri={uri}
+				variant="expand"
 			/>
 			{isOpen && (
 				<AnimatePresence>
-					<motion.ul>
-						{submenu.map(({ label, uri }) => {
+					<motion.ul
+						initial={{ height: 0, opacity: 0 }}
+						animate={{ height: "auto", opacity: 1 }}
+						exit={{ height: 0, opacity: 0 }}
+					>
+						{submenu?.map(({ node: { label, path } }, index) => {
 							return (
-								<Item key={label} label={label} type="submenu" uri={uri} />
+								<Item
+									closeSubmenu={() => {}}
+									key={index}
+									label={label}
+									uri={path}
+									variant="submenu"
+								/>
 							);
 						})}
 					</motion.ul>
@@ -36,4 +42,4 @@ export const Submenu = ({ label, submenu, uri }: iSubmenu) => {
 			)}
 		</li>
 	);
-};
+}

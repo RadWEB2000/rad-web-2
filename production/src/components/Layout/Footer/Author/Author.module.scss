@@ -1,5 +1,8 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	@include font(2.2rem, 700);
+	@include flex(center, flex-start);
+	& > p {
+		@include font(1.7rem, 800, 1, inherit, null, -1px, center);
+	}
 }

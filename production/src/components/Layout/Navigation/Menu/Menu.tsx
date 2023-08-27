@@ -1,30 +1,42 @@
-import styles from "./Menu.module.scss";
-import { Item } from "./Item/Item";
-import { Submenu } from "./Submenu/Submenu";
+import Item from "./Item/Item";
+import Submenu from "./Submenu/Submenu";
+import styles from "@default/components/Layout/Navigation/Menu/Menu.module.scss";
+type tMenuElement = {
+	node: {
+		path: string;
+		label: string;
+	};
+};
 
 interface iMenu {
-	menu: {
-		label: string;
-		submenu?: {
-			label: string;
-			uri: string;
-		}[];
-		uri: string;
-	}[];
+	menu: tMenuElement[][];
 }
 
-export const Menu = ({ menu }: iMenu) => {
+export default function Menu({ menu }: iMenu) {
 	return (
 		<menu className={styles.wrapper}>
-			{menu.map(({ label, submenu, uri }) => {
-				if (submenu) {
+			{menu.map((item, index) => {
+				if (item.length > 1) {
 					return (
-						<Submenu key={label} label={label} submenu={submenu} uri={uri} />
+						<Submenu
+							label={item[0].node.label}
+							key={item[0].node.label}
+							uri={item[0].node.path}
+							submenu={item.slice(1, -1)}
+						/>
 					);
 				} else {
-					return <Item key={label} label={label} type="regular" uri={uri} />;
+					return (
+						<Item
+							closeSubmenu={() => {}}
+							label={item[0].node.label}
+							key={item[0].node.label}
+							uri={item[0].node.path}
+							variant="regular"
+						/>
+					);
 				}
 			})}
 		</menu>
 	);
-};
+}

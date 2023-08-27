@@ -1,35 +1,58 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	@include flex(center, center);
-	flex-flow: column;
-	margin: 3rem auto;
-	row-gap: 2rem;
-	text-align: center;
-	width: 100%;
-	& > .title {
-		@include font(8rem, 900);
+	&,
+	& > address {
+		@include flex(center, center, column);
 	}
-	& > .details {
-		font-style: normal;
+	& > .title {
+		@include font(10rem, 900, 1.2, $drukCyr, null, -1px, center);
+		color: $yellow;
+	}
+	& > .slogan {
+		@include font(3.15rem, 900, 1, inherit, null, -1px, center);
+	}
+	& > address {
+		margin-top: 2rem;
+		row-gap: 0.7rem;
 		& > * {
-			margin-top: 0.5rem;
-			line-height: 1.85;
+			@include font(1.7rem, 400, 1.2, inherit, null, -1px, center);
+			font-style: normal;
+			color: $silver;
 		}
 	}
-	@media only screen {
-		@media (min-width: 1150px) {
-			grid-column: 10/-1;
-			// margin: 0 0 auto;
-			& > .details {
-				a {
-					transition: 0.15s ease-in-out color;
-					&:focus,
-					&:focus-within,
-					&:hover {
-						color: $cyan;
-					}
+}
+
+@media only screen {
+	@media (min-width: 620px) {
+		.wrapper {
+			& > .title {
+				font-size: 18rem;
+			}
+			& > .slogan {
+				font-size: 3.7rem;
+			}
+			& > address {
+				& > * {
+					font-size: 1.82rem;
 				}
+			}
+		}
+	}
+	@media (min-width: 1290px) {
+		.wrapper {
+			& > .title {
+				font-size: 14rem;
+			}
+		}
+	}
+	@media (min-width: 1750px) {
+		.wrapper {
+			& > .title {
+				font-size: 20rem;
+			}
+			& > .slogan {
+				font-size: 4.7rem;
 			}
 		}
 	}

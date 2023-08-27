@@ -1,12 +1,11 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	@include flex(center, flex-start);
-	@include size(100%, 100%);
-	font-family: $righteous;
+	$size: 100%;
+	@include flex(center, flx-start, null, null, null, false);
+	@include size($size, $size);
 	padding-left: 1.2rem;
 	& > a {
-		@include font(3rem, 700);
-		letter-spacing: 1.5px;
+		@include font(2.8rem, 800, null, $openSans, null, -1px, start);
 	}
 }

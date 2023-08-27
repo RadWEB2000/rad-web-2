@@ -1,0 +1,74 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(center, flex-start, column, null, 1rem, false);
+	background-color: $erie;
+	border-radius: 2rem;
+	min-height: 40rem;
+	padding: 1rem;
+	width: clamp(12rem, 60rem, 95%);
+}
+
+.image {
+	aspect-ratio: 4/4.5;
+	border-radius: 2rem;
+	overflow: hidden;
+	transition: 0.2s ease-in-out transform;
+	width: 100%;
+	& > figure {
+		@include size(100%, 100%);
+		position: relative;
+	}
+}
+
+.details {
+	width: 100%;
+	padding: 0 0 1rem 0;
+	& > .fullname {
+		& > h2 {
+			@include font(3rem, 500, 1.2, $openSans, null, -1px, start);
+		}
+	}
+	& > .jobs {
+		@include font(1.85rem, 300, 1.4, inherit, null, -1px, start);
+		color: $silver;
+		margin-top: 1rem;
+	}
+}
+
+@media only screen {
+	@media (min-width: 900px) {
+		.wrapper {
+			row-gap: 1.5rem;
+		}
+
+		.image {
+			aspect-ratio: 4/5.2;
+		}
+
+		.details {
+			& > .fullname {
+				& > h2 {
+					font-size: 3.9rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 1200px) {
+		.wrapper {
+			min-height: 50rem;
+		}
+
+		.image {
+			aspect-ratio: 4/5.5;
+		}
+
+		.details {
+			& > .fullname {
+				& > h2 {
+					font-size: 5rem;
+				}
+			}
+		}
+	}
+}

@@ -1,78 +1,89 @@
 @import "../../../styles/Variables.scss";
 
 .wrapper {
-	background: $black;
-	border-bottom: 0.5px solid $jet;
+	@include positioning(0, null, null, null, null, null, null, 9999999, sticky);
+	background-color: $yellow;
+	color: $black;
 	display: grid;
-	font-family: $openSans;
-	grid-template-columns: repeat(13, 1fr);
-	position: fixed;
-	top: 0;
-	width: 100%;
-	left: 0;
-	transition: 0.15s linear background-color;
-	z-index: 999;
-
+	grid-template-columns: repeat(17, 1fr);
+	height: 6rem;
+	padding: 0 0.8rem 0.15rem 0.8rem;
+	row-gap: 1rem;
+	transition: 0.3s ease-in-out all;
 	& > .brand,
 	& > .settings {
-		height: 7rem;
+		grid-row: 1;
+		height: 6rem;
 	}
+
 	& > .brand {
-		grid-column: 1/8;
+		grid-column: 1/11;
 	}
 	& > .menu {
-		grid-column: 1/-1;
+		@include size(calc(100vh - 6rem - 2rem), 100%);
 		grid-row: 2;
-		height: 0;
-		overflow: hidden;
-		transition: 0.15s linear height;
-
-		&[data-openMenu="true"] {
-			height: calc(100vh - 7rem);
-		}
+		opacity: 0;
+		transition: 0.3s ease-in-out all;
+		visibility: hidden;
 	}
 	& > .settings {
-		@include flex(center, flex-end);
-		gap: 1rem;
-		grid-column: 8/-1;
-		padding-right: 1.2rem;
-	}
-	&[data-openMenu="true"] {
-		background-color: $jet;
+		grid-column: 11/-1;
 	}
 
-	@media only screen {
-		@media (min-width: 600px) {
+	&[data-open-menu="true"] {
+		height: 100vh;
+		& > .menu {
+			grid-column: 1/-1;
+			opacity: 1;
+			overflow-y: scroll;
+			visibility: visible;
+			&::-webkit-scrollbar {
+				width: 0;
+			}
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 1250px) {
+		.wrapper {
+			background-color: $black;
+			color: $white;
+			grid-template-rows: 6.25rem;
+			height: auto;
+			padding: 0 3rem 0.1rem 3rem;
 			& > .brand,
-			& > .settings {
-				height: 9rem;
+			& > .menu {
+				grid-row: 1;
+				height: 100%;
+			}
+
+			& > .brand {
+				grid-column: 1/4;
 			}
 			& > .menu {
-				&[data-openMenu="true"] {
-					height: calc(100vh - 9rem);
+				@include size(100%, 100%);
+				grid-column: 4/-1;
+				grid-row: 1;
+				opacity: 1;
+				visibility: visible;
+			}
+			& > .settings {
+				display: none;
+			}
+
+			&[data-open-menu="true"] {
+				height: 100%;
+				& > .menu {
+					grid-column: 6/-1;
+					overflow-y: visible;
 				}
 			}
 		}
-		@media (min-width: 1050px) {
-			grid-template-columns: repeat(17, 1fr);
-			height: 8rem;
-			& > * {
-				height: 100% !important;
-			}
-			& > .brand {
-				grid-column: 1/3;
-			}
-			& > .menu {
-				grid-column: 3/18;
-				grid-row: 1;
-				overflow: visible;
-			}
-			& > .settings {
-				grid-column: 18 / -1;
-			}
-			&[data-openMenu="true"] {
-				background-color: $black;
-			}
+	}
+	@media (min-width: 1850px) {
+		.wrapper {
+			grid-template-rows: 7.5rem;
 		}
 	}
 }

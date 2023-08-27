@@ -1,0 +1,6 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	margin: 2rem auto 4rem;
+	width: clamp(10rem, 120rem, 92%);
+}

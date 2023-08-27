@@ -1,17 +1,14 @@
 import Link from "next/link";
-import styles from "./Brand.module.scss";
+import styles from "@default/components/Layout/Navigation/Brand/Brand.module.scss";
 
 export interface iBrand {
-	name: string;
-	uri: string;
+	brand: string;
 }
 
-export const Brand = ({ name, uri }: iBrand) => {
+export default function Brand({ brand }: iBrand) {
 	return (
 		<div className={styles.wrapper}>
-			<Link href={uri} rel="indexfollow">
-				{name}
-			</Link>
+			<Link href="/">{brand}</Link>
 		</div>
 	);
-};
+}

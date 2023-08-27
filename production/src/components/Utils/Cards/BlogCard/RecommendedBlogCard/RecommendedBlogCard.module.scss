@@ -1,0 +1,54 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	// background-color: hsla(0, 100%, 100%, 0.6);
+	width: clamp(10rem, 40rem, 95%);
+}
+
+.link {
+	@include flex(flex-start, flex-start, column, null, 0.5rem, true);
+	&:focus,
+	&:focus-within,
+	&:hover {
+		& > .image {
+			& > div {
+				filter: brightness(115%);
+				transform: scale(1.2);
+			}
+		}
+		& > .content {
+			& > .title {
+				& > h2 {
+					color: $salmon;
+				}
+			}
+		}
+	}
+}
+
+.image {
+	aspect-ratio: 4/3;
+	width: 100%;
+	overflow: hidden;
+	& > div {
+		@include size(100%, 100%);
+		position: relative;
+		transition: 0.15s ease-in-out filter, 0.15s ease-in-out transform;
+	}
+}
+
+.content {
+	@include flex(flex-start, flex-start, column, null, 0.15rem, true);
+	padding: 0.25rem 0.5rem;
+	& > .title {
+		& > h2 {
+			@include font(2.3rem, 700, 1.1, inherit, null, -1px, start);
+			transition: 0.15s ease-in-out color;
+		}
+	}
+	& > .excerpt {
+		@include font(1.7rem, 300, 1.2, inherit, null, -1px, start);
+		color: $silver;
+		margin-top: 0.25rem;
+	}
+}

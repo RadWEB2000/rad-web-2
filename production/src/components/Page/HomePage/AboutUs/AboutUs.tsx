@@ -1,38 +1,73 @@
-import styles from "./AboutUs.module.scss";
-import { about } from "@default/src/data/about";
-import { HomeAboutUsCard } from "@default/src/components/Utils/Cards/AboutUs/HomeAboutUsCard/HomeAboutUsCard";
-import { Section, iSection } from "../Section/Section";
+"use client";
+import styles from "@default/components/Page/HomePage/AboutUs/AboutUs.module.scss";
+import RegularAboutUsCard from "@default/components/Utils/Cards/AboutUsCard/HomeAboutUsCard/HomeAboutUsCard";
 
-interface iAboutUs extends iSection {
-	cards: {
-		fullname: string;
-		image: string;
-		uri: string;
-		jobs: string;
+type tAboutUs = {
+	cards?: {
+		node: {
+			featuredImage: {
+				node: {
+					altText: string;
+					sourceUrl: string;
+					title: string;
+				};
+			};
+			teammate: {
+				fullname: {
+					firstname: string;
+					lastname: string;
+				};
+				job: {
+					jobName: string;
+				}[];
+			};
+			uri: string;
+		};
 	}[];
-}
+	content: string;
+	title: string;
+};
 
-export const AboutUs = ({ cards, content, title, button }: iAboutUs) => {
+export default function AboutUs({ cards, content, title }: tAboutUs) {
 	return (
 		<div className={styles.wrapper}>
-			<Section content={content} title={title} button={button} />
+			<section>
+				<header>
+					<h2 dangerouslySetInnerHTML={{ __html: title }} />
+				</header>
+				<p dangerouslySetInnerHTML={{ __html: content }} />
+			</section>
 			<ul>
-				{cards.reverse().map(({ fullname, image, jobs, uri }) => {
-					return (
-						<HomeAboutUsCard
-							fullname={fullname}
-							image={{
-								alt: `${fullname} - ${jobs}`,
-								src: image,
-								title: `${fullname} - ${jobs}`,
-							}}
-							jobs={jobs}
-							key={image}
-							uri={uri}
-						/>
-					);
-				})}
+				{cards?.map(
+					(
+						{
+							node: {
+								featuredImage,
+								teammate: {
+									fullname: { firstname, lastname },
+									job,
+								},
+								uri,
+							},
+						},
+						index
+					) => {
+						return (
+							<RegularAboutUsCard
+								fullname={`${firstname} ${lastname}`}
+								image={{
+									alt: featuredImage.node.altText,
+									src: featuredImage.node.sourceUrl,
+									title: featuredImage.node.title,
+								}}
+								jobs={job}
+								key={index}
+								uri={uri}
+							/>
+						);
+					}
+				)}
 			</ul>
 		</div>
 	);
-};
+}

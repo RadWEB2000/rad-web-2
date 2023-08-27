@@ -1,0 +1,159 @@
+@import "../../../../styles/Variables.scss";
+
+.box {
+	display: grid;
+	margin: 1rem auto 4rem auto;
+}
+
+.content {
+	display: grid;
+	grid-column: 1/-1;
+	& > section {
+		padding: 2rem 4rem;
+		grid-row: 1;
+		& > p {
+			@include font(1.4rem, 300, 1.6, inherit, null, -1px, start);
+			color: $seasalt;
+		}
+	}
+}
+.title {
+	@include flex(center, center, null, null, null, false);
+	padding: 2rem 4rem;
+	& > h1 {
+		@include font(6.5rem, 900, 0.9, $drukCyr, null, 1px, center);
+		word-break: break-all;
+		word-wrap: break-word;
+		&::first-letter {
+			color: $yellow;
+		}
+	}
+}
+
+.cards {
+	@include flex(flex-start, flex-start, column, null, 2rem, false);
+	grid-column: 1/-1;
+	width: 100%;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+@media only screen {
+	@media (min-width: 600px) {
+		.box {
+			display: grid;
+			margin-top: 1rem;
+		}
+
+		.content {
+			display: grid;
+			grid-column: 1/-1;
+			& > section {
+				padding: 2rem 2.5rem;
+				grid-row: 1;
+				& > p {
+					font-size: 1.7rem;
+				}
+			}
+		}
+		.title {
+			@include flex(center, center, null, null, null, false);
+			padding: 2rem 3rem;
+			& > h1 {
+				font-size: 9rem;
+			}
+		}
+
+		.cards {
+			@include flex(flex-start, flex-start, column, null, 2rem, false);
+			grid-column: 1/-1;
+			width: 100%;
+			gap: 1rem;
+			margin-top: 1rem;
+		}
+	}
+	@media (min-width: 900px) {
+		.box {
+			grid-template-columns: 35rem calc(100% - 35rem);
+		}
+		.content {
+			grid-template-rows: 12rem auto;
+			grid-column: 1;
+			& > section {
+				grid-row: 2;
+				& > p {
+					font-size: 1.5rem;
+				}
+			}
+		}
+		.title {
+			& > h1 {
+				font-size: 14rem;
+			}
+		}
+
+		.cards {
+			grid-column: 2;
+		}
+	}
+	@media (min-width: 1100px) {
+		.box {
+			grid-template-columns: 45rem calc(100% - 45rem);
+		}
+		.content {
+			grid-column: 1;
+			& > section {
+				& > p {
+					font-size: 1.5rem;
+				}
+			}
+		}
+		.title {
+			& > h1 {
+				font-size: 17rem;
+			}
+		}
+	}
+	@media (min-width: 1350px) {
+		.box {
+			grid-template-columns: 55rem calc(100% - 55rem);
+		}
+		.content {
+			grid-column: 1;
+			& > section {
+				& > p {
+					font-size: 1.5rem;
+				}
+			}
+		}
+		.title {
+			& > h1 {
+				font-size: 17rem;
+			}
+		}
+	}
+	@media (min-width: 1900px) {
+		.box {
+			grid-template-columns: 55rem calc(100% - 55rem);
+			margin-top: 4rem;
+		}
+		.content {
+			grid-column: 1;
+			& > section {
+				& > p {
+					font-size: 1.7rem;
+					color: $silver;
+					h2 {
+						color: $white;
+						margin-bottom: 2rem;
+					}
+				}
+			}
+		}
+		.title {
+			& > h1 {
+				font-size: 17rem;
+			}
+		}
+	}
+}

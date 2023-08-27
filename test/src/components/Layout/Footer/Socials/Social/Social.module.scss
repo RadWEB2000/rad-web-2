@@ -1,0 +1,36 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include size(5rem, 5rem);
+	&,
+	& > a,
+	& > a > span {
+		@include flex(center, center);
+	}
+	& > a,
+	& > a > span {
+		@include size(100%, 100%);
+	}
+	& > a {
+		position: relative;
+		& > span {
+			font-size: 2.55rem;
+			transition: 0.15s ease-in-out color;
+		}
+		&::before {
+			@include positioning(null, null, 0, 0, null, null, null, -1, absolute);
+			@include size(2px, 0%);
+			background-color: $darkMagenta;
+			transition: 0.35s ease-in-out width;
+		}
+		&:focus-within,
+		&:hover {
+			&::before {
+				width: 100%;
+			}
+			& > span {
+				color: $darkMagenta;
+			}
+		}
+	}
+}

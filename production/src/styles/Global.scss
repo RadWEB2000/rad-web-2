@@ -1,16 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500&display=swap");
 @import "./Variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Righteous&display=swap");
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 ::after,
 ::before {
 	content: "";
 	position: absolute;
+}
+
+::selection {
+	background: hsla(0, 100%, 0%, 0);
+	color: $salmon;
 }
 
 :focus,
@@ -31,13 +40,15 @@ button {
 
 body {
 	background-color: $black;
-	color: $white;
-	font-family: $ibm;
+	color: $seasalt;
+	font-family: $poppins;
+	background-attachment: fixed;
 	font-size: 1.6rem;
 }
 
 html {
-	font-size: 52.5%;
+	font-family: "Montserrat", sans-serif;
+	font-size: 62.5%;
 }
 
 button,
@@ -49,31 +60,12 @@ textarea {
 	outline: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: $righteous;
-}
-
 li,
 ol,
 ul {
 	list-style: none;
 }
-.language {
-}
 
-.headerWrapper {
+.hero {
 	margin-top: 7rem;
-	@media only screen {
-		@media (min-width: 600px) {
-			margin-top: 9rem;
-		}
-		@media (min-width: 1050px) {
-			margin-top: 8rem;
-		}
-	}
 }

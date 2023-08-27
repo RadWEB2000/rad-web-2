@@ -1,70 +1,71 @@
-import styles from "./Projects.module.scss";
-import { HomeProjectCard } from "@default/src/components/Utils/Cards/Projects/HomeProjectCard/HomeProjectCard";
-import { projects } from "@default/src/data/projects";
-import Link from "next/link";
+import HomeProjectCard from "@default/components/Utils/Cards/ProjectCard/HomeProjectCard/HomeProjectCard";
+import styles from "@default/components/Page/HomePage/Projects/Projects.module.scss";
+import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
 
-interface iProjects {
+type tProjects = {
+	button?: string | null;
 	cards: {
-		release: string;
-		excerpt: string;
-		image: string;
-		title: string;
-		category: {
-			name: string;
+		node: {
+			excerpt: string;
+			featuredImage: {
+				node: {
+					altText: string;
+					sourceUrl: string;
+					title: string;
+				};
+			};
+			title: string;
 			uri: string;
-		}[];
-		slug: string;
+		};
 	}[];
+	content?: string;
 	title: string;
-	content: string;
-	button?: {
-		label: string;
-		uri: string;
-	};
-}
+	uri?: string | null;
+};
 
-export const Projects = ({ button, cards, content, title }: iProjects) => {
+export default function Projects({
+	button,
+	cards,
+	content,
+	title,
+	uri,
+}: tProjects) {
 	return (
 		<div className={styles.wrapper}>
-			<article>
+			<section>
 				<header>
 					<h2 dangerouslySetInnerHTML={{ __html: title }} />
 				</header>
-				<p dangerouslySetInnerHTML={{ __html: content }} />
-				<div>
-					{button && (
-						<Link href={button.uri} rel="index follow">
-							{button.label}
-						</Link>
-					)}
-				</div>
-			</article>
-			<div>
-				<ul>
-					{cards
-						.sort((a: any, b: any) => {
-							const dateA: any = new Date(a.release);
-							const dateB: any = new Date(b.release);
-							return dateB - dateA;
-						})
-						.slice(0, 4)
-						.map(({ category, image, title, slug }) => {
-							return (
-								<HomeProjectCard
-									categories={category}
-									image={{
-										alt: title,
-										src: image,
-										title: title,
-									}}
-									key={title}
-									title={title}
-									uri={slug}
-								/>
-							);
-						})}
-				</ul>
-			</div>
+				{content && <p dangerouslySetInnerHTML={{ __html: content }} />}
+				{button && uri && button !== null && uri !== null && (
+					<div>
+						<ButtonPrimary
+							theme="secondary"
+							label={button}
+							uri={uri}
+							variant="link"
+						/>
+					</div>
+				)}
+			</section>
+			<ul>
+				{cards.map(({ node: { excerpt, featuredImage, title, uri } }) => {
+					return (
+						<HomeProjectCard
+							button="więcej"
+							excerpt={excerpt}
+							image={{
+								alt: featuredImage.node.altText,
+								src: featuredImage.node.sourceUrl,
+								title: featuredImage.node.title,
+							}}
+							key={title}
+							title={title}
+							uri={uri}
+						/>
+					);
+				})}
+			</ul>
 		</div>
 	);
-};
+}

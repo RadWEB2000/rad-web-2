@@ -1,41 +1,48 @@
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import styles from "./Item.module.scss";
-import { BsChevronDown } from "react-icons/bs";
-import { motion } from "framer-motion";
 import { MouseEventHandler } from "react";
+import styles from "@default/components/Layout/Navigation/Menu/Item/Item.module.scss";
 
-interface iItem {
-	handleExpand?: MouseEventHandler;
+type tItem = {
 	label: string;
 	uri: string;
-	type: "expand" | "regular" | "submenu";
-}
+} & (
+	| {
+			variant: "expand";
+			toggleSubmenu: MouseEventHandler;
+	  }
+	| {
+			variant: "regular" | "submenu";
+			closeSubmenu: MouseEventHandler;
+	  }
+);
 
-export const Item = ({ handleExpand, label, type, uri }: iItem) => {
-	if (type === "expand") {
+export default function Item(props: tItem) {
+	const { label, uri, variant } = props;
+	if (variant === "expand") {
+		const { toggleSubmenu } = props;
 		return (
 			<div className={styles.expand}>
-				<Link href={uri} rel="index follow">
+				<Link className={styles.link} href={uri}>
 					{label}
 				</Link>
-				<motion.button
-					aria-label="expand"
-					onClick={handleExpand}
-					whileTap={{
-						scale: 0.9,
-					}}
+				<button
+					aria-label="Rozwiń / zwiń podmenu"
+					className={styles.button}
+					onClick={toggleSubmenu}
 				>
-					<BsChevronDown />
-				</motion.button>
+					<ChevronDown />
+				</button>
 			</div>
 		);
 	} else {
+		const { closeSubmenu } = props;
 		return (
-			<li className={type === "regular" ? styles.regular : styles.submenu}>
-				<Link href={uri} rel="index follow">
+			<li className={variant === "regular" ? styles.regular : styles.submenu}>
+				<Link className={styles.link} href={uri} onClick={closeSubmenu}>
 					{label}
 				</Link>
 			</li>
 		);
 	}
-};
+}

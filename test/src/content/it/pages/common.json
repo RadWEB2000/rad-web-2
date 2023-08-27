@@ -1,0 +1,106 @@
+{
+	"navigation": [
+		{
+			"label": "Inizio",
+			"uri": "/"
+		},
+		{
+			"label": "Chi siamo",
+			"uri": "/",
+			"submenu": [
+				{
+					"label": "Radosław Adamczyk",
+					"uri": "/"
+				},
+				{
+					"label": "Klaudia Paluch",
+					"uri": "/"
+				},
+				{
+					"label": "Filip Bukowiecki",
+					"uri": "/"
+				}
+			]
+		},
+		{
+			"label": "Blog",
+			"uri": "/",
+			"submenu": [
+				{
+					"label": "Programmazione",
+					"uri": "/"
+				},
+				{
+					"label": "SEO",
+					"uri": "/"
+				},
+				{
+					"label": "Business",
+					"uri": "/"
+				},
+				{
+					"label": "Copywriting",
+					"uri": "/"
+				},
+				{
+					"label": "Design UI/UX",
+					"uri": "/"
+				},
+				{
+					"label": "Realizzazione Video",
+					"uri": "/"
+				}
+			]
+		},
+		{
+			"label": "Servizi",
+			"uri": "/",
+			"submenu": [
+				{
+					"label": "Siti web",
+					"uri": "/"
+				},
+				{
+					"label": "Applicazioni web",
+					"uri": "/"
+				},
+				{
+					"label": "SEO",
+					"uri": "/"
+				},
+				{
+					"label": "Google Ads",
+					"uri": "/"
+				},
+				{
+					"label": "Copywriting",
+					"uri": "/"
+				},
+				{
+					"label": "Design UI/UX",
+					"uri": "/"
+				},
+				{
+					"label": "Realizzazione Video",
+					"uri": "/"
+				},
+				{
+					"label": "Località",
+					"uri": "/"
+				}
+			]
+		},
+		{
+			"label": "Progetti",
+			"uri": "/"
+		},
+		{
+			"label": "Case Study",
+			"uri": "/"
+		},
+		{
+			"label": "Contatti",
+			"uri": "/"
+		}
+	]
+}

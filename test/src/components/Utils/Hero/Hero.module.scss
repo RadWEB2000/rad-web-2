@@ -1,0 +1,52 @@
+@import "../../../styles/Variables.scss";
+
+.wrapper {
+	background-image: linear-gradient(
+		to bottom,
+		hsla(0, 100%, 0%, 1),
+		hsla(0, 100%, 0%, 0.8),
+		hsla(0, 100%, 0%, 0.4),
+		hsla(0, 100%, 0%, 0)
+	);
+	display: grid;
+	grid-template-columns: repeat(15, 1fr);
+	min-height: 90vh;
+}
+
+.content,
+.featuredImage {
+	$size: 100%;
+	@include flex(center, center);
+	@include size($size, $size);
+	grid-row: 1;
+}
+
+.content {
+	grid-column: 2/8;
+}
+
+.details {
+	&,
+	& > * {
+		width: 100%;
+	}
+	& > .title {
+		& > h1 {
+			@include font(9rem, 700, 1.2, inherit, capitalize, 1.2px, start);
+		}
+	}
+
+	& > .content {
+		@include font(2.2rem, 400, 1.6, inherit, null, -1px, start);
+		margin-top: 1.2rem;
+	}
+}
+
+.featuredImage {
+	grid-column: 8/15;
+}
+
+.image {
+	@include size(90%, 90%);
+	position: relative;
+}
