@@ -4,7 +4,11 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import stackoverflowDark from "react-syntax-highlighter/dist/esm/styles/hljs/stackoverflow-dark";
 import styles from "@default/components/Page/PostPage/Content/CustomComponents/CustomComponents.module.scss";
 
-export const CustomComponents = {
+interface iCustomComponents {
+	[tagName: string]: React.ComponentType<any>;
+}
+
+export const CustomComponents: iCustomComponents = {
 	p: (props: any) => {
 		return <p className={styles.p} {...props} />;
 	},
