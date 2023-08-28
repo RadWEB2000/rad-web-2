@@ -8,7 +8,7 @@ import Statistics from "@default/components/Page/HomePage/Statistics/Statistics"
 import WatchWord from "@default/components/Page/HomePage/WatchWord/WatchWord";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
 import { Metadata } from "next";
-
+export const revalidate = 1;
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
 		method: "POST",
