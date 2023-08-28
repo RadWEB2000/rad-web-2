@@ -3,7 +3,7 @@
 .wrapper {
 	aspect-ratio: 16/9;
 	margin: 3rem auto 3rem;
-	width: clamp(10rem, 170rem, 95%);
+	width: clamp(10rem, 140rem, 95%);
 	& > iframe {
 		@include size(100%, 100%);
 		border: none;
