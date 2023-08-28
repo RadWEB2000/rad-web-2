@@ -1,0 +1,11 @@
+@import "../../../styles/Variables.scss";
+
+.wrapper {
+	aspect-ratio: 16/9;
+	margin: 3rem auto 3rem;
+	width: clamp(10rem, 170rem, 95%);
+	& > iframe {
+		border: none;
+		outline: none;
+	}
+}
