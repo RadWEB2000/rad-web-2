@@ -5,6 +5,7 @@ import "../../public/fonts/drukCyr/stylesheet.css";
 import MenuProvider from "@default/context/MenuContext";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
 import Footer from "@default/components/Layout/Footer/Footer";
+import Donations from "@default/components/Layout/Donations/Donations";
 
 export default async function RootLayout({
 	children,
@@ -119,6 +120,7 @@ export default async function RootLayout({
 						menu={navigation.data.menu.menuItems.edges}
 					/>
 					{children}
+					<Donations />
 					<Footer
 						brand={footer.data.menus.edges[0].node.footer.brand}
 						details={footer.data.menus.edges[0].node.footer.details}
