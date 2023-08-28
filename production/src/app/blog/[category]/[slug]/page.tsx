@@ -3,7 +3,6 @@ import Content from "@default/components/Page/PostPage/Content/Content";
 import Hero from "@default/components/Page/PostPage/Hero/Hero";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
-export const revalidate = 1;
 
 export async function generateMetadata({
 	params: { slug },

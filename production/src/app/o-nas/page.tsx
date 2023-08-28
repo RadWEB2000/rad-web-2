@@ -3,7 +3,6 @@ import Hero from "@default/components/Page/AboutUsPage/Hero/Hero";
 import Team from "@default/components/Page/AboutUsPage/Team/Team";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
-export const revalidate = 1;
 
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {

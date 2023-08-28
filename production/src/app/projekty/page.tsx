@@ -4,7 +4,6 @@ import getSplitWordpressContent from "@default/lib/functions/getSplitWordpressCo
 import Hero from "@default/components/Page/ProjectsPage/Hero/Hero";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
-export const revalidate = 1;
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
 		method: "POST",

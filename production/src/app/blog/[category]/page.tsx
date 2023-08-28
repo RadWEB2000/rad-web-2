@@ -1,7 +1,6 @@
 import Wrapper from "@default/components/Page/BlogPage/Wrapper/Wrapper";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
-export const revalidate = 1;
 
 export async function generateMetadata({
 	params: { category },

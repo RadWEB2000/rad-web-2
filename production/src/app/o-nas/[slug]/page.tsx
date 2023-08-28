@@ -4,7 +4,6 @@ import RecommendedArticles from "@default/components/Utils/Wrappers/RecommendedA
 import RecommendedProjects from "@default/components/Utils/Wrappers/RecommendedProjects/RecommendedProjects";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
-export const revalidate = 1;
 
 export async function generateMetadata({
 	params: { slug },
