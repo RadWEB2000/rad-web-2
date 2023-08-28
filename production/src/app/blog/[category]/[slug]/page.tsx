@@ -31,6 +31,7 @@ export async function generateMetadata({
 				}
 			}
 			`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -140,6 +141,7 @@ export default async function ArticlePage({
 				}
 			  }
 				`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

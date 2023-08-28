@@ -28,6 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 				}
 			}
 			`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -104,6 +105,7 @@ export default async function ProjectsPage() {
 				}
 			}
 				`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

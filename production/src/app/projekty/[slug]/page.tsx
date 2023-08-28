@@ -30,6 +30,7 @@ export async function generateMetadata({
 				}
 			}
 			`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -127,6 +128,7 @@ export default async function ProjectPage({
 				}
 			}
 				`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

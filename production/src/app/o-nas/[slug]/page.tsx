@@ -31,6 +31,7 @@ export async function generateMetadata({
 				}
 			}
 			`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -151,6 +152,7 @@ export default async function PersonPage({
 				}
 			  }
 				`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

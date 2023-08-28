@@ -32,6 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 				}
 			}
 			`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -224,6 +225,7 @@ export default async function HomePage() {
 				}
 			}
 				`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

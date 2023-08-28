@@ -24,6 +24,7 @@ export default async function RootLayout({
 				}
 			}
 				`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -51,6 +52,7 @@ export default async function RootLayout({
 					}
 				}
 					`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -101,6 +103,7 @@ export default async function RootLayout({
 				}
 			  }
 					`,
+			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
