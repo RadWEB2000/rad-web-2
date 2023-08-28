@@ -1,7 +1,8 @@
 import Content from "@default/components/Page/PostPage/Content/Content";
 import Hero from "@default/components/Page/ProjectPage/Hero/Hero";
-import { wordpressAPI } from "@default/lib/wordpress/configs";
 import { Metadata } from "next";
+import { wordpressAPI } from "@default/lib/wordpress/configs";
+export const revalidate = 1;
 
 export async function generateMetadata({
 	params: { slug },
@@ -30,7 +31,6 @@ export async function generateMetadata({
 				}
 			}
 			`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -128,7 +128,6 @@ export default async function ProjectPage({
 				}
 			}
 				`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

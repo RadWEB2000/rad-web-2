@@ -6,8 +6,9 @@ import Projects from "@default/components/Page/HomePage/Projects/Projects";
 import Services from "@default/components/Page/HomePage/Services/Services";
 import Statistics from "@default/components/Page/HomePage/Statistics/Statistics";
 import WatchWord from "@default/components/Page/HomePage/WatchWord/WatchWord";
-import { wordpressAPI } from "@default/lib/wordpress/configs";
 import { Metadata } from "next";
+import { wordpressAPI } from "@default/lib/wordpress/configs";
+
 export const revalidate = 1;
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {

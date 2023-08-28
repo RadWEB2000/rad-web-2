@@ -1,9 +1,11 @@
-import Hero from "@default/components/Page/PersonPage/Hero/Hero";
 import Content from "@default/components/Page/PostPage/Content/Content";
+import Hero from "@default/components/Page/PersonPage/Hero/Hero";
 import RecommendedArticles from "@default/components/Utils/Wrappers/RecommendedArticles/RecommendedArticles";
 import RecommendedProjects from "@default/components/Utils/Wrappers/RecommendedProjects/RecommendedProjects";
-import { wordpressAPI } from "@default/lib/wordpress/configs";
 import { Metadata } from "next";
+import { wordpressAPI } from "@default/lib/wordpress/configs";
+export const revalidate = 1;
+
 export async function generateMetadata({
 	params: { slug },
 }: {
@@ -31,7 +33,6 @@ export async function generateMetadata({
 				}
 			}
 			`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -152,7 +153,6 @@ export default async function PersonPage({
 				}
 			  }
 				`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

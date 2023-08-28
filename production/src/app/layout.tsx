@@ -1,11 +1,12 @@
-import Navigation from "@default/components/Layout/Navigation/Navigation";
 import "@default/styles/Global.scss";
 import "@default/styles/Variables.scss";
 import "../../public/fonts/drukCyr/stylesheet.css";
-import MenuProvider from "@default/context/MenuContext";
-import { wordpressAPI } from "@default/lib/wordpress/configs";
-import Footer from "@default/components/Layout/Footer/Footer";
 import Donations from "@default/components/Layout/Donations/Donations";
+import Footer from "@default/components/Layout/Footer/Footer";
+import MenuProvider from "@default/context/MenuContext";
+import Navigation from "@default/components/Layout/Navigation/Navigation";
+import { wordpressAPI } from "@default/lib/wordpress/configs";
+export const revalidate = 1;
 
 export default async function RootLayout({
 	children,
@@ -53,7 +54,6 @@ export default async function RootLayout({
 					}
 				}
 					`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -104,7 +104,6 @@ export default async function RootLayout({
 				}
 			  }
 					`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

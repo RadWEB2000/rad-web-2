@@ -1,8 +1,10 @@
 import Benefits from "@default/components/Page/AboutUsPage/Benefits/Benefits";
 import Hero from "@default/components/Page/AboutUsPage/Hero/Hero";
 import Team from "@default/components/Page/AboutUsPage/Team/Team";
-import { wordpressAPI } from "@default/lib/wordpress/configs";
 import { Metadata } from "next";
+import { wordpressAPI } from "@default/lib/wordpress/configs";
+export const revalidate = 1;
+
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
 		method: "POST",
@@ -26,7 +28,6 @@ export async function generateMetadata(): Promise<Metadata> {
 				}
 			}
 			`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -128,7 +129,6 @@ export default async function AboutUs() {
 					  }
 			  }
 				`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

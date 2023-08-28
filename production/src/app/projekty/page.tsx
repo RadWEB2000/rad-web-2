@@ -1,10 +1,10 @@
-import Content from "@default/components/Page/PostPage/Content/Content";
 import Cards from "@default/components/Page/ProjectsPage/Cards/Cards";
-import Hero from "@default/components/Page/ProjectsPage/Hero/Hero";
+import Content from "@default/components/Page/PostPage/Content/Content";
 import getSplitWordpressContent from "@default/lib/functions/getSplitWordpressContent";
-import { wordpressAPI } from "@default/lib/wordpress/configs";
+import Hero from "@default/components/Page/ProjectsPage/Hero/Hero";
 import { Metadata } from "next";
-
+import { wordpressAPI } from "@default/lib/wordpress/configs";
+export const revalidate = 1;
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
 		method: "POST",
@@ -28,7 +28,6 @@ export async function generateMetadata(): Promise<Metadata> {
 				}
 			}
 			`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -105,7 +104,6 @@ export default async function ProjectsPage() {
 				}
 			}
 				`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())

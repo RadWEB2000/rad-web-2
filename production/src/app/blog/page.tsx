@@ -1,6 +1,7 @@
 import Wrapper from "@default/components/Page/BlogPage/Wrapper/Wrapper";
-import { wordpressAPI } from "@default/lib/wordpress/configs";
 import { Metadata } from "next";
+import { wordpressAPI } from "@default/lib/wordpress/configs";
+export const revalidate = 1;
 
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
@@ -25,7 +26,6 @@ export async function generateMetadata(): Promise<Metadata> {
 				}
 			}
 			`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
@@ -122,7 +122,6 @@ export default async function BlogPage() {
 				}
 			  }
 				`,
-			revalidate: 10,
 		}),
 	})
 		.then((response) => response.json())
