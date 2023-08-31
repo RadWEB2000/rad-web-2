@@ -1,0 +1,21 @@
+@import "../../../../styles/Variables.scss";
+
+.box {
+	margin: 5rem auto 0.5rem;
+	width: clamp(10rem, 90rem, 95%);
+	& > header {
+		& > h2 {
+			@include font(10rem, 900, 0.8, $drukCyr, uppercase, -1px, center);
+		}
+	}
+	& > p {
+		@include font(2.6rem, 400, 1.6, inherit, null, -1px, start);
+		margin-top: 2.5em;
+	}
+}
+
+.cards {
+	@include flex(start, space-between, row);
+	margin: 2rem auto;
+	width: 95%;
+}

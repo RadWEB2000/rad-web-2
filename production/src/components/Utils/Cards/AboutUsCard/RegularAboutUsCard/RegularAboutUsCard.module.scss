@@ -29,7 +29,7 @@
 			@include font(3rem, 500, 1.2, $openSans, null, -1px, start);
 		}
 	}
-	& > .jobs {
+	k & > .jobs {
 		@include font(1.85rem, 300, 1.4, inherit, null, -1px, start);
 		color: $silver;
 		margin-top: 1rem;

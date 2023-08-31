@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "@default/components/Utils/Social/Social.module.scss";
 
 interface iSocial {
-	theme?: "regular";
+	theme?: "regular" | "contact";
 	url: string;
 }
 

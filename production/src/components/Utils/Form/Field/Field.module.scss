@@ -1,0 +1,39 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	width: 100%;
+}
+
+.label {
+	@include font(3rem, 500, 1.4, inherit, null, 1px, start);
+}
+
+.field {
+	height: auto;
+	padding: 0.2rem;
+	& > * {
+		@include font(1.9rem, 400, null, inherit, null, -0.25px, start);
+		background-color: #2b2b2c;
+		border-radius: 0.4rem;
+		color: $white;
+		transition: 0.15s linear background-color;
+		&:focus,
+		&:focus-within,
+		&:hover {
+			background-color: #3e3d3d;
+		}
+		&::placeholder {
+			color: $silver;
+		}
+	}
+	& > input {
+		@include size(6.5rem, 100%);
+		padding: 0.6rem 2rem;
+	}
+	& > textarea {
+		padding: 2rem;
+		min-height: 30rem;
+		resize: vertical;
+		width: 100%;
+	}
+}

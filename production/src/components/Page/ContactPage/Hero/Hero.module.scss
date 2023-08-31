@@ -1,0 +1,17 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	padding: 4rem 6rem;
+	& > section {
+		@include flex(flex-start, flex-start, column, null, 3rem, false);
+		& > header {
+			& > h1 {
+				@include font(27rem, 900, 1.2, $drukCyr, uppercase, -1px, start);
+				color: $yellow;
+			}
+		}
+		& > p {
+			@include font(3rem, 300, 1.7, inherit, null, -1px, start);
+		}
+	}
+}

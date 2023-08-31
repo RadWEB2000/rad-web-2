@@ -1,0 +1,65 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	margin: 2rem auto;
+	width: clamp(10rem, 60rem, 90%);
+}
+
+.image {
+	@include size(65rem, 100%);
+	position: relative;
+}
+
+.box {
+	@include size(auto, 100%);
+	padding: 0.5rem 0.75rem;
+}
+
+.socials {
+	@include flex(center, space-evenly, row wrap, 1rem, 1rem, false);
+}
+
+.title {
+	@include font(5rem, 300, 1.3, inherit, null, -1px, start);
+	color: $peach;
+}
+
+.jobs,
+.locations {
+	@include font(unset, 400, 1.2, inherit, null, -1px, start);
+}
+.jobs {
+	font-size: 3rem;
+}
+
+.locations {
+	color: $silver;
+	font-size: 2.7rem;
+	font-style: italic;
+}
+
+.contact {
+	@include flex(flex-end, flex-end, column);
+	& > a {
+		@include flex(center, flex-end, row nowrap, 0.7rem);
+		height: 3.5rem;
+		color: $white;
+		transition: 0.15s linear color;
+		&:focus,
+		&:focus-within,
+		&:hover {
+			color: $peach;
+		}
+		& > * {
+			@include flex(center, center);
+		}
+		& > i {
+			font-size: 2rem;
+			width: 2.5rem;
+		}
+	}
+}
+
+.button {
+	@include flex(center, center);
+}
