@@ -195,17 +195,17 @@ export default async function ContactPage() {
 				}}
 				title={contact.title}
 			/>
-			<AboutUs
+			{/* <AboutUs
 				cards={teammates.edges}
 				content={team.content}
 				title={team.title}
-			/>
-			<Form
+			/> */}
+			{/* <Form
 				button={form.button}
 				content={form.content}
 				fields={form.fields}
 				title={form.title}
-			/>
+			/> */}
 		</>
 	);
 }
