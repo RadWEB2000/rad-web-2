@@ -1,7 +1,8 @@
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useContext } from "react";
 import styles from "@default/components/Layout/Navigation/Menu/Item/Item.module.scss";
+import { MenuContext } from "@default/context/MenuContext";
 
 type tItem = {
 	label: string;
@@ -13,17 +14,18 @@ type tItem = {
 	  }
 	| {
 			variant: "regular" | "submenu";
-			closeSubmenu: MouseEventHandler;
+			closeSubmenu: () => void;
 	  }
 );
 
 export default function Item(props: tItem) {
 	const { label, uri, variant } = props;
+	const { closeMenu } = useContext(MenuContext);
 	if (variant === "expand") {
 		const { toggleSubmenu } = props;
 		return (
 			<div className={styles.expand}>
-				<Link className={styles.link} href={uri}>
+				<Link className={styles.link} onClick={closeMenu} href={uri}>
 					{label}
 				</Link>
 				<button
@@ -39,7 +41,14 @@ export default function Item(props: tItem) {
 		const { closeSubmenu } = props;
 		return (
 			<li className={variant === "regular" ? styles.regular : styles.submenu}>
-				<Link className={styles.link} href={uri} onClick={closeSubmenu}>
+				<Link
+					className={styles.link}
+					onClick={() => {
+						closeMenu();
+						closeSubmenu();
+					}}
+					href={uri}
+				>
 					{label}
 				</Link>
 			</li>
