@@ -39,4 +39,30 @@
 			}
 		}
 	}
+
+	&[data-theme="contact"] {
+		@include size(4rem, 4rem);
+		& > a {
+			@include flex(center, center);
+			@include size(100%, 100%);
+			color: $silver;
+			font-size: 3rem;
+			position: relative;
+			transition: 0.12s linear color;
+			&::before {
+				@include size(2px, 0%);
+				background-color: $salmon;
+				bottom: 0;
+				left: 0;
+				transition: 0.12s linear width;
+			}
+			&:focus-within,
+			&:hover {
+				color: $salmon;
+				&::before {
+					width: 100%;
+				}
+			}
+		}
+	}
 }

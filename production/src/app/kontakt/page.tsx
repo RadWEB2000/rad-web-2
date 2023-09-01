@@ -3,6 +3,7 @@ import { wordpressAPI } from "@default/lib/wordpress/configs";
 import Hero from "@default/components/Page/ContactPage/Hero/Hero";
 import Form from "@default/components/Utils/Form/Form";
 import AboutUs from "@default/components/Page/ContactPage/AboutUs/AboutUs";
+import Contact from "@default/components/Page/ContactPage/Contact/Contact";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
@@ -110,10 +111,21 @@ export default async function ContactPage() {
                       button
                     }
 					team {
-						button
 						content
 						title
 					}
+					contact {
+						title
+						emailBox {
+						  email
+						  title
+						}
+						phoneBox {
+						  title
+						  label
+						  value
+						}
+					  }
                   }
                 }
                 teammates(first: 10) {
@@ -164,15 +176,26 @@ export default async function ContactPage() {
 		page: {
 			title,
 			content,
-			contactPage: { form, team },
+			contactPage: { contact, form, team },
 		},
 		teammates,
 	} = site.data;
 	return (
 		<>
 			<Hero content={content} title={title} />
+			<Contact
+				emailBox={{
+					email: contact.emailBox.email,
+					title: contact.emailBox.title,
+				}}
+				phoneBox={{
+					label: contact.phoneBox.label,
+					title: contact.phoneBox.title,
+					value: contact.phoneBox.value,
+				}}
+				title={contact.title}
+			/>
 			<AboutUs
-				button={team.button}
 				cards={teammates.edges}
 				content={team.content}
 				title={team.title}

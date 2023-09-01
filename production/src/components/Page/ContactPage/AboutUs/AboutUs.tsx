@@ -2,7 +2,6 @@ import ContactAboutUsCard from "@default/components/Utils/Cards/AboutUsCard/Cont
 import styles from "@default/components/Page/ContactPage/AboutUs/AboutUs.module.scss";
 
 type tAboutUs = {
-	button: string;
 	cards: {
 		node: {
 			teammate: {
@@ -40,7 +39,7 @@ type tAboutUs = {
 	title: string;
 };
 
-export default function AboutUs({ button, cards, content, title }: tAboutUs) {
+export default function AboutUs({ cards, content, title }: tAboutUs) {
 	return (
 		<div>
 			<section className={styles.box}>
@@ -69,9 +68,8 @@ export default function AboutUs({ button, cards, content, title }: tAboutUs) {
 					}) => {
 						return (
 							<ContactAboutUsCard
-								button={button}
 								email={email}
-								fullname={`${firstname} ${lastname}`}
+								fullname={`${firstname}<br/>${lastname}`}
 								image={{
 									altText,
 									sourceUrl,

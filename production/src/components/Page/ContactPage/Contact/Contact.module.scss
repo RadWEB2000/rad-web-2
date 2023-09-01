@@ -1,0 +1,65 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(flex-start, center, column, null, 5rem, false);
+	background-color: $yellow;
+	color: $black;
+	min-height: 100vh;
+	padding: 12rem 4rem;
+	width: 100%;
+	& > .content {
+		& > .title {
+			@include font(15rem, 900, 0.8, $drukCyr, uppercase, -1px, start);
+		}
+	}
+	& > .cards {
+		margin-top: 17rem;
+		width: 100%;
+		& > .card {
+			&:nth-of-type(1) {
+				border-bottom: 1.5px solid $black;
+				border-top: 3px solid $black;
+			}
+			&:nth-of-type(2) {
+				border-bottom: 3px solid $black;
+				border-top: 1.5px solid $black;
+			}
+		}
+	}
+}
+
+.card {
+	@include flex(flex-start, flex-start, column);
+	overflow: hidden;
+	position: relative;
+	transition: 0.15s linear color;
+	z-index: 0;
+	padding: 1rem 2rem;
+	&::before {
+		@include size(100%, 100%);
+		background-color: $black;
+		left: 50%;
+		top: 100%;
+		transform: translateX(-50%);
+		z-index: -1;
+		transition: 0.15s linear transform;
+	}
+	&:focus,
+	&:focus-within,
+	&:hover {
+		color: $yellow;
+		&::before {
+			transform: translateX(-50%) translateY(-100%);
+		}
+	}
+	&,
+	& > * {
+		width: 100%;
+	}
+	& > .label {
+		@include font(9rem, 700, 1.2, inherit, uppercase, -1px, start);
+	}
+	& > .link {
+		@include font(6rem, 400, 1.4, inherit, lowercase, -1px, end);
+	}
+}

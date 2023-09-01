@@ -2,64 +2,64 @@
 
 .wrapper {
 	margin: 2rem auto;
-	width: clamp(10rem, 60rem, 90%);
+	width: clamp(10rem, 70rem, 90%);
+}
+
+.link {
+	@include flex(center, center, column, null, 1rem);
+	& > * {
+		width: 100%;
+	}
 }
 
 .image {
-	@include size(65rem, 100%);
+	border-radius: 2rem;
+	height: 70rem;
+	overflow: hidden;
 	position: relative;
 }
 
 .box {
-	@include size(auto, 100%);
-	padding: 0.5rem 0.75rem;
+	padding: 0.5rem 1rem 1rem;
 }
-
 .socials {
-	@include flex(center, space-evenly, row wrap, 1rem, 1rem, false);
+	@include flex(center, space-around, row wrap, 1rem, 1rem, false);
+	padding: 1rem 2rem;
 }
 
 .title {
-	@include font(5rem, 300, 1.3, inherit, null, -1px, start);
-	color: $peach;
+	@include font(6.5rem, 600, 1.2, inherit, null, -1px, center);
+	color: $antique;
 }
 
 .jobs,
 .locations {
-	@include font(unset, 400, 1.2, inherit, null, -1px, start);
+	@include font(3rem, 400, 1.4, inherit, null, -1px, center);
+	margin-top: 0.15rem;
 }
-.jobs {
-	font-size: 3rem;
-}
-
 .locations {
 	color: $silver;
-	font-size: 2.7rem;
-	font-style: italic;
 }
 
 .contact {
-	@include flex(flex-end, flex-end, column);
-	& > a {
-		@include flex(center, flex-end, row nowrap, 0.7rem);
-		height: 3.5rem;
-		color: $white;
+	padding: 0 3rem;
+	& > .link {
+		@include flex(center, center, row nowrap);
+		margin: 0.15rem auto;
 		transition: 0.15s linear color;
-		&:focus,
 		&:focus-within,
 		&:hover {
 			color: $peach;
 		}
-		& > * {
-			@include flex(center, center);
-		}
 		& > i {
-			font-size: 2rem;
-			width: 2.5rem;
+			$size: 4rem;
+			@include flex(center, center);
+			@include size($size, $size);
+			font-size: 3rem;
+		}
+		& > p {
+			@include font(1.9rem, 500, 1, inherit, null, null, end);
+			font-style: normal;
 		}
 	}
-}
-
-.button {
-	@include flex(center, center);
 }
