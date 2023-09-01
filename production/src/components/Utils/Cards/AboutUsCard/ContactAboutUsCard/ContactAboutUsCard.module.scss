@@ -1,7 +1,6 @@
 @import "../../../../../styles/Variables.scss";
 
 .wrapper {
-	margin: 2rem auto;
 	width: clamp(10rem, 70rem, 90%);
 }
 
@@ -14,7 +13,7 @@
 
 .image {
 	border-radius: 2rem;
-	height: 70rem;
+	height: 40rem;
 	overflow: hidden;
 	position: relative;
 }
@@ -28,13 +27,13 @@
 }
 
 .title {
-	@include font(6.5rem, 600, 1.2, inherit, null, -1px, center);
+	@include font(3.5rem, 600, 1.2, inherit, null, -1px, center);
 	color: $antique;
 }
 
 .jobs,
 .locations {
-	@include font(3rem, 400, 1.4, inherit, null, -1px, center);
+	@include font(1.7rem, 400, 1.4, inherit, null, -1px, center);
 	margin-top: 0.15rem;
 }
 .locations {
@@ -42,7 +41,7 @@
 }
 
 .contact {
-	padding: 0 3rem;
+	padding: 0 0.2rem;
 	& > .link {
 		@include flex(center, center, row nowrap);
 		margin: 0.15rem auto;
@@ -52,14 +51,116 @@
 			color: $peach;
 		}
 		& > i {
-			$size: 4rem;
-			@include flex(center, center);
-			@include size($size, $size);
-			font-size: 3rem;
+			display: none;
 		}
 		& > p {
-			@include font(1.9rem, 500, 1, inherit, null, null, end);
+			@include font(1.5rem, 500, 1.6, inherit, null, null, center);
 			font-style: normal;
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 550px) {
+		.wrapper {
+			width: clamp(10rem, 45rem, 90%);
+		}
+
+		.image {
+			height: 50rem;
+		}
+		.title {
+			font-size: 4.5rem;
+			line-height: 1.4;
+		}
+
+		.jobs,
+		.locations {
+			font-size: 2.4rem;
+		}
+
+		.contact {
+			& > .link {
+				& > i {
+					$size: 4rem;
+					@include flex(center, center);
+					@include size($size, $size);
+					font-size: 3rem;
+				}
+				& > p {
+					@include font(1.7rem, 500, 1.6, inherit, null, null, end);
+				}
+			}
+		}
+	}
+	@media (min-width: 1200px) {
+		.title {
+			font-size: 3.7rem;
+			line-height: 1.2;
+		}
+
+		.jobs,
+		.locations {
+			font-size: 2.1rem;
+		}
+
+		.contact {
+			margin-top: 1rem;
+			& > .link {
+				& > i {
+					display: none;
+				}
+				& > p {
+					@include font(1.5rem, 500, 1.6, inherit, null, null, end);
+				}
+			}
+		}
+	}
+	@media (min-width: 1450px) {
+		.image {
+			height: 55rem;
+		}
+		.title {
+			font-size: 4rem;
+			line-height: 1.2;
+		}
+
+		.jobs,
+		.locations {
+			font-size: 2.3rem;
+		}
+
+		.contact {
+			& > .link {
+				& > p {
+					font-size: 1.7rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 1850px) {
+		.wrapper {
+			width: clamp(10rem, 70rem, 90%);
+		}
+
+		.image {
+			height: 65rem;
+		}
+		.title {
+			font-size: 5.2rem;
+		}
+
+		.jobs,
+		.locations {
+			font-size: 2.7rem;
+		}
+
+		.contact {
+			& > .link {
+				& > p {
+					font-size: 2rem;
+				}
+			}
 		}
 	}
 }

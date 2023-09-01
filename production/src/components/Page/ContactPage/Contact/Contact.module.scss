@@ -5,15 +5,15 @@
 	background-color: $yellow;
 	color: $black;
 	min-height: 100vh;
-	padding: 12rem 4rem;
+	padding: 12rem 2rem;
 	width: 100%;
 	& > .content {
 		& > .title {
-			@include font(15rem, 900, 0.8, $drukCyr, uppercase, -1px, start);
+			@include font(7.5rem, 900, 0.8, $drukCyr, uppercase, -1px, start);
 		}
 	}
 	& > .cards {
-		margin-top: 17rem;
+		margin-top: 3rem;
 		width: 100%;
 		& > .card {
 			&:nth-of-type(1) {
@@ -34,7 +34,7 @@
 	position: relative;
 	transition: 0.15s linear color;
 	z-index: 0;
-	padding: 1rem 2rem;
+	padding: 1rem 0.5rem;
 	&::before {
 		@include size(100%, 100%);
 		background-color: $black;
@@ -57,9 +57,97 @@
 		width: 100%;
 	}
 	& > .label {
-		@include font(9rem, 700, 1.2, inherit, uppercase, -1px, start);
+		@include font(3rem, 700, 1.2, inherit, uppercase, -1px, start);
 	}
 	& > .link {
-		@include font(6rem, 400, 1.4, inherit, lowercase, -1px, end);
+		@include font(1.7rem, 400, 1.4, inherit, lowercase, -1px, end);
+		margin-top: 1.5rem;
+	}
+}
+
+@media only screen {
+	@media (min-width: 500px) {
+		.wrapper {
+			padding: 12rem 2rem;
+			& > .content {
+				& > .title {
+					font-size: 11rem;
+				}
+			}
+		}
+
+		.card {
+			padding: 1rem 1.15rem;
+			& > .label {
+				font-size: 3.5rem;
+			}
+			& > .link {
+				font-size: 2.2rem;
+			}
+		}
+	}
+	@media (min-width: 650px) {
+		.wrapper {
+			padding: 12rem 4rem;
+			& > .content {
+				& > .title {
+					font-size: 13rem;
+				}
+			}
+		}
+
+		.card {
+			padding: 1rem 1.5rem;
+			& > .label {
+				font-size: 4.5rem;
+			}
+			& > .link {
+				font-size: 2.9rem;
+			}
+		}
+	}
+	@media (min-width: 900px) {
+		.card {
+			& > .label {
+				font-size: 6rem;
+			}
+			& > .link {
+				font-size: 3.5rem;
+			}
+		}
+	}
+	@media (min-width: 1500px) {
+		.wrapper {
+			& > .cards {
+				margin-top: 15rem;
+			}
+		}
+		.card {
+			& > .label {
+				font-size: 12rem;
+			}
+			& > .link {
+				font-size: 9rem;
+			}
+		}
+	}
+	@media (min-width: 1850px) {
+		.wrapper {
+			& > .content {
+				& > .title {
+					font-size: 15rem;
+				}
+			}
+		}
+
+		.card {
+			padding: 1rem 2rem;
+			& > .label {
+				font-size: 10rem;
+			}
+			& > .link {
+				font-size: 7rem;
+			}
+		}
 	}
 }

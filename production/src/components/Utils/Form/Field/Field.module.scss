@@ -5,14 +5,14 @@
 }
 
 .label {
-	@include font(3rem, 500, 1.4, inherit, null, 1px, start);
+	@include font(2rem, 500, 1.4, inherit, null, 1px, start);
 }
 
 .field {
 	height: auto;
 	padding: 0.2rem;
 	& > * {
-		@include font(1.9rem, 400, null, inherit, null, -0.25px, start);
+		@include font(1.5rem, 400, null, inherit, null, -0.25px, start);
 		background-color: #2b2b2c;
 		border-radius: 0.4rem;
 		color: $white;
@@ -27,13 +27,33 @@
 		}
 	}
 	& > input {
-		@include size(6.5rem, 100%);
-		padding: 0.6rem 2rem;
+		@include size(5rem, 100%);
+		padding: 0.6rem 1rem;
 	}
 	& > textarea {
-		padding: 2rem;
+		padding: 1.4rem;
 		min-height: 30rem;
 		resize: vertical;
 		width: 100%;
+	}
+}
+@media only screen {
+	@media (min-width: 650px) {
+		.label {
+			font-size: 2.8rem;
+		}
+
+		.field {
+			& > * {
+				font-size: 1.8rem;
+			}
+			& > input {
+				@include size(6rem, 100%);
+				padding: 0.6rem 1.5rem;
+			}
+			& > textarea {
+				padding: 1.7rem;
+			}
+		}
 	}
 }
