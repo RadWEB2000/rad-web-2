@@ -16,6 +16,12 @@ export async function generateMetadata(): Promise<Metadata> {
 				page(id: "/o-nas", idType: URI) {
 					seo {
 						opengraphTitle
+						opengraphImage {
+                            altText
+                            date
+                            sourceUrl(size: POST_THUMBNAIL)
+                            title(format: RENDERED)
+                        }
 						opengraphSiteName
 						opengraphType
 						metaDesc
@@ -36,6 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	const {
 		seo: {
+			opengraphImage,
 			opengraphTitle,
 			opengraphSiteName,
 			opengraphType,
@@ -61,6 +68,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			siteName: opengraphSiteName,
 			modifiedTime: modified,
 			publishedTime: date,
+			images: opengraphImage.sourceUrl,
 			locale: "pl",
 		},
 		twitter: {

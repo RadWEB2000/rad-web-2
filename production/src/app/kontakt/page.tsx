@@ -46,6 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	const {
 		seo: {
+			opengraphImage,
 			opengraphTitle,
 			opengraphSiteName,
 			opengraphType,
@@ -72,6 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			modifiedTime: modified,
 			publishedTime: date,
 			locale: "pl",
+			images: opengraphImage.sourceUrl,
 		},
 		twitter: {
 			description: opengraphDescription,
