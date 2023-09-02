@@ -74,7 +74,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			modifiedTime: modified,
 			publishedTime: date,
 			locale: "pl",
-			images: opengraphImage.sourceUrl,
+			images: opengraphImage.sourceUrl !== null ? opengraphImage.sourceUrl : '',
 		},
 		twitter: {
 			description: opengraphDescription,
