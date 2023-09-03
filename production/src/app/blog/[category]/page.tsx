@@ -23,6 +23,12 @@ export async function generateMetadata({
 						metaDesc
 						opengraphDescription
 						title
+						opengraphImage {
+                            altText
+                            date
+                            sourceUrl(size: POST_THUMBNAIL)
+                            title(format: RENDERED)
+                        }
 					}
 					modified
 					date
@@ -43,6 +49,7 @@ export async function generateMetadata({
 			opengraphType,
 			metaDesc,
 			opengraphDescription,
+			opengraphImage,
 			title,
 		},
 		modified,
@@ -61,6 +68,7 @@ export async function generateMetadata({
 			title: opengraphTitle,
 			type: opengraphType,
 			siteName: opengraphSiteName,
+			images: opengraphImage?.sourceUrl ?? "",
 			modifiedTime: modified,
 			publishedTime: date,
 			locale: "pl",

@@ -20,6 +20,12 @@ export async function generateMetadata({
 					seo {
 						opengraphTitle
 						opengraphSiteName
+						opengraphImage {
+                            altText
+                            date
+                            sourceUrl(size: POST_THUMBNAIL)
+                            title(format: RENDERED)
+                        }
 						opengraphType
 						metaDesc
 						opengraphDescription
@@ -40,6 +46,7 @@ export async function generateMetadata({
 	const {
 		seo: {
 			opengraphTitle,
+			opengraphImage,
 			opengraphSiteName,
 			opengraphType,
 			metaDesc,
@@ -64,6 +71,7 @@ export async function generateMetadata({
 			siteName: opengraphSiteName,
 			modifiedTime: modified,
 			publishedTime: date,
+			images: opengraphImage?.sourceUrl ?? "",
 			locale: "pl",
 		},
 		twitter: {

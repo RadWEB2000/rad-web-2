@@ -21,6 +21,12 @@ export async function generateMetadata(): Promise<Metadata> {
 						metaDesc
 						opengraphDescription
 						title
+						opengraphImage {
+                            altText
+                            date
+                            sourceUrl(size: POST_THUMBNAIL)
+                            title(format: RENDERED)
+                        }
 					}
 					modified
 					date
@@ -37,6 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	const {
 		seo: {
 			opengraphTitle,
+			opengraphImage,
 			opengraphSiteName,
 			opengraphType,
 			metaDesc,
@@ -60,6 +67,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			type: opengraphType,
 			siteName: opengraphSiteName,
 			modifiedTime: modified,
+			images: opengraphImage?.sourceUrl ?? "",
 			publishedTime: date,
 			locale: "pl",
 		},
