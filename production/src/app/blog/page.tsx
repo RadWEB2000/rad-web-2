@@ -62,7 +62,11 @@ export async function generateMetadata(): Promise<Metadata> {
 		openGraph: {
 			description: opengraphDescription,
 			title: opengraphTitle,
-			images: opengraphImage?.sourceUrl ?? "",
+			images: [
+				{
+					url: opengraphImage?.sourceUrl ?? "",
+				},
+			],
 			type: opengraphType,
 			siteName: opengraphSiteName,
 			modifiedTime: modified,

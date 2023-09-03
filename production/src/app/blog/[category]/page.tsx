@@ -68,7 +68,11 @@ export async function generateMetadata({
 			title: opengraphTitle,
 			type: opengraphType,
 			siteName: opengraphSiteName,
-			images: opengraphImage?.sourceUrl ?? "",
+			images: [
+				{
+					url: opengraphImage?.sourceUrl ?? "",
+				},
+			],
 			modifiedTime: modified,
 			publishedTime: date,
 			locale: "pl",

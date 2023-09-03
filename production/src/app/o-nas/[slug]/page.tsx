@@ -74,7 +74,11 @@ export async function generateMetadata({
 			modifiedTime: modified,
 			publishedTime: date,
 			locale: "pl",
-			images: opengraphImage?.sourceUrl ?? "",
+			images: [
+				{
+					url: opengraphImage?.sourceUrl ?? "",
+				},
+			],
 		},
 		twitter: {
 			description: opengraphDescription,
