@@ -1,0 +1,13 @@
+User-agent: facebookexternalhitDisallow
+:
+
+User-agent: TwitterbotDisallow
+:
+
+
+
+User-agent: *
+Allow: /
+Disallow: /cms
+
+Sitemap: https://rad-web.vercel.app/sitemap.xml

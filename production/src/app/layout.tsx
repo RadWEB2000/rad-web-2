@@ -113,6 +113,8 @@ export default async function RootLayout({
 	return (
 		<html lang="pl">
 			<head>
+				<meta name="robots" content="max-image-preview:standard" />
+
 				<script
 					dangerouslySetInnerHTML={{
 						__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
