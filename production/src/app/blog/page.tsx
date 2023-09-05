@@ -77,6 +77,11 @@ export async function generateMetadata(): Promise<Metadata> {
 			description: opengraphDescription,
 			title: opengraphTitle,
 			creator: opengraphSiteName,
+			images: [
+				{
+					url: opengraphImage?.sourceUrl ?? "",
+				},
+			],
 		},
 	};
 }
