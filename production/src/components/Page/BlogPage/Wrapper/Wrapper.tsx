@@ -1,7 +1,7 @@
 "use client";
 import styles from "@default/components/Page/BlogPage/Wrapper/Wrapper.module.scss";
-import RegularBlogCard from "@default/components/Utils/Cards/BlogCard/RegularBlogCard/RegularBlogCard";
-import Search, { tSearch } from "@default/components/Utils/Search/Search";
+import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
+import Search from "@default/components/Utils/Search/Search";
 import { iArticlesArray } from "@default/ts/interfaces";
 import { useState } from "react";
 
@@ -53,7 +53,7 @@ export default function Wrapper({ cards, content, search, title }: tWrapper) {
 								},
 							}: iArticlesArray) => {
 								return (
-									<RegularBlogCard
+									<BlogCard
 										author={{
 											firstname: author[0].teammate.fullname.firstname,
 											lastname: author[0].teammate.fullname.lastname,
@@ -64,14 +64,11 @@ export default function Wrapper({ cards, content, search, title }: tWrapper) {
 										}}
 										date={date}
 										excerpt={excerpt}
-										image={{
-											alt: featuredImage.node.altText,
-											src: featuredImage.node.sourceUrl,
-											title: featuredImage.node.title,
-										}}
+										image={featuredImage.node}
 										key={title}
 										title={title}
 										uri={uri}
+										theme="regular"
 									/>
 								);
 							}

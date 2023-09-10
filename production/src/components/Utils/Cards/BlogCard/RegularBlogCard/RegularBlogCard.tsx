@@ -1,5 +1,5 @@
 import { getDate } from "@default/lib/functions/getDate";
-import { tImage } from "@default/ts/types";
+import { tImage2 } from "@default/ts/types";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@default/components/Utils/Cards/BlogCard/RegularBlogCard/RegularBlogCard.module.scss";
@@ -15,7 +15,7 @@ type tRegularBlogCard = {
 	};
 	date: string;
 	excerpt: string;
-	image: tImage;
+	image: tImage2;
 	title: string;
 	uri: string;
 };
@@ -39,9 +39,9 @@ export default function RegularBlogCard({
 				<figure className={styles.image}>
 					<div>
 						<Image
-							alt={image.alt}
+							alt={image.altText}
 							fill
-							src={image.src}
+							src={image.sourceUrl}
 							style={{
 								objectFit: "cover",
 								objectPosition: "center",

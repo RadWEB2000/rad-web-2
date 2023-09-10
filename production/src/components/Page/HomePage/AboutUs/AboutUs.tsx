@@ -1,16 +1,12 @@
-"use client";
 import styles from "@default/components/Page/HomePage/AboutUs/AboutUs.module.scss";
 import AboutUsCard from "@default/components/Utils/Cards/AboutUsCard/AboutUsCard";
+import { tImage2 } from "@default/ts/types";
 
 type tAboutUs = {
 	cards?: {
 		node: {
 			featuredImage: {
-				node: {
-					altText: string;
-					sourceUrl: string;
-					title: string;
-				};
+				node: tImage2;
 			};
 			teammate: {
 				fullname: {

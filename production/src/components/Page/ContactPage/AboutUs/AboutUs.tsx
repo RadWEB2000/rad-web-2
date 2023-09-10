@@ -1,5 +1,6 @@
-import ContactAboutUsCard from "@default/components/Utils/Cards/AboutUsCard/ContactAboutUsCard/ContactAboutUsCard";
 import styles from "@default/components/Page/ContactPage/AboutUs/AboutUs.module.scss";
+import AboutUsCard from "@default/components/Utils/Cards/AboutUsCard/AboutUsCard";
+import { tImage2 } from "@default/ts/types";
 
 type tAboutUs = {
 	cards: {
@@ -26,11 +27,7 @@ type tAboutUs = {
 				}[];
 			};
 			featuredImage: {
-				node: {
-					altText: string;
-					sourceUrl: string;
-					title: string;
-				};
+				node: tImage2;
 			};
 			uri: string;
 		};
@@ -67,7 +64,7 @@ export default function AboutUs({ cards, content, title }: tAboutUs) {
 						},
 					}) => {
 						return (
-							<ContactAboutUsCard
+							<AboutUsCard
 								email={email}
 								fullname={`${firstname}<br/>${lastname}`}
 								image={{
@@ -81,6 +78,7 @@ export default function AboutUs({ cards, content, title }: tAboutUs) {
 								phone={phone}
 								socialMedia={socialMedia}
 								uri={uri}
+								theme="contact"
 							/>
 						);
 					}

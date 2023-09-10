@@ -1,5 +1,5 @@
 import { getDate } from "@default/lib/functions/getDate";
-import { tImage } from "@default/ts/types";
+import { tImage2 } from "@default/ts/types";
 import { CalendarDays, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,7 +15,7 @@ type tHomeBlogCard = {
 		uri: string;
 	};
 	date: string;
-	image: tImage;
+	image: tImage2;
 	status: string;
 	title: string;
 	uri: string;
@@ -40,10 +40,10 @@ export default function HomeBlogCard({
 				<figure className={styles.image}>
 					<div>
 						<Image
-							alt={image.alt}
+							alt={image.altText}
 							fill
 							loading="lazy"
-							src={image.src}
+							src={image.sourceUrl}
 							style={{
 								objectFit: "cover",
 								objectPosition: "center",

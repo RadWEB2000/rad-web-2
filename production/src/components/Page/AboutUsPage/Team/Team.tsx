@@ -1,5 +1,5 @@
-import RegularAboutUsCard from "@default/components/Utils/Cards/AboutUsCard/RegularAboutUsCard/RegularAboutUsCard";
 import styles from "@default/components/Page/AboutUsPage/Team/Team.module.scss";
+import AboutUsCard from "@default/components/Utils/Cards/AboutUsCard/AboutUsCard";
 
 type tTeam = {
 	cards: {
@@ -52,16 +52,13 @@ export default function Team({ cards, content, title }: tTeam) {
 						},
 					}) => {
 						return (
-							<RegularAboutUsCard
+							<AboutUsCard
 								fullname={`${firstname} ${lastname}`}
-								image={{
-									alt: featuredImage.node.altText,
-									src: featuredImage.node.sourceUrl,
-									title: featuredImage.node.title,
-								}}
+								image={featuredImage.node}
 								key={uri}
 								jobs={job}
 								uri={uri}
+								theme="regular"
 							/>
 						);
 					}

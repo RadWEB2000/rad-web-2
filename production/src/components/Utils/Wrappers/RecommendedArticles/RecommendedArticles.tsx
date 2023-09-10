@@ -1,3 +1,4 @@
+import BlogCard from "../../Cards/BlogCard/BlogCard";
 import RecommendedBlogCard from "../../Cards/BlogCard/RecommendedBlogCard/RecommendedBlogCard";
 import styles from "@default/components/Utils/Wrappers/RecommendedArticles/RecommendedArticles.module.scss";
 
@@ -30,19 +31,16 @@ export default function RecommendedArticles({
 			<ul>
 				{cards
 					.slice(0, 4)
-					.map(({ date, excerpt, featuredImage: { node }, title, uri }) => {
+					.map(({ date, excerpt, featuredImage, title, uri }) => {
 						return (
-							<RecommendedBlogCard
+							<BlogCard
 								date={date}
 								excerpt={excerpt}
-								image={{
-									alt: node.altText,
-									src: node.sourceUrl,
-									title: node.title,
-								}}
+								image={featuredImage.node}
 								key={title}
 								title={title}
 								uri={uri}
+								theme="recommended"
 							/>
 						);
 					})}

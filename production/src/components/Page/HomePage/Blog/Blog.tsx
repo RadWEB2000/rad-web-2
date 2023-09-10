@@ -4,6 +4,7 @@ import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/Butto
 import { MoveRight } from "lucide-react";
 import styles from "@default/components/Page/HomePage/Blog/Blog.module.scss";
 import HomeBlogCard from "@default/components/Utils/Cards/BlogCard/HomeBlogCard/HomeBlogCard";
+import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
 
 type tBlog = {
 	cards?: any[];
@@ -50,7 +51,7 @@ export default function Blog({
 						},
 					}) => {
 						return (
-							<HomeBlogCard
+							<BlogCard
 								author={{
 									firstname: author[0].teammate.fullname.firstname,
 									lastname: author[0].teammate.fullname.lastname,
@@ -60,15 +61,12 @@ export default function Blog({
 									uri: categories.edges[0].node.uri,
 								}}
 								date={date}
-								image={{
-									alt: featuredImage.node.altText,
-									src: featuredImage.node.sourceUrl,
-									title: featuredImage.node.title,
-								}}
+								image={featuredImage.node}
 								key={title}
 								status={status}
 								title={title}
 								uri={uri}
+								theme="home"
 							/>
 						);
 					}
