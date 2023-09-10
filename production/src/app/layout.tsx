@@ -124,10 +124,7 @@ export default async function RootLayout({
 					})(window,document,'script','dataLayer','GTM-MPGDKSZ');`,
 					}}
 				/>
-				<meta
-					name="google-site-verification"
-					content="1R0cNdnVvIwcVStMUJAi1N2vG73gP-13D0eY4ONp2bw"
-				/>
+				<meta name="google-site-verification" content="tZrSZyvCWg3npiY9ThA_vWTqach4rNhP1TpMLSrAG5k" />
 			</head>
 			<MenuProvider>
 				<body>
