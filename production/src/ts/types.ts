@@ -279,3 +279,11 @@ export type t_home_page_content = {
 		}[];
 	};
 };
+
+// ----------------------------
+
+export type tImage2 = {
+	altText: string;
+	sourceUrl: string;
+	title: string;
+};

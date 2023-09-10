@@ -1,6 +1,6 @@
 "use client";
 import styles from "@default/components/Page/HomePage/AboutUs/AboutUs.module.scss";
-import RegularAboutUsCard from "@default/components/Utils/Cards/AboutUsCard/HomeAboutUsCard/HomeAboutUsCard";
+import AboutUsCard from "@default/components/Utils/Cards/AboutUsCard/AboutUsCard";
 
 type tAboutUs = {
 	cards?: {
@@ -53,16 +53,13 @@ export default function AboutUs({ cards, content, title }: tAboutUs) {
 						index
 					) => {
 						return (
-							<RegularAboutUsCard
+							<AboutUsCard
 								fullname={`${firstname} ${lastname}`}
-								image={{
-									alt: featuredImage.node.altText,
-									src: featuredImage.node.sourceUrl,
-									title: featuredImage.node.title,
-								}}
+								image={featuredImage.node}
 								jobs={job}
 								key={index}
 								uri={uri}
+								theme="home"
 							/>
 						);
 					}

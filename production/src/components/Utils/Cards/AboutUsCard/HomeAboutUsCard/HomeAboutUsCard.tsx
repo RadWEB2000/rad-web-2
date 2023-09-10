@@ -1,4 +1,4 @@
-import { tImage } from "@default/ts/types";
+import { tImage2 } from "@default/ts/types";
 import { GoArrowRight } from "react-icons/go";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import styles from "@default/components/Utils/Cards/AboutUsCard/HomeAboutUsCard/
 
 export type tHomeAboutUsCard = {
 	fullname: string;
-	image: tImage;
+	image: tImage2;
 	jobs: {
 		jobName: string;
 	}[];
@@ -24,9 +24,9 @@ export default function HomeAboutUsCard({
 		<li className={styles.wrapper}>
 			<figure className={styles.image}>
 				<Image
-					alt={image.alt}
+					alt={image.altText}
 					fill
-					src={image.src}
+					src={image.sourceUrl}
 					style={{
 						objectFit: "cover",
 						objectPosition: "center",

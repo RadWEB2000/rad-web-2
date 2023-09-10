@@ -1,11 +1,11 @@
-import { tImage } from "@default/ts/types";
+import { tImage2 } from "@default/ts/types";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@default/components/Utils/Cards/AboutUsCard/RegularAboutUsCard/RegularAboutUsCard.module.scss";
 
 export type tRegularAboutUsCard = {
 	fullname: string;
-	image: tImage;
+	image: tImage2;
 	jobs: {
 		jobName: string;
 	}[];
@@ -23,9 +23,9 @@ export default function RegularAboutUsCard({
 			<div className={styles.image}>
 				<figure>
 					<Image
-						alt={image.alt}
+						alt={image.altText}
 						fill
-						src={image.src}
+						src={image.sourceUrl}
 						style={{
 							objectFit: "cover",
 							objectPosition: "center",
