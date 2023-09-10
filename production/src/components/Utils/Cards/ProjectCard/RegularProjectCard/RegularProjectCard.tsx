@@ -1,5 +1,5 @@
 import { getDate } from "@default/lib/functions/getDate";
-import { tImage } from "@default/ts/types";
+import { tImage2 } from "@default/ts/types";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@default/components/Utils/Cards/ProjectCard/RegularProjectCard/RegularProjectCard.module.scss";
@@ -7,7 +7,7 @@ import styles from "@default/components/Utils/Cards/ProjectCard/RegularProjectCa
 type tRegularProjectCard = {
 	date: string;
 	excerpt: string;
-	image: tImage;
+	image: tImage2;
 	title: string;
 	uri: string;
 };
@@ -29,10 +29,10 @@ export default function RegularProjectCard({
 				<div className={styles.image}>
 					<figure>
 						<Image
-							alt={image.alt}
+							alt={image.altText}
 							fill
 							loading="lazy"
-							src={image.src}
+							src={image.sourceUrl}
 							style={{
 								objectFit: "cover",
 								objectPosition: "center",

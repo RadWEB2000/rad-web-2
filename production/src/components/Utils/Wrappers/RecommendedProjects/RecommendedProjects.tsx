@@ -1,14 +1,11 @@
 import styles from "@default/components/Utils/Wrappers/RecommendedProjects/RecommendedProjects.module.scss";
-import RecommendedProject from "../../Cards/ProjectCard/RecommendedProject/RecommendedProject";
+import { tImage2 } from "@default/ts/types";
+import ProjectCard from "../../Cards/ProjectCard/ProjectCard";
 
 type tRecommendedProjects = {
 	cards: {
 		featuredImage: {
-			node: {
-				altText: string;
-				sourceUrl: string;
-				title: string;
-			};
+			node: tImage2;
 		};
 		date: string;
 		title: string;
@@ -34,18 +31,15 @@ export default function RecommendedProjects({
 					)
 					.reverse()
 					.slice(0, 4)
-					.map(({ featuredImage: { node }, title, uri, date }) => {
+					.map(({ featuredImage, title, uri, date }) => {
 						console.log(date);
 						return (
-							<RecommendedProject
-								image={{
-									alt: node.altText,
-									src: node.sourceUrl,
-									title: node.title,
-								}}
+							<ProjectCard
+								image={featuredImage.node}
 								key={title}
 								title={title}
 								uri={uri}
+								theme="recommended"
 							/>
 						);
 					})}

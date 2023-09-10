@@ -1,5 +1,6 @@
-import RegularProjectCard from "@default/components/Utils/Cards/ProjectCard/RegularProjectCard/RegularProjectCard";
 import styles from "@default/components/Page/ProjectsPage/Cards/Cards.module.scss";
+import { tImage2 } from "@default/ts/types";
+import ProjectCard from "@default/components/Utils/Cards/ProjectCard/ProjectCard";
 
 type tCards = {
 	cards?: {
@@ -9,11 +10,7 @@ type tCards = {
 			date: string;
 			excerpt: string;
 			featuredImage: {
-				node: {
-					altText: string;
-					sourceUrl: string;
-					title: string;
-				};
+				node: tImage2;
 			};
 		};
 	}[];
@@ -24,17 +21,14 @@ export default function Cards({ cards }: tCards) {
 		<ul className={styles.wrapper}>
 			{cards?.map(({ node: { date, excerpt, featuredImage, title, uri } }) => {
 				return (
-					<RegularProjectCard
+					<ProjectCard
 						date={date}
 						excerpt={excerpt}
-						image={{
-							alt: featuredImage.node.altText,
-							src: featuredImage.node.sourceUrl,
-							title: featuredImage.node.title,
-						}}
+						image={featuredImage.node}
 						key={title}
 						title={title}
 						uri={uri}
+						theme="regular"
 					/>
 				);
 			})}

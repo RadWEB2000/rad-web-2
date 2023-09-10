@@ -1,4 +1,4 @@
-import { tImage } from "@default/ts/types";
+import { tImage2 } from "@default/ts/types";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@default/components/Utils/Cards/ProjectCard/HomeProjectCard/HomeProjectCard..module.scss";
@@ -6,7 +6,7 @@ import styles from "@default/components/Utils/Cards/ProjectCard/HomeProjectCard/
 export type tHomeProjectCard = {
 	button: string;
 	excerpt: string;
-	image: tImage;
+	image: tImage2;
 	title: string;
 	uri: string;
 };
@@ -23,9 +23,9 @@ export default function HomeProjectCard({
 			<div className={styles.image__box}>
 				<figure className={styles.image}>
 					<Image
-						alt={image.alt}
+						alt={image.altText}
 						fill
-						src={image.src}
+						src={image.sourceUrl}
 						style={{
 							objectFit: "cover",
 							objectPosition: "center",

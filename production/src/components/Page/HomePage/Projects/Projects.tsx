@@ -1,6 +1,8 @@
 import HomeProjectCard from "@default/components/Utils/Cards/ProjectCard/HomeProjectCard/HomeProjectCard";
 import styles from "@default/components/Page/HomePage/Projects/Projects.module.scss";
 import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
+import { tImage2 } from "@default/ts/types";
+import ProjectCard from "@default/components/Utils/Cards/ProjectCard/ProjectCard";
 
 type tProjects = {
 	button?: string | null;
@@ -8,11 +10,7 @@ type tProjects = {
 		node: {
 			excerpt: string;
 			featuredImage: {
-				node: {
-					altText: string;
-					sourceUrl: string;
-					title: string;
-				};
+				node: tImage2;
 			};
 			title: string;
 			uri: string;
@@ -51,17 +49,14 @@ export default function Projects({
 			<ul>
 				{cards.map(({ node: { excerpt, featuredImage, title, uri } }) => {
 					return (
-						<HomeProjectCard
+						<ProjectCard
 							button="więcej"
 							excerpt={excerpt}
-							image={{
-								alt: featuredImage.node.altText,
-								src: featuredImage.node.sourceUrl,
-								title: featuredImage.node.title,
-							}}
+							image={featuredImage.node}
 							key={title}
 							title={title}
 							uri={uri}
+							theme="home"
 						/>
 					);
 				})}

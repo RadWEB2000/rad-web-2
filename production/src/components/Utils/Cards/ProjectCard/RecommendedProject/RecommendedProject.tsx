@@ -1,10 +1,10 @@
-import { tImage } from "@default/ts/types";
+import { tImage2 } from "@default/ts/types";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@default/components/Utils/Cards/ProjectCard/RecommendedProject/RecommendedProject.module.scss";
 
 type tRecommendedProject = {
-	image: tImage;
+	image: tImage2;
 	title: string;
 	uri: string;
 };
@@ -20,10 +20,10 @@ export default function RecommendedProject({
 				<div>
 					<figure>
 						<Image
-							alt={image.alt}
+							alt={image.altText}
 							fill
 							loading="lazy"
-							src={image.src}
+							src={image.sourceUrl}
 							style={{
 								objectFit: "cover",
 								objectPosition: "center",
