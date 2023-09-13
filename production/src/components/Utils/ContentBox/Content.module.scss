@@ -196,17 +196,19 @@
 	.p,
 	.li {
 		@include font(1.9rem, 400, 1.3, inherit, null, -1px, start);
+		color: $silver;
 	}
 
 	.p {
 		margin: 0.5rem 0 0.25rem;
-		opacity: 0.6;
+		opacity: 0.9;
 	}
 
 	.h2,
 	.h3,
 	.h4 {
 		@include font(unset, 800, null, inherit, null, -1px, start);
+		color: $white;
 		padding: 0.5rem 0.75rem;
 	}
 
@@ -266,7 +268,7 @@
 	.strong,
 	.i,
 	.em {
-		color: $black;
+		color: $white;
 	}
 
 	.i,
@@ -290,5 +292,59 @@
 				font-size: 3rem;
 			}
 		}
+	}
+}
+.wrapper[data-variant="dark"] {
+	.p,
+	.li {
+		color: $silver;
+	}
+
+	.h2,
+	.h3,
+	.h4 {
+		color: $white;
+	}
+
+	.link {
+		&:focus,
+		&:focus-within,
+		&:hover {
+			color: $peach;
+		}
+	}
+
+	.b,
+	.strong,
+	.i,
+	.em {
+		color: $white;
+	}
+}
+.wrapper[data-variant="light"] {
+	.p,
+	.li {
+		color: $erie;
+	}
+
+	.h2,
+	.h3,
+	.h4 {
+		color: $black;
+	}
+
+	.link {
+		&:focus,
+		&:focus-within,
+		&:hover {
+			color: $peach;
+		}
+	}
+
+	.b,
+	.strong,
+	.i,
+	.em {
+		color: $black;
 	}
 }

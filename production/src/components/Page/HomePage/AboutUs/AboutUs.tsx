@@ -32,7 +32,7 @@ export default function AboutUs({ cards, content, title }: tAboutUs) {
 				<header>
 					<h2 dangerouslySetInnerHTML={{ __html: title }} />
 				</header>
-				<ContentBox content={content} theme="section" variant="dark" />
+				<ContentBox content={content} theme="section" variant="light" />
 			</section>
 			<ul>
 				{cards?.map(

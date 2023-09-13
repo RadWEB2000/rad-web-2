@@ -2,6 +2,7 @@
 import Card, { tCard } from "@default/components/Page/HomePage/Offer/Card/Card";
 import styles from "@default/components/Page/HomePage/Offer/Offer.module.scss";
 import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
+import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 
 type tOffer = {
 	cards: tCard[];
@@ -19,6 +20,7 @@ export default function Offer({ button, cards, content, title, uri }: tOffer) {
 					<header className={styles.title}>
 						<h2 dangerouslySetInnerHTML={{ __html: title }} />
 					</header>
+					<ContentBox content={content} theme="section" variant="dark" />
 					<p
 						className={styles.content}
 						dangerouslySetInnerHTML={{ __html: content }}
