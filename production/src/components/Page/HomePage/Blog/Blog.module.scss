@@ -14,17 +14,12 @@
 	color: $black;
 	padding: 4rem 2rem;
 	& > section {
-		margin: auto;
+		margin: 1rem auto 3rem;
 		width: clamp(10rem, 150rem, 95%);
 		& > header {
 			& > h2 {
 				@include font(12rem, 700, 1, $drukCyr, uppercase, -1px, start);
 			}
-		}
-		& > p {
-			@include font(1.7rem, 500, 1.6, inherit, null, -1.15px, start);
-			color: $erie;
-			margin-top: 2.5rem;
 		}
 	}
 	& > ul {
@@ -47,9 +42,6 @@
 						font-size: 15rem;
 					}
 				}
-				& > p {
-					font-size: 1.9rem;
-				}
 			}
 		}
 	}
@@ -61,25 +53,19 @@
 						font-size: 15rem;
 					}
 				}
-				& > p {
-					font-size: 1.9rem;
-				}
 			}
 			& > ul {
 				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 	}
-	@media (min-width: 950px) {
+	@media (min-width: 700px) {
 		.wrapper {
 			& > section {
 				& > header {
 					& > h2 {
-						font-size: 22rem;
+						font-size: 31rem;
 					}
-				}
-				& > p {
-					font-size: 2rem;
 				}
 			}
 		}
@@ -87,11 +73,8 @@
 	@media (min-width: 1250px) {
 		.wrapper {
 			& > section {
-				& > header >h2 {
+				& > header > h2 {
 					font-size: 45rem;
-				}
-				& > p {
-					font-size: 2.6rem;
 				}
 			}
 			& > ul {

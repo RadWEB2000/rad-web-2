@@ -1,11 +1,8 @@
-"use client";
-
-import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
-import { MoveRight } from "lucide-react";
 import styles from "@default/components/Page/HomePage/Blog/Blog.module.scss";
-import HomeBlogCard from "@default/components/Utils/Cards/BlogCard/HomeBlogCard/HomeBlogCard";
+import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
 import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
 import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
+import { MoveRight } from "lucide-react";
 
 type tBlog = {
 	cards?: any[];
