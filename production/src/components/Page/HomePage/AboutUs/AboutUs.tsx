@@ -1,5 +1,6 @@
 import styles from "@default/components/Page/HomePage/AboutUs/AboutUs.module.scss";
 import AboutUsCard from "@default/components/Utils/Cards/AboutUsCard/AboutUsCard";
+import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 import { tImage2 } from "@default/ts/types";
 
 type tAboutUs = {
@@ -31,7 +32,7 @@ export default function AboutUs({ cards, content, title }: tAboutUs) {
 				<header>
 					<h2 dangerouslySetInnerHTML={{ __html: title }} />
 				</header>
-				<p dangerouslySetInnerHTML={{ __html: content }} />
+				<ContentBox content={content} theme="section" variant="dark" />
 			</section>
 			<ul>
 				{cards?.map(

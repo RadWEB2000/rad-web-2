@@ -192,6 +192,7 @@
 
 .wrapper[data-theme="section"] {
 	width: 100%;
+	margin: 5rem auto 3rem;
 	.p,
 	.li {
 		@include font(1.9rem, 400, 1.3, inherit, null, -1px, start);

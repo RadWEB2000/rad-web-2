@@ -16,11 +16,6 @@
 				@include font(9.25rem, 800, 0.8, $drukCyr, uppercase, 1px, start);
 			}
 		}
-		& > p {
-			@include font(1.9rem, 400, 1.1, inherit, null, -1px, start);
-			color: $erie;
-			margin-top: 2rem;
-		}
 	}
 
 	& > ul {
@@ -42,9 +37,6 @@
 					& > h2 {
 						font-size: 12rem;
 					}
-				}
-				& > p {
-					font-size: 2.2rem;
 				}
 			}
 
@@ -74,10 +66,6 @@
 					& > h2 {
 						font-size: 18rem;
 					}
-				}
-				& > p {
-					font-size: 2.4rem;
-					line-height: 1.6;
 				}
 			}
 			& > ul {
