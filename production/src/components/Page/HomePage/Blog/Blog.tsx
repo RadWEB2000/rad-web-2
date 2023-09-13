@@ -5,6 +5,7 @@ import { MoveRight } from "lucide-react";
 import styles from "@default/components/Page/HomePage/Blog/Blog.module.scss";
 import HomeBlogCard from "@default/components/Utils/Cards/BlogCard/HomeBlogCard/HomeBlogCard";
 import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
+import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 
 type tBlog = {
 	cards?: any[];
@@ -28,7 +29,7 @@ export default function Blog({
 				<header>
 					<h2 dangerouslySetInnerHTML={{ __html: title }} />
 				</header>
-				<p dangerouslySetInnerHTML={{ __html: content }} />
+				<ContentBox content={content} theme="section" variant="light" />
 				<ButtonPrimary
 					label={label}
 					theme="tertiary"

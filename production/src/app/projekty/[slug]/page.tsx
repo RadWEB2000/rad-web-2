@@ -1,7 +1,7 @@
-import Content from "@default/components/Page/PostPage/Content/Content";
 import Hero from "@default/components/Page/ProjectPage/Hero/Hero";
-import { Metadata } from "next";
+import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
+import { Metadata } from "next";
 
 export async function generateMetadata({
 	params: { slug },
@@ -175,7 +175,7 @@ export default async function ProjectPage({
 				stack={stack}
 				website={website}
 			/>
-			<Content content={content} />
+			<ContentBox content={content} theme="article" />
 		</>
 	);
 }

@@ -1,9 +1,9 @@
-import Content from "@default/components/Page/PostPage/Content/Content";
 import Hero from "@default/components/Page/PersonPage/Hero/Hero";
 import RecommendedArticles from "@default/components/Utils/Wrappers/RecommendedArticles/RecommendedArticles";
 import RecommendedProjects from "@default/components/Utils/Wrappers/RecommendedProjects/RecommendedProjects";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
+import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 
 export async function generateMetadata({
 	params: { slug },
@@ -208,7 +208,7 @@ export default async function PersonPage({
 				phone={phone}
 				socials={socialMedia}
 			/>
-			<Content content={content} />
+			<ContentBox content={content} theme="person" />
 			{articles && (
 				<RecommendedArticles
 					cards={articles}
