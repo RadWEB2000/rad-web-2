@@ -14,7 +14,7 @@
 .content {
 	& > .title {
 		& > h1 {
-			@include font(5rem, 800, 0.9, $drukCyr, null, 1px, center);
+			@include font(4.3rem, 800, 0.9, $drukCyr, null, 1px, center);
 			color: $yellow;
 			&::first-letter {
 				color: $peach;
@@ -66,7 +66,7 @@
 		.content {
 			& > .title {
 				& > h1 {
-					font-size: 7.82rem;
+					font-size: 5.5rem;
 				}
 			}
 			& > .excerpt {
@@ -87,7 +87,7 @@
 		.content {
 			& > .title {
 				& > h1 {
-					font-size: 9rem;
+					font-size: 7rem;
 				}
 			}
 		}
@@ -105,7 +105,7 @@
 		.content {
 			& > .title {
 				& > h1 {
-					font-size: 14rem;
+					font-size: 10rem;
 				}
 			}
 			& > .excerpt {

@@ -1,8 +1,8 @@
-import HomeProjectCard from "@default/components/Utils/Cards/ProjectCard/HomeProjectCard/HomeProjectCard";
 import styles from "@default/components/Page/HomePage/Projects/Projects.module.scss";
 import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
 import { tImage2 } from "@default/ts/types";
 import ProjectCard from "@default/components/Utils/Cards/ProjectCard/ProjectCard";
+import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 
 type tProjects = {
 	button?: string | null;
@@ -34,7 +34,15 @@ export default function Projects({
 				<header>
 					<h2 dangerouslySetInnerHTML={{ __html: title }} />
 				</header>
-				{content && <p dangerouslySetInnerHTML={{ __html: content }} />}
+				{content && (
+					<div
+						style={{
+							width: `clamp(10rem,120rem,95%)`,
+						}}
+					>
+						<ContentBox content={content} theme="section" variant="dark" />
+					</div>
+				)}
 				{button && uri && button !== null && uri !== null && (
 					<div>
 						<ButtonPrimary

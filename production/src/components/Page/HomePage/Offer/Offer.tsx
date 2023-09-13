@@ -1,4 +1,3 @@
-"use client";
 import Card, { tCard } from "@default/components/Page/HomePage/Offer/Card/Card";
 import styles from "@default/components/Page/HomePage/Offer/Offer.module.scss";
 import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
@@ -21,10 +20,6 @@ export default function Offer({ button, cards, content, title, uri }: tOffer) {
 						<h2 dangerouslySetInnerHTML={{ __html: title }} />
 					</header>
 					<ContentBox content={content} theme="section" variant="dark" />
-					<p
-						className={styles.content}
-						dangerouslySetInnerHTML={{ __html: content }}
-					/>
 					{button !== null && uri !== null && (
 						<ButtonPrimary
 							label="Więcej"

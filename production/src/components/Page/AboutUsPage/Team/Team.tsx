@@ -1,5 +1,6 @@
 import styles from "@default/components/Page/AboutUsPage/Team/Team.module.scss";
 import AboutUsCard from "@default/components/Utils/Cards/AboutUsCard/AboutUsCard";
+import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 
 type tTeam = {
 	cards: {
