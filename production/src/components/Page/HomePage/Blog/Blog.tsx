@@ -1,11 +1,41 @@
 import styles from "@default/components/Page/HomePage/Blog/Blog.module.scss";
 import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
 import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
+import BlogCard2 from "@default/components/Utils/Cards/BlogCard2/BlogCard2";
 import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
+import { tImage2 } from "@default/ts/types";
 import { MoveRight } from "lucide-react";
 
 type tBlog = {
-	cards?: any[];
+	cards?: {
+		node: {
+			categories: {
+				edges: {
+					node: {
+						name: string;
+						uri: string;
+					};
+				}[];
+			};
+			post: {
+				author: {
+					teammate: {
+						fullname: {
+							firstname: string;
+							lastname: string;
+						};
+						uri: string;
+					};
+				};
+				title: string;
+				uri: string;
+				date: string;
+				featuredImage: {
+					node: tImage2;
+				};
+			};
+		};
+	}[];
 	button: {
 		label: string;
 		uri: string;
@@ -40,31 +70,19 @@ export default function Blog({
 					({
 						node: {
 							categories,
-							date,
-							featuredImage,
-							post: { author },
-							status,
-							title,
-							uri,
+							post: { author, date, featuredImage, title, uri },
 						},
 					}) => {
 						return (
-							<BlogCard
-								author={{
-									firstname: author[0].teammate.fullname.firstname,
-									lastname: author[0].teammate.fullname.lastname,
-								}}
-								category={{
-									name: categories.edges[0].node.name,
-									uri: categories.edges[0].node.uri,
-								}}
+							<BlogCard2
+								author={author.teammate}
+								category={categories.edges[0].node}
 								date={date}
-								image={featuredImage.node}
+								image={featuredImage?.node}
 								key={title}
-								status={status}
 								title={title}
 								uri={uri}
-								theme="home"
+								variant="home"
 							/>
 						);
 					}

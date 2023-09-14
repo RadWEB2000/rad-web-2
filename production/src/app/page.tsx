@@ -8,6 +8,8 @@ import Statistics from "@default/components/Page/HomePage/Statistics/Statistics"
 import WatchWord from "@default/components/Page/HomePage/WatchWord/WatchWord";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
+import { Suspense } from "react";
+import { iArticlesHomePage } from "@default/ts/interfaces";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
@@ -248,6 +250,58 @@ export default async function HomePage() {
 		.then((data) => {
 			return data;
 		});
+	const articles: iArticlesHomePage = await fetch(wordpressAPI, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query ArticleHomeItems {
+				posts(first: 6) {
+				  edges {
+					node {
+					  categories(last: 1) {
+						edges {
+						  node {
+							name
+							uri
+						  }
+						}
+					  }
+					  post {
+						author {
+						  ... on Teammate {
+							teammate {
+							  fullname {
+								firstname
+								lastname
+							  }
+							}
+							uri
+						  }
+						}
+					  }
+					  title(format: RENDERED)
+					  uri
+					  date
+					  featuredImage {
+						node {
+						  altText
+						  sourceUrl(size: POST_THUMBNAIL)
+						  title(format: RENDERED)
+						}
+					  }
+					}
+				  }
+				}
+			  }`,
+		}),
+	})
+		.then((response) => response.json())
+		.then((data) => {
+			return data;
+		});
 
 	if (page.data) {
 		const {
@@ -270,15 +324,17 @@ export default async function HomePage() {
 				/>
 				<Services cards={homePage.servicesCards} />
 				<WatchWord content={homePage.watchWord} />
-				<Blog
-					button={{
-						label: homePage.blog.button,
-						uri: homePage.blog.uri,
-					}}
-					content={homePage.blog.content}
-					title={homePage.blog.title}
-					cards={posts.edges}
-				/>
+				<Suspense fallback={<div>loading blog section</div>}>
+					<Blog
+						button={{
+							label: homePage.blog.button,
+							uri: homePage.blog.uri,
+						}}
+						content={homePage.blog.content}
+						title={homePage.blog.title}
+						cards={posts.edges}
+					/>
+				</Suspense>
 				<Statistics cards={homePage.statistics} />
 				<Projects
 					button={homePage.projects.button}

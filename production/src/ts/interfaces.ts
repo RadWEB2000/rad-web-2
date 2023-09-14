@@ -1,3 +1,5 @@
+import { tImage2 } from "@default/ts/types";
+
 export interface iArticlesArray {
 	node: {
 		title: string;
@@ -29,5 +31,41 @@ export interface iArticlesArray {
 			}[];
 		};
 		date: string;
+	};
+}
+
+export interface iArticlesHomePage {
+	data: {
+		posts: {
+			edges: {
+				node: {
+					categories: {
+						edges: {
+							node: {
+								name: string;
+								uri: string;
+							};
+						}[];
+					};
+					post: {
+						author: {
+							teammate: {
+								fullname: {
+									firstname: string;
+									lastname: string;
+								};
+								uri: string;
+							};
+						};
+						title: string;
+						uri: string;
+						date: string;
+						featuredImage: {
+							node: tImage2;
+						};
+					};
+				};
+			}[];
+		};
 	};
 }
