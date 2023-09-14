@@ -3,6 +3,7 @@ import { tImage2 } from "@default/ts/types";
 import Image from "next/image";
 import Link from "next/link";
 import { BsCalendar2Date } from "react-icons/bs";
+import styles from "@default/components/Utils/Cards/BlogCard2/BlogCard.module.scss";
 
 type tHomeArticlePage = {
 	author: {
@@ -28,12 +29,11 @@ function HomeArticlePage(props: tHomeArticlePage) {
 		date: date,
 		type: "short",
 	});
-	console.log(author);
 	return (
-		<li>
-			<Link href={uri}>
-				<div>
-					<figure>
+		<li className={styles.home_article_page}>
+			<Link className={styles.box} href={uri}>
+				<div className={styles.image_box}>
+					<figure className={styles.image}>
 						<Image
 							alt={image.altText}
 							fill
@@ -46,22 +46,28 @@ function HomeArticlePage(props: tHomeArticlePage) {
 						/>
 					</figure>
 				</div>
-				<section>
-					<header>
-						<h3 dangerouslySetInnerHTML={{ __html: title }} />
+				<section className={styles.content}>
+					<header className={styles.title_box}>
+						<h3
+							className={styles.title}
+							dangerouslySetInnerHTML={{ __html: title }}
+						/>
 					</header>
-					<div>
+					<div className={styles.author_box}>
 						<Link
+							className={styles.author}
 							href={author.uri}
 						>{`${author.fullname.firstname} ${author.fullname.lastname}`}</Link>
 					</div>
-					<aside>
-						<Link href={category.uri}>{category.name}</Link>
-						<div>
-							<i>
+					<aside className={styles.details}>
+						<Link className={styles.category} href={category.uri}>
+							{category.name}
+						</Link>
+						<div className={styles.release}>
+							<i className={styles.release_icon}>
 								<BsCalendar2Date />
 							</i>
-							<p>{`${day} ${month} ${year}`}</p>
+							<p className={styles.release_date}>{`${day} ${month} ${year}`}</p>
 						</div>
 					</aside>
 				</section>
