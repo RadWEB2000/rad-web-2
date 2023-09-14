@@ -7,7 +7,7 @@ import { tImage2 } from "@default/ts/types";
 import { MoveRight } from "lucide-react";
 
 type tBlog = {
-	cards?: {
+	cards: {
 		node: {
 			categories: {
 				edges: {
@@ -24,15 +24,15 @@ type tBlog = {
 							firstname: string;
 							lastname: string;
 						};
-						uri: string;
 					};
-				};
-				title: string;
-				uri: string;
-				date: string;
-				featuredImage: {
-					node: tImage2;
-				};
+					uri: string;
+				}[];
+			};
+			title: string;
+			uri: string;
+			date: string;
+			featuredImage: {
+				node: tImage2;
 			};
 		};
 	}[];
@@ -70,15 +70,28 @@ export default function Blog({
 					({
 						node: {
 							categories,
-							post: { author, date, featuredImage, title, uri },
+							date,
+							featuredImage,
+							post: { author },
+							title,
+							uri,
 						},
 					}) => {
 						return (
 							<BlogCard2
-								author={author.teammate}
-								category={categories.edges[0].node}
+								author={{
+									fullname: {
+										firstname: author[0].teammate.fullname.firstname,
+										lastname: author[0].teammate.fullname.lastname,
+									},
+									uri: author[0].uri,
+								}}
+								category={{
+									name: categories.edges[0].node.name,
+									uri: categories.edges[0].node.uri,
+								}}
 								date={date}
-								image={featuredImage?.node}
+								image={featuredImage.node}
 								key={title}
 								title={title}
 								uri={uri}

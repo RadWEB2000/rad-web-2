@@ -54,15 +54,15 @@ export interface iArticlesHomePage {
 									firstname: string;
 									lastname: string;
 								};
-								uri: string;
 							};
-						};
-						title: string;
-						uri: string;
-						date: string;
-						featuredImage: {
-							node: tImage2;
-						};
+							uri: string;
+						}[];
+					};
+					title: string;
+					uri: string;
+					date: string;
+					featuredImage: {
+						node: tImage2;
 					};
 				};
 			}[];

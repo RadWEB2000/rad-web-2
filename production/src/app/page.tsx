@@ -332,7 +332,7 @@ export default async function HomePage() {
 						}}
 						content={homePage.blog.content}
 						title={homePage.blog.title}
-						cards={posts.edges}
+						cards={articles.data.posts.edges}
 					/>
 				</Suspense>
 				<Statistics cards={homePage.statistics} />

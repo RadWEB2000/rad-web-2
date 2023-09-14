@@ -28,25 +28,24 @@ function HomeArticlePage(props: tHomeArticlePage) {
 		date: date,
 		type: "short",
 	});
+	console.log(author);
 	return (
 		<li>
 			<Link href={uri}>
-				{image && (
-					<div>
-						<figure>
-							<Image
-								alt={image.altText}
-								fill
-								src={image.sourceUrl}
-								style={{
-									objectFit: "cover",
-									objectPosition: "center",
-								}}
-								title={image.title}
-							/>
-						</figure>
-					</div>
-				)}
+				<div>
+					<figure>
+						<Image
+							alt={image.altText}
+							fill
+							src={image.sourceUrl}
+							style={{
+								objectFit: "cover",
+								objectPosition: "center",
+							}}
+							title={image.title}
+						/>
+					</figure>
+				</div>
 				<section>
 					<header>
 						<h3 dangerouslySetInnerHTML={{ __html: title }} />
