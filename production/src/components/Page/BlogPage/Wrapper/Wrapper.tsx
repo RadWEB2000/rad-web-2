@@ -1,12 +1,43 @@
 "use client";
 import styles from "@default/components/Page/BlogPage/Wrapper/Wrapper.module.scss";
 import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
+import BlogCard2 from "@default/components/Utils/Cards/BlogCard2/BlogCard2";
 import Search from "@default/components/Utils/Search/Search";
 import { iArticlesArray } from "@default/ts/interfaces";
+import { tImage2 } from "@default/ts/types";
 import { useState } from "react";
 
 type tWrapper = {
-	cards: iArticlesArray[];
+	cards: {
+		node: {
+			post: {
+				author: {
+					teammate: {
+						fullname: {
+							firstname: string;
+							lastname: string;
+						};
+					};
+					uri: string;
+				}[];
+			};
+			featuredImage: {
+				node: tImage2;
+			};
+			title: string;
+			uri: string;
+			date: string;
+			excerpt: string;
+			categories: {
+				edges: {
+					node: {
+						name: string;
+						uri: string;
+					};
+				}[];
+			};
+		};
+	}[];
 	content: string;
 	search?: {
 		label: string;
@@ -53,10 +84,13 @@ export default function Wrapper({ cards, content, search, title }: tWrapper) {
 								},
 							}: iArticlesArray) => {
 								return (
-									<BlogCard
+									<BlogCard2
 										author={{
-											firstname: author[0].teammate.fullname.firstname,
-											lastname: author[0].teammate.fullname.lastname,
+											fullname: {
+												firstname: author[0].teammate.fullname.firstname,
+												lastname: author[0].teammate.fullname.lastname,
+											},
+											uri: author[0].uri,
 										}}
 										category={{
 											name: categories.edges[0].node.name,
@@ -68,7 +102,7 @@ export default function Wrapper({ cards, content, search, title }: tWrapper) {
 										key={title}
 										title={title}
 										uri={uri}
-										theme="regular"
+										variant="blog"
 									/>
 								);
 							}

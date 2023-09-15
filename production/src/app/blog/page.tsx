@@ -1,6 +1,7 @@
 import Wrapper from "@default/components/Page/BlogPage/Wrapper/Wrapper";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
+import { iArticlesBlogPage } from "@default/ts/interfaces";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
@@ -150,6 +151,60 @@ export default async function BlogPage() {
 		page: { title, content },
 		posts: { edges },
 	} = page.data;
+	const articles:iArticlesBlogPage = await fetch(wordpressAPI, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query ArticleBlogItems {
+				posts {
+				  edges {
+					node {
+					  post {
+						author {
+						  ... on Teammate {
+							teammate {
+							  fullname {
+								firstname
+								lastname
+							  }
+							}
+							uri
+						  }
+						}
+					  }
+					  featuredImage {
+						node {
+						  altText
+						  sourceUrl(size: POST_THUMBNAIL)
+						  title(format: RENDERED)
+						}
+					  }
+					  title(format: RENDERED)
+					  uri
+					  date
+					  excerpt(format: RENDERED)
+					  categories(last: 1) {
+						edges {
+						  node {
+							name
+							uri
+						  }
+						}
+					  }
+					}
+				  }
+				}
+			  }
+				`,
+		}),
+	})
+		.then((response) => response.json())
+		.then((data) => {
+			return data;
+		});
 
 	return (
 		<Wrapper
@@ -159,7 +214,7 @@ export default async function BlogPage() {
 				placeholder: "Pisz tutaj...",
 			}}
 			title={title}
-			cards={edges}
+			cards={articles.data.posts.edges}
 		/>
 	);
 }

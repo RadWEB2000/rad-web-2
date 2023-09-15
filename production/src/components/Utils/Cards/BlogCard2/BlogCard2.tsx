@@ -5,7 +5,26 @@ import Link from "next/link";
 import { BsCalendar2Date } from "react-icons/bs";
 import styles from "@default/components/Utils/Cards/BlogCard2/BlogCard.module.scss";
 
-type tHomeArticlePage = {
+type tBlogArticleCard = {
+	author: {
+		fullname: {
+			firstname: string;
+			lastname: string;
+		};
+		uri: string;
+	};
+	category: {
+		name: string;
+		uri: string;
+	};
+	excerpt: string;
+	date: string;
+	image: tImage2;
+	title: string;
+	uri: string;
+};
+
+type tHomeArticleCard = {
 	author: {
 		fullname: {
 			firstname: string;
@@ -23,7 +42,64 @@ type tHomeArticlePage = {
 	uri: string;
 };
 
-function HomeArticlePage(props: tHomeArticlePage) {
+function BlogArticleCard(props: tBlogArticleCard) {
+	const { author, category, date, excerpt, image, title, uri } = props;
+	const { day, month, year } = getDate({
+		date: date,
+		type: "short",
+	});
+	return (
+		<li className={styles.blog_article_page}>
+			<Link className={styles.box} href={uri}>
+				<div className={styles.image_box}>
+					<figure className={styles.image}>
+						<Image
+							alt={image.altText}
+							fill
+							loading="lazy"
+							src={image.sourceUrl}
+							style={{
+								objectFit: "cover",
+								objectPosition: "center",
+							}}
+							title={image.title}
+							quality={60}
+						/>
+					</figure>
+				</div>
+				<section className={styles.content}>
+					<aside className={styles.details}>
+						<Link className={styles.category} href={category.uri}>
+							{category.name}
+						</Link>
+						<p className={styles.release}>{`${day} ${month} ${year}`}</p>
+					</aside>
+					<article className={styles.info}>
+						<header className={styles.title_box}>
+							<h3
+								className={styles.title}
+								dangerouslySetInnerHTML={{ __html: title }}
+							/>
+						</header>
+						<p
+							className={styles.excerpt}
+							dangerouslySetInnerHTML={{
+								__html: excerpt.substring(0, 100).trim() + "...",
+							}}
+						/>
+					</article>
+					<div className={styles.author_box}>
+						<Link className={styles.author} href={author.uri}>
+							{`${author.fullname.firstname} ${author.fullname.lastname}`}
+						</Link>
+					</div>
+				</section>
+			</Link>
+		</li>
+	);
+}
+
+function HomeArticleCard(props: tHomeArticleCard) {
 	const { author, category, date, image, title, uri } = props;
 	const { day, month, year } = getDate({
 		date: date,
@@ -92,17 +168,37 @@ type tBlogCard2 = {
 	image: tImage2;
 	title: string;
 	uri: string;
-	variant: "home" | "person" | "list" | "recommended" | "service";
-};
+} & (
+	| {
+			variant: "home" | "person" | "recommended" | "service";
+	  }
+	| {
+			variant: "blog";
+			excerpt: string;
+	  }
+);
 
 export default function BlogCard2(props: tBlogCard2) {
 	const { author, category, date, image, title, uri, variant } = props;
 
 	if (variant === "home") {
 		return (
-			<HomeArticlePage
+			<HomeArticleCard
 				author={author}
 				category={category}
+				date={date}
+				image={image}
+				title={title}
+				uri={uri}
+			/>
+		);
+	} else if (variant === "blog") {
+		const { excerpt } = props;
+		return (
+			<BlogArticleCard
+				author={author}
+				category={category}
+				excerpt={excerpt}
 				date={date}
 				image={image}
 				title={title}

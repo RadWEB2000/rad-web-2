@@ -1,5 +1,195 @@
 @import "../../../../styles/Variables.scss";
 
+.blog_article_page {
+	background-color: $erie;
+	border-radius: 1.5rem;
+	margin: auto;
+	transition: 0.12s ease-in-out filter;
+	width: 95%;
+	& > .box {
+		@include flex(flex-start, flex-start, column, null, 1rem);
+		padding: 1.3rem;
+		& > .image_box {
+			display: none;
+		}
+		& > .content {
+			@include flex(flex-start, flex-start, column, null, 2rem);
+			&,
+			& > * {
+				width: 100%;
+			}
+			& > .details {
+				align-items: center;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				justify-items: center;
+				height: 4rem;
+			}
+			& > .info {
+				& > .title_box {
+					& > .title {
+						@include font(2.3rem, 600, 1.12, inherit, null, -1px, start);
+					}
+				}
+				& > .excerpt {
+					@include font(1.7rem, 300, 1, inherit, null, -1px, start);
+					color: $silver;
+					margin-top: 1.2rem;
+				}
+			}
+			& > .author_box {
+				@include flex(center, flex-end);
+			}
+		}
+	}
+
+	&:focus-within,
+	&:hover {
+		filter: brightness(115%);
+	}
+
+	@media only screen {
+		@media (min-width: 450px) {
+			width: clamp(30rem, 35rem, 90%);
+		}
+		@media (min-width: 530px) {
+			width: clamp(30rem, 44rem, 90%);
+			overflow: hidden;
+			& > .box {
+				padding: 0;
+				& > .image_box {
+					@include size(26rem, 100%);
+					display: block;
+					& > .image {
+						@include size(100%, 100%);
+						position: relative;
+					}
+				}
+				& > .content {
+					padding: 1rem 1.2rem;
+				}
+			}
+		}
+		@media (min-width: 700px) {
+			width: clamp(30rem, 50rem, 90%);
+			& > .box {
+				& > .image_box {
+					height: 32rem;
+				}
+				& > .content {
+					padding: 1rem 1.2rem 1.3rem;
+					& > .info {
+						& > .title_box {
+							& > .title {
+								@include font(2.6rem, 600, 1.3);
+							}
+						}
+						& > .excerpt {
+							@include font(1.9rem, 300, 1.1);
+						}
+					}
+				}
+			}
+		}
+		@media (min-width: 1300px) {
+			border-radius: 0.85rem;
+			width: 95%;
+			& > .box {
+				display: grid;
+				grid-template-columns: repeat(12, 1fr);
+				height: 42rem;
+				& > .image_box,
+				.content {
+					height: 100%;
+				}
+				& > .image_box {
+					grid-column: 1/5;
+				}
+				& > .content {
+					@include flex(center, space-between, column);
+					grid-column: 5/-1;
+					padding: 3rem 1.2rem;
+					& > .author_box {
+						& > .author {
+							border-radius: 0.75rem;
+							background-color: $silver;
+							color: $black;
+							font-weight: 600;
+							padding: 0.8rem 1.2rem;
+						}
+					}
+					& > .details {
+						height: auto;
+						& > .category,
+						& > .release {
+							@include font(1.7rem, 500, 1, inherit, uppercase, -1px, center);
+							border-radius: 0.75rem;
+							padding: 0.8rem 1.2rem;
+						}
+						& > .category {
+							background-color: $antique;
+							color: $erie;
+							transition: 0.15s ease-in-out background-color;
+							margin: auto auto auto 0;
+							&:focus,
+							&:hover {
+								background-color: $alabaster;
+							}
+						}
+						& > .release {
+							background-color: $black;
+							margin: auto 0 auto auto;
+						}
+					}
+					& > .info {
+						& > .title_box {
+							& > .title {
+								font-size: 3rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 2.1rem;
+						}
+					}
+				}
+			}
+		}
+		@media (min-width: 1800px) {
+			& > .box {
+				height: 48rem;
+				& > .image_box {
+					grid-column: 1/6;
+				}
+				& > .content {
+					grid-column: 6/-1;
+					& > .author_box {
+						& > .author {
+							font-size: 1.7rem;
+						}
+					}
+					& > .details {
+						& > .category,
+						& > .release {
+							font-size: 1.6em;
+							font-weight: 600;
+						}
+					}
+					& > .info {
+						& > .title_box {
+							& > .title {
+								font-size: 3.3rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 2.4rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 .home_article_page {
 	background-color: $platinum;
 	width: 100%;
