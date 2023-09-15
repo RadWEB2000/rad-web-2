@@ -41,6 +41,17 @@ type tHomeArticleCard = {
 	title: string;
 	uri: string;
 };
+type tRecommendedArticleCard = {
+	category: {
+		name: string;
+		uri: string;
+	};
+	date: string;
+	excerpt: string;
+	image: tImage2;
+	title: string;
+	uri: string;
+};
 
 function BlogArticleCard(props: tBlogArticleCard) {
 	const { author, category, date, excerpt, image, title, uri } = props;
@@ -152,14 +163,58 @@ function HomeArticleCard(props: tHomeArticleCard) {
 	);
 }
 
+function RecommendedArticleCard(props: tRecommendedArticleCard) {
+	const { category, date, excerpt, image, title, uri } = props;
+	const { day, month, year } = getDate({
+		date: date,
+		type: "short",
+	});
+	return (
+		<li>
+			<Link href={uri}>
+				<div>
+					<figure>
+						<Image
+							alt={image.altText}
+							fill
+							loading="lazy"
+							src={image.sourceUrl}
+							style={{
+								objectFit: "cover",
+								objectPosition: "center",
+							}}
+							title={image.title}
+							quality={40}
+						/>
+					</figure>
+				</div>
+				<section>
+					<aside>
+						<Link href={category.uri}>{category.name}</Link>
+						<p>
+							<i className={styles.release_icon}>
+								<BsCalendar2Date />
+							</i>
+							<span>{`${day} ${month} ${year}`}</span>
+						</p>
+					</aside>
+					<article>
+						<header>
+							<h3 dangerouslySetInnerHTML={{ __html: title }} />
+						</header>
+						<p
+							dangerouslySetInnerHTML={{
+								__html: excerpt.substring(0, 75).trim() + "...",
+							}}
+						/>
+					</article>
+				</section>
+			</Link>
+		</li>
+	);
+}
+
 type tBlogCard2 = {
-	author: {
-		fullname: {
-			firstname: string;
-			lastname: string;
-		};
-		uri: string;
-	};
 	category: {
 		name: string;
 		uri: string;
@@ -170,18 +225,37 @@ type tBlogCard2 = {
 	uri: string;
 } & (
 	| {
-			variant: "home" | "person" | "recommended" | "service";
+			excerpt: string;
+			variant: "recommended";
 	  }
 	| {
 			variant: "blog";
 			excerpt: string;
+			author: {
+				fullname: {
+					firstname: string;
+					lastname: string;
+				};
+				uri: string;
+			};
+	  }
+	| {
+			variant: "home";
+			author: {
+				fullname: {
+					firstname: string;
+					lastname: string;
+				};
+				uri: string;
+			};
 	  }
 );
 
 export default function BlogCard2(props: tBlogCard2) {
-	const { author, category, date, image, title, uri, variant } = props;
+	const { category, date, image, title, uri, variant } = props;
 
 	if (variant === "home") {
+		const { author } = props;
 		return (
 			<HomeArticleCard
 				author={author}
@@ -193,7 +267,7 @@ export default function BlogCard2(props: tBlogCard2) {
 			/>
 		);
 	} else if (variant === "blog") {
-		const { excerpt } = props;
+		const { author, excerpt } = props;
 		return (
 			<BlogArticleCard
 				author={author}

@@ -1,6 +1,7 @@
 import Wrapper from "@default/components/Page/BlogPage/Wrapper/Wrapper";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
+import { iArticlesBlogPage } from "@default/ts/interfaces";
 
 export async function generateMetadata({
 	params: { category },
@@ -154,6 +155,61 @@ export default async function BlogPage({
 			return data;
 		});
 
+	const articles: iArticlesBlogPage = await fetch(wordpressAPI, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+				query ArticleBlogItems {
+					posts(first: 100) {
+					  edges {
+						node {
+						  post {
+							author {
+							  ... on Teammate {
+								teammate {
+								  fullname {
+									firstname
+									lastname
+								  }
+								}
+								uri
+							  }
+							}
+						  }
+						  featuredImage {
+							node {
+							  altText
+							  sourceUrl(size: POST_THUMBNAIL)
+							  title(format: RENDERED)
+							}
+						  }
+						  title(format: RENDERED)
+						  uri
+						  date
+						  excerpt(format: RENDERED)
+						  categories(last: 1) {
+							edges {
+							  node {
+								name
+								uri
+							  }
+							}
+						  }
+						}
+					  }
+					}
+				  }
+					`,
+		}),
+	})
+		.then((response) => response.json())
+		.then((data) => {
+			return data;
+		});
+
 	const {
 		page: { title, content },
 		posts: { edges },
@@ -167,8 +223,9 @@ export default async function BlogPage({
 				placeholder: "Pisz tutaj...",
 			}}
 			title={title}
-			cards={edges.filter(({ node: { uri } }: { node: { uri: string } }) =>
-				uri.toLowerCase().includes(category)
+			cards={articles.data.posts.edges.filter(
+				({ node: { uri } }: { node: { uri: string } }) =>
+					uri.toLowerCase().includes(category)
 			)}
 		/>
 	);

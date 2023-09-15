@@ -151,7 +151,7 @@ export default async function BlogPage() {
 		page: { title, content },
 		posts: { edges },
 	} = page.data;
-	const articles:iArticlesBlogPage = await fetch(wordpressAPI, {
+	const articles: iArticlesBlogPage = await fetch(wordpressAPI, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -159,7 +159,7 @@ export default async function BlogPage() {
 		body: JSON.stringify({
 			query: `
 			query ArticleBlogItems {
-				posts {
+				posts(first: 100) {
 				  edges {
 					node {
 					  post {
