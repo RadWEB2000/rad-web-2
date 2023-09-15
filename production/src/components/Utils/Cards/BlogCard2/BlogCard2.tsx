@@ -49,7 +49,7 @@ function BlogArticleCard(props: tBlogArticleCard) {
 		type: "short",
 	});
 	return (
-		<li className={styles.blog_article_page}>
+		<li className={styles.blog_article_card}>
 			<Link className={styles.box} href={uri}>
 				<div className={styles.image_box}>
 					<figure className={styles.image}>
@@ -106,7 +106,7 @@ function HomeArticleCard(props: tHomeArticleCard) {
 		type: "short",
 	});
 	return (
-		<li className={styles.home_article_page}>
+		<li className={styles.home_article_card}>
 			<Link className={styles.box} href={uri}>
 				<div className={styles.image_box}>
 					<figure className={styles.image}>

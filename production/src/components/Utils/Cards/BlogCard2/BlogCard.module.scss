@@ -1,6 +1,6 @@
 @import "../../../../styles/Variables.scss";
 
-.blog_article_page {
+.blog_article_card {
 	background-color: $erie;
 	border-radius: 1.5rem;
 	margin: auto;
@@ -190,7 +190,7 @@
 	}
 }
 
-.home_article_page {
+.home_article_card {
 	background-color: $platinum;
 	width: 100%;
 	& > .box {
