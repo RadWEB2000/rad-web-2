@@ -6,10 +6,13 @@
 	& > .box {
 		@include flex(flex-start, flex-start, column, 0, 1rem, false);
 		& > .image_box {
-			@include size(50rem, 100%);
+			@include size(30rem, 100%);
+			border-radius: 1rem 1rem 0 0;
+			overflow: hidden;
 			& > .image {
 				@include size(100%, 100%);
 				position: relative;
+				transition: 0.15s ease-in-out transform;
 			}
 		}
 		& > .content {
@@ -20,24 +23,96 @@
 			}
 			& > .title_box {
 				& > .title {
-					@include font(3rem, 600, 1.2, inherit, null, -1px, start);
+					@include font(2.2rem, 600, 0.95, inherit, null, -1px, start);
 				}
 			}
 			& > .author_box {
 				@include flex(center, flex-end);
 				& > .author {
-					@include font(2.2rem, 400, null, inherit, null, -1px, end);
+					@include font(2rem, 400, null, inherit, null, -1px, end);
 				}
 			}
 			& > .details {
+				border-top: 1px solid hsla(0, 100%, 0%, 0.12);
 				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				height: 3.5rem;
+				grid-template-columns: repeat(1, 1fr);
+				row-gap: 1rem;
+				padding-top: 1rem;
 				& > .category {
-					@include font(1.7rem, 400, 1, inherit, uppercase, -1px, center);
+					@include flex(center, center);
+					@include font(1.5rem, 500, 1, inherit, uppercase, -1px, center);
 				}
 				& > .release {
-					@include flex(center, center, row nowrap);
+					@include flex(center, center, row nowrap, 0.5rem);
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+
+	&:focus-within,
+	&:hover {
+		& > .box {
+			& > .image_box {
+				& > .image {
+					transform: rotate(1deg) scale(1.05);
+				}
+			}
+		}
+	}
+
+	@media only screen {
+		@media (min-width: 470px) {
+			& > .box {
+				& > .image_box {
+					height: 40rem;
+				}
+				& > .content {
+					& > .title_box {
+						& > .title {
+							font-size: 2.4rem;
+						}
+					}
+					& > .author_box {
+						& > .author {
+							font-size: 1.9rem;
+						}
+					}
+					& > .details {
+						grid-template-columns: repeat(2, 1fr);
+						height: 4.5rem;
+						row-gap: unset;
+						padding-top: unset;
+
+						& > * {
+							transition: 0.12s ease-in-out background-color;
+							&:focus-within,
+							&:hover {
+								background-color: hsla(0, 100%, 0%, 0.05);
+							}
+						}
+
+						& > .category {
+							border-radius: 0 0 0 1.25rem;
+						}
+						& > .release {
+							border-radius: 0 0 1.25rem 0;
+						}
+					}
+				}
+			}
+		}
+		@media (min-width: 1400px) {
+			& > .box {
+				& > .image_box {
+					height: 55rem;
+				}
+				& > .content {
+					& > .title_box {
+						& > .title {
+							font-size: 2.6rem;
+						}
+					}
 				}
 			}
 		}
