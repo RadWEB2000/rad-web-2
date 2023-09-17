@@ -4,6 +4,7 @@ import RecommendedProjects from "@default/components/Utils/Wrappers/RecommendedP
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
 import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
+import { iArticlesRecommended } from "@default/ts/interfaces";
 
 export async function generateMetadata({
 	params: { slug },
@@ -176,6 +177,49 @@ export default async function PersonPage({
 		.then((data) => {
 			return data;
 		});
+	const articles2: iArticlesRecommended = await fetch(wordpressAPI, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query ArticlePersonBlogItems {
+				teammate(id: "${slug}", idType: SLUG) {
+				  teammate {
+					articles {
+					  ... on Post {
+						categories(last: 1) {
+						  edges {
+							node {
+							  name
+							  uri
+							}
+						  }
+						}
+						date
+						excerpt(format: RENDERED)
+						featuredImage {
+						  node {
+							altText
+							sourceUrl(size: POST_THUMBNAIL)
+							title(format: RENDERED)
+						  }
+						}
+						title(format: RENDERED)
+						uri
+					  }
+					}
+				  }
+				}
+			  }
+				`,
+		}),
+	})
+		.then((response) => response.json())
+		.then((data) => {
+			return data;
+		});
 
 	const {
 		content,
@@ -211,7 +255,7 @@ export default async function PersonPage({
 			<ContentBox content={content} theme="person" />
 			{articles && (
 				<RecommendedArticles
-					cards={articles}
+					cards={articles2.data.teammate.teammate.articles}
 					title="Przeczytaj moje artykuły"
 				/>
 			)}

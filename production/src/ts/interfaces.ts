@@ -106,3 +106,29 @@ export interface iArticlesBlogPage {
 		};
 	};
 }
+
+export interface iArticlesRecommended {
+	data: {
+		teammate: {
+			teammate: {
+				articles: {
+					categories: {
+						edges: {
+							node: {
+								name: string;
+								uri: string;
+							};
+						}[];
+					};
+					date: string;
+					excerpt: string;
+					featuredImage: {
+						node: tImage2;
+					};
+					title: string;
+					uri: string;
+				}[];
+			};
+		};
+	};
+}

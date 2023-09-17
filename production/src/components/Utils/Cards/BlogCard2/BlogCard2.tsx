@@ -170,10 +170,10 @@ function RecommendedArticleCard(props: tRecommendedArticleCard) {
 		type: "short",
 	});
 	return (
-		<li>
-			<Link href={uri}>
-				<div>
-					<figure>
+		<li className={styles.recommended_article_card}>
+			<Link className={styles.box} href={uri}>
+				<div className={styles.image_box}>
+					<figure className={styles.image}>
 						<Image
 							alt={image.altText}
 							fill
@@ -188,26 +188,34 @@ function RecommendedArticleCard(props: tRecommendedArticleCard) {
 						/>
 					</figure>
 				</div>
-				<section>
-					<aside>
-						<Link href={category.uri}>{category.name}</Link>
-						<p>
-							<i className={styles.release_icon}>
-								<BsCalendar2Date />
-							</i>
-							<span>{`${day} ${month} ${year}`}</span>
-						</p>
-					</aside>
-					<article>
-						<header>
-							<h3 dangerouslySetInnerHTML={{ __html: title }} />
+				<section className={styles.details}>
+					<article className={styles.content}>
+						<header className={styles.title_box}>
+							<h3
+								className={styles.title}
+								dangerouslySetInnerHTML={{ __html: title }}
+							/>
 						</header>
 						<p
+							className={styles.excerpt}
 							dangerouslySetInnerHTML={{
-								__html: excerpt.substring(0, 75).trim() + "...",
+								__html: excerpt.substring(0, 115).trim() + "...",
 							}}
 						/>
 					</article>
+					<aside className={styles.info}>
+						<Link className={styles.category} href={category.uri}>
+							{category.name}
+						</Link>
+						<p className={styles.release}>
+							<i className={styles.release_icon}>
+								<BsCalendar2Date />
+							</i>
+							<span
+								className={styles.release_date}
+							>{`${day} ${month} ${year}`}</span>
+						</p>
+					</aside>
 				</section>
 			</Link>
 		</li>
@@ -251,7 +259,7 @@ type tBlogCard2 = {
 	  }
 );
 
-export default function BlogCard2(props: tBlogCard2) {
+export default function BlogCard2(props: tBlogCard2): React.ReactNode | null {
 	const { category, date, image, title, uri, variant } = props;
 
 	if (variant === "home") {
@@ -279,5 +287,17 @@ export default function BlogCard2(props: tBlogCard2) {
 				uri={uri}
 			/>
 		);
-	}
+	} else if (variant === "recommended") {
+		const { excerpt } = props;
+		return (
+			<RecommendedArticleCard
+				category={category}
+				excerpt={excerpt}
+				date={date}
+				image={image}
+				title={title}
+				uri={uri}
+			/>
+		);
+	} else return null;
 }
