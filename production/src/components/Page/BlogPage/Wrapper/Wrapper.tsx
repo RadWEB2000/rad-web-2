@@ -51,8 +51,7 @@ export default function Wrapper({ cards, content, search, title }: tWrapper) {
 									title,
 									uri,
 								},
-							}: iArticlesArray) => {
-								console.log(author[0].uri);
+							}) => {
 								return (
 									<BlogCard2
 										author={{

@@ -1,7 +1,10 @@
 import Wrapper from "@default/components/Page/BlogPage/Wrapper/Wrapper";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
-import { iArticlesBlogPage } from "@default/ts/interfaces";
+import {
+	iArticlesBlogPage,
+	iArticlesBlogPageCard,
+} from "@default/ts/interfaces";
 
 export async function generateMetadata({
 	params: { category },
@@ -155,7 +158,7 @@ export default async function BlogPage({
 			return data;
 		});
 
-	const articles: iArticlesBlogPage = await fetch(wordpressAPI, {
+	const articles: iArticlesBlogPageCard[] = await fetch(wordpressAPI, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -166,19 +169,19 @@ export default async function BlogPage({
 					posts(first: 100) {
 					  edges {
 						node {
-						  post {
-							author {
-							  ... on Teammate {
-								teammate {
-								  fullname {
-									firstname
-									lastname
-								  }
+							post {
+								author {
+									... on Teammate {
+										teammate {
+											fullname {
+												firstname
+												lastname
+											}
+										}
+										uri
+									}
 								}
-								uri
-							  }
 							}
-						  }
 						  featuredImage {
 							node {
 							  altText
@@ -206,13 +209,18 @@ export default async function BlogPage({
 		}),
 	})
 		.then((response) => response.json())
-		.then((data) => {
-			return data;
-		});
+		.then(
+			({
+				data: {
+					posts: { edges },
+				},
+			}) => {
+				return edges;
+			}
+		);
 
 	const {
 		page: { title, content },
-		posts: { edges },
 	} = page.data;
 
 	return (
@@ -223,9 +231,8 @@ export default async function BlogPage({
 				placeholder: "Pisz tutaj...",
 			}}
 			title={title}
-			cards={articles.data.posts.edges.filter(
-				({ node: { uri } }: { node: { uri: string } }) =>
-					uri.toLowerCase().includes(category)
+			cards={articles.filter(({ node: { uri } }: { node: { uri: string } }) =>
+				uri.toLowerCase().includes(category)
 			)}
 		/>
 	);

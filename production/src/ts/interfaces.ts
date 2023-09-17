@@ -102,11 +102,7 @@ export interface iArticlesBlogPageCard {
 }
 
 export interface iArticlesBlogPage {
-	data: {
-		posts: {
-			edges: iArticlesBlogPageCard[];
-		};
-	};
+	edges: iArticlesBlogPageCard[];
 }
 
 export interface iArticlesRecommended {

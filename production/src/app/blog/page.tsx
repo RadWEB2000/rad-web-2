@@ -1,7 +1,7 @@
 import Wrapper from "@default/components/Page/BlogPage/Wrapper/Wrapper";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
-import { iArticlesBlogPage } from "@default/ts/interfaces";
+import { iArticlesBlogPageCard } from "@default/ts/interfaces";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
@@ -149,9 +149,9 @@ export default async function BlogPage() {
 
 	const {
 		page: { title, content },
-		posts: { edges },
 	} = page.data;
-	const articles: iArticlesBlogPage = await fetch(wordpressAPI, {
+
+	const articles: iArticlesBlogPageCard[] = await fetch(wordpressAPI, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -162,19 +162,19 @@ export default async function BlogPage() {
 				posts(first: 100) {
 				  edges {
 					node {
-					  post {
-						author {
-						  ... on Teammate {
-							teammate {
-							  fullname {
-								firstname
-								lastname
-							  }
+						post {
+							author {
+								... on Teammate {
+									teammate {
+										fullname {
+											firstname
+											lastname
+										}
+									}
+									uri
+								}
 							}
-							uri
-						  }
 						}
-					  }
 					  featuredImage {
 						node {
 						  altText
@@ -202,9 +202,15 @@ export default async function BlogPage() {
 		}),
 	})
 		.then((response) => response.json())
-		.then((data) => {
-			return data;
-		});
+		.then(
+			({
+				data: {
+					posts: { edges },
+				},
+			}) => {
+				return edges;
+			}
+		);
 
 	return (
 		<Wrapper
@@ -214,7 +220,7 @@ export default async function BlogPage() {
 				placeholder: "Pisz tutaj...",
 			}}
 			title={title}
-			cards={articles.data.posts.edges}
+			cards={articles}
 		/>
 	);
 }

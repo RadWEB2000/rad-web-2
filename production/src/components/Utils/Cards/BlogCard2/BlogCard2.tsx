@@ -5,14 +5,16 @@ import Link from "next/link";
 import { BsCalendar2Date } from "react-icons/bs";
 import styles from "@default/components/Utils/Cards/BlogCard2/BlogCard.module.scss";
 
-type tBlogArticleCard = {
-	author: {
-		fullname: {
-			firstname: string;
-			lastname: string;
-		};
-		uri: string;
+type tAuthor = {
+	fullname: {
+		firstname: string;
+		lastname: string;
 	};
+	uri: string;
+};
+
+type tBlogArticleCard = {
+	author: tAuthor;
 	category: {
 		name: string;
 		uri: string;
@@ -25,13 +27,7 @@ type tBlogArticleCard = {
 };
 
 type tHomeArticleCard = {
-	author: {
-		fullname: {
-			firstname: string;
-			lastname: string;
-		};
-		uri: string;
-	};
+	author: tAuthor;
 	category: {
 		name: string;
 		uri: string;
@@ -239,23 +235,11 @@ type tBlogCard2 = {
 	| {
 			variant: "blog";
 			excerpt: string;
-			author: {
-				fullname: {
-					firstname: string;
-					lastname: string;
-				};
-				uri: string;
-			};
+			author: tAuthor;
 	  }
 	| {
 			variant: "home";
-			author: {
-				fullname: {
-					firstname: string;
-					lastname: string;
-				};
-				uri: string;
-			};
+			author: tAuthor;
 	  }
 );
 
