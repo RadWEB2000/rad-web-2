@@ -1,43 +1,12 @@
 "use client";
 import styles from "@default/components/Page/BlogPage/Wrapper/Wrapper.module.scss";
-import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
 import BlogCard2 from "@default/components/Utils/Cards/BlogCard2/BlogCard2";
 import Search from "@default/components/Utils/Search/Search";
-import { iArticlesArray } from "@default/ts/interfaces";
-import { tImage2 } from "@default/ts/types";
+import { iArticlesArray, iArticlesBlogPageCard } from "@default/ts/interfaces";
 import { useState } from "react";
 
 type tWrapper = {
-	cards: {
-		node: {
-			post: {
-				author: {
-					teammate: {
-						fullname: {
-							firstname: string;
-							lastname: string;
-						};
-					};
-					uri: string;
-				}[];
-			};
-			featuredImage: {
-				node: tImage2;
-			};
-			title: string;
-			uri: string;
-			date: string;
-			excerpt: string;
-			categories: {
-				edges: {
-					node: {
-						name: string;
-						uri: string;
-					};
-				}[];
-			};
-		};
-	}[];
+	cards: iArticlesBlogPageCard[];
 	content: string;
 	search?: {
 		label: string;
@@ -83,6 +52,7 @@ export default function Wrapper({ cards, content, search, title }: tWrapper) {
 									uri,
 								},
 							}: iArticlesArray) => {
+								console.log(author[0].uri);
 								return (
 									<BlogCard2
 										author={{

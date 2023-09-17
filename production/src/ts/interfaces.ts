@@ -70,39 +70,41 @@ export interface iArticlesHomePage {
 	};
 }
 
+export interface iArticlesBlogPageCard {
+	node: {
+		post: {
+			author: {
+				teammate: {
+					fullname: {
+						firstname: string;
+						lastname: string;
+					};
+				};
+				uri: string;
+			}[];
+		};
+		featuredImage: {
+			node: tImage2;
+		};
+		title: string;
+		uri: string;
+		date: string;
+		excerpt: string;
+		categories: {
+			edges: {
+				node: {
+					name: string;
+					uri: string;
+				};
+			}[];
+		};
+	};
+}
+
 export interface iArticlesBlogPage {
 	data: {
 		posts: {
-			edges: {
-				node: {
-					post: {
-						author: {
-							teammate: {
-								fullname: {
-									firstname: string;
-									lastname: string;
-								};
-							};
-							uri: string;
-						}[];
-					};
-					featuredImage: {
-						node: tImage2;
-					};
-					title: string;
-					uri: string;
-					date: string;
-					excerpt: string;
-					categories: {
-						edges: {
-							node: {
-								name: string;
-								uri: string;
-							};
-						}[];
-					};
-				};
-			}[];
+			edges: iArticlesBlogPageCard[];
 		};
 	};
 }
