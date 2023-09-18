@@ -130,3 +130,15 @@ export interface iArticlesRecommended {
 		};
 	};
 }
+
+export interface iProjectCards {
+	node: {
+		date: string;
+		excerpt: string;
+		featuredImage: {
+			node: tImage2;
+		};
+		title: string;
+		uri: string;
+	};
+}

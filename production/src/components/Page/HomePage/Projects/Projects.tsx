@@ -1,7 +1,7 @@
 import styles from "@default/components/Page/HomePage/Projects/Projects.module.scss";
 import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
 import { tImage2 } from "@default/ts/types";
-import ProjectCard from "@default/components/Utils/Cards/ProjectCard/ProjectCard";
+import ProjectCard from "@default/components/Utils/Cards/ProjectCard2/ProjectCard";
 import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 
 type tProjects = {
@@ -58,13 +58,13 @@ export default function Projects({
 				{cards.map(({ node: { excerpt, featuredImage, title, uri } }) => {
 					return (
 						<ProjectCard
-							button="więcej"
+							date={`Wed Oct 18 2023 12:40:44 GMT+0200 (Central European Summer Time)`}
 							excerpt={excerpt}
 							image={featuredImage.node}
 							key={title}
 							title={title}
 							uri={uri}
-							theme="home"
+							variant="home"
 						/>
 					);
 				})}

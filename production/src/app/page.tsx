@@ -9,7 +9,7 @@ import WatchWord from "@default/components/Page/HomePage/WatchWord/WatchWord";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
 import { Suspense } from "react";
-import { iArticlesHomePage } from "@default/ts/interfaces";
+import { iArticlesHomePage, iProjectCards } from "@default/ts/interfaces";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
@@ -302,11 +302,50 @@ export default async function HomePage() {
 		.then((data) => {
 			return data;
 		});
+	const works: iProjectCards[] = await fetch(wordpressAPI, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query ProjectItems {
+				projects(first: 4) {
+				  edges {
+					node {
+					  excerpt(format: RENDERED)
+					  featuredImage {
+						node {
+						  altText
+						  sourceUrl(size: POST_THUMBNAIL)
+						  title(format: RENDERED)
+						}
+					  }
+					  title(format: RENDERED)
+					  uri
+					  date
+					}
+				  }
+				}
+			  }`,
+		}),
+	})
+		.then((response) => response.json())
+		.then(
+			({
+				data: {
+					projects: { edges },
+				},
+			}) => {
+				return edges;
+			}
+		);
+
+	console.log(works);
 
 	if (page.data) {
 		const {
 			page: { homePage },
-			posts,
 			projects,
 			teammates,
 		} = page.data;
@@ -338,7 +377,7 @@ export default async function HomePage() {
 				<Statistics cards={homePage.statistics} />
 				<Projects
 					button={homePage.projects.button}
-					cards={projects.edges}
+					cards={works}
 					content={homePage.projects.content}
 					title={homePage.projects.title}
 					uri={homePage.projects.uri}
