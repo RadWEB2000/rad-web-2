@@ -1,7 +1,6 @@
 import styles from "@default/components/Page/HomePage/Blog/Blog.module.scss";
 import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
 import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
-import BlogCard2 from "@default/components/Utils/Cards/BlogCard2/BlogCard2";
 import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 import { tImage2 } from "@default/ts/types";
 import { MoveRight } from "lucide-react";
@@ -78,7 +77,7 @@ export default function Blog({
 						},
 					}) => {
 						return (
-							<BlogCard2
+							<BlogCard
 								author={{
 									fullname: {
 										firstname: author[0].teammate.fullname.firstname,

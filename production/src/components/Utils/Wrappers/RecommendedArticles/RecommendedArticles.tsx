@@ -1,8 +1,6 @@
 import { tImage2 } from "@default/ts/types";
-import BlogCard from "../../Cards/BlogCard/BlogCard";
-import RecommendedBlogCard from "../../Cards/BlogCard/RecommendedBlogCard/RecommendedBlogCard";
 import styles from "@default/components/Utils/Wrappers/RecommendedArticles/RecommendedArticles.module.scss";
-import BlogCard2 from "@default/components/Utils/Cards/BlogCard2/BlogCard2";
+import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
 
 type tRecommendedArticles = {
 	cards: {
@@ -39,7 +37,7 @@ export default function RecommendedArticles({
 					.slice(0, 4)
 					.map(({ categories, date, excerpt, featuredImage, title, uri }) => {
 						return (
-							<BlogCard2
+							<BlogCard
 								category={categories.edges[0].node}
 								date={date}
 								excerpt={excerpt}

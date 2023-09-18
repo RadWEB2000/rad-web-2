@@ -1,6 +1,6 @@
 "use client";
 import styles from "@default/components/Page/BlogPage/Wrapper/Wrapper.module.scss";
-import BlogCard2 from "@default/components/Utils/Cards/BlogCard2/BlogCard2";
+import BlogCard from "@default/components/Utils/Cards/BlogCard/BlogCard";
 import Search from "@default/components/Utils/Search/Search";
 import { iArticlesArray, iArticlesBlogPageCard } from "@default/ts/interfaces";
 import { useState } from "react";
@@ -53,7 +53,7 @@ export default function Wrapper({ cards, content, search, title }: tWrapper) {
 								},
 							}) => {
 								return (
-									<BlogCard2
+									<BlogCard
 										author={{
 											fullname: {
 												firstname: author[0].teammate.fullname.firstname,
