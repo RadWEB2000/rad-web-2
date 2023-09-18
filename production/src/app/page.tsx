@@ -9,7 +9,7 @@ import WatchWord from "@default/components/Page/HomePage/WatchWord/WatchWord";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
 import { Suspense } from "react";
-import { iArticlesHomePage, iProjectCards } from "@default/ts/interfaces";
+import { iArticlesHomePage, iProjectCard } from "@default/ts/interfaces";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
@@ -302,7 +302,7 @@ export default async function HomePage() {
 		.then((data) => {
 			return data;
 		});
-	const works: iProjectCards[] = await fetch(wordpressAPI, {
+	const works: iProjectCard[] = await fetch(wordpressAPI, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -341,12 +341,9 @@ export default async function HomePage() {
 			}
 		);
 
-	console.log(works);
-
 	if (page.data) {
 		const {
 			page: { homePage },
-			projects,
 			teammates,
 		} = page.data;
 		return (

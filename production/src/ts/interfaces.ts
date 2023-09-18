@@ -131,7 +131,7 @@ export interface iArticlesRecommended {
 	};
 }
 
-export interface iProjectCards {
+export interface iProjectCard {
 	node: {
 		date: string;
 		excerpt: string;
