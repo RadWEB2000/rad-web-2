@@ -1,6 +1,156 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper[data-variant="home"] {
+	position: sticky;
+	top: 7rem;
+	& > .box {
+		@include size(auto, clamp(10rem, 150rem, 90%));
+		background-color: $black;
+		display: grid;
+		grid-template-columns: repeat(21, 1fr);
+		margin: 0 auto;
+		& > .image_box {
+			border-radius: 1.25rem;
+			// grid-column: 1/9;
+			grid-column: 1/-1;
+			overflow: hidden;
+			@include size(15rem, 100%);
+			& > .image {
+				@include size(100%, 100%);
+				position: relative;
+			}
+		}
+		& > .details {
+			@include flex(center, center, column, null, 2rem);
+			// grid-column: 9/-1;
+			grid-column: 1/-1;
+			padding: 3rem;
+			& > * {
+				width: 100%;
+			}
+			& > .release_box {
+				@include flex(center, flex-end);
+				& > .release {
+					@include font(1.6rem, 600, 1, inherit, null, -1px, end);
+				}
+			}
+			& > .content {
+				& > .title_box {
+					& > .title {
+						@include font(4rem, 800, 0.98, inherit, null, -0.75px, start);
+						color: $peach;
+						transition: 0.12s linear color, 0.12s linear text-decoration;
+						&:focus-within,
+						&:hover {
+							color: $salmon;
+							text-decoration: underline;
+						}
+					}
+				}
+				& > .excerpt {
+					@include font(1.4rem, 500, 1.6, inherit, null, -1px, start);
+					color: $silver;
+					margin-top: 1.5rem;
+					// width: 70%;
+				}
+			}
+		}
+
+		@media only screen {
+			@media (min-width: 520px) {
+				& > .image_box {
+					height: 25rem;
+				}
+				& > .details {
+					& > .release_box {
+						& > .release {
+							font-size: 1.8rem;
+						}
+					}
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 5rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.65rem;
+						}
+					}
+				}
+			}
+			@media (min-width: 700px) {
+				@include size(42.5rem, clamp(10rem, 150rem, 90%));
+				& > .image_box {
+					border-radius: 1.75rem;
+					grid-column: 1/9;
+					&,
+					& > .image {
+						@include size(100%, 100%);
+					}
+				}
+				& > .details {
+					grid-column: 9/-1;
+					padding: 3rem;
+					& > * {
+						width: 100%;
+					}
+					& > .release_box {
+						& > .release {
+							font-size: 2rem;
+						}
+					}
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 5rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.55rem;
+							width: 95%;
+						}
+					}
+				}
+			}
+			@media (min-width: 900px) {
+				height: 50rem;
+				& > .details {
+					& > .release_box {
+						& > .release {
+							font-size: 2.3rem;
+						}
+					}
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 7rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.85rem;
+						}
+					}
+				}
+			}
+			@media (min-width: 1250px) {
+				height: 60rem;
+				& > .details {
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 8rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.9rem;
+							width: 75%;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 .wrapper[data-variant="projects"] {
 }
