@@ -21,8 +21,7 @@ export default function ProjectCard(props: tProjectCard) {
 	});
 
 	function getLengthExcerpt(): number {
-		if (variant === "home") return 230;
-		else if (variant === "recommended") return 180;
+		if (variant === "home" || variant === "recommended") return 230;
 		else if (variant === "projects") return 170;
 		else return 0;
 	}

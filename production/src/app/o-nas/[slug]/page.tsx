@@ -4,7 +4,10 @@ import RecommendedProjects from "@default/components/Utils/Wrappers/RecommendedP
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
 import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
-import { iArticlesRecommended } from "@default/ts/interfaces";
+import {
+	iArticlesRecommended,
+	iPersonProjectCard,
+} from "@default/ts/interfaces";
 
 export async function generateMetadata({
 	params: { slug },
@@ -220,6 +223,49 @@ export default async function PersonPage({
 		.then((data) => {
 			return data;
 		});
+	const works: iPersonProjectCard[] = await fetch(wordpressAPI, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query PersonProjectItems {
+				teammate(id: "${slug}", idType: SLUG) {
+				  teammate {
+					projects {
+					  ... on Project {
+						title(format: RENDERED)
+						uri
+						date
+						excerpt(format: RENDERED)
+						featuredImage {
+						  node {
+							altText
+							sourceUrl(size: POST_THUMBNAIL)
+							title(format: RENDERED)
+						  }
+						}
+					  }
+					}
+				  }
+				}
+			  }
+				`,
+		}),
+	})
+		.then((response) => response.json())
+		.then(
+			({
+				data: {
+					teammate: {
+						teammate: { projects },
+					},
+				},
+			}) => {
+				return projects;
+			}
+		);
 
 	const {
 		content,
@@ -232,8 +278,6 @@ export default async function PersonPage({
 			socialMedia,
 			locations,
 			phone,
-			articles,
-			projects,
 		},
 	} = page.data.teammate;
 	return (
@@ -253,14 +297,14 @@ export default async function PersonPage({
 				socials={socialMedia}
 			/>
 			<ContentBox content={content} theme="person" />
-			{articles && (
+			{articles2 && (
 				<RecommendedArticles
 					cards={articles2.data.teammate.teammate.articles}
 					title="Przeczytaj moje artykuły"
 				/>
 			)}
-			{projects && (
-				<RecommendedProjects title="Poznaj moje projekty" cards={projects} />
+			{works && (
+				<RecommendedProjects title="Poznaj moje projekty" cards={works} />
 			)}
 		</>
 	);

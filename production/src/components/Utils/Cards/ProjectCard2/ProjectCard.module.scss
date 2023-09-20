@@ -155,4 +155,111 @@
 .wrapper[data-variant="projects"] {
 }
 .wrapper[data-variant="recommended"] {
+	& > .box {
+		@include flex(flex-start, flex-start, column, null, 1rem, false);
+		@include size(auto, 98%);
+		margin: auto;
+		& > .image_box {
+			@include size(25rem, 100%);
+			border-radius: 1.4rem;
+			overflow: hidden;
+			& > .image {
+				position: relative;
+				transition: 0.15s ease-in-out transform;
+				z-index: 0;
+				&,
+				&::after {
+					@include size(100%, 100%);
+				}
+				&::after {
+					@include positioning(
+						50%,
+						null,
+						null,
+						50%,
+						-50%,
+						-50%,
+						null,
+						3,
+						absolute
+					);
+					background-color: hsla(38, 71%, 77%, 0.482);
+					transition: 0.15s ease-in-out background-color;
+				}
+			}
+		}
+		.details {
+			background-color: $erie;
+			border-radius: 1.4rem;
+			margin: 0 auto;
+			padding: 1.2rem 1.5rem;
+			transform: translateY(-8rem);
+			transition: 0.15s ease-in-out transform;
+			width: 90%;
+			& > .release_box {
+				& > .release {
+					@include font(1.95rem, 500, 1, inherit, uppercase, 0.5px, end);
+				}
+			}
+			& > .content {
+				& > .title_box {
+					& > .title {
+						@include font(3.15rem, 700, 1.05, inherit, null, -0.8px, start);
+						transition: 0.15s ease-in-out color;
+						&:focus-within,
+						&:hover {
+							color: $peach;
+						}
+					}
+				}
+				& > .excerpt {
+					@include font(1.55rem, 400, 1.35, inherit, null, -0.7px, start);
+					color: $silver;
+					margin-top: 1.5rem;
+				}
+			}
+		}
+		&:focus-within,
+		&:hover {
+			& > .image_box {
+				& > .image {
+					transform: scale(1.05);
+					&::after {
+						background-color: hsla(38, 71%, 77%, 0.01);
+					}
+				}
+			}
+			& > .details {
+				transform: translateY(-9.5rem);
+			}
+		}
+		@media only screen {
+			@media (min-width: 1400px) {
+				width: 95%;
+				& > .image_box {
+					border-radius: 1.75rem;
+					height: 38rem;
+				}
+				.details {
+					border-radius: 1.75rem;
+					padding: 2rem 3rem;
+					& > .release_box {
+						& > .release {
+							font-size: 2.2rem;
+						}
+					}
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 5.25rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.9rem;
+						}
+					}
+				}
+			}
+		}
+	}
 }

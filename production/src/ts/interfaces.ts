@@ -142,3 +142,12 @@ export interface iProjectCard {
 		uri: string;
 	};
 }
+export interface iPersonProjectCard {
+	date: string;
+	excerpt: string;
+	featuredImage: {
+		node: tImage2;
+	};
+	title: string;
+	uri: string;
+}
