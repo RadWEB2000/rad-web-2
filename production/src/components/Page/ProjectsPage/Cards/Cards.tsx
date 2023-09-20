@@ -1,5 +1,5 @@
 import styles from "@default/components/Page/ProjectsPage/Cards/Cards.module.scss";
-import ProjectCard from "@default/components/Utils/Cards/ProjectCard2/ProjectCard";
+import ProjectCard from "@default/components/Utils/Cards/ProjectCard/ProjectCard";
 import { iProjectCard } from "@default/ts/interfaces";
 
 type tCards = {

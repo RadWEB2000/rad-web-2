@@ -1,0 +1,339 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper[data-variant="home"] {
+	position: sticky;
+	top: 7rem;
+	& > .box {
+		@include size(auto, clamp(10rem, 150rem, 90%));
+		background-color: $black;
+		display: grid;
+		grid-template-columns: repeat(21, 1fr);
+		margin: 0 auto;
+		& > .image_box {
+			border-radius: 1.25rem;
+			// grid-column: 1/9;
+			grid-column: 1/-1;
+			overflow: hidden;
+			@include size(15rem, 100%);
+			& > .image {
+				@include size(100%, 100%);
+				position: relative;
+			}
+		}
+		& > .details {
+			@include flex(center, center, column, null, 2rem);
+			// grid-column: 9/-1;
+			grid-column: 1/-1;
+			padding: 3rem;
+			& > * {
+				width: 100%;
+			}
+			& > .release_box {
+				@include flex(center, flex-end);
+				& > .release {
+					@include font(1.6rem, 600, 1, inherit, null, -1px, end);
+				}
+			}
+			& > .content {
+				& > .title_box {
+					& > .title {
+						@include font(4rem, 800, 0.98, inherit, null, -0.75px, start);
+						color: $peach;
+						transition: 0.12s linear color, 0.12s linear text-decoration;
+						&:focus-within,
+						&:hover {
+							color: $salmon;
+							text-decoration: underline;
+						}
+					}
+				}
+				& > .excerpt {
+					@include font(1.4rem, 500, 1.6, inherit, null, -1px, start);
+					color: $silver;
+					margin-top: 1.5rem;
+					// width: 70%;
+				}
+			}
+		}
+
+		@media only screen {
+			@media (min-width: 520px) {
+				& > .image_box {
+					height: 25rem;
+				}
+				& > .details {
+					& > .release_box {
+						& > .release {
+							font-size: 1.8rem;
+						}
+					}
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 5rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.65rem;
+						}
+					}
+				}
+			}
+			@media (min-width: 700px) {
+				@include size(42.5rem, clamp(10rem, 150rem, 90%));
+				& > .image_box {
+					border-radius: 1.75rem;
+					grid-column: 1/9;
+					&,
+					& > .image {
+						@include size(100%, 100%);
+					}
+				}
+				& > .details {
+					grid-column: 9/-1;
+					padding: 3rem;
+					& > * {
+						width: 100%;
+					}
+					& > .release_box {
+						& > .release {
+							font-size: 2rem;
+						}
+					}
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 5rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.55rem;
+							width: 95%;
+						}
+					}
+				}
+			}
+			@media (min-width: 900px) {
+				height: 50rem;
+				& > .details {
+					& > .release_box {
+						& > .release {
+							font-size: 2.3rem;
+						}
+					}
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 7rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.85rem;
+						}
+					}
+				}
+			}
+			@media (min-width: 1250px) {
+				height: 60rem;
+				& > .details {
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 8rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.9rem;
+							width: 75%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.wrapper[data-variant="projects"] {
+	& > .box {
+		@include flex(flex-start, flex-start, column, null, 1rem, false);
+		@include size(auto, clamp(10rem, 52.5rem, 95%));
+		margin: 0 auto;
+		& > .image_box {
+			@include size(25rem, 100%);
+			border-radius: 1.25rem;
+			overflow: hidden;
+			& > .image {
+				@include size(100%, 100%);
+				position: relative;
+				transition: 0.15s ease-in-out transform;
+			}
+		}
+
+		& > .details {
+			background-color: $erie;
+			padding: 3rem 2rem 4rem;
+			border-radius: 1.25rem;
+			transform: translateY(-4rem);
+			& > .release_box {
+				& > .release {
+					@include font(1.9rem, 600, 1, inherit, uppercase, null, start);
+				}
+			}
+			& > .content {
+				margin-top: 1.2rem;
+				& > .title_box {
+					& > .title {
+						@include font(3.75rem, 700, 1.05, inherit, null, -0.25px, start);
+						transition: 0.15s ease-in-out color;
+						&:focus-within,
+						&:hover {
+							color: $peach;
+						}
+					}
+				}
+				& > .excerpt {
+					@include font(1.6rem, 400, 1.2, inherit, null, -0.5px, start);
+					color: $silver;
+					margin-top: 1.2rem;
+				}
+			}
+		}
+		&:focus-within,
+		&:hover {
+			& > .image_box {
+				& > .image {
+					transform: scale(1.2) rotate(12deg);
+				}
+			}
+		}
+		@media only screen {
+			@media (min-width: 840px) {
+				& > .image_box {
+					height: 35rem;
+				}
+
+				& > .details {
+					padding: 3rem 3rem 4rem;
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 4rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.7rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.wrapper[data-variant="recommended"] {
+	& > .box {
+		@include flex(flex-start, flex-start, column, null, 1rem, false);
+		@include size(auto, 98%);
+		margin: auto;
+		& > .image_box {
+			@include size(25rem, 100%);
+			border-radius: 1.4rem;
+			overflow: hidden;
+			& > .image {
+				position: relative;
+				transition: 0.15s ease-in-out transform;
+				z-index: 0;
+				&,
+				&::after {
+					@include size(100%, 100%);
+				}
+				&::after {
+					@include positioning(
+						50%,
+						null,
+						null,
+						50%,
+						-50%,
+						-50%,
+						null,
+						3,
+						absolute
+					);
+					background-color: hsla(38, 71%, 77%, 0.482);
+					transition: 0.15s ease-in-out background-color;
+				}
+			}
+		}
+		.details {
+			background-color: $erie;
+			border-radius: 1.4rem;
+			margin: 0 auto;
+			padding: 1.2rem 1.5rem;
+			transform: translateY(-8rem);
+			transition: 0.15s ease-in-out transform;
+			width: 90%;
+			& > .release_box {
+				& > .release {
+					@include font(1.95rem, 500, 1, inherit, uppercase, 0.5px, end);
+				}
+			}
+			& > .content {
+				& > .title_box {
+					& > .title {
+						@include font(3.15rem, 700, 1.05, inherit, null, -0.8px, start);
+						transition: 0.15s ease-in-out color;
+						&:focus-within,
+						&:hover {
+							color: $peach;
+						}
+					}
+				}
+				& > .excerpt {
+					@include font(1.55rem, 400, 1.35, inherit, null, -0.7px, start);
+					color: $silver;
+					margin-top: 1.5rem;
+				}
+			}
+		}
+		&:focus-within,
+		&:hover {
+			& > .image_box {
+				& > .image {
+					transform: scale(1.05);
+					&::after {
+						background-color: hsla(38, 71%, 77%, 0.01);
+					}
+				}
+			}
+			& > .details {
+				transform: translateY(-9.5rem);
+			}
+		}
+		@media only screen {
+			@media (min-width: 1400px) {
+				width: 95%;
+				& > .image_box {
+					border-radius: 1.75rem;
+					height: 38rem;
+				}
+				.details {
+					border-radius: 1.75rem;
+					padding: 2rem 3rem;
+					& > .release_box {
+						& > .release {
+							font-size: 2.2rem;
+						}
+					}
+					& > .content {
+						& > .title_box {
+							& > .title {
+								font-size: 5.25rem;
+							}
+						}
+						& > .excerpt {
+							font-size: 1.9rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

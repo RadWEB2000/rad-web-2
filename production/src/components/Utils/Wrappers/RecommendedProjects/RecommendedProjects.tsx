@@ -1,6 +1,6 @@
 import styles from "@default/components/Utils/Wrappers/RecommendedProjects/RecommendedProjects.module.scss";
 import { tImage2 } from "@default/ts/types";
-import ProjectCard from "@default/components/Utils/Cards/ProjectCard2/ProjectCard";
+import ProjectCard from "@default/components/Utils/Cards/ProjectCard/ProjectCard";
 import { iPersonProjectCard } from "@default/ts/interfaces";
 
 type tRecommendedProjects = {

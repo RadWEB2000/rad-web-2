@@ -1,6 +1,6 @@
 import styles from "@default/components/Page/HomePage/Projects/Projects.module.scss";
 import ButtonPrimary from "@default/components/Utils/Buttons/ButtonPrimary/ButtonPrimary";
-import ProjectCard from "@default/components/Utils/Cards/ProjectCard2/ProjectCard";
+import ProjectCard from "@default/components/Utils/Cards/ProjectCard/ProjectCard";
 import ContentBox from "@default/components/Utils/ContentBox/ContentBox";
 import { iProjectCard } from "@default/ts/interfaces";
 
