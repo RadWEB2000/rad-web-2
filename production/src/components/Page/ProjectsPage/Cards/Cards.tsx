@@ -1,19 +1,9 @@
 import styles from "@default/components/Page/ProjectsPage/Cards/Cards.module.scss";
-import { tImage2 } from "@default/ts/types";
-import ProjectCard from "@default/components/Utils/Cards/ProjectCard/ProjectCard";
+import ProjectCard from "@default/components/Utils/Cards/ProjectCard2/ProjectCard";
+import { iProjectCard } from "@default/ts/interfaces";
 
 type tCards = {
-	cards?: {
-		node: {
-			title: string;
-			uri: string;
-			date: string;
-			excerpt: string;
-			featuredImage: {
-				node: tImage2;
-			};
-		};
-	}[];
+	cards: iProjectCard[];
 };
 
 export default function Cards({ cards }: tCards) {
@@ -28,7 +18,7 @@ export default function Cards({ cards }: tCards) {
 						key={title}
 						title={title}
 						uri={uri}
-						theme="regular"
+						variant="projects"
 					/>
 				);
 			})}

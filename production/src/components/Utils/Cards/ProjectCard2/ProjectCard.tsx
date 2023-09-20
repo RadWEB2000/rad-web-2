@@ -20,12 +20,6 @@ export default function ProjectCard(props: tProjectCard) {
 		type: "short",
 	});
 
-	function getLengthExcerpt(): number {
-		if (variant === "home" || variant === "recommended") return 230;
-		else if (variant === "projects") return 170;
-		else return 0;
-	}
-
 	return (
 		<li className={styles.wrapper} data-variant={variant}>
 			<Link className={styles.box} href={uri}>
@@ -59,7 +53,7 @@ export default function ProjectCard(props: tProjectCard) {
 						<p
 							className={styles.excerpt}
 							dangerouslySetInnerHTML={{
-								__html: excerpt.substring(0, getLengthExcerpt()).trim(),
+								__html: excerpt.substring(0, 230).trim(),
 							}}
 						/>
 					</article>

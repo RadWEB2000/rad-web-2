@@ -4,6 +4,7 @@ import getSplitWordpressContent from "@default/lib/functions/getSplitWordpressCo
 import Hero from "@default/components/Page/ProjectsPage/Hero/Hero";
 import { Metadata } from "next";
 import { wordpressAPI } from "@default/lib/wordpress/configs";
+import { iProjectCard } from "@default/ts/interfaces";
 export async function generateMetadata(): Promise<Metadata> {
 	const seo = await fetch(wordpressAPI, {
 		method: "POST",
@@ -127,6 +128,45 @@ export default async function ProjectsPage() {
 		.then((data) => {
 			return data;
 		});
+	const works: iProjectCard[] = await fetch(wordpressAPI, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query ProjectItems {
+				projects(first: 1000) {
+				  edges {
+					node {
+					  excerpt(format: RENDERED)
+					  featuredImage {
+						node {
+						  altText
+						  sourceUrl(size: POST_THUMBNAIL)
+						  title(format: RENDERED)
+						}
+					  }
+					  title(format: RENDERED)
+					  uri
+					  date
+					}
+				  }
+				}
+			  }
+				`,
+		}),
+	})
+		.then((response) => response.json())
+		.then(
+			({
+				data: {
+					projects: { edges },
+				},
+			}) => {
+				return edges;
+			}
+		);
 
 	const {
 		page: { content, title },
@@ -139,7 +179,7 @@ export default async function ProjectsPage() {
 	return (
 		<div>
 			<Hero content={beforeContent} title={title} />
-			<Cards cards={edges} />
+			<Cards cards={works} />
 			{afterContent && <Content content={afterContent} />}
 		</div>
 	);
