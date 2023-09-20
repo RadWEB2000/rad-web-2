@@ -2,7 +2,7 @@ import { getDate } from "@default/lib/functions/getDate";
 import { tImage2 } from "@default/ts/types";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@default/components/Utils/Cards/ProjectCard2/ProjectCard.module.scss";
+import styles from "@default/components/Utils/Cards/ProjectCard/ProjectCard.module.scss";
 
 type tProjectCard = {
 	date: string;
