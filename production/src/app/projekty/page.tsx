@@ -170,7 +170,6 @@ export default async function ProjectsPage() {
 
 	const {
 		page: { content, title },
-		projects: { edges },
 	} = page.data;
 	const { beforeContent, afterContent } = getSplitWordpressContent({
 		content: content,

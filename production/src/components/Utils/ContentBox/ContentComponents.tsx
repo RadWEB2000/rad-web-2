@@ -23,8 +23,7 @@ export const ContentComponents: iContentComponents = {
 						showInlineLineNumbers={true}
 						wrapLines={true}
 					>
-						const a = 2;
-						{props.children.map((item: string, index: number) => item)}
+						{props.children}
 					</SyntaxHighlighter>
 				</div>
 			);

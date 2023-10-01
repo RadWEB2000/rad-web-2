@@ -15,6 +15,7 @@ type tProjectCard = {
 
 export default function ProjectCard(props: tProjectCard) {
 	const { date, excerpt, image, variant, title, uri } = props;
+	console.log(date);
 	const { month, year } = getDate({
 		date: date,
 		type: "short",
@@ -41,7 +42,7 @@ export default function ProjectCard(props: tProjectCard) {
 				</div>
 				<section className={styles.details}>
 					<aside className={styles.release_box}>
-						<p className={styles.release}>{`${month} ${year}`}</p>
+						{date && <p className={styles.release}>{`${month} ${year}`}</p>}
 					</aside>
 					<article className={styles.content}>
 						<header className={styles.title_box}>

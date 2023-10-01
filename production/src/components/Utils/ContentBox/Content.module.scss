@@ -56,6 +56,7 @@
 	.code {
 		font-size: 2rem;
 		margin: 2rem auto;
+		word-wrap: break-word;
 		width: clamp(10rem, 100rem, 95%);
 	}
 
