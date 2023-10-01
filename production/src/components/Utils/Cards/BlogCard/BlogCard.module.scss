@@ -195,9 +195,13 @@
 	width: 100%;
 	& > .box {
 		@include flex(flex-start, flex-start, column, 0, 1rem, false);
+		&,
+		& > * {
+			width: 100%;
+		}
 		& > .image_box {
-			@include size(30rem, 100%);
 			border-radius: 1rem 1rem 0 0;
+			height: 30rem;
 			overflow: hidden;
 			& > .image {
 				@include size(100%, 100%);
