@@ -1,0 +1,11 @@
+@import "../../../styles/Variables.scss";
+
+.wrapper {
+	@include size("normal", 12rem, 100%);
+	background-color: $grayLight;
+	border-bottom: $grayDark 1px solid;
+	backdrop-filter: blur(1.2rem);
+	position: fixed;
+	top: 0;
+	left: 0;
+}

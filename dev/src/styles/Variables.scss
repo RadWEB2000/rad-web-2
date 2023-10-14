@@ -1,14 +1,16 @@
 // COLORS
-$black: #000;
-$flashWhite: #efeff0;
-$gray: #a19fa4;
-$hellotrope: #d692ff;
-$lavender: #bd7fde;
-$platinum: #e5e5e6;
-$richBlackDark: #080611;
-$richBlackLighten: #0c0816;
-$richBlackLight: #0f0c20;
-$white: #fff;
+$black: hsl(0, 0%, 0%);
+$flashWhite: hsl(240, 3%, 94%);
+$gray: hsl(264, 3%, 63%);
+$hellotrope: hsl(277, 100%, 79%);
+$lavender: hsl(279, 59%, 68%);
+$platinum: hsl(240, 2%, 90%);
+$richBlackDark: hsl(251, 48%, 5%);
+$richBlackLighten: hsl(257, 47%, 6%);
+$richBlackLight: hsl(249, 45%, 9%);
+$white: hsl(0, 0%, 100%);
+$grayDark: hsla(0, 0%, 100%, 0.122);
+$grayLight: hsla(0, 0%, 100%, 0.04);
 // MIXINS
 @mixin flex(
 	$align,

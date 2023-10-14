@@ -27,9 +27,10 @@
 			"@css/*": ["./src/styles/*"],
 			"@data/*": ["./src/data/*"],
 			"@lib/*": ["./src/lib/*"],
-			"@parts/layout/*": ["./src/components/Layout/*"],
-			"@parts/utils/*": ["./src/components/Utils/*"],
-			"@parts/page/*": ["./src/components/Pages/*"],
+			"@components/*": ["./src/components/*"],
+			"@layout/*": ["./src/components/Layout/*"],
+			"@utils/*": ["./src/components/Utils/*"],
+			"@page/*": ["./src/components/Pages/*"],
 			"@ts/*": ["./src/ts/*"]
 		}
 	},
