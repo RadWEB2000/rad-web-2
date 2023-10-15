@@ -1,11 +1,28 @@
 @import "../../../styles/Variables.scss";
 
 .wrapper {
-	@include size("normal", 12rem, 100%);
+	@include size("normal", 11rem, 100%);
 	background-color: $grayLight;
 	border-bottom: $grayDark 1px solid;
 	backdrop-filter: blur(1.2rem);
-	position: fixed;
+	position: sticky;
 	top: 0;
 	left: 0;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	padding: 0.25rem 3rem;
+}
+
+.brand {
+	@include flex(center, center);
+	grid-column: 1/3;
+}
+
+.menu {
+	@include flex(center, flex-end);
+	grid-column: 3/12;
+}
+.settings {
+	@include flex(center, center);
+	grid-column: 12/-1;
 }

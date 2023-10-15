@@ -1,6 +1,7 @@
 import Navigation from "@layout/Navigation";
 import "@css/Global.scss";
 import { Inter } from "next/font/google";
+import logo from "@assets/logo.svg";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,16 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<Navigation />
+				<Navigation
+					brand={{
+						image: {
+							altText: "RadWEB - Programowanie i SEO | Podbij internet",
+							sourceUrl: logo,
+							title: "RadWEB - Programowanie i SEO | Podbij internet",
+						},
+						uri: "/",
+					}}
+				/>
 				{children}
 			</body>
 		</html>
