@@ -23,11 +23,12 @@
 		"paths": {
 			"@app/*": ["./src/*"],
 			"@assets/*": ["./src/assets/*"],
+			"@components/*": ["./src/components/*"],
 			"@configs/*": ["./src/configs/*"],
 			"@css/*": ["./src/styles/*"],
 			"@data/*": ["./src/data/*"],
+			"@icons/*": ["./src/assets/icons/*"],
 			"@lib/*": ["./src/lib/*"],
-			"@components/*": ["./src/components/*"],
 			"@layout/*": ["./src/components/Layout/*"],
 			"@utils/*": ["./src/components/Utils/*"],
 			"@page/*": ["./src/components/Pages/*"],

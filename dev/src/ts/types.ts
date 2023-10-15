@@ -10,3 +10,31 @@ export type tImage = {
 	sourceUrl: string | StaticImageData;
 	title: string;
 };
+
+export type tMenu = {
+	menu: {
+		label: string;
+		uri: string;
+		submenu: tMenuItem[] | null;
+	}[];
+};
+
+export type tMenuItem = {
+	label: string;
+	uri: string;
+};
+
+export type tNavigation = {
+	brand: tBrand;
+	menu: {
+		label: string;
+		uri: string;
+		submenu: tMenuItem[] | null;
+	}[];
+};
+
+export type tSubmenu = {
+	label: string;
+	submenu: tMenuItem[];
+	uri: string;
+};

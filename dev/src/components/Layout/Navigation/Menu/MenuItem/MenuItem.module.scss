@@ -1,0 +1,39 @@
+@import "../../../../../styles/Variables.scss";
+
+.expand {
+	@include flex(center, flex-start, row nowrap);
+	& > .button {
+		@include flex(center, center);
+		aspect-ratio: 1/1;
+		height: 100%;
+		font-size: 3.15rem;
+		color: $white;
+	}
+}
+
+.regular {
+	background: orangered;
+}
+
+.expand,
+.regular {
+	height: 3.7rem;
+	& > .link {
+		@include flex(center, flex-start);
+		@include font(2.2rem, 700, 1, uppercase, null, center, $white, null);
+		@include size("normal", 4rem, auto);
+		padding: 0 1.2rem;
+		position: relative;
+		// background: silver;
+		z-index: 0;
+		&::before {
+			@include size(10rem, 100rem);
+			background-color: #fff;
+			z-index: 3;
+		}
+	}
+}
+
+.submenu {
+	background: darkblue;
+}

@@ -1,7 +1,8 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	@include flex(center, center);
+	@include flex(center, flex-start);
 	@include size("normal", 100%, 100%);
 	position: relative;
+	background: red;
 }
