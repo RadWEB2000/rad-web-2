@@ -2,25 +2,30 @@
 
 .wrapper {
 	@include positioning(0, null, null, 0, null, null, null, 9999, sticky);
-	@include size("normal", auto, 100vw);
+	@include size("normal", auto, 100%);
 	background-color: $grayLight;
 	border-bottom: $grayDark 1px solid;
-	backdrop-filter: blur(1.2rem);
+	backdrop-filter: blur(3rem);
 	display: grid;
 	grid-template-columns: repeat(13, 1fr);
 	padding: 0.25rem 0.9rem;
+	transition: 0.15s linear height;
+	transition: 0.12s linear background-color;
+	&[data-menu="true"] {
+		background-color: $grayDark;
+	}
 }
 
 .brand,
 .settings {
 	@include flex(center, center);
-	@include size("normal", 100%, 100%);
+	@include size("normal", 6rem, 100%);
+	// background: red;
 	grid-row: 1;
-	height: 6rem;
 }
 
 .brand {
-	grid-column: 1/8;
+	grid-column: 1/7;
 }
 
 .menu {
@@ -28,5 +33,17 @@
 	grid-column: -1/1;
 }
 .settings {
-	grid-column: 8/-1;
+	grid-column: 7/-1;
+}
+
+@media only screen {
+	@media (min-width: 500px) {
+		.wrapper {
+			padding: 0.5rem 1.4rem;
+		}
+		.brand,
+		.settings {
+			height: 8rem;
+		}
+	}
 }

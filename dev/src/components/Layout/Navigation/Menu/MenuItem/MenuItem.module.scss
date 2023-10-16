@@ -1,18 +1,21 @@
 @import "../../../../../styles/Variables.scss";
 
 .expand {
-	@include flex(center, flex-start, row nowrap);
+	@include flex(center, flex-start, row nowrap, 0.25rem);
 	& > .button {
 		@include flex(center, center);
 		aspect-ratio: 1/1;
-		height: 100%;
+		border-radius: 0.75rem;
+		height: 70%;
 		font-size: 3.15rem;
 		color: $white;
+		transition: 0.15s ease-in-out background-color, 0.15s ease-in-out color;
+		&:focus-within,
+		&:hover {
+			background-color: $white;
+			color: $black;
+		}
 	}
-}
-
-.regular {
-	background: orangered;
 }
 
 .expand,
@@ -24,16 +27,79 @@
 		@include size("normal", 4rem, auto);
 		padding: 0 1.2rem;
 		position: relative;
-		// background: silver;
 		z-index: 0;
 		&::before {
-			@include size(10rem, 100rem);
-			background-color: #fff;
-			z-index: 3;
+			@include size("normal", 100%, 1px);
+			background-color: $gray;
+			border-radius: 0rem 1rem 1rem 0rem;
+			left: 0;
+			opacity: 0.5;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: 0.15s ease-in-out background-color, 0.15s ease-in-out opacity,
+				0.15s ease-in-out width;
+			z-index: -1;
+		}
+		&:focus-within,
+		&:hover {
+			&::before {
+				background-color: hsla(261, 42%, 38%, 0.5);
+				opacity: 1;
+				width: 100%;
+			}
 		}
 	}
 }
 
 .submenu {
-	background: darkblue;
+	& > .link {
+		@include font(1.72rem, 500, 1, uppercase, null, center, $white, null);
+		position: relative;
+		padding: 0.4rem 1.15rem;
+		z-index: 0;
+		&::before {
+			@include size("normal", 100%, 1px);
+			background-color: $gray;
+			border-radius: 0rem 1rem 1rem 0rem;
+			left: 0;
+			opacity: 0.5;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: 0.15s ease-in-out background-color, 0.15s ease-in-out opacity,
+				0.15s ease-in-out width;
+			z-index: -1;
+		}
+		&:focus-within,
+		&:hover {
+			&::before {
+				background-color: hsla(261, 42%, 38%, 0.35);
+				opacity: 1;
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 500px) {
+		.expand {
+			& > .button {
+				height: 80%;
+				font-size: 3.45rem;
+			}
+		}
+		.expand,
+		.regular {
+			height: 4rem;
+			& > .link {
+				font-size: 2.75rem;
+			}
+		}
+		.submenu {
+			& > .link {
+				font-size: 2.2rem;
+				line-height: 1.5;
+			}
+		}
+	}
 }

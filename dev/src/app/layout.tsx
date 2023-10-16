@@ -1,3 +1,4 @@
+import LayoutProvider from "@context/LayoutContext";
 import Navigation from "@layout/Navigation";
 import "@css/Global.scss";
 import { Inter } from "next/font/google";
@@ -63,17 +64,19 @@ export default async function RootLayout({
 	} = await getData();
 
 	return (
-		<html lang={settings.generalSettingsLanguage}>
-			<body className={inter.className}>
-				<Navigation
-					brand={{
-						image: brand.logo,
-						uri: brand.link,
-					}}
-					menu={menu}
-				/>
-				{children}
-			</body>
-		</html>
+		<LayoutProvider>
+			<html lang={settings.generalSettingsLanguage}>
+				<body className={inter.className}>
+					<Navigation
+						brand={{
+							image: brand.logo,
+							uri: brand.link,
+						}}
+						menu={menu}
+					/>
+					{children}
+				</body>
+			</html>
+		</LayoutProvider>
 	);
 }

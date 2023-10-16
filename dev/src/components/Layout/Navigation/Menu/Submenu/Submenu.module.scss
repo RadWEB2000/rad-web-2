@@ -1,0 +1,23 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	border-left: 0px solid hsla(0, 100%, 100%, 0);
+	transition: 0.15s ease-in-out border-left;
+	width: 100%;
+	&[data-expand="true"] {
+		border-left: 1.5px solid $white;
+	}
+}
+.box {
+	@include flex(flex-start, flex-start, column, 0.5rem, 0.5rem);
+	height: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	transition: 0.2s ease-in-out all;
+	&[data-expand="true"] {
+		transition: 0.2s ease-in-out all;
+		height: auto;
+		padding: 0.5rem 1.3rem 0.8rem 1.3rem;
+	}
+}

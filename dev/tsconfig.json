@@ -25,6 +25,7 @@
 			"@assets/*": ["./src/assets/*"],
 			"@components/*": ["./src/components/*"],
 			"@configs/*": ["./src/configs/*"],
+			"@context/*": ["./src/context/*"],
 			"@css/*": ["./src/styles/*"],
 			"@data/*": ["./src/data/*"],
 			"@icons/*": ["./src/assets/icons/*"],
