@@ -1,5 +1,5 @@
 // COLORS
-$black: hsl(0, 0%, 0%);
+
 $flashWhite: hsl(240, 3%, 94%);
 $gray: hsl(264, 3%, 63%);
 $hellotrope: hsl(277, 100%, 79%);
@@ -13,6 +13,25 @@ $white: hsl(0, 0%, 100%);
 $grayDark: hsla(0, 0%, 100%, 0.122);
 $grayLight: hsla(0, 0%, 100%, 0.04);
 $tekhelet: hsl(261, 42%, 38%);
+// --------------------------------------
+$black: var(--black);
+$gray-dark: var(--gray-dark);
+$gray-regular: var(--gray-regular);
+$gray-light: var(--gray-light);
+$white-dark: var(--white-dark);
+$white-darker: var(--white-darker);
+$white-regular: var(--white-regular);
+
+$font-color: var(--font-color);
+
+$primary-lighten: var(--primary-lighten);
+$primary-regular: var(--primary-regular);
+$primary-dark: var(--primary-dark);
+$primary-darker: var(--primary-darker);
+$secondary-dark: var(--secondary-dark);
+$secondary-light: var(--secondary-light);
+$secondary-regular: var(--secondary-regular);
+
 // MIXINS
 @mixin flex(
 	$align,
@@ -144,4 +163,21 @@ $tekhelet: hsl(261, 42%, 38%);
 			width: $width;
 		}
 	}
+}
+
+:export {
+	black: $black;
+	flashWhite: $flashWhite;
+	gray: $gray;
+	hellotrope: $hellotrope;
+	lavender: $lavender;
+	platinum: $platinum;
+	rebecca: $rebecca;
+	richBlackDark: $richBlackDark;
+	richBlackLighten: $richBlackLighten;
+	richBlackLight: $richBlackLight;
+	white: $white;
+	grayDark: $grayDark;
+	grayLight: $grayLight;
+	tekhelet: $tekhelet;
 }

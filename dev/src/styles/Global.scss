@@ -17,7 +17,7 @@
 }
 
 ::selection {
-	background: hsla(0, 100%, 0%, 0);
+	background: hsla(0, 3%, 93%, 0.537);
 }
 
 :focus,
@@ -40,11 +40,12 @@ body {
 	background-attachment: fixed;
 	background-image: radial-gradient(
 		closest-side,
-		$richBlackLighten,
-		$richBlackDark
+		$secondary-regular,
+		$secondary-dark
 	);
-	color: $white;
+	color: $font-color;
 	font-size: 1.6rem;
+	transition: 0.1s linear all;
 }
 
 html {

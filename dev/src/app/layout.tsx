@@ -1,6 +1,7 @@
+import "@css/Global.scss";
+import "@css/Theme.scss";
 import LayoutProvider from "@context/LayoutContext";
 import Navigation from "@layout/Navigation";
-import "@css/Global.scss";
 import { Inter } from "next/font/google";
 import { queryNavigation, querySettings } from "@data/queries";
 import { iQueryNavigation, iQuerySettings } from "@ts/interfaces";

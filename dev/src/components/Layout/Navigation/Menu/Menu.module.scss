@@ -17,3 +17,11 @@
 		width: 0;
 	}
 }
+
+@media only screen {
+	@media (min-width: 700px) {
+		.wrapper {
+			width: 75%;
+		}
+	}
+}

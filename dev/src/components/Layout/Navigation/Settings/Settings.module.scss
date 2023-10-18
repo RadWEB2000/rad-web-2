@@ -1,7 +1,7 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	@include flex(center, flex-end);
+	@include flex(center, flex-end, row nowrap, 0.15rem, null, true);
 	@include size("normal", 100%, 100%);
 
 	& > .menuButton {
@@ -11,7 +11,7 @@
 		padding: 0.25rem;
 		position: relative;
 		& > span {
-			@include size("normal", 3px, 100%);
+			@include size("normal", 3px, 85%);
 			border-radius: 2rem;
 			background-color: $white;
 			transition: 0.15s ease-in-out opacity, 0.15s ease-in-out transform,
@@ -52,5 +52,13 @@
 				}
 			}
 		}
+	}
+
+	& > .themeButton {
+		@include flex(center, center);
+		@include size("normal", 4rem, 4rem);
+		background: red;
+		color: $white;
+		font-size: 3rem;
 	}
 }

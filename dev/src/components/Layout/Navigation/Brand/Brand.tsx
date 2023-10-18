@@ -11,6 +11,7 @@ export default function Brand(props: tBrand) {
 				alt={image.altText}
 				fill
 				loading="eager"
+				priority
 				style={{
 					objectFit: "contain",
 					objectPosition: "center",
