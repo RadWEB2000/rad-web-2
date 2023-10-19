@@ -5,6 +5,7 @@ import Navigation from "@layout/Navigation";
 import { Inter } from "next/font/google";
 import { queryNavigation, querySettings } from "@data/queries";
 import { iQueryNavigation, iQuerySettings } from "@ts/interfaces";
+import logo from "@assets/logo.svg";
 export const revalidate = 1;
 
 async function getData() {

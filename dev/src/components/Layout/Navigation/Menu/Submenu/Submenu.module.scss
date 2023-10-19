@@ -1,11 +1,11 @@
 @import "../../../../../styles/Variables.scss";
 
 .wrapper {
-	border-left: 0px solid hsla(0, 100%, 100%, 0);
+	border-left: 0px solid $utils-secondary;
 	transition: 0.15s ease-in-out border-left;
 	width: 100%;
 	&[data-expand="true"] {
-		border-left: 1.5px solid $white;
+		border-left: 1.5px solid $utils-secondary;
 	}
 }
 .box {
@@ -19,5 +19,44 @@
 		transition: 0.2s ease-in-out all;
 		height: auto;
 		padding: 0.5rem 1.3rem 0.8rem 1.3rem;
+	}
+}
+
+@media only screen {
+	@media (min-width: 970px) {
+		.wrapper {
+			// @include flex(flex-start, flex-start, column, null, 1.15rem);
+			background: red;
+			position: relative;
+			width: auto;
+			& > .box {
+				all: unset;
+				@include flex(flex-start, flex-start, column, null, 1.15rem);
+				@include size("normal", unset, 24rem);
+				border-radius: 0 1rem 1rem 1rem;
+				position: absolute;
+				overflow: visible;
+				padding: 2rem 0.2rem;
+				opacity: 0;
+				visibility: hidden;
+				display: none;
+				height: unset;
+				background-image: linear-gradient(
+					to bottom right,
+					$primary-darker,
+					$primary-alpha-tertiary
+				);
+				transition: 0.2s ease-in-out all;
+				z-index: 999;
+				&[data-expand="true"] {
+					height: auto;
+					transition: 0.2s ease-in-out all;
+
+					opacity: 1;
+					display: flex;
+					visibility: visible;
+				}
+			}
+		}
 	}
 }

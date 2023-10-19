@@ -24,4 +24,17 @@
 			width: 75%;
 		}
 	}
+	@media (min-width: 970px) {
+		.wrapper {
+			@include size("normal", 100%, 100%);
+			@include flex(center, flex-end, row nowrap, null, 0.1rem, true);
+			padding: unset;
+			overflow-y: visible;
+			&[data-open="true"] {
+				height: 100%;
+				width: 100%;
+				padding: unset;
+			}
+		}
+	}
 }

@@ -8,12 +8,12 @@
 		border-radius: 0.75rem;
 		height: 70%;
 		font-size: 3.15rem;
-		color: $white;
+		color: $utils-primary;
 		transition: 0.15s ease-in-out background-color, 0.15s ease-in-out color;
 		&:focus-within,
 		&:hover {
-			background-color: $white;
-			color: $black;
+			background-color: $utils-primary;
+			color: $utils-secondary;
 		}
 	}
 }
@@ -23,14 +23,24 @@
 	height: 3.7rem;
 	& > .link {
 		@include flex(center, flex-start);
-		@include font(2.2rem, 700, 1, uppercase, null, center, $white, null);
+		@include font(
+			2.2rem,
+			700,
+			1,
+			uppercase,
+			null,
+			center,
+			$utils-primary,
+			null
+		);
 		@include size("normal", 4rem, auto);
 		padding: 0 1.2rem;
 		position: relative;
+		transition: 0.12s ease-in-out color;
 		z-index: 0;
 		&::before {
-			@include size("normal", 100%, 1px);
-			background-color: $gray;
+			@include size("normal", 100%, 1.3px);
+			background-color: $utils-primary;
 			border-radius: 0rem 1rem 1rem 0rem;
 			left: 0;
 			opacity: 0.5;
@@ -42,8 +52,9 @@
 		}
 		&:focus-within,
 		&:hover {
+			color: $white-regular;
 			&::before {
-				background-color: hsla(261, 42%, 38%, 0.5);
+				background-color: $primary-alpha-primary;
 				opacity: 1;
 				width: 100%;
 			}
@@ -53,13 +64,23 @@
 
 .submenu {
 	& > .link {
-		@include font(1.72rem, 500, 1, uppercase, null, center, $white, null);
+		@include font(
+			1.72rem,
+			500,
+			1,
+			uppercase,
+			null,
+			center,
+			$utils-primary,
+			null
+		);
 		position: relative;
 		padding: 0.4rem 1.15rem;
+		transition: 0.12s ease-in-out color;
 		z-index: 0;
 		&::before {
-			@include size("normal", 100%, 1px);
-			background-color: $gray;
+			@include size("normal", 100%, 1.3px);
+			background-color: $utils-primary;
 			border-radius: 0rem 1rem 1rem 0rem;
 			left: 0;
 			opacity: 0.5;
@@ -71,8 +92,9 @@
 		}
 		&:focus-within,
 		&:hover {
+			color: $white-regular;
 			&::before {
-				background-color: hsla(261, 42%, 38%, 0.35);
+				background-color: $primary-alpha-secondary;
 				opacity: 1;
 				width: 100%;
 			}
@@ -99,6 +121,95 @@
 			& > .link {
 				font-size: 2.2rem;
 				line-height: 1.5;
+			}
+		}
+	}
+	@media (min-width: 970px) {
+		.expand {
+			@include flex(center, flex-start, row nowrap, 1rem);
+			& > .button {
+				@include flex(center, center);
+				aspect-ratio: 1/1;
+				border-radius: 0.75rem;
+				height: 70%;
+				font-size: 3.15rem;
+				color: $utils-primary;
+				transition: 0.15s ease-in-out background-color, 0.15s ease-in-out color;
+				&:focus-within,
+				&:hover {
+					background-color: $utils-primary;
+					color: $utils-secondary;
+				}
+			}
+		}
+
+		.expand,
+		.regular {
+			height: 3rem;
+			& > .link {
+				@include flex(center, flex-start);
+				@include font(
+					1.9rem,
+					700,
+					1,
+					uppercase,
+					null,
+					center,
+					$utils-primary,
+					null
+				);
+				@include size("normal", 4rem, auto);
+				padding: 0 0.3rem;
+				position: relative;
+				transition: 0.12s ease-in-out color;
+				z-index: 0;
+				&::before {
+					@include size("normal", 2px, 10%);
+					background-color: $font-color;
+					left: 0;
+					bottom: 3px;
+					opacity: 1;
+					top: unset;
+					transform: unset;
+					transition: 0.15s ease-in-out width;
+					z-index: -1;
+				}
+				&:focus-within,
+				&:hover {
+					color: $font-color;
+					&::before {
+						background-color: inset;
+						opacity: 1;
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.submenu {
+			& > .link {
+				@include font(
+					1.72rem,
+					500,
+					1,
+					uppercase,
+					null,
+					center,
+					$utils-primary,
+					null
+				);
+				position: relative;
+				padding: 0.4rem 1.15rem;
+				transition: 0.12s ease-in-out opacity;
+				z-index: 0;
+				color: $white-regular;
+				&::before {
+					display: none;
+				}
+				&:focus-within,
+				&:hover {
+					opacity: 0.8;
+				}
 			}
 		}
 	}
