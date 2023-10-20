@@ -1,3 +1,4 @@
+import Navigation from "navigation/Navigation";
 import StyledComponentsRegistry from "functions/StyledComponentsRegistery";
 
 export const metadata = {
@@ -14,7 +15,10 @@ export default function RootLayout({
 		<>
 			<html lang="en">
 				<StyledComponentsRegistry>
-					<body>{children}</body>
+					<body>
+						<Navigation />
+						{children}
+					</body>
 				</StyledComponentsRegistry>
 			</html>
 		</>

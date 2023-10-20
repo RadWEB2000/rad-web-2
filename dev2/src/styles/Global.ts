@@ -18,7 +18,7 @@ export const Global = createGlobalStyle`
     }
 
     html {
-        background-color: red;
+        background-color: salmon;
         font-size: 62.5%;
     }
 `;
