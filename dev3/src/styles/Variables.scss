@@ -1,16 +1,35 @@
-$black: #020308;
-$dark-purple: #070112;
-$my-violet: #0d0026;
-
-$davy-gray: #5c5b5d;
-$dim-gray: #626366;
-$erie-black: #16171b;
-$federal-blue: #1f0252;
-$magnolia: #e3e0e8;
-$medium-slate-blue: #9254ff;
-$rebecca-purple: #713da0;
-$russian-violet: #12032e;
-$seasalt: #fafafa;
+$battleship-gray: rgb(143, 143, 143);
+$battleship-gray-dark: rgb(133, 133, 133);
+$blue-ncs: rgb(39, 143, 190);
+$cal-poly-green: rgb(3, 79, 37);
+$chyster-blue: rgb(93, 1, 213);
+$electric-indigo: rgb(105, 23, 237);
+$electric-indigo-light: rgb(98, 0, 255);
+$erie-black: rgb(38, 38, 38);
+$facebook: rgb(59, 88, 151);
+$fuchsia: #ef16f3;
+$github: rgb(23, 5, 61);
+$instagram: rgb(194, 41, 161);
+$jet: rgb(44, 43, 43);
+$lapis-lazuli: rgb(29, 103, 140);
+$linkedin: rgb(42, 87, 132);
+$palantine-blue: rgb(73, 48, 232);
+$pictron-blue: rgb(85, 178, 221);
+$platinum: rgb(217, 217, 217);
+$platinum-light: rgb(232, 232, 232);
+$purpureus: rgb(139, 82, 163);
+$rich-black: rgb(10, 10, 10);
+$royal-purple: rgb(122, 74, 143);
+$russian-violet: rgb(67, 11, 91);
+$school-bus-yellow: rgb(255, 217, 0);
+$silver: rgb(196, 196, 196);
+$shamrock-green: rgb(37, 157, 91);
+$steel-pink: rgb(191, 20, 194);
+$tik-tok: rgb(0, 0, 0);
+$twitter: rgb(51, 51, 51);
+$xanthous: rgb(251, 184, 50);
+$white: rgb(255, 255, 255);
+$youtube: rgb(255, 0, 0);
 
 @mixin flex(
 	$align,
