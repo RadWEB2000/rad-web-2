@@ -1,0 +1,46 @@
+@import './Variables.scss';
+body[data-theme="light"],
+body[data-theme="dark"] {
+    --black:hsl(0,0%,0%);
+    --gray-dark:hsla(0, 0%, 100%, 0.122);
+	--gray-regular:hsla(0, 0%, 100%, 0.04);
+	--gray-light:hsl(264,3%,63%);
+    --white-dark:hsl(240, 2%, 90%)
+    --white-darker:hsla(240,3%,94%)
+    --white-regular:hsl(0, 0%, 100%);
+}
+
+body[data-theme="light"] {
+	--background: red;
+    --font-color:hsl(0,0%,0%);
+	--primary-lighten:hsl(234, 78%, 44%);
+	--primary-regular:hsl(234, 78%, 44%);
+	--primary-dark:hsl(234, 78%, 44%);
+	--primary-darker:hsl(234, 78%, 44%);
+    --primary-alpha-primary:hsla(234, 78%, 44%, 0.95);
+    --primary-alpha-secondary:hsla(234, 78%, 44%, 0.75);
+    --primary-alpha-tertiary:hsla(234, 78%, 44%, 0.85);
+	--secondary-dark:hsl(251, 48%, 95%);
+	--secondary-light:hsl(257, 47%, 96%);
+	--secondary-regular:hsl(249, 45%, 99%);
+    --utils-primary:hsla(0,0%,0%);
+    --utils-secondary:hsla(0,100%,100%);
+    --white-regular:hsl(0, 0%, 100%);
+}
+body[data-theme="dark"] {
+	--background: red;
+    --font-color:hsl(0, 0%, 100%);
+	--primary-lighten:hsl(277, 100%, 79%);
+	--primary-regular:hsl(279, 60%, 68%);
+	--primary-dark:hsl(277, 42%, 43%);
+	--primary-darker:hsl(261, 42%, 38%);
+    --primary-alpha-primary:hsla(261, 42%, 38%, 0.5);
+    --primary-alpha-secondary:hsla(261, 42%, 38%, 0.35);
+    --primary-alpha-tertiary:hsla(261, 42%, 38%, 0.95);
+	--secondary-dark:hsl(251, 48%, 5%);
+	--secondary-light:hsl(257, 47%, 6%);
+	--secondary-regular:hsl(249, 45%, 9%);
+    --utils-primary:hsla(0,100%,100%);
+    --utils-secondary:hsla(0,0%,0%);
+    // --white-regular:hsl(0, 0%, 100%);
+}

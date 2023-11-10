@@ -1,0 +1,74 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(center, flex-end, row nowrap, 0.15rem, null, true);
+	@include size("normal", 100%, 100%);
+
+	& > .menuButton {
+		@include flex(center, space-between, column, null, null, true);
+		@include size("normal", 4rem, 4rem);
+		overflow: hidden;
+		padding: 0.25rem;
+		position: relative;
+		& > span {
+			@include size("normal", 3px, 85%);
+			border-radius: 2rem;
+			background-color: $utils-primary;
+			transition: 0.15s ease-in-out opacity, 0.15s ease-in-out transform,
+				0.15s ease-in-out visibility;
+		}
+		&[data-open="true"] {
+			& > span {
+				&:nth-of-type(1) {
+					@include positioning(
+						50%,
+						null,
+						null,
+						50%,
+						-50%,
+						-50%,
+						45deg,
+						null,
+						absolute
+					);
+				}
+				&:nth-of-type(2) {
+					opacity: 0;
+					display: none;
+					visibility: hidden;
+				}
+				&:nth-of-type(3) {
+					@include positioning(
+						50%,
+						null,
+						null,
+						50%,
+						-50%,
+						-50%,
+						-45deg,
+						null,
+						absolute
+					);
+				}
+			}
+		}
+	}
+
+	& > .themeButton {
+		@include flex(center, center);
+		@include size("normal", 4rem, 4rem);
+		color: $utils-primary;
+		font-size: 3rem;
+	}
+}
+
+@media only screen {
+	@media (min-width: 970px) {
+		.wrapper {
+			justify-content: center;
+			& > .menuButton {
+				display: none;
+			}
+		}
+	}
+}
