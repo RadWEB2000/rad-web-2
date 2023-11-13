@@ -29,10 +29,10 @@
 			"data/*": ["./src/data/*"],
 			"functions/*": ["./src/lib/functions/*"],
 			"hooks/*": ["./src/lib/hooks/*"],
-			"layout/*": ["./src/components/layout/*"],
+			"layout/*": ["./src/components/Layout/*"],
 			"lib/*": ["./src/lib/*"],
-			"pages/*": ["./src/components/pages/*"],
-			"utils/*": ["./src/components/utils/*"],
+			"pages/*": ["./src/components/Pages/*"],
+			"utils/*": ["./src/components/Utils/*"],
 			"ts/*": ["./src/ts/*"]
 		}
 	},
