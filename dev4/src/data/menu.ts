@@ -1,6 +1,13 @@
-import { tMenuArray } from 'ts/types';
-
-export const menu: tMenuArray[] = [
+export type tMenuArrayItem = {
+	label: string;
+	uri: string;
+	submenu?: tMenuArrayItem[] | null;
+	submenuTheme?: 'small' | 'big';
+	submenuTitles?: {
+		[key: string]: string;
+	};
+};
+export const menu: tMenuArrayItem[] = [
 	{
 		label: 'Start',
 		uri: '#',
@@ -9,48 +16,38 @@ export const menu: tMenuArray[] = [
 	{
 		label: 'O nas',
 		uri: '#',
+		submenuTheme: 'small',
 		submenu: [
 			{
-				label: 'Zespół',
+				label: 'Radosław Adamczyk',
 				uri: '#',
-				submenu: [
-					{
-						label: 'Radosław Adamczyk',
-						uri: '#',
-					},
-					{
-						label: 'Filip Bukowiecki',
-						uri: '#',
-					},
-					{
-						label: 'Klaudia Paluch',
-						uri: '#',
-					},
-				],
 			},
 			{
-				label: 'Poznaj nas',
+				label: 'Filip Bukowiecki',
 				uri: '#',
-				submenu: [
-					{
-						label: 'Idea',
-						uri: '#',
-					},
-					{
-						label: 'Narzędzia',
-						uri: '#',
-					},
-					{
-						label: 'Dołącz do nas',
-						uri: '#',
-					},
-				],
+			},
+			{
+				label: 'Klaudia Paluch',
+				uri: '#',
+			},
+			{
+				label: 'Narzędzia',
+				uri: '#',
+			},
+			{
+				label: 'Dołącz do nas',
+				uri: '#',
 			},
 		],
 	},
 	{
 		label: 'Blog',
 		uri: '#',
+		submenuTheme: 'big',
+		submenuTitles: {
+			categories: 'Kategorie',
+			topics: 'Tematy',
+		},
 		submenu: [
 			{
 				label: 'Programowanie',
