@@ -1,0 +1,8 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(center, flex-end, row nowrap, 1rem);
+	@include size(100%, 100%);
+	background-color: orangered;
+	padding: 1rem 2rem;
+}

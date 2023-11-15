@@ -1,0 +1,8 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(center, flex-start);
+	@include font(3.7rem, 900, 0.8, null, null, start, $rich-black, null);
+	@include size(100%, 100%);
+	padding: 0.5rem 1rem;
+}

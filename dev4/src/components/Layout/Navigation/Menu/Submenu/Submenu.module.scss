@@ -1,0 +1,9 @@
+@import "../../../../../styles/Variables.scss";
+
+.big__wrapper {
+	background: red;
+}
+
+.big__wrapper[data-device="desktop"] {
+	display: none;
+}
