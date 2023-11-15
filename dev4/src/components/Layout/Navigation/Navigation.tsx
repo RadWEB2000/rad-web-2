@@ -1,10 +1,10 @@
-import Brand from "l_navigation/Brand";
-import Settings from "l_navigation/Settings";
-import Menu from "l_navigation/Menu";
 import { menu } from "data/menu";
-import styles from "l_navigation/Navigation.module.scss";
-import Socials from "l_navigation/Socials";
 import { socials } from "data/socials";
+import Brand from "l_navigation/Brand";
+import Menu from "l_navigation/Menu";
+import styles from "l_navigation/Navigation.module.scss";
+import Settings from "l_navigation/Settings";
+import Socials from "l_navigation/Socials";
 
 export default function Navigation() {
 	return (

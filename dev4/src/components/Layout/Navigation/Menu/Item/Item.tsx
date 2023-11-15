@@ -1,11 +1,14 @@
+"use client";
 import Link from "next/link";
 import { FaAngleDown } from "react-icons/fa6";
+import styles from "l_navigation/Menu/Item/Item.module.scss";
 
 type tItem = {
 	label: string;
 	uri: string;
 } & (
 	| {
+			handleSubmenu: any;
 			theme: "expand";
 	  }
 	| {
@@ -18,27 +21,25 @@ type tItem = {
 );
 
 export default function Item(props: tItem) {
-	const { label, theme, uri } = props;
-	if (theme === "expand") {
+	if (props.theme === "expand") {
 		return (
-			<div>
-				<Link href={uri}>{label}</Link>
-				<button>
+			<div className={styles.wrapper}>
+				<Link href={props.uri}>{props.label}</Link>
+				<button onClick={() => props.handleSubmenu()}>
 					<FaAngleDown />
 				</button>
 			</div>
 		);
-	} else if (theme === "regural") {
+	} else if (props.theme === "regural") {
 		return (
-			<li>
-				<Link href={uri}>{label}</Link>
+			<li className={styles.regural}>
+				<Link href={props.uri}>{props.label}</Link>
 			</li>
 		);
-	} else if (theme === "submenu") {
-		const { level } = props;
+	} else if (props.theme === "submenu") {
 		return (
-			<li data-level={level}>
-				<Link href={uri}>{label}</Link>
+			<li className={styles.submenu} data-level={props.level}>
+				<Link href={props.uri}>{props.label}</Link>
 			</li>
 		);
 	}

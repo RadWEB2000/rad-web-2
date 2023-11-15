@@ -17,7 +17,7 @@ export default function Menu(props: tMenu) {
 								label={label}
 								key={label}
 								submenu={submenu}
-								submenuTheme={"small"} // Użyj submenuTheme z menu
+								submenuTheme={submenuTheme} // Użyj submenuTheme z menu
 								submenuTitle={submenuTitles || {}} // Użyj submenuTitles z menu
 								uri={uri}
 							/>
