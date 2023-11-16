@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "css/Global.scss";
 import Navigation from "layout/Navigation";
+import MenuProvider from "context/MenuContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +17,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="pl">
-			<body className={inter.className}>
-				<Navigation />
-				{children}
-			</body>
-		</html>
+		<MenuProvider>
+			<html lang="pl">
+				<body className={inter.className}>
+					<Navigation />
+					{children}
+				</body>
+			</html>
+		</MenuProvider>
 	);
 }

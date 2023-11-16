@@ -3,6 +3,6 @@
 .wrapper {
 	@include flex(center, center);
 	@include size(4.75rem, 4.75rem);
-	background: white;
+	// background: white;
 	font-size: 2.2rem;
 }
