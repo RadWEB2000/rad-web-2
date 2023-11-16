@@ -1,8 +1,41 @@
 @import "../../../../../styles/Variables.scss";
 
+@mixin rotate($degrees) {
+	transform: translate(-50%, -50%) rotate($degrees);
+}
+
 .wrapper {
-	@include flex(center, center);
+	@include flex(center, space-evenly, column);
 	@include size(4.75rem, 4.75rem);
-	// background: white;
-	font-size: 2.2rem;
+	overflow: hidden;
+	position: relative;
+	& > .line {
+		@include size(0.4rem, 100%);
+		background-color: $platinum;
+		transition: 0.15s linear all;
+	}
+
+	&:focus-within,
+	&:hover {
+		& > .line {
+			background-color: rgba($white, 0.8);
+		}
+	}
+
+	&[data-open="true"] {
+		& > .line {
+			background-color: $white;
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%) rotate(45deg);
+
+			&:nth-of-type(1) {
+				@include rotate(45deg);
+			}
+			&:nth-of-type(2) {
+				@include rotate(-45deg);
+			}
+		}
+	}
 }

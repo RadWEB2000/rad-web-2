@@ -13,15 +13,14 @@ export default function MenuButton() {
 	return (
 		<motion.button
 			className={styles.wrapper}
+			data-open={isOpen}
 			onClick={toggle}
-			style={{
-				backgroundColor: isOpen ? "green " : "salmon",
-			}}
 			whileTap={{
 				scale: 0.92,
 			}}
 		>
-			<FaBars />
+			<span className={styles.line} />
+			<span className={styles.line} />
 		</motion.button>
 	);
 }
