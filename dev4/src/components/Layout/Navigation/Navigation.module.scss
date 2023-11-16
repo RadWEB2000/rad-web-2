@@ -2,8 +2,7 @@
 
 .wrapper {
 	@include size(auto, 100%);
-	background-color: #f00fdd;
-	color: #fff;
+	background-color: $black;
 	display: grid;
 	grid-template-columns: repeat(21, 1fr);
 	top: 0;
@@ -17,18 +16,21 @@
 }
 
 .brand {
-	background: green;
 	grid-column: 1/11;
 }
 
 .menu {
-	background: violet;
 	display: grid;
 	grid-column: 1/-1;
-	grid-template-rows: calc(100% - 15rem) 15rem;
+	grid-template-rows: calc(100% - 20rem) 20rem;
 	grid-row: 2;
 	height: calc(100vh - 8rem);
-	padding: 1.2rem;
+	transition: 0.3s linear all;
+	&[data-open="false"] {
+		height: 0;
+		overflow-y: hidden;
+		transition: 0.3s linear all;
+	}
 }
 
 .settings {

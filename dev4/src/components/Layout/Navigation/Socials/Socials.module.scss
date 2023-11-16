@@ -1,0 +1,53 @@
+@import "../../../../styles/Variables.scss";
+
+@mixin tileSocial($background) {
+	@include size(5.65rem, 5.65rem);
+	& > a {
+		@include flex(center, center);
+		@include size(100%, 100%);
+		background-color: $background;
+		border-radius: 1.2rem;
+		color: $white;
+		font-size: 3rem;
+		transition: 0.15s linear background-color, 0.15s linear box-shadow,
+			0.15s linear color;
+	}
+	&:focus-within,
+	&:hover {
+		& > a {
+			background-color: $white;
+			box-shadow: 0 0 2rem rgba($white, 0.85), 0 0 3rem rgba($background, 0.85);
+			color: $background;
+		}
+	}
+}
+
+.wrapper {
+	@include flex(center, center, row wrap, 0.5rem, 0rem, true);
+	@include size(100%, 70%);
+	margin: 0 auto;
+}
+
+.container {
+	&[data-color="facebook"] {
+		@include tileSocial($facebook);
+	}
+	&[data-color="youtube"] {
+		@include tileSocial($youtube);
+	}
+	&[data-color="instagram"] {
+		@include tileSocial($instagram);
+	}
+	&[data-color="tiktok"] {
+		@include tileSocial($tik-tok);
+	}
+	&[data-color="twitter"] {
+		@include tileSocial($twitter);
+	}
+	&[data-color="github"] {
+		@include tileSocial($github);
+	}
+	&[data-color="linkedin"] {
+		@include tileSocial($linkedin);
+	}
+}

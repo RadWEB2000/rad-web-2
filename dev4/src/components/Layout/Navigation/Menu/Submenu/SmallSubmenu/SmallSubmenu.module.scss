@@ -1,9 +1,7 @@
 @import "../../../../../../styles/Variables.scss";
 
 .wrapper {
-	background: red;
 	& > ul {
-		background: red;
 		@include flex(flex-start, flex-start, column, null, 1rem);
 		padding: 2rem;
 	}
