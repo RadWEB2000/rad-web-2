@@ -12,6 +12,7 @@
 	& > .line {
 		@include size(0.4rem, 100%);
 		background-color: $platinum;
+		border-radius: 2rem;
 		transition: 0.15s linear all;
 	}
 

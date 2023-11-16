@@ -16,7 +16,7 @@ export default function MenuButton() {
 			data-open={isOpen}
 			onClick={toggle}
 			whileTap={{
-				scale: 0.92,
+				scale: 0.72,
 			}}
 		>
 			<span className={styles.line} />

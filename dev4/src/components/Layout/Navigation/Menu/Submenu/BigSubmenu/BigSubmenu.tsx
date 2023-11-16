@@ -4,6 +4,7 @@ import Item from "l_navigation/Menu/Item";
 import { tMenuArrayItem } from "data/menu";
 import { useState } from "react";
 import styles from "l_navigation/Menu/Submenu/BigSubmenu/BigSubmenu.module.scss";
+import { AnimatePresence } from "framer-motion";
 
 type tBigSubmenu = {
 	label: string;
@@ -114,45 +115,49 @@ function Mobile(props: tBigSubmenu) {
 				theme="expand"
 			/>
 			{isOpenSubmenu && (
-				<ul>
-					{props.submenu?.map((item, index) => {
-						if (item.submenu) {
-							return (
-								<li key={index}>
-									<Item
-										handleSubmenu={() => handleSecondarySubmenu(item.label)}
-										label={item.label}
-										isExpanded={openSubmenus[item.label]}
-										key={index}
-										theme="expand"
-										level={2}
-										uri={item.uri}
-									/>
-									{openSubmenus[item.label] && (
-										<ul>
-											{item.submenu?.map((item, index) => {
-												return (
-													<Item
-														label={item.label}
-														key={index}
-														theme="submenu"
-														uri={item.uri}
-													/>
-												);
-											})}
-										</ul>
-									)}
-								</li>
-							);
-						} else {
-							return (
-								<li key={index}>
-									<Item label={item.label} theme="submenu" uri={item.uri} />
-								</li>
-							);
-						}
-					})}
-				</ul>
+				<AnimatePresence>
+					<ul>
+						{props.submenu?.map((item, index) => {
+							if (item.submenu) {
+								return (
+									<li key={index}>
+										<Item
+											handleSubmenu={() => handleSecondarySubmenu(item.label)}
+											label={item.label}
+											isExpanded={openSubmenus[item.label]}
+											key={index}
+											theme="expand"
+											level={2}
+											uri={item.uri}
+										/>
+										{openSubmenus[item.label] && (
+											<AnimatePresence>
+												<ul>
+													{item.submenu?.map((item, index) => {
+														return (
+															<Item
+																label={item.label}
+																key={index}
+																theme="submenu"
+																uri={item.uri}
+															/>
+														);
+													})}
+												</ul>
+											</AnimatePresence>
+										)}
+									</li>
+								);
+							} else {
+								return (
+									<li key={index}>
+										<Item label={item.label} theme="submenu" uri={item.uri} />
+									</li>
+								);
+							}
+						})}
+					</ul>
+				</AnimatePresence>
 			)}
 		</li>
 	);
