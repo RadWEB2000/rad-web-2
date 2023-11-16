@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import { FaAngleDown } from "react-icons/fa6";
+import { FaAngleUp, FaAngleDown } from "react-icons/fa6";
 import styles from "l_navigation/Menu/Item/Item.module.scss";
-import { Dispatch, SetStateAction } from "react";
-
+import { AnimatePresence, motion } from "framer-motion";
 type tItem = {
 	label: string;
 	uri: string;
 } & (
 	| {
+			isExpanded: boolean;
 			level: 1 | 2;
 			handleSubmenu: () => void;
 			theme: "expand";
@@ -26,9 +26,11 @@ export default function Item(props: tItem) {
 		return (
 			<div className={styles.expand} data-level={props.level}>
 				<Link href={props.uri}>{props.label}</Link>
-				<button onClick={props.handleSubmenu}>
-					<FaAngleDown />
-				</button>
+				<motion.button onClick={props.handleSubmenu}>
+					<AnimatePresence>
+						{props.isExpanded ? <FaAngleUp /> : <FaAngleDown />}
+					</AnimatePresence>
+				</motion.button>
 			</div>
 		);
 	} else if (props.theme === "regural") {

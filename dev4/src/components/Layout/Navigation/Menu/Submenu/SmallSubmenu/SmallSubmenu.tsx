@@ -1,7 +1,7 @@
 "use client";
 import { tMenuArrayItem } from "data/menu";
 import { useState } from "react";
-import styles from "l_navigation/Menu/Submenu/BigSubmenu/BigSubmenu.module.scss";
+import styles from "l_navigation/Menu/Submenu/SmallSubmenu/SmallSubmenu.module.scss";
 import Item from "l_navigation/Menu/Item";
 
 type tSmallSubmenu = {
@@ -15,14 +15,13 @@ type tSmallSubmenu = {
 
 export default function SmallSubmenu(props: tSmallSubmenu) {
 	const [isOpenSubmenu, setIsOpenSubmenu] = useState(false);
-	const [isOpenSubmenuSecondary, setIsOpenSubmenuSecondary] = useState(false);
-	console.log(props.submenu);
 	return (
-		<li className={styles.small__wrapper}>
+		<li className={styles.wrapper}>
 			<Item
 				handleSubmenu={() => setIsOpenSubmenu(!isOpenSubmenu)}
 				label={props.label}
 				level={1}
+				isExpanded={isOpenSubmenu}
 				uri={props.uri}
 				theme="expand"
 			/>

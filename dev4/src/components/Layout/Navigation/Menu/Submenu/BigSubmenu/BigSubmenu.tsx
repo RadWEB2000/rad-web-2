@@ -14,6 +14,10 @@ type tBigSubmenu = {
 	};
 };
 
+type tOpenSubmenus = {
+	[key: string]: boolean;
+};
+
 function Desktop(props: tBigSubmenu) {
 	const [isOpenSubmenu, setIsOpenSubmenu] = useState(false);
 	const [isOpenSubmenuSecondary, setIsOpenSubmenuSecondary] = useState(false);
@@ -22,6 +26,7 @@ function Desktop(props: tBigSubmenu) {
 			<Item
 				handleSubmenu={() => setIsOpenSubmenu(!isOpenSubmenu)}
 				label={props.label}
+				isExpanded={isOpenSubmenu}
 				level={1}
 				uri={props.uri}
 				theme="expand"
@@ -87,14 +92,22 @@ function Desktop(props: tBigSubmenu) {
 		</li>
 	);
 }
+
 function Mobile(props: tBigSubmenu) {
 	const [isOpenSubmenu, setIsOpenSubmenu] = useState(false);
-	const [isOpenSubmenuSecondary, setIsOpenSubmenuSecondary] = useState(false);
-	console.log("submenu mobile", props.submenu[1].submenu?.length);
+	const [openSubmenus, setOpenSubmenus] = useState<tOpenSubmenus>({});
+
+	function handleSecondarySubmenu(label: string) {
+		setOpenSubmenus((prevState) => ({
+			...prevState,
+			[label]: !prevState[label],
+		}));
+	}
 	return (
 		<li className={`${styles.wrapper} ${styles.mobile}`}>
 			<Item
 				handleSubmenu={() => setIsOpenSubmenu(!isOpenSubmenu)}
+				isExpanded={isOpenSubmenu}
 				label={props.label}
 				level={1}
 				uri={props.uri}
@@ -105,18 +118,17 @@ function Mobile(props: tBigSubmenu) {
 					{props.submenu?.map((item, index) => {
 						if (item.submenu) {
 							return (
-								<li key={item.label}>
+								<li key={index}>
 									<Item
-										handleSubmenu={() =>
-											setIsOpenSubmenuSecondary(!isOpenSubmenuSecondary)
-										}
+										handleSubmenu={() => handleSecondarySubmenu(item.label)}
 										label={item.label}
+										isExpanded={openSubmenus[item.label]}
 										key={index}
 										theme="expand"
 										level={2}
 										uri={item.uri}
 									/>
-									{isOpenSubmenuSecondary && (
+									{openSubmenus[item.label] && (
 										<ul>
 											{item.submenu?.map((item, index) => {
 												return (

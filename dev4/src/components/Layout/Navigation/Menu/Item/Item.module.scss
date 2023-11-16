@@ -2,18 +2,33 @@
 
 .expand[data-level="1"],
 .regural {
-	& > a {
-		@include font(2.7rem, 700);
-	}
-}
-
-.expand {
 	@include flex(center, flex-start, row nowrap, 1rem);
+	background: palegreen;
+	& > a {
+		background: lime;
+		@include flex(center, flex-start);
+		@include font(2.7rem, 700);
+		padding: 0.15rem;
+		height: 4.7rem;
+	}
 	& > button {
 		@include flex(center, center);
 		@include size(2.65rem, 2.65rem);
 		color: #fff;
 		font-size: 2.4rem;
+	}
+}
+
+.expand[data-level="2"] {
+	@include flex(center, flex-start, row nowrap, 0.7rem);
+	& > a {
+		@include font(2.2rem, 500);
+	}
+	& > button {
+		@include flex(center, center);
+		@include size(2rem, 2rem);
+		color: #fff;
+		font-size: 1.7rem;
 	}
 }
 
@@ -23,6 +38,6 @@
 
 .submenu {
 	& > a {
-		@include font(2.1rem, 500);
+		@include font(2.2rem, 500);
 	}
 }

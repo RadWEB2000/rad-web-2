@@ -3,3 +3,18 @@
 .desktop {
 	display: none;
 }
+
+.mobile {
+	background: black;
+	& > ul {
+		@include flex(flex-start, flex-start, column, null, 1rem);
+		padding: 2rem;
+		& > li {
+			width: 100%;
+			& > ul {
+				@include flex(flex-start, flex-start, column, null, 0.6rem);
+				padding: 1.2rem;
+			}
+		}
+	}
+}

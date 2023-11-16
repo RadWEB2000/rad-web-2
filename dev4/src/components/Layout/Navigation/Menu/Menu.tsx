@@ -1,6 +1,7 @@
 import { tMenuArrayItem } from "data/menu";
-import Item from "./Item";
-import Submenu from "./Submenu";
+import Item from "l_navigation/Menu/Item";
+import Submenu from "l_navigation/Menu/Submenu";
+import styles from "l_navigation/Menu/Menu.module.scss";
 
 type tMenu = {
 	menu: tMenuArrayItem[];
@@ -8,7 +9,7 @@ type tMenu = {
 
 export default function Menu(props: tMenu) {
 	return (
-		<menu>
+		<menu className={styles.wrapper}>
 			{props.menu.map(
 				({ label, uri, submenu, submenuTheme, submenuTitles }) => {
 					if (submenu !== null) {
