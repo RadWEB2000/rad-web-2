@@ -51,3 +51,11 @@
 		@include tileSocial($linkedin);
 	}
 }
+
+@media only screen {
+	@media (min-width: 1050px) {
+		.wrapper {
+			display: none;
+		}
+	}
+}

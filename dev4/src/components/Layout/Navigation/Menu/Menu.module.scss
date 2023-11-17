@@ -12,3 +12,11 @@
 		width: 0;
 	}
 }
+@media only screen {
+	@media (min-width: 1050px) {
+		.wrapper {
+			@include flex(center, flex-end, row nowrap, 0.15rem, 0.7rem);
+			background: lime;
+		}
+	}
+}
