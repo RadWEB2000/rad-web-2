@@ -17,6 +17,7 @@ type tItem = {
 			theme: "regural";
 	  }
 	| {
+			level?: 1 | 2;
 			theme: "submenu";
 	  }
 );
@@ -41,7 +42,7 @@ export default function Item(props: tItem) {
 		);
 	} else if (props.theme === "submenu") {
 		return (
-			<li className={styles.submenu}>
+			<li className={styles.submenu} data-level={props.level ? props.level : 1}>
 				<Link href={props.uri}>{props.label}</Link>
 			</li>
 		);

@@ -3,6 +3,11 @@
 .wrapper {
 	@include flex(center, center);
 	@include size(4.75rem, 4.75rem);
-	background: white;
-	font-size: 2.2rem;
+	color: $platinum;
+	font-size: 3.2rem;
+	transition: 0.15s linear color;
+	&:focus-within,
+	&:hover {
+		color: $white;
+	}
 }

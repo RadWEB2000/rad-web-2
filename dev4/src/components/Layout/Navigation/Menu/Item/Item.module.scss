@@ -52,17 +52,24 @@
 
 .expand[data-level="2"] {
 	column-gap: 0.55rem;
-	& > a {
-		@include font(2.2rem, 500);
-	}
 	& > button {
 		@include size(2rem, 2rem);
 		font-size: 1.7rem;
 	}
 }
 
+.expand[data-level="2"],
 .submenu {
 	& > a {
 		@include font(2.2rem, 500);
+		color: rgba($platinum, 0.7);
+		transition: 0.15s ease-in-out color;
+		&:focus-within,
+		&:hover {
+			color: $platinum;
+		}
 	}
+}
+
+.submenu {
 }
