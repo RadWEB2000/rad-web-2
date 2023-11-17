@@ -14,7 +14,7 @@ export default function Navigation() {
 		menu: { isOpen },
 	} = useContext(MenuContext);
 	return (
-		<nav className={styles.wrapper}>
+		<nav className={styles.wrapper} data-open={isOpen}>
 			<div className={styles.brand}>
 				<Brand label="Rad<br/>WEB" uri="#" />
 			</div>

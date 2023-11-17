@@ -1,12 +1,17 @@
 @import "../../../styles/Variables.scss";
 
 .wrapper {
-	@include size(auto, 100%);
+	@include size(8rem, 100%);
 	background-color: $black;
 	display: grid;
 	grid-template-columns: repeat(21, 1fr);
 	top: 0;
 	position: sticky;
+	transition: 0.12s linear height;
+	&[data-open="true"] {
+		position: fixed;
+		height: 100vh;
+	}
 }
 
 .brand,
