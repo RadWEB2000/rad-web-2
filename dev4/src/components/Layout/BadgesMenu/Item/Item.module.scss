@@ -1,0 +1,25 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include size(5.25rem, 5.25rem);
+	background: $black;
+	border-radius: 0.7rem;
+	transition: 0.3s ease-in-out box-shadow;
+
+	& > a {
+		@include flex(center, center);
+		@include size(100%, 100%);
+		color: rgba($silver, 0.6);
+		font-size: 3.6rem;
+		transition: 0.3s ease-in-out color;
+	}
+
+	&:focus-within,
+	&:hover {
+		box-shadow: 0px 0px 9px 0px rgba($school-bus-yellow, 0.52),
+			0px 0px 6px 1px rgba($lavenda, 0.25), 0px 4px 4px 0px rgba($lavenda, 0.25);
+		& > a {
+			color: $white;
+		}
+	}
+}

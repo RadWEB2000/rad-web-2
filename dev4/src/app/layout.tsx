@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "css/Global.scss";
 import Navigation from "layout/Navigation";
 import MenuProvider from "context/MenuContext";
+import BadgesMenu from "layout/BadgesMenu";
+import { mobileNavigation } from "data/mobileNavigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +24,7 @@ export default function RootLayout({
 				<body className={inter.className}>
 					<Navigation />
 					{children}
+					<BadgesMenu menu={mobileNavigation} />
 				</body>
 			</html>
 		</MenuProvider>

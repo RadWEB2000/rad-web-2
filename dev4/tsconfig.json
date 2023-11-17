@@ -31,6 +31,7 @@
 			"functions/*": ["./src/lib/functions/*"],
 			"hooks/*": ["./src/lib/hooks/*"],
 			"layout/*": ["./src/components/Layout/*"],
+			"l_badges/*": ["./src/components/Layout/BadgesMenu/*"],
 			"l_navigation/*": ["./src/components/Layout/Navigation/*"],
 			"lib/*": ["./src/lib/*"],
 			"pages/*": ["./src/components/Pages/*"],
