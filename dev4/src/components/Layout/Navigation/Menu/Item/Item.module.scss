@@ -1,7 +1,7 @@
-@import "../../../../../styles/Variables.scss";
+@import '../../../../../styles/Variables.scss';
 
-.expand[data-level="1"],
-.expand[data-level="2"],
+.expand[data-level='1'],
+.expand[data-level='2'],
 .regural {
 	@include flex(center, flex-start, row nowrap);
 	& > a {
@@ -20,7 +20,7 @@
 	}
 }
 
-.expand[data-level="1"],
+.expand[data-level='1'],
 .regural {
 	column-gap: 1rem;
 	& > a {
@@ -50,7 +50,7 @@
 	}
 }
 
-.expand[data-level="2"] {
+.expand[data-level='2'] {
 	column-gap: 0.55rem;
 	& > button {
 		@include size(2rem, 2rem);
@@ -58,7 +58,7 @@
 	}
 }
 
-.expand[data-level="2"],
+.expand[data-level='2'],
 .submenu {
 	& > a {
 		@include font(2.2rem, 500);
@@ -71,5 +71,53 @@
 	}
 }
 
-.submenu {
+@media only screen {
+	@media (min-width: 1050px) {
+		.expand[data-level='1'],
+		.regural {
+			column-gap: 1rem;
+			& > a {
+				@include font(1.7rem, 700);
+				padding: 0.15rem 0.5rem;
+				height: 3rem;
+				&::before {
+					border-radius: 0;
+					height: 2px;
+					width: 1%;
+					background-color: $electric-indigo;
+				}
+				&:focus-within,
+				&:hover {
+					&::before {
+						width: 100%;
+					}
+				}
+			}
+			& > button {
+				@include size(2.65rem, 2.65rem);
+				font-size: 2.4rem;
+			}
+		}
+
+		.expand[data-level='2'] {
+			column-gap: 0.55rem;
+			& > button {
+				@include size(2rem, 2rem);
+				font-size: 1.7rem;
+			}
+		}
+
+		.expand[data-level='2'],
+		.submenu {
+			& > a {
+				@include font(2.2rem, 500);
+				color: rgba($platinum, 0.7);
+				transition: 0.15s ease-in-out color;
+				&:focus-within,
+				&:hover {
+					color: $platinum;
+				}
+			}
+		}
+	}
 }

@@ -1,5 +1,5 @@
-"use client";
-import { createContext, useState } from "react";
+'use client';
+import { createContext, useEffect, useState } from 'react';
 
 type tMenuContext = {
 	menu: {
@@ -23,6 +23,27 @@ export const MenuContext = createContext<tMenuContext>({
 
 export default function MenuProvider(props: tMenuProvider) {
 	const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+	function getDeviceSize() {
+		if (window !== undefined) {
+			if (window.innerWidth >= 1050) {
+				setIsOpenMenu(true);
+			} else {
+				setIsOpenMenu(false);
+			}
+		}
+	}
+
+	useEffect(() => {
+		getDeviceSize();
+
+		if (window !== undefined) {
+			window.addEventListener('resize', () => {
+				getDeviceSize();
+			});
+		}
+	}, []);
+
 	return (
 		<MenuContext.Provider
 			value={{

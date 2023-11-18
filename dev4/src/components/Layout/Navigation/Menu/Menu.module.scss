@@ -1,4 +1,4 @@
-@import "../../../../styles/Variables.scss";
+@import '../../../../styles/Variables.scss';
 
 .wrapper {
 	@include flex(flex-start, flex-start, column, null, 0.7rem);
@@ -15,6 +15,7 @@
 @media only screen {
 	@media (min-width: 1050px) {
 		.wrapper {
+			overflow-y: visible;
 			@include flex(center, flex-end, row nowrap, 0.15rem, 0.7rem);
 			background: lime;
 		}

@@ -1,4 +1,4 @@
-@import "../../../../../../styles/Variables.scss";
+@import '../../../../../../styles/Variables.scss';
 
 .desktop {
 	display: none;
@@ -16,5 +16,57 @@
 				padding: 1.2rem;
 			}
 		}
+	}
+}
+@media only screen {
+	@media (max-width: 1050px) {
+		.mobile {
+			display: none;
+		}
+	}
+	@media (min-width: 1050px) {
+		.desktop {
+			display: block;
+			// position: relative;
+		}
+		.desktop__wrapper {
+			background: violet;
+			& > .desktop__menu {
+				background: lime;
+				display: none;
+			}
+		}
+
+		// .d__menu {
+		// 	position: fixed;
+		// 	left: 0;
+		// 	right: 0;
+		// 	display: grid;
+		// 	grid-template-columns: repeat(4, 1fr);
+		// 	left: 0;
+		// 	height: clamp(0, auto, calc(100vh - 8.5rem));
+		// 	top: 8rem;
+		// 	width: 100vw;
+		// 	background: rgb(30, 30, 175);
+		// 	padding: 2rem 3rem;
+
+		// 	& > div:not(:last-of-type) {
+		// 		background: pink;
+		// 		row-gap: 1rem;
+		// 		&,
+		// 		& > ul {
+		// 			@include flex(flex-start, flex-start, column);
+		// 		}
+		// 		& > ul {
+		// 			row-gap: 0.75rem;
+		// 			& > li {
+		// 				background: orange;
+		// 				& > a {
+		// 					font-size: 1.55rem;
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 }
