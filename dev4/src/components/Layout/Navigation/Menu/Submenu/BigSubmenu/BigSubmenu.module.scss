@@ -19,7 +19,7 @@
 	}
 }
 @media only screen {
-	@media (max-width: 1050px) {
+	@media (min-width: 1049.5px) {
 		.mobile {
 			display: none;
 		}
@@ -27,14 +27,18 @@
 	@media (min-width: 1050px) {
 		.desktop {
 			display: block;
-			// position: relative;
+			position: relative;
 		}
-		.desktop__wrapper {
-			background: violet;
-			& > .desktop__menu {
-				background: lime;
-				display: none;
-			}
+
+		.desktop__menu {
+			background: rgb(37, 126, 177);
+			position: fixed;
+			top: 6rem;
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			width: 100vw;
+			left: 0;
+			display: none;
 		}
 
 		// .d__menu {

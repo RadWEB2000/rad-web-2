@@ -1,9 +1,9 @@
-"use client";
-import { tMenuArrayItem } from "data/menu";
-import { useState } from "react";
-import styles from "l_navigation/Menu/Submenu/SmallSubmenu/SmallSubmenu.module.scss";
-import Item from "l_navigation/Menu/Item";
-import { AnimatePresence } from "framer-motion";
+'use client';
+import { tMenuArrayItem } from 'data/menu';
+import { useState } from 'react';
+import styles from 'l_navigation/Menu/Submenu/SmallSubmenu/SmallSubmenu.module.scss';
+import Item from 'l_navigation/Menu/Item';
+import { AnimatePresence } from 'framer-motion';
 
 type tSmallSubmenu = {
 	label: string;
@@ -17,7 +17,10 @@ type tSmallSubmenu = {
 export default function SmallSubmenu(props: tSmallSubmenu) {
 	const [isOpenSubmenu, setIsOpenSubmenu] = useState(false);
 	return (
-		<li className={styles.wrapper}>
+		<li
+			className={styles.wrapper}
+			onMouseLeave={() => setIsOpenSubmenu(false)}
+		>
 			<Item
 				handleSubmenu={() => setIsOpenSubmenu(!isOpenSubmenu)}
 				label={props.label}
