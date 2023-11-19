@@ -4,6 +4,7 @@
 	@include positioning(null, null, 0, 9, null, null, null, 99, fixed);
 	@include size(8rem, 100%);
 	background-color: $black;
+	background-color: $white;
 	border-radius: 0.4rem 0.4rem 0 0;
 }
 
