@@ -10,3 +10,10 @@
 		color: $platinum;
 	}
 }
+@media only screen {
+	@media (min-width: 1050px) {
+		.wrapper {
+			font-size: 2.7rem;
+		}
+	}
+}

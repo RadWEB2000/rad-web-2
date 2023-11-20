@@ -11,3 +11,11 @@
 		color: $white;
 	}
 }
+@media only screen {
+	@media (min-width: 1050px) {
+		.wrapper {
+			@include size(4rem, 4rem);
+			font-size: 2.5rem;
+		}
+	}
+}

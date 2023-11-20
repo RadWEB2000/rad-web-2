@@ -1,4 +1,4 @@
-@import '../../../../../../styles/Variables.scss';
+@import "../../../../../../styles/Variables.scss";
 
 .desktop {
 	display: none;
@@ -31,14 +31,14 @@
 		}
 
 		.desktop__menu {
+			@include size(clamp(35rem, auto, calc(100vh - 20rem)), 100vw);
 			background: rgb(37, 126, 177);
 			position: fixed;
-			top: 6rem;
+			top: 6.5rem;
 			display: grid;
 			grid-template-columns: repeat(5, 1fr);
-			width: 100vw;
 			left: 0;
-			display: none;
+			padding: 2rem 5rem;
 		}
 
 		// .d__menu {
