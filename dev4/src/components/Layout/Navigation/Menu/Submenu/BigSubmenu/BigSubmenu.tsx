@@ -1,16 +1,16 @@
 "use client";
-import Image from "next/image";
-import Item from "l_navigation/Menu/Item";
 import { tMenuArrayItem } from "data/menu";
-import { useState } from "react";
-import styles from "l_navigation/Menu/Submenu/BigSubmenu/BigSubmenu.module.scss";
 import { AnimatePresence } from "framer-motion";
+import Item from "l_navigation/Menu/Item";
+import styles from "l_navigation/Menu/Submenu/BigSubmenu/BigSubmenu.module.scss";
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 type tBigSubmenu = {
 	label: string;
 	uri: string;
-	submenu: tMenuArrayItem[]; // Zmień na tMenuArrayItem[]
+	submenu: tMenuArrayItem[];
 	submenuTitle: {
 		[key: string]: string;
 	};
@@ -122,7 +122,10 @@ function Mobile(props: tBigSubmenu) {
 		}));
 	}
 	return (
-		<li className={`${styles.wrapper} ${styles.mobile}`}>
+		<li
+			className={`${styles.wrapper} ${styles.mobile}`}
+			onMouseLeave={() => setIsOpenSubmenu(false)}
+		>
 			<Item
 				handleSubmenu={() => setIsOpenSubmenu(!isOpenSubmenu)}
 				isExpanded={isOpenSubmenu}

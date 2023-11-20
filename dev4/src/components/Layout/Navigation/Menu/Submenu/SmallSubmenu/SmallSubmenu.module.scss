@@ -1,4 +1,4 @@
-@import '../../../../../../styles/Variables.scss';
+@import "../../../../../../styles/Variables.scss";
 
 .wrapper {
 	& > ul {
@@ -14,10 +14,12 @@
 			& > ul {
 				background-color: $black;
 				color: $white;
+				left: -5rem;
 				position: absolute;
 				border-radius: 0 0.2rem 0.2rem 0.2rem;
 				box-shadow: 0 0 0.3rem rgba($platinum, 0.42);
-				width: 30rem;
+				width: 25rem;
+				z-index: 9999;
 			}
 		}
 	}

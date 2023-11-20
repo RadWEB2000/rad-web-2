@@ -4,8 +4,89 @@
 	display: none;
 }
 
+.desktop__menu {
+	@include size(clamp(35rem, auto, calc(100vh - 20rem)), 100vw);
+	background-color: $black;
+	position: fixed;
+	top: 6.95rem;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(4, 1fr);
+	left: 0;
+	padding: 2rem 1.5rem 3rem;
+	& > .categories {
+		grid-column: 1;
+	}
+	& > .topics {
+		grid-column: 2;
+	}
+	& > .article {
+		grid-column: 3/-1;
+	}
+
+	& > *:not(.article) {
+		padding: 0.72rem;
+		& > .title {
+			@include font(2.7rem, 800, 1, null, null, start);
+		}
+		& > .items {
+			@include flex(flex-start, flex-start, column, null, 0.75rem);
+			margin-top: 1rem;
+			padding: 0.18rem;
+			& > li {
+				& > a {
+					@include font(1.5rem, 500, 1, null, null, start);
+				}
+			}
+		}
+	}
+	& > .article {
+		display: grid;
+		grid-template-columns: repeat(9, 1fr);
+		& > .image {
+			grid-column: 1/5;
+			& > a {
+				& > figure {
+					@include size(100%, 100%);
+					border-radius: 0.85rem;
+					overflow: hidden;
+					position: relative;
+				}
+			}
+		}
+		& > .content {
+			@include flex(flex-start, flex-start, column, null, 1rem, false);
+			grid-column: 5/-1;
+			padding: 0.95rem;
+			& > .title {
+				@include font(3.2rem, 700, 1.2, null, null, start);
+				transition: 0.12s linear color;
+				&:focus-within,
+				&:hover {
+					color: $steel-pink;
+				}
+			}
+			& > .details {
+				@include flex(flex-start, flex-start, column, null, 1rem);
+				& > * {
+					@include font(1.85rem, 300, 1, null, null, start);
+					color: $platinum;
+					transition: 0.12s linear color;
+				}
+				& > .category {
+					font-weight: 700;
+					&:focus-within,
+					&:hover {
+						color: $platinum-light;
+					}
+				}
+			}
+		}
+	}
+}
+
 .mobile {
-	background: black;
+	background: $black;
 	& > ul {
 		@include flex(flex-start, flex-start, column, null, 1rem);
 		padding: 2rem;
@@ -30,89 +111,10 @@
 			position: relative;
 		}
 
-		.desktop__menu {
-			@include size(clamp(35rem, auto, calc(100vh - 20rem)), 100vw);
-			background-color: $black;
-			position: fixed;
-			top: 6.5rem;
-			display: grid;
-			gap: 1rem;
-			grid-template-columns: repeat(4, 1fr);
-			left: 0;
-			padding: 2rem 1.5rem 3rem;
-			& > .categories {
-				grid-column: 1;
-			}
-			& > .topics {
-				grid-column: 2;
-			}
-			& > .article {
-				grid-column: 3/-1;
-			}
-
-			& > *:not(.article) {
-				padding: 0.72rem;
-				& > .title {
-					@include font(2.7rem, 800, 1, null, null, start);
-				}
-				& > .items {
-					@include flex(flex-start, flex-start, column, null, 0.75rem);
-					margin-top: 1rem;
-					padding: 0.18rem;
-					& > li {
-						& > a {
-							@include font(1.5rem, 500, 1, null, null, start);
-						}
-					}
-				}
-			}
-			& > .article {
-				display: grid;
-				grid-template-columns: repeat(9, 1fr);
-				& > .image {
-					grid-column: 1/5;
-					& > a {
-						& > figure {
-							@include size(100%, 100%);
-							border-radius: 0.85rem;
-							overflow: hidden;
-							position: relative;
-						}
-					}
-				}
-				& > .content {
-					@include flex(flex-start, flex-start, column, null, 1rem, false);
-					grid-column: 5/-1;
-					padding: 0.95rem;
-					& > .title {
-						@include font(3.2rem, 700, 1.2, null, null, start);
-						transition: 0.12s linear color;
-						&:focus-within,
-						&:hover {
-							color: $steel-pink;
-						}
-					}
-					& > .details {
-						@include flex(flex-start, flex-start, column, null, 1rem);
-						& > * {
-							@include font(1.85rem, 300, 1, null, null, start);
-							color: $platinum;
-							transition: 0.12s linear color;
-						}
-						& > .category {
-							font-weight: 700;
-							&:focus-within,
-							&:hover {
-								color: $platinum-light;
-							}
-						}
-					}
-				}
-			}
-		}
 		@media (min-width: 1400px) {
 			.desktop__menu {
 				grid-template-columns: repeat(12, 1fr);
+				padding: 4rem 6rem 5rem 6rem;
 				& > .categories {
 					grid-column: 1/2;
 				}
