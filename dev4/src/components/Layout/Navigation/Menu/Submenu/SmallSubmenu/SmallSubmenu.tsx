@@ -3,7 +3,7 @@ import { tMenuArrayItem } from 'data/menu';
 import { useState } from 'react';
 import styles from 'l_navigation/Menu/Submenu/SmallSubmenu/SmallSubmenu.module.scss';
 import Item from 'l_navigation/Menu/Item';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type tSmallSubmenu = {
 	label: string;
@@ -30,8 +30,20 @@ export default function SmallSubmenu(props: tSmallSubmenu) {
 				theme="expand"
 			/>
 			{isOpenSubmenu && (
-				<AnimatePresence>
-					<ul>
+				<AnimatePresence initial={false}>
+					<motion.ul
+						initial={{
+							height: 0,
+							overflow: 'hidden',
+							opacity: 0,
+							visibility: 'hidden',
+						}}
+						animate={{
+							height: 'auto',
+							opacity: 1,
+							visibility: 'visible',
+						}}
+					>
 						{props.submenu?.map((item, index) => {
 							return (
 								<li key={item.label}>
@@ -44,7 +56,7 @@ export default function SmallSubmenu(props: tSmallSubmenu) {
 								</li>
 							);
 						})}
-					</ul>
+					</motion.ul>
 				</AnimatePresence>
 			)}
 		</li>
