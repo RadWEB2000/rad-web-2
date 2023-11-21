@@ -1,9 +1,9 @@
-'use client';
-import { tMenuArrayItem } from 'data/menu';
-import { useState } from 'react';
-import styles from 'l_navigation/Menu/Submenu/SmallSubmenu/SmallSubmenu.module.scss';
-import Item from 'l_navigation/Menu/Item';
-import { AnimatePresence, motion } from 'framer-motion';
+"use client";
+import { tMenuArrayItem } from "data/menu";
+import { useState } from "react";
+import styles from "l_navigation/Menu/Submenu/SmallSubmenu/SmallSubmenu.module.scss";
+import Item from "l_navigation/Menu/Item";
+import { AnimatePresence, motion } from "framer-motion";
 
 type tSmallSubmenu = {
 	label: string;
@@ -17,10 +17,7 @@ type tSmallSubmenu = {
 export default function SmallSubmenu(props: tSmallSubmenu) {
 	const [isOpenSubmenu, setIsOpenSubmenu] = useState(false);
 	return (
-		<li
-			className={styles.wrapper}
-			onMouseLeave={() => setIsOpenSubmenu(false)}
-		>
+		<li className={styles.wrapper} onMouseLeave={() => setIsOpenSubmenu(false)}>
 			<Item
 				handleSubmenu={() => setIsOpenSubmenu(!isOpenSubmenu)}
 				label={props.label}
@@ -30,19 +27,11 @@ export default function SmallSubmenu(props: tSmallSubmenu) {
 				theme="expand"
 			/>
 			{isOpenSubmenu && (
-				<AnimatePresence initial={false}>
+				<AnimatePresence>
 					<motion.ul
-						initial={{
-							height: 0,
-							overflow: 'hidden',
-							opacity: 0,
-							visibility: 'hidden',
-						}}
-						animate={{
-							height: 'auto',
-							opacity: 1,
-							visibility: 'visible',
-						}}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
 					>
 						{props.submenu?.map((item, index) => {
 							return (

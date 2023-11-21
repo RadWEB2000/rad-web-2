@@ -1,4 +1,4 @@
-@import '../../../../../../styles/Variables.scss';
+@import "../../../../../../styles/Variables.scss";
 
 .wrapper {
 	& > ul {
@@ -13,7 +13,6 @@
 			position: relative;
 			& > ul {
 				background-color: $black;
-				background: red;
 				color: $white;
 				left: -5rem;
 				position: absolute;

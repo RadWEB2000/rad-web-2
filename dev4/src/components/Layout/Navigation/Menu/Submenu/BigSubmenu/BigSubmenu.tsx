@@ -1,6 +1,6 @@
 "use client";
 import { tMenuArrayItem } from "data/menu";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Item from "l_navigation/Menu/Item";
 import styles from "l_navigation/Menu/Submenu/BigSubmenu/BigSubmenu.module.scss";
 import Image from "next/image";
@@ -35,34 +35,21 @@ function Desktop(props: tBigSubmenu) {
 					theme="expand"
 				/>
 				{isOpenSubmenu && (
-					<div className={styles.desktop__wrapper}>
-						<div className={styles.desktop__menu}>
-							<div className={styles.categories}>
-								<h3 className={styles.title}>
-									{props.submenuTitle.categories}
-								</h3>
-								<ul className={styles.items}>
-									{props.submenu.map((item, index) => {
-										return (
-											<Item
-												label={item.label}
-												key={index}
-												theme="submenu"
-												uri={item.uri}
-											/>
-										);
-									})}
-								</ul>
-							</div>
-							<div className={styles.topics}>
-								<h3 className={styles.title}>{props.submenuTitle.topics}</h3>
-								<ul className={styles.items}>
-									{props.submenu
-										.flatMap((item, index) =>
-											item.submenu ? [...item.submenu] : []
-										)
-										.filter(Boolean)
-										.map((item, index) => {
+					<AnimatePresence>
+						<motion.div
+							className={styles.desktop__wrapper}
+							onMouseLeave={() => setIsOpenSubmenu(false)}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+						>
+							<div className={styles.desktop__menu}>
+								<div className={styles.categories}>
+									<h3 className={styles.title}>
+										{props.submenuTitle.categories}
+									</h3>
+									<ul className={styles.items}>
+										{props.submenu.map((item, index) => {
 											return (
 												<Item
 													label={item.label}
@@ -72,39 +59,62 @@ function Desktop(props: tBigSubmenu) {
 												/>
 											);
 										})}
-								</ul>
-							</div>
-							<div className={styles.article}>
-								<div className={styles.image}>
-									<Link href="#">
-										<figure>
-											<Image
-												alt=""
-												fill
-												src="https://images.unsplash.com/photo-1699019950419-ffe12ae956c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-												style={{
-													objectFit: "cover",
-													objectPosition: "center",
-												}}
-											/>
-										</figure>
-									</Link>
+									</ul>
 								</div>
-								<div className={styles.content}>
-									<h2 className={styles.title}>
-										<Link href="#">Czym jest sezonowość słów kluczowych?</Link>
-									</h2>
-									<div className={styles.details}>
-										<p className={styles.release}>12-10-2023</p>
-										<Link className={styles.category} href="#">
-											Programowanie
+								<div className={styles.topics}>
+									<h3 className={styles.title}>{props.submenuTitle.topics}</h3>
+									<ul className={styles.items}>
+										{props.submenu
+											.flatMap((item, index) =>
+												item.submenu ? [...item.submenu] : []
+											)
+											.filter(Boolean)
+											.map((item, index) => {
+												return (
+													<Item
+														label={item.label}
+														key={index}
+														theme="submenu"
+														uri={item.uri}
+													/>
+												);
+											})}
+									</ul>
+								</div>
+								<div className={styles.article}>
+									<div className={styles.image}>
+										<Link href="#">
+											<figure>
+												<Image
+													alt=""
+													fill
+													src="https://images.unsplash.com/photo-1699019950419-ffe12ae956c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+													style={{
+														objectFit: "cover",
+														objectPosition: "center",
+													}}
+												/>
+											</figure>
 										</Link>
-										<p className={styles.author}>Radosław Adamczyk</p>
+									</div>
+									<div className={styles.content}>
+										<h2 className={styles.title}>
+											<Link href="#">
+												Czym jest sezonowość słów kluczowych?
+											</Link>
+										</h2>
+										<div className={styles.details}>
+											<p className={styles.release}>12-10-2023</p>
+											<Link className={styles.category} href="#">
+												Programowanie
+											</Link>
+											<p className={styles.author}>Radosław Adamczyk</p>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
+						</motion.div>
+					</AnimatePresence>
 				)}
 			</li>
 		</>
@@ -136,7 +146,11 @@ function Mobile(props: tBigSubmenu) {
 			/>
 			{isOpenSubmenu && (
 				<AnimatePresence>
-					<ul>
+					<motion.ul
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+					>
 						{props.submenu?.map((item, index) => {
 							if (item.submenu) {
 								return (
@@ -152,7 +166,11 @@ function Mobile(props: tBigSubmenu) {
 										/>
 										{openSubmenus[item.label] && (
 											<AnimatePresence>
-												<ul>
+												<motion.ul
+													initial={{ opacity: 0 }}
+													animate={{ opacity: 1 }}
+													exit={{ opacity: 0 }}
+												>
 													{item.submenu?.map((item, index) => {
 														return (
 															<Item
@@ -163,7 +181,7 @@ function Mobile(props: tBigSubmenu) {
 															/>
 														);
 													})}
-												</ul>
+												</motion.ul>
 											</AnimatePresence>
 										)}
 									</li>
@@ -176,7 +194,7 @@ function Mobile(props: tBigSubmenu) {
 								);
 							}
 						})}
-					</ul>
+					</motion.ul>
 				</AnimatePresence>
 			)}
 		</li>
