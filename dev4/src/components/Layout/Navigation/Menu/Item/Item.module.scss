@@ -13,7 +13,6 @@
 		@include flex(center, center);
 		color: $white;
 		transition: 0.12s linear color;
-		&:focus-within,
 		&:hover {
 			color: $school-bus-yellow;
 		}
@@ -37,7 +36,6 @@
 			transition: 0.2s linear height, 0.12s linear width;
 			z-index: -1;
 		}
-		&:focus-within,
 		&:hover {
 			&::before {
 				width: 100%;
@@ -64,7 +62,6 @@
 		@include font(2.2rem, 500);
 		color: rgba($platinum, 0.7);
 		transition: 0.15s ease-in-out color;
-		&:focus-within,
 		&:hover {
 			color: $platinum;
 		}
@@ -84,8 +81,8 @@
 				&::before {
 					border-radius: 0;
 					height: 2px;
-					width: 1%;
-					background-color: $electric-indigo;
+					width: 0%;
+					background-color: $school-bus-yellow;
 				}
 				&:focus-within,
 				&:hover {
@@ -116,7 +113,41 @@
 				transition: 0.15s ease-in-out color;
 				&:focus-within,
 				&:hover {
-					color: $platinum;
+					color: $white;
+				}
+			}
+		}
+	}
+	@media (min-width: 1520px) {
+		.expand[data-level="1"],
+		.regural {
+			column-gap: 0rem;
+			& > a {
+				font-size: 2rem;
+			}
+			& > button {
+				@include size(2.75rem, 2.75rem);
+				font-size: 2.6rem;
+			}
+		}
+
+		.expand[data-level="2"] {
+			column-gap: 0.55rem;
+			& > button {
+				@include size(2rem, 2rem);
+				font-size: 1.7rem;
+			}
+		}
+
+		.expand[data-level="2"],
+		.submenu {
+			& > a {
+				@include font(1.5rem, 500);
+				color: rgba($platinum, 0.7);
+				transition: 0.15s ease-in-out color;
+				&:focus-within,
+				&:hover {
+					color: $white;
 				}
 			}
 		}

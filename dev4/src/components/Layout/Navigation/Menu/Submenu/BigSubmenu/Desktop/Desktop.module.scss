@@ -46,11 +46,16 @@
 		& > .image {
 			grid-column: 1/5;
 			& > a {
+				border-radius: 0.85rem;
+				display: block;
+				overflow: hidden;
+				&,
 				& > figure {
 					@include size(100%, 100%);
-					border-radius: 0.85rem;
-					overflow: hidden;
+				}
+				& > figure {
 					position: relative;
+					transition: 0.12s linear transform;
 				}
 			}
 		}
@@ -60,10 +65,8 @@
 			padding: 0.95rem;
 			& > .title {
 				@include font(3.2rem, 700, 1.2, null, null, start);
-				transition: 0.12s linear color;
-				&:focus-within,
-				&:hover {
-					color: $steel-pink;
+				& > a {
+					transition: 0.12s linear color;
 				}
 			}
 			& > .details {
@@ -71,15 +74,27 @@
 				& > * {
 					@include font(1.85rem, 300, 1, null, null, start);
 					color: $platinum;
+					cursor: default;
+				}
+				& > *:not(.release) {
+					cursor: pointer;
 					transition: 0.12s linear color;
+					&:focus-within,
+					&:hover {
+						color: $white;
+					}
 				}
 				& > .category {
 					font-weight: 700;
-					&:focus-within,
-					&:hover {
-						color: $platinum-light;
-					}
 				}
+			}
+		}
+		&:hover {
+			& > .image > a > figure {
+				transform: scale(1.22);
+			}
+			& > .content > .title > a {
+				color: $steel-pink;
 			}
 		}
 	}
@@ -129,10 +144,8 @@
 						font-size: 4.1rem;
 					}
 					& > .details {
-						margin-top: 1rem;
-						display: grid;
-						grid-template-columns: repeat(2, 1fr);
-						row-gap: 1.2rem;
+						margin-top: 0.2rem;
+						row-gap: 1rem;
 						& > * {
 							font-size: 1.87rem;
 							text-align: center;
@@ -140,7 +153,6 @@
 						& > .author {
 							grid-column: 1/-1;
 							text-align: start;
-							margin-top: 2rem;
 						}
 					}
 				}
@@ -165,13 +177,29 @@
 						font-size: 4.1rem;
 					}
 					& > .details {
-						margin-top: 2.2rem;
 						row-gap: 1.2rem;
 						& > * {
 							font-size: 2.2rem;
 						}
-						& > .author {
-							margin-top: 1rem;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: 1850px) {
+		.container {
+			padding: 4rem 11rem 5rem 11rem;
+			& > .article {
+				& > .content {
+					padding: 2rem;
+					& > .title {
+						font-size: 3.7rem;
+						line-height: 0.9;
+					}
+					& > .details {
+						margin-top: 2rem;
+						& > * {
+							font-size: 2.2rem;
 						}
 					}
 				}
