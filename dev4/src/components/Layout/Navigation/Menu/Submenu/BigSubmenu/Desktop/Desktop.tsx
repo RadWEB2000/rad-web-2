@@ -12,7 +12,7 @@ export default function Desktop(props: tBigSubmenu) {
 
 	return (
 		<>
-			<li className={styles.wrapper}>
+			<li className={styles.desktop}>
 				<Item
 					handleSubmenu={() => setIsOpenSubmenu(!isOpenSubmenu)}
 					label={props.label}
@@ -24,13 +24,12 @@ export default function Desktop(props: tBigSubmenu) {
 				{isOpenSubmenu && (
 					<AnimatePresence>
 						<motion.div
-							className={styles.container}
 							onMouseLeave={() => setIsOpenSubmenu(false)}
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
 						>
-							<div className={styles.desktop__menu}>
+							<div className={styles.container}>
 								<div className={styles.categories}>
 									<h3 className={styles.title}>
 										{props.submenuTitle.categories}
