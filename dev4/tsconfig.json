@@ -36,6 +36,7 @@
 			"lib/*": ["./src/lib/*"],
 			"pages/*": ["./src/components/Pages/*"],
 			"utils/*": ["./src/components/Utils/*"],
+			"u_buttons/*": ["./src/components/Utils/Buttons/*"],
 			"ts/*": ["./src/ts/*"]
 		}
 	},
