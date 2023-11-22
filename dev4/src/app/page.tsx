@@ -14,6 +14,11 @@ export default function HomePage() {
 						uri: "#",
 					},
 				]}
+				image={{
+					altText: "RadWEB Work",
+					sourceUrl: "/giphy.gif",
+					title: "RadWEB Promoted Video",
+				}}
 				slogan="Odkryj internet<br/>na nowo"
 				title="Rad<br/>WEB"
 			/>
