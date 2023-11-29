@@ -1,0 +1,113 @@
+@mixin flex(
+	$align,
+	$justify,
+	$flow: null,
+	$columnGap: null,
+	$rowGap: null,
+	$shrink: false
+) {
+	align-items: $align;
+	display: flex;
+	justify-content: $justify;
+	@if $columnGap != null {
+		column-gap: $columnGap;
+	}
+	@if $flow != null {
+		flex-flow: $flow;
+	}
+	@if $rowGap != null {
+		row-gap: $rowGap;
+	}
+	@if $shrink != false {
+		& > * {
+			flex-shrink: 0;
+		}
+	}
+}
+
+@mixin font(
+	$size,
+	$weight: 400,
+	$lineHeight: null,
+	$textTransform: null,
+	$letterSpacing: null,
+	$align: null,
+	$color: null,
+	$shadow: null
+) {
+	font-size: $size;
+	font-weight: $weight;
+	@if $lineHeight != null {
+		line-height: $lineHeight;
+	}
+	@if $textTransform != null {
+		text-transform: $textTransform;
+	}
+	@if $letterSpacing != null {
+		letter-spacing: $letterSpacing;
+	}
+	@if $align != null {
+		text-align: $align;
+	}
+	@if $color != null {
+		color: $color;
+	}
+	@if $shadow != null {
+		text-shadow: $shadow;
+	}
+}
+
+@mixin positioning(
+	$top: null,
+	$right: null,
+	$bottom: null,
+	$left: null,
+	$translateY: null,
+	$translateX: null,
+	$rotate: null,
+	$zIndex: null,
+	$position: null
+) {
+	@if $top!=null {
+		top: $top;
+	}
+	@if $right!=null {
+		right: $right;
+	}
+	@if $bottom!=null {
+		bottom: $bottom;
+	}
+	@if $left!=null {
+		left: $left;
+	}
+	@if $translateX != null {
+		transform: translateX($translateX);
+	}
+	@if $translateY != null {
+		transform: translateY($translateY);
+	}
+	@if $rotate != null {
+		transform: rotate($rotate);
+	}
+	@if $translateX != null && $translateY != null {
+		transform: translate($translateX, $translateY);
+	}
+	@if $translateX != null && $translateY != null && $rotate != null {
+		transform: translate($translateX, $translateY) rotate($rotate);
+	}
+	@if $zIndex != null {
+		z-index: $zIndex;
+	}
+	@if $position != null {
+		position: $position;
+	}
+}
+
+@mixin size($height: null, $width: null) {
+	@if $height != null {
+		height: $height;
+	}
+	@if $width != null {
+		width: $width;
+	}
+}
