@@ -1,6 +1,7 @@
 import 'css/Global.scss';
 import 'css/Variables.css';
 
+import Navigation from 'layout/Navigation';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -18,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl">
-      <body className={inter.className} >{children}</body>
+      <body className={inter.className}>
+        <Navigation/>
+        {children}
+      </body>
     </html>
   )
 }
