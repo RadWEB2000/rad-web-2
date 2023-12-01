@@ -10,8 +10,7 @@
 .container {
     @include flex(flex-start, center, column, 1rem);
     @include size(95%, clamp(10rem, 1300rem, 95%));
-    color: #fff;
-    // background: lime;
+    color: $white;
     margin: auto;
     padding: 0 1rem;
 }
@@ -27,7 +26,6 @@
 }
 .slogan {
     @include font(clamp(3.15rem, 7dvw, 9rem), 900, 1, null, -0.2rem, start);
-    // @include font(9rem, 900, 1, null, -0.5rem, start);
 }
 
 .buttons {

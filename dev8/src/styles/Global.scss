@@ -38,8 +38,10 @@ button {
 }
 
 body {
-    background-attachment: fixed;
-    background: #070708;
+    @include backgroundCover();
+    background-color: $black;
+    background-image: linear-gradient(to bottom, #010101, #000);
+
     font-size: 1.6rem;
     transition: 0.2s linear all;
     padding-bottom: 6rem;
