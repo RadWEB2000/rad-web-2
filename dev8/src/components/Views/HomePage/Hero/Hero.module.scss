@@ -31,3 +31,12 @@
 .buttons {
     @include flex(center, flex-start, row wrap, 1rem, 1rem);
 }
+
+@media only screen and (orientation: landscape) and (max-width: 1050px) {
+    .title {
+        font-size: clamp(5rem, 8dvw, 12rem);
+    }
+    .slogan {
+        font-size: clamp(3.15rem, 5dvw, 9rem);
+    }
+}
