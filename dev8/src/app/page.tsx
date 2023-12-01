@@ -1,33 +1,24 @@
-import backgroundImage from 'assets/hero_background.webp';
-import layerImage from 'assets/hero_rocks.webp';
+import background from 'assets/abstract.webp';
 import Hero from 'views/HomePage/Hero';
 
 export default function HomePage(){
   return(
     <>
       <Hero
-        background={{
-          altText:"",
-          sourceUrl:backgroundImage,
-          title:""
-        }}
+        background={background.src}
         content={{
-          slogan:"Odkryj z nami<br/>internet",
           title:"RadWEB",
+          slogan:"Odkryj z nami<br/> internet",
           buttons:[
             {
-                label:"Blog",
-                uri:"#"
+              label:"Blog",
+              uri:"#"
             },
             {
-              label:"Kontakt", uri:"#"
-            }
+              label:"Kontakt",
+              uri:"#"
+            },
           ]
-        }}
-        layer={{
-          altText:"",
-          sourceUrl:layerImage,
-          title:""
         }}
       />
       <div>

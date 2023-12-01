@@ -2,66 +2,34 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-    background: lime;
-    min-height: 95vh;
-    width: 100%;
-    position: relative;
+    @include backgroundCover;
+    @include size(101dvh, 100%);
     display: grid;
-    grid-template-areas: "stack";
+    grid-template-areas: "layer";
 }
-
-.background,
-.container,
-.layer {
-    grid-area: stack;
-    //   @include size(100%, 100%);
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-}
-
-.background,
 .container {
-    & > figure {
-        height: 100%;
-        width: 100%;
-        position: relative;
-    }
+    @include flex(flex-start, center, column, 1rem);
+    @include size(95%, clamp(10rem, 1300rem, 95%));
+    color: #fff;
+    // background: lime;
+    margin: auto;
+    padding: 0 1rem;
 }
 
-.background {
-    transition: 0.2s linear transform;
-    z-index: 0;
+.slogan,
+.title {
+    text-shadow: 1rem 1rem 3rem hsla(0, 100%, 0, 0.6);
+    width: 100%;
 }
 
-.container {
-    z-index: 1;
-    position: relative;
-    & > header {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        padding: 2rem 5rem;
-        width: 100%;
-        position: sticky;
-        top: 150px;
-        background: orangered;
-        & > * {
-            background: purple;
-            grid-column: 2/7;
-        }
-        & > .title {
-            @include font(
-                clamp(4rem, 6rem + 7vw, 130rem),
-                800,
-                0.8,
-                null,
-                null,
-                start
-            );
-        }
-    }
+.title {
+    @include font(clamp(5rem, 23dvw, 20rem), 900, 1, null, -1rem, start);
+}
+.slogan {
+    @include font(clamp(3.15rem, 7dvw, 9rem), 900, 1, null, -0.2rem, start);
+    // @include font(9rem, 900, 1, null, -0.5rem, start);
 }
 
-.layer {
-    z-index: 2;
+.buttons {
+    @include flex(center, flex-start, row wrap, 1rem, 1rem);
 }

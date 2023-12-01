@@ -1,50 +1,86 @@
+@mixin backgroundCover() {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 @mixin flex(
-  $align,
-  $justify,
-  $flow: null,
-  $columnGap: null,
-  $rowGap: null,
-  $shrink: false
+    $align,
+    $justify,
+    $flow: null,
+    $columnGap: null,
+    $rowGap: null,
+    $shrink: false
 ) {
-  align-items: $align;
-  display: flex;
-  justify-content: $justify;
-  @if $columnGap != null {
-    column-gap: $columnGap;
-  }
-  @if $flow != null {
-    flex-flow: $flow;
-  }
-  @if $rowGap != null {
-    row-gap: $rowGap;
-  }
-  @if $shrink != false {
-    & > * {
-      flex-shrink: 0;
+    align-items: $align;
+    display: flex;
+    justify-content: $justify;
+    @if $columnGap != null {
+        column-gap: $columnGap;
     }
-  }
+    @if $flow != null {
+        flex-flow: $flow;
+    }
+    @if $rowGap != null {
+        row-gap: $rowGap;
+    }
+    @if $shrink != false {
+        & > * {
+            flex-shrink: 0;
+        }
+    }
 }
 
 @mixin font(
-  $size,
-  $weight: 400,
-  $lineHeight: null,
-  $textTransform: null,
-  $letterSpacing: null,
-  $align: null
+    $size,
+    $weight: 400,
+    $lineHeight: null,
+    $textTransform: null,
+    $letterSpacing: null,
+    $align: null
 ) {
-  font-size: $size;
-  font-weight: $weight;
-  @if $lineHeight != null {
-    line-height: $lineHeight;
-  }
-  @if $textTransform != null {
-    text-transform: $textTransform;
-  }
-  @if $letterSpacing != null {
-    letter-spacing: $letterSpacing;
-  }
-  @if $align != null {
-    text-align: $align;
-  }
+    font-size: $size;
+    font-weight: $weight;
+    @if $lineHeight != null {
+        line-height: $lineHeight;
+    }
+    @if $textTransform != null {
+        text-transform: $textTransform;
+    }
+    @if $letterSpacing != null {
+        letter-spacing: $letterSpacing;
+    }
+    @if $align != null {
+        text-align: $align;
+    }
+}
+
+@mixin size($height: null, $width: null) {
+    @if $height != null {
+        height: $height;
+    }
+    @if $width != null {
+        width: $width;
+    }
+}
+
+@mixin grid($area: null, $autoFlow: null, $columns: null, $row: null) {
+    display: grid;
+
+    @if $area != null {
+        grid-template-areas: $area;
+    }
+
+    @if $autoFlow != null {
+        grid-auto-flow: $autoFlow;
+    }
+
+    @if $columns != null {
+        grid-template-columns: $columns;
+    }
+
+    @if $row != null {
+        grid-template-rows: $rows;
+    }
 }
