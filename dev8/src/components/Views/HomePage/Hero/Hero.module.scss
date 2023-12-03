@@ -3,10 +3,30 @@
 
 .wrapper {
     @include backgroundCover;
-    @include size(101dvh, 100%);
+    @include size(100vh, 100%);
     display: grid;
     grid-template-areas: "layer";
+    z-index: 0;
+    & > * {
+        grid-area: layer;
+    }
 }
+
+.buttons {
+    margin-top: 1rem;
+}
+
+.movie {
+    @include size(100%, 100%);
+    position: relative;
+    z-index: -1;
+    & > video {
+        @include size(100%, 100%);
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
 .container {
     @include flex(flex-start, center, column, 1rem);
     @include size(95%, clamp(10rem, 1300rem, 95%));
@@ -17,15 +37,15 @@
 
 .slogan,
 .title {
-    text-shadow: 1rem 1rem 3rem hsla(0, 100%, 0, 0.6);
+    text-shadow: 1rem 1rem 2.12rem hsla(0, 100%, 0, 0.6);
     width: 100%;
 }
 
 .title {
-    @include font(clamp(5rem, 23dvw, 20rem), 900, 1, null, -1rem, start);
+    @include font(clamp(5rem, 17rem, 20rem), 900, 1, null, -1rem, start);
 }
 .slogan {
-    @include font(clamp(3.15rem, 7dvw, 9rem), 900, 1, null, -0.2rem, start);
+    @include font(clamp(3.15rem, 7rem, 9rem), 900, 0.95, null, -0.2rem, start);
 }
 
 .buttons {

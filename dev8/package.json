@@ -9,7 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/date-fns": "^2.6.0",
+    "@types/file-loader": "^5.0.4",
+    "@types/react-icons": "^3.0.0",
+    "@types/sass": "^1.45.0",
     "date-fns": "^2.30.0",
+    "file-loader": "^6.2.0",
     "framer-motion": "^10.16.7",
     "next": "14.0.3",
     "react": "^18",
