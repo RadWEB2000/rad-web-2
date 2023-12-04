@@ -1,5 +1,6 @@
-import HeroButton from "utils/Buttons/HeroButton";
-import styles from "views/HomePage/Hero/Hero.module.scss";
+import HeroButton from 'utils/Buttons/HeroButton';
+import styles from 'v_home/Hero/Hero.module.scss';
+
 type tHero = {
     background?: string;
     content: {

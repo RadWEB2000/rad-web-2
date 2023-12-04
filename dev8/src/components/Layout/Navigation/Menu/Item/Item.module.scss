@@ -1,0 +1,27 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.expand,
+.regural {
+    height: 3.75rem;
+    & > a {
+        @include flex(center, flex-start);
+        @include font(1.92rem, 700, 1, null, null, center);
+        height: 100%;
+    }
+}
+
+.expand {
+    @include flex(center, flex-start);
+    & > button {
+        @include size(3.75rem, 3.75rem);
+        font-size: 2rem;
+    }
+}
+
+.submenu {
+    & > a {
+        @include flex(center, flex-start);
+        @include font(1.8rem, 500, 1, null, null, center);
+    }
+}

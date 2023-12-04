@@ -39,9 +39,10 @@ button {
 
 body {
     @include backgroundCover();
-    background-color: $black;
-    background-image: linear-gradient(to bottom, #010101, #000);
-
+    // background-color: $black;
+    // background-image: linear-gradient(to bottom, #010101, #000);
+    // color: #878686;
+    color: #000;
     font-size: 1.6rem;
     transition: 0.2s linear all;
     padding-bottom: 6rem;

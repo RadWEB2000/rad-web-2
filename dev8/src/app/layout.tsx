@@ -1,6 +1,8 @@
 import 'css/Global.scss';
 import 'css/Variables.css';
 
+import LayoutProvider from 'context/LayoutContext';
+import { navigation } from 'data/navigation';
 import Navigation from 'layout/Navigation';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -19,10 +21,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl">
+      <LayoutProvider>
       <body className={inter.className}>
-        <Navigation/>
+        <Navigation
+          brand={navigation.brand}
+          menu={navigation.menu}
+        />
         {children}
       </body>
+      </LayoutProvider>
     </html>
   )
 }

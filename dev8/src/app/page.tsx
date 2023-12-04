@@ -1,9 +1,7 @@
-import Hero from "views/HomePage/Hero";
-
 export default function HomePage() {
     return (
         <>
-            <Hero
+            {/* <Hero
                 content={{
                     title: "RadWEB",
                     slogan: "Odkryj z nami<br/> internet",
@@ -18,11 +16,11 @@ export default function HomePage() {
                         },
                     ],
                 }}
-            />
+            /> */}
             <div>
-                <h1>home page</h1>
+                {/* <h1>home page</h1> */}
             </div>
-            <p>
+            {/* <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Adipisci eaque excepturi nam officia autem earum repudiandae ab,
                 facere, unde rem possimus! Ipsum perferendis ducimus possimus id
@@ -582,7 +580,7 @@ export default function HomePage() {
                 consequatur assumenda tempore rerum, similique accusantium
                 tempora, reiciendis exercitationem, ipsum non modi molestiae.
                 Quisquam error eum veritatis harum, dolorum omnis.
-            </p>
+            </p> */}
         </>
     );
 }
