@@ -1,0 +1,26 @@
+@import "../../../styles/Mixins.scss";
+@import "../../../styles/Variables.scss";
+
+.wrapper {
+    @include grid(null, null, repeat(12, 1fr), null);
+    width: 100%;
+    position: fixed;
+    background: green;
+    top: 0;
+    left: 0;
+}
+
+.brand {
+    grid-row: 1;
+    grid-column: 1/8;
+}
+
+.settings {
+    grid-row: 1;
+    grid-column: 8/-1;
+}
+
+.menu {
+    grid-column: 1/-1;
+    grid-row: 2;
+}

@@ -1,5 +1,10 @@
+"use client"
+import { useContext } from 'react';
+
+import { LayoutContext } from 'context/LayoutContext';
 import Brand from 'l_nav/Brand';
 import Menu from 'l_nav/Menu';
+import styles from 'l_nav/Navigation.module.scss';
 import MenuButton from 'utils/Buttons/MenuButton';
 
 type tNavigation = {
@@ -21,29 +26,25 @@ type tNavigation = {
     }[]
 }
 
-export default async function Navigation(props:tNavigation) {
+export default  function Navigation(props:tNavigation) {
+    const {menu:{isOpen}} = useContext(LayoutContext);
     return (
-        <>
             <nav
-                style={{
-                    backgroundColor: "hsla(0,100%,0%,.28)",
-                    position: "fixed",
-                    top: "0",
-                    left: "0",
-                    width: "100%",
-                    height: "5rem",
-                    zIndex: 999,
-                }}
+                className={styles.wrapper}
+                data-open={isOpen}
             >   
+                <div className={styles.brand}>
                 <Brand
                     label={props.brand.label}
                     uri={props.brand.uri}
                 />
+                </div>
+                <div className={styles.menu}>
                 <Menu
                     menu={props.menu}
                 />
-                <MenuButton/>
+                </div>
+                <div className={styles.setting}><MenuButton/></div>
             </nav>
-        </>
     );
 }
