@@ -2,8 +2,9 @@
 import { useState } from 'react';
 
 import Item from 'l_nav/Menu/Item';
+import styles from 'l_nav/Menu/Submenu/Submenu.module.scss';
 
-import Dropdown from './Dropdown/Dropdown';
+import Dropdown from './Dropdown';
 
 type tSubmenu = {
     label:string;
@@ -21,7 +22,7 @@ type tSubmenu = {
 export default function Submenu(props:tSubmenu){
     const [isOpenSubmenu,setIsOpenSubmenu] = useState(false);
     return(
-        <li>
+        <li className={styles.wrapper} onMouseLeave={() => setIsOpenSubmenu(false)}>
             <Item
                 handleToggleOpen={() => setIsOpenSubmenu(!isOpenSubmenu)}
                 label={props.label}
@@ -45,6 +46,7 @@ export default function Submenu(props:tSubmenu){
                         }else{
                             return (
                                 <Item
+                                    closeSubmenu={() => setIsOpenSubmenu(false)}
                                     key={index}
                                     label={item.label}
                                     uri={item.uri}

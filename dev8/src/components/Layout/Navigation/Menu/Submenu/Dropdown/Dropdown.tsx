@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 import Item from 'l_nav/Menu/Item';
+import styles from 'l_nav/Menu/Submenu/Dropdown/Dropdown.module.scss';
 
 type tDropdown = {
     label:string;
@@ -16,7 +17,7 @@ export default function Dropdown(props:tDropdown){
     const [isOpenDropdown,setIsOpenDropdown] = useState(false);
 
     return(
-        <li>
+        <li className={styles.wrapper} onMouseLeave={() => setIsOpenDropdown(false)}>
         <Item
             handleToggleOpen={() => setIsOpenDropdown(!isOpenDropdown)}
             label={props.label}
@@ -30,6 +31,7 @@ export default function Dropdown(props:tDropdown){
                 {props.submenu.map((item,index) => {
                     return(
                         <Item
+                        closeDropdown={() => setIsOpenDropdown(false)}
                         key={index}
                         label={item.label}
                         uri={item.uri}

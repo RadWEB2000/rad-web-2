@@ -1,0 +1,23 @@
+@import '../../../../../styles/Mixins.scss';
+@import '../../../../../styles/Variables.scss';
+
+.expand {
+  color: white;
+  button {
+    color: pink;
+    font-size: 3rem;
+  }
+  //   background: red;
+}
+
+.regural {
+  //   background: blue;
+}
+
+.small {
+  background: purple;
+}
+
+.submenu {
+  background: green;
+}

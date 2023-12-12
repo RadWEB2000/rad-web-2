@@ -1,0 +1,6 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include font(3rem, 700, 1, null, null, start);
+}

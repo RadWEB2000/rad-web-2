@@ -1,0 +1,12 @@
+@import '../../../../styles/Mixins.scss';
+@import '../../../../styles/Variables.scss';
+
+.wrapper {
+  @include flex(center, center);
+  @include font(1.65rem, 500, 1, null, -1.2px, center);
+  background-color: $dogwood-rose;
+  border-radius: 1rem;
+  height: 3.45rem;
+  color: $white;
+  padding: 0rem 1.1rem;
+}

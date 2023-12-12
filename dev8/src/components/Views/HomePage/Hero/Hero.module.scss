@@ -8,6 +8,7 @@
     grid-template-areas: "layer";
     z-index: 0;
     & > * {
+        @include size(100%, 100%);
         grid-area: layer;
     }
 }
@@ -17,7 +18,6 @@
 }
 
 .movie {
-    @include size(100%, 100%);
     position: relative;
     z-index: -1;
     & > video {
@@ -29,10 +29,9 @@
 
 .container {
     @include flex(flex-start, center, column, 1rem);
-    @include size(95%, clamp(10rem, 1300rem, 95%));
     color: $white;
     margin: auto;
-    padding: 0 1rem;
+    padding: 0 1.6rem;
 }
 
 .slogan,
@@ -42,10 +41,10 @@
 }
 
 .title {
-    @include font(clamp(5rem, 17rem, 20rem), 900, 1, null, -1rem, start);
+    @include font(clamp(5rem, 10rem, 17rem), 900, 1, null, -1rem, start);
 }
 .slogan {
-    @include font(clamp(3.15rem, 7rem, 9rem), 900, 0.95, null, -0.2rem, start);
+    @include font(clamp(3.5rem, 5rem, 11rem), 900, 0.95, null, -0.2rem, start);
 }
 
 .buttons {

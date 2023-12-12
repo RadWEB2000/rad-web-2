@@ -1,0 +1,23 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start, flex-start, column, null, 0.2rem);
+    @include size(100%, 100%);
+    overflow-y: scroll;
+    padding: 2rem;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+@media only screen {
+    @media (min-width: 650px) {
+        .wrapper {
+            @include flex(flex-start, flex-start, column, null, 0.4rem);
+            padding: 4rem 2rem;
+            margin: auto;
+            width: 75%;
+        }
+    }
+}

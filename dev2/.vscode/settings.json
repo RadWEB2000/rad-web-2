@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "reactSnippets.settings.prettierEnabled": true,
+  "eslint.validate": ["javascript", "javascript/react", "typescript", "typescript/react"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}

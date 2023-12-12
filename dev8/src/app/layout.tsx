@@ -1,5 +1,4 @@
 import 'css/Global.scss';
-import 'css/Variables.css';
 
 import LayoutProvider from 'context/LayoutContext';
 import { navigation } from 'data/navigation';

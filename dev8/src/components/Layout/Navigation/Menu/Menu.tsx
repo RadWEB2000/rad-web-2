@@ -1,4 +1,5 @@
 import Item from 'l_nav/Menu/Item';
+import styles from 'l_nav/Menu/Menu.module.scss';
 import Submenu from 'l_nav/Menu/Submenu';
 
 type tMenu = {
@@ -18,7 +19,7 @@ type tMenu = {
 
 export default function Menu(props:tMenu){
     return(
-        <menu>
+        <menu className={styles.wrapper}>
             {props.menu?.map((item,index) => {
                 if(item.submenu){
                     return(

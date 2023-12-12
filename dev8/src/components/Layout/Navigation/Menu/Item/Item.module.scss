@@ -2,26 +2,51 @@
 @import "../../../../../styles/Variables.scss";
 
 .expand,
-.regural {
-    height: 3.75rem;
-    & > a {
-        @include flex(center, flex-start);
-        @include font(1.92rem, 700, 1, null, null, center);
+.dropdown_expand {
+    @include flex(center, flex-start, row nowrap);
+    & > button {
+        @include flex(center, center);
+        aspect-ratio: 1/1;
+        color: $white;
         height: 100%;
     }
 }
 
-.expand {
-    @include flex(center, flex-start);
-    & > button {
-        @include size(3.75rem, 3.75rem);
-        font-size: 2rem;
+.submenu,
+.dropdown_expand,
+.dropdown_submenu {
+    @include flex(center, flex-start, row nowrap);
+    height: 2.8rem;
+    & > a {
+        @include font(2rem, 500, 1, null, null, start);
+        padding: 0rem 0.5rem;
     }
 }
 
-.submenu {
+.expand,
+.regural {
+    height: 3.6rem;
     & > a {
-        @include flex(center, flex-start);
-        @include font(1.8rem, 500, 1, null, null, center);
+        @include font(2.7rem, 500, 1, null, null, start);
+        padding: 0rem 0.75rem;
+    }
+}
+
+.expand {
+    & > button {
+        font-size: 3rem;
+    }
+}
+
+.regural {
+    &,
+    & > a {
+        @include flex(center, center);
+    }
+}
+
+.dropdown_expand {
+    & > button {
+        font-size: 2.5rem;
     }
 }

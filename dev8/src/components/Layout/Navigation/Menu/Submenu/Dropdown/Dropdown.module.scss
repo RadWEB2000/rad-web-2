@@ -1,0 +1,19 @@
+@import "../../../../../../styles/Mixins.scss";
+@import "../../../../../../styles/Variables.scss";
+
+.wrapper {
+    & > ul {
+        @include flex(flex-start, flex-start, column);
+        padding: 0.85rem 0 0.85rem 0.85rem;
+    }
+}
+@media only screen {
+    @media (min-width: 650px) {
+        .wrapper {
+            & > ul {
+                padding: 1.8rem 0 1.8rem 1.8rem;
+                row-gap: 0.65rem;
+            }
+        }
+    }
+}

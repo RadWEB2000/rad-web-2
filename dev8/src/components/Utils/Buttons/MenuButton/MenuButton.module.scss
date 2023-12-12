@@ -3,14 +3,13 @@
 
 .wrapper {
     @include flex(center, space-evenly, column);
-    @include size(3.8rem, 3.8rem);
-    background: red;
+    @include size(4.44rem, 4.44rem);
     position: relative;
     overflow: hidden;
 
     & > .line {
-        @include size(0.25rem, 100%);
-        background: #000;
+        @include size(0.3rem, 100%);
+        background-color: $white;
         border-radius: 0.7rem;
         transition: 0.12s linear transform;
     }

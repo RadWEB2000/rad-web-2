@@ -44,7 +44,7 @@ export default  function Navigation(props:tNavigation) {
                     menu={props.menu}
                 />
                 </div>
-                <div className={styles.setting}><MenuButton/></div>
+                <div className={styles.settings}><MenuButton/></div>
             </nav>
     );
 }

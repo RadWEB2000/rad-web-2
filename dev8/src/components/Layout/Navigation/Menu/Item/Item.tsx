@@ -1,9 +1,6 @@
 import styles from 'l_nav/Menu/Item/Item.module.scss';
+import getArrowDirectionExpand from 'lib/functions/getArrowDirectionExpand';
 import Link from 'next/link';
-import {
-  BiDownArrowAlt,
-  BiUpArrowAlt,
-} from 'react-icons/bi';
 
 type tItem = {
     label:string;
@@ -20,8 +17,10 @@ type tItem = {
     } | {
         theme:"regural"
     }| {
+        closeSubmenu:() => void;
         theme:"submenu"
     }| {
+        closeDropdown:() => void;
         theme:"dropdown-submenu"
     }
 )
@@ -34,26 +33,18 @@ export default function Item(props:tItem){
                 {props.label}
                 </Link>
                 <button onClick={props.handleToggleOpen}>
-                    {
-                        props.isExpand ?
-                        <BiUpArrowAlt /> : 
-                        <BiDownArrowAlt />
-                    }
+                    {getArrowDirectionExpand(props.isExpand)}
                 </button>
             </div>
         )
     }else if(props.theme === "dropdown-expand") {
         return(
-            <div className={styles.dropdown}>
+            <div className={styles.dropdown_expand}>
                 <Link href={props.uri}>
                 {props.label}
                 </Link>
                 <button onClick={props.handleToggleOpen}>
-                {
-                        props.isExpand ?
-                        <BiUpArrowAlt /> : 
-                        <BiDownArrowAlt />
-                    }
+                    {getArrowDirectionExpand(props.isExpand)}
                 </button>
             </div>
         )
@@ -67,7 +58,7 @@ export default function Item(props:tItem){
         )
     }else if(props.theme === "submenu"){
         return(
-            <li className={styles.submenu}>
+            <li className={styles.submenu} onClick={props.closeSubmenu}>
                 <Link href={props.uri}>
                     {props.label}
                 </Link>
@@ -75,7 +66,7 @@ export default function Item(props:tItem){
         )
     }else if(props.theme === "dropdown-submenu"){
         return(
-            <li className={styles.submenu}>
+            <li className={styles.dropdown_submenu} onClick={props.closeDropdown}>
                 <Link href={props.uri}>
                     {props.label}
                 </Link>

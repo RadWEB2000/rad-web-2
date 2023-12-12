@@ -84,3 +84,17 @@
         grid-template-rows: $rows;
     }
 }
+
+@mixin gridSize($area: null, $columns: null, $rows: null) {
+    @if $area != null {
+        grid-area: $area;
+    }
+
+    @if $columns != null {
+        grid-column: $columns;
+    }
+
+    @if $rows != null {
+        grid-row: $rows;
+    }
+}
