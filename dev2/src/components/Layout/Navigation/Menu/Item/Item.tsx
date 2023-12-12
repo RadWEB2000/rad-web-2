@@ -10,7 +10,7 @@ type tItem = {
         theme:"small"
     } |
     {
-        handleExpand?:() => void;
+        handleExpand:() => void;
         isExpand:boolean;
         theme:"expand"
     } |

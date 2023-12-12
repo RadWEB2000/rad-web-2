@@ -2,8 +2,9 @@
 @import '../../../../../styles/Variables.scss';
 
 .expand {
-  color: white;
+  color: white !important;
   button {
+    border: 2px solid pink;
     color: pink;
     font-size: 3rem;
   }
@@ -12,6 +13,7 @@
 
 .regural {
   //   background: blue;
+  color: aqua;
 }
 
 .small {

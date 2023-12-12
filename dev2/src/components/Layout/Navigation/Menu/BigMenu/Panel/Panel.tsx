@@ -1,17 +1,27 @@
 "use client";
 import { navigation } from "data/navigation";
 import { useState } from "react";
-import Link from "next/link";
 import Submenu from "l_nav/Menu/BigMenu/Panel/Submenu";
 import Item from "l_nav/Menu/Item";
 
+type tChangeSubmenuItems = {
+    label:string;
+        submenu:{
+            label:string;
+            uri:string;
+            submenu?:{
+                label:string;
+                uri:string;
+            }[]
+        }[]
+}
+
 export default function Panel(){
-     const [currentSubmenu,setCurrentSubmenu] = useState<string>("blog");
-   
+     const [currentSubmenu,setCurrentSubmenu] = useState<string>("");
 
     function changeSubmenuItems(filteredItem:string){
-        const data = navigation.menu.big.filter((item) => item.value.toLowerCase().includes(filteredItem.toLowerCase()));
-        return data[0];
+        const data:tChangeSubmenuItems = navigation.menu.big.filter((item) => item.value.toLowerCase().includes(filteredItem.toLowerCase()))[0];
+        return data;
     }
     return(
            <menu>
@@ -32,9 +42,9 @@ export default function Panel(){
                 if(item.submenu){
                     return(
                         <Item
-                            handle={() => changeSubmenuItems(item.value)}
-                            theme="expand"
+                            handleExpand={() => setCurrentSubmenu(item.value)}
                             isExpand={false}
+                            theme="expand"
                             label={item.label}
                             uri={item.uri}
                         />
