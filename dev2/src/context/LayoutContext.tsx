@@ -5,7 +5,7 @@ import {
   createContext,
   useState,
 } from 'react';
-
+import { tBigMenu as tBigMenuData} from "ts/types";
 type tLayoutContext = {
     menu : {
         isOpen:boolean;
@@ -16,6 +16,9 @@ type tLayoutContext = {
 
 type tLayoutProvider = {
     children:React.ReactNode;
+    menu:{
+        big:tBigMenuData[];
+     };
 }
 
 export const LayoutContext = createContext<tLayoutContext>({
@@ -38,7 +41,9 @@ export default function LayoutProvider(props:tLayoutProvider){
                 }
             }}
         >
-            <Navigation/>
+            <Navigation menu={{
+                big:props.menu.big
+            }} />
             {props.children}
         </LayoutContext.Provider>
     )

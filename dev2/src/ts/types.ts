@@ -26,15 +26,19 @@ export type tBigMenu = {
   label: string;
   value: string;
   uri: string;
-  submenu?: {
-    label: string;
-    value?: string;
-    uri: string;
-    submenu?: {
-      label: string;
-      uri: string;
-    }[];
-  }[];
+  submenu?:
+    | {
+        label: string;
+        value?: string;
+        uri: string;
+        submenu?:
+          | {
+              label: string;
+              uri: string;
+            }[]
+          | null;
+      }[]
+    | null;
 };
 
 export type tDesktopMenu = {

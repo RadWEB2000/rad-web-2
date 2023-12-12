@@ -1,8 +1,8 @@
 import 'css/Global.scss';
-
 import LayoutProvider from 'context/LayoutContext';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { navigation } from 'data/navigation';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <LayoutProvider>
+      <LayoutProvider
+        menu={{
+          big:navigation.menu.big
+        }}
+      >
       <body className={inter.className}>
         {children}
       </body>

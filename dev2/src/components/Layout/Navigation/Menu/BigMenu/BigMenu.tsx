@@ -1,8 +1,11 @@
 
 import Panel from "./Panel";
+import { tBigMenu as tBigMenuData} from "ts/types";
+type tBigMenu = {
+    menu:tBigMenuData[];
+}
 
-
-export default function BigMenu(){
+export default function BigMenu(props:tBigMenu){
     return(
         <div
             style={{
@@ -10,7 +13,9 @@ export default function BigMenu(){
             }}
         >
         <menu>
-            <Panel/>
+            <Panel
+                menu={props.menu}
+            />
         </menu>
         <div></div>
         <ul></ul>
