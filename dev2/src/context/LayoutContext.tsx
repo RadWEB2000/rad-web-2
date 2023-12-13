@@ -1,11 +1,10 @@
 "use client";
 
-import Navigation from 'layout/Navigation';
 import {
   createContext,
   useState,
 } from 'react';
-import { tBigMenu as tBigMenuData} from "ts/types";
+import { tBigMenu as tBigMenuData, tSocial} from "ts/types";
 type tLayoutContext = {
     menu : {
         isOpen:boolean;
@@ -16,9 +15,7 @@ type tLayoutContext = {
 
 type tLayoutProvider = {
     children:React.ReactNode;
-    menu:{
-        big:tBigMenuData[];
-     };
+    
 }
 
 export const LayoutContext = createContext<tLayoutContext>({
@@ -41,9 +38,7 @@ export default function LayoutProvider(props:tLayoutProvider){
                 }
             }}
         >
-            <Navigation menu={{
-                big:props.menu.big
-            }} />
+           
             {props.children}
         </LayoutContext.Provider>
     )

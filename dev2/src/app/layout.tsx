@@ -3,6 +3,7 @@ import LayoutProvider from 'context/LayoutContext';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { navigation } from 'data/navigation';
+import Navigation from 'layout/Navigation';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,11 +20,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <LayoutProvider
-        menu={{
-          big:navigation.menu.big
-        }}
       >
       <body className={inter.className}>
+        <Navigation 
+                brand={navigation.brand}
+                menu={{
+                    big:navigation.menu.big,
+                    small:navigation.menu.small.items
+                }} 
+                socials={navigation.socials}
+                settings={{
+                    menuButton:navigation.settings.menuButton
+                }}
+            />
         {children}
       </body>
       </LayoutProvider>

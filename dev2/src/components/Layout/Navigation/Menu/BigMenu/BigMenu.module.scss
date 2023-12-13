@@ -1,0 +1,29 @@
+@import '../../../../../styles/Mixins.scss';
+@import '../../../../../styles/Variables.scss';
+
+.wrapper {
+  @include size(100%, 100%);
+  // background: purple;
+  padding: 2rem;
+  @include grid(null, null, repeat(3, 1fr), null, null, 0.8rem);
+}
+
+.menu {
+  background: green;
+  grid-column: 1/-1;
+  grid-row: 1;
+}
+
+.articles {
+  background: blue;
+  display: none;
+  figure {
+    display: none;
+  }
+}
+
+.socials {
+  background: salmon;
+  grid-column: 1/-1;
+  grid-row: 2;
+}

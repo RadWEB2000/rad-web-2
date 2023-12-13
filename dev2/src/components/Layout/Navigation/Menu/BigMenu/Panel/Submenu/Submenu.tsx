@@ -23,7 +23,8 @@ type tSubmenu = {
 
 export default function Submenu(props: tSubmenu) {
   console.log(props.menu);
-  const [isOpenDropdown, setIsOpenDropdown] = useState(false);
+  const [isOpenDropdown, setIsOpenDropdown] = useState<{ [key: string]: boolean }>({});
+ 
   return (
     <div>
       <button
@@ -37,15 +38,15 @@ export default function Submenu(props: tSubmenu) {
         props.menu.submenu.map((item, index) => {
           if (item.submenu) {
             return (
-              <li key={index}>
+              <li key={index} onMouseLeave={() => setIsOpenDropdown((prev) => ({...prev,[item.label] : false}))} >
                 <Item
-                  handleExpand={() => setIsOpenDropdown(!isOpenDropdown)}
+                  handleExpand={() => setIsOpenDropdown((prev) => ({...prev,[item.label] : !prev[item.label]}))}
                   theme="expand"
-                  isExpand={isOpenDropdown}
+                  isExpand={isOpenDropdown[item.label]}
                   label={item.label}
                   uri={item.uri}
                 />
-                {isOpenDropdown && (
+                {isOpenDropdown[item.label] && (
                   <AnimatePresence>
                     <ul>
                       {item.submenu.map((item, index) => {

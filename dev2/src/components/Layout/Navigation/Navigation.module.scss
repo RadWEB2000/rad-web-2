@@ -1,0 +1,43 @@
+@import '../../../styles/Mixins.scss';
+@import '../../../styles/Variables.scss';
+
+.wrapper {
+  @include flex(flex-start, flex-start, column);
+  @include size(clamp(6.5rem, 7.15rem, auto), 100%);
+  position: fixed;
+  background: blue;
+  overflow: hidden;
+  top: 0;
+  transition: 0.12s linear height;
+  left: 0;
+  z-index: 99;
+  & > * {
+    width: 100%;
+  }
+  &[data-expand='true'] {
+    & > .bottom {
+      transition: 0.12s linear height;
+      height: calc(100vh - 7.15rem);
+    }
+  }
+}
+
+.top {
+  //   background: green;
+  //   display: grid;
+  //   grid-template-columns: repeat(11, 1fr);
+  height: 7.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: row;
+  menu {
+    display: none;
+  }
+}
+
+.bottom {
+  background: red;
+  transition: 0.12s linear height;
+  height: 0;
+}
