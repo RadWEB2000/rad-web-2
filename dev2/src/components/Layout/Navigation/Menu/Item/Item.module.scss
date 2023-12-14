@@ -1,19 +1,56 @@
 @import '../../../../../styles/Mixins.scss';
 @import '../../../../../styles/Variables.scss';
 
+.expand,
+.regural {
+  @include flex(center, flex-start, row nowrap, 0.15rem, null, false);
+  @include size(6rem, 100%);
+  & > a {
+    @include flex(center, center);
+    @include font(4.75rem, 400, 1.2, uppercase, -2px, center);
+    color: #000;
+    padding: 0rem 2rem;
+    position: relative;
+    transition: 0.25s linear color;
+    &:focus-within,
+    &:hover {
+      color: #fff;
+      &::before {
+        width: 100%;
+      }
+    }
+    &::before {
+      @include size(2px, 0);
+      background-color: #fff;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      transition: 0.25s linear width;
+    }
+  }
+}
+
 .expand {
-  color: white !important;
-  button {
-    border: 2px solid pink;
-    color: pink;
-    font-size: 3rem;
+  & > button {
+    @include flex(center, center);
+    aspect-ratio: 1/1;
+    font-size: 4.15rem;
+    height: 100%;
+    & > * {
+      transition: 0.12s linear transform;
+    }
+    &:focus-within,
+    &:hover {
+      & > * {
+        transform: scale(1.2);
+      }
+    }
   }
   //   background: red;
 }
 
 .regural {
   //   background: blue;
-  color: aqua;
 }
 
 .small {
@@ -21,5 +58,10 @@
 }
 
 .submenu {
-  background: green;
+  @include flex(center, flex-start, row nowrap, 0.15rem, null, false);
+  height: 5.5rem;
+  & > a {
+    @include flex(center, center);
+    @include font(3.5rem, 400, 1.2, uppercase, -2px, center);
+  }
 }

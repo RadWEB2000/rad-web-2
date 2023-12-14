@@ -1,0 +1,33 @@
+@import '../../../../../../../styles/Mixins.scss';
+@import '../../../../../../../styles/Variables.scss';
+
+.wrapper {
+  & > .return {
+    @include flex(center, flex-start, row nowrap, 1rem);
+    @include font(4rem, 450, 1, uppercase, -2px, center);
+    margin: 0 0 0 auto;
+    padding: 1rem 1.7rem;
+    border-radius: 0.55dvh;
+    color: $dogwood-rose;
+    transition: 0.15s linear color;
+    &:focus-within,
+    &:hover {
+      color: $mexican-pink;
+    }
+  }
+  & > .title {
+    @include font(7rem, 700, 1, uppercase, -4.5px, start);
+  }
+
+  & > .menu {
+    @include flex(flex-start, flex-start, column, null, 0.45rem);
+    margin-top: 2rem;
+    & > li {
+      width: 100%;
+      & > ul {
+        @include flex(flex-start, flex-start, column, null, 0.25rem);
+        padding: 3rem;
+      }
+    }
+  }
+}

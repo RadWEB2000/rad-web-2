@@ -1,11 +1,9 @@
 import 'css/Global.scss';
 import LayoutProvider from 'context/LayoutContext';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { navigation } from 'data/navigation';
 import Navigation from 'layout/Navigation';
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <LayoutProvider
       >
-      <body className={inter.className}>
+      <body >
         <Navigation 
                 brand={navigation.brand}
                 menu={{

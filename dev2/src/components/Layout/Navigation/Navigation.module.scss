@@ -23,9 +23,6 @@
 }
 
 .top {
-  //   background: green;
-  //   display: grid;
-  //   grid-template-columns: repeat(11, 1fr);
   height: 7.15rem;
   display: flex;
   align-items: center;
@@ -37,7 +34,6 @@
 }
 
 .bottom {
-  background: red;
   transition: 0.12s linear height;
   height: 0;
 }

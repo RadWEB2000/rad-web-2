@@ -3,27 +3,24 @@
 
 .wrapper {
   @include size(100%, 100%);
-  // background: purple;
-  padding: 2rem;
-  @include grid(null, null, repeat(3, 1fr), null, null, 0.8rem);
+  @include grid(null, null, repeat(3, 1fr), calc(100% - 12rem) 12rem, null, 0.8rem);
+  padding: 4rem;
 }
 
 .menu {
-  background: green;
+  @include size(100%, 100%);
   grid-column: 1/-1;
   grid-row: 1;
 }
 
 .articles {
-  background: blue;
   display: none;
-  figure {
-    display: none;
-  }
 }
 
 .socials {
-  background: salmon;
+  @include flex(center, center);
   grid-column: 1/-1;
   grid-row: 2;
+  height: 6rem;
+  margin: auto 0;
 }

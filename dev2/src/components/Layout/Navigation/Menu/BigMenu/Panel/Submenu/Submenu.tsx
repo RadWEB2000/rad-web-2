@@ -2,6 +2,8 @@
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import Item from 'l_nav/Menu/Item';
+import styles from "l_nav/Menu/BigMenu/Panel/Submenu/Submenu.module.scss"
+import { AiOutlineRollback } from "react-icons/ai";
 
 type tSubmenu = {
   back: {
@@ -22,23 +24,24 @@ type tSubmenu = {
 };
 
 export default function Submenu(props: tSubmenu) {
-  console.log(props.menu);
   const [isOpenDropdown, setIsOpenDropdown] = useState<{ [key: string]: boolean }>({});
- 
   return (
-    <div>
-      <button
-        style={{ color: 'pink' }}
+    <div className={styles.wrapper}>
+      <button className={styles.return}
         onClick={props.back.handle}
       >
-        {props.back.label}
+        <span>
+          {props.back.label}
+        </span>
+        <i><AiOutlineRollback /></i>
       </button>
-      <h3>{props.menu.label}</h3>
+      <h3 className={styles.title}>{props.menu.label}</h3>
+      <ul  className={styles.menu}>
       {props.menu.submenu &&
         props.menu.submenu.map((item, index) => {
           if (item.submenu) {
             return (
-              <li key={index} onMouseLeave={() => setIsOpenDropdown((prev) => ({...prev,[item.label] : false}))} >
+              <li key={index}>
                 <Item
                   handleExpand={() => setIsOpenDropdown((prev) => ({...prev,[item.label] : !prev[item.label]}))}
                   theme="expand"
@@ -75,6 +78,7 @@ export default function Submenu(props: tSubmenu) {
             );
           }
         })}
+        </ul>
     </div>
   );
 }
