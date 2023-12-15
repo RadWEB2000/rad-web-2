@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Item from 'l_nav/Menu/Item';
 import styles from "l_nav/Menu/BigMenu/Panel/Submenu/Submenu.module.scss"
 import { AiOutlineRollback } from "react-icons/ai";
+import {motion} from "framer-motion";
 
 type tSubmenu = {
   back: {
@@ -35,8 +36,25 @@ export default function Submenu(props: tSubmenu) {
         </span>
         <i><AiOutlineRollback /></i>
       </button>
-      <h3 className={styles.title}>{props.menu.label}</h3>
-      <ul  className={styles.menu}>
+      <motion.h3 
+        className={styles.title}
+        animate={{
+          x:0
+        }}
+        initial={{
+          x:-200
+        }}
+      >
+        {props.menu.label}
+      </motion.h3>
+      <motion.ul  className={styles.menu}
+        animate={{
+          y:0
+        }}
+        initial={{
+          y:-40
+        }}
+      >
       {props.menu.submenu &&
         props.menu.submenu.map((item, index) => {
           if (item.submenu) {
@@ -78,7 +96,7 @@ export default function Submenu(props: tSubmenu) {
             );
           }
         })}
-        </ul>
+        </motion.ul>
     </div>
   );
 }

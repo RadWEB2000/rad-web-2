@@ -4,9 +4,10 @@
 .wrapper {
   & > .return {
     @include flex(center, flex-start, row nowrap, 1rem);
-    @include font(4rem, 450, 1, uppercase, -2px, center);
+    @include font(1.6rem, 450, null, uppercase, -2px, center);
+    background: white;
     margin: 0 0 0 auto;
-    padding: 1rem 1.7rem;
+    padding: 1rem;
     border-radius: 0.55dvh;
     color: $dogwood-rose;
     transition: 0.15s linear color;
@@ -16,17 +17,28 @@
     }
   }
   & > .title {
-    @include font(7rem, 700, 1, uppercase, -4.5px, start);
+    @include font(4rem, 800, 1, uppercase, -1.5px, start);
+    margin-top: 1rem;
   }
 
   & > .menu {
     @include flex(flex-start, flex-start, column, null, 0.45rem);
-    margin-top: 2rem;
+    margin-top: 1rem;
     & > li {
       width: 100%;
       & > ul {
         @include flex(flex-start, flex-start, column, null, 0.25rem);
-        padding: 3rem;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen {
+  @media (min-width: 400px) {
+    .wrapper {
+      & > .title {
+        font-size: 6.15rem;
       }
     }
   }

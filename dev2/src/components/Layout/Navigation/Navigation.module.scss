@@ -5,7 +5,7 @@
   @include flex(flex-start, flex-start, column);
   @include size(clamp(6.5rem, 7.15rem, auto), 100%);
   position: fixed;
-  background: blue;
+  background: aqua;
   overflow: hidden;
   top: 0;
   transition: 0.12s linear height;

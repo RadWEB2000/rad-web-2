@@ -10,12 +10,24 @@
   }
   & > .main {
     & > h3 {
-      @include font(7rem, 700, 1, uppercase, -4.5px, start);
+      @include font(4rem, 800, 1, uppercase, -1.5px, start);
     }
     & > div {
       @include flex(flex-start, flex-start, column, null, 0.45rem);
       margin-top: 2rem;
-      padding: 2rem;
+      padding: 1rem;
+    }
+  }
+}
+
+@media only screen {
+  @media (min-width: 400px) {
+    .wrapper {
+      & > .main {
+        & > h3 {
+          font-size: 6.15rem;
+        }
+      }
     }
   }
 }

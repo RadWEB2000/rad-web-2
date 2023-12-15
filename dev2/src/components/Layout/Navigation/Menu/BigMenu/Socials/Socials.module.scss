@@ -2,13 +2,8 @@
 @import '../../../../../../styles/Variables.scss';
 
 .wrapper {
-  @include flex(center, space-evenly, row nowrap, 1rem, null, true);
-  width: 100%;
-  &,
-  & > a,
-  & > a > i {
-    height: 100%;
-  }
+  @include grid(null, null, repeat(4, 1fr), null, 0.1rem);
+  @include size(100%, 100%);
 
   & > a {
     &:focus-within,
@@ -19,10 +14,13 @@
         }
       }
     }
+    &,
     & > i {
       @include flex(center, center);
-      aspect-ratio: 1/1;
-      font-size: 3.5rem;
+      @include size(100%, 100%);
+    }
+    & > i {
+      font-size: 2.9rem;
       & > * {
         transition: 0.12s linear transform;
       }

@@ -5,6 +5,8 @@ import Submenu from "l_nav/Menu/BigMenu/Panel/Submenu";
 import Item from "l_nav/Menu/Item";
 import { tBigMenu } from "ts/types";
 import styles from "l_nav/Menu/BigMenu/Panel/Panel.module.scss";
+import {motion} from "framer-motion";
+
 type tPanel = {
     menu:tBigMenu[];
 }
@@ -30,8 +32,22 @@ export default function Panel(props:tPanel){
                         menu={changeSubmenuItems(currentSubmenu)}
                     /> :
                 <div className={styles.main}>
-                    <h3>Spis treści</h3>
-                    <div>
+                    <motion.h3
+                        animate={{
+                            x:0
+                        }}
+                        initial={{
+                            x:-200
+                        }}
+                    >Spis treści</motion.h3>
+                    <motion.div
+                         animate={{
+                          y:0
+                        }}
+                        initial={{
+                            y:-40
+                        }}
+                    >
                         {props.menu.map((item,index) => {
                             if(item.submenu){
                                 return(
@@ -54,7 +70,7 @@ export default function Panel(props:tPanel){
                                 )
                             }
                         })}
-                    </div>
+                    </motion.div>
                 </div>
             }
         </menu>

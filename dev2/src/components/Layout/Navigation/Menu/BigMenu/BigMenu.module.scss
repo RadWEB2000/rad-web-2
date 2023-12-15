@@ -3,8 +3,8 @@
 
 .wrapper {
   @include size(100%, 100%);
-  @include grid(null, null, repeat(3, 1fr), calc(100% - 12rem) 12rem, null, 0.8rem);
-  padding: 4rem;
+  @include grid(null, null, repeat(3, 1fr), calc(100% - 7rem) 7rem, null, 0.8rem);
+  padding: 1.2rem 1.2rem 2.24rem 1.2rem;
 }
 
 .menu {
@@ -21,6 +21,14 @@
   @include flex(center, center);
   grid-column: 1/-1;
   grid-row: 2;
-  height: 6rem;
+  height: 5rem;
   margin: auto 0;
+}
+
+@media only screen {
+  @media (min-width: 400px) {
+    .wrapper {
+      padding: 4.75rem 3rem;
+    }
+  }
 }

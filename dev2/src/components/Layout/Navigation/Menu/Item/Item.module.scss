@@ -4,12 +4,12 @@
 .expand,
 .regural {
   @include flex(center, flex-start, row nowrap, 0.15rem, null, false);
-  @include size(6rem, 100%);
+  @include size(3rem, 100%);
   & > a {
     @include flex(center, center);
-    @include font(4.75rem, 400, 1.2, uppercase, -2px, center);
+    @include font(1.75rem, 500, 1.2, uppercase, -0.2px, center);
     color: #000;
-    padding: 0rem 2rem;
+    padding: 0rem 0.2rem;
     position: relative;
     transition: 0.25s linear color;
     &:focus-within,
@@ -34,7 +34,7 @@
   & > button {
     @include flex(center, center);
     aspect-ratio: 1/1;
-    font-size: 4.15rem;
+    font-size: 2.15rem;
     height: 100%;
     & > * {
       transition: 0.12s linear transform;
@@ -59,9 +59,34 @@
 
 .submenu {
   @include flex(center, flex-start, row nowrap, 0.15rem, null, false);
-  height: 5.5rem;
+  height: 2rem;
   & > a {
     @include flex(center, center);
-    @include font(3.5rem, 400, 1.2, uppercase, -2px, center);
+    @include font(1.55rem, 400, 1.2, uppercase, -0.2px, center);
+  }
+}
+
+@media only screen {
+  @media (min-width: 400px) {
+    .expand,
+    .regural {
+      height: 3.75rem;
+      & > a {
+        font-size: 3rem;
+      }
+    }
+
+    .expand {
+      & > button {
+        font-size: 2.95rem;
+      }
+    }
+
+    .submenu {
+      height: 2.7rem;
+      & > a {
+        font-size: 2.3rem;
+      }
+    }
   }
 }
