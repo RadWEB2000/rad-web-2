@@ -1,0 +1,132 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.primary__wrapper ,
+.secondary__wrapper ,
+.tertiary__wrapper {
+    display: flex;
+    margin: 4rem auto;
+    align-items: center;
+    justify-content: center;
+}
+
+// PRIMARY  =================================================================
+
+
+.primary__box {
+    @include flex(center,center,row nowrap,.7rem);
+    height: 4rem;
+    transition:.14s linear column-gap;
+    &:focus-within,
+    &:hover {
+        column-gap: 1.2rem;
+        & > .primary__icon {
+            color:$white;
+        }
+        & > .primary__label {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.primary__icon {
+    @include flex(center,center);
+    @include size(4rem,4rem);
+    color:$taupeGray;
+    font-size: 2.25rem;
+    transition:.14s linear color;
+}
+
+.primary__label {
+    @include font(2rem,300,1.1,uppercase,null,center,$monospace);
+    position: relative;
+    &::before {
+        @include size(2px,0%);
+        background-color: $white;
+        bottom: -.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        transition:.14s linear width;
+    }
+}
+
+// SECONDARY  =================================================================
+
+.secondary__box {
+    @include flex(center,center,row nowrap,1rem);
+    padding: 1rem 2.2rem;
+    transition:.12s linear border, .12s linear box-shadow, .12s linear color, .12s linear transform;
+
+    &:focus-within,
+    &:hover {
+        transform: scale(.96);
+    }
+
+    &[data-filled=true]{
+        background-color: $white;
+        color:$black;
+        &:focus-within,
+        &:hover {
+            box-shadow: 0 0 2rem  rgba($white,.72);
+        }   
+    }
+    &[data-filled=false]{
+        background-color: rgba($black,0);
+        border:2px solid $shipGray;
+        color:$shipGray;
+        &:focus-within,
+        &:hover {
+            border:2px solid $white;
+            box-shadow: 0 0 2rem  rgba($white,.72);
+            color:$white;
+        } 
+    }
+
+    &[data-rounded=true]{
+        border-radius: 1rem;
+    }
+
+}
+
+.secondary__label {
+    @include font(2.2rem,500,1.2,null,null,center,$montserrat);
+}
+.secondary__icon {
+    @include flex(center,center);
+    @include size(3.2rem,3.2rem);
+    font-size: 3rem;
+}
+
+// TERTIARY  =================================================================
+
+.tertiary__box {
+    @include flex(center,center,row nowrap,1rem);
+    min-height: 4.5rem;
+    padding: 0rem 1rem;
+    position: relative;
+    &::before {
+        @include size(2px,0%);
+        background-color: $white;
+        bottom: 0;
+        left: 0;
+        transition: .19s ease-in-out width;
+    }
+    &:focus-within,
+    &:hoveR {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+.tertiary__label {
+    @include font(4rem,300,1.2,null,null,center);
+}
+
+.tertiary__icon {
+    @include flex(center,center);
+    @include size(4.25rem,4.25rem);
+    font-size: 3.85rem;
+}

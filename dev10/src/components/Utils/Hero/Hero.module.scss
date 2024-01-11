@@ -1,0 +1,50 @@
+@import "../../../styles/Mixins.scss";
+@import "../../../styles/Variables.scss";
+
+// HOME  =================================================================
+
+.home__wrapper {
+    display: grid;
+    position: relative;
+    grid-template-areas: "layer";
+    height: 95dvh;
+    & > * {
+        @include size(100%,100%);
+    }
+}
+
+
+
+.home__video {
+    background: aqua;
+    grid-area: "layer";
+    object-fit: cover;
+    filter:brightness(65%);
+    position: absolute;
+    z-index: -1;
+}
+
+.home__content {
+    @include flex(flex-start,flex-end,column,null,null,true);
+    grid-area: "layer";
+    background: rgba(0, 128, 0, 0.404);
+    padding: 2rem;
+}
+
+.home__title {
+    @include font(8rem,700,1,null,null,center);
+    background: red;
+    margin-bottom: 2rem;
+}
+
+.home__slogan {
+    @include font(4rem,700,1,null,null,start);
+    background: brown;
+
+}
+
+.home__buttons {
+    @include flex(center,flex-start,row wrap,1rem,1rem,true);
+    margin-top: 4rem;
+    background: pink;
+}
