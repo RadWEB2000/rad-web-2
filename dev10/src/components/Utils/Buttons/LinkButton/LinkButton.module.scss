@@ -114,7 +114,7 @@
         transition: .19s ease-in-out width;
     }
     &:focus-within,
-    &:hoveR {
+    &:hover {
         &::before {
             width: 100%;
         }
@@ -122,11 +122,11 @@
 }
 
 .tertiary__label {
-    @include font(4rem,300,1.2,null,null,center);
+    @include font(3rem,300,1.2,null,null,center);
 }
 
 .tertiary__icon {
     @include flex(center,center);
     @include size(4.25rem,4.25rem);
-    font-size: 3.85rem;
+    font-size: 3.5rem;
 }

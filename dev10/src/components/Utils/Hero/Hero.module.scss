@@ -4,10 +4,10 @@
 // HOME  =================================================================
 
 .home__wrapper {
+    @include size(95dvh,100%);
     display: grid;
-    position: relative;
     grid-template-areas: "layer";
-    height: 95dvh;
+    position: relative;
     & > * {
         @include size(100%,100%);
     }
@@ -16,10 +16,9 @@
 
 
 .home__video {
-    background: aqua;
+    filter:brightness(65%);
     grid-area: "layer";
     object-fit: cover;
-    filter:brightness(65%);
     position: absolute;
     z-index: -1;
 }
@@ -27,24 +26,103 @@
 .home__content {
     @include flex(flex-start,flex-end,column,null,null,true);
     grid-area: "layer";
-    background: rgba(0, 128, 0, 0.404);
-    padding: 2rem;
+    padding:3rem .2rem ;
+    & >* {
+        width: 95%;
+    }
+    & > *:not(.home__buttons){
+        cursor: default;
+    }
 }
 
 .home__title {
-    @include font(8rem,700,1,null,null,center);
-    background: red;
+    @include font(clamp(5rem,10vw + 3rem , 23rem),700,1,null,null,start);
     margin-bottom: 2rem;
 }
 
 .home__slogan {
-    @include font(4rem,700,1,null,null,start);
-    background: brown;
-
+    @include font(clamp(3rem,5vw + 1rem , 9rem),600,.85,null,null,start);
 }
 
 .home__buttons {
     @include flex(center,flex-start,row wrap,1rem,1rem,true);
-    margin-top: 4rem;
-    background: pink;
+    margin-top: 3rem;
+    padding: 1rem;
 }
+
+@media only screen {
+    @media (min-width:1100px){
+        .home__content {
+            padding: 3rem 4rem 7rem;
+        }
+    }
+}
+
+// PERSON  =================================================================
+
+.person__wrapper {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    width:clamp(5rem,190rem,98%);
+    margin:17rem auto 5rem;
+
+}
+
+.person__title__wrapper {
+    grid-column: 1/-1;
+}
+
+.person__title {
+    @include font(clamp(1rem,10vw + 4rem,15rem),700,1,null,null,start);
+    font-size: 5rem;
+    text-wrap:balance;
+    word-wrap: break-word;
+}
+
+.person__box {
+    grid-row: 2;
+    grid-column: 1/-1;
+}
+
+.person__box__work {
+    margin-top: 3rem;
+    @include font(clamp(1.5rem,4vw + 4rem,6rem),700,1,null,null,start);
+    text-wrap:balance;
+    font-size: 3rem;
+}
+
+.person__box__content {
+    color:$taupeGray;
+    margin-top: 3rem;
+    @include font(1.9rem,400,2.4,null,null,start,null);
+    font-size: 1.6rem;
+    
+}
+
+.person__image {
+    height: 60rem;
+    margin-top: 3rem;
+    grid-column: 1/-1;
+    grid-row: 3;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
