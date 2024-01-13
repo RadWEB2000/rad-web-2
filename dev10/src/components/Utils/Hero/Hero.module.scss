@@ -123,3 +123,94 @@
         }
     }
 }
+
+// ARTICLE  =================================================================
+
+.article__wrapper {
+    @include flex(flex-start, flex-end, column, null, 1.3rem);
+    @include size(clamp(120rem, 80dvh, auto), 100%);
+    color: $black;
+    padding: 12rem 3rem 4rem;
+
+    &[data-category='seo'] {
+        background-color: rgb(254, 254, 156);
+    }
+    &[data-category='technology'] {
+        background-color: #e8e1f9;
+    }
+    &[data-category='ads'] {
+        background-color: #f9c6c6;
+    }
+    &[data-category='socials'] {
+        background-color: #e4f9e2;
+    }
+    &[data-category='www'] {
+        background-color: #d4fffc;
+    }
+}
+
+.article__breadcrumbs {
+    @include flex(center, flex-start, row wrap, 0.5rem, 0.5rem, true);
+}
+
+.article__breadcrumbs__item {
+    @include font(1.8rem, 400, null, uppercase, null, start, $monospace);
+    position: relative;
+    &::after {
+        @include size(1.5px, 0%);
+        background-color: $black;
+        border-radius: 2rem;
+        bottom: 0;
+        left: 0;
+        transition: 0.15s ease-in-out width;
+    }
+    &:focus-within,
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.article__title {
+    @include font(clamp(3rem, 3vw + 7rem, 7.65rem), 700, 1, null, null, start, null);
+    font-size: clamp(3rem, 7.65rem, 11.65rem);
+}
+
+.article__excerpt {
+    width: clamp(1rem, 75ch, 90%);
+    @include font(1.9rem, 500, 1.7, null, null, start, null);
+}
+
+.article__release,
+.article__reading {
+    @include flex(center, center, row wrap, 0.45rem, 0.45rem);
+    @include font(1.54rem, 400, 1.12, null, null, center, $monospace);
+    border: 1px solid $taupeGray;
+    border-radius: 0.75rem;
+    padding: 0.35rem 0.72rem;
+    & > b {
+        @include flex(center, center);
+        @include size(2.22rem, 2.22rem);
+    }
+}
+
+.article__details {
+    @include flex(center, flex-end, row wrap, 1rem, 1rem);
+    width: 100%;
+}
+
+.article__category {
+    @include flex(center, center);
+    background-color: $black;
+    border-radius: 0.85dvh;
+    color: $white;
+    padding: 0.5rem 1rem;
+    z-index: 0;
+    margin-top: 3rem;
+    transition: 0.15s ease-in-out background-color;
+    &:focus-within,
+    &:hover {
+        background-color: rgba($richBlack, 0.8);
+    }
+}
