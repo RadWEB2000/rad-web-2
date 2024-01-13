@@ -8,9 +8,8 @@
 }
 
 .menu {
+  @include gridSize(null, 1/-1, 1);
   @include size(100%, 100%);
-  grid-column: 1/-1;
-  grid-row: 1;
 }
 
 .articles {
@@ -18,17 +17,13 @@
 }
 
 .socials {
-  @include flex(center, center);
-  grid-column: 1/-1;
-  grid-row: 2;
-  height: 5rem;
-  margin: auto 0;
+  @include gridSize(null, 1/-1, 2);
 }
 
 @media only screen {
-  @media (min-width: 400px) {
+  @media (min-width: 375px) {
     .wrapper {
-      padding: 4.75rem 3rem;
+      padding: 1.75rem 2.1rem 1.9rem;
     }
   }
 }

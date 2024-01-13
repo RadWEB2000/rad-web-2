@@ -67,12 +67,14 @@
 }
 
 @media only screen {
-  @media (min-width: 400px) {
+  @media (min-width: 375px) {
     .expand,
     .regural {
       height: 3.75rem;
       & > a {
-        font-size: 3rem;
+        font-size: 2.45rem;
+        line-height: 0.8;
+        text-align: start;
       }
     }
 
@@ -83,9 +85,9 @@
     }
 
     .submenu {
-      height: 2.7rem;
+      height: 2.3rem;
       & > a {
-        font-size: 2.3rem;
+        font-size: 1.7rem;
       }
     }
   }

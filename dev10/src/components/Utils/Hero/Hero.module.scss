@@ -1,57 +1,55 @@
-@import "../../../styles/Mixins.scss";
-@import "../../../styles/Variables.scss";
+@import '../../../styles/Mixins.scss';
+@import '../../../styles/Variables.scss';
 
 // HOME  =================================================================
 
 .home__wrapper {
-    @include size(95dvh,100%);
+    @include size(95dvh, 100%);
     display: grid;
-    grid-template-areas: "layer";
+    grid-template-areas: 'layer';
     position: relative;
     & > * {
-        @include size(100%,100%);
+        @include size(100%, 100%);
     }
 }
 
-
-
 .home__video {
-    filter:brightness(65%);
-    grid-area: "layer";
+    filter: brightness(65%);
+    grid-area: 'layer';
     object-fit: cover;
     position: absolute;
     z-index: -1;
 }
 
 .home__content {
-    @include flex(flex-start,flex-end,column,null,null,true);
-    grid-area: "layer";
-    padding:3rem .2rem ;
-    & >* {
+    @include flex(flex-start, flex-end, column, null, null, true);
+    grid-area: 'layer';
+    padding: 3rem 0.2rem;
+    & > * {
         width: 95%;
     }
-    & > *:not(.home__buttons){
+    & > *:not(.home__buttons) {
         cursor: default;
     }
 }
 
 .home__title {
-    @include font(clamp(5rem,10vw + 3rem , 23rem),700,1,null,null,start);
+    @include font(clamp(5rem, 10vw + 3rem, 23rem), 700, 1, null, null, start);
     margin-bottom: 2rem;
 }
 
 .home__slogan {
-    @include font(clamp(3rem,5vw + 1rem , 9rem),600,.85,null,null,start);
+    @include font(clamp(3rem, 5vw + 1rem, 9rem), 600, 0.85, null, null, start);
 }
 
 .home__buttons {
-    @include flex(center,flex-start,row wrap,1rem,1rem,true);
+    @include flex(center, flex-start, row wrap, 1rem, 1rem, true);
     margin-top: 3rem;
     padding: 1rem;
 }
 
 @media only screen {
-    @media (min-width:1100px){
+    @media (min-width: 1100px) {
         .home__content {
             padding: 3rem 4rem 7rem;
         }
@@ -62,10 +60,10 @@
 
 .person__wrapper {
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    width:clamp(5rem,190rem,98%);
-    margin:17rem auto 5rem;
-
+    grid-template-columns: repeat(12, 1fr);
+    width: clamp(5rem, 190rem, 98%);
+    margin: 12rem auto 5rem;
+    padding: 2rem 3rem;
 }
 
 .person__title__wrapper {
@@ -73,10 +71,9 @@
 }
 
 .person__title {
-    @include font(clamp(1rem,10vw + 4rem,15rem),700,1,null,null,start);
-    font-size: 5rem;
-    text-wrap:balance;
-    word-wrap: break-word;
+    @include font(5rem, 700, 1, null, null, start);
+    // font-size: 5rem;
+    text-wrap: balance;
 }
 
 .person__box {
@@ -86,43 +83,43 @@
 
 .person__box__work {
     margin-top: 3rem;
-    @include font(clamp(1.5rem,4vw + 4rem,6rem),700,1,null,null,start);
-    text-wrap:balance;
+    @include font(clamp(1.5rem, 4vw + 4rem, 6rem), 700, 1, null, null, start);
+    text-wrap: balance;
     font-size: 3rem;
 }
 
 .person__box__content {
-    color:$taupeGray;
-    margin-top: 3rem;
-    @include font(1.9rem,400,2.4,null,null,start,null);
+    color: $taupeGray;
+    margin-top: 1.5rem;
+    @include font(1.9rem, 400, 2.4, null, null, start, null);
     font-size: 1.6rem;
-    
 }
 
 .person__image {
-    height: 60rem;
+    height: 30rem;
     margin-top: 3rem;
     grid-column: 1/-1;
     grid-row: 3;
     position: relative;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media only screen {
+    @media (min-width: 615px) {
+        .person__box {
+            grid-column: 1/7;
+            grid-row: 2;
+        }
+        .person__image {
+            grid-column: 7/-1;
+            grid-row: 2;
+        }
+    }
+    @media (min-width: 850px) {
+        .person__title {
+            font-size: 9rem;
+        }
+        .person__image {
+            height: 40rem;
+        }
+    }
+}

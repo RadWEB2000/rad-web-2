@@ -4,11 +4,13 @@
 .wrapper {
   @include size(100%, 100%);
   color: #000;
+  background: red;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 0;
   }
   & > .main {
+    background: purple;
     & > h3 {
       @include font(4rem, 800, 1, uppercase, -1.5px, start);
     }

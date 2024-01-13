@@ -2,6 +2,7 @@
 @import '../../../../../../../styles/Variables.scss';
 
 .wrapper {
+  background: lime;
   & > .return {
     @include flex(center, flex-start, row nowrap, 1rem);
     @include font(1.6rem, 450, null, uppercase, -2px, center);
@@ -18,12 +19,11 @@
   }
   & > .title {
     @include font(4rem, 800, 1, uppercase, -1.5px, start);
-    margin-top: 1rem;
+    margin: 1.5rem 0 1rem 0;
   }
 
   & > .menu {
     @include flex(flex-start, flex-start, column, null, 0.45rem);
-    margin-top: 1rem;
     & > li {
       width: 100%;
       & > ul {
@@ -35,7 +35,7 @@
 }
 
 @media only screen {
-  @media (min-width: 400px) {
+  @media (min-width: 375px) {
     .wrapper {
       & > .title {
         font-size: 6.15rem;

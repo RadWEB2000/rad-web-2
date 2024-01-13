@@ -7,5 +7,5 @@
     "plugin:pretter/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["simple-import-sort", "prettier", "@typescript-eslint"]
+  "plugins": ["simple-import-sort", "prettier", "@typescript-eslint",]
 }
