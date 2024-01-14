@@ -1,13 +1,16 @@
 @import '../../../../styles/Mixins.scss';
 @import '../../../../styles/Variables.scss';
 
+// PRIMARY  =================================================================
+
+
 .primary__wrapper {
 }
 
 .primary__box {
     aspect-ratio: 1/1;
     background-color: rgba($taupeGray, 0);
-    border-radius: 0.12rem;
+    border-radius: 1rem;
     width: 100%;
     display: grid;
     padding: 1rem;
@@ -38,6 +41,7 @@
     @include font(2.4rem, 600, 1.2, null, null, start);
     padding: 1rem;
     grid-area: title;
+    text-wrap:balance;
 }
 
 .primary__details {
@@ -46,3 +50,86 @@
     grid-area: details;
     padding: 1rem;
 }
+
+@media only screen {
+    @media (min-width:1300px){
+        .primary__title {
+            font-size: 4rem;
+        }
+    }
+}
+
+// SECONDARY  =================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TERTIARY  =================================================================
+
+
+.tertiary__wrapper {
+    margin:3rem auto;
+}
+
+.tertiary__box {
+    @include flex(flex-start,flex-start,column,null,1.2rem);
+    background: purple;
+    width: clamp(2rem,40rem,45rem);
+}
+
+.tertiary__details {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    & >*{ 
+        @include flex(center,center);
+        @include font(1.9rem,400,null,null,null,null,$monospace);
+    }
+}
+
+.tertiary__content {
+    @include flex(flex-start,flex-start,column,null,.7rem);
+    padding:1rem 1.2rem;
+    & >* {
+        width: 100%;
+    }
+
+}
+
+.tertiary__title {
+    @include font(3.2rem,600,1.2,null,null,start);
+}
+
+.tertiary__category {
+    justify-content: flex-start;
+}
+
+.tertiary__excerpt {
+    @include font(1.55rem,300,1.4,null,null,start);
+}
+
+.tertiary__release {
+    justify-content: flex-end;
+}
+
+.tertiary__image {
+    border-radius: 1rem;
+    overflow: hidden;
+    aspect-ratio: 16/14;
+    position: relative;
+    width: 100%;
+}
+
+
+
+
+
