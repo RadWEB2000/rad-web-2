@@ -25,7 +25,7 @@ export default function Page() {
             matter="technology"
             release="Wed May 29 2024 23:40:38 GMT+0200 (Central European Summer Time)"
             title="Jak wybrać odpowiednią bazę danych do projektu?"
-            theme="blog"
+            theme="article"
         />
     );
 }

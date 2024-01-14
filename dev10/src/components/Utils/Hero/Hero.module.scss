@@ -239,3 +239,80 @@
         }
     }
 }
+
+// GLOSSARY  =================================================================
+
+.glossary__wrapper {
+    @include flex(center, center, column, null, 4rem, false);
+    @include size(clamp(90rem, 85vh, auto), clamp(1rem, 80rem, 95%));
+    margin: 12rem auto 0;
+}
+
+.glossary__title {
+    @include font(4rem, 600, 1, null, null, center);
+}
+
+.glossary__content {
+    @include font(1.45rem, 600, 1.2, null, -1px, center, null);
+    color: $taupeGray;
+}
+
+@media only screen {
+    @media (min-width: 570px) {
+        .glossary__title {
+            font-size: 5.25rem;
+        }
+
+        .glossary__content {
+            font-size: 1.6rem;
+            line-height: 2;
+        }
+    }
+    @media (min-width: 1100px) {
+        .glossary__title {
+            font-size: 7rem;
+        }
+
+        .glossary__content {
+            font-size: 1.7rem;
+        }
+    }
+}
+
+// PROJECT  =================================================================
+
+.project__wrapper {
+    @include size(95vh, 100%);
+    display: grid;
+    grid-template-areas: 'layer';
+    & > * {
+        grid-area: layer;
+    }
+}
+
+.project__image {
+    filter: brightness(50%);
+    position: relative;
+    z-index: -1;
+}
+
+.project__content {
+    @include flex(center, center, column, null, 3rem);
+}
+
+.project__title {
+    @include font(6.75rem, 700, null, null, null, center);
+    text-wrap: pretty;
+}
+
+.project__release {
+    @include font(2.7rem, 300, 1.2, null, null, center, $monospace);
+}
+
+@media only screen {
+    @media (min-width: 1100px) {
+        .project__title {
+            font-size: 9rem;
+        }
+    }
+}

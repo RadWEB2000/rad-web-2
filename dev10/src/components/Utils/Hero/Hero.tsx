@@ -15,11 +15,14 @@ type tHero = {} & (
           theme: 'person';
       } & tPerson)
     | ({
-          theme: 'blog';
+          theme: 'article';
       } & tArticle)
-    | {
-          theme: 'other';
-      }
+    | ({
+          theme: 'glossary';
+      } & tGlossary)
+    | ({
+          theme: 'project';
+      } & tProject)
 );
 
 type tArticle = {
@@ -35,6 +38,11 @@ type tArticle = {
         label: string;
         uri: string;
     };
+};
+
+type tGlossary = {
+    content: string;
+    title: string;
 };
 
 type tHome = {
@@ -110,6 +118,18 @@ function Article(props: tArticle) {
     );
 }
 
+function Glossary(props: tGlossary) {
+    return (
+        <header className={css.glossary__wrapper}>
+            <h1 className={css.glossary__title} dangerouslySetInnerHTML={{ __html: props.title }} />
+            <p
+                className={css.glossary__content}
+                dangerouslySetInnerHTML={{ __html: props.content }}
+            />
+        </header>
+    );
+}
+
 function Home(props: tHome) {
     return (
         <div className={css.home__wrapper}>
@@ -167,12 +187,60 @@ function Person(props: tPerson) {
     );
 }
 
+type tProject = {
+    button: string;
+    image: tImage;
+    release: string;
+    url: string;
+    title: string;
+};
+
+function Project(props: tProject) {
+    const { month, year } = getDate(props.release, 'long');
+    return (
+        <header className={css.project__wrapper}>
+            <figure className={css.project__image}>
+                <Image
+                    alt={props.image.altText}
+                    fill
+                    loading="eager"
+                    src={props.image.sourceUrl}
+                    style={{
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                    }}
+                    title={props.image.title}
+                />
+            </figure>
+            <section className={css.project__content}>
+                <p className={css.project__release}>{`${month()} ${year}`}</p>
+                <h1
+                    className={css.project__title}
+                    dangerouslySetInnerHTML={{ __html: props.title }}
+                />
+                <LinkButton
+                    iconify
+                    rounded
+                    filled
+                    label={props.button}
+                    uri={props.url}
+                    theme="secondary"
+                />
+            </section>
+        </header>
+    );
+}
+
 export default function Hero(props: tHero) {
     if (props.theme === 'home') {
         return <Home {...props} />;
     } else if (props.theme === 'person') {
         return <Person {...props} />;
-    } else if (props.theme === 'blog') {
+    } else if (props.theme === 'article') {
         return <Article {...props} />;
+    } else if (props.theme === 'glossary') {
+        return <Glossary {...props} />;
+    } else if (props.theme === 'project') {
+        return <Project {...props} />;
     }
 }
