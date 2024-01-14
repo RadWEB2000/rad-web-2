@@ -1,0 +1,48 @@
+@import '../../../../styles/Mixins.scss';
+@import '../../../../styles/Variables.scss';
+
+.primary__wrapper {
+}
+
+.primary__box {
+    aspect-ratio: 1/1;
+    background-color: rgba($taupeGray, 0);
+    border-radius: 0.12rem;
+    width: 100%;
+    display: grid;
+    padding: 1rem;
+    grid-template-areas:
+        'title title title title title'
+        'title title title title title'
+        'graphic graphic graphic details details'
+        'graphic graphic graphic  details details'
+        'graphic graphic graphic  details details'
+        'graphic graphic graphic  details details';
+    transition: 0.15s ease-in-out background-color;
+
+    &:focus-within,
+    &:hover {
+        background-color: rgba($taupeGray, 0.12);
+    }
+}
+
+.primary__image {
+    grid-area: graphic;
+    position: relative;
+    padding: 0.6rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.primary__title {
+    @include font(2.4rem, 600, 1.2, null, null, start);
+    padding: 1rem;
+    grid-area: title;
+}
+
+.primary__details {
+    @include flex(flex-end, flex-end, column, null, 1rem, false);
+    @include font(1.93rem, 300, 1, null, null, end, $monospace);
+    grid-area: details;
+    padding: 1rem;
+}
