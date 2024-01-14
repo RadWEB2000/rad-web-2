@@ -173,13 +173,12 @@
 }
 
 .article__title {
-    @include font(clamp(3rem, 3vw + 7rem, 7.65rem), 700, 1, null, null, start, null);
-    font-size: clamp(3rem, 7.65rem, 11.65rem);
+    @include font(4rem, 700, 1, null, null, start, null);
 }
 
 .article__excerpt {
+    @include font(1.4rem, 500, 1.7, null, null, start, null);
     width: clamp(1rem, 75ch, 90%);
-    @include font(1.9rem, 500, 1.7, null, null, start, null);
 }
 
 .article__release,
@@ -207,10 +206,36 @@
     color: $white;
     padding: 0.5rem 1rem;
     z-index: 0;
-    margin-top: 3rem;
+    margin-top: 1.3rem;
     transition: 0.15s ease-in-out background-color;
     &:focus-within,
     &:hover {
         background-color: rgba($richBlack, 0.8);
+    }
+}
+
+@media only screen {
+    @media (min-width: 600px) {
+        .article__title {
+            font-size: 6rem;
+            width: 90%;
+        }
+
+        .article__excerpt {
+            font-size: 1.8rem;
+        }
+    }
+    @media (min-width: 900px) {
+        .article__wrapper {
+            padding: 14rem 3rem 4rem;
+        }
+        .article__title {
+            font-size: 7.4rem;
+            width: 80%;
+        }
+
+        .article__excerpt {
+            font-size: 1.9rem;
+        }
     }
 }
