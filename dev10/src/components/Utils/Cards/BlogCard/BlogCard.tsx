@@ -83,7 +83,7 @@ function Secondary(props:tSecondary){
     if(props.direction === "left"){
         return(
             <li className={css.secondary__wrapper} >
-                <Link className={css.secondary__box} href={props.uri}>
+                <Link className={css.secondary__box} data-direction={props.direction}  href={props.uri}>
                     <i className={css.secondary__icon} ><FaChevronLeft /></i>
                     <span className={css.secondary__label}  dangerouslySetInnerHTML={{__html:props.title}} />
                 </Link>
@@ -92,7 +92,7 @@ function Secondary(props:tSecondary){
     }else if(props.direction === "right"){
         return(
             <li className={css.secondary__wrapper} >
-                <Link className={css.secondary__box}  href={props.uri}>
+                <Link className={css.secondary__box} data-direction={props.direction}  href={props.uri}>
                     <span className={css.secondary__label}  dangerouslySetInnerHTML={{__html:props.title}} />
                     <i className={css.secondary__icon} ><FaChevronRight /></i>
                 </Link>
@@ -122,14 +122,14 @@ function Tertiary(props:tTertiary){
                     />
                 </figure>
                 <section className={css.tertiary__content} >
+                    <h3 className={css.tertiary__title}  dangerouslySetInnerHTML={{__html:props.title}} />
+                    <p className={css.tertiary__excerpt}  dangerouslySetInnerHTML={{__html:props.excerpt.substring(0,85) + '...'}} />
                     <div className={css.tertiary__details} >
                         <Link className={css.tertiary__category}  href={props.category.uri}>
                             {props.category.label}
                         </Link>
                         <p className={css.tertiary__release} >{`${day}-${month()}-${year}`}</p>
                     </div>
-                    <h3 className={css.tertiary__title}  dangerouslySetInnerHTML={{__html:props.title}} />
-                    <p className={css.tertiary__excerpt}  dangerouslySetInnerHTML={{__html:props.excerpt.substring(0,150) + '...'}} />
                 </section>
             </Link>
         </li>

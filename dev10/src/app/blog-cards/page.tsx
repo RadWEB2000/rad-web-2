@@ -4,7 +4,7 @@ import { Hero } from 'utils/Hero';
 export default function Page() {
     return (
         <>
-            <div
+            {/* <div
                 style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(3,1fr)',
@@ -108,10 +108,15 @@ export default function Page() {
                     title="Czym się kierować w wyborze kamery?"
                     uri="#"
                 />
-            </div>
-              <div
+            </div> */}
+              {/* <div
              style={{
-                width:"100%"
+                width:"100%",
+                display:"flex",
+                alignItems:"start",
+                justifyContent:"center",
+                gap:"1rem",
+                flexFlow:"row wrap"
              }}
             >
                 <BlogCard
@@ -215,6 +220,26 @@ export default function Page() {
                    theme="tertiary"
                     title="Czym się kierować w wyborze kamery?"
                     uri="#"
+                />
+            </div> */}
+            <div style={{
+                display:"grid",
+                gridTemplateColumns:"repeat(2,1fr)",
+                width:"clamp(25rem,130rem,95%)",
+                margin:"20rem auto",
+                gap:".5rem"
+            }}>
+                <BlogCard
+                    direction='left'
+                    title='Co to jest i jak działa nagłówek etag protokołu http?'
+                    uri='#'
+                    theme='secondary'
+                />
+                <BlogCard
+                    direction='right'
+                    title='Jakie są różnice tworzenia zmiennych za pomocą var vs const i let w JavaScript?'
+                    uri='#'
+                    theme='secondary'
                 />
             </div>
         </>

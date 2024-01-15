@@ -32,6 +32,8 @@
 .primary__image {
     grid-area: graphic;
     position: relative;
+    width: 100%;
+    height: 100%;
     padding: 0.6rem;
     border-radius: 0.8rem;
     overflow: hidden;
@@ -61,16 +63,57 @@
 
 // SECONDARY  =================================================================
 
+.secondary__wrapper {
+}
 
+.secondary__box {
+    display: grid;
+    transition:.14s linear color, .1s linear outline;
+    border-radius: 1rem;
+    grid-column: 8rem;
+    width: 8rem;
+    &:focus-within,
+    &:hover {
+        outline:2px solid $white;
+        color:$taupeGray;
+    }
+}
 
+.secondary__icon {
+    @include flex(center,center);
+    @include size(8rem,8rem);
+    font-size: 4.25rem;
+}
 
+.secondary__label {
+    @include font(2rem,400,1.4,null,null,null,$monospace);
+    display: none;
+    padding: 1rem;
+    margin: auto 0;
+}
 
-
-
-
-
-
-
+@media only screen {
+    @media (min-width:800px){
+        .secondary__box {
+            width: auto;
+            &[data-direction="left"]{
+                grid-template-columns:8rem calc(100% - 8rem);
+                & > .secondary__label {
+                    text-align: start;
+                }
+            }
+            &[data-direction="right"]{
+                grid-template-columns:calc(100% - 8rem) 8rem;
+                & > .secondary__label {
+                    text-align: end;
+                }
+            }
+        }
+        .secondary__label {
+            display: inline-block;
+        }
+    }
+}
 
 
 
@@ -78,16 +121,27 @@
 
 
 .tertiary__wrapper {
-    margin:3rem auto;
+    // margin:3rem auto;
 }
 
 .tertiary__box {
     @include flex(flex-start,flex-start,column,null,1.2rem);
-    background: purple;
+    // background: purple;
     width: clamp(2rem,40rem,45rem);
+    &:focus-within,
+    &:hover {
+        & > .tertiary__image {
+            &::after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
 }
 
 .tertiary__details {
+    border-top:1px solid $taupeGray;
+    padding: 1rem 0;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     & >*{ 
@@ -114,7 +168,8 @@
 }
 
 .tertiary__excerpt {
-    @include font(1.55rem,300,1.4,null,null,start);
+    @include font(1.55rem,300,1.9,null,null,start);
+    margin-bottom: 1rem;
 }
 
 .tertiary__release {
@@ -124,9 +179,24 @@
 .tertiary__image {
     border-radius: 1rem;
     overflow: hidden;
-    aspect-ratio: 16/14;
+    aspect-ratio: 4/4.5;
     position: relative;
     width: 100%;
+
+
+    &::after {
+        content:"👁";
+        @include flex(center,center);
+        @include size(100%,100%);
+        background-color:rgba($black,.7);
+        font-size: 14rem;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%,-50%);
+        transition: .15s linear opacity,  .15s linear  visibility;
+    }
 }
 
 
