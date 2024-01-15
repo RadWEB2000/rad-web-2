@@ -128,3 +128,47 @@
         }       
     }
 }
+
+// SECONDARY  =================================================================
+
+.secondary__wrapper{
+
+}
+
+.secondary__box {
+    @include flex(flex-start,flex-start,column,null,1rem);
+    // background: lime;
+    background-color: $black;
+    margin: auto;
+    border-radius: 2rem;
+    outline:0px solid rgba($magnolia,.5);
+    padding: 1.2rem;
+    transition:.1s ease-in-out outline;
+    width:clamp(2rem,44rem,90%);
+    &:focus-within,
+    &:hover {
+        outline:4px solid rgba($magnolia,.5);
+    }
+}
+
+.secondary__image {
+    aspect-ratio: 4/5;
+    border-radius: 2rem;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.secondary__content {
+    @include flex(flex-start,flex-start,column,null,.5rem);
+    padding: .45rem;
+}
+
+.secondary__title {
+    @include font(3.43rem,500,1.4,null,null,start,null);
+}
+
+.secondary__work {
+    @include font(1.7rem,800,1.4,null,null,start,$monospace);
+    color:$taupeGray;
+}

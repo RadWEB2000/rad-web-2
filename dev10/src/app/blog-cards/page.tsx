@@ -4,7 +4,7 @@ import { Hero } from 'utils/Hero';
 export default function Page() {
     return (
         <>
-            {/* <div
+            <div
                 style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(3,1fr)',
@@ -108,7 +108,7 @@ export default function Page() {
                     title="Czym się kierować w wyborze kamery?"
                     uri="#"
                 />
-            </div> */}
+            </div>
               {/* <div
              style={{
                 width:"100%",

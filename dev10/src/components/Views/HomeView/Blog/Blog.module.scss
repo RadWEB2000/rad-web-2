@@ -1,0 +1,27 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+
+}
+
+.cards {
+   display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.container {
+
+}
+
+.title {
+
+}
+
+.content {
+
+}
+
+.button {
+
+}

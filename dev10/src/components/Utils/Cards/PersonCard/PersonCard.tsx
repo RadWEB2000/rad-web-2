@@ -26,7 +26,10 @@ type tPrimary = {
     button:string;
     content:string;
     
-}& tPersonCardBase
+}& tPersonCardBase;
+
+type tSecondary = {
+} & tPersonCardBase;
 
 function Primary(props:tPrimary){
     return(
@@ -60,14 +63,13 @@ function Primary(props:tPrimary){
     )
 }
 
-type tSecondary = {
-} & tPersonCardBase
+
 
 function Secondary(props:tSecondary){
     return(
-        <li>
-            <Link href={props.uri}>
-                <figure>
+        <li className={css.secondary__wrapper} >
+            <Link className={css.secondary__box}  href={props.uri}>
+                <figure className={css.secondary__image} >
                     <Image
                         alt={props.image.altText}
                         fill
@@ -80,9 +82,9 @@ function Secondary(props:tSecondary){
                         title={props.image.title}
                     />
                 </figure>
-                <section>
-                    <h3 dangerouslySetInnerHTML={{__html:props.title}} />
-                    <p dangerouslySetInnerHTML={{__html:props.work}} />
+                <section className={css.secondary__content} >
+                    <h3 className={css.secondary__title}  dangerouslySetInnerHTML={{__html:props.title}} />
+                    <p className={css.secondary__work}  dangerouslySetInnerHTML={{__html:props.work}} />
                 </section>
             </Link>
         </li>
