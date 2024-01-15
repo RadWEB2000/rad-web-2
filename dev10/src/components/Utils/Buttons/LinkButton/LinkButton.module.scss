@@ -1,11 +1,9 @@
 @import "../../../../styles/Mixins.scss";
 @import "../../../../styles/Variables.scss";
 
-.primary__wrapper ,
 .secondary__wrapper ,
 .tertiary__wrapper {
     display: flex;
-    margin: 4rem auto;
     align-items: center;
     justify-content: center;
 }

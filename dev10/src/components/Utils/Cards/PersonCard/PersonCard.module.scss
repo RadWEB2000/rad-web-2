@@ -1,0 +1,130 @@
+@import '../../../../styles/Mixins.scss';
+@import '../../../../styles/Variables.scss';
+
+// PRIMARY  =================================================================
+
+.primary__wrapper {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    margin:31rem auto;
+    min-height: 67rem;
+    width:clamp(2rem,130rem,95%);
+}
+
+.primary__image__wrapper {
+    grid-column: 1/-1;
+}
+
+.primary__image {
+    aspect-ratio: 4/3.3;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.primary__container{
+    @include flex(flex-start,flex-start,column,null,1rem);
+    grid-column: 1/-1;
+    padding: 2rem;
+}
+
+.primary__title{
+    @include font(4.15rem,900,.9,null,null,start,$montserrat);
+}
+
+.primary__work {
+    @include font(1.9rem,500,1.2,null,null,start,$monospace);
+    text-wrap:balance;
+}
+
+.primary__content{
+    @include font(1.45rem,200,1.72,null,null,start);
+    color:$taupeGray;
+    max-width:45ch;
+}
+
+@media only screen {
+    @media (min-width:580px){
+        .primary__wrapper {
+            min-height: 67rem;
+        }
+
+        .primary__title{
+            font-size: 6.15rem;
+        }
+
+        .primary__work {
+            font-size: 2.2rem;
+        }
+
+        .primary__content{
+            font-size: 1.65rem;
+        }       
+    }
+    @media (min-width:770px){
+        .primary__wrapper {
+            min-height: 62vh;
+         }
+
+        .primary__image__wrapper {
+            grid-column: 1/4;
+        }
+        .primary__image {
+            @include size(100%,100%);
+            aspect-ratio: unset;
+        }
+
+        .primary__container{
+            grid-column: 4/-1;
+        }
+
+        .primary__title{
+            font-size: 6.15rem;
+        }
+
+        .primary__work {
+            font-size: 2.2rem;
+        }
+
+        .primary__content{
+            font-size: 1.65rem;
+        }       
+    }
+    @media (min-width:1000px){
+        .primary__wrapper {
+            min-height: 62vh;
+         }
+
+        .primary__image__wrapper {
+            grid-column: 1/4;
+        }
+
+        .primary__title{
+            font-size: 8.2rem;
+        }
+
+        .primary__work {
+            font-size: 2.7rem;
+        }
+
+        .primary__content{
+            font-size: 1.95rem;
+        }       
+    }
+    @media (min-width:1550px){
+        .primary__wrapper {
+            min-height: 62rem;
+         }
+        .primary__title{
+            font-size: 10rem;
+        }
+
+        .primary__work {
+            font-size: 3.3rem;
+        }
+
+        .primary__content{
+            font-size: 2.3rem;
+        }       
+    }
+}

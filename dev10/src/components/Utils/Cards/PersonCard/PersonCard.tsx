@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { tImage } from "ts/types"
 import { LinkButton } from "utils/Buttons"
+import css from "utils/Cards/PersonCard/PersonCard.module.scss";
+import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 type tPersonCardBase = {
     image:tImage;
@@ -28,9 +30,9 @@ type tPrimary = {
 
 function Primary(props:tPrimary){
     return(
-        <li>
-            <div>
-                <figure>
+        <li className={css.primary__wrapper} >
+            <div className={css.primary__image__wrapper} >
+                <figure className={css.primary__image} >
                      <Image
                         alt={props.image.altText}
                         fill
@@ -44,18 +46,16 @@ function Primary(props:tPrimary){
                     />
                 </figure>
             </div>
-            <div>
-                <header>
-                    <h3 dangerouslySetInnerHTML={{__html:props.title}} />
-                    <h5  dangerouslySetInnerHTML={{__html:props.work}}  />
-                </header>
-                <p  dangerouslySetInnerHTML={{__html:props.content}}  />
+            <section className={css.primary__container} >
+                <h3  className={css.primary__title} dangerouslySetInnerHTML={{__html:props.title}} />
+                <h5  className={css.primary__work} dangerouslySetInnerHTML={{__html:props.work}}  />
+                <p  className={css.primary__content}  dangerouslySetInnerHTML={{__html:props.content}}  />
                 <LinkButton
                     label={props.button}
                     uri={props.uri}
                     theme="primary"
                 />
-            </div>
+            </section>
         </li>
     )
 }
