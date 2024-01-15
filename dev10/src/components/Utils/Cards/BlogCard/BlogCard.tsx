@@ -101,8 +101,6 @@ function Secondary(props:tSecondary){
     }
 }
 
-
-
 function Tertiary(props:tTertiary){
     const {day,month,year} = getDate(props.release,"number");
     return(
