@@ -1,0 +1,30 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    background-color: $oxfordBlue;
+    margin: 15rem 0rem;
+    padding: 4rem 5rem;
+}
+
+.box {
+    @include flex(flex-start,flex-start,column,null,1rem);
+    background: lime;
+    width:clamp(3rem,130rem,95%);
+}
+
+.title {
+    @include font(14rem,500,1.2,null,null,start);
+}
+
+.content {
+    @include font(2rem,600,1.8,null,-.5px,start);
+    padding: 2rem;
+}
+
+.cards {
+    @include flex(flex-start,flex-start,column,null,1rem);
+    // background: blue;
+    margin-top: 2rem;
+    width: 100%;
+}

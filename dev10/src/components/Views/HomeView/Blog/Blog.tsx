@@ -31,6 +31,8 @@ export default function Blog(props:tBlog){
                 <LinkButton
                     label={props.button}
                     uri={props.uri}
+                    filled
+                    iconify
                     theme="secondary"
                 />
             </div>

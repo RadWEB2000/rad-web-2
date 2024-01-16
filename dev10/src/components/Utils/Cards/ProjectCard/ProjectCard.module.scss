@@ -1,0 +1,88 @@
+@import '../../../../styles/Mixins.scss';
+@import '../../../../styles/Variables.scss';
+
+// PRIMARY  =================================================================
+
+.primary__wrapper {
+    display: grid;
+    grid-template-columns: repeat(13,1fr);
+    // background: red;
+    padding-top: 1rem;
+    height: 45rem;
+    width: 100%;
+    position: relative;
+
+    &::after,
+    &::before {
+        height: .5rem;
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        background-color: $blue;
+        box-shadow:0 0 1rem rgba($blue,.5);
+        transition:.67s ease-in-out width;
+        width: 1%;
+        z-index: 1;
+    }
+
+    &::before {
+        background-color: $taupeGray;
+        width: 100%;
+        z-index: 0;
+    }
+
+    &:focus-within,
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+
+}
+
+
+.primary__details {
+    @include flex(flex-start,flex-start,column,null,2rem);
+    padding: 2rem;
+    // background: purple;
+    grid-column: 1/5;
+}
+
+.primary__content__box {
+    padding: 2rem;
+    // background: salmon;
+    grid-column: 10/-1;
+}
+
+.primary__content {
+    @include font(1.9rem,500,2,null,null,start,$monospace);
+}
+
+.primary__title {
+    @include font(5.2rem,600,1.2,null,null,start);
+}
+
+.primary__image__box {
+    @include flex(flex-start,center);
+    // background: yellow;
+    grid-column: 5/10;
+}
+
+.primary__image {
+    height: 40rem;
+    position: relative;
+    width:clamp(5rem,50rem,60%);
+}
+
+.primary__categories{
+    @include flex(center,flex-start,row wrap,1rem, 1rem);
+}
+.primary__categories__item {
+    @include font(1.7rem,800,1,null,null,center);
+    background-color: $white;
+    color: $black;
+    padding: .85rem 1.3rem;
+}
+
