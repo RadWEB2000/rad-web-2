@@ -56,7 +56,7 @@ function Primary(props:tPrimary) {
             </div>
             <div className={css.primary__content__box} >
                 <p className={css.primary__content} 
-                    dangerouslySetInnerHTML={{__html:props.content.substring(0,120)+'...'}}
+                    dangerouslySetInnerHTML={{__html: props.content.length >= 145 ? props.content.substring(0,145)+'...' : props.content}}
                 />
             </div>
         </Link>

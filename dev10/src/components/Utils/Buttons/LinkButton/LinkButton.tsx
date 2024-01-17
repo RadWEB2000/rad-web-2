@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 type tLinkButtonBase = {
     label: string;
+    mode?:"dark"|"light";
     uri: string;
 };
 
@@ -55,6 +56,7 @@ function Secondary(props: tSecondary) {
                 className={css.secondary__box}
                 data-filled={props.filled}
                 data-rounded={props.rounded}
+                data-mode={props.mode}
                 href={props.uri}
             >
                 <span className={css.secondary__label}>{props.label}</span>

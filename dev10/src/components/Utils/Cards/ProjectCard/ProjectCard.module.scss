@@ -6,21 +6,22 @@
 .primary__wrapper {
     display: grid;
     grid-template-columns: repeat(13,1fr);
-    // background: red;
     padding-top: 1rem;
-    height: 45rem;
+    transition:.27s ease-in-out background-color;
+    min-height: 30rem;
     width: 100%;
     position: relative;
 
     &::after,
     &::before {
+        border-radius: 2rem;
         height: .5rem;
         top: 0;
         left: 0;
     }
 
     &::after {
-        background-color: $blue;
+        background-image:linear-gradient(to right,$blue, $darkBlue, rgba($aquamarine,.7));
         box-shadow:0 0 1rem rgba($blue,.5);
         transition:.67s ease-in-out width;
         width: 1%;
@@ -28,13 +29,14 @@
     }
 
     &::before {
-        background-color: $taupeGray;
+        background-color: rgba($taupeGray,.2);
         width: 100%;
         z-index: 0;
     }
 
     &:focus-within,
     &:hover {
+        background-color: rgba($blue,.045);
         &::after {
             width: 100%;
         }
@@ -42,38 +44,39 @@
 
 }
 
+.primary__details ,
+.primary__content__box {
+    padding: 2rem 1rem;
+    grid-column: 1/-1;
+}
 
 .primary__details {
     @include flex(flex-start,flex-start,column,null,2rem);
-    padding: 2rem;
-    // background: purple;
-    grid-column: 1/5;
+    grid-row: 1/1;
 }
 
 .primary__content__box {
-    padding: 2rem;
-    // background: salmon;
-    grid-column: 10/-1;
+    grid-row: 2/5;
 }
 
 .primary__content {
-    @include font(1.9rem,500,2,null,null,start,$monospace);
+    @include font(1.62rem,400,1.7,null,null,start,$monospace);
 }
 
 .primary__title {
-    @include font(5.2rem,600,1.2,null,null,start);
+    @include font(3.7rem,600,1.2,null,null,start);
 }
 
 .primary__image__box {
     @include flex(flex-start,center);
-    // background: yellow;
-    grid-column: 5/10;
+    display: none;
+    grid-column: 7/-1;
+    grid-row: 1/3;
 }
 
 .primary__image {
-    height: 40rem;
+    @include size(92%, clamp(5rem,30rem,85%));
     position: relative;
-    width:clamp(5rem,50rem,60%);
 }
 
 .primary__categories{
@@ -81,8 +84,69 @@
 }
 .primary__categories__item {
     @include font(1.7rem,800,1,null,null,center);
-    background-color: $white;
-    color: $black;
+    background-color: $black;
+    color: $white;
     padding: .85rem 1.3rem;
 }
 
+@media only screen {
+    @media (min-width:650px){
+        .primary__details {
+            grid-column: 1/9;
+        }
+
+        .primary__content__box {
+            grid-column: 1/9;
+        }
+
+        .primary__content {
+            font-size: 1.62rem;
+        }
+
+        .primary__title {
+            font-size: 3.7rem;
+        }
+
+        .primary__image__box {
+            display: flex;
+            grid-column: 9/-1;
+            grid-row: 1/5;
+        }
+    }
+    @media (min-width:1100px){
+        .primary__wrapper {
+            min-height: 45rem;
+        }
+
+        .primary__content__box,
+        .primary__details,
+        .primary__image__box {
+            grid-row: 1 !important;
+        }
+
+        .primary__content__box,
+        .primary__details {
+            padding: 2rem !important;
+        }
+
+        .primary__details {
+            grid-column: 1/5;
+        }
+
+        .primary__content__box {
+            grid-column: 10/-1;
+        }
+
+        .primary__content {
+            font-size: 1.8rem;
+        }
+
+        .primary__title {
+            font-size: 4.7rem;
+        }
+
+        .primary__image__box {
+            grid-column: 5/10;
+        }
+    }
+}

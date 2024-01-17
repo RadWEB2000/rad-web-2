@@ -28,8 +28,10 @@ export default function Projects(props:tProjects){
                 <LinkButton
                     label={props.button}
                     uri={props.uri}
-                    filled
+                    mode="dark"
                     iconify
+                    filled
+                    rounded
                     theme="secondary"
                 />
             </div>

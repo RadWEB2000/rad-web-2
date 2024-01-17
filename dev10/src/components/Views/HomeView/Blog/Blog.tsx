@@ -32,6 +32,7 @@ export default function Blog(props:tBlog){
                     label={props.button}
                     uri={props.uri}
                     filled
+                    mode="light"
                     iconify
                     theme="secondary"
                 />
