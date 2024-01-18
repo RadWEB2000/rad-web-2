@@ -1,6 +1,6 @@
 import { Hero } from "utils/Hero";
 import { home } from "data/example/home";
-import { Blog, Projects } from "views/HomeView";
+import { Blog, Projects, Services } from "views/HomeView";
 import exampleImage from "assets/graphics/example.jpg";
 
 export default function HomePage(){
@@ -150,6 +150,11 @@ export default function HomePage(){
                     content="Expedita aut voluptatem quia doloremque beatae voluptatibus. Quae consequuntur corporis velit qui iste. Quia dolorum vel totam eos et nam ut numquam et. Similique aut atque voluptas perferendis sapiente temporibus. Nulla minima dolores qui fuga. Aut molestiae dolor facilis saepe. Ratione tempore voluptate sed ut excepturi quis provident nostrum. Omnis suscipit eveniet dicta ut libero porro."
                     title="Projekty"
                     uri="#"
+                />
+                <Services
+                    cards={home.services.cards}
+                    title={home.services.title}
+
                 />
            </main>
         </>

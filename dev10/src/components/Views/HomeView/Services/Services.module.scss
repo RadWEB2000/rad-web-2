@@ -1,0 +1,31 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include size(100vh,100%);
+    display: grid;
+    grid-template-rows: 7rem calc(100% - 7rem);
+    background-color: $darkBlue;
+    padding: 4rem;
+}
+
+.box {
+    grid-row: 1;
+}
+
+.cards {
+    @include flex(flex-start,flex-start,column);
+    background: #0000006a;
+    grid-row: 2;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+.title {
+    @include flex(center,flex-start);
+    @include font(4.4rem,700,1.2);
+    @include size(100%,100%);
+    padding: .3rem;
+}
