@@ -28,8 +28,8 @@ type tHomeTile = {
 
 function HomeTile(props:tHomeTile) {
     return(
-        <Link href={props.uri}>
-            <figure>
+        <Link className={css.primary__card__wrapper} href={props.uri}>
+            <figure className={css.primary__card__image} >
                 <Image
                     alt={props.image.altText}
                     fill
@@ -41,26 +41,26 @@ function HomeTile(props:tHomeTile) {
                     }}
                     title={props.image.title}
                 />
-            </figure>``
-            <h3 dangerouslySetInnerHTML={{__html:props.title}} />
+            </figure>
+            <h3 className={css.primary__card__title}  dangerouslySetInnerHTML={{__html:props.title}} />
         </Link>
     )
 }
 
 function Home(props:tHome){
     return(
-        <li>
-            <section>
-                <div>
-                    <h3 dangerouslySetInnerHTML={{__html:props.title}} />
-                    <p  dangerouslySetInnerHTML={{__html:props.content}} />
+        <li className={css.primary__wrapper} >
+            <section className={css.primary__box} >
+                <div className={css.primary__box__details} >
+                    <h2 className={css.primary__box__details__title}  dangerouslySetInnerHTML={{__html:props.title}} />
+                    <p className={css.primary__box__details__content}   dangerouslySetInnerHTML={{__html:props.content}} />
                     <LinkButton
                         label={props.button}
                         theme="primary"
                         uri={props.uri}
                     />
                 </div>
-                <div>
+                <div className={css.primary__box__image} >
                     <figure>
                          <Image
                             alt={props.image.altText}
@@ -78,7 +78,7 @@ function Home(props:tHome){
             </section>
             {
                 props.cards &&
-                <ul>
+                <ul className={css.primary__cards} >
                     {props.cards.map((item,index) => {
                         return <HomeTile {...item} key={index} />
                     })}
