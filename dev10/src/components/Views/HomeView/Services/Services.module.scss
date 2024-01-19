@@ -2,20 +2,25 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-    @include size(100vh,100%);
     display: grid;
     grid-template-rows: 7rem calc(100% - 7rem);
     background-color: $darkBlue;
     padding: 4rem;
+    padding: 4rem 2rem;
 }
 
 .box {
+    background-color: $darkBlue;
+    //  position:sticky;
+    // top: 0;
+    padding:2rem .3rem 1rem;
     grid-row: 1;
+    z-index: 99;
 }
 
 .cards {
-    @include flex(flex-start,flex-start,column);
-    background: #0000006a;
+    @include flex(flex-start,flex-start,column,null,1rem);
+    // background: #0000006a;
     grid-row: 2;
     overflow-y: scroll;
     &::-webkit-scrollbar{
@@ -27,5 +32,14 @@
     @include flex(center,flex-start);
     @include font(4.4rem,700,1.2);
     @include size(100%,100%);
-    padding: .3rem;
+   
+}
+
+@media only screen {
+    @media (min-width:1200px){
+        .box {
+            position:sticky;
+            top: 0;
+        }       
+    }
 }

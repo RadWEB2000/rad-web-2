@@ -50,32 +50,30 @@ function HomeTile(props:tHomeTile) {
 function Home(props:tHome){
     return(
         <li className={css.primary__wrapper} >
-            <section className={css.primary__box} >
-                <div className={css.primary__box__details} >
-                    <h2 className={css.primary__box__details__title}  dangerouslySetInnerHTML={{__html:props.title}} />
-                    <p className={css.primary__box__details__content}   dangerouslySetInnerHTML={{__html:props.content}} />
-                    <LinkButton
-                        label={props.button}
-                        theme="primary"
-                        uri={props.uri}
+            <div className={css.primary__box__details} >
+                <h2 className={css.primary__box__details__title}  dangerouslySetInnerHTML={{__html:props.title}} />
+                <p className={css.primary__box__details__content}   dangerouslySetInnerHTML={{__html:props.content}} />
+                <LinkButton
+                    label={props.button}
+                    theme="primary"
+                    uri={props.uri}
+                />
+            </div>
+            <div className={css.primary__image__box} >
+                <figure className={css.primary__image} >
+                        <Image
+                        alt={props.image.altText}
+                        fill
+                        loading="lazy"
+                        src={props.image.sourceUrl}
+                        style={{
+                            objectFit: 'cover',
+                            objectPosition: 'center',
+                        }}
+                        title={props.image.title}
                     />
-                </div>
-                <div className={css.primary__box__image} >
-                    <figure>
-                         <Image
-                            alt={props.image.altText}
-                            fill
-                            loading="lazy"
-                            src={props.image.sourceUrl}
-                            style={{
-                                objectFit: 'cover',
-                                objectPosition: 'center',
-                            }}
-                            title={props.image.title}
-                        />
-                    </figure>
-                </div>
-            </section>
+                </figure>
+            </div>
             {
                 props.cards &&
                 <ul className={css.primary__cards} >
