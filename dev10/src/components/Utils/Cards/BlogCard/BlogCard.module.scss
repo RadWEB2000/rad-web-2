@@ -40,7 +40,7 @@
 }
 
 .primary__title {
-    @include font(2.4rem, 600, 1.2, null, null, start);
+    @include font(2rem, 600, 1.2, null, null, start);
     padding: 1rem;
     grid-area: title;
     text-wrap:balance;
@@ -56,7 +56,7 @@
 @media only screen {
     @media (min-width:1300px){
         .primary__title {
-            font-size: 4rem;
+            font-size: 3rem;
         }
     }
 }

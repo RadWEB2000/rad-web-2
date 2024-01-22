@@ -6,14 +6,20 @@ import css from "views/HomeView/Blog/Blog.module.scss"
 type tBlog = {
     button:string;
     cards:{
-        category:{
-            label:string;
+        node:{
+            categories:{
+                edges:{
+                    label:string;
+                    uri:string;
+                }[]
+            };
+            image:{
+                node: tImage
+            };
+            dateGmt:string;
+            title:string;
             uri:string;
-        };
-        image:tImage;
-        release:string;
-        title:string;
-        uri:string;
+        }
     }[];
     content:string;
     title:string;
@@ -39,9 +45,14 @@ export default function Blog(props:tBlog){
             </div>
             <ul className={css.cards} >
                 {props.cards.slice(0,6).map((item,index) => {
+                    console.log("blog card",item.node.image)
                     return(
                         <BlogCard
-                            {...item}
+                            categories={item.node.categories.edges[0]}
+                            release={item.node.dateGmt}
+                            image={item.node.image}
+                            title={item.node.title}
+                            uri={item.node.uri}
                             key={index}
                             theme="primary"
                         />

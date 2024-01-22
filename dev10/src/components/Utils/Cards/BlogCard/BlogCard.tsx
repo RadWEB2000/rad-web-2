@@ -23,12 +23,16 @@ type tBlogCard = {} & (
 );
 
 type tPrimary = {
-    image: tImage;
-    release: string;
-    category: {
-        label: string;
-        uri: string;
+     categories:{
+        label:string;
+        uri:string;
     };
+    image:{
+        node: tImage
+    };
+    release:string;
+    title:string;
+    uri:string;
 } & tBlogCardBase;
 
 type tSecondary = {
@@ -47,6 +51,7 @@ type tTertiary = {
 
 function Primary(props: tPrimary) {
     const { day, month, year } = getDate(props.release, 'number');
+    console.log(`featured img: ${props.title} -`, props.image)
     return (
         <li className={css.primary__wrapper}>
             <Link className={css.primary__box} href={props.uri}>
@@ -55,22 +60,25 @@ function Primary(props: tPrimary) {
                     dangerouslySetInnerHTML={{ __html: props.title }}
                 />
                 <figure className={css.primary__image}>
+                    {/* {
+                        props.image && */}
                     <Image
-                        alt={props.image.altText}
-                        fill
-                        loading="lazy"
-                        src={props.image.sourceUrl}
-                        style={{
-                            objectFit: 'cover',
-                            objectPosition: 'center',
-                        }}
-                        title={props.image.title}
+                    alt={""}
+                    fill
+                    loading="lazy"
+                    src={"http://localhost/radweb/wp-content/uploads/2024/01/image-5-150x150.jpeg"}
+                    style={{
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                    }}
+                    title={""}
                     />
+                {/* } */}
                 </figure>
                 <div className={css.primary__details}>
-                    <Link className={css.primary__category} href={props.category.uri}>
-                        {props.category.label}
-                    </Link>
+                    {/* <Link className={css.primary__category} href={props.categories.uri}>
+                        {props.categories.label}
+                    </Link> */}
                     <p className={css.primary__release}>{`${day}-${month()}-${year}`}</p>
                 </div>
             </Link>
