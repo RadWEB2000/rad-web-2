@@ -2,25 +2,11 @@ import { BlogCard } from "utils/Cards";
 import { tImage } from "ts/types";
 import { LinkButton } from "utils/Buttons";
 import css from "views/HomeView/Blog/Blog.module.scss"
+import { iArticlePostsHome } from "app/types/interface";
 
 type tBlog = {
     button:string;
-    cards:{
-        node:{
-            categories:{
-                edges:{
-                    label:string;
-                    uri:string;
-                }[]
-            };
-            image:{
-                node: tImage
-            };
-            dateGmt:string;
-            title:string;
-            uri:string;
-        }
-    }[];
+    cards:iArticlePostsHome;
     content:string;
     title:string;
     uri:string;
@@ -44,15 +30,14 @@ export default function Blog(props:tBlog){
                 />
             </div>
             <ul className={css.cards} >
-                {props.cards.slice(0,6).map((item,index) => {
-                    console.log("blog card",item.node.image)
+                {props.cards.nodes.slice(0,6).map((item,index) => {
                     return(
                         <BlogCard
-                            categories={item.node.categories.edges[0]}
-                            release={item.node.dateGmt}
-                            image={item.node.image}
-                            title={item.node.title}
-                            uri={item.node.uri}
+                            categories={item.categories.nodes[0]}
+                            date={item.dateGmt}
+                            image={item.featuredImage.node}
+                            title={item.title}
+                            uri={item.uri}
                             key={index}
                             theme="primary"
                         />

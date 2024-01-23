@@ -6,7 +6,7 @@
 .primary__wrapper {
     display: grid;
     grid-template-columns: repeat(7,1fr);
-    margin:31rem auto;
+    margin:0 auto;
     min-height: 67rem;
     width:clamp(2rem,130rem,95%);
 }

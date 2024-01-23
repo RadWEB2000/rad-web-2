@@ -14,7 +14,8 @@ const months = [
 ];
 
 export default function getDate(time: string, type: 'long' | 'short' | 'number') {
-    const day = new Date(time).getDate() < 10 ? `0${new Date().getDate()}` : new Date().getDate();
+
+    const day = new Date(time).getDate() < 10 ? `0${new Date(time).getDate()}` : new Date(time).getDate();
 
     function month() {
         const monthNumber = new Date(time).getMonth();
@@ -27,7 +28,7 @@ export default function getDate(time: string, type: 'long' | 'short' | 'number')
         }
     }
 
-    const year = new Date().getFullYear();
+    const year = new Date(time).getFullYear();
 
     return {
         day,

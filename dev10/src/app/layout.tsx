@@ -1,6 +1,6 @@
 import LayoutProvider from "context/LayoutContext";
 import "css/Global.scss"
-
+export const revalidate = 1;
 type tRootLayout = {
     children:React.ReactNode;
 }

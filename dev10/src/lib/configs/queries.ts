@@ -7,29 +7,25 @@ export const q_settings = `
     }
 `
 
-export const q_articles_home = `
+export const q_article_posts_home = `
     query ArticlePostsHome {
         posts(first: 6) {
-            edges {
-                node {
-                    title
-                    uri
-                    featuredImage {
-                        node {
-                            altText
-                            sourceUrl(size: THUMBNAIL)
-                            title(format: RAW)
-                        }
+            nodes {
+                title(format: RENDERED)
+                uri
+                featuredImage {
+                    node {
+                        altText
+                        sourceUrl(size: THUMBNAIL)
+                        title(format:RENDERED)
                     }
-                    categories(last: 1) {
-                        edges {
-                            node {
-                                name
-                                uri
-                            }
-                        }
+                }
+                dateGmt
+                categories(last: 1) {
+                    nodes {
+                        name
+                        uri
                     }
-                    dateGmt
                 }
             }
         }
