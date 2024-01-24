@@ -1,7 +1,10 @@
+"use client"
 import { PersonCard } from "utils/Cards";
 import { LinkButton } from "utils/Buttons";
 import { tImage } from "ts/types";
 import { FaAnglesLeft, FaAnglesRight } from "react-icons/fa6";
+import css from "views/HomeView/About/About.module.scss";
+import {About_Carousel} from "views/HomeView";
 
 type tAbout = {
     title:string;
@@ -23,10 +26,10 @@ type tAbout = {
 export default function About(props:tAbout){
     let indexCard = 0;
     return(
-        <div>
-            <section>
-                <h2 dangerouslySetInnerHTML={{__html:props.title}} />
-                <p dangerouslySetInnerHTML={{__html:props.content}} />
+        <div className={css.wrapper}>
+            <section className={css.box}>
+                <h2 className={css.title} dangerouslySetInnerHTML={{__html:props.title}} />
+                <p className={css.content} dangerouslySetInnerHTML={{__html:props.content}} />
                 <LinkButton
                     theme="secondary"
                     filled
@@ -36,27 +39,11 @@ export default function About(props:tAbout){
                     mode="light"
                 />
             </section>
-            {
+             {
                 props.cards &&
-                <div>
-                    <button>
-                        <FaAnglesLeft/>
-                    </button>
-                    <ul>
-                        <PersonCard
-                            button={props.cards[indexCard].button}
-                            content={props.cards[indexCard].content}
-                            image={props.cards[indexCard].image}
-                            theme="primary"
-                            title={props.cards[indexCard].title}
-                            uri={props.cards[indexCard].work}
-                            work={props.cards[indexCard].work}
-                            />
-                    </ul>
-                    <button>
-                        <FaAnglesRight/>
-                    </button>
-                </div>
+                <About_Carousel
+                    cards={props.cards}
+                />
             }
         </div>  
     )

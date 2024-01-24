@@ -6,7 +6,7 @@
 .primary__wrapper {
     display: grid;
     grid-template-columns: repeat(7,1fr);
-    margin:0 auto;
+    margin:0 0 0 auto;
     min-height: 67rem;
     width:clamp(2rem,130rem,95%);
 }
@@ -25,11 +25,11 @@
 .primary__container{
     @include flex(flex-start,flex-start,column,null,1rem);
     grid-column: 1/-1;
-    padding: 2rem;
+    padding: 2rem .45rem;
 }
 
 .primary__title{
-    @include font(4.15rem,900,.9,null,null,start,$montserrat);
+    @include font(3.15rem,900,.9,null,null,start,$montserrat);
 }
 
 .primary__work {
@@ -76,6 +76,7 @@
 
         .primary__container{
             grid-column: 4/-1;
+            padding: 2rem;
         }
 
         .primary__title{

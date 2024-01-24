@@ -1,0 +1,41 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    margin: 5rem 0rem 15rem;
+    padding: 0rem 3rem;
+}
+
+.box {
+    @include flex(flex-start,flex-start,column,null,2.4rem);
+}
+
+.title {
+    @include font(7rem,600,1.1,null,null,start);
+}
+
+.content {
+    @include font(1.9rem,400,2,null,1.5px,start);
+    font-size: 1.72rem;
+    color:$taupeGray;
+    max-width: 95%;
+}
+
+@media only screen {
+    @media (min-width:850px){
+        .title {
+            font-size: 8.5rem;
+        }
+        .content {
+            font-size: 1.8rem;
+        }
+    }
+    @media (min-width:1500px){
+        .title {
+            font-size: 11.5rem;
+        }
+        .content {
+            font-size: 2.2rem;
+        }
+    }
+}
