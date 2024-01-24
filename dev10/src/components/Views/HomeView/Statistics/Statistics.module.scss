@@ -1,0 +1,110 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include backgroundCover;
+    background-blend-mode: darken;
+    background-color: rgba($black,.8);
+    padding: 12rem 3rem;
+    min-height:80rem;
+}
+
+.cards {
+    @include flex(flex-start,flex-start,row wrap,1.5rem,1.5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fill,25rem);
+    margin-top: 5rem;
+}
+
+.card {
+    @include flex(center,center,column);
+    aspect-ratio: 1/1;
+    border-bottom:2px solid $white;
+    border-right:2px solid $white;
+    padding: 2rem;
+    width: 100%;
+}
+
+.value {
+    @include font(10rem,300,1);
+}
+
+.label {
+    @include font(1.7rem,800,1.2);
+    text-align: center;
+}
+
+.box {
+    @include flex(flex-start,flex-start,column,null,3rem);
+}
+
+.title {
+    @include font(4rem,300,1.5,null,null,start);
+}
+
+.content {
+    @include font(1.6rem,500,2,null,null,start);
+}
+
+@media only screen {
+    @media (min-width:650px){
+        .cards {
+            grid-template-columns: repeat(auto-fill,28rem);
+        }
+
+        .value {
+            font-size: 13rem;
+        }
+
+        .label {
+            font-size: 2rem;
+        }
+
+        .box {
+            @include flex(flex-start,flex-start,column,null,3rem);
+        }
+
+        .title {
+            font-size: 5.52rem;
+            line-height: 1.3;
+        }
+
+        .content {
+            font-size: 1.9rem;
+        }       
+    }
+    @media (min-width:1000px){
+        .cards {
+            grid-template-columns: repeat(auto-fill,35rem);
+        }
+
+        .value {
+            font-size: 16rem;
+        }
+
+        .title {
+            font-size:7rem;
+        }
+
+        .content {
+            font-size: 2.4rem;
+        }       
+    }
+    @media (min-width:1600px){
+        .cards {
+            grid-template-columns: repeat(auto-fill,45rem);
+        }
+
+        .value {
+            font-size: 22rem;
+        }
+
+        .title {
+            font-size:11rem;
+        }
+
+        .content {
+            font-size: 2.7rem;
+        }       
+    }
+}

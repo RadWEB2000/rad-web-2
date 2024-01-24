@@ -1,6 +1,6 @@
 import { Hero } from "utils/Hero";
 import { home } from "data/example/home";
-import { About, Blog, Projects, Services } from "views/HomeView";
+import { About, Blog, Projects, Services, Statistics } from "views/HomeView";
 import exampleImage from "assets/graphics/example.jpg";
 import { wordpress_api } from "lib/configs/wordpress";
 import { q_article_posts_home,q_settings } from "lib/configs/queries";
@@ -41,6 +41,55 @@ export default async function HomePage(){
                 theme="home"
             />
            <main>
+                <About
+                    button={{
+                        label:"Poznaj nas",
+                        uri:"#"
+                    }}
+                    cards={[
+                        {
+                            button:"więcej",
+                            content:"Velit natus et et id aut nulla fugit quo vitae. Provident eligendi quasi saepe dolores consequuntur impedit quo nihil. Ipsa qui nesciunt autem distinctio deleniti. Error quae illum laborum et nulla molestias est. Reiciendis dicta enim magnam ut quas ex.",
+                            image:{
+                                altText:"",
+                                sourceUrl:maleImg.src,
+                                title:""
+                            },
+                            title:"Radosław Adamczyk",
+                            uri:"#",
+                            work:"Specjalista SEO/SEM | Front-end & Web Developer"
+                        },
+                        {
+                            button:"więcej",
+                            content:"Velit natus et et id aut nulla fugit quo vitae. Provident eligendi quasi saepe dolores consequuntur impedit quo nihil. Ipsa qui nesciunt autem distinctio deleniti. Error quae illum laborum et nulla molestias est. Reiciendis dicta enim magnam ut quas ex.",
+                            image:{
+                                altText:"",
+                                sourceUrl:femaleImg.src,
+                                title:""
+                            },
+                            title:"Anna Kowalska",
+                            uri:"#",
+                            work:"Copywriter"
+                        },
+                    ]}
+                    content={`Doloribus itaque quia illum sit. Eaque nesciunt ducimus perspiciatis est aut vitae quia veniam voluptatibus. Eos quod alias ratione ea sapiente inventore suscipit. Quam corrupti voluptatum. Sapiente quae maxime provident maxime exercitationem aperiam vel omnis. Voluptatum vel aut atque. Veniam nam quia mollitia qui. Aliquid omnis unde est sint inventore.`}
+                    title="O nas - zespół RadWEB"
+                />
+                <Statistics
+                    title="Profesjonalizm w każdym pikselu,<br/> sukces w każdym kliknięciu!"
+                    content="Tempore ut accusantium molestiae eos nisi magni temporibus. Quidem perferendis itaque tenetur consequuntur omnis id. Earum provident beatae dolorem deleniti veniam sunt. Cupiditate sit nesciunt a quisquam delectus dolor delectus dolorem. Adipisci deserunt similique nihil dignissimos sit optio autem quo. Quis laborum modi ea nisi. Soluta dolorem ratione id nisi consequatur repellat consequatur."
+                    cards={[
+                        {
+                            label:"Lat doświadczenia",
+                            value:new Date().getFullYear() - 2016
+                        },
+                        {
+                            label:"Zrealizowanych projektów",
+                            value:7
+                        },
+                    ]}
+                    image="https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                />
                 <Blog
                     button="wpisy"               
                     cards={articles}
@@ -101,40 +150,8 @@ export default async function HomePage(){
                     title={home.services.title}
 
                 />
-                <About
-                    button={{
-                        label:"Poznaj nas",
-                        uri:"#"
-                    }}
-                    cards={[
-                        {
-                            button:"więcej",
-                            content:"Velit natus et et id aut nulla fugit quo vitae. Provident eligendi quasi saepe dolores consequuntur impedit quo nihil. Ipsa qui nesciunt autem distinctio deleniti. Error quae illum laborum et nulla molestias est. Reiciendis dicta enim magnam ut quas ex.",
-                            image:{
-                                altText:"",
-                                sourceUrl:maleImg.src,
-                                title:""
-                            },
-                            title:"Radosław Adamczyk",
-                            uri:"#",
-                            work:"Specjalista SEO/SEM | Front-end & Web Developer"
-                        },
-                        {
-                            button:"więcej",
-                            content:"Velit natus et et id aut nulla fugit quo vitae. Provident eligendi quasi saepe dolores consequuntur impedit quo nihil. Ipsa qui nesciunt autem distinctio deleniti. Error quae illum laborum et nulla molestias est. Reiciendis dicta enim magnam ut quas ex.",
-                            image:{
-                                altText:"",
-                                sourceUrl:femaleImg.src,
-                                title:""
-                            },
-                            title:"Anna Kowalska",
-                            uri:"#",
-                            work:"Copywriter"
-                        },
-                    ]}
-                    content={`Doloribus itaque quia illum sit. Eaque nesciunt ducimus perspiciatis est aut vitae quia veniam voluptatibus. Eos quod alias ratione ea sapiente inventore suscipit. Quam corrupti voluptatum. Sapiente quae maxime provident maxime exercitationem aperiam vel omnis. Voluptatum vel aut atque. Veniam nam quia mollitia qui. Aliquid omnis unde est sint inventore.`}
-                    title="O nas - zespół RadWEB"
-                />
+                
+                
            </main>
         </>
     )
