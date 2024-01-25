@@ -151,3 +151,27 @@
             }
     }
 }
+
+// SECONDARY  =================================================================
+
+.secondary__wrapper {
+    @include flex(flex-start,flex-start,column,null,1rem);
+    background-image: linear-gradient(to bottom, rgba(220, 149, 99,.12), rgba($black,.6));
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.secondary__image{ 
+    @include size(7rem,7rem);
+    filter:invert(1);
+    position: relative;
+}
+
+.secondary__title {
+    @include font(3rem,600,1.2,null,null,start);
+}
+
+.secondary__content {
+    @include font(1.7rem,700,1.5,null,null,start,$monospace);
+    color:rgba($white,.75);
+}

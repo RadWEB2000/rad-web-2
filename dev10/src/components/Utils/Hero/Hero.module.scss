@@ -3,6 +3,15 @@
 
 // HOME  =================================================================
 
+@keyframes backgroundHomeVideo {
+    from {
+        filter: brightness(65%) hue-rotate(0deg);
+    }
+    to {
+        filter: brightness(65%) hue-rotate(142deg);
+    }
+}
+
 .home__wrapper {
     @include size(95dvh, 100%);
     display: grid;
@@ -14,7 +23,8 @@
 }
 
 .home__video {
-    filter: brightness(65%);
+    animation: backgroundHomeVideo 10s linear infinite alternate-reverse;
+    // filter: brightness(65%);
     grid-area: 'layer';
     object-fit: cover;
     position: absolute;

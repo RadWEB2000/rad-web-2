@@ -7,6 +7,7 @@ import { q_article_posts_home,q_settings } from "lib/configs/queries";
 import {iArticlePostsHome, iSettings} from "ts/interface";
 import maleImg from "assets/graphics/male.jpg";
 import femaleImg from "assets/graphics/female.jpg";
+
 export default async function HomePage(){
 
     const articles:iArticlePostsHome = await fetch(wordpress_api, {
@@ -20,7 +21,6 @@ export default async function HomePage(){
     }).then(res => res.json()).then(({data:{posts}}) => {
         return posts;
     })
-
     const settings:iSettings = await fetch(wordpress_api, {
         method:"POST",
         headers: {

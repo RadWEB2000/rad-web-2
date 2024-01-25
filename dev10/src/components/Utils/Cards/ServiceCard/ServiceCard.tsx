@@ -12,7 +12,10 @@ type tServiceCardBase = {
 type tServiceCard = {} & (
     {
         theme:"home"
-    } & tHome
+    } & tHome | 
+    {
+        theme: "offer"
+    } & tOffer
 )
 
 type tHome = {
@@ -25,6 +28,16 @@ type tHome = {
 type tHomeTile = {
     image:tImage;
 } & tServiceCardBase
+
+type tOffer = {
+    image:tImage;
+    title:string;
+    content:string;
+    button:{
+        label:string;
+        uri:string;
+    }
+}
 
 function HomeTile(props:tHomeTile) {
     return(
@@ -86,8 +99,38 @@ function Home(props:tHome){
     )
 }
 
+
+function Offer(props:tOffer){
+    return(
+        <li className={css.secondary__wrapper}>
+            <figure className={css.secondary__image}>
+                 <Image
+                    alt={props.image.altText}
+                    fill
+                    loading="lazy"
+                    src={props.image.sourceUrl}
+                    style={{
+                        objectFit: 'contain',
+                        objectPosition: 'center',
+                    }}
+                    title={props.image.title}
+                />
+            </figure>
+            <h3 className={css.secondary__title} dangerouslySetInnerHTML={{__html:props.title}} />
+            <p className={css.secondary__content} dangerouslySetInnerHTML={{__html: props.content.length >= 125 ? props.content.substring(0,125)+'...' : props.content}} />
+            <LinkButton
+                label={props.button.label}
+                uri={props.button.uri}
+                theme="primary"
+            />
+        </li>
+    )
+}
+
 export default function ServiceCard(props:tServiceCard){
     if(props.theme === "home"){
         return <Home {...props} />
+    }else if(props.theme === "offer"){
+        return <Offer {...props} />
     }
 }
