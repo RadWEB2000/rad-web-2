@@ -23,6 +23,11 @@ type tHero = {} & (
     | ({
           theme: 'project';
       } & tProject)
+    | (
+        {
+            theme:"about_us"
+        } & tAboutUs
+    )
 );
 
 type tArticle = {
@@ -40,6 +45,11 @@ type tArticle = {
     };
 };
 
+type tAboutUs = {
+    title:string;
+    content:string;
+    image:tImage;
+}
 type tGlossary = {
     content: string;
     title: string;
@@ -67,6 +77,38 @@ type tPerson = {
     title: string;
     work: string;
 };
+
+type tProject = {
+    button: string;
+    image: tImage;
+    release: string;
+    url: string;
+    title: string;
+};
+
+function AboutUs(props:tAboutUs){
+    return(
+        <div className={css.about_us__wrapper}>
+            <figure className={css.about_us__image}>
+                 <Image
+                    alt={props.image.altText}
+                    fill
+                    loading="lazy"
+                    src={props.image.sourceUrl}
+                    style={{
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                    }}
+                    title={props.image.title}
+                />
+            </figure>
+            <header className={css.about_us__box}>
+                <h1 className={css.about_us__title} dangerouslySetInnerHTML={{__html:props.title}} />
+                <p className={css.about_us__content} dangerouslySetInnerHTML={{__html:props.content}} />
+            </header>
+        </div>
+    )
+}
 
 function Article(props: tArticle) {
     const { day, month, year } = getDate(props.release, 'short');
@@ -187,14 +229,6 @@ function Person(props: tPerson) {
     );
 }
 
-type tProject = {
-    button: string;
-    image: tImage;
-    release: string;
-    url: string;
-    title: string;
-};
-
 function Project(props: tProject) {
     const { month, year } = getDate(props.release, 'long');
     return (
@@ -242,5 +276,7 @@ export default function Hero(props: tHero) {
         return <Glossary {...props} />;
     } else if (props.theme === 'project') {
         return <Project {...props} />;
+    }else if (props.theme === "about_us"){
+        return <AboutUs {...props} />
     }
 }

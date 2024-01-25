@@ -62,15 +62,15 @@ function Primary(props: tPrimary) {
                 />
                 <figure className={css.primary__image}>
                     <Image
-                    alt={props.image.altText}
-                    fill
-                    loading="lazy"
-                    src={props.image.sourceUrl}
-                    style={{
-                        objectFit: 'cover',
-                        objectPosition: 'center',
-                    }}
-                    title={props.image.title}
+                        alt={props.image.altText}
+                        fill
+                        loading="lazy"
+                        src={props.image.sourceUrl}
+                        style={{
+                            objectFit: 'cover',
+                            objectPosition: 'center',
+                        }}
+                        title={props.image.title}
                     />
                 </figure>
                 <div className={css.primary__details}>
