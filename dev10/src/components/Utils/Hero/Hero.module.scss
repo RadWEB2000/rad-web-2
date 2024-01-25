@@ -330,28 +330,59 @@
 // ABOUT US  =================================================================
 
 .about_us__wrapper {
+    @include size(clamp(99dvh,99dvh,120dvh),100%);
     display: grid;
     grid-template-areas: "layer";
-    @include size(95dvh,100%);
 }
 
 .about_us__image {
     filter:brightness(60%);
-    position: relative;
     grid-area: layer;
+    position: relative;
     z-index: -1;
 }
 
 .about_us__box {
-    @include flex(flex-end,center,column,null,2rem);
+    @include flex(flex-end,center,column,null,1rem);
     grid-area: layer;
-    padding:7rem 5rem 2rem 10rem;
+    padding:10rem 1.2rem 2rem 1.2rem;
 }
 
 .about_us__title {
-    @include font(14rem,500,1.4,null,null,end);
+    @include font(4.5rem,500,1.4,null,null,end);
 }
 
 .about_us__content {
-    @include font(1.7rem,600,1.9,null,2px,end);
+    @include font(1.35rem,600,1.9,null,2px,end);
+}
+
+@media only screen {
+    @media (min-width:552px){
+        .about_us__box {
+            padding:7rem 2.5rem 2rem 8rem;
+            // padding:10rem 1.2rem 2rem 1.2rem;
+            row-gap:2rem;
+        }
+
+        .about_us__title {
+            font-size: 9rem;
+        }
+
+        .about_us__content {
+            font-size: 1.7rem;
+        }       
+    }
+    @media (min-width:1000px){
+        .about_us__box {
+            padding:7rem 5rem 2rem 10rem;
+        }
+
+        .about_us__title {
+            font-size: 12rem;
+        }
+
+        .about_us__content {
+            font-size: 1.8rem;
+        }       
+    }
 }

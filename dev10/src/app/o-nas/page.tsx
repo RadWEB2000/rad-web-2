@@ -1,3 +1,4 @@
+import { Culture } from "views/AboutView";
 import { Hero } from "utils/Hero";
 
 export default function AboutUsPage(){
@@ -13,6 +14,17 @@ export default function AboutUsPage(){
                 title="Kim jesteśmy?"
                 theme="about_us"
             />
+            <main>
+                <Culture
+                    content="In animi eaque dignissimos nobis incidunt blanditiis. Repellat possimus sit non. Velit neque sequi animi accusantium qui voluptas accusantium velit illum. Et at sint labore. Accusantium occaecati consequuntur tempore. Quod et ut officia officiis. <br/><br/>Id aut qui quis repellendus voluptatem suscipit. Beatae omnis enim ut dolore fuga. Accusamus et natus quis sunt debitis ut et aspernatur distinctio."               
+                    image={{
+                        altText:"",
+                        sourceUrl:"https://images.unsplash.com/photo-1567449303183-ae0d6ed1498e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        title:""
+                    }}
+                    title="Nasza kultura"
+                />
+            </main>
         </>
     )
 }
