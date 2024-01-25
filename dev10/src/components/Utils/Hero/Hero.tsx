@@ -50,6 +50,18 @@ type tAboutUs = {
     content:string;
     image:tImage;
 }
+
+type tBlog = {
+    
+    categories:{
+        label:string;
+        uri:string;
+    }[];
+    content:string;
+    image:tImage;
+    title:string;
+}
+
 type tGlossary = {
     content: string;
     title: string;
@@ -158,6 +170,52 @@ function Article(props: tArticle) {
             </div>
         </header>
     );
+}
+
+
+
+function Blog(props:tBlog){
+    return(
+        <div>
+            <section>
+                <header>
+                    <h1
+                        dangerouslySetInnerHTML={{__html:props.title}}
+                    />
+                    <p
+                        dangerouslySetInnerHTML={{__html:props.content}}
+                    />
+                </header>
+                <figure>
+                    <Image
+                        alt={props.image.altText}
+                        fill
+                        loading="lazy"
+                        src={props.image.sourceUrl}
+                        style={{
+                            objectFit: 'cover',
+                            objectPosition: 'center',
+                        }}
+                        title={props.image.title}
+                    />
+                </figure>
+            </section>
+            {
+                props.categories &&
+                <ul>
+                    {props.categories.map((item,index) => {
+                        return(
+                            <Link
+                                dangerouslySetInnerHTML={{__html:item.label}}
+                                href={item.uri}
+                                key={index}
+                            />
+                        )
+                    })}
+                </ul>
+            }
+        </div>
+    )
 }
 
 function Glossary(props: tGlossary) {

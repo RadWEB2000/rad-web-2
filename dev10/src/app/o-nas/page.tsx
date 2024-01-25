@@ -1,4 +1,4 @@
-import { Culture } from "views/AboutView";
+import { Culture, Values } from "views/AboutView";
 import { Hero } from "utils/Hero";
 
 export default function AboutUsPage(){
@@ -15,6 +15,27 @@ export default function AboutUsPage(){
                 theme="about_us"
             />
             <main>
+                <Values
+                    title="Nasze wartości"
+                    cards={[
+                        {
+                            title:"Odpowiedzialność",
+                            content:"At aut eaque. Occaecati reiciendis molestiae et praesentium voluptatem eos accusamus quis deleniti. Non cupiditate labore ea quam ad labore quis laudantium quia. Sapiente consequuntur rem nam excepturi omnis dignissimos omnis qui.",
+                        },
+                        {
+                            title:"Odwaga",
+                            content:"At aut eaque. Occaecati reiciendis molestiae et praesentium voluptatem eos accusamus quis deleniti. Non cupiditate labore ea quam ad labore quis laudantium quia. Sapiente consequuntur rem nam excepturi omnis dignissimos omnis qui.",
+                        },
+                        {
+                            title:"Etyczność",
+                            content:"At aut eaque. Occaecati reiciendis molestiae et praesentium voluptatem eos accusamus quis deleniti. Non cupiditate labore ea quam ad labore quis laudantium quia. Sapiente consequuntur rem nam excepturi omnis dignissimos omnis qui.",
+                        },
+                        {
+                            title:"Transparentność",
+                            content:"At aut eaque. Occaecati reiciendis molestiae et praesentium voluptatem eos accusamus quis deleniti. Non cupiditate labore ea quam ad labore quis laudantium quia. Sapiente consequuntur rem nam excepturi omnis dignissimos omnis qui.",
+                        },
+                    ]}
+                />
                 <Culture
                     content="In animi eaque dignissimos nobis incidunt blanditiis. Repellat possimus sit non. Velit neque sequi animi accusantium qui voluptas accusantium velit illum. Et at sint labore. Accusantium occaecati consequuntur tempore. Quod et ut officia officiis. <br/><br/>Id aut qui quis repellendus voluptatem suscipit. Beatae omnis enim ut dolore fuga. Accusamus et natus quis sunt debitis ut et aspernatur distinctio."               
                     image={{
