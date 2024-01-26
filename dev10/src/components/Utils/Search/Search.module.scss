@@ -1,0 +1,25 @@
+@import '../../../styles/Mixins.scss';
+@import '../../../styles/Variables.scss';
+
+.wrapper {
+    @include flex(flex-start,flex-start,column,null,1.4rem);
+}
+
+.label {
+    @include font(1.6rem,700,1.2,null,null,start);
+}
+
+.field {
+    @include size(4.55rem,clamp(2rem,65rem,95%));
+    @include font(1.9rem,400,1,null,null,start);
+    border-radius: 1rem;
+    background-color: $erieBlack;
+    color:$white;
+    padding: 1rem 2rem;
+    transition:.12s linear outline;
+
+    &:focus-within,
+    &:hover {
+        outline: 3px solid $white;
+    }
+}

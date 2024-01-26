@@ -6,6 +6,7 @@ import { LinkButton } from 'utils/Buttons';
 import css from 'utils/Hero/Hero.module.scss';
 import { IoTimeOutline } from 'react-icons/io5';
 import { MdOutlineDateRange } from 'react-icons/md';
+import Search from '../Search/Search';
 
 type tHero = {} & (
     | ({
@@ -58,6 +59,10 @@ type tAboutUs = {
 type tBlog = {
     content:string;
     title:string;
+    search: {
+        label:string;
+        placeholder:string;
+    }
 }
 
 type tGlossary = {
@@ -174,13 +179,18 @@ function Article(props: tArticle) {
 
 function Blog(props:tBlog){
     return(
-        <header>
+        <header className={css.blog__wrapper}>
             <h1
+                className={css.blog__title}
                 dangerouslySetInnerHTML={{__html:props.title}}
             />
             <p
+                className={css.blog__content}
                 dangerouslySetInnerHTML={{__html:props.content}}
             />
+            <div className={css.blog__search}>
+                <Search {...props.search} />
+            </div>
         </header>
     )
 }
