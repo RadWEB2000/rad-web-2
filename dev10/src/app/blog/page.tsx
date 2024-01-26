@@ -5,7 +5,7 @@ export default function BlogPage(){
         <>
             <Hero
                 content="Explicabo quia alias. Ipsum reiciendis et. Possimus quibusdam sequi eum. Sunt ipsa sequi. In est quis nihil. Accusamus exercitationem quia dolores praesentium aspernatur."
-                title="Pozycjonowanie"
+                title="Blog"
                 theme="blog"
                 search={{
                     label:"Szukaj",
