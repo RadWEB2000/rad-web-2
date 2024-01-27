@@ -3,15 +3,18 @@
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(11,1fr);
-    padding: 4rem 5rem;
     gap:1rem;
+    grid-template-columns: repeat(11,1fr);
     margin: auto;
-    width: 85%;
+    padding: 4rem 2.5rem;
+    width: clamp(5rem,130rem,95%);
+    & > * {
+        grid-column: 1/-1;
+    }
 }
 
 .title {
-    grid-column: 1/5;
+    grid-row: 1;
     & > h2 {
         @include font(3rem,200,1.2,null,null,start,$monospace);
         border-bottom: 1px solid $white;
@@ -21,9 +24,27 @@
 }
 
 .content {
-    grid-column: 5/-1;
+    grid-row: 2;
     & > p {
-        @include font(1.9rem,400,2.2,null,1px,start);
+        @include font(1.45rem,400,2.2,null,1px,start);
         color:$taupeGray;
+        padding: 3rem;
+    }
+}
+
+@media only screen {
+    @media (min-width:1200px){
+        .title {
+            grid-column: 1/4;
+            grid-row: 1;
+
+        }
+        .content {
+            grid-column: 4/-1;
+            grid-row: 1;
+            & > p {
+                font-size: 1.62rem;
+            }
+        }
     }
 }
