@@ -1,5 +1,4 @@
 import { BlogCard } from "utils/Cards";
-import { tImage } from "ts/types";
 import { LinkButton } from "utils/Buttons";
 import css from "views/HomeView/Blog/Blog.module.scss"
 import { iArticlePostsHome } from "app/types/interface";

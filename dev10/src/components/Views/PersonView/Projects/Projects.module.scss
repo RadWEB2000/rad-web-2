@@ -1,0 +1,51 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    display: grid;
+    gap:1rem;
+    grid-template-columns: repeat(11,1fr);
+    margin: auto;
+    padding: 4rem 2.5rem;
+    width: clamp(5rem,130rem,95%);
+    & > * {
+        grid-column: 1/-1;
+    }
+}
+
+.title {
+    grid-row: 1;
+    & > h2 {
+        @include font(3rem,200,1.2,null,null,start,$monospace);
+        border-bottom: 1px solid $white;
+        padding: 1rem 1.5rem;
+
+    }
+}
+
+.blog {
+    @include flex(flex-start,flex-start,column,null,1rem);
+    grid-row: 2;
+}
+
+@media only screen {
+    @media (min-width:600px){
+        .blog{
+            // grid-template-columns: repeat(2,1fr);
+        }
+    }
+    @media (min-width:1200px){
+        .title {
+            grid-column: 1/4;
+            grid-row: 1;
+
+        }
+        .blog {
+            grid-column: 4/-1;
+            grid-row: 1;
+            & > p {
+                font-size: 1.62rem;
+            }
+        }
+    }
+}

@@ -150,3 +150,89 @@
         }
     }
 }
+
+
+// SECONDARY  =================================================================
+.secondary__wrapper {
+    background-color:$erieBlack;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 10rem calc(100% - 27rem) 17rem;
+    grid-template-rows: minmax(2rem,auto) auto;
+    min-height: 10rem;
+    padding: 1rem;
+    transition: .12s linear filter;
+    width: 100%;
+    &:focus-within,
+    &:hover {
+        filter:brightness(125%);
+    }
+}
+
+.secondary__image {
+    aspect-ratio: 2/3;
+    border-radius: 1rem;
+    grid-column: 1;
+    grid-row: 1/-1;
+    overflow: hidden;
+    position: relative;
+}
+
+.secondary__categories {
+    @include flex(flex-start,flex-end,row,.2rem,.2rem);
+    grid-column: 2/-1;
+    grid-row: 1;
+    padding: .24rem;
+}
+
+.secondary__category {
+    @include font(1.5rem,800,1,null,null,center);
+    background-color: $taupeGray;
+    border-radius: 1rem;
+    color: $erieBlack;
+    padding: .85rem .6rem;
+}
+
+.secondary__title {
+    @include font(2.45rem,500,1.2,null,null,start);
+    grid-column: 2/-1;
+    grid-row: 2;
+    padding: 2rem 1rem 0 2rem;
+}
+
+@media only screen {
+    @media (min-width:630px){
+        .secondary__category {
+            font-size: 1.58rem;
+            padding: .85rem 1.2rem;
+        }
+        .secondary__title {
+            font-size: 2.7rem;
+            line-height: 1.1;
+        }       
+    }
+    @media (min-width:925px){
+        .secondary__wrapper {
+            grid-template-columns: 10rem calc(100% - 35rem) 25rem;
+            grid-template-rows:1fr;
+        }
+        .secondary__image {
+            grid-row: 1;
+        }
+        .secondary__categories {
+            @include flex(flex-end,flex-start,column,.7rem,.7rem);
+            grid-column: 3;
+            grid-row: 1;
+        }
+        .secondary__category {
+            font-size: 1.6rem;
+            padding: .72rem 1.6rem;
+        }
+        .secondary__title {
+            font-size: 2.7rem;
+            grid-column: 2;
+            grid-row: 1;
+            padding: 2rem ;
+        }       
+    }
+}

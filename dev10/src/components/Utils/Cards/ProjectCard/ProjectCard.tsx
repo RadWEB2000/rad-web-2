@@ -13,7 +13,10 @@ type tProjectCard = {
 } & (
     {
         theme:"primary"
-    } & tPrimary
+    } & tPrimary | 
+    {
+        theme:"secondary"
+    } & tSecondary
 )
 
 type tPrimary = {
@@ -63,8 +66,54 @@ function Primary(props:tPrimary) {
     )
 }
 
+type tSecondary = {
+    image:tImage;
+    title:string;
+    categories:string[];
+    uri:string;
+}
+
+function Secondary(props:tSecondary){
+    return(
+        <Link className={css.secondary__wrapper} href={props.uri}>
+            <figure className={css.secondary__image} >
+                 <Image
+                    alt={props.image.altText}
+                    fill
+                    loading="lazy"
+                    src={props.image.sourceUrl}
+                    style={{
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                    }}
+                    title={props.image.title}
+                />
+            </figure>
+            <h3
+                className={css.secondary__title} 
+                dangerouslySetInnerHTML={{__html:props.title}}
+            />
+            <ul
+                className={css.secondary__categories} 
+            >
+                {props.categories.map((item,index) => {
+                    return(
+                        <li
+                            className={css.secondary__category} 
+                            dangerouslySetInnerHTML={{__html:item}}
+                            key={index}
+                        />
+                    )
+                })}
+            </ul>
+        </Link>
+    )
+}
+
 export default function ProjectCard(props:tProjectCard){
     if(props.theme === "primary")   {
         return <Primary {...props} />
+    }else if(props.theme === "secondary"){
+        return <Secondary {...props} />
     }
 }
