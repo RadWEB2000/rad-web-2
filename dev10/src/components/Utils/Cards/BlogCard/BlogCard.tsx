@@ -4,6 +4,7 @@ import Image from 'next/image';
 import getDate from 'app/lib/functions/getDate';
 import css from 'utils/Cards/BlogCard/BlogCard.module.scss';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { LinkButton } from '../../Buttons';
 
 type tBlogCardBase = {
     title: string;
@@ -19,7 +20,11 @@ type tBlogCard = {} & (
       } & tSecondary
     | {
           theme: 'tertiary';
-      } & tTertiary
+      } & tTertiary 
+    | {
+        theme:"quatenary"
+    } & tQuatenary
+    
 );
 
 type tPrimary = {
@@ -140,6 +145,74 @@ function Tertiary(props:tTertiary){
     )
 }
 
+type tQuatenary = {
+    button: {
+        label:string;
+        uri:string;
+    };
+    categories: {
+        label:string;
+        uri:string;
+    }[];
+    image:tImage;
+    title:string;
+    excerpt:string;
+    date:string;
+}
+
+function Quatenary(props:tQuatenary){
+    const {day,month,year} = getDate(props.date, "short");
+    return(
+        <li className={css.quatenary__wrapper} >
+            <figure className={css.quatenary__image} >
+                 <Image
+                    alt={props.image.altText}
+                    fill
+                    loading="lazy"
+                    src={props.image.sourceUrl}
+                    style={{
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                    }}
+                    title={props.image.title}
+                />
+            </figure>
+            <section className={css.quatenary__details} >
+                <ul className={css.quatenary__categories} >
+                    {props.categories.map((item,index) => {
+                        return (
+                            <Link
+                                className={css.quatenary__category} 
+                                dangerouslySetInnerHTML={{__html:item.label}}
+                                href={item.uri}
+                                key={index}
+                            />
+                        )
+                    })}
+                </ul>
+                <p className={css.quatenary__release}>{`${day} ${month()} ${year}`}</p>
+                <h3 
+                    className={css.quatenary__title} 
+                    dangerouslySetInnerHTML={{__html:props.title}}
+                />
+                <p
+                    className={css.quatenary__excerpt} 
+                    dangerouslySetInnerHTML={{__html:props.excerpt.substring(0,132) + "..."}}
+                />
+                <LinkButton
+                    filled
+                    iconify
+                    label={props.button.label}
+                    mode='light'
+                    rounded
+                    theme='secondary'
+                    uri={props.button.uri}
+                />
+            </section>
+        </li>
+    )
+}
+
 
 export default function BlogCard(props: tBlogCard) {
     if (props.theme === 'primary') {
@@ -148,5 +221,7 @@ export default function BlogCard(props: tBlogCard) {
         return <Secondary {...props} />
     }else if(props.theme === "tertiary"){
         return <Tertiary {...props} />
+    } else if(props.theme === "quatenary"){
+        return <Quatenary {...props} />
     }
 }

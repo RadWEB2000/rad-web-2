@@ -3,3 +3,21 @@ export type tImage = {
     sourceUrl:string;
     title:string;
 }
+
+
+
+
+export type tBlogCard = {
+    title:string;
+    date:string;
+    uri:string;
+} & (
+    {
+        categories: {
+            label:string;
+            uri:string;
+        }
+        image: tImage;
+        theme : "primary";
+    }
+)

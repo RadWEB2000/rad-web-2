@@ -7,6 +7,9 @@ const nextConfig = {
             }, 
             {
                 hostname:"localhost"
+            },
+            {
+                hostname:"rad-web.pl"
             }
         ]
     }
