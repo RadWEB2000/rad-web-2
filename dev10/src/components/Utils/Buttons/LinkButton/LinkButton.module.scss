@@ -147,3 +147,59 @@
     @include size(4.25rem,4.25rem);
     font-size: 3.5rem;
 }
+
+// QUATENARY  =================================================================
+
+.quatenary__wrapper {
+    @include flex(center,flex-start,row nowrap, .67rem);
+    border-radius: .42rem;
+    overflow: hidden;
+    outline:0px solid $white;
+    padding: .7rem 1.2rem; 
+    position: relative;
+    transition:.12s linear outline, .12s linear transform;
+    z-index: 0;
+
+    &::after,
+    &::before {
+        @include size(50%,100%);
+        background-color:$white;
+        left: 0;
+        position: absolute;
+        transition:.12s linear height;
+        z-index: -1;
+    }
+
+    &::after {
+        top: 0;
+    }
+
+    &::before {
+        bottom: 0;
+    }
+    &:focus-within,
+    &:hover {
+        outline:2px solid $white;
+        &::after,
+        &::before {
+            height: 0%;
+        }
+        & > .quatenary__label {
+            color:$white;
+        }
+    }
+
+}
+
+.quatenary__icon {
+    @include flex(center,center);
+    @include size(3rem,3rem);
+    color:$taupeGray;
+    font-size: 2rem;
+}
+
+.quatenary__label {
+    @include font(1.74rem,500,1.1,null,null,center);
+    color:$black;
+    transition:.12s linear color;
+}

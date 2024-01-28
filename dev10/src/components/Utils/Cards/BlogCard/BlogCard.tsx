@@ -200,12 +200,8 @@ function Quatenary(props:tQuatenary){
                     dangerouslySetInnerHTML={{__html:props.excerpt.substring(0,132) + "..."}}
                 />
                 <LinkButton
-                    filled
-                    iconify
                     label={props.button.label}
-                    mode='light'
-                    rounded
-                    theme='secondary'
+                    theme='quatenary'
                     uri={props.button.uri}
                 />
             </section>

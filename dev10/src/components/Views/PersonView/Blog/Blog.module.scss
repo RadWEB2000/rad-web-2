@@ -7,7 +7,7 @@
     grid-template-columns: repeat(11,1fr);
     margin: auto;
     padding: 4rem 2.5rem;
-    width: clamp(5rem,130rem,95%);
+    width: clamp(5rem,130rem,98%);
     & > * {
         grid-column: 1/-1;
     }

@@ -1,4 +1,4 @@
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaHandPointRight } from 'react-icons/fa';
 import { MdArrowRightAlt } from 'react-icons/md';
 import { RiArrowRightUpLine } from 'react-icons/ri';
 import css from 'utils/Buttons/LinkButton/LinkButton.module.scss';
@@ -19,7 +19,10 @@ type tLinkButton = {} & (
       }
     | {
           theme: 'tertiary';
-      }
+      } | 
+      {
+        theme:"quatenary"
+      } & tQuatenary
 ) &
     tLinkButtonBase;
 
@@ -80,6 +83,23 @@ function Tertiary(props: tTertiary) {
     );
 }
 
+type tQuatenary = {
+    label:string;
+    uri:string;
+}
+
+function Quatenary(props:tQuatenary){
+    return (
+        <Link
+            className={css.quatenary__wrapper}
+            href={props.uri}
+        >
+            <span className={css.quatenary__label}>{props.label}</span>
+            <i className={css.quatenary__icon}><FaHandPointRight/></i>
+        </Link>
+    )
+}
+
 export default function LinkButton(props: tLinkButton) {
     if (props.theme === 'primary') {
         return <Primary {...props} />;
@@ -87,5 +107,7 @@ export default function LinkButton(props: tLinkButton) {
         return <Secondary {...props} />;
     } else if (props.theme === 'tertiary') {
         return <Tertiary {...props} />;
+    } else if (props.theme === "quatenary"){
+        return <Quatenary {...props} />
     }
 }
