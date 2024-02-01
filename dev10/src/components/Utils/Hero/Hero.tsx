@@ -1,7 +1,7 @@
 import getDate from 'functions/getDate';
 import Image from 'next/image';
 import Link from 'next/link';
-import { tImage } from 'ts/types';
+import { tButton, tImage } from 'ts/types';
 import { LinkButton } from 'utils/Buttons';
 import css from 'utils/Hero/Hero.module.scss';
 import { IoTimeOutline } from 'react-icons/io5';
@@ -71,10 +71,7 @@ type tGlossary = {
 };
 
 type tHome = {
-    buttons?: {
-        label: string;
-        uri: string;
-    }[];
+    buttons?: {button:tButton}[];
     movie: string;
     slogan: string;
     title: string;
@@ -175,8 +172,6 @@ function Article(props: tArticle) {
     );
 }
 
-
-
 function Blog(props:tBlog){
     return(
         <header className={css.blog__wrapper}>
@@ -222,7 +217,7 @@ function Home(props: tHome) {
                 {props.buttons && (
                     <ul className={css.home__buttons}>
                         {props.buttons.map((item, index) => {
-                            return <LinkButton {...item} key={index} theme="tertiary" />;
+                            return <LinkButton {...item.button} key={index} theme="tertiary" />;
                         })}
                     </ul>
                 )}

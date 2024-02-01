@@ -3,12 +3,11 @@ import { MdArrowRightAlt } from 'react-icons/md';
 import { RiArrowRightUpLine } from 'react-icons/ri';
 import css from 'utils/Buttons/LinkButton/LinkButton.module.scss';
 import Link from 'next/link';
+import { tButton } from 'ts/types';
 
 type tLinkButtonBase = {
-    label: string;
     mode?:"dark"|"light";
-    uri: string;
-};
+} & tButton;
 
 type tLinkButton = {} & (
     | ({
@@ -39,7 +38,7 @@ type tTertiary = tLinkButtonBase;
 function Primary(props: tPrimary) {
     return (
         <div className={css.primary__wrapper}>
-            <Link className={css.primary__box} href={props.uri}>
+            <Link className={css.primary__box} href={"#"}>
                 <i className={css.primary__icon}>
                     <FaChevronLeft />
                 </i>
@@ -53,6 +52,7 @@ function Primary(props: tPrimary) {
 }
 
 function Secondary(props: tSecondary) {
+    console.log("secondary button", props)
     return (
         <div className={css.secondary__wrapper}>
             <Link
@@ -60,7 +60,7 @@ function Secondary(props: tSecondary) {
                 data-filled={props.filled}
                 data-rounded={props.rounded}
                 data-mode={props.mode}
-                href={props.uri}
+                href={"#"}
             >
                 <span className={css.secondary__label}>{props.label}</span>
                 {props.iconify && (
@@ -74,7 +74,7 @@ function Secondary(props: tSecondary) {
 }
 function Tertiary(props: tTertiary) {
     return (
-        <Link className={css.tertiary__box} href={props.uri}>
+        <Link className={css.tertiary__box} href={props.link}>
             <span className={css.tertiary__label}>{props.label}</span>
             <i className={css.tertiary__icon}>
                 <RiArrowRightUpLine />
@@ -85,14 +85,14 @@ function Tertiary(props: tTertiary) {
 
 type tQuatenary = {
     label:string;
-    uri:string;
+    link:string;
 }
 
 function Quatenary(props:tQuatenary){
     return (
         <Link
             className={css.quatenary__wrapper}
-            href={props.uri}
+            href={props.link}
         >
             <span className={css.quatenary__label}>{props.label}</span>
             <i className={css.quatenary__icon}><FaHandPointRight/></i>

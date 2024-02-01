@@ -1,10 +1,10 @@
 import { ProjectCard } from "utils/Cards";
-import { tImage } from "ts/types";
+import { tButton, tImage } from "ts/types";
 import { LinkButton } from "utils/Buttons";
 import css from "views/HomeView/Projects/Projects.module.scss";
 
 type tProjects = {
-    button:string;
+    button:tButton;
     cards : {
         categories:string[];
         content:string;
@@ -14,7 +14,6 @@ type tProjects = {
     }[];
     content:string;
     title:string;
-    uri:string;
 }
 
 export default function Projects(props:tProjects){
@@ -26,8 +25,8 @@ export default function Projects(props:tProjects){
                 <h2 className={css.title} dangerouslySetInnerHTML={{__html:props.title}} />
                 <p className={css.content} dangerouslySetInnerHTML={{__html:props.content}} />
                 <LinkButton
-                    label={props.button}
-                    uri={props.uri}
+                    label={props.button.label}
+                    link={props.button.link}
                     mode="dark"
                     iconify
                     filled

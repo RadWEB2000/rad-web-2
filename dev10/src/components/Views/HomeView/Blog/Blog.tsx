@@ -2,13 +2,13 @@ import { BlogCard } from "utils/Cards";
 import { LinkButton } from "utils/Buttons";
 import css from "views/HomeView/Blog/Blog.module.scss"
 import { iArticlePostsHome } from "app/types/interface";
+import { tButton } from "ts/types";
 
 type tBlog = {
-    button:string;
+    button:tButton;
     cards:iArticlePostsHome;
     content:string;
     title:string;
-    uri:string;
 }
 
 export default function Blog(props:tBlog){
@@ -20,8 +20,8 @@ export default function Blog(props:tBlog){
             </section>
             <div className={css.button} >
                 <LinkButton
-                    label={props.button}
-                    uri={props.uri}
+                    label={props.button.label}
+                    link={props.button.link}
                     filled
                     mode="light"
                     iconify

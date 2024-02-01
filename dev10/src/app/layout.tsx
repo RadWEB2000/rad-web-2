@@ -1,3 +1,6 @@
+import { q_settings } from "lib/configs/queries";
+import { wordpress_api } from "lib/configs/wordpress";
+import { iSettings } from "ts/interface";
 import LayoutProvider from "context/LayoutContext";
 import "css/Global.scss"
 export const revalidate = 1;
@@ -9,7 +12,20 @@ export const metadata = {
     title: 'RadWEB',
 };
 
-export default function RootLayout(props:tRootLayout){
+export default async function RootLayout(props:tRootLayout){
+    const settings:iSettings = await fetch(wordpress_api, {
+        method:"POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            query:q_settings
+        })
+    }).then(res => res.json()).then(({data:{allSettings}}) => {
+        return allSettings;
+    })
+
+
     return(
         <html lang="pl">
             <head>

@@ -3,12 +3,28 @@ import { home } from "data/example/home";
 import { About, Blog, Projects, Services, Statistics } from "views/HomeView";
 import exampleImage from "assets/graphics/example.jpg";
 import { wordpress_api } from "lib/configs/wordpress";
-import { q_article_posts_home,q_settings } from "lib/configs/queries";
-import {iArticlePostsHome, iSettings} from "ts/interface";
+import { q_article_posts_home,q_home_page,q_settings } from "lib/configs/queries";
+import {iArticlePostsHome, iHomePage, iSettings} from "ts/interface";
 import maleImg from "assets/graphics/male.jpg";
 import femaleImg from "assets/graphics/female.jpg";
 
 export default async function HomePage(){
+
+
+    const homePage:iHomePage = await fetch(wordpress_api, {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            query:q_home_page
+        })
+    }).then(res => res.json()).then(({data : {page : {homePage}}}) => {
+        return homePage
+    })
+
+
+    // console.log(homePage)
 
     const articles:iArticlePostsHome = await fetch(wordpress_api, {
         method:"POST",
@@ -21,23 +37,14 @@ export default async function HomePage(){
     }).then(res => res.json()).then(({data:{posts}}) => {
         return posts;
     })
-    const settings:iSettings = await fetch(wordpress_api, {
-        method:"POST",
-        headers: {
-            "Content-Type":"application/json"
-        },
-        body: JSON.stringify({
-            query:q_settings
-        })
-    }).then(res => res.json()).then(({data:{allSettings}}) => {
-        return allSettings;
-    })
-
-
+   
     return(
         <>
             <Hero
-                {...home.hero}
+                buttons={homePage.hero.buttons}
+                title={homePage.hero.title}
+                slogan={homePage.hero.slogan}
+                movie="/assets/movies/hero_1.webm"
                 theme="home"
             />
            <main>
@@ -72,33 +79,23 @@ export default async function HomePage(){
                             work:"Copywriter"
                         },
                     ]}
-                    content={`Doloribus itaque quia illum sit. Eaque nesciunt ducimus perspiciatis est aut vitae quia veniam voluptatibus. Eos quod alias ratione ea sapiente inventore suscipit. Quam corrupti voluptatum. Sapiente quae maxime provident maxime exercitationem aperiam vel omnis. Voluptatum vel aut atque. Veniam nam quia mollitia qui. Aliquid omnis unde est sint inventore.`}
-                    title="O nas - zespół RadWEB"
+                    content={homePage.team.content}
+                    title={homePage.team.title}
                 />
                 <Statistics
-                    title="Profesjonalizm w każdym pikselu,<br/> sukces w każdym kliknięciu!"
-                    content="Tempore ut accusantium molestiae eos nisi magni temporibus. Quidem perferendis itaque tenetur consequuntur omnis id. Earum provident beatae dolorem deleniti veniam sunt. Cupiditate sit nesciunt a quisquam delectus dolor delectus dolorem. Adipisci deserunt similique nihil dignissimos sit optio autem quo. Quis laborum modi ea nisi. Soluta dolorem ratione id nisi consequatur repellat consequatur."
-                    cards={[
-                        {
-                            label:"Lat doświadczenia",
-                            value:new Date().getFullYear() - 2016
-                        },
-                        {
-                            label:"Zrealizowanych projektów",
-                            value:7
-                        },
-                    ]}
+                    title={homePage.statistics.title}
+                    content={homePage.statistics.content}
+                    cards={homePage.statistics.cards}
                     image="https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 />
                 <Blog
-                    button="wpisy"               
+                    button={homePage.blog.button}
                     cards={articles}
-                    content={`Qui cum molestiae molestiae commodi vero. In tempore sequi aperiam asperiores nam dolores hic ut. Explicabo consequatur aliquid blanditiis rem itaque consequatur voluptatum saepe numquam.`}
-                    title="Blog"
-                    uri="#"
+                    content={homePage.blog.content}
+                    title={homePage.blog.title}
                 />
                 <Projects
-                    button="wszystkie projekty"
+                    button={homePage.projects.button}
                     cards={[
                         {
                             categories:[
@@ -141,16 +138,13 @@ export default async function HomePage(){
                             uri:"#"
                         } , 
                     ]}
-                    content="Expedita aut voluptatem quia doloremque beatae voluptatibus. Quae consequuntur corporis velit qui iste. Quia dolorum vel totam eos et nam ut numquam et. Similique aut atque voluptas perferendis sapiente temporibus. Nulla minima dolores qui fuga. Aut molestiae dolor facilis saepe. Ratione tempore voluptate sed ut excepturi quis provident nostrum. Omnis suscipit eveniet dicta ut libero porro."
-                    title="Projekty"
-                    uri="#"
+                    content={homePage.projects.content}
+                    title={homePage.projects.title}
                 />
                 <Services
                     cards={home.services.cards}
-                    title={home.services.title}
-
+                    title={homePage.services.title}
                 />
-                
                 
            </main>
         </>

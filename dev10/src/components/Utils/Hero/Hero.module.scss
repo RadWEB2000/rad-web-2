@@ -254,8 +254,9 @@
 
 .glossary__wrapper {
     @include flex(center, center, column, null, 4rem, false);
-    @include size(clamp(90rem, 85vh, auto), clamp(1rem, 80rem, 95%));
-    margin: 12rem auto 0;
+    @include size(85vh, 100%);
+    padding: 5rem 2rem 1rem;
+    // margin:  auto 0;
 }
 
 .glossary__title {
@@ -263,8 +264,10 @@
 }
 
 .glossary__content {
-    @include font(1.45rem, 600, 1.2, null, -1px, center, null);
+    @include font(1.45rem, 600, 1.2, null, null, center, null);
     color: $taupeGray;
+    margin:0 auto;
+    width:clamp(4rem,160rem,95%);
 }
 
 @media only screen {

@@ -5,6 +5,11 @@ export type tImage = {
 }
 
 
+export type tButton = {
+    link:string;
+    label:string;
+}
+
 
 
 export type tBlogCard = {

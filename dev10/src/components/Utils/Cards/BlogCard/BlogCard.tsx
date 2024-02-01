@@ -148,10 +148,10 @@ function Tertiary(props:tTertiary){
 type tQuatenary = {
     button: {
         label:string;
-        uri:string;
+        link:string;
     };
     categories: {
-        label:string;
+        name:string;
         uri:string;
     }[];
     image:tImage;
@@ -183,7 +183,7 @@ function Quatenary(props:tQuatenary){
                         return (
                             <Link
                                 className={css.quatenary__category} 
-                                dangerouslySetInnerHTML={{__html:item.label}}
+                                dangerouslySetInnerHTML={{__html:item.name}}
                                 href={item.uri}
                                 key={index}
                             />
@@ -201,8 +201,8 @@ function Quatenary(props:tQuatenary){
                 />
                 <LinkButton
                     label={props.button.label}
+                    link={props.button.link}
                     theme='quatenary'
-                    uri={props.button.uri}
                 />
             </section>
         </li>
