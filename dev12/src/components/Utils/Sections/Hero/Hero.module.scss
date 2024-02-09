@@ -1,0 +1,67 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Utils.scss";
+
+// HOME PAGE -----------------------
+
+.home__page__wrapper {
+  @include size(97dvh, 100%);
+  display: grid;
+  position: relative;
+  grid-template-areas: "layer";
+  & > * {
+    @include size(100%, 100%);
+    grid-area: "layer";
+  }
+}
+
+.home__page__movie {
+  object-position: center;
+  filter: brightness(65%);
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+.home__page__content {
+  @include flex(center, center, column, null, 1rem);
+  //   display: none;
+  //   background: red;
+  grid-area: "layer";
+  z-index: 0;
+  & > *:not(.home__page__content__buttons) {
+    font-family: $exo;
+    line-height: 0.92;
+    text-align: center;
+    width: clamp(1rem, 90rem, 90%);
+  }
+}
+.home__page__content__title {
+  color: #fff;
+  font-size: 7.12rem;
+  font-weight: 900;
+}
+.home__page__content__slogan {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 3.12rem;
+  font-weight: 700;
+  width: 80%;
+}
+
+@media only screen {
+  @media (min-width: 600px) {
+    .home__page__content__title {
+      font-size: 11.12rem;
+    }
+    .home__page__content__slogan {
+      font-size: 4.12rem;
+    }
+  }
+  @media (min-width: 1330px) {
+    .home__page__content__title {
+      font-size: 20rem;
+    }
+    .home__page__content__slogan {
+      font-size: 7.12rem;
+    }
+  }
+}

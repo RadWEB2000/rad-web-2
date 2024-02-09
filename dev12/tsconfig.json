@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "app/*": ["./src/*"],
+      "assets/*": ["./src/assets/*"],
+      "components/*": ["./src/components/*"],
+      "configs/*": ["./src/lib/configs/*"],
+      "context/*": ["./src/context/*"],
+      "css/*": ["./src/styles/*"],
+      "data/*": ["./src/data/*"],
+      "functions/*": ["./src/lib/functions/*"],
+      "hooks/*": ["./src/lib/hooks/*"],
+      "layout/*": ["./src/components/Layout/*"],
+      "l_nav/*": ["./src/components/Layout/Navigation/*"],
+      "lib/*": ["./src/lib/*"],
+      "ts/*": ["./src/types/*"],
+      "utils/*": ["./src/components/Utils/*"],
+      "u_sections/*": ["./src/components/Utils/Sections/*"],
+      "views/*": ["./src/components/Views/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

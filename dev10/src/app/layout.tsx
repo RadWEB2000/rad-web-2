@@ -13,21 +13,9 @@ export const metadata = {
 };
 
 export default async function RootLayout(props:tRootLayout){
-    const settings:iSettings = await fetch(wordpress_api, {
-        method:"POST",
-        headers: {
-            "Content-Type":"application/json"
-        },
-        body: JSON.stringify({
-            query:q_settings
-        })
-    }).then(res => res.json()).then(({data:{allSettings}}) => {
-        return allSettings;
-    })
-
-
+  
     return(
-        <html lang="pl">
+        <html lang="pl" >
             <head>
                 <meta name="robots" content="noindex nofollow" />
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>

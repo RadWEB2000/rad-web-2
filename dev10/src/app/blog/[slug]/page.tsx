@@ -2,24 +2,18 @@ import { q_article } from "app/lib/configs/queries";
 import { wordpress_api } from "app/lib/configs/wordpress";
 import { Hero } from "utils/Hero";
 
-export default async function ArticlePage(){
+export default async function ArticlePage({ params }: { params: { slug: string } }){
 
-    const article = await fetch(wordpress_api, {
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body: JSON.stringify({
-            query:q_article
-        })
-    }).then(res => res.json()).then(({data : {post}}) => {
-        return post
-    })
+
+    console.log(params.slug)
 
 
     return (
         <>
-             <Hero
+            stronka
+
+
+             {/* <Hero
                 breadcrumbs={[
                     {
                         label: 'Start',
@@ -55,7 +49,7 @@ export default async function ArticlePage(){
                         background:"red"
                     }}
                 />
-            </main>
+            </main> */}
         </>
     )
 }

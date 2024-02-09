@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Exo:wght@700;900&family=IBM+Plex+Sans:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap");
+@import "./Mixins.scss";
+@import "./Variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::after,
+::before {
+  content: "";
+  position: absolute;
+}
+
+::selection {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+:focus,
+:focus-within {
+  outline: none;
+}
+
+a {
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  background-color: #010509;
+  font-family: $ibm;
+  font-size: 1.6rem;
+  transition: 0.2s linear all;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button,
+input,
+textarea {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  outline: none;
+}
+
+li,
+ol,
+ul {
+  list-style: none;
+}
+p {
+  text-wrap: balance;
+}
