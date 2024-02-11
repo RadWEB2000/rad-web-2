@@ -1,0 +1,27 @@
+@import "../../../styles/Mixins.scss";
+@import "../../../styles/Variables.scss";
+
+//  PRIMARY BUTTON ========================================
+
+.primary__wrapper {
+  @include flex(center, flex-start, row wrap, 0.35rem, null, true);
+  border-radius: 0.5rem;
+  background-color: hsla(0, 0%, 100%, 0.92);
+  height: 4.7rem;
+  padding: 0rem 3.5rem;
+  transition: 0.24s linear background-color;
+  &:focus-within,
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 1);
+  }
+}
+
+.primary__label {
+  @include flex(center, center);
+  @include font(1.9rem, 600, 1, null, null, center);
+}
+
+.primary__icon {
+  @include flex(center, center);
+  font-size: 3rem;
+}

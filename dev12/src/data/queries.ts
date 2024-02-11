@@ -25,17 +25,12 @@ export const q_home = `
                 hero {
                     title
                     slogan
-                    image {
-                        altText
-                        sourceUrl(size: MEDIUM)
-                        title(format: RENDERED)
-                    }
                     buttons {
-                    button {
-                        url
-                        title
-                        target
-                    }
+                        button {
+                            url
+                            title
+                            target
+                        }
                     }
                 }
                 projects {

@@ -22,7 +22,6 @@ export type tQueryHomePage = {
   hero: {
     title: string;
     slogan: string;
-    image: tImage;
     buttons: {
       button: {
         url: string;

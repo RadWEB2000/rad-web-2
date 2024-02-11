@@ -28,11 +28,13 @@
   //   background: red;
   grid-area: "layer";
   z-index: 0;
+  & > * {
+    width: clamp(1rem, 95rem, 90%);
+  }
   & > *:not(.home__page__content__buttons) {
     font-family: $exo;
     line-height: 0.92;
     text-align: center;
-    width: clamp(1rem, 90rem, 90%);
   }
 }
 .home__page__content__title {
@@ -45,6 +47,12 @@
   font-size: 3.12rem;
   font-weight: 700;
   width: 80%;
+}
+
+.home__page__content__buttons {
+  @include flex(center, center, row wrap, 1rem, 1rem);
+  // background: red;
+  padding: 2rem;
 }
 
 @media only screen {

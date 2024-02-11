@@ -66,3 +66,11 @@ ul {
 p {
   text-wrap: balance;
 }
+
+@media only screen {
+  @media (prefers-color-scheme: light) {
+    body {
+      background-color: #d3d3d3;
+    }
+  }
+}
