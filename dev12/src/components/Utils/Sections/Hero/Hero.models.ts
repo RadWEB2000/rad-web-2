@@ -1,22 +1,14 @@
-import { tImage } from "ts/types";
-
-export type tHero =
-  | ({
-      theme: "home";
-    } & tHomePageHero)
-  | {
-      theme: "article";
-    };
+import { tButton, tImage } from "ts/types";
 
 export type tHomePageHero = {
   title: string;
   slogan: string;
-  image: tImage;
-  buttons: {
-    button: {
-      target: string;
-      title: string;
-      url: string;
-    };
+  live?: string;
+  buttons: { button: tButton }[];
+  socials: {
+    link: string;
   }[];
+  video: string;
 };
+
+export type tHero = { theme: "home" } & tHomePageHero;

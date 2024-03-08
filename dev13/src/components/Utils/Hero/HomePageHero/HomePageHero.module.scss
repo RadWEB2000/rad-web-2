@@ -1,0 +1,180 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  background-color: $black;
+  display: grid;
+  grid-template-rows: auto 55rem;
+}
+
+.content__box {
+  align-items: flex-end;
+  background-color: $black;
+  display: grid;
+  grid-row: 1;
+  grid-template-columns: repeat(1, 1fr);
+  min-height: 60rem;
+  padding: 15rem 3rem 3rem 3rem;
+  position: relative;
+  z-index: 0;
+  &::after {
+    @include backgroundCover;
+    @include size(100%, 100%);
+    background-image: url("/assets/images/background.webp");
+    left: 0;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.headings {
+  @include flex(flex-start, flex-end, column, null, 1rem);
+  //   grid-column: 1/3;
+  text-transform: uppercase;
+}
+
+.title {
+  @include font(6rem, 900, 1.5, null, null, start);
+}
+
+.slogan {
+  @include font(2.15rem, 600, 1.9, null, null, start);
+  color: rgba($white, 0.85);
+  text-wrap: balance;
+}
+
+.buttons {
+  @include flex(center, flex-start, row wrap, 1.4rem);
+}
+
+.media__box {
+  grid-row: 2;
+  position: relative;
+}
+
+.socials {
+  @include flex(center, flex-end, row wrap, 2rem, 2rem);
+  background-color: $black;
+  padding: 1rem 2.5rem;
+  position: absolute;
+  max-width: 100%;
+  right: 0;
+  top: 1rem;
+  z-index: 1;
+}
+
+.video {
+  @include size(100%, 100%);
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  z-index: 0;
+}
+
+@media only screen {
+  @media (orientation: landscape) and (min-width: 375px) {
+    .wrapper {
+      grid-template-rows: auto 35rem;
+    }
+    .content__box {
+      grid-template-columns: repeat(3, 1fr);
+      min-height: 35rem;
+      padding: 10.5rem 3rem 3rem 3rem;
+    }
+    .headings {
+      grid-column: 1/3;
+    }
+    .title {
+      font-size: 8.25rem;
+    }
+    .slogan {
+      font-size: 2.6rem;
+    }
+    .socials {
+      padding: 1rem 1.65rem;
+    }
+  }
+  @media (orientation: portrait) and (min-width: 670px) {
+    .title {
+      font-size: 10rem;
+    }
+
+    .slogan {
+      font-size: 2.65rem;
+    }
+
+    .buttons {
+      column-gap: 1.7rem;
+    }
+  }
+  @media (min-width: 800px) {
+    .wrapper {
+      grid-template-rows: auto 50rem;
+    }
+
+    .content__box {
+      grid-template-columns: repeat(4, 1fr);
+      min-height: 50rem;
+      padding: 15rem 1.5rem 2rem 1.5rem;
+    }
+
+    .headings {
+      grid-column: 1/4;
+    }
+    .title {
+      font-size: 11rem;
+    }
+
+    .slogan {
+      font-size: 3rem;
+    }
+
+    .buttons {
+      grid-column: 4;
+    }
+  }
+  @media (min-width: 1200px) {
+    .wrapper {
+      grid-template-rows: auto 65rem;
+    }
+
+    .content__box {
+      gap: 4rem;
+      grid-template-columns: repeat(3, 1fr);
+      min-height: 85vh;
+      padding: 15rem 1.5rem 2rem 1.5rem;
+    }
+
+    .headings {
+      grid-column: 1/3;
+    }
+    .title {
+      font-size: 15rem;
+    }
+
+    .slogan {
+      font-size: 4.23rem;
+    }
+
+    .buttons {
+      grid-column: 3;
+      justify-content: center;
+    }
+  }
+  @media (min-width: 1400px) {
+    .wrapper {
+      grid-template-rows: auto 70rem;
+    }
+
+    .title {
+      font-size: 23rem;
+      line-height: 0.9;
+    }
+
+    .slogan {
+      font-size: 5rem;
+    }
+  }
+}

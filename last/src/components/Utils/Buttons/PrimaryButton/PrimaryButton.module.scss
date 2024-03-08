@@ -1,0 +1,50 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  @include flex(center, center, row nowrap, 1rem);
+  border-radius: 3rem;
+  border: 0.35rem dashed #fff;
+  color: #fff;
+  min-height: 4rem;
+  padding: 0.85rem 1.72rem;
+  transition: 0.12s linear border, 0.12s linear color, 0.12s linear transform;
+  user-select: none;
+  &:focus-within,
+  &:hover {
+    border: 0.35rem solid rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
+    transform: scale(0.95);
+    & > .icon {
+      & > * {
+        transform: translateX(1rem);
+      }
+    }
+  }
+}
+
+.label {
+  @include font(2.42rem, 600, 1, uppercase, null, center);
+  font-family: $kode;
+}
+.icon {
+  @include flex(center, center);
+  aspect-ratio: 1/1;
+  font-size: 3rem;
+  height: 100%;
+  position: relative;
+  & > * {
+    transition: 0.12s linear transform;
+  }
+}
+
+@media only screen {
+  @media (min-width: 1024px) {
+    .label {
+      font-size: 4rem;
+    }
+    .icon {
+      font-size: 5rem;
+    }
+  }
+}

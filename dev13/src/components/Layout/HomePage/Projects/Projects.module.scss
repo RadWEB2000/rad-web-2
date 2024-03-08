@@ -1,0 +1,82 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.head {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: auto;
+  position: relative;
+}
+
+.head__image {
+  grid-column: 1/-1;
+  grid-row: 1;
+  position: relative;
+  z-index: -1;
+}
+
+.head__box {
+  @include flex(flex-start, flex-start, column, null);
+  background-color: $yellow;
+  border-radius: 0.45rem;
+  color: $black;
+  grid-column: 1/-1;
+  grid-row: 1;
+  margin: 2rem 0.5rem;
+  padding: 1.4rem 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.head__box__title {
+  @include font(3.5rem, 900, null, uppercase, null, start);
+}
+
+.head__box__content {
+  @include font(1.55rem, 600, 2, null, null, start);
+  margin-top: 2rem;
+}
+
+@media only screen {
+  @media (orientation: landscape) {
+    .head__box__title {
+      font-size: 6rem;
+    }
+  }
+  @media (min-width: 550px) {
+    .head__box {
+      grid-column: 2/-1;
+      padding: 2.4rem 3.5rem;
+    }
+
+    .head__box__title {
+      font-size: 6rem;
+    }
+
+    .head__box__content {
+      font-size: 1.62rem;
+    }
+  }
+  @media (min-width: 830px) {
+    .head__box {
+      grid-column: 4/-1;
+    }
+  }
+  @media (min-width: 1215px) {
+    .head__box {
+      grid-column: 5/-1;
+      margin: 7rem 4rem 4rem 0rem;
+    }
+    .head__box__content {
+      font-size: 1.81rem;
+    }
+  }
+  @media (min-width: 1530px) {
+    .head__box__title {
+      font-size: 8.25rem;
+    }
+    .head__box__content {
+      font-size: 1.97rem;
+    }
+  }
+}

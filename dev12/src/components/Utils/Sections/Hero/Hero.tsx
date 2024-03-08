@@ -1,35 +1,65 @@
-import { tHero, tHomePageHero } from "u_sections/Hero/Hero.models";
-import css from "u_sections/Hero/Hero.module.scss";
-import { Buttons } from "utils/Buttons";
+import Image from "next/image";
+import Link from "next/link";
+import { tHero, tHomePageHero } from "utils/Sections/Hero/Hero.models";
+import css from "./Hero.module.scss"
+import getSocialIcon from "app/lib/functions/getSocialIcon";
+import { Button } from "utils/Buttons";
 
 
 function HomePageHero(props:tHomePageHero){
     return(
-        <header className={css.home__page__wrapper}>
-            <section className={css.home__page__content}>
-                <h1 className={css.home__page__content__title} dangerouslySetInnerHTML={{__html:props.title}} />
-                <h2 className={css.home__page__content__slogan} dangerouslySetInnerHTML={{__html:props.slogan}}  />
-                {
-                    props.buttons &&
-                    <ul className={css.home__page__content__buttons}>
-                        {props.buttons.map((item,index) => {
-                            return <Buttons
-                                key={`${item.button.title}-${index}`}
-                                label={item.button.title}
-                                doubleArrows
-                                target={item.button.target}
-                                theme="primary"
-                                uri={item.button.url}
-                            />
-                        })}
-                    </ul>
-                }
-            </section>
-            <video autoPlay muted loop   className={css.home__page__movie} src="/assets/movies/background.webm"/>
-        </header>
+        <div className={css.home__wrapper}>
+            <header className={css.home__box}>
+                <hgroup  className={css.home__box__headings}>
+                    <h1  className={css.home__box__title} dangerouslySetInnerHTML={{__html:props.title}} />
+                    <h2  className={css.home__box__slogan}  dangerouslySetInnerHTML={{__html:props.slogan}} />
+                </hgroup>
+                <ul  className={css.home__box__buttons} >
+                    {props.buttons.map((item,index) => {
+                        return (
+                          <Button
+                            label={item.button.title}
+                            mode="light"
+                            rel="index follow"
+                            target={item.button.target}
+                            theme="primary"
+                            uri={item.button.url}
+                            key={item.button.title + index}
+                          />
+                        )
+                    })}
+                </ul>
+            </header>
+            <div className={css.home__media}>
+                <ul className={css.home__media__socials}>
+                    {props.socials.map((item,index) => {
+                        const icon = getSocialIcon({
+                            url:item.link
+                        })
+                        return(
+                            <Link  className={css.home__media__social} href={item.link} key={index} rel="nofollow">
+                               {icon}
+                            </Link>
+                        )
+                    })}
+                </ul>
+                <video
+                    autoPlay
+                    className={css.home__media__video}
+                    loop
+                    muted
+                >
+                    <source 
+                        src={props.video}
+                    />
+                </video>
+            </div>
+        </div>
     )
 }
 
-export default function Hero(props:tHero){
-    if(props.theme === "home") return <HomePageHero {...props} />
+export default function Hero(props:tHero) {
+    if(props.theme === "home"){
+        return <HomePageHero {...props} />
+    }
 }

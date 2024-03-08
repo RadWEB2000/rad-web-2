@@ -1,53 +1,79 @@
-import { tImage } from "ts/types";
+import { tButton, tImage } from "ts/types";
 
 export type tQueryHomePage = {
-  about_us: {
-    title: string;
-    content: string;
-    button: {
-      url: string;
+  page: {
+    about_us: {
       title: string;
-      target: string;
+      overview: string;
+      image: tImage;
+      content: string;
+      button: tButton;
     };
-  };
-  blog: {
-    title: string;
-    content: string;
-    button: {
-      url: string;
+    blog: {
       title: string;
-      target: string;
+      overview: string;
+      button: tButton;
+      content: string;
     };
-  };
-  hero: {
-    title: string;
-    slogan: string;
-    buttons: {
-      button: {
-        url: string;
+    directonary: {
+      title: string;
+      button: tButton;
+      content: string;
+    };
+    faq: {
+      title: string;
+      image: tImage;
+      cards: {
+        question: string;
+        answer: string;
+      }[];
+    };
+    hero: {
+      title: string;
+      slogan: string;
+      buttons: tButton[];
+    };
+    how_we_works: {
+      title: string;
+      image: tImage;
+      values: {
+        icon: tImage;
+        content: string;
         title: string;
-        target: string;
-      };
+      }[];
+    };
+    projects: {
+      title: string;
+      content: string;
+      button: tImage;
+      image: tImage;
+    };
+    services: {
+      title: string;
+      content: string;
+      button: tImage;
+    };
+  };
+  posts: any;
+  settings: {
+    socials: {
+      link: string;
     }[];
   };
-  projects: {
-    title: string;
-    content: string;
-    button: {
-      url: string;
-      title: string;
-      target: string;
-    };
+};
+
+export type tQueryHomePageArticles = {
+  title: string;
+  slug: string;
+  excerpt: string;
+  featuredImage: {
+    node: tImage;
   };
-  services: {
-    title: string;
-  };
-  statistics: {
-    title: string;
-    content: string;
-    positions: {
-      label: string;
-      value: number;
+  date: string;
+  categories: {
+    nodes: {
+      name: string;
+      uri: string;
     }[];
   };
 };

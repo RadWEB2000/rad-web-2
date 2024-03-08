@@ -1,27 +1,37 @@
 @import "../../../styles/Mixins.scss";
 @import "../../../styles/Variables.scss";
 
-//  PRIMARY BUTTON ========================================
+//  BUTTON PRIMARY ============================================
 
-.primary__wrapper {
-  @include flex(center, flex-start, row wrap, 0.35rem, null, true);
-  border-radius: 0.5rem;
-  background-color: hsla(0, 0%, 100%, 0.92);
-  height: 4.7rem;
-  padding: 0rem 3.5rem;
-  transition: 0.24s linear background-color;
+.primary {
+  // background: pink;
+  @include flex(center, flex-start, row nowrap, 1rem);
+  height: 3.2rem;
+  position: relative;
+  &::after {
+    @include size(2px, 0%);
+    background-color: #eee;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    transition: 0.12s linear width;
+  }
   &:focus-within,
   &:hover {
-    background-color: hsla(0, 0%, 100%, 1);
+    &::after {
+      width: 100%;
+    }
   }
 }
 
 .primary__label {
-  @include flex(center, center);
-  @include font(1.9rem, 600, 1, null, null, center);
+  // background: #222;
+  @include font(2.7rem, 300, 1.1, null, null, center);
 }
 
 .primary__icon {
   @include flex(center, center);
-  font-size: 3rem;
+  @include size(3.2rem, 3.2rem);
+  // background: blue;
+  font-size: 2.5rem;
 }

@@ -1,0 +1,17 @@
+export type uRel =
+  | "alternate"
+  | "author"
+  | "bookmark"
+  | "external"
+  | "help"
+  | "license"
+  | "next"
+  | "nofollow"
+  | "noreferrer"
+  | "noopener"
+  | "prev"
+  | "search"
+  | "alternate author"
+  | "external nofollow noreferrer"
+  | "next prev"
+  | "index follow";

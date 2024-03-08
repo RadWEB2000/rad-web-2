@@ -1,75 +1,75 @@
 @import "../../../../styles/Mixins.scss";
-@import "../../../../styles/Utils.scss";
+@import "../../../../styles/Variables.scss";
 
-// HOME PAGE -----------------------
+//  HOME PAGE ============================================
 
-.home__page__wrapper {
-  @include size(97dvh, 100%);
+.home__wrapper {
+  @include flex(flex-start, flex-start, column);
+  background-color: #000;
+  &,
+  & > * {
+    width: 100%;
+  }
+}
+
+.home__box {
+  height: 65rem;
   display: grid;
-  position: relative;
-  grid-template-areas: "layer";
-  & > * {
-    @include size(100%, 100%);
-    grid-area: "layer";
-  }
+  grid-template-columns: repeat(2, 1fr);
+  padding: 4rem;
 }
 
-.home__page__movie {
-  object-position: center;
-  filter: brightness(65%);
-  object-fit: cover;
-  position: absolute;
-  z-index: -1;
-}
-
-.home__page__content {
-  @include flex(center, center, column, null, 1rem);
-  //   display: none;
-  //   background: red;
-  grid-area: "layer";
-  z-index: 0;
-  & > * {
-    width: clamp(1rem, 95rem, 90%);
-  }
-  & > *:not(.home__page__content__buttons) {
-    font-family: $exo;
-    line-height: 0.92;
-    text-align: center;
-  }
-}
-.home__page__content__title {
-  color: #fff;
-  font-size: 7.12rem;
-  font-weight: 900;
-}
-.home__page__content__slogan {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 3.12rem;
-  font-weight: 700;
-  width: 80%;
-}
-
-.home__page__content__buttons {
-  @include flex(center, center, row wrap, 1rem, 1rem);
+.home__box__buttons {
+  @include flex(flex-end, center, row wrap, 1rem, 1rem);
   // background: red;
-  padding: 2rem;
 }
 
-@media only screen {
-  @media (min-width: 600px) {
-    .home__page__content__title {
-      font-size: 11.12rem;
-    }
-    .home__page__content__slogan {
-      font-size: 4.12rem;
-    }
-  }
-  @media (min-width: 1330px) {
-    .home__page__content__title {
-      font-size: 20rem;
-    }
-    .home__page__content__slogan {
-      font-size: 7.12rem;
-    }
+.home__box__headings {
+  @include flex(flex-start, flex-end, column);
+}
+
+.home__box__title {
+  @include font(17rem, 900, 1.2, null);
+}
+
+.home__box__slogan {
+  @include font(6.15rem, 500, 1.2, null);
+  color: hsla(0, 100%, 100%, 0.85);
+  text-wrap: balance;
+}
+
+.home__media {
+  aspect-ratio: 16/8;
+  position: relative;
+}
+
+.home__media__video {
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  z-index: 0;
+}
+
+.home__media__socials {
+  @include flex(center, flex-end, row nowrap, 2rem);
+  position: absolute;
+  background-color: #000;
+  top: 0;
+  right: 0;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  z-index: 1;
+}
+
+.home__media__social {
+  @include flex(center, center);
+  font-size: 4rem;
+  color: #fff;
+  position: relative;
+  transition: 0.12s linear opacity;
+  &:focus-within,
+  &:hover {
+    opacity: 0.7;
   }
 }

@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "app/*": ["./src/*"],
+      "assets/*": ["./src/assets/*"],
+      "components/*": ["./src/components/*"],
+      "layout/*": ["./src/components/Layout/*"],
+      "l_footer/*": ["./src/components/Layout/Footer/*"],
+      "l_nav/*": ["./src/components/Layout/Navigation/*"],
+      "l_seo/*": ["./src/components/Layout/Seo/*"],
+      "utils/*": ["./src/components/Utils/*"],
+      "u_buttons/*": ["./src/components/Utils/Buttons/*"],
+      "u_cards/*": ["./src/components/Utils/Cards/*"],
+      "u_hero/*": ["./src/components/Utils/Hero/*"],
+      "views/*": ["./src/components/Views/*"],
+      "v_about/*": ["./src/components/Views/AboutPage/*"],
+      "v_article/*": ["./src/components/Views/ArticlePage/*"],
+      "v_blog/*": ["./src/components/Views/BlogPage/*"],
+      "v_contact/*": ["./src/components/Views/ContactPage/*"],
+      "v_home/*": ["./src/components/Views/HomePage/*"],
+      "v_person/*": ["./src/components/Views/PersonPage/*"],
+      "v_policy/*": ["./src/components/Views/PolicyPage/*"],
+      "v_project/*": ["./src/components/Views/ProjectPage/*"],
+      "v_projects/*": ["./src/components/Views/ProjectsPage/*"],
+      "v_service/*": ["./src/components/Views/ServicePage/*"],
+      "v_services/*": ["./src/components/Views/ServicesPage/*"],
+      "data/*": ["./src/data/*"],
+      "graphql/*": ["./src/data/gql/*"],
+      "lib/*": ["./src/lib/*"],
+      "configs/*": ["./src/lib/configs/*"],
+      "hooks/*": ["./src/lib/hooks/*"],
+      "functions/*": ["./src/lib/functions/*"],
+      "css/*": ["./src/styles/*"],
+      "ts/*": ["./src/types/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

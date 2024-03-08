@@ -22,6 +22,7 @@
       "app/*": ["./src/*"],
       "assets/*": ["./src/assets/*"],
       "components/*": ["./src/components/*"],
+      "cards/*": ["./src/components/Utils/Cards/*"],
       "configs/*": ["./src/lib/configs/*"],
       "context/*": ["./src/context/*"],
       "css/*": ["./src/styles/*"],

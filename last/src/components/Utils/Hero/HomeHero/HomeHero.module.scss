@@ -1,0 +1,120 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  @include flex(center, flex-end, column, null, 2rem);
+  min-height: 60vh;
+  background-color: #010101;
+  padding: 17rem 5rem 4rem;
+  z-index: 0;
+}
+
+.headings {
+  @include flex(flex-start, flex-end, column);
+  font-family: $lato;
+  & > * {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.title {
+  @include font(7rem, 700, 1.2, uppercase, null);
+  color: #fff;
+  color: gold;
+}
+
+.slogan {
+  @include font(3rem, 500, 1.2, uppercase, null);
+  text-wrap: balance;
+  margin-bottom: 4rem;
+}
+
+.buttons {
+  @include flex(center, center, row wrap, 0.75rem, 0.75rem, true);
+}
+
+.movie__box {
+  @include size(40vh, 100%);
+  position: relative;
+}
+
+.movie {
+  @include size(100%, 100%);
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+
+@media only screen {
+  @media (orientation: landscape) {
+    .wrapper {
+      padding: 13rem 5rem 4rem;
+    }
+    .movie__box {
+      height: 70vh;
+    }
+  }
+  @media (min-width: 768px) {
+    .wrapper {
+      align-items: flex-start;
+      padding: 17rem 5rem 4rem;
+    }
+
+    .headings {
+      font-family: $lato;
+      & > * {
+        text-align: start;
+        width: 100%;
+      }
+    }
+
+    .title {
+      font-size: 10rem;
+    }
+
+    .slogan {
+      font-size: 4rem;
+    }
+
+    .buttons {
+      justify-content: flex-start;
+    }
+
+    .movie__box {
+      aspect-ratio: 16/7;
+      height: unset;
+    }
+  }
+  @media (min-width: 1024px) {
+    .wrapper {
+      padding: 17rem 7rem 4rem;
+    }
+
+    .title {
+      font-size: 14rem;
+    }
+
+    .slogan {
+      font-size: 6rem;
+    }
+  }
+  @media (min-width: 1440px) {
+    .title {
+      font-size: 21rem;
+    }
+
+    .slogan {
+      font-size: 5.2rem;
+    }
+  }
+  @media (min-width: 1660px) {
+    .title {
+      font-size: 29rem;
+    }
+
+    .slogan {
+      font-size: 6rem;
+    }
+  }
+}

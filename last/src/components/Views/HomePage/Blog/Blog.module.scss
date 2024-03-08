@@ -1,0 +1,54 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  align-items: start;
+  display: grid;
+  margin: 10rem 0rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.overview__box {
+  grid-column: 2/7;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 7/-1;
+  //   background: red;
+  gap: 1rem;
+  padding-right: 2rem;
+
+  & > li {
+    background-color: #181818;
+    border-radius: 1dvw;
+    // height: 30rem;
+    padding: 2rem;
+    width: 100%;
+  }
+}
+
+.content__box {
+  margin-top: 10rem;
+  grid-column: 1/-1;
+}
+
+.content__box,
+.overview__box {
+  @include flex(flex-start, flex-start, column, null, 3rem);
+  margin: 3rem auto;
+  width: clamp(5rem, 130rem, 90%);
+}
+
+.title {
+  @include font(14rem, 700, 1.4, uppercase, null, start);
+  margin-bottom: -2.5rem;
+}
+
+.content,
+.overview {
+  @include font(2.2rem, 400, 2, null, null, start);
+  padding: 1rem;
+  width: 100%;
+}

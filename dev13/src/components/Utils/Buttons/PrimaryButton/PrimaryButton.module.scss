@@ -1,0 +1,57 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  @include flex(center, flex-start, row, 0.45rem);
+  height: 5rem;
+  position: relative;
+  transition: 0.34s ease-in-out color;
+  &::after {
+    @include size(2px, 0%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.34s ease-in-out width;
+  }
+  &:focus-within,
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.icon {
+  @include flex(center, center);
+  @include size(4.25rem, 4.25rem);
+  font-size: 2.7rem;
+}
+
+.label {
+  font-size: 2.5rem;
+  font-family: $code;
+  padding: 0rem 0.25rem;
+  text-transform: uppercase;
+}
+
+.wrapper[data-theme="dark"] {
+  color: rgba($black, 0.85);
+  &::after {
+    background-color: $black;
+  }
+  &:focus-within,
+  &:hover {
+    color: $black;
+  }
+}
+
+.wrapper[data-theme="light"] {
+  color: rgba($white, 0.85);
+  &::after {
+    background-color: $white;
+  }
+  &:focus-within,
+  &:hover {
+    color: $white;
+  }
+}
