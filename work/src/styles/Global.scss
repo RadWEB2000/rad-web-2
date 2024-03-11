@@ -1,3 +1,5 @@
+@import "./Variables.scss";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,7 +7,7 @@
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba($black, 0);
 }
 
 ::after,
@@ -33,7 +35,7 @@ button {
 body {
   font-weight: 400;
   color: #d0d0d0;
-  background-color: #030303;
+  background-color: $black;
   font-size: 1.6rem;
   transition: 0.2s linear all;
 }

@@ -1,0 +1,93 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  border-radius: 0.75rem;
+  display: grid;
+  grid-template-areas: "layer";
+  margin: 5rem auto 0rem;
+  overflow: hidden;
+  width: clamp(5rem, 190rem, 95%);
+}
+
+.container {
+  @include flex(flex-start, flex-end, column);
+  background-image: linear-gradient(
+    to bottom,
+    rgba($black, 0.12),
+    rgba($black, 0.4)
+  );
+  grid-area: layer;
+  min-height: 65vh;
+  padding: 2rem 1rem 3rem;
+}
+
+.headings__box {
+  @include flex(flex-start, flex-start, column);
+  color: $white;
+}
+
+.title {
+  @include font(7rem, 700, 1, null, null, start);
+}
+
+.slogan {
+  @include font(2.25rem, 500, 1.5, null, null, start);
+  margin-top: 2rem;
+}
+
+.video__box {
+  @include flex(center, center);
+  filter: brightness(60%);
+  grid-area: layer;
+  position: relative;
+  z-index: -1;
+}
+
+.video {
+  @include size(100%, 100%);
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+
+.buttons {
+  @include flex(flex-start, flex-start, row wrap, 1rem, 1rem);
+  margin: 1rem auto;
+  width: clamp(5rem, 190rem, 95%);
+  gap: 1rem;
+}
+
+@media only screen {
+  @media (min-width: 530px) {
+    .title {
+      font-size: 9.25rem;
+    }
+    .slogan {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 800px) {
+    .container {
+      padding: 2rem 3rem 3.75rem;
+      min-height: 75vh;
+    }
+    .title {
+      font-size: 13rem;
+    }
+    .slogan {
+      font-size: 3.75rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      min-height: 82vh;
+    }
+    .title {
+      font-size: 17rem;
+    }
+    .slogan {
+      font-size: 4.16rem;
+    }
+  }
+}

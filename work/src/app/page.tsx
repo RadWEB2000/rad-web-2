@@ -24,13 +24,12 @@ export default async function HomePage(){
     }
   })
 
-  console.log(data.hero)
 
   return(
     <>
       <Hero
         {...data.hero}
-        video="/assets/hero-background.webm"
+        video="/assets/hero-background-2.webm"
       />
       <div>
         <h1>strona glowna</h1>

@@ -1,0 +1,119 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  @include flex(center, center);
+  min-height: 6rem;
+  border: 3px solid rgba($white, 0.1);
+  border-radius: 1rem;
+  position: relative;
+  z-index: 0;
+  &:focus-within,
+  &:hover {
+    .line {
+      width: 51%;
+      height: 51%;
+    }
+  }
+}
+
+.line {
+  @include size(2.2vh, 2.2vh);
+  border: 3px dashed white;
+  border-color: $white;
+  position: absolute;
+  transition: 0.32s linear height, 0.32s linear width;
+  z-index: -1;
+}
+
+.bottom_left,
+.top_left {
+  left: 0;
+}
+
+.bottom_right,
+.top_right {
+  right: 0;
+}
+
+.top_left,
+.top_right {
+  top: 0;
+}
+
+.bottom_left,
+.bottom_right {
+  bottom: 0;
+}
+
+.top_left {
+  border-radius: 1rem 0 0 0;
+  border-bottom: rgba($white, 0);
+  border-right: rgba($white, 0);
+}
+
+.bottom_left {
+  border-radius: 0 0 0 1rem;
+  border-top: rgba($white, 0);
+  border-right: rgba($white, 0);
+}
+.top_right {
+  border-radius: 0 1rem 0 0;
+  border-bottom: rgba($white, 0);
+  border-left: rgba($white, 0);
+}
+
+.bottom_right {
+  border-radius: 0 0 1rem 0;
+  border-top: rgba($white, 0);
+  border-left: rgba($white, 0);
+}
+
+.box {
+  @include flex(center, center, row nowrap);
+  padding: 1rem 2rem;
+  padding: 0.3rem 2rem;
+  height: 100%;
+}
+
+.label {
+  @include font(2.23rem, 300, 1, uppercase, null, center);
+}
+
+.icon {
+  @include flex(center, center);
+  @include size(2.5rem, 2.5rem);
+  font-size: 2.2rem;
+}
+
+@media only screen {
+  @media (min-width: 700px) {
+    .box {
+      padding: 0.5rem 2rem;
+    }
+
+    .label {
+      font-size: 2.75rem;
+    }
+
+    .icon {
+      @include size(3rem, 3rem);
+      font-size: 2.7rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .box {
+      padding: 0.95rem 2rem;
+      gap: 1.2rem;
+    }
+
+    .label {
+      font-size: 3.15rem;
+    }
+
+    .icon {
+      @include size(4rem, 4rem);
+      font-size: 3.5rem;
+    }
+  }
+}
