@@ -17,8 +17,29 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "app/*": ["./src/*"]
+      "app/*": ["./src/app/*"],
+      "assets/*": ["./src/assets/*"],
+      "buttons/*": ["./src/components/Utils/Buttons/*"],
+      "cards/*": ["./src/components/Utils/Cards/*"],
+      "components/*": ["./src/components/*"],
+      "configs/*": ["./src/lib/configs/*"],
+      "context/*": ["./src/context/*"],
+      "css/*": ["./src/styles/*"],
+      "data/*": ["./src/data/*"],
+      "footer/*": ["./src/components/Layout/Footer/*"],
+      "functions/*": ["./src/lib/functions/*"],
+      "gql/*": ["./src/data/queries/*"],
+      "hooks/*": ["./src/lib/hooks/*"],
+      "layout/*": ["./src/components/Layout/*"],
+      "lib/*": ["./src/lib/*"],
+      "nav/*": ["./src/components/Layout/Navigation/*"],
+      "seo/*": ["./src/components/Layout/Seo/*"],
+      "ts/*": ["./src/types/*"],
+      "v/home/*": ["./src/components/Views/Home/*"],
+      "views/*": ["./src/components/Views/*"],
+      "utils/*": ["./src/components/Utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

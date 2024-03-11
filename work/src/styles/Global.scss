@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::after,
+::before {
+  content: "";
+  position: absolute;
+}
+
+:focus,
+:focus-within {
+  outline: none;
+}
+
+a {
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-weight: 400;
+  color: #d0d0d0;
+  background-color: #030303;
+  font-size: 1.6rem;
+  transition: 0.2s linear all;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button,
+input,
+textarea {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  outline: none;
+}
+
+li,
+ol,
+ul {
+  list-style: none;
+}
+p {
+  text-wrap: balance;
+}
