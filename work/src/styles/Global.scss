@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@700&family=Kode+Mono&family=Rubik+Mono+One&display=swap");
 @import "./Variables.scss";
 
 * {
@@ -33,9 +34,11 @@ button {
 }
 
 body {
+  font-family: $regural;
   font-weight: 400;
-  color: #d0d0d0;
-  background-color: $black;
+  color: $black;
+  background-color: $white;
+  background-color: aqua;
   font-size: 1.6rem;
   transition: 0.2s linear all;
 }

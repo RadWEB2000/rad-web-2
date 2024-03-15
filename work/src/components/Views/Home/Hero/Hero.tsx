@@ -1,44 +1,38 @@
 import PrimaryButton from "buttons/PrimaryButton";
+import Image from "next/image";
 import Link from "next/link";
-import { tHero } from "v/home/Hero/Hero.models";
+import {tHero} from "v/home/Hero/Hero.models";
 import css from "v/home/Hero/Hero.module.scss";
 
-export default function Hero({buttons,slogan,title,video}:tHero){
-    return(
-        <>
-            <div className={css.wrapper} >
-                <header className={css.container} >
-                    <hgroup className={css.headings__box} >
-                        <h1 className={css.title}  dangerouslySetInnerHTML={{__html:title}} />
-                        <h2 className={css.slogan}  dangerouslySetInnerHTML={{__html:slogan}} />
-                    </hgroup>
-                </header>
-                <figure className={css.video__box} >
-                    <video
-                        autoPlay
-                        className={css.video} 
-                        loop
-                        muted
-                    >
-                        <source 
-                            type="video/webm"
-                            src={video}
-                        />
-                    </video>
-                </figure>
-            </div>
-            {
-                buttons &&
-                <ul className={css.buttons} >
+export default function Hero({buttons,slogan,background_image:image,title}:tHero){
+    return (
+        <header className={css.wrapper}>
+            <picture className={css.image} >
+               <Image
+                    alt={image.altText}
+                    fill
+                    loading="eager"
+                    priority
+                    src={image.sourceUrl}
+                    style={{
+                        objectFit:"cover",
+                        objectPosition:"center"
+                    }}
+                    title=""
+                    quality={80}
+               />
+            </picture>
+            <section className={css.container} >
+                <hgroup className={css.headings} >
+                    <h1 className={css.title}  dangerouslySetInnerHTML={{__html:title}} />
+                    <h2 className={css.slogan}  dangerouslySetInnerHTML={{__html:slogan}} />
+                </hgroup>
+                <ul className={css.buttons} >    
                     {buttons.map((item, index) => {
-                        return <PrimaryButton
-                            {...item}
-                            rel="index follow"
-                            key={index}
-                        />
+                        return <PrimaryButton {...item} mode="red" rel="index follow" key={index} />
                     })}
                 </ul>
-            }
-        </>
+            </section>
+        </header>
     )
 }

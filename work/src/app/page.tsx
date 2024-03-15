@@ -1,6 +1,6 @@
+import Hero from "v/home/Hero/Hero";
 import wordpressConnect from "configs/wordpressConnect"
 import HomePageQuery, {tHomePageRequestQuery, tHomePageResponseQuery} from "gql/HomePageQuery"
-import { Hero } from "views/Home"
 
 export default async function HomePage(){
 
@@ -9,28 +9,48 @@ export default async function HomePage(){
     query:HomePageQuery
   })
   .then((response:tHomePageRequestQuery):tHomePageResponseQuery => {
+    const {blog,hero} = response.data.page.homePage;
+    const posts = response.data.posts.nodes;
     return {
       hero: {
-        buttons:response.data.page.pageHomePage.hero.buttons.map(({button}) => {
-          return {
-            target:button.target,
-            title:button.title,
-            url:button.url
-          }
+        background_image:{...hero.background_image.node},
+        buttons:hero.buttons.map(({button}) => {
+          return {...button}
         }),
-        slogan:response.data.page.pageHomePage.hero.slogan,
-        title:response.data.page.pageHomePage.hero.title
+        slogan:hero.slogan,
+        title:hero.title
+      },
+      blog: {
+        button:blog.button,
+        content: {
+          additional:blog.additional_content,
+          base:blog.content
+        },
+        title:blog.title,
+        posts:posts.map(({categories,date,excerpt,title,uri}) => {
+          return {
+            categories:categories.nodes.map((item) => {
+              return {...item}
+            }),
+            date:date,
+            excerpt:excerpt,
+            title:title,
+            uri:uri
+          }
+        })
       }
     }
+
   })
 
 
   return(
     <>
       <Hero
-        {...data.hero}
-        video="/assets/hero-background-2.webm"
+          {...data.hero}
       />
+      <main>
+      </main>
       <div>
         <h1>strona glowna</h1>
       </div>

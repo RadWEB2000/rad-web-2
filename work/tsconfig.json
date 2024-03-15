@@ -21,6 +21,7 @@
     "paths": {
       "app/*": ["./src/app/*"],
       "assets/*": ["./src/assets/*"],
+      "blogCards/*": ["./src/components/Utils/Cards/BlogCards/*"],
       "buttons/*": ["./src/components/Utils/Buttons/*"],
       "cards/*": ["./src/components/Utils/Cards/*"],
       "components/*": ["./src/components/*"],
@@ -32,6 +33,7 @@
       "functions/*": ["./src/lib/functions/*"],
       "gql/*": ["./src/data/queries/*"],
       "hooks/*": ["./src/lib/hooks/*"],
+      "img/*": ["./src/assets/images/*"],
       "layout/*": ["./src/components/Layout/*"],
       "lib/*": ["./src/lib/*"],
       "nav/*": ["./src/components/Layout/Navigation/*"],

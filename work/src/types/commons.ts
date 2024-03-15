@@ -27,3 +27,14 @@ export type tRel =
   | "external nofollow noreferrer"
   | "next prev"
   | "index follow";
+
+export type tPost = {
+  categories: {
+    name: string;
+    uri: string;
+  }[];
+  date: string;
+  excerpt: string;
+  title: string;
+  uri: string;
+};

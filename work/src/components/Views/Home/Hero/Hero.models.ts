@@ -4,5 +4,8 @@ export type tHero = {
   title: string;
   slogan: string;
   buttons: tCustomButton[];
-  video: string;
+  background_image: {
+    altText: string;
+    sourceUrl: string;
+  };
 };
