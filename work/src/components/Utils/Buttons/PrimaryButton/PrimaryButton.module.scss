@@ -1,116 +1,134 @@
-@import "../../../../styles/Mixins.scss";
-@import "../../../../styles/Variables.scss";
+@import '../../../../styles/Mixins.scss';
+@import '../../../../styles/Variables.scss';
 
 @mixin borderLeft() {
-  left: 0;
-  &::after,
-  &::before {
-    border-right: rgba($black, 0);
-    left: 0;
-  }
+	left: 0;
+	&::after,
+	&::before {
+		border-right: rgba($black, 0);
+		left: 0;
+	}
 
-  &::after {
-    border-bottom: rgba($black, 0);
-    border-top-left-radius: 1.5rem;
-    top: 0;
-  }
-  &::before {
-    bottom: 0;
-    border-bottom-left-radius: 1.5rem;
-    border-top: rgba($black, 0);
-  }
+	&::after {
+		border-bottom: rgba($black, 0);
+		border-top-left-radius: 1.5rem;
+		top: 0;
+	}
+	&::before {
+		bottom: 0;
+		border-bottom-left-radius: 1.5rem;
+		border-top: rgba($black, 0);
+	}
 }
 @mixin borderRight() {
-  right: 0;
-  &::after,
-  &::before {
-    border-left: rgba($black, 0);
-    right: 0;
-  }
+	right: 0;
+	&::after,
+	&::before {
+		border-left: rgba($black, 0);
+		right: 0;
+	}
 
-  &::after {
-    border-bottom: rgba($black, 0);
-    border-top-right-radius: 1.5rem;
-    top: 0;
-  }
-  &::before {
-    border-bottom-right-radius: 1.5rem;
-    border-top: rgba($black, 0);
-    bottom: 0;
-  }
+	&::after {
+		border-bottom: rgba($black, 0);
+		border-top-right-radius: 1.5rem;
+		top: 0;
+	}
+	&::before {
+		border-bottom-right-radius: 1.5rem;
+		border-top: rgba($black, 0);
+		bottom: 0;
+	}
 }
 @mixin border($color) {
-  color: $color;
-  .border__left,
-  .border__right {
-    &::after,
-    &::before {
-      border: 3px solid $color;
-    }
-  }
-  .border__left {
-    @include borderLeft();
-  }
-  .border__right {
-    @include borderRight();
-  }
+	color: $color;
+	.border__left,
+	.border__right {
+		&::after,
+		&::before {
+			border: 3px solid $color;
+		}
+	}
+	.border__left {
+		@include borderLeft();
+	}
+	.border__right {
+		@include borderRight();
+	}
 
-  &:focus-within,
-  &:hover {
-    .border__left,
-    .border__right {
-      &::after,
-      &::before {
-        @include size(50%, 100%);
-      }
-    }
-  }
+	&:focus-within,
+	&:hover {
+		.border__left,
+		.border__right {
+			&::after,
+			&::before {
+				@include size(50%, 100%);
+			}
+		}
+	}
 }
 
 .wrapper {
-  @include flex(center, center, row nowrap, 0.75rem);
-  border-radius: 1.5rem;
-  padding: 0.5rem 2rem;
-  position: relative;
-  transition: 0.12s ease-in-out column-gap, 0.12s ease-in-out filter;
-  &:focus-within,
-  &:hover {
-    column-gap: 0.92rem;
-    filter: brightness(115%);
-  }
+	@include flex(center, center, row nowrap, 0.75rem);
+	border-radius: 1.5rem;
+	padding: 0.5rem 2rem;
+	position: relative;
+	transition: 0.12s ease-in-out column-gap, 0.12s ease-in-out filter;
+	&:focus-within,
+	&:hover {
+		column-gap: 0.92rem;
+		filter: brightness(115%);
+	}
 }
 
 .border__left,
 .border__right {
-  height: 100%;
-  position: absolute;
-  transform: translateY(-50%);
-  top: 50%;
-  width: 50%;
-  &::after,
-  &::before {
-    @include size(2.15dvh, 4.5dvh);
-    position: absolute;
-    transition: 0.12s linear height, 0.12s linear width;
-  }
+	height: 100%;
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	width: 50%;
+	&::after,
+	&::before {
+		@include size(2.15dvh, 4.5dvh);
+		position: absolute;
+		transition: 0.12s linear height, 0.12s linear width;
+	}
 }
 
 .label {
-  @include font(1.8rem, 600, 1, uppercase, null, center);
+	@include font(1.8rem, 600, 1, uppercase, null, center);
 }
 
 .icon {
-  @include flex(center, center);
-  @include size(3rem, 3rem);
-  font-size: 1.8rem;
+	@include flex(center, center);
+	@include size(3rem, 3rem);
+	font-size: 1.8rem;
 }
 
-.wrapper[data-mode="red"] {
-  @include border($red);
+.wrapper[data-mode='red'] {
+	@include border($red);
 }
-.wrapper[data-mode="white"] {
-  @include border($white);
+.wrapper[data-mode='white'] {
+	@include border($white);
 }
-.wrapper[data-mode="black"] {
-  @include border($black);
+.wrapper[data-mode='black'] {
+	@include border($black);
+}
+
+@media only screen {
+	@media (min-width: 1150px) {
+		.wrapper {
+			padding: 0.85rem 2rem;
+		}
+
+		.label {
+			font-size: 2.7rem;
+		}
+
+		.icon {
+			@include flex(center, center);
+			@include size(3.6rem, 3.6rem);
+			font-size: 2.9rem;
+		}
+	}
 }

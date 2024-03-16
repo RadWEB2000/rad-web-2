@@ -1,66 +1,67 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@700&family=Kode+Mono&family=Rubik+Mono+One&display=swap");
-@import "./Variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@700&family=Kode+Mono&family=Rubik+Mono+One&display=swap');
+@import './Variables.scss';
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: rgba($black, 0);
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: rgba($black, 0);
 }
 
 ::after,
 ::before {
-  content: "";
-  position: absolute;
+	content: '';
+	position: absolute;
 }
 
 :focus,
 :focus-within {
-  outline: none;
+	outline: none;
 }
 
 a {
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 body {
-  font-family: $regural;
-  font-weight: 400;
-  color: $black;
-  background-color: $white;
-  background-color: aqua;
-  font-size: 1.6rem;
-  transition: 0.2s linear all;
+	font-family: $regural;
+	font-weight: 400;
+	color: $black;
+	background-color: $white;
+	background-color: aqua;
+	background: #333;
+	font-size: 1.6rem;
+	transition: 0.2s linear all;
 }
 
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 button,
 input,
 textarea {
-  background: transparent;
-  border: none;
-  font-family: inherit;
-  outline: none;
+	background: transparent;
+	border: none;
+	font-family: inherit;
+	outline: none;
 }
 
 li,
 ol,
 ul {
-  list-style: none;
+	list-style: none;
 }
 p {
-  text-wrap: balance;
+	text-wrap: balance;
 }
