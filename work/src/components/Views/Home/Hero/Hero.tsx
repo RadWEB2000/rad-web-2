@@ -21,6 +21,7 @@ export default function Hero({
 					style={{
 						objectFit: 'cover',
 						objectPosition: 'center',
+						transform: 'rotateY(180deg)',
 					}}
 					title=""
 					quality={80}
