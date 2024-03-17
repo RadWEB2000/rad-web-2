@@ -10,8 +10,9 @@ export default async function HomePage() {
 		key: `${process.env.WP_PL}`,
 		query: HomePageQuery,
 	}).then((response: tHomePageRequestQuery): tHomePageResponseQuery => {
-		const { blog, hero } = response.data.page.homePage;
+		const {aboutUs,  blog, hero } = response.data.page.homePage;
 		const posts = response.data.posts.nodes;
+		const team = response.data.users.nodes;
 		return {
 			hero: {
 				background_image: { ...hero.background_image.node },
@@ -42,6 +43,23 @@ export default async function HomePage() {
 					}
 				),
 			},
+			about_us: {
+				button:aboutUs.button,
+				content:aboutUs.content,
+				image:aboutUs.image.node,
+				team: team.map(({description,firstName,lastName,personPage: {image,works}}) => {
+					console.log(image)
+					return {
+						firstName:firstName,
+						image:image.node,
+						lastName:lastName,
+						overview:description,
+						works:works
+					}
+				}),
+				title:aboutUs.title,
+				uri:aboutUs.uri
+			}
 		};
 	});
 

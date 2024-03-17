@@ -21,7 +21,7 @@ export default function Hero({
 					style={{
 						objectFit: 'cover',
 						objectPosition: 'center',
-						transform: 'rotateY(180deg)',
+						filter:"brightness(105%)"
 					}}
 					title=""
 					quality={80}

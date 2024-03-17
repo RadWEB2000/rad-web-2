@@ -1,86 +1,102 @@
-import { tCustomButton, tImage, tPost } from 'ts/commons';
+import { tCustomButton, tImage, tPost } from "ts/commons";
 
 export type tHomePageRequestQuery = {
-	data: {
-		page: {
-			homePage: {
-				hero: {
-					background_image: {
-						node: {
-							altText: string;
-							sourceUrl: string;
-						};
-					};
-					buttons: {
-						button: tCustomButton;
-					}[];
-					slogan: string;
-					title: string;
-				};
-				blog: {
-					title: string;
-					content: string;
-					additional_content: string;
-					button: tCustomButton;
-				};
-			};
-		};
-		posts: {
-			nodes: {
-				categories: {
-					nodes: {
-						name: string;
-						uri: string;
-					}[];
-				};
-				date: string;
-				excerpt: string;
-				title: string;
-				uri: string;
-			}[];
-		};
-	};
-	users: {
-		nodes: {
-			firstName: string;
-			lastName: string;
-			description: string;
-			personPage: {
-				works: string;
-				image: {
-					node: tImage;
-				};
-			};
-		}[];
-	};
+  data: {
+    page: {
+      homePage: {
+        hero: {
+          background_image: {
+            node: {
+              altText: string;
+              sourceUrl: string;
+            };
+          };
+          buttons: {
+            button: tCustomButton;
+          }[];
+          slogan: string;
+          title: string;
+        };
+        blog: {
+          title: string;
+          content: string;
+          additional_content: string;
+          button: tCustomButton;
+        };
+        aboutUs: {
+          title: string;
+          uri: string;
+          button: tCustomButton;
+          image: {
+            node: tImage;
+          };
+          content: string;
+        };
+      };
+    };
+    posts: {
+      nodes: {
+        categories: {
+          nodes: {
+            name: string;
+            uri: string;
+          }[];
+        };
+        date: string;
+        excerpt: string;
+        title: string;
+        uri: string;
+      }[];
+    };
+    users: {
+      nodes: {
+        firstName: string;
+        lastName: string;
+        description: string;
+        personPage: {
+          works: string;
+          image: {
+            node: tImage;
+          };
+        };
+      }[];
+    };
+  };
 };
 
 export type tHomePageResponseQuery = {
-	hero: {
-		background_image: {
-			altText: string;
-			sourceUrl: string;
-		};
-		title: string;
-		slogan: string;
-		buttons: tCustomButton[];
-	};
-	blog: {
-		title: string;
-		button: tCustomButton;
-		content: {
-			base: string;
-			additional: string;
-		};
-		posts: tPost[];
-	};
-	about_us: {
-		team: {
-			firstName: string;
-			lastName: string;
-			desc;
-		};
-	};
+  hero: {
+    background_image: {
+      altText: string;
+      sourceUrl: string;
+    };
+    title: string;
+    slogan: string;
+    buttons: tCustomButton[];
+  };
+  blog: {
+    title: string;
+    button: tCustomButton;
+    content: {
+      base: string;
+      additional: string;
+    };
+    posts: tPost[];
+  };
+  about_us: {
+    button: tCustomButton;
+    content: string;
+    image: tImage;
+    team: {
+      firstName: string;
+      image: tImage;
+      lastName: string;
+      overview: string;
+      works: string;
+    }[];
+    title: string;
+    uri: string;
+  };
 };
 
 const HomePageQuery: string = `
@@ -137,6 +153,7 @@ const HomePageQuery: string = `
         firstName
         lastName
         description
+        uri
         personPage {
           works
           image {
