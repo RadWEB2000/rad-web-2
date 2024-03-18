@@ -10,7 +10,7 @@ export default function Hero({
 	title,
 }: tHero) {
 	return (
-		<header className={css.wrapper}>
+		<section className={css.wrapper}>
 			<picture className={css.image}>
 				<Image
 					alt={image.altText}
@@ -27,7 +27,7 @@ export default function Hero({
 					quality={80}
 				/>
 			</picture>
-			<section className={css.container}>
+			<header className={css.container}>
 				<hgroup className={css.headings}>
 					<h1
 						className={css.title}
@@ -43,14 +43,14 @@ export default function Hero({
 						return (
 							<PrimaryButton
 								{...item}
-								mode="red"
+								mode="white"
 								rel="index follow"
 								key={index}
 							/>
 						);
 					})}
 				</ul>
-			</section>
-		</header>
+			</header>
+		</section>
 	);
 }

@@ -1,0 +1,39 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  background-color: $orange;
+  display: grid;
+  padding: 4rem 7rem 2rem;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.title {
+  @include font(13rem, 700, 1.1, null, null, start);
+  grid-area: title;
+  grid-column: 1/-1;
+  grid-row: 1;
+}
+
+.box {
+  @include flex(flex-start, flex-start, column, null, null, true);
+  grid-column: 2/4;
+}
+
+.content {
+  @include font(2.3rem, 400, 1.7, null, null, start);
+  margin-top: 1rem;
+}
+
+.image {
+  position: relative;
+  background: lime;
+  display: flex;
+  border-radius: 3rem;
+  overflow: hidden;
+  //   height: 40px;
+  grid-column: 4/-1;
+  grid-row: 2;
+  margin-top: 2rem;
+  padding: 3rem;
+}

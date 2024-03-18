@@ -140,7 +140,7 @@ const HomePageQuery: string = `
           image {
             node {
               altText
-              sourceUrl(size: POST_THUMBNAIL)
+              sourceUrl(size: LARGE)
               title
             }
           }

@@ -1,4 +1,4 @@
-import { AboutUs, Hero } from 'views/Home';
+import { Hero } from 'components/Views/Home';
 import wordpressConnect from 'configs/wordpressConnect';
 import HomePageQuery, {
 	tHomePageRequestQuery,
@@ -14,13 +14,22 @@ export default async function HomePage() {
 		const posts = response.data.posts.nodes;
 		const team = response.data.users.nodes;
 		return {
-			hero: {
-				background_image: { ...hero.background_image.node },
-				buttons: hero.buttons.map(({ button }) => {
-					return { ...button };
+			about_us: {
+				button:aboutUs.button,
+				content:aboutUs.content,
+				image:aboutUs.image.node,
+				team: team.map(({description,firstName,lastName,personPage: {image,works}}) => {
+					console.log(image)
+					return {
+						firstName:firstName,
+						image:image.node,
+						lastName:lastName,
+						overview:description,
+						works:works
+					}
 				}),
-				slogan: hero.slogan,
-				title: hero.title,
+				title:aboutUs.title,
+				uri:aboutUs.uri
 			},
 			blog: {
 				button: blog.button,
@@ -43,32 +52,25 @@ export default async function HomePage() {
 					}
 				),
 			},
-			about_us: {
-				button:aboutUs.button,
-				content:aboutUs.content,
-				image:aboutUs.image.node,
-				team: team.map(({description,firstName,lastName,personPage: {image,works}}) => {
-					console.log(image)
-					return {
-						firstName:firstName,
-						image:image.node,
-						lastName:lastName,
-						overview:description,
-						works:works
-					}
+			hero: {
+				background_image: { ...hero.background_image.node },
+				buttons: hero.buttons.map(({ button }) => {
+					return { ...button };
 				}),
-				title:aboutUs.title,
-				uri:aboutUs.uri
+				slogan: hero.slogan,
+				title: hero.title,
 			}
 		};
 	});
 
 	return (
 		<>
-			<Hero {...data.hero} />
-			<main>
-				<AboutUs />
-			</main>
+		<Hero
+			{...data.hero}
+			
+		/>
+		<main>
+		</main>
 			<div>
 				<h1>strona glowna</h1>
 			</div>

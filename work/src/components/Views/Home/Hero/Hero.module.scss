@@ -2,96 +2,57 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
+  border-radius: 2rem;
   display: grid;
-  grid-template-areas: "layer";
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  margin: 2rem auto 3rem;
+  width: clamp(2rem, 160rem, 97%);
 }
 
 .image {
-  grid-area: layer;
+  display: flex;
   position: relative;
+  padding: 2rem;
+  overflow: hidden;
+  height: 32vh;
+  border-radius: 2rem;
+  grid-column: 1/2;
+  grid-column: 1/-1;
+  grid-row: 1;
 }
 
 .container {
-  @include flex(flex-start, flex-end, column);
-  background-image: linear-gradient(
-    to bottom right,
-    rgba($white, 0),
-    rgba($gray, 0.7)
+  @include flex(flex-start, flex-end, column, null, 1rem);
+  border-radius: 2rem;
+  min-height: 85vh;
+  min-height: 50vh;
+  height: auto;
+  // background-color: $blue-polynesian;
+  background-image: radial-gradient(
+    color-mix(in srgb, $blue-polynesian 95%, $blue-oxford 5%),
+    $blue-polynesian
   );
-  color: $black;
-  grid-area: layer;
-  z-index: 0;
-  min-height: 93vh;
-  padding: 7rem 1rem 4rem 1rem;
+  padding: 3rem;
+  padding: 2rem;
+  grid-column: 2/-1;
+  grid-column: 1/-1;
+  grid-row: 2;
 }
 
 .title {
-  @include font(7rem, 900, 1, null, null, start);
+  @include font(17rem, 900, 1, null, null, start);
+  font-size: 6rem;
 }
 
 .slogan {
-  @include font(2.7rem, 700, 1.1, null, null, start);
+  @include font(4.15rem, 700, 1.4, null, null, start);
+  font-size: 2.24rem;
   text-wrap: balance;
 }
 
 .buttons {
-  @include flex(flex-start, flex-start, row wrap, 1rem, 1rem, true);
+  @include flex(flex-start, flex-start, row wrap, 0.57rem, 0.57rem);
+  margin-top: 4rem;
   margin-top: 2rem;
-}
-
-@media only screen {
-  @media (min-width: 550px) {
-    .title {
-      font-size: 10rem;
-    }
-
-    .slogan {
-      font-size: 3rem;
-    }
-  }
-  @media (min-width: 715px) {
-    .title {
-      font-size: 12.7rem;
-    }
-
-    .slogan {
-      font-size: 3.77rem;
-    }
-  }
-  @media (min-width: 950px) {
-    .container {
-      padding: 10rem 5rem 4rem 5rem;
-    }
-
-    .title {
-      font-size: 14rem;
-    }
-
-    .slogan {
-      font-size: 4.38rem;
-    }
-  }
-  @media (min-width: 1150px) {
-    .container {
-      padding: 15rem 6.5rem 4rem 6.5rem;
-    }
-
-    .title {
-      font-size: 17rem;
-    }
-
-    .slogan {
-      font-size: 5.2rem;
-    }
-  }
-  @media (min-width: 1450px) {
-    .title {
-      font-size: 26rem;
-    }
-
-    .slogan {
-      font-size: 6.2rem;
-      width: 70%;
-    }
-  }
 }

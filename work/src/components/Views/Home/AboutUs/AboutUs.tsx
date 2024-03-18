@@ -1,23 +1,43 @@
-export default function AboutUs() {
+import PrimaryButton from "buttons/PrimaryButton";
+import Image from "next/image";
+import { tAboutUs } from "v/home/AboutUs/AboutUs.models";
+import css from "v/home/AboutUs/AboutUs.module.scss";
+
+export default function AboutUs({button,content,image,team,title,uri}:tAboutUs) {
 	return (
-		<div>
-			<section>
-				<h2>O nas</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Quam quas, fuga, non cumque quia officia consectetur eos
-					laudantium amet laborum saepe sed alias ratione soluta!
-					Molestias aperiam qui in ducimus? Obcaecati veniam saepe sed
-					voluptatibus, eum culpa optio, corrupti officiis provident
-					at consequuntur asperiores pariatur eos, praesentium a.
-					Dolor excepturi aliquam atque error consectetur tenetur
-					tempora aperiam officia consequatur odit. Cupiditate, in
-					earum nam itaque modi officiis! Sequi saepe qui maxime hic
-					ipsum incidunt voluptate id quam ad dignissimos eius at,
-					rerum ducimus accusamus, sapiente similique. Maxime eum
-					labore suscipit.
-				</p>
+		<>	
+			<section className={css.wrapper} >
+				<h2 className={css.title}  dangerouslySetInnerHTML={{__html:title}} />
+				<section className={css.box}>
+				<div className={css.button}>
+					<PrimaryButton
+						{...button}
+						mode="white"
+						rel="index follow"
+					/>
+				</div>
+				<p className={css.content} 
+					dangerouslySetInnerHTML={{__html:content}}
+				/>
+				</section>
+				<picture className={css.image} >
+					<Image
+						alt={image.altText}
+						fill
+						loading="eager"
+						priority
+						src={image.sourceUrl}
+						style={{
+							objectFit: 'cover',
+							objectPosition: 'center',
+							filter:"brightness(105%)"
+						}}
+						title={image.title}
+						quality={80}
+					/>
+				</picture>
 			</section>
-		</div>
+			
+		</>
 	);
 }
