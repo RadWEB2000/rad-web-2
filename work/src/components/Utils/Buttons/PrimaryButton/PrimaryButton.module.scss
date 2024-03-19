@@ -141,4 +141,19 @@
       font-size: 3.6rem;
     }
   }
+  @media (min-width: 2300px) {
+    .wrapper {
+      padding: 2.5rem 4rem;
+    }
+
+    .label {
+      font-size: 4.7rem;
+    }
+
+    .icon {
+      $size: 5rem;
+      @include size($size, $size);
+      font-size: 4.8rem;
+    }
+  }
 }

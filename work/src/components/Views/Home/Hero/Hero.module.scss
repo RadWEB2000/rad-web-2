@@ -4,55 +4,131 @@
 .wrapper {
   border-radius: 2rem;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
   gap: 1rem;
+  grid-template-columns: repeat(7, 1fr);
   margin: 2rem auto 3rem;
-  width: clamp(2rem, 160rem, 97%);
+  width: minmax(2rem, 90%);
 }
 
 .image {
-  display: flex;
-  position: relative;
-  padding: 2rem;
-  overflow: hidden;
-  height: 32vh;
   border-radius: 2rem;
-  grid-column: 1/2;
+  display: flex;
   grid-column: 1/-1;
   grid-row: 1;
+  height: 42vh;
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
 }
 
 .container {
   @include flex(flex-start, flex-end, column, null, 1rem);
-  border-radius: 2rem;
-  min-height: 85vh;
-  min-height: 50vh;
-  height: auto;
-  // background-color: $blue-polynesian;
   background-image: radial-gradient(
     color-mix(in srgb, $blue-polynesian 95%, $blue-oxford 5%),
     $blue-polynesian
   );
-  padding: 3rem;
-  padding: 2rem;
-  grid-column: 2/-1;
+  border-radius: 2rem;
   grid-column: 1/-1;
   grid-row: 2;
+  height: auto;
+  min-height: 40vh;
+  padding: 2rem;
 }
 
 .title {
-  @include font(17rem, 900, 1, null, null, start);
-  font-size: 6rem;
+  @include font(6rem, 900, 1, null, null, start);
 }
 
 .slogan {
-  @include font(4.15rem, 700, 1.4, null, null, start);
-  font-size: 2.24rem;
+  @include font(2.24rem, 700, 1.4, null, null, start);
   text-wrap: balance;
 }
 
 .buttons {
   @include flex(flex-start, flex-start, row wrap, 0.57rem, 0.57rem);
-  margin-top: 4rem;
   margin-top: 2rem;
+}
+
+@media only screen {
+  @media (min-width: 600px) {
+    .image {
+      height: unset;
+      grid-column: 1/4;
+    }
+
+    .container {
+      min-height: 70vh;
+      height: auto;
+      padding: 1rem;
+      grid-column: 4/-1;
+      grid-row: 1;
+    }
+
+    .title {
+      font-size: 7.4rem;
+    }
+
+    .slogan {
+      font-size: 2.64rem;
+      margin-top: 1rem;
+    }
+
+    .buttons {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  @media (min-width: 1000px) {
+    .container {
+      min-height: 85vh;
+      padding: 2rem 2.5rem 4rem;
+    }
+
+    .title {
+      font-size: 11rem;
+    }
+
+    .slogan {
+      font-size: 4rem;
+      margin-top: 1rem;
+    }
+
+    .buttons {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  @media (min-width: 1300px) {
+    .image {
+      grid-column: 1/3;
+    }
+
+    .container {
+      grid-column: 3/-1;
+    }
+  }
+  @media (min-width: 1455px) {
+    .title {
+      font-size: 17rem;
+    }
+
+    .slogan {
+      font-size: 5rem;
+      margin-top: unset;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+    }
+  }
+  @media (min-width: 2300px) {
+    .title {
+      font-size: 21rem;
+    }
+
+    .slogan {
+      font-size: 6.1rem;
+      margin-top: unset;
+    }
+  }
 }
