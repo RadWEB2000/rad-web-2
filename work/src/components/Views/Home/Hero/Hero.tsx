@@ -43,7 +43,7 @@ export default function Hero({
 						return (
 							<PrimaryButton
 								{...item}
-								mode="white"
+								mode="black"
 								rel="index follow"
 								key={index}
 							/>

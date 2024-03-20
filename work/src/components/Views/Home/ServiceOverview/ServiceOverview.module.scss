@@ -1,0 +1,48 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  @include flex(flex-start, flex-start, column, null, 1rem);
+  background-color: color-mix(in srgb, $onyx 40%, $black 60%);
+  padding: 4rem 2rem;
+  width: clamp(5rem, 150rem, 90%);
+  margin: 2rem auto;
+  border-radius: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+}
+
+.card {
+  @include flex(center, flex-start, row wrap, 0.75rem);
+  padding: 1rem 2rem;
+}
+
+.icon {
+  position: relative;
+  @include size(4.2rem, 4.2rem);
+  display: block;
+}
+
+.label {
+  @include font(2.25rem, 400, 1.2, uppercase, null, start);
+  color: $yellow;
+  font-family: $special;
+}
+
+.title {
+  @include font(3.4rem, 700, 1.4, null, null, start);
+  font-family: $special;
+  padding: 2rem 4rem;
+}
+
+@media only screen {
+  @media (min-width: 1300px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

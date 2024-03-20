@@ -1,4 +1,5 @@
 import PrimaryButton from "buttons/PrimaryButton";
+import { PrimaryPersonCard } from "cards/index";
 import Image from "next/image";
 import { tAboutUs } from "v/home/AboutUs/AboutUs.models";
 import css from "v/home/AboutUs/AboutUs.module.scss";
@@ -9,23 +10,22 @@ export default function AboutUs({button,content,image,team,title,uri}:tAboutUs) 
 			<section className={css.wrapper} >
 				<h2 className={css.title}  dangerouslySetInnerHTML={{__html:title}} />
 				<section className={css.box}>
-				<div className={css.button}>
-					<PrimaryButton
-						{...button}
-						mode="white"
-						rel="index follow"
+					<div className={css.button}>
+						<PrimaryButton
+							{...button}
+							mode="white"
+							rel="index follow"
+						/>
+					</div>
+					<p className={css.content} 
+						dangerouslySetInnerHTML={{__html:content}}
 					/>
-				</div>
-				<p className={css.content} 
-					dangerouslySetInnerHTML={{__html:content}}
-				/>
 				</section>
 				<picture className={css.image} >
 					<Image
 						alt={image.altText}
 						fill
-						loading="eager"
-						priority
+						loading="lazy"
 						src={image.sourceUrl}
 						style={{
 							objectFit: 'cover',
@@ -37,7 +37,31 @@ export default function AboutUs({button,content,image,team,title,uri}:tAboutUs) 
 					/>
 				</picture>
 			</section>
-			
+			{
+				team &&
+				<div>
+					<div>
+						<button>{"<"}</button>
+						<button>{">"}</button>
+					</div>
+					<ul>
+						{team.map(({firstName,lastName, image , overview,works},index) => {
+							return (	
+								<PrimaryPersonCard
+									fullname={`${firstName} ${lastName}`}
+									image={image}
+									key={index}
+									overview={overview}
+									works={works}
+								/>
+							)
+						})}
+					</ul>
+				</div>
+			}
+			<ul>
+
+			</ul>
 		</>
 	);
 }

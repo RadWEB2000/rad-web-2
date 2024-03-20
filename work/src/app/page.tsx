@@ -1,4 +1,4 @@
-import { Hero } from 'components/Views/Home';
+import { AboutUs, Hero, ServiceOverview } from 'views/Home';
 import wordpressConnect from 'configs/wordpressConnect';
 import HomePageQuery, {
 	tHomePageRequestQuery,
@@ -10,7 +10,7 @@ export default async function HomePage() {
 		key: `${process.env.WP_PL}`,
 		query: HomePageQuery,
 	}).then((response: tHomePageRequestQuery): tHomePageResponseQuery => {
-		const {aboutUs,  blog, hero } = response.data.page.homePage;
+		const {aboutUs,  blog, hero, service_overview } = response.data.page.homePage;
 		const posts = response.data.posts.nodes;
 		const team = response.data.users.nodes;
 		return {
@@ -59,6 +59,15 @@ export default async function HomePage() {
 				}),
 				slogan: hero.slogan,
 				title: hero.title,
+			},
+			service_overview: {
+				cards: service_overview.cards.map(({icon,title}) => {
+					return {
+						icon:icon.node,
+						title:title
+					}
+				}),
+				title:service_overview.title
 			}
 		};
 	});
@@ -70,6 +79,12 @@ export default async function HomePage() {
 			
 		/>
 		<main>
+			<ServiceOverview
+				{...data.service_overview}
+			/>
+			{/* <AboutUs
+				{...data.about_us}
+			/> */}
 		</main>
 			<div>
 				<h1>strona glowna</h1>

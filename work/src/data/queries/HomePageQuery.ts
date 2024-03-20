@@ -32,6 +32,15 @@ export type tHomePageRequestQuery = {
           };
           content: string;
         };
+        service_overview: {
+          title: string;
+          cards: {
+            title: string;
+            icon: {
+              node: tImage;
+            };
+          }[];
+        };
       };
     };
     posts: {
@@ -97,6 +106,13 @@ export type tHomePageResponseQuery = {
     title: string;
     uri: string;
   };
+  service_overview: {
+    title: string;
+    cards: {
+      title: string;
+      icon: tImage;
+    }[];
+  };
 };
 
 const HomePageQuery: string = `
@@ -145,6 +161,19 @@ const HomePageQuery: string = `
             }
           }
           content
+        }
+        service_overview {
+          title
+          cards {
+            title
+            icon {
+              node {
+                altText
+                sourceUrl(size: THUMBNAIL)
+                uri
+              }
+            }
+          }
         }
       }
     }
