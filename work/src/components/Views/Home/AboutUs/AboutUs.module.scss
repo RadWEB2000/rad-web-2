@@ -33,18 +33,13 @@
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin: 1rem auto;
-  row-gap: 2rem;
-  width: clamp(5rem, 130rem, 95%);
+  @include flex(flex-start, flex-end, row wrap, 1rem);
 }
 
 @media only screen {
   @media (min-width: 1000px) {
     .cards {
-      grid-template-columns: repeat(2, 1fr);
-      margin: 2rem 2rem 2rem auto;
+      margin: 2rem 4rem 2rem auto;
     }
   }
 }

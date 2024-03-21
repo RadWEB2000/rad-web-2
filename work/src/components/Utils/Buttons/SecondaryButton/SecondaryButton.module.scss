@@ -5,7 +5,6 @@
   @include flex(center, center);
   @include font(2rem, 700, 1.1, uppercase, null, center);
   font-family: $code;
-  padding: 0.7rem 1rem;
   position: relative;
   &::before {
     background-color: $white;

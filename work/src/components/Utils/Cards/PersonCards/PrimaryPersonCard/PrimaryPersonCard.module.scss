@@ -7,86 +7,52 @@
     rgba($black, 0.6) 65%,
     rgba($onyx, 0.6) 35%
   );
-  border-radius: 2rem;
-  display: grid;
-  grid-template-columns: repeat(15, 1fr);
-  margin: 0 auto;
-  width: 95%;
+  background-color: $white;
+  color: $black;
+  border-radius: 0.4rem;
+  width: clamp(5rem, 40rem, 90%);
+  padding: 0.5rem 0.4rem 1rem;
 }
 
 .image__wrapper {
-  @include flex(center, center);
-  background-image: linear-gradient(to bottom, $yellow, $yellow3);
-  border-radius: 0.5rem;
-  grid-column: 1/-1;
-  height: 40rem;
-  padding: 0.3rem;
+  height: 35rem;
+  width: 100%;
 }
 
 .image {
   @include size(100%, 100%);
-  border-radius: 0.5rem;
   display: block;
-  overflow: hidden;
   position: relative;
 }
-
 .container {
-  @include flex(flex-start, flex-start, column, null, 1rem);
-  grid-column: 1/-1;
-  padding: 2rem;
+  @include flex(flex-start, flex-start, column, null, 0.12rem);
+  padding: 0.45rem 1.2rem;
 }
 
-.title {
-  @include font(3.7rem, 700, 1.1, null, null, start);
-  color: color-mix(in srgb, $yellow3 35%, $white 65%);
+.title,
+.works {
   text-wrap: balance;
 }
 
+.title {
+  @include font(3.1rem, 700, 1.2, null, null, start);
+}
+
 .works {
-  @include font(1.6rem, 600, null, null, null, start);
-  font-family: $special;
+  @include font(1.63rem, 800, 1.6, null, null, start);
+  color: color-mix(in srgb, $black 35%, $onyx 65%);
+}
+
+.line {
+  @include size(1.2px, 100%);
+  border-radius: 0.75rem;
+  background-color: rgba($onyx, 0.6);
 }
 
 .overview {
-  @include font(1.55rem, 400, 1.8, null, null, start);
-  color: rgba($white, 0.7);
-}
-
-@media only screen {
-  @media (min-width: 500px) {
-    .image__wrapper {
-      grid-column: 1/8;
-      height: 100%;
-      padding: 0.6rem;
-    }
-
-    .container {
-      grid-column: 8/-1;
-      min-height: 45rem;
-    }
-  }
-  @media (min-width: 910px) {
-    .title {
-      font-size: 5.45rem;
-    }
-    .works {
-      font-size: 2.6rem;
-    }
-    .overview {
-      font-size: 1.9rem;
-    }
-  }
-  @media (min-width: 1000px) {
-    .container {
-      grid-column: 8/-1;
-      min-height: 65rem;
-    }
-    .title {
-      font-size: 3.45rem;
-    }
-    .works {
-      font-size: 2.2rem;
-    }
-  }
+  color: $onyx;
+  @include font(1.55rem, 300, 1.7, null, null, start);
+  font-family: $special;
+  margin-top: 0.45rem;
+  margin-bottom: 0.7rem;
 }

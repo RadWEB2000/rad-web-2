@@ -18,7 +18,7 @@ export default function PrimaryPersonCard({fullname,image,overview,works}:tPrima
                         src={image.sourceUrl}
                         style={{
                             objectFit: 'cover',
-                            objectPosition: 'center',
+                            objectPosition: 'top',
                         }}
                         title={image.title}
                         quality={80}
@@ -28,7 +28,8 @@ export default function PrimaryPersonCard({fullname,image,overview,works}:tPrima
             <section className={css.container} >
                 <h3  className={css.title}   dangerouslySetInnerHTML={{__html:fullname}} />
                 <h4  className={css.works}   dangerouslySetInnerHTML={{__html:works}} />
-                <p   className={css.overview}  dangerouslySetInnerHTML={{__html:overview.substring(0,115)}} />
+                <span className={css.line}/>
+                <p   className={css.overview}  dangerouslySetInnerHTML={{__html:overview.substring(0,75)}} />
                 <SecondaryButton
                     rel="index follow"
                     target=""
