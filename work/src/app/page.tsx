@@ -82,9 +82,9 @@ export default async function HomePage() {
 			<ServiceOverview
 				{...data.service_overview}
 			/>
-			{/* <AboutUs
+			<AboutUs
 				{...data.about_us}
-			/> */}
+			/>
 		</main>
 			<div>
 				<h1>strona glowna</h1>

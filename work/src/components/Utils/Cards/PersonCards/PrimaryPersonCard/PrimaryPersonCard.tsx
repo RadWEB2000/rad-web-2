@@ -1,38 +1,40 @@
 import Image from "next/image";
 import Link from "next/link";
 import { tPrimaryPersonCard } from "cards/PersonCards/PrimaryPersonCard/PrimaryPersonCard.models";
+import css from "cards/PersonCards/PrimaryPersonCard/PrimaryPersonCard.module.scss";
+import SecondaryButton from "buttons/SecondaryButton";
 
 export default function PrimaryPersonCard({fullname,image,overview,works}:tPrimaryPersonCard){
     return (
-        <li>
-            <figure>
+        <li className={css.wrapper} >
+            <figure  className={css.image__wrapper} >
                 <picture
-                    style={{
-                        display:"none"
-                    }}
+                     className={css.image} 
                 >
-<Image
-											alt={image.altText}
-											fill
-											loading="lazy"
-											src={image.sourceUrl}
-											style={{
-												objectFit: 'cover',
-												objectPosition: 'center',
-												filter:"brightness(105%)",
-											}}
-											title={image.title}
-											quality={80}
-										/>
+                    <Image
+                        alt={image.altText}
+                        fill
+                        loading="lazy"
+                        src={image.sourceUrl}
+                        style={{
+                            objectFit: 'cover',
+                            objectPosition: 'center',
+                        }}
+                        title={image.title}
+                        quality={80}
+                    />
                 </picture>
             </figure>
-            <section>
-                <h3 dangerouslySetInnerHTML={{__html:fullname}} />
-                <h4 dangerouslySetInnerHTML={{__html:works}} />
-                <p dangerouslySetInnerHTML={{__html:overview}} />
-                <Link href="">
-                    więcej
-                </Link>
+            <section className={css.container} >
+                <h3  className={css.title}   dangerouslySetInnerHTML={{__html:fullname}} />
+                <h4  className={css.works}   dangerouslySetInnerHTML={{__html:works}} />
+                <p   className={css.overview}  dangerouslySetInnerHTML={{__html:overview.substring(0,115)}} />
+                <SecondaryButton
+                    rel="index follow"
+                    target=""
+                    title="więcej"
+                    url="#"
+                />
             </section>
         </li>
     )

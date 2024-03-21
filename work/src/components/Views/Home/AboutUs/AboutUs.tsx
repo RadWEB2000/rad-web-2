@@ -39,29 +39,20 @@ export default function AboutUs({button,content,image,team,title,uri}:tAboutUs) 
 			</section>
 			{
 				team &&
-				<div>
-					<div>
-						<button>{"<"}</button>
-						<button>{">"}</button>
-					</div>
-					<ul>
-						{team.map(({firstName,lastName, image , overview,works},index) => {
-							return (	
-								<PrimaryPersonCard
-									fullname={`${firstName} ${lastName}`}
-									image={image}
-									key={index}
-									overview={overview}
-									works={works}
-								/>
-							)
-						})}
-					</ul>
-				</div>
+				<ul className={css.cards}>
+					{team.map(({firstName,lastName, image , overview,works},index) => {
+						return (	
+							<PrimaryPersonCard
+								fullname={`${firstName} ${lastName}`}
+								image={image}
+								key={index}
+								overview={overview}
+								works={works}
+							/>
+						)
+					})}
+				</ul>
 			}
-			<ul>
-
-			</ul>
 		</>
 	);
 }

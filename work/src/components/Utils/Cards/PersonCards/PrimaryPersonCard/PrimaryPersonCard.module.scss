@@ -1,0 +1,92 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+  background-color: color-mix(
+    in srgb,
+    rgba($black, 0.6) 65%,
+    rgba($onyx, 0.6) 35%
+  );
+  border-radius: 2rem;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  margin: 0 auto;
+  width: 95%;
+}
+
+.image__wrapper {
+  @include flex(center, center);
+  background-image: linear-gradient(to bottom, $yellow, $yellow3);
+  border-radius: 0.5rem;
+  grid-column: 1/-1;
+  height: 40rem;
+  padding: 0.3rem;
+}
+
+.image {
+  @include size(100%, 100%);
+  border-radius: 0.5rem;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  @include flex(flex-start, flex-start, column, null, 1rem);
+  grid-column: 1/-1;
+  padding: 2rem;
+}
+
+.title {
+  @include font(3.7rem, 700, 1.1, null, null, start);
+  color: color-mix(in srgb, $yellow3 35%, $white 65%);
+  text-wrap: balance;
+}
+
+.works {
+  @include font(1.6rem, 600, null, null, null, start);
+  font-family: $special;
+}
+
+.overview {
+  @include font(1.55rem, 400, 1.8, null, null, start);
+  color: rgba($white, 0.7);
+}
+
+@media only screen {
+  @media (min-width: 500px) {
+    .image__wrapper {
+      grid-column: 1/8;
+      height: 100%;
+      padding: 0.6rem;
+    }
+
+    .container {
+      grid-column: 8/-1;
+      min-height: 45rem;
+    }
+  }
+  @media (min-width: 910px) {
+    .title {
+      font-size: 5.45rem;
+    }
+    .works {
+      font-size: 2.6rem;
+    }
+    .overview {
+      font-size: 1.9rem;
+    }
+  }
+  @media (min-width: 1000px) {
+    .container {
+      grid-column: 8/-1;
+      min-height: 65rem;
+    }
+    .title {
+      font-size: 3.45rem;
+    }
+    .works {
+      font-size: 2.2rem;
+    }
+  }
+}

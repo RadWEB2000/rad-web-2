@@ -11,7 +11,7 @@
 .title {
   @include font(12rem, 700, 1.1, null, null, start);
   grid-column: 1/-1;
-  margin-bottom: 7rem;
+  margin-bottom: 3rem;
 }
 
 .content {
@@ -30,4 +30,21 @@
   grid-column: 7/-1;
   position: relative;
   display: block;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 1rem auto;
+  row-gap: 2rem;
+  width: clamp(5rem, 130rem, 95%);
+}
+
+@media only screen {
+  @media (min-width: 1000px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 2rem 2rem 2rem auto;
+    }
+  }
 }

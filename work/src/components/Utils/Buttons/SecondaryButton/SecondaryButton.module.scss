@@ -1,0 +1,28 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  @include flex(center, center);
+  @include font(2rem, 700, 1.1, uppercase, null, center);
+  font-family: $code;
+  padding: 0.7rem 1rem;
+  position: relative;
+  &::before {
+    background-color: $white;
+    border-radius: 3rem;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.32s ease-in-out width;
+    width: 0%;
+  }
+
+  &:focus-within,
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
