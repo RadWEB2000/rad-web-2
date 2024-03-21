@@ -1,45 +1,52 @@
-@import "../../../../styles/Mixins.scss";
-@import "../../../../styles/Variables.scss";
+@import '../../../../styles/Mixins.scss';
+@import '../../../../styles/Variables.scss';
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  margin: 2rem auto 2rem 2rem;
-  width: clamp(5rem, 130rem, 95%);
+.container {
+	display: grid;
+	grid-template-areas:
+		'title title title btn btn'
+		'overview overview overview photo photo photo'
+		'overview overview overview photo photo photo'
+		'overview overview overview photo photo photo'
+		'overview overview overview photo photo photo';
+	width: clamp(5rem, 170rem, 90%);
+	margin: 1.5rem auto 1.5rem 2rem;
 }
 
 .title {
-  @include font(12rem, 700, 1.1, null, null, start);
-  grid-column: 1/-1;
-  margin-bottom: 3rem;
+	@include font(7.2rem, 700, 1.3, null, null, start);
+	grid-area: title;
+	background: salmon;
+}
+
+.button {
+	background: lime;
+	grid-area: btn;
 }
 
 .content {
-  @include font(2rem, 500, 1.7, null, null, start);
-}
-
-.box {
-  @include flex(flex-start, flex-start, column, null, 2rem);
-  padding: 2rem;
-  grid-column: 1/7;
+	@include font(1.7rem, 400, 1.7);
+	color: color-mix(in srgb, $white 55%, $gray2 45%);
+	grid-area: overview;
+	background: aqua;
 }
 
 .image {
-  border-radius: 2rem;
-  overflow: hidden;
-  grid-column: 7/-1;
-  position: relative;
-  display: block;
+	grid-area: photo;
+	width: 100%;
+	display: block;
+	position: relative;
+	height: 40rem;
 }
 
 .cards {
-  @include flex(flex-start, flex-end, row wrap, 1rem);
+	@include flex(flex-start, flex-end, row wrap, 1rem);
 }
 
 @media only screen {
-  @media (min-width: 1000px) {
-    .cards {
-      margin: 2rem 4rem 2rem auto;
-    }
-  }
+	@media (min-width: 1000px) {
+		.cards {
+			margin: 2rem 4rem 2rem auto;
+		}
+	}
 }
