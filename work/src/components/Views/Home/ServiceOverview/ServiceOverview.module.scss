@@ -17,7 +17,7 @@
 }
 
 .card {
-  @include flex(center, flex-start, row wrap, 0.75rem);
+  @include flex(flex-start, flex-start, column, 0.75rem);
   padding: 1rem 2rem;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .label {
-  @include font(2.25rem, 400, 1.2, uppercase, null, start);
+  @include font(1.75rem, 400, 1.2, uppercase, null, start);
   color: $yellow;
   font-family: $special;
 }
@@ -36,10 +36,15 @@
 .title {
   @include font(3.4rem, 700, 1.4, null, null, start);
   font-family: $special;
-  padding: 2rem 4rem;
+  padding: 2rem 2rem;
 }
 
 @media only screen {
+  @media (min-width: 600px) {
+    .card {
+      @include flex(center, flex-start, row wrap);
+    }
+  }
   @media (min-width: 1300px) {
     .cards {
       grid-template-columns: repeat(2, 1fr);

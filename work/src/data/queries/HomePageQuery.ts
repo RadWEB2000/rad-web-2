@@ -188,7 +188,7 @@ const HomePageQuery: string = `
           image {
             node {
               altText
-              sourceUrl(size: PERSON_THUMBNAIL)
+              sourceUrl(size: LARGE)
               title(format: RENDERED)
             }
           }
