@@ -1,4 +1,4 @@
-import { AboutUs, Hero, ServiceOverview } from 'views/Home';
+import { AboutUs, Blog, Hero, ServiceOverview } from 'views/Home';
 import wordpressConnect from 'configs/wordpressConnect';
 import HomePageQuery, {
 	tHomePageRequestQuery,
@@ -84,6 +84,9 @@ export default async function HomePage() {
 			/>
 			<AboutUs
 				{...data.about_us}
+			/>
+			<Blog
+				{...data.blog}
 			/>
 		</main>
 			<div>

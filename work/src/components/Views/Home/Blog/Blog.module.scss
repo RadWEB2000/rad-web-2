@@ -1,0 +1,7 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+  background-color: color-mix(in srgb, $black 30%, $yellow 70%);
+  padding: 4rem 10rem;
+}
