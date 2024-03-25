@@ -6,6 +6,9 @@ const nextConfig = {
         hostname: "multi.rad-web-cms.pl",
         protocol: "http",
       },
+      {
+        hostname: "images.unsplash.com",
+      },
     ],
   },
 };

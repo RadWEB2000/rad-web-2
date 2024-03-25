@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { tPrimaryPersonCard } from "cards/PersonCards/PrimaryPersonCard/PrimaryPersonCard.models";
 import css from "cards/PersonCards/PrimaryPersonCard/PrimaryPersonCard.module.scss";
 import SecondaryButton from "buttons/SecondaryButton";

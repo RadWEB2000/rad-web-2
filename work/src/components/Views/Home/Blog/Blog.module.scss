@@ -1,31 +1,70 @@
-@import '../../../../styles/Mixins.scss';
-@import '../../../../styles/Variables.scss';
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
 
 .wrapper {
-	@include flex(flex-start, flex-start, column);
-	// background-color: $orange;
-	background-color: color-mix(in srgb, $red 45%, $yellow3 55%);
-	padding: 4rem 10rem;
-	overflow-x: hidden;
+  @include flex(flex-start, flex-start, column);
+  background-color: color-mix(in srgb, $yellow 85%, $yellow3 15%);
+  padding: 4rem 1rem;
+  overflow-x: hidden;
+}
+
+.container,
+.cards {
+  margin: 0 auto;
+  width: clamp(5rem, 120rem, 93%);
 }
 
 .container {
-	@include flex(flex-start, flex-start, column, null, 1rem);
-	background-color: lime;
+  @include flex(center, flex-start, row wrap, 1rem, 1rem);
+  color: $black;
 }
 
 .content {
-	@include font(1.8rem, 500, 2.1, null, null, start);
+  @include font(1.6rem, 500, 2.1, null, null, start);
 }
 
 .title {
-	@include font(25rem, 800, 1.2, null, null, start);
+  @include font(7rem, 800, 1.2, null, null, start);
+  margin: 0 auto 0 0;
 }
 .cards {
-	@include flex(flex-start, flex-start, row nowrap, 1rem, null, true);
-	overflow-x: scroll;
-	background: red;
-	margin: 5rem 0;
-	width: 100%;
-	overflow-y: scroll;
+  @include flex(flex-start, flex-start, row nowrap, 1rem, null, true);
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    background-color: rgba($black, 0.3);
+    margin-top: 1rem;
+  }
+  &::-webkit-scrollbar-button {
+    background-color: rgba($black, 0.4);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($black, 0.82);
+    border-radius: 2dvw;
+    transition: 0.12s linear background-color;
+    &:hover {
+      background-color: rgba($black, 1);
+    }
+  }
+}
+
+@media only screen {
+  @media (min-width: 700px) {
+    .content {
+      font-size: 1.75rem;
+    }
+
+    .title {
+      font-size: 14rem;
+    }
+  }
+  @media (min-width: 840px) {
+    .content {
+      font-size: 1.85rem;
+      line-height: 2.4;
+    }
+
+    .title {
+      font-size: 18rem;
+    }
+  }
 }

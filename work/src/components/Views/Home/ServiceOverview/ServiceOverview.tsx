@@ -11,7 +11,6 @@ export default function ServiceOverview({ cards, title }: tServiceOverview) {
 			/>
 			<ul className={css.cards}>
 				{cards.map(({ icon, title }, index) => {
-					console.log('icon title', title);
 					return (
 						<li
 							aria-label={title}

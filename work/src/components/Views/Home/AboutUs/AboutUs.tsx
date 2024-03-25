@@ -10,7 +10,6 @@ export default function AboutUs({
 	image,
 	team,
 	title,
-	uri,
 }: tAboutUs) {
 	return (
 		<>

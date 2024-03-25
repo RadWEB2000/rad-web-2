@@ -1,4 +1,4 @@
-import { AboutUs, Blog, Hero, ServiceOverview } from 'views/Home';
+import { AboutUs, Blog, Hero, Projects, ServiceOverview } from 'views/Home';
 import wordpressConnect from 'configs/wordpressConnect';
 import HomePageQuery, {
 	tHomePageRequestQuery,
@@ -101,6 +101,61 @@ export default async function HomePage() {
 				<ServiceOverview {...data.service_overview} />
 				<AboutUs {...data.about_us} />
 				<Blog {...data.blog} />
+				<Projects
+					button={{
+						target:"",
+						title:"Wszystkie projekty",
+						url:""
+					}}	
+					buttonCard='więcej'
+					cards={[
+						{
+							categories:["Strony internetowe"],
+							excerpt:"Amet repellat ut impedit. Illum aut facere cupiditate consequatur. Est temporibus autem sit sunt. Et magni fugit consequatur. Voluptatibus eos quia vel esse itaque numquam expedita nam impedit.",
+							image:{
+								altText:"",
+								sourceUrl:"https://images.unsplash.com/photo-1530721733923-e2df89901503?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+								title:""
+							},
+							title:"Chief Tactics Consultant",
+							uri:"#"
+						},
+						{
+							categories:["Pozycjonowanie"],
+							excerpt:"Amet repellat ut impedit. Illum aut facere cupiditate consequatur. Est temporibus autem sit sunt. Et magni fugit consequatur. Voluptatibus eos quia vel esse itaque numquam expedita nam impedit.",
+							image:{
+								altText:"",
+								sourceUrl:"https://images.unsplash.com/photo-1600705722738-d39380209f19?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+								title:""
+							},
+							title:"Dynamic Web Producer",
+							uri:"#"
+						},
+						{
+							categories:["Strony internetowe", "Pozycjonowanie"],
+							excerpt:"Amet repellat ut impedit. Illum aut facere cupiditate consequatur. Est temporibus autem sit sunt. Et magni fugit consequatur. Voluptatibus eos quia vel esse itaque numquam expedita nam impedit.",
+							image:{
+								altText:"",
+								sourceUrl:"https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80&w=2011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+								title:""
+							},
+							title:"Direct Accountability Officer",
+							uri:"#"
+						},
+						{
+							categories:["Videomaking"],
+							excerpt:"Amet repellat ut impedit. Illum aut facere cupiditate consequatur. Est temporibus autem sit sunt. Et magni fugit consequatur. Voluptatibus eos quia vel esse itaque numquam expedita nam impedit.",
+							image:{
+								altText:"",
+								sourceUrl:"https://images.unsplash.com/photo-1533561797500-4fad4750814e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+								title:""
+							},
+							title:"Product Marketing Associate",
+							uri:"#"
+						},
+					]}
+					title='Nasze realizacje'
+				/>
 			</main>
 			<div>
 				<h1>strona glowna</h1>
