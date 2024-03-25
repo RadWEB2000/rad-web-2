@@ -10,26 +10,34 @@ export default async function HomePage() {
 		key: `${process.env.WP_PL}`,
 		query: HomePageQuery,
 	}).then((response: tHomePageRequestQuery): tHomePageResponseQuery => {
-		const {aboutUs,  blog, hero, service_overview } = response.data.page.homePage;
+		const { aboutUs, blog, hero, service_overview } =
+			response.data.page.homePage;
 		const posts = response.data.posts.nodes;
 		const team = response.data.users.nodes;
 		return {
 			about_us: {
-				button:aboutUs.button,
-				content:aboutUs.content,
-				image:aboutUs.image.node,
-				team: team.map(({description,firstName,lastName,personPage: {image,works}}) => {
-					console.log(image)
-					return {
-						firstName:firstName,
-						image:image.node,
-						lastName:lastName,
-						overview:description,
-						works:works
+				button: aboutUs.button,
+				content: aboutUs.content,
+				image: aboutUs.image.node,
+				team: team.map(
+					({
+						description,
+						firstName,
+						lastName,
+						personPage: { image, works },
+					}) => {
+						console.log(image);
+						return {
+							firstName: firstName,
+							image: image.node,
+							lastName: lastName,
+							overview: description,
+							works: works,
+						};
 					}
-				}),
-				title:aboutUs.title,
-				uri:aboutUs.uri
+				),
+				title: aboutUs.title,
+				uri: aboutUs.uri,
 			},
 			blog: {
 				button: blog.button,
@@ -39,15 +47,29 @@ export default async function HomePage() {
 				},
 				title: blog.title,
 				posts: posts.map(
-					({ categories, date, excerpt, title, uri }) => {
+					({
+						author,
+						categories,
+						date,
+						excerpt,
+						featuredImage,
+						title,
+						uri,
+					}) => {
 						return {
+							author: {
+								firstName: author.node.firstName,
+								lastName: author.node.lastName,
+								image: author.node.personPage.image.node,
+							},
 							categories: categories.nodes.map((item) => {
 								return { ...item };
 							}),
-							date: date,
-							excerpt: excerpt,
-							title: title,
-							uri: uri,
+							date,
+							excerpt,
+							image: featuredImage.node,
+							title,
+							uri,
 						};
 					}
 				),
@@ -61,34 +83,25 @@ export default async function HomePage() {
 				title: hero.title,
 			},
 			service_overview: {
-				cards: service_overview.cards.map(({icon,title}) => {
+				cards: service_overview.cards.map(({ icon, title }) => {
 					return {
-						icon:icon.node,
-						title:title
-					}
+						icon: icon.node,
+						title: title,
+					};
 				}),
-				title:service_overview.title
-			}
+				title: service_overview.title,
+			},
 		};
 	});
 
 	return (
 		<>
-		<Hero
-			{...data.hero}
-			
-		/>
-		<main>
-			<ServiceOverview
-				{...data.service_overview}
-			/>
-			<AboutUs
-				{...data.about_us}
-			/>
-			<Blog
-				{...data.blog}
-			/>
-		</main>
+			<Hero {...data.hero} />
+			<main>
+				<ServiceOverview {...data.service_overview} />
+				<AboutUs {...data.about_us} />
+				<Blog {...data.blog} />
+			</main>
 			<div>
 				<h1>strona glowna</h1>
 			</div>

@@ -1,7 +1,31 @@
-@import "../../../../styles/Mixins.scss";
-@import "../../../../styles/Variables.scss";
+@import '../../../../styles/Mixins.scss';
+@import '../../../../styles/Variables.scss';
 
 .wrapper {
-  background-color: color-mix(in srgb, $black 30%, $yellow 70%);
-  padding: 4rem 10rem;
+	@include flex(flex-start, flex-start, column);
+	// background-color: $orange;
+	background-color: color-mix(in srgb, $red 45%, $yellow3 55%);
+	padding: 4rem 10rem;
+	overflow-x: hidden;
+}
+
+.container {
+	@include flex(flex-start, flex-start, column, null, 1rem);
+	background-color: lime;
+}
+
+.content {
+	@include font(1.8rem, 500, 2.1, null, null, start);
+}
+
+.title {
+	@include font(25rem, 800, 1.2, null, null, start);
+}
+.cards {
+	@include flex(flex-start, flex-start, row nowrap, 1rem, null, true);
+	overflow-x: scroll;
+	background: red;
+	margin: 5rem 0;
+	width: 100%;
+	overflow-y: scroll;
 }

@@ -1,0 +1,80 @@
+@import '../../../../../styles/Mixins.scss';
+@import '../../../../../styles/Variables.scss';
+
+.wrapper {
+	@include flex(flex-start, flex-start, column);
+	padding: 0.5rem 0.75rem;
+	background-color: $white;
+	border-radius: 1rem;
+	width: 35rem;
+	color: $black;
+}
+
+.featuredImage {
+	width: 100%;
+	border-radius: 1rem;
+	overflow: hidden;
+	height: 30rem;
+	position: relative;
+	display: block;
+	&::after {
+		content: '👉🏻';
+		@include flex(center, center);
+		@include size(100%, 100%);
+		background-color: rgba($yellow3, 0.6);
+		font-size: 25rem;
+		top: 0;
+		left: 0;
+	}
+}
+
+.details {
+	@include flex(flex-start, flex-start, column, 1.75rem);
+	padding: 0.45rem 0;
+}
+
+.categories {
+	@include flex(flex-start, flex-start, row wrap, 0.4rem, 0.4rem);
+}
+
+.category {
+	@include flex(center, center);
+	@include font(1.56rem, 500, 1, uppercase, -0.8px, center);
+	border-radius: 0.75rem;
+	background-color: $onyx;
+	color: $white;
+	padding: 0.4rem 0.75rem;
+}
+
+.date {
+	font-family: $special;
+}
+
+.container {
+	margin-top: 0.25rem;
+}
+
+.title {
+	@include font(2.26rem, 700, 1.2, null, null, null);
+}
+
+.excerpt {
+	@include font(1.51rem, 300, 1.6, null);
+}
+
+.author {
+	@include flex(center, flex-start, row wrap, 0.45rem, 0.45rem);
+	margin-top: 0.25rem;
+}
+
+.author__image {
+	@include flex(center, center);
+	@include size(3rem, 3rem);
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+
+.author__fullname {
+	@include font(1.45rem, 600, 1, null);
+}
