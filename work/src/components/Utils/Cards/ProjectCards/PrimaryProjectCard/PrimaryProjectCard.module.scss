@@ -2,23 +2,20 @@
 @import "../../../../../styles/Variables.scss";
 
 .wrapper {
-    background: purple;
-    border-radius: 2rem;
-    overflow: hidden;
-    background-color: $black;
+    @include size(80vh, clamp(5rem, 152rem, 90%));
     background-image:linear-gradient(to bottom, color-mix(in srgb, $black 60%, $onyx 40%), $black);
+    border-radius: 2rem;
     color: $white;
-    width:clamp(5rem, 152rem, 90%);
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    height: 80vh;
     margin: 2rem auto;
+    overflow: hidden;
   }
   
   .container {
     @include flex(flex-start, center, column, null, 1rem);
-    padding: 4rem;
     grid-column: 1/5;
+    padding: 4rem;
   }
   
   .title {
@@ -27,7 +24,7 @@
   }
   
   .excerpt {
-    @include font(2.27rem, 300, 2);
+    @include font(1.8rem, 300, 2);
   }
   
   .categories {
@@ -57,8 +54,8 @@
   }
   
   .image {
+      display: block;
     grid-column: 5/-1;
     position: relative;
-    display: block;
   }
   
