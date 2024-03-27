@@ -3,19 +3,18 @@
 
 .wrapper {
   @include flex(center, center);
-  @include font(2rem, 700, 1.1, uppercase, null, center);
+  @include font(3rem, 800, 1.1, uppercase, null, center);
   font-family: $code;
   position: relative;
   &::before {
+    @include size(2px, 0);
     background-color: $white;
     border-radius: 3rem;
-    height: 2px;
-    position: absolute;
     left: 0;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     transition: 0.32s ease-in-out width;
-    width: 0%;
   }
 
   &:focus-within,

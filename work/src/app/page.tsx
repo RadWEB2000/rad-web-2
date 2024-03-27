@@ -157,9 +157,6 @@ export default async function HomePage() {
 					title='Nasze realizacje'
 				/>
 			</main>
-			<div>
-				<h1>strona glowna</h1>
-			</div>
 		</>
 	);
 }

@@ -1,0 +1,52 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    align-items: end;
+    // background: red;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 9rem calc(100% - 18rem) 9rem;
+    padding: 0rem 2rem;
+    width: 100%;
+  }
+  
+  
+  .button {
+    $size:6.4rem;
+    @include flex(center,center);
+    @include size($size,$size);
+    margin:1rem auto;
+    border: 2px solid rgba($black, .38);
+    font-size: calc($size * 91 / 100);
+    border-radius: .5dvw;
+    overflow: hidden;
+    position: relative;
+    &::after {
+      @include size(0,0);
+      border-radius: 50%;
+      background-image: radial-gradient(rgba($black, .03), rgba($black, .21));
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      transition:.12s ease-in-out  height, .12s ease-in-out width;
+    }
+    & >* {
+      transition:.12s linear  transform;
+    }
+  
+    &:hover {
+      &::after {
+        @include size($size * 1.3,$size * 1.3);
+      }
+      & > *  {
+        transform: scale(.9);
+      }
+    }
+  }
+  
+
+  .cards {
+    overflow-x: hidden;
+  }

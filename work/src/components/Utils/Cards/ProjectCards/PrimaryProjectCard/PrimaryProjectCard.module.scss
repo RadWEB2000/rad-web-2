@@ -1,0 +1,64 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    background: purple;
+    border-radius: 2rem;
+    overflow: hidden;
+    background-color: $black;
+    background-image:linear-gradient(to bottom, color-mix(in srgb, $black 60%, $onyx 40%), $black);
+    color: $white;
+    width:clamp(5rem, 152rem, 90%);
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    height: 80vh;
+    margin: 2rem auto;
+  }
+  
+  .container {
+    @include flex(flex-start, center, column, null, 1rem);
+    padding: 4rem;
+    grid-column: 1/5;
+  }
+  
+  .title {
+    @include font(6.37rem, 900);
+    text-wrap: balance;
+  }
+  
+  .excerpt {
+    @include font(2.27rem, 300, 2);
+  }
+  
+  .categories {
+    @include flex(flex-start, flex-start, row wrap, 1rem, 1rem);
+    margin-bottom: 3rem;
+  }
+  
+  .category {
+    @include font(1.9rem, 600, 1, null, null, center);
+    border: 2px solid $white;
+    font-family: $special;
+    padding: 0.8rem 1.2rem;
+    position: relative;
+    &::after {
+      @include size(100%, 0%);
+      background-color: rgba($white, 0.15);
+      left: 0;
+      top: 0;
+      transition: 0.12s ease-in-out width;
+    }
+    &:focus-within,
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  
+  .image {
+    grid-column: 5/-1;
+    position: relative;
+    display: block;
+  }
+  

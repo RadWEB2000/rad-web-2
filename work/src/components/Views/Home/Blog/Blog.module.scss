@@ -2,8 +2,10 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
+  @include backgroundCover;
   @include flex(flex-start, flex-start, column);
   background-color: color-mix(in srgb, $yellow 85%, $yellow3 15%);
+  background-image: url("/assets/projects-background.svg");
   padding: 4rem 1rem;
   overflow-x: hidden;
 }
@@ -30,14 +32,16 @@
 .cards {
   @include flex(flex-start, flex-start, row nowrap, 1rem, null, true);
   overflow-x: scroll;
+  padding-bottom: 1rem;
   &::-webkit-scrollbar {
-    background-color: rgba($black, 0.3);
+    background-color: rgba($black, 0.12);
     margin-top: 1rem;
   }
   &::-webkit-scrollbar-button {
-    background-color: rgba($black, 0.4);
+    display: none;
   }
   &::-webkit-scrollbar-thumb {
+    cursor: pointer;
     background-color: rgba($black, 0.82);
     border-radius: 2dvw;
     transition: 0.12s linear background-color;
