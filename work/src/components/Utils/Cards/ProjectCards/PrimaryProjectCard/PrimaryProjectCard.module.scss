@@ -2,29 +2,30 @@
 @import "../../../../../styles/Variables.scss";
 
 .wrapper {
-    @include size(80vh, clamp(5rem, 152rem, 90%));
+    @include size(minmax(70rem, auto), clamp(5rem, 152rem, 97%));
     background-image:linear-gradient(to bottom, color-mix(in srgb, $black 60%, $onyx 40%), $black);
+    @include flex(flex-start,flex-start,column-reverse, null, .12rem);
     border-radius: 2rem;
     color: $white;
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    // display: grid;
+    // grid-template-columns: repeat(9, 1fr);
     margin: 2rem auto;
     overflow: hidden;
   }
   
   .container {
     @include flex(flex-start, center, column, null, 1rem);
-    grid-column: 1/5;
-    padding: 4rem;
+    // grid-column: 1/6;
+    padding: 2rem 1.75rem;
   }
   
   .title {
-    @include font(6.37rem, 900);
+    @include font(3.37rem, 900);
     text-wrap: balance;
   }
   
   .excerpt {
-    @include font(1.8rem, 300, 2);
+    @include font(1.55rem, 300, 2);
   }
   
   .categories {
@@ -55,7 +56,10 @@
   
   .image {
       display: block;
-    grid-column: 5/-1;
+      width: 100%;
+      aspect-ratio: 10/4;
+      grid-row: 1;
+    // grid-column: 6/-1;
     position: relative;
   }
   

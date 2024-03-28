@@ -6,7 +6,7 @@
   background-color: color-mix(in srgb, $yellow 72%, $yellow3 28%);
   background-image: url("/assets/projects-background.svg");
   color:$black;
-  padding: 4rem;
+  padding: 4rem 1rem;
 }
 
 .container {
@@ -14,10 +14,10 @@
 }
 
 .title {
-  @include font(12.25rem, 900);
+  @include font(4.61rem, 900);
   margin: 0 auto 0 0;
 }
 
 .content {
-  @include font(2.2rem, 400, 2.2);
+  @include font(1.651rem, 400, 2.2);
 }

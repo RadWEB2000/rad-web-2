@@ -2,9 +2,15 @@
 import css from  "v/home/Projects/Slider/Slider.module.scss";
 import { tSlider, tSliderButton } from "v/home/Projects/Slider/Slider.models";
 import { LiaAngleDoubleRightSolid as RightIcon, LiaAngleDoubleLeftSolid as LeftIcon } from "react-icons/lia";
-import { PrimaryProjectCard } from "utils/Cards";
+import { PrimaryProjectCard as ProjectCard } from "utils/Cards";
 import { useCallback, useState } from "react";
 import {motion} from "framer-motion";
+import dynamic from 'next/dynamic';
+
+// const ProjectCard = dynamic(() => import("utils/Cards").then((mod) => mod.PrimaryProjectCard) ,{
+//     ssr:false,
+//     loading:() => <p>Loading....</p>
+// })
 
 function SliderButton({handle,icon}:tSliderButton){
     return (
@@ -48,7 +54,7 @@ export default function Slider({button,cards}:tSlider){
         >
             {cards.slice(index.start,index.end).map((item,index) => {
                 return (
-                    <PrimaryProjectCard
+                    <ProjectCard
                         {...item}
                         button={button}
                         direction={slideDirection}

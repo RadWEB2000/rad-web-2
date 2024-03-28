@@ -16,10 +16,12 @@ export default function PrimaryProjectCard({button,categories, direction, excerp
             key={title}
             initial={{
                 opacity: 1,
+                scale:.92,
                 x: direction === "left" ? 300 : -300
               }}
-              animate={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0, scale:1 }}
               exit={{
+                scale:.92,
                 opacity: 1,
                 x: direction === "left" ? -300 : 300
               }}
