@@ -1,0 +1,35 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start, flex-start, column, null, 1rem);
+    border-radius: 1rem;
+    background-color: color-mix(in srgb, $white 75%, $gray2 25%);
+    padding: 3rem;
+    margin:3rem auto;
+    widtH:clamp(5rem, 38rem, 95%);
+    transition:.02s ease-in-out background-color, .12s ease-in-out border-radius;
+    &:focus-within,
+    &:hover{
+        background-color: color-mix(in srgb, $yellow 75%, $yellow3 25%);
+        border-radius: 0 7rem 0 0;
+    }
+}
+
+.categories {
+    @include flex(center,flex-start, row wrap, .6rem, .6rem);
+}
+
+.category {
+    @include font(1.44rem, 500, 1,null);
+    padding: 0.2rem 0.5rem;
+    position: relative;
+}
+
+.title {
+    @include font(3.2rem, 700);
+}
+
+.excerpt {
+    @include font(1.55rem, 500, 1.4);
+}

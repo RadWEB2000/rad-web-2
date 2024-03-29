@@ -1,4 +1,4 @@
-import { PrimaryBlogCard } from "cards/index";
+import { PrimaryBlogCard, SecondaryBlogCard } from "cards/index";
 
 export default function HomePage(){
 	return(
@@ -6,6 +6,7 @@ export default function HomePage(){
 			<>
 				<h1>HomePage</h1>
 				<PrimaryBlogCard/>
+				<SecondaryBlogCard/>
 			</>
 		</>
 	)
