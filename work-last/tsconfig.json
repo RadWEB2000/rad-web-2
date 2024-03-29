@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "app/*": ["./src/app/*"],
+      "assets/*": ["./src/assets/*"],
+      "blogCards/*": ["./src/components/Utils/Cards/BlogCards/*"],
+      "buttons/*": ["./src/components/Utils/Buttons/*"],
+      "cards/*": ["./src/components/Utils/Cards/*"],
+      "components/*": ["./src/components/*"],
+      "configs/*": ["./src/lib/configs/*"],
+      "context/*": ["./src/context/*"],
+      "css/*": ["./src/styles/*"],
+      "data/*": ["./src/data/*"],
+      "footer/*": ["./src/components/Layout/Footer/*"],
+      "functions/*": ["./src/lib/functions/*"],
+      "gql/*": ["./src/data/queries/*"],
+      "hooks/*": ["./src/lib/hooks/*"],
+      "img/*": ["./src/assets/images/*"],
+      "layout/*": ["./src/components/Layout/*"],
+      "lib/*": ["./src/lib/*"],
+      "nav/*": ["./src/components/Layout/Navigation/*"],
+      "seo/*": ["./src/components/Layout/Seo/*"],
+      "ts/*": ["./src/types/*"],
+      "v/home/*": ["./src/components/Views/Home/*"],
+      "views/*": ["./src/components/Views/*"],
+      "utils/*": ["./src/components/Utils/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

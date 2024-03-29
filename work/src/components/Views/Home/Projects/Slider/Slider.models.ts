@@ -13,5 +13,6 @@ export type tSlider = {
 
 export type tSliderButton = {
     handle:() => void;
+    direction:"left"|"right";
     icon:JSX.Element;
 }

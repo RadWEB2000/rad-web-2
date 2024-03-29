@@ -56,3 +56,40 @@
     grid-row: 1;
     overflow-x: hidden;
   }
+
+  @media only screen {
+    @media (min-width:480px){
+      .wrapper {
+        grid-template-columns: calc(100% - calc(2 * 5.3rem)) 5.3rem 5.3rem;
+        // grid-template-columns: repeat(2, 1fr);
+        gap:.4rem;
+        padding: 0rem .25rem;
+      }
+      
+      
+      .button {
+        grid-row: 1;
+        background: green;
+        $size:5.2rem;
+        @include size($size,$size);
+        &:focus,
+        &:hover {
+          &::after {
+            @include size($size * 1.3,$size * 1.3);
+          }
+        }
+        &[data-direction="left"]{
+          grid-column: 2;
+        }
+        &[data-direction="right"]{
+          grid-column: 3;
+        }
+      }
+      
+    
+      .cards {
+        grid-column: 1;
+        grid-row: 1;
+      }   
+    }
+  }

@@ -12,9 +12,9 @@ import dynamic from 'next/dynamic';
 //     loading:() => <p>Loading....</p>
 // })
 
-function SliderButton({handle,icon}:tSliderButton){
+function SliderButton({direction,handle,icon}:tSliderButton){
     return (
-        <button className={css.button} onClick={handle}>
+        <button className={css.button} data-direction={direction} onClick={handle}>
             {icon}
         </button>
     )
@@ -46,6 +46,7 @@ export default function Slider({button,cards}:tSlider){
     return (
     <div className={css.wrapper} >
         <SliderButton
+            direction="left"
             handle={() => prevCard()}
             icon={<LeftIcon/>}
         />
@@ -64,6 +65,7 @@ export default function Slider({button,cards}:tSlider){
             })}
         </motion.ul>
         <SliderButton
+            direction="right"
             handle={() => nextCard()}
             icon={<RightIcon/>}
         />

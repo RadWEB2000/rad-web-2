@@ -57,7 +57,7 @@ export default function PrimaryProjectCard({button,categories, direction, excerp
                             objectPosition: 'center',
                         }}
                         title={image.title}
-                        quality={35}
+                        quality={15}
                     />
                 </picture>
             </figure>
