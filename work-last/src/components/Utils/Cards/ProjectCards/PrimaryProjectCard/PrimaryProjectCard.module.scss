@@ -1,0 +1,159 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start, flex-start, column);
+    border:2px solid $gray2;
+    border-radius: 1rem;
+    margin:2rem auto;
+    padding: 2rem;
+    width:clamp(5rem, 120rem, 90%);
+}
+
+.image__box {
+    @include flex(center,center);
+    width: 100%;
+}
+
+.image {
+    $size:40dvh;
+    @include size($size,$size);
+    border:2px solid $orange;
+    position: relative;
+    border-radius: 50%;
+}
+
+.index {
+    $size:5.1rem;
+    @include flex(center,center);
+    @include font(3rem, 800, 1, uppercase, null, center);
+    @include size($size, $size);
+    border:2px solid $black;
+    font-family: $special;
+    font-style: normal;
+}
+
+.title {
+    @include font(3.22rem, 800, 1.4, null, null, start);
+}
+
+.overview {
+    @include font(1.55rem, 400, 1.5, null, null, start);
+    color:$onyx;
+}
+
+@media only screen {
+    @media (min-width:570px){
+        .wrapper {
+            display: grid;
+            grid-template-areas: 
+                "picture picture details"
+                "picture picture details"
+                "picture picture details"
+                "content_box content_box details"
+                "content_box content_box details"
+                "content_box content_box details"
+            ;
+        }
+        .image__box {
+            grid-area: picture;
+        }
+        .details {
+            @include flex(flex-end, flex-start, column, null, 1rem);
+            grid-area: details;
+        }
+        .box {
+            grid-area: content_box;
+        }
+        .image {
+            $size:45dvh;
+            @include size($size,$size);
+        }
+        
+        .title {
+            color:$orange;
+            font-size: 4rem;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        
+        .overview {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }       
+    }
+    @media (min-width:990px){
+        .wrapper {
+            grid-template-areas: 
+                "picture picture content_box conten_box details"
+                "picture picture content_box conten_box details"
+                "picture picture content_box conten_box details"
+                "picture picture content_box conten_box details"
+                "picture picture content_box conten_box details"
+            ;
+        }
+
+        .image{ 
+            $size:35dvh;
+            @include size($size,$size);
+            border-right: 2px solid rgba($black,0);
+        }
+
+        .details {
+            border-left:1.2px solid black;
+        }
+        .box {
+            @include flex(flex-end,flex-end,column);
+            height: 100%;
+            padding: 1rem;
+        }
+        .overview{
+            font-size: 1.9rem;
+        }
+    }
+    @media (min-width:1240px){
+        .wrapper {
+            grid-template-areas: 
+                "picture picture details details details"
+                "picture picture details details details"
+                "picture picture content_box content_box content_box"
+                "picture picture content_box content_box content_box"
+                "picture picture content_box content_box content_box"
+            ;
+        }
+        .image{ 
+            $size:35dvh;
+            @include size($size,$size);
+            border-right: 2px solid rgba($black,0);
+        }
+        .details {
+            @include flex(center, flex-start, row-reverse wrap-reverse, 1rem, 1rem);
+            @include size(auto, 100%);
+            border-left:0px;
+            border-bottom: 2px solid rgba($black,0);
+        }
+        .box {
+            padding: 2rem;
+            width: 80%;
+        }
+        
+        .index {
+            $size:7rem;
+            @include size($size, $size);
+            border:3px solid $black;
+            font-size: 3.8rem;
+        }
+
+        .overview{
+            font-size: 2.2rem;
+            line-height: 1.8;
+        }
+        .title {
+            font-size: 7rem;
+            text-orientation: unset;
+            writing-mode:unset;
+        }
+        
+    }
+}

@@ -3,7 +3,7 @@ import css from "cards/BlogCards/SecondaryBlogCard/SecondaryBlogCard.module.scss
 
 export default function SecondaryBlogCard(){
     return (
-        <Link className={css.wrapper} href="#">
+        <Link aria-label="Jak nauczyć się React JS – podstawowe pojęcia" className={css.wrapper} href="#" title="Jak nauczyć się React JS – podstawowe pojęcia">
             <ul className={css.categories} >
                 <Link className={css.category}  href="#">
                     Programowanie    
