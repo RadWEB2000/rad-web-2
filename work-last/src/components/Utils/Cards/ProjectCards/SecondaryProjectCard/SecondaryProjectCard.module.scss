@@ -1,0 +1,144 @@
+@import '../../../../../styles/Mixins.scss';
+@import '../../../../../styles/Variables.scss';
+
+.wrapper {
+	@include flex(flex-start, flex-start, column, null, 0.8rem, false);
+	border-top: 1.2px solid rgba($onyx, 0.2);
+	margin: 2rem auto;
+	padding: 2rem 2rem;
+	width: clamp(5rem, 110rem, 97%);
+	& > * {
+		width: 100%;
+	}
+}
+
+.container {
+}
+
+.details {
+	@include flex(flex-start, flex-start, column);
+}
+
+.subtitle,
+.title {
+	@include font(null, 800, 1.2, null, null, start);
+}
+
+.subtitle {
+	font-size: 2.6rem;
+}
+
+.title {
+	font-size: 3.4rem;
+}
+
+.slogan {
+	@include font(1.7rem, 500, 1.2, null, null, start);
+}
+
+.box {
+	padding: 0.45rem;
+}
+
+.overview {
+	@include font(1.45rem, 300, 1.6, null, null, start);
+}
+
+.image__box {
+	@include flex(center, center);
+	border-radius: 1rem;
+	background-color: rgba($yellow, 0.1);
+	aspect-ratio: 1/1;
+	position: relative;
+}
+
+.image {
+	aspect-ratio: 1/1;
+	display: block;
+	position: relative;
+	width: 85%;
+}
+
+@media only screen {
+	@media (min-width: 540px) {
+		.subtitle {
+			font-size: 3.2rem;
+		}
+
+		.title {
+			font-size: 4.3rem;
+		}
+
+		.slogan {
+			font-size: 1.82rem;
+		}
+		.image {
+			width: 75%;
+		}
+	}
+	@media (min-width: 700px) {
+		.wrapper {
+			display: grid;
+			grid-template-columns: repeat(11, 1fr);
+		}
+
+		.container {
+			grid-column: 1/7;
+		}
+
+		.subtitle {
+			font-size: 3.2rem;
+		}
+
+		.title {
+			font-size: 4.3rem;
+		}
+
+		.slogan {
+			font-size: 1.82rem;
+		}
+
+		.box {
+			padding: 0.35rem;
+		}
+
+		.overview {
+			font-size: 1.42rem;
+		}
+
+		.image__box {
+			@include size(100%, 100%);
+			aspect-ratio: unset;
+			grid-column: 7/-1;
+		}
+
+		.image {
+			width: 75%;
+		}
+	}
+	@media (min-width: 1000px) {
+		.container {
+			grid-column: 1/7;
+		}
+
+		.subtitle {
+			font-size: 3.8rem;
+		}
+
+		.title {
+			font-size: 5.7rem;
+		}
+
+		.slogan {
+			font-size: 2.3rem;
+		}
+
+		.box {
+			padding: 0.45rem;
+		}
+
+		.image {
+			width: 85%;
+		}
+	}
+}

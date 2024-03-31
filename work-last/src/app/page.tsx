@@ -1,14 +1,20 @@
-import { PrimaryBlogCard, PrimaryProjectCard, SecondaryBlogCard } from "cards/index";
+import {
+	PrimaryBlogCard,
+	PrimaryProjectCard,
+	SecondaryBlogCard,
+	SecondaryProjectCard,
+} from 'cards/index';
 
-export default function HomePage(){
-	return(
+export default function HomePage() {
+	return (
 		<>
 			<>
 				<h1>HomePage</h1>
-				<PrimaryBlogCard/>
+				<PrimaryBlogCard />
 				<PrimaryProjectCard side="left" />
-				<SecondaryBlogCard/>
+				<SecondaryProjectCard />
+				<SecondaryBlogCard />
 			</>
 		</>
-	)
+	);
 }
