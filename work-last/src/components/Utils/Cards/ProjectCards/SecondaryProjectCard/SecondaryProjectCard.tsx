@@ -38,10 +38,9 @@ export default function SecondaryProjectCard() {
 						style={{
 							objectFit: 'contain',
 							objectPosition: 'center',
-							scale: 1.09,
 						}}
 						title=""
-						quality={44}
+						quality={64}
 					/>
 				</picture>
 			</figure>
